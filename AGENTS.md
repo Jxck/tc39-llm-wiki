@@ -64,7 +64,7 @@ tags: [proposal, date-time]
    | [2018-09](../_generated/agenda-index.md) | Stage 2 到達。`Temporal for Stage 2` | 1 → 2 |
 
    会合セルは `raw/notes` の該当ファイルへ相対リンク(例: `[2018-09](../../raw/notes/meetings/2018-09/sept-27.md)`)。Stage 列は遷移を `旧 → 新`、更新のみなら現ステージを記す。テーブルの直後に、下記のステージ推移グラフを置く。
-3. ステージ推移グラフ — テーブルの下に mermaid `xychart-beta` の折れ線を埋め込む。**横軸は議事録のある全区間(2012〜2026 の年)固定**、縦軸は Stage (0〜4)。各年末時点の stage を下から積み上げる形で並べる。提案が存在しない年は 0。Stage 2.7 を経た提案は `2.7` を小数点で打つ。グラフ直後に読み方の注記(各遷移の年月)を `>` で添える。例:
+3. ステージ推移グラフ — テーブルの下に mermaid `xychart-beta` の折れ線を埋め込む。**横軸は議事録のある全区間(2012〜2026 の年)固定**、縦軸は Stage (0〜4)。各年末時点の stage を下から積み上げる形で並べる。提案が存在しない年は 0。Stage 2.7 を経た提案は `2.7` を小数点で打つ。**撤回された提案は撤回年で線を止める**(line 配列をそこで終え、以降の点を描かない)。長期停滞は同じ値の横ばいで自然に表現される(特別な印は不要)。グラフ直後に読み方の注記(各遷移の年月)を `>` で添える。例:
 
    ````
    ```mermaid
@@ -93,6 +93,7 @@ tags: [proposal, date-time]
 1. 対象会合 or 提案を決める。`wiki/_generated/agenda-index.md` を grep して関連議題と会合を特定する(例: `grep -i -A4 decorators wiki/_generated/agenda-index.md`)。
 2. 該当する `raw/notes` のセクションを読む(`### Conclusion` と `### Speaker's Summary of Key Points` がステージ判定の要)。
 3. 提案ページを新規作成 or 更新: ステージ遷移テーブルに行を追加、ステージ推移グラフ(mermaid)を更新、論点を追記/更新、frontmatter の `current_stage`/`status` を最新化。発言引用は日本語訳で。
+   - **champion の確定は delegates.txt だけで決めない**。当該会合の Presenter 行・本文で裏取りする。略号は会合ごとに振り直されることがある(例: 2019-10 は Robin Ricard を RRI と表記するが、delegates.txt の RRI=Reefath Rajali は別人)。発言の帰属・年月も原文で確認する(誤帰属が起きやすい箇所)。
 4. **人物の生成とリンク**(提案ページを書き終えたら必ず実行):
    - `python3 tools/extract_people.py` — 提案ページに登場する略号を検出し、`wiki/people/<ABBR>.md` を生成/再生成(フルネーム=delegates.txt、所属・参加会合=出席者テーブル、担当ドラフト=各提案 frontmatter の `champions` を相互参照)。
    - `python3 tools/link_people.py` — 提案ページ本文中の略号を `[ABBR](../people/ABBR.md)` にリンク(冪等)。frontmatter・コードブロック・mermaid・既存リンクは保護。
@@ -110,6 +111,14 @@ tags: [proposal, date-time]
 - ページ間の矛盾、古くなった記述(新しい会合で覆された主張)、孤立ページ、相互リンク漏れ、論点の決着漏れを点検。
 - `agenda-index.md` に出てくるが提案ページが無い重要提案を洗い出す。
 - 素材更新時(submodule pull 後)は `python3 tools/extract_agenda.py`、続けて `python3 tools/extract_people.py && python3 tools/link_people.py` で再生成。
+
+### Update(運用方針の反映)
+
+会話の中で **wiki の運用(規約・ページ形式・ワークフロー・ツールの使い方)に関する合意が新しくできたら、それをこの AGENTS.md に反映**し、`wiki/log.md` に `update` として 1 行記録する。これにより次セッション以降は更新後の規約で運用される。
+
+- 判断基準: 「**チームメイトや別エージェントにも必要な、wiki の動き方に関する取り決めか**」。該当すれば AGENTS.md を編集する。
+- 該当しないもの(その場限りの指示、私個人の振る舞いの好みなど)は AGENTS.md に書かない。
+- 矛盾する旧記述があれば置き換える(追記で二重化しない)。
 
 ## 人物ページ(people/)
 
