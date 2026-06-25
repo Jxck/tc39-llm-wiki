@@ -34,14 +34,19 @@ Joint Iteration は、2 つ以上の iterator / iterable を**位置的に対応
 | [2026-05](../../raw/notes/meetings/2026-05/may-19.md)       | **Stage 4 到達**。SpiderMonkey 出荷済み・V8 実装完了                                                                       | 3 → 4   |
 
 ```mermaid
-xychart-beta
-    title "Joint Iteration stage 2012-2026"
-    x-axis [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
-    y-axis "Stage" 0 --> 4
-    line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2.7, 3, 4]
+gantt
+    title Joint Iteration stage timeline
+    dateFormat YYYY-MM
+    axisFormat %Y
+    todayMarker off
+    Stage 1 : 2023-09, 2024-02
+    Stage 2 : 2024-02, 2024-06
+    Stage 2.7 : 2024-06, 2025-11
+    Stage 3 : 2025-11, 2026-05
+    Stage 4 : 2026-05, 2026-06
 ```
 
-> 横軸=2012-2026、縦軸=Stage。初出は 2023-09(Stage 1)。2024-02 に Stage 2、2024-06 に Stage 2.7(同年内に複数遷移したため年末値は 2.7)。2025-11 に Stage 3、2026-05 に Stage 4。
+> 各 Stage の横棒 = その stage に居た期間(横軸 = 実時間)。2023-09 Stage 1 → 2024-02 Stage 2 → 2024-06 Stage 2.7 → 2025-11 Stage 3 → 2026-05 Stage 4。
 
 ## 主な論点
 
