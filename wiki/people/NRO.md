@@ -2,7 +2,7 @@
 abbr: NRO
 name: Nicolò Ribaudo
 orgs: [Babel - Invited Expert, Babel-InvitedExpert, Igalia, Igalia, S.L, Invited Expert, Invited Expert - Babel]
-meetings_attended: 26
+meetings_attended: 27
 tags: [person]
 ---
 
@@ -11,11 +11,11 @@ tags: [person]
 - **フルネーム**: Nicolò Ribaudo
 - **所属**: Babel - Invited Expert / Babel-InvitedExpert / Igalia / Igalia, S.L / Invited Expert / Invited Expert - Babel
 - **担当ドラフト (champion)**: [Records & Tuples](../proposals/records-and-tuples.md)
-- **言及される提案ページ**: [Records & Tuples](../proposals/records-and-tuples.md)
-- **参加したミーティング**: 全 26 回
+- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Records & Tuples](../proposals/records-and-tuples.md)
+- **参加したミーティング**: 全 27 回
 
 ## 参加したミーティング
 
-2020-07 2021-10 2021-12 2022-07 2022-09 2022-11 2023-01 2023-03 2023-05 2023-07 2023-09 2023-11 2024-02 2024-04 2024-06 2024-07 2024-10 2024-12 2025-02 2025-04 2025-05 2025-07 2025-09 2025-11 2026-01 2026-03
+2020-07 2021-10 2021-12 2022-07 2022-09 2022-11 2023-01 2023-03 2023-05 2023-07 2023-09 2023-11 2024-02 2024-04 2024-06 2024-07 2024-10 2024-12 2025-02 2025-04 2025-05 2025-07 2025-09 2025-11 2026-01 2026-03 2026-05
 
 > このページは `tools/extract_people.py` による生成物。フルネーム/所属/参加会合は `raw/notes`(delegates.txt と各会合の出席者テーブル)由来、担当ドラフトは提案ページ frontmatter の `champions` から相互参照。手で編集せず再生成すること。

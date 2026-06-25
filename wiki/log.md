@@ -95,3 +95,13 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-06-25] update | submodule ポインタは必ずコミット(note↔wiki 同期)
 
 - 方針変更: 「未マージ PR のポインタはコミットしない」を撤回。**submodule を pull / PR checkout したら必ずポインタをコミットする**(`[wiki]`)ことに統一。wiki が参照した note の状態を常に記録し同期させるため。AGENTS.md の該当節を置き換え。
+
+## [2026-06-25] lint | wiki 全体の健全性チェック(Decorators 降格の反映ほか)
+
+内部健全性と出典(2026-05 は PR #411)を突合。発見と修正:
+
+- **Decorators が陳腐化**: 2026-05(114th)で Stage 3 → **Stage 2.7 へ降格**(Decorator Metadata も lockstep)していたが提案ページが 2023-05 で止まっていた([raw may-19.md:1194](../raw/notes/meetings/2026-05/may-19.md) で確認)。frontmatter(`status: stage2.7` / `current_stage: 2.7`)・ステージ遷移テーブル(2026-05 行追加)・mermaid グラフ(2026 を 2.7 に)・概要・`### Stage 2.7 への降格` 論点・出典・index.md 行を更新。
+- **AGENTS.md**: `status` enum に `stage2.7` を新設(降格を表現できなかったため。本 lint で合意し反映)。index.md の凡例も更新。
+- **2026-05 index 概要の事実誤り 2 点**: (1) Dynamic Code Brand Checks を「Stage 4 到達」に誤記(実際は normative change の consensus のみ・次回再要求)→ 除外。(2) Decorators の 2.7 移行を「advancement/進む」と誤記 → 降格(regress)へ訂正。
+- **人物数**: index.md 「43 名」は lint 開始時点では 42 ページとの不整合だったが、Decorators ページに [DLM](people/DLM.md) が登場し再生成で 43 ページとなったため 43 のまま整合(extract_people/link_people 実行済み)。
+- 内部リンク・人物略号(43)・会合↔提案リンクは全て解決。Temporal の Stage 4(2026-03)は出典と整合。

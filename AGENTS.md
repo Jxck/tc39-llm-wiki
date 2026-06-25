@@ -44,7 +44,7 @@ tools/
 ---
 title: Temporal
 slug: temporal
-status: shipped        # stage0 | stage1 | stage2 | stage3 | shipped | withdrawn | inactive
+status: shipped        # stage0 | stage1 | stage2 | stage2.7 | stage3 | shipped | withdrawn | inactive
 current_stage: 4       # 0 / 1 / 2 / 2.7 / 3 / 4
 ecma: [262, 402]       # 影響する仕様
 champions: [PFC, ...]  # 略号

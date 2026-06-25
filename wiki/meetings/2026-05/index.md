@@ -8,7 +8,7 @@
 
 ## 概要
 
-Amsterdam での3日間。**Stage 4 到達**が複数(Joint Iteration / `Atomics.pause` / Dynamic Code Brand Checks)。Stage 3 へ Iterator Chunking・Iterator Includes・Error stack accessor、Stage 2.7 へ Decorators(本体)と Decorator Metadata が進むなど iterator 系・decorators 周りの advancement が目立った。ほかに Intl(Stable Formatting / Sequence Units / Default Behaviours)、ESM/Source Phase Imports の normative PR、AsyncContext の web 統合、`export defer` / `export all from` / Module Scope Ceiling など module 系を議論。Stage 1 の "Comparisons"(deep comparison/deviation reporting)や、規制動向として **EU CRA(Cyber Resilience Act)** の解説セッションもあった。
+Amsterdam での3日間。**Stage 4 到達**は Joint Iteration / `Atomics.pause`(Dynamic Code Brand Checks は normative change の consensus のみで Stage 4 は次回再要求、Explicit Resource Management は条件達成で finished)。Stage 3 へ Iterator Chunking・Iterator Includes・Error stack accessor が進む一方、**Decorators(本体)と Decorator Metadata は Stage 3 → Stage 2.7 へ降格(regress)**するなど iterator 系・decorators 周りの動きが目立った。ほかに Intl(Stable Formatting / Sequence Units / Default Behaviours)、ESM/Source Phase Imports の normative PR、AsyncContext の web 統合、`export defer` / `export all from` / Module Scope Ceiling など module 系を議論。Stage 1 の "Comparisons"(deep comparison/deviation reporting)や、規制動向として **EU CRA(Cyber Resilience Act)** の解説セッションもあった。
 
 ## 日次サマリー
 
