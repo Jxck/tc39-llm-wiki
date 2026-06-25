@@ -90,7 +90,12 @@ tags: [proposal, date-time]
 
 各操作は Claude Code のスラッシュコマンドとしても用意してある(`.claude/commands/`): **`/ingest <提案>`**、**`/query <質問>`**、**`/lint [対象]`**、**`/update [合意]`**。コマンドは手順を持たず、本ファイルの該当ワークフローを読んで実行するだけのポインタ(定義は AGENTS.md が唯一の正本。コマンド側に再掲しない)。
 
-**コミット規約(全操作共通)**: 各操作の完了時に、その操作で生成・変更したファイルを **操作名をプレフィックスにしたメッセージ**でコミットする —— `[ingest]` / `[query]` / `[lint]` / `[update]`(例: `[lint] fix champion attribution in records-and-tuples`)。メッセージ本文は英語。コミットはリポジトリ/環境の git 規約(署名・rebase・必要な trailer 等)に従う。Query で file back しなかった場合などコミットすべき変更が無いときはスキップしてよい。
+**コミット規約**: 変更はプレフィックス付きの英語メッセージでコミットする。プレフィックスは変更の起因で決める:
+
+- 操作(コマンド)に起因する変更 → その**操作名**: `[ingest]` / `[query]` / `[lint]` / `[update]`(例: `[lint] fix champion attribution in records-and-tuples`)。
+- いずれの操作にも起因しない **wiki 全体に関わる変更** → `[wiki]`: コマンド自体の追加・変更、`tools/` などツールの変更、リポジトリ構成や本ファイルの構造的変更など。
+
+コミットはリポジトリ/環境の git 規約(署名・rebase・必要な trailer 等)に従う。コミットすべき変更が無いとき(Query で file back しなかった等)はスキップしてよい。
 
 ### Ingest(素材の取り込み)
 
