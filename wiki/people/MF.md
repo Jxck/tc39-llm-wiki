@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Michael Ficarra
 - **所属**: ?? / F5 / F5 Networks
-- **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Temporal](../proposals/temporal.md)
+- **担当ドラフト (champion)**: [Joint Iteration](../proposals/joint-iteration.md)
+- **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Joint Iteration](../proposals/joint-iteration.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 15 回
 
 ## 参加したミーティング

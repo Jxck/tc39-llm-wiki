@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Daniel Ehrenberg
 - **所属**: Bloomberg / Igalia
 - **担当ドラフト (champion)**: [Decorators](../proposals/decorators.md)
-- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
+- **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../proposals/decorators.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 22 回
 
 ## 参加したミーティング

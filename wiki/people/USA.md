@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Ujjwal Sharma
 - **所属**: Igalia / Igalia S.L. / Igalia, S.L
-- **担当ドラフト (champion)**: [Temporal](../proposals/temporal.md)
-- **言及される提案ページ**: [Temporal](../proposals/temporal.md)
+- **担当ドラフト (champion)**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Temporal](../proposals/temporal.md)
+- **言及される提案ページ**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 31 回
 
 ## 参加したミーティング

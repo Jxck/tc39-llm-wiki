@@ -111,3 +111,15 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - 「使う側(フレームワーク作者・TypeScript/Babel エコシステム・アプリ開発者)は強く欲しがるが、作る側(V8/SpiderMonkey/JSC のエンジン実装者)が誰も出荷したがらない」という需要/実装のミスマッチが停滞と 2026-05 降格の核心、と回答(出典: [2019-03](../raw/notes/meetings/2019-03/mar-27.md)・[2021-07](../raw/notes/meetings/2021-07/july-14.md)・[2023-01](../raw/notes/meetings/2023-01/feb-01.md)・[2026-05 may-19](../raw/notes/meetings/2026-05/may-19.md))。
 - file back: [decorators.md](proposals/decorators.md) の `## 主な論点` に `### 需要と実装のミスマッチ(誰が欲しいのか)` を追加。
 - 副次: 本文に [OFR](people/OFR.md) が新規登場し人物ページ生成(44 名)。"TS"(TypeScript の略)が delegate 略号 TS と誤一致してリンク化されたため、`extract_people.py` の `NON_PERSON` に `TS` を追記し、誤生成ページを除去・本文を `TypeScript` 表記へ修正。
+
+## [2026-06-25] ingest | 2026 年に Stage 4 到達した提案を ingest
+
+- 対象を「2026 年(113th 2026-03 / 114th 2026-05、および 111th 2026-01)に Stage 4 へ到達した提案」に確定。該当は 6 件(Temporal は既存ページで最新のため除外し、新規 5 件を ingest)。各提案は複数年の履歴を持つため、subagent で agenda-index + raw 横断の履歴調査を 5 件並列実行し、本体で検証・ページ化。
+  - [Upsert](proposals/upsert.md)(`Map.prototype.getOrInsert`、ECMA-262、Stage 4 2026-01)
+  - [Intl Era/Month Code](proposals/intl-era-month-code.md)(ECMA-402、Stage 4 2026-03、Temporal と同時)
+  - [Joint Iteration](proposals/joint-iteration.md)(`Iterator.zip`、ECMA-262、Stage 4 2026-05)
+  - [Atomics.pause](proposals/atomics-pause.md)(ECMA-262、Stage 4 2026-05、引数削除の normative change 込み)
+  - [Explicit Resource Management](proposals/explicit-resource-management.md)(`using`、ECMA-262、Stage 4 2026-05。2025-05 conditional Stage 4)
+- 各ページに frontmatter・ステージ遷移テーブル・mermaid グラフ・主な論点・出典を整備。発言引用は日本語訳。
+- `extract_people.py` / `link_people.py` を実行し人物ページを 44 → 52 名に拡充(新規: BAN/BFS/EAO/EPR/FYT/KM/LCA/RPR)。誤検出なし。
+- [index.md](index.md) のカタログに 5 行追加、`intl-era-month-code` を未作成リストから除去、人物数を 52 に更新。[Temporal](proposals/temporal.md) の関連提案を Intl Era/Month Code ページへリンク化。

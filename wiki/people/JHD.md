@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Jordan Harband
 - **所属**: Coinbase / HeroDevs / Herodevs / Invited Expert / Invited expert / Socket / Socket Inc / Socket, Inc / invited expert
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
+- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Joint Iteration](../proposals/joint-iteration.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 34 回
 
 ## 参加したミーティング

@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Shane Carr
 - **所属**: Google
-- **担当ドラフト (champion)**: [Temporal](../proposals/temporal.md)
-- **言及される提案ページ**: [Temporal](../proposals/temporal.md)
+- **担当ドラフト (champion)**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Temporal](../proposals/temporal.md)
+- **言及される提案ページ**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 25 回
 
 ## 参加したミーティング
