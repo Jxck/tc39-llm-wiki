@@ -136,3 +136,10 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - 「module harmony」系(ES Modules と派生提案群)を [Modules](families/modules.md) family にまとめた。subagent で agenda-index + raw を横断調査し、ES Modules / dynamic import / import.meta / top-level await / import attributes / JSON modules / export-from(Stage 4)、source phase imports / import defer / import text(Stage 3)、ESM phase imports(2.7)、export defer(2、2.7 提案中)、export all from / module scope ceiling / module declarations / compartments(Stage 1〜停滞)の計 16 提案を現ステージ付きで一覧化。横断テーマ(import の phase、評価遅延、ホスト統合、`assert`→`with` 改名)を整理。
 - 各提案ページは未作成のため members はコード表記。新規人物 [GB](people/GB.md)(Guy Bedford)を生成(54 名)。`vm`(Node module)を delegate 略号 `VM` と誤検出してリンク化したため `extract_people.py` の `NON_PERSON` に `VM` を追記し、誤生成ページを除去・本文をコード表記へ修正(`TS` と同種の対処)。
 - index.md の families セクションに modules を追加。
+
+## [2026-06-25] update | raw に tc39/proposals を追加し precedence を定義
+
+- `raw/proposals`(tc39/proposals)を submodule 追加。現ステージ別テーブル + champions の正典リストを raw に取り込んだ。
+- AGENTS.md のレイヤ節を 2 ソース構成に改訂し、precedence を明文化: 経緯・論点・発言は `raw/notes` が一次、現ステージ(`current_stage`/`status`)と champion の確定値は `raw/proposals` が一次。proposals はスナップショットで経緯を持たない点も注記。
+- ディレクトリ構成に `raw/proposals/` の主要ファイルを追記。
+- Lint(b) に proposals 突き合わせ手順を追加: frontmatter の `current_stage`/`status`/`champions` を README/finished/stage-1/inactive と grep 照合し、食い違いは precedence に従って解決(現ステージは proposals 一次、経緯は notes で裏取り)。
