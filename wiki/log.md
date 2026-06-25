@@ -69,3 +69,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-06-25] wiki | Summarise コマンドを追加
 
 - 会合を話題単位で日次要約する `/summarise` を追加(出力 `wiki/meetings/<YYYY-MM>/`、日ごとに 1 ファイル + index.md)。フォーマット定義は AGENTS.md の「ワークフロー > Summarise」。コミットプレフィックスに `[summarise]` を追加。
+
+## [2026-06-25] update | Summarise に既存提案ページへのリンク規約を追加
+
+- 要約のトピックが既存の提案ページ(`wiki/proposals/<slug>.md`)に該当する場合、Slides の次に `- 提案ページ: [Title](../../proposals/<slug>.md)` を置く規約を AGENTS.md の Summarise に追加。
