@@ -106,6 +106,11 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - **人物数**: index.md 「43 名」は lint 開始時点では 42 ページとの不整合だったが、Decorators ページに [DLM](people/DLM.md) が登場し再生成で 43 ページとなったため 43 のまま整合(extract_people/link_people 実行済み)。
 - 内部リンク・人物略号(43)・会合↔提案リンクは全て解決。Temporal の Stage 4(2026-03)は出典と整合。
 
+## [2026-06-26] query | Unicode のなかでの Intl.MessageFormat の立ち位置
+
+- 「MF2 本体(構文 DSL・データモデル)は Unicode、参照実装は ICU(ICU4C/4J, 2024-04 時点 tech preview)、JS API のみ TC39」という 3 層の垂直スタックと、TG2 が MF2 の評価を Unicode/業界に外注した位置づけ、を回答(出典: [2024-04 april-10](../raw/notes/meetings/2024-04/april-10.md))。先行質問「Intl.MessageFormat は Template Instantiation と被るか」には、Template Instantiation は W3C/WHATWG の HTML 提案で TC39 スコープ外・目的も別、と前提を訂正して回答。
+- file back: [intl-messageformat.md](proposals/intl-messageformat.md) の `## 主な論点` に `### Unicode との分業構造 — 構文は Unicode、API は TC39` を追加。続けて `## 関連提案` に `### 混同しやすい別物 — Template Instantiation / DOM Parts(参考・TC39 スコープ外)` を追加(W3C/WHATWG WICG の DOM 側提案。DOM Parts=低レイヤのマーク/更新機構、Template Instantiation=その上の宣言的テンプレート API、という階層関係。外部資料に基づく参考注記で、出典は wiki 素材外として明示)。
+
 ## [2026-06-25] query | Decorator は結局誰が欲しいのか
 
 - 「使う側(フレームワーク作者・TypeScript/Babel エコシステム・アプリ開発者)は強く欲しがるが、作る側(V8/SpiderMonkey/JSC のエンジン実装者)が誰も出荷したがらない」という需要/実装のミスマッチが停滞と 2026-05 降格の核心、と回答(出典: [2019-03](../raw/notes/meetings/2019-03/mar-27.md)・[2021-07](../raw/notes/meetings/2021-07/july-14.md)・[2023-01](../raw/notes/meetings/2023-01/feb-01.md)・[2026-05 may-19](../raw/notes/meetings/2026-05/may-19.md))。

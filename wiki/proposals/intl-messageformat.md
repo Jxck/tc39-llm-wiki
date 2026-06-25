@@ -56,6 +56,22 @@ xychart-beta
 
 2024-04 (april-10) の status update で、この案は頓挫したことが報告される。[EAO](../people/EAO.md) によれば、TG2 のフィードバックは parser 除去への懸念(特に Google の i18n グループ)を示した。[EAO](../people/EAO.md)「全体として今これは行き詰まっており (stuck)、いつか進むかもしれない」。さらに「TC39 / TG2 は、ある意味で開発を Unicode CLDR に外注した。我々は MF2.0 が良いかどうかを論評せず、業界に採用されるのを待つ。採用されれば良いものということで、さらなる前進を検討するかもしれない」と、次の一手が標準化団体の外(業界の採用)に委ねられたことを述べた。
 
+### Unicode との分業構造 — 構文は Unicode、API は TC39
+
+MF2 の本体(構文 DSL とデータモデル)は **Unicode 側で策定**され、TC39 はその上に JS API を被せるだけ、という垂直スタックの分業になっている。[EAO](../people/EAO.md) はこの構造を「stacking」と表現した(2024-04 april-10):
+
+> MessageFormat 2 の message syntax は **Unicode で定義**されている。そして JavaScript API は **TC39 でのみ**定義している。
+
+層は 3 つに整理できる:
+
+1. **Unicode** — MF2 の構文とデータモデルそのもの(規範)。
+2. **ICU**(ICU4C / ICU4J)— その参照実装。2024-04 時点で **tech preview** に入った段階。[DE](../people/DE.md) は「ICU の tech preview で 6〜12〜18 か月かけて安定化すれば、構文が安定だという強いシグナルを TC39 に与える」と述べた。
+3. **TC39 / TG2** — 上記を前提に `Intl.MessageFormat` の JS API を定義するだけ。EAO によればこの JS API は 2013 年以来ほぼ同形で、web ローカライゼーションの約 1/3 が既に旧版(ICU MessageFormat 1)相当の polyfill `intl-messageformat` に依存している。
+
+この分業ゆえ、TG2 は MF2 の中身の評価そのものを Unicode 側に委ねた(上記「syntax parser を外す案」で引用した EAO の「Unicode CLDR に外注した」発言)。[SFC](../people/SFC.md) も「今は **Unicode 側の開発**に注力しており、それが片付いたら JavaScript / web platform 側にエネルギーを注ぐ」と、Unicode 先行・TC39 後追いの順序を明言している。結果として TC39 の前進条件は「Unicode 発の構文が業界に採用され安定したか」に従属し、[SYG](../people/SYG.md) が挙げた CLDR 由来の date/time 整形障害(2023)のような **Unicode/CLDR の安定性への疑念**が、そのまま TC39 での前進をためらわせる要因になっている。
+
+> 補足: Unicode 内部では MF2 は CLDR Technical Committee 配下の Message Format Working Group が策定する技術標準で、ICU がその参照実装にあたる(議事録では EAO がこれらをまとめて「Unicode CLDR」と呼ぶ)。
+
 ### error handling — throw しないモデルと API 形
 
 `Intl.MessageFormat` は入力がユーザ/翻訳者起源で失敗しやすいため、エラーで throw しない設計を志向する。[EAO](../people/EAO.md) は 2023-09 に「他の Intl フォーマッタと違いユーザデータに依存し、翻訳者など複数のワークフローを経てくるため、最終的に(部分的に)失敗する可能性が他より高い」と非致命エラーの理由を説明した。これに対し [DE](../people/DE.md) は「エラーがあれば throw するのを期待していた」と述べ、また custom formatter API の規模・複雑さへの懸念を示した。[JHD](../people/JHD.md) は `onError` が void を返す設計に疑問を呈した。
@@ -78,6 +94,17 @@ Stage 1 の場で [CM](../people/CM.md) が「『message』という語の使い
 - [Intl Era/Month Code](../proposals/intl-era-month-code.md) — 同じ ECMA-402 の国際化提案。
 - [Temporal](../proposals/temporal.md) — `Intl.MessageFormat` から日時値を扱う際に参照されうる(2026-03 に MF2 が Temporal の `PlainTime` parse 挙動の問題を発見、という言及あり)。
 - `Measure` / `Amount` — 数値+単位/通貨を MessageFormat へ渡し、翻訳者が値をローカライズしてしまうのを防ぐ用途として MF2 が動機に挙げられている(2024-10 / 2024-12 / 2025-09 ほか)。未精読。
+
+### 混同しやすい別物 — Template Instantiation / DOM Parts(参考・TC39 スコープ外)
+
+`Intl.MessageFormat` は「HTML の Template Instantiation と被るのでは」と混同されることがあるが、両者は別物。Template Instantiation / DOM Parts は **W3C/WHATWG(WICG webcomponents)の DOM 側提案**であり、TC39 の管轄外(本 wiki の素材 `raw/notes` には登場しない)。以下は外部資料に基づく参考整理:
+
+- **Template Instantiation** — 2017-11 に Apple が提案。`<template>` を mustache 構文 `{{ }}` で値置換・条件分岐・ループしながら clone する**宣言的テンプレート API**(`HTMLTemplateElement.createInstance()` → `TemplateInstance`、`update()`、template parts、拡張可能な template processors)。当初スコープが広すぎる(構文 + parts + processor 一式)とされ、2017/2019 の議論を経て、低レイヤの **DOM Parts を先に固める**方針へ分割された。
+- **DOM Parts** — Apple/Google 合同提案。DOM ツリー中の可変箇所(child nodes / content attribute / JS property 等)を id 並みに高速に**マークし更新する低レイヤ機構**(`ChildNodePart` / `NodePart` / `AttributePart`、imperative API と `<template>` 内の declarative API)。式評価・if/else・loop・テンプレート処理モデルは**含まない**(将来検討に先送り)。
+- **棲み分け** — DOM Parts =「DOM のどこを更新するか」を示す低レイヤ、Template Instantiation =その上で「構文とデータバインディング」を与える高レイヤ。競合ではなく階層関係で、2025-03 時点では DOM Parts を先行させる方針で議論が継続。
+- **`Intl.MessageFormat` との違い** — MessageFormat は i18n の**文字列**整形(plural / gender / select の言語依存分岐)であり、出力は DOM ではなく文字列。「テンプレートに値を差し込む」表層だけ似るが、解く問題(言語別整形 vs DOM 構築)も標準化団体(Unicode+TC39 vs W3C/WHATWG)も別。
+
+> 出典(外部、wiki 素材外): [WICG/webcomponents DOM-Parts.md](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/DOM-Parts.md) / [Template-Instantiation.md](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md) / [Template Instantiation 2025-03-26 minutes](https://www.w3.org/2025/03/26-webcomponents-minutes.html)。
 
 ## 出典
 
