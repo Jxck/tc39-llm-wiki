@@ -12,6 +12,7 @@ tags: [person]
 - **所属**: ?? / F5 / F5 Networks
 - **担当ドラフト (champion)**: [Joint Iteration](../proposals/joint-iteration.md)
 - **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Joint Iteration](../proposals/joint-iteration.md), [Temporal](../proposals/temporal.md)
+- **言及される family ページ**: [Iterator helpers and friends](../families/iterator.md)
 - **参加したミーティング**: 全 15 回
 
 ## 参加したミーティング

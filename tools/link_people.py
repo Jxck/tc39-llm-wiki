@@ -25,8 +25,9 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PROPOSALS = ROOT / "wiki" / "proposals"
+FAMILIES = ROOT / "wiki" / "families"
 PEOPLE = ROOT / "wiki" / "people"
-REL = "../people"  # from wiki/proposals/ to wiki/people/
+REL = "../people"  # from wiki/proposals/ or wiki/families/ to wiki/people/
 
 # Protect inline code, existing markdown links, and existing wikilinks.
 PROTECT = re.compile(r"`[^`]*`|\[[^\]]*\]\([^)]*\)|\[\[[^\]]*\]\]")
@@ -67,7 +68,10 @@ def main():
     wl_alias = re.compile(r"\[\[(" + alt + r")\|([^\]]*)\]\]")
 
     changed = 0
-    for pf in sorted(PROPOSALS.glob("*.md")):
+    sources = sorted(PROPOSALS.glob("*.md"))
+    if FAMILIES.is_dir():
+        sources += sorted(FAMILIES.glob("*.md"))
+    for pf in sources:
         text = pf.read_text(encoding="utf-8", errors="replace")
         lines = text.splitlines(keepends=False)
         out = []

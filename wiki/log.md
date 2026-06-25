@@ -123,3 +123,10 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - 各ページに frontmatter・ステージ遷移テーブル・mermaid グラフ・主な論点・出典を整備。発言引用は日本語訳。
 - `extract_people.py` / `link_people.py` を実行し人物ページを 44 → 52 名に拡充(新規: BAN/BFS/EAO/EPR/FYT/KM/LCA/RPR)。誤検出なし。
 - [index.md](index.md) のカタログに 5 行追加、`intl-era-month-code` を未作成リストから除去、人物数を 52 に更新。[Temporal](proposals/temporal.md) の関連提案を Intl Era/Month Code ページへリンク化。
+
+## [2026-06-25] update | families レイヤを新設(カテゴリ横断のまとめ)
+
+- 同じカテゴリにくくれる提案群を束ねる **family ページ**(`wiki/families/<family>.md`)を導入。個別の経緯は `proposals/` に置き、family は横断的なまとめ(メンバー一覧 + 横断テーマ)に徹する(二重メンテ回避)。AGENTS.md にディレクトリ構成・family ページ形式・lint 観点(family の双方向整合)を追記。
+- **メンバーシップは双方向**: 提案 frontmatter に `families: [...]`、family ページに `members: [...]` を持ち、lint で不一致を検出する。未作成提案は family の `members` 側にだけ slug で載る。
+- `extract_people.py` / `link_people.py` を `wiki/families/` も走査するよう拡張(family ページの人物リンクが解決・生成されるように)。人物ページに「言及される family」行を追加。これにより [GCL](people/GCL.md) が新規生成され 53 名に。
+- 最初の family として [Iterator helpers and friends](families/iterator.md) を作成([MF](people/MF.md) の 2026-05 ロードマップを骨子に、helpers/concat/zip/chunking/includes/async 系など 11 提案を stage 付きで一覧化)。[joint-iteration](proposals/joint-iteration.md) に `families: [iterator]` を付与。index.md に families セクションを追加。

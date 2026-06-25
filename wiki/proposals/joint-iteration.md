@@ -7,6 +7,7 @@ ecma: [262]
 champions: [MF]
 first_seen: "2023-09"
 reached_stage4: "2026-05"
+families: [iterator]
 tags: [proposal, iterator]
 ---
 

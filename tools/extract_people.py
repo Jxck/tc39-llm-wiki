@@ -26,6 +26,7 @@ NOTES = ROOT / "raw" / "notes"
 MEETINGS = NOTES / "meetings"
 DELEGATES = NOTES / "delegates.txt"
 PROPOSALS = ROOT / "wiki" / "proposals"
+FAMILIES = ROOT / "wiki" / "families"
 OUT_DIR = ROOT / "wiki" / "people"
 
 ABBR_TOKEN = re.compile(r"[A-Z][A-Z0-9]{1,4}")
@@ -138,8 +139,24 @@ def main():
         proposals.append((slug, title, set(fm["champions"]), tokens))
         referenced |= tokens
 
+    # Family pages also reference delegates (cross-cutting synthesis). Scan them
+    # too so their person links resolve (people pages are generated for any abbr
+    # appearing in a family page, even if it never appears in a proposal page).
+    families = []  # (slug, title, referenced_set)
+    if FAMILIES.is_dir():
+        for ff in sorted(FAMILIES.glob("*.md")):
+            text = ff.read_text(encoding="utf-8", errors="replace")
+            fm, body = parse_frontmatter(text)
+            slug = fm["slug"] or ff.stem
+            title = fm["title"] or slug
+            tokens = (set(REF_TOKEN.findall(text)) & roster) - NON_PERSON
+            tokens |= (set(WIKILINK.findall(text)) & roster) - NON_PERSON
+            tokens |= (set(PEOPLE_LINK.findall(text)) & roster) - NON_PERSON
+            families.append((slug, title, tokens))
+            referenced |= tokens
+
     if not referenced:
-        print("no referenced delegates found in wiki/proposals/")
+        print("no referenced delegates found in wiki/proposals/ or wiki/families/")
         return
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -157,6 +174,7 @@ def main():
         meetings = sorted(att["meetings"])
         champ_of = [(s, t) for (s, t, ch, _ref) in proposals if abbr in ch]
         appears_in = [(s, t) for (s, t, _ch, ref) in proposals if abbr in ref]
+        fam_in = [(s, t) for (s, t, ref) in families if abbr in ref]
 
         lines = []
         lines.append("---")
@@ -185,6 +203,11 @@ def main():
             lines.append(
                 "- **言及される提案ページ**: "
                 + ", ".join(f"[{t}](../proposals/{s}.md)" for s, t in appears_in)
+            )
+        if fam_in:
+            lines.append(
+                "- **言及される family ページ**: "
+                + ", ".join(f"[{t}](../families/{s}.md)" for s, t in fam_in)
             )
         lines.append(f"- **参加したミーティング**: 全 {len(meetings)} 回")
         lines.append("")
