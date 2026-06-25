@@ -91,3 +91,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-06-25] update | 未マージ PR からの要約と submodule 運用を明文化
 
 - Summarise に submodule 運用を追加: 未マージ PR にしかない会合は `raw/notes` で PR を checkout して要約し、ポインタはコミットしない。定期的に submodule を update し、**PR が main にマージされたら submodule を main 追跡へ戻して**ポインタを通常更新(`[wiki]`)する。
+
+## [2026-06-25] update | submodule ポインタは必ずコミット(note↔wiki 同期)
+
+- 方針変更: 「未マージ PR のポインタはコミットしない」を撤回。**submodule を pull / PR checkout したら必ずポインタをコミットする**(`[wiki]`)ことに統一。wiki が参照した note の状態を常に記録し同期させるため。AGENTS.md の該当節を置き換え。
