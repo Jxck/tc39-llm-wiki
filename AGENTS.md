@@ -59,11 +59,12 @@ tags: [proposal, date-time]
 1. `## 概要` — 1〜3 段落。何を解決する提案か。
 2. `## ステージ遷移` — 時系列テーブル。1 行 = 1 イベント:
 
-   | 会合 | できごと | Stage |
-   |------|----------|-------|
+   | 会合                                     | できごと                             | Stage |
+   | ---------------------------------------- | ------------------------------------ | ----- |
    | [2018-09](../_generated/agenda-index.md) | Stage 2 到達。`Temporal for Stage 2` | 1 → 2 |
 
    会合セルは `raw/notes` の該当ファイルへ相対リンク(例: `[2018-09](../../raw/notes/meetings/2018-09/sept-27.md)`)。Stage 列は遷移を `旧 → 新`、更新のみなら現ステージを記す。テーブルの直後に、下記のステージ推移グラフを置く。
+
 3. ステージ推移グラフ — テーブルの下に mermaid `xychart-beta` の折れ線を埋め込む。**横軸は議事録のある全区間(2012〜2026 の年)固定**、縦軸は Stage (0〜4)。各年末時点の stage を下から積み上げる形で並べる。提案が存在しない年は 0。Stage 2.7 を経た提案は `2.7` を小数点で打つ。**撤回された提案は撤回年で線を止める**(line 配列をそこで終え、以降の点を描かない)。長期停滞は同じ値の横ばいで自然に表現される(特別な印は不要)。グラフ直後に読み方の注記(各遷移の年月)を `>` で添える。例:
 
    ````
@@ -77,14 +78,24 @@ tags: [proposal, date-time]
    ````
 
    注: `xychart-beta` は mermaid 10.3+ が必要。VSCode の `bierner.markdown-mermaid` の webview プレビューでは空描画になる(別の mermaid 拡張なら描画可)ため、レンダラ依存に注意。title は ASCII 推奨(全角・em ダッシュ・括弧で parse が崩れる環境がある)。
+
 4. `## 主な論点` — 策定途中で問題になった点。論点ごとに小見出し `### <論点名>`。各論点に: 何が争点か / 誰が懸念したか(略号) / どの会合で / どう決着したか(または未決)。発言引用は `>` で(日本語訳)。
 5. `## 関連提案` — `[Title](../proposals/other-slug.md)` 形式で相互リンク(未作成提案はコード表記の素テキスト)。
 6. `## 出典` — 参照した会合ファイルの一覧(箇条書きリンク)。
 
 リンク規約: **すべて標準の markdown 相対リンク**を使う(Obsidian の `[[wikilink]]` は VSCode の markdown プレビューで遷移できないため使わない。標準リンクは VSCode でも Obsidian でも動く)。
+
 - 素材へ: `[2018-09](../../raw/notes/meetings/2018-09/sept-27.md)`
 - 提案間: `[Temporal](../proposals/temporal.md)`。まだ作成していない提案はデッドリンクを避け、コード表記の素テキスト(例: `` `pattern-matching` ``)で書き、作成時にリンク化する。
 - 人物の略号: `[PFC](../people/PFC.md)`。リンク付けは手作業ではなく `tools/link_people.py` が行う(下記。既存の `[[ABBR]]` も自動で markdown リンクへ移行する)。frontmatter の `champions` は YAML なのでリンクにしない(略号のまま)。
+
+## フォーマット
+
+markdown / json は **oxfmt** で整形する(設定 `.oxfmtrc.json`、`proseWrap: preserve` で日本語の行は折り返さない、`embeddedLanguageFormatting: off`)。除外は `raw/**`(submodule・不変)と `wiki/_generated/**`(生成物・JSONL を含む)。
+
+- 手動: `npm run fmt`(= `oxfmt`)、検査は `npm run fmt:check`。
+- **自動強制**: Claude Code の PostToolUse hook(`.claude/settings.json`)が編集した .md/.json を即整形し、git の pre-commit hook(`.githooks/pre-commit`、`core.hooksPath` 要設定)が staged ファイルを整形して再 stage する。
+- clone 直後は `git config core.hooksPath .githooks` を一度実行する。
 
 ## ワークフロー
 
@@ -121,10 +132,12 @@ tags: [proposal, date-time]
 wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」と区別していた出典突き合わせも Lint に統合する)。
 
 **(a) 内部健全性**(wiki 内部を見る)
+
 - ページ間の矛盾、古くなった記述(新しい会合で覆された主張)、孤立ページ、相互リンク漏れ、論点の決着漏れを点検。
 - `agenda-index.md` に出てくるが提案ページが無い重要提案を洗い出す。
 
 **(b) 出典との整合性**(wiki ↔ raw を突き合わせる)
+
 - 各提案ページの主張を引用元の逐語録に照らして検証する。**誤りを探す姿勢**で点検し、見つけたら raw を真として修正する。
 - 特に誤りが出やすい箇所: ステージ遷移の年月・方向、champion の人物特定、発言の帰属、引用の正確性。
 

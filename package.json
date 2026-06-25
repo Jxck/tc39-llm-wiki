@@ -1,0 +1,13 @@
+{
+  "name": "tc39-wiki",
+  "version": "0.0.0",
+  "private": true,
+  "description": "LLM-maintained wiki over TC39 meeting notes",
+  "scripts": {
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.55.0"
+  }
+}

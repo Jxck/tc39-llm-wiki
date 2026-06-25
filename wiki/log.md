@@ -5,7 +5,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-06-25] setup | wiki 初期構築
 
 - 運用規約 [AGENTS.md](../AGENTS.md) を策定(レイヤ・提案ページ形式・言語規約・ワークフロー)。
-- `tools/extract_agenda.py` を作成し、全 86 会合 / 2737 議題のバックボーン [_generated/agenda-index.md](_generated/agenda-index.md) を生成。
+- `tools/extract_agenda.py` を作成し、全 86 会合 / 2737 議題のバックボーン [\_generated/agenda-index.md](_generated/agenda-index.md) を生成。
 - 代表 3 提案を精読してページ化:
   - [Temporal](proposals/temporal.md) — shipped(Stage 4 / 2026-03)。「長期で出荷に至った大型提案」の実例。
   - [Decorators](proposals/decorators.md) — stage3(Stage 3 / 2022-03)。「3 度再設計した難航提案」の実例。
@@ -77,3 +77,9 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-06-25] summarise | 113th TC39 Meeting (2026-03)
 
 - 最新会合 2026-03(113th, New York)を日次要約。`wiki/meetings/2026-03/` に Day 1-3 + index.md を生成。index は tc39/agendas 2026/03 へリンクし、会期・開催地・概要・参加者をまとめた。Day 2 の Temporal トピックは [Temporal](proposals/temporal.md) 提案ページへリンク。
+
+## [2026-06-25] wiki | markdown フォーマッタ oxfmt を導入
+
+- `oxfmt`(Rust 製・markdown 対応)を devDependency 導入。設定 `.oxfmtrc.json`(`proseWrap: preserve`、`embeddedLanguageFormatting: off`、除外 `raw/**`・`wiki/_generated/**`)。
+- 既存の wiki 全 markdown を整形(表の桁揃え・見出し後の空行など。mermaid・日本語長文・リンクは保持)。
+- **自動強制**: PostToolUse hook(`.claude/settings.json`)で編集ファイルを即整形、pre-commit hook(`.githooks/pre-commit` + `core.hooksPath`)で staged を整形・再 stage。AGENTS.md に「フォーマット」節を追加。

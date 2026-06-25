@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=\"$(python3 -c 'import sys,json; print(json.load(sys.stdin).get(\"tool_input\",{}).get(\"file_path\",\"\"))' 2>/dev/null)\"; if [ -n \"$f\" ]; then npx oxfmt --no-error-on-unmatched-pattern \"$f\" >/dev/null 2>&1; fi; exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}

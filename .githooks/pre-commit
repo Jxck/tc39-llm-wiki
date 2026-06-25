@@ -1,0 +1,9 @@
+#!/bin/sh
+# Format staged files with oxfmt before commit, then re-stage.
+# oxfmt skips ignored paths (raw/, wiki/_generated/) and unknown extensions.
+cd "$(git rev-parse --show-toplevel)" || exit 0
+files=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$files" ] && exit 0
+printf '%s\n' "$files" | tr '\n' '\0' | xargs -0 npx oxfmt --no-error-on-unmatched-pattern >/dev/null 2>&1
+printf '%s\n' "$files" | tr '\n' '\0' | xargs -0 git add
+exit 0

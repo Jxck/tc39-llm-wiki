@@ -25,32 +25,32 @@ champion は初期の Yehuda Katz ([YK](../people/YK.md)) / Brian Terlson ([BT](
 
 ## ステージ遷移
 
-| 会合 | できごと | Stage |
-|------|----------|-------|
-| [2014-04](../../raw/notes/meetings/2014-04/apr-10.md) | `Decorators for ES7` 初出 ([YK](../people/YK.md))。strawman 開始 | 0 |
-| [2015-03](../../raw/notes/meetings/2015-03/mar-24.md) | Stage 1 acceptance。[YK](../people/YK.md) が設計空間を audit | 0 → 1 |
-| [2016-05](../../raw/notes/meetings/2016-05/may-25.md) | Stage 2 狙うも spec 不完全("uninitialized function" 未定義)で**不成立** | 1 |
-| [2016-07](../../raw/notes/meetings/2016-07/jul-28.md) | Stage 2 到達。[DE](../people/DE.md) と協働し spec を completeに | 1 → 2 |
-| [2016-09](../../raw/notes/meetings/2016-09/sept-29.md) | Sigil swap (`@`↔`#`) 提案は**却下**。decorators が `@`、private fields が `#` で確定 | 2 |
-| [2017-07](../../raw/notes/meetings/2017-07/jul-27.md) | privacy/fields/decorators の相互作用。`PrivateName` 議論。Stage 2 維持 | 2 |
-| [2017-09](../../raw/notes/meetings/2017-09/sept-27.md), [28](../../raw/notes/meetings/2017-09/sept-28.md) | detailed semantics。`PrivateName` vs `Symbol`/`WeakMap`。Stage 3 reviewer 任命 | 2 |
-| [2018-03](../../raw/notes/meetings/2018-03/mar-21.md) | towards Stage 3。implementer feedback で `PrivateName` を primitive → object へ。[MM](../people/MM.md) が primitive を拒否 | 2 |
-| [2018-05](../../raw/notes/meetings/2018-05/may-23.md) | auto-inserting parens を撤回。export ordering 論争が表面化 | 2 |
-| [2018-07](../../raw/notes/meetings/2018-07/july-25.md) | [WH](../people/WH.md) が「class decorator は `export` の**後**であるべき」と明言。advance せず | 2 |
-| [2018-09](../../raw/notes/meetings/2018-09/sept-26.md) | private 直接 access を断念(class 全体を decorate で代替)。export ordering 紛糾。[DH](../people/DH.md)「最悪案でも ship したい」 | 2 |
-| [2018-11](../../raw/notes/meetings/2018-11/nov-28.md) | `initializer` 追加。engine implementer ([SGN](../people/SGN.md)/[MLS](../people/MLS.md)) が startup perf/static analysis を強く懸念 | 2 |
-| [2019-01](../../raw/notes/meetings/2019-01/jan-30.md) | Stage 3 を提案するも**失敗**。「too complex」([MLS](../people/MLS.md))・「non-optimizable」([SGN](../people/SGN.md))・「changes every month」([AK](../people/AK.md)) | 2 |
-| [2019-03](../../raw/notes/meetings/2019-03/mar-27.md) | "Yet Another Decorators" = static decorators へ全面**再設計**。「decorator は value ではない」 | 2 |
-| [2020-09](../../raw/notes/meetings/2020-09/sept-23.md) | static decorators から離れた **new proposal iteration**(現行 function-based 案の原型) | 2 |
-| [2021-07](../../raw/notes/meetings/2021-07/july-14.md) | function-based 設計を提示。Stage 3 reviewer 募集 | 2 |
-| [2021-12](../../raw/notes/meetings/2021-12/dec-15.md) | `@init` modifier を撤去し initialization を core capability 化 | 2 |
-| [2022-03](../../raw/notes/meetings/2022-03/mar-28.md) | **Decorators が Stage 3 到達**(metadata を別 Stage 2 提案へ分離する条件付き) | 2 → 3 |
-| [2022-03](../../raw/notes/meetings/2022-03/mar-30.md), [31](../../raw/notes/meetings/2022-03/mar-31.md) | minor followups(`isPrivate`→`private`、`@(expr)()` 禁止、`@a.#b` 許可ほか) | 3 |
-| [2022-06](../../raw/notes/meetings/2022-06/jun-06.md) | Flexible Initializers の normative change は Stage 3 変更として却下(follow-up へ) | 3 |
-| [2023-01](../../raw/notes/meetings/2023-01/feb-01.md), [02](../../raw/notes/meetings/2023-01/feb-02.md) | export ordering を「前後どちらか一方のみ可」で決着。`context.access` に `has` 追加・target 第1引数化 | 3 |
-| [2023-03](../../raw/notes/meetings/2023-03/mar-21.md) | Decorators normative update(6点)。Decorator Metadata は Stage 2 のまま design option 1 で合意 | 3 |
-| [2023-05](../../raw/notes/meetings/2023-05/may-16.md) | field/accessor initializer order を逆順に修正。Metadata の Stage 3 design 合意 | 3 |
-| [2023-05](../../raw/notes/meetings/2023-05/may-18.md) | **Decorator Metadata が単独で Stage 3 到達** | (metadata) 2 → 3 |
+| 会合                                                                                                      | できごと                                                                                                                                                             | Stage            |
+| --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| [2014-04](../../raw/notes/meetings/2014-04/apr-10.md)                                                     | `Decorators for ES7` 初出 ([YK](../people/YK.md))。strawman 開始                                                                                                     | 0                |
+| [2015-03](../../raw/notes/meetings/2015-03/mar-24.md)                                                     | Stage 1 acceptance。[YK](../people/YK.md) が設計空間を audit                                                                                                         | 0 → 1            |
+| [2016-05](../../raw/notes/meetings/2016-05/may-25.md)                                                     | Stage 2 狙うも spec 不完全("uninitialized function" 未定義)で**不成立**                                                                                              | 1                |
+| [2016-07](../../raw/notes/meetings/2016-07/jul-28.md)                                                     | Stage 2 到達。[DE](../people/DE.md) と協働し spec を completeに                                                                                                      | 1 → 2            |
+| [2016-09](../../raw/notes/meetings/2016-09/sept-29.md)                                                    | Sigil swap (`@`↔`#`) 提案は**却下**。decorators が `@`、private fields が `#` で確定                                                                                 | 2                |
+| [2017-07](../../raw/notes/meetings/2017-07/jul-27.md)                                                     | privacy/fields/decorators の相互作用。`PrivateName` 議論。Stage 2 維持                                                                                               | 2                |
+| [2017-09](../../raw/notes/meetings/2017-09/sept-27.md), [28](../../raw/notes/meetings/2017-09/sept-28.md) | detailed semantics。`PrivateName` vs `Symbol`/`WeakMap`。Stage 3 reviewer 任命                                                                                       | 2                |
+| [2018-03](../../raw/notes/meetings/2018-03/mar-21.md)                                                     | towards Stage 3。implementer feedback で `PrivateName` を primitive → object へ。[MM](../people/MM.md) が primitive を拒否                                           | 2                |
+| [2018-05](../../raw/notes/meetings/2018-05/may-23.md)                                                     | auto-inserting parens を撤回。export ordering 論争が表面化                                                                                                           | 2                |
+| [2018-07](../../raw/notes/meetings/2018-07/july-25.md)                                                    | [WH](../people/WH.md) が「class decorator は `export` の**後**であるべき」と明言。advance せず                                                                       | 2                |
+| [2018-09](../../raw/notes/meetings/2018-09/sept-26.md)                                                    | private 直接 access を断念(class 全体を decorate で代替)。export ordering 紛糾。[DH](../people/DH.md)「最悪案でも ship したい」                                      | 2                |
+| [2018-11](../../raw/notes/meetings/2018-11/nov-28.md)                                                     | `initializer` 追加。engine implementer ([SGN](../people/SGN.md)/[MLS](../people/MLS.md)) が startup perf/static analysis を強く懸念                                  | 2                |
+| [2019-01](../../raw/notes/meetings/2019-01/jan-30.md)                                                     | Stage 3 を提案するも**失敗**。「too complex」([MLS](../people/MLS.md))・「non-optimizable」([SGN](../people/SGN.md))・「changes every month」([AK](../people/AK.md)) | 2                |
+| [2019-03](../../raw/notes/meetings/2019-03/mar-27.md)                                                     | "Yet Another Decorators" = static decorators へ全面**再設計**。「decorator は value ではない」                                                                       | 2                |
+| [2020-09](../../raw/notes/meetings/2020-09/sept-23.md)                                                    | static decorators から離れた **new proposal iteration**(現行 function-based 案の原型)                                                                                | 2                |
+| [2021-07](../../raw/notes/meetings/2021-07/july-14.md)                                                    | function-based 設計を提示。Stage 3 reviewer 募集                                                                                                                     | 2                |
+| [2021-12](../../raw/notes/meetings/2021-12/dec-15.md)                                                     | `@init` modifier を撤去し initialization を core capability 化                                                                                                       | 2                |
+| [2022-03](../../raw/notes/meetings/2022-03/mar-28.md)                                                     | **Decorators が Stage 3 到達**(metadata を別 Stage 2 提案へ分離する条件付き)                                                                                         | 2 → 3            |
+| [2022-03](../../raw/notes/meetings/2022-03/mar-30.md), [31](../../raw/notes/meetings/2022-03/mar-31.md)   | minor followups(`isPrivate`→`private`、`@(expr)()` 禁止、`@a.#b` 許可ほか)                                                                                           | 3                |
+| [2022-06](../../raw/notes/meetings/2022-06/jun-06.md)                                                     | Flexible Initializers の normative change は Stage 3 変更として却下(follow-up へ)                                                                                    | 3                |
+| [2023-01](../../raw/notes/meetings/2023-01/feb-01.md), [02](../../raw/notes/meetings/2023-01/feb-02.md)   | export ordering を「前後どちらか一方のみ可」で決着。`context.access` に `has` 追加・target 第1引数化                                                                 | 3                |
+| [2023-03](../../raw/notes/meetings/2023-03/mar-21.md)                                                     | Decorators normative update(6点)。Decorator Metadata は Stage 2 のまま design option 1 で合意                                                                        | 3                |
+| [2023-05](../../raw/notes/meetings/2023-05/may-16.md)                                                     | field/accessor initializer order を逆順に修正。Metadata の Stage 3 design 合意                                                                                       | 3                |
+| [2023-05](../../raw/notes/meetings/2023-05/may-18.md)                                                     | **Decorator Metadata が単独で Stage 3 到達**                                                                                                                         | (metadata) 2 → 3 |
 
 ```mermaid
 xychart-beta

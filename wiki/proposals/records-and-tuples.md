@@ -26,18 +26,18 @@ Stage 2 到達後、これらの根本制約が長期間動かせず、最終的
 
 ## ステージ遷移
 
-| 会合 | できごと | Stage |
-| --- | --- | --- |
-| 2019-10 | Records & Tuples for Stage 1。[RRD](../people/RRD.md)(Robin Ricard)/[RBU](../people/RBU.md)(Rick Button)が初登壇。`===` の構造比較、`#{}`/`#[]` 構文、JSON 連携の可能性が議論され Stage 1 合意(※この回の出席者表は Robin Ricard に別 delegate と同じ略号を割り当てているが、本 wiki では Robin Ricard を一貫して [RRD](../people/RRD.md) とする) | 1 |
-| 2020-03 | Record and Tuple Update(中間報告) | 1 |
-| 2020-07 | Record and Tuple for Stage 2。`Object.is`/`===` のセマンティクス、Symbol をキーにできない件を整理し Stage 2 合意。ただし [KG](../people/KG.md)/[SYG](../people/SYG.md)/[YSV](../people/YSV.md)/Moddable が「Stage 3 前に実装可能性の実証が必須」と条件付け | 2 |
-| 2020-09 / 2021-03 / 2021-10 | updates。設計の細部調整が続くが基本設計は不変 | 2 |
-| 2021-12 | 「object をどう参照するか」の決定木を提示(Symbols-as-WeakMap-keys / ObjectPlaceholder / object 直接格納)。membrane の security invariant を巡り紛糾、結論出ず | 2 |
-| 2022-07 / 2022-09 | updates。2022-09 時点で「次回 Stage 3 を目指す」と表明 | 2 |
-| 2022-11 | updates。[YSV](../people/YSV.md) が「そもそも解こうとしている根本問題は何か」を問い、動機の不明確さが露呈。Stage 3 には進めず | 2 |
-| (2023-2024) | 長期停滞。plenary での進展なし | 2 |
-| 2025-02 | Records and Tuples future directions。[ACE](../people/ACE.md) が「new primitive・`===` 過負荷には appetite がない」と総括し、primitive を諦めた再設計(object 化・shallow 化・Map/Set 専用の合成キー等価)を提示 | 2 |
-| 2025-04 | Withdrawing Records & Tuples。再設計は Composites として別途 Stage 1 へ。本提案は撤回で consensus | withdrawn |
+| 会合                        | できごと                                                                                                                                                                                                                                                                                                                                         | Stage     |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| 2019-10                     | Records & Tuples for Stage 1。[RRD](../people/RRD.md)(Robin Ricard)/[RBU](../people/RBU.md)(Rick Button)が初登壇。`===` の構造比較、`#{}`/`#[]` 構文、JSON 連携の可能性が議論され Stage 1 合意(※この回の出席者表は Robin Ricard に別 delegate と同じ略号を割り当てているが、本 wiki では Robin Ricard を一貫して [RRD](../people/RRD.md) とする) | 1         |
+| 2020-03                     | Record and Tuple Update(中間報告)                                                                                                                                                                                                                                                                                                                | 1         |
+| 2020-07                     | Record and Tuple for Stage 2。`Object.is`/`===` のセマンティクス、Symbol をキーにできない件を整理し Stage 2 合意。ただし [KG](../people/KG.md)/[SYG](../people/SYG.md)/[YSV](../people/YSV.md)/Moddable が「Stage 3 前に実装可能性の実証が必須」と条件付け                                                                                       | 2         |
+| 2020-09 / 2021-03 / 2021-10 | updates。設計の細部調整が続くが基本設計は不変                                                                                                                                                                                                                                                                                                    | 2         |
+| 2021-12                     | 「object をどう参照するか」の決定木を提示(Symbols-as-WeakMap-keys / ObjectPlaceholder / object 直接格納)。membrane の security invariant を巡り紛糾、結論出ず                                                                                                                                                                                    | 2         |
+| 2022-07 / 2022-09           | updates。2022-09 時点で「次回 Stage 3 を目指す」と表明                                                                                                                                                                                                                                                                                           | 2         |
+| 2022-11                     | updates。[YSV](../people/YSV.md) が「そもそも解こうとしている根本問題は何か」を問い、動機の不明確さが露呈。Stage 3 には進めず                                                                                                                                                                                                                    | 2         |
+| (2023-2024)                 | 長期停滞。plenary での進展なし                                                                                                                                                                                                                                                                                                                   | 2         |
+| 2025-02                     | Records and Tuples future directions。[ACE](../people/ACE.md) が「new primitive・`===` 過負荷には appetite がない」と総括し、primitive を諦めた再設計(object 化・shallow 化・Map/Set 専用の合成キー等価)を提示                                                                                                                                   | 2         |
+| 2025-04                     | Withdrawing Records & Tuples。再設計は Composites として別途 Stage 1 へ。本提案は撤回で consensus                                                                                                                                                                                                                                                | withdrawn |
 
 ```mermaid
 xychart-beta
