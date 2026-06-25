@@ -87,3 +87,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-06-25] summarise | 114th TC39 Meeting (2026-05)
 
 - tc39/notes の未マージ PR #411(2026 May transcript)を submodule で checkout し、114th(Amsterdam, JetBrains)を日次要約。`wiki/meetings/2026-05/` に Day 1-3 + index.md を生成。Day 1 の Temporal/Decorators トピックは提案ページへリンク。submodule のポインタ変更はコミットしない(未マージ PR のため)。
+
+## [2026-06-25] update | 未マージ PR からの要約と submodule 運用を明文化
+
+- Summarise に submodule 運用を追加: 未マージ PR にしかない会合は `raw/notes` で PR を checkout して要約し、ポインタはコミットしない。定期的に submodule を update し、**PR が main にマージされたら submodule を main 追跡へ戻して**ポインタを通常更新(`[wiki]`)する。
