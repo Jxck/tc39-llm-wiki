@@ -105,3 +105,9 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - **2026-05 index 概要の事実誤り 2 点**: (1) Dynamic Code Brand Checks を「Stage 4 到達」に誤記(実際は normative change の consensus のみ・次回再要求)→ 除外。(2) Decorators の 2.7 移行を「advancement/進む」と誤記 → 降格(regress)へ訂正。
 - **人物数**: index.md 「43 名」は lint 開始時点では 42 ページとの不整合だったが、Decorators ページに [DLM](people/DLM.md) が登場し再生成で 43 ページとなったため 43 のまま整合(extract_people/link_people 実行済み)。
 - 内部リンク・人物略号(43)・会合↔提案リンクは全て解決。Temporal の Stage 4(2026-03)は出典と整合。
+
+## [2026-06-25] query | Decorator は結局誰が欲しいのか
+
+- 「使う側(フレームワーク作者・TypeScript/Babel エコシステム・アプリ開発者)は強く欲しがるが、作る側(V8/SpiderMonkey/JSC のエンジン実装者)が誰も出荷したがらない」という需要/実装のミスマッチが停滞と 2026-05 降格の核心、と回答(出典: [2019-03](../raw/notes/meetings/2019-03/mar-27.md)・[2021-07](../raw/notes/meetings/2021-07/july-14.md)・[2023-01](../raw/notes/meetings/2023-01/feb-01.md)・[2026-05 may-19](../raw/notes/meetings/2026-05/may-19.md))。
+- file back: [decorators.md](proposals/decorators.md) の `## 主な論点` に `### 需要と実装のミスマッチ(誰が欲しいのか)` を追加。
+- 副次: 本文に [OFR](people/OFR.md) が新規登場し人物ページ生成(44 名)。"TS"(TypeScript の略)が delegate 略号 TS と誤一致してリンク化されたため、`extract_people.py` の `NON_PERSON` に `TS` を追記し、誤生成ページを除去・本文を `TypeScript` 表記へ修正。
