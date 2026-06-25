@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Kevin Gibbons
 - **所属**: F5 / F5 Networks
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Upsert](../proposals/upsert.md)
+- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Upsert](../proposals/upsert.md)
 - **言及される family ページ**: [Iterator helpers and friends](../families/iterator.md)
 - **参加したミーティング**: 全 20 回
 

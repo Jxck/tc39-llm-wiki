@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Eemeli Aro
 - **所属**: Mozilla
-- **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Intl Era/Month Code](../proposals/intl-era-month-code.md)
+- **担当ドラフト (champion)**: [Intl.MessageFormat](../proposals/intl-messageformat.md)
+- **言及される提案ページ**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl.MessageFormat](../proposals/intl-messageformat.md)
 - **参加したミーティング**: 全 20 回
 
 ## 参加したミーティング

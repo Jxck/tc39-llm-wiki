@@ -143,3 +143,10 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - AGENTS.md のレイヤ節を 2 ソース構成に改訂し、precedence を明文化: 経緯・論点・発言は `raw/notes` が一次、現ステージ(`current_stage`/`status`)と champion の確定値は `raw/proposals` が一次。proposals はスナップショットで経緯を持たない点も注記。
 - ディレクトリ構成に `raw/proposals/` の主要ファイルを追記。
 - Lint(b) に proposals 突き合わせ手順を追加: frontmatter の `current_stage`/`status`/`champions` を README/finished/stage-1/inactive と grep 照合し、食い違いは precedence に従って解決(現ステージは proposals 一次、経緯は notes で裏取り)。
+
+## [2026-06-25] ingest | Intl.MessageFormat (Stage 1, stuck)
+
+- 新規提案ページ `wiki/proposals/intl-messageformat.md` を作成。MessageFormat 2.0 (MF2) を JS に公開する ECMA-402 提案。
+- ステージ: 2022-03 に Stage 1 到達後、2026 まで Stage 1 で停滞。2024-02 に「parser を外しデータモデルのみで Stage 2」案、2024-04 に TG2(Google i18n)反対で頓挫し stuck に。論点は「実績の乏しい DSL/parser を言語に入れる是非」「error handling(throw しないモデル / option 1〜6)」「`message` 語の混乱」「`Intl.MessageResource` への分離(2022-11)」。
+- champion は canonical の `raw/proposals/ecma402/README.md`(Stage 1 節)に従い EAO のみとした(DLM の co-champion 関与は経緯として本文に保持)。
+- `extract_people.py` / `link_people.py` 実行、`index.md` に行追加。

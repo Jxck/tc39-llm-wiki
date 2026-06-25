@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Dan Minor
 - **所属**: Mozilla
 - **担当ドラフト (champion)**: [Upsert](../proposals/upsert.md)
-- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Upsert](../proposals/upsert.md)
+- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Upsert](../proposals/upsert.md)
 - **参加したミーティング**: 全 24 回
 
 ## 参加したミーティング
