@@ -83,3 +83,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - `oxfmt`(Rust 製・markdown 対応)を devDependency 導入。設定 `.oxfmtrc.json`(`proseWrap: preserve`、`embeddedLanguageFormatting: off`、除外 `raw/**`・`wiki/_generated/**`)。
 - 既存の wiki 全 markdown を整形(表の桁揃え・見出し後の空行など。mermaid・日本語長文・リンクは保持)。
 - **自動強制**: PostToolUse hook(`.claude/settings.json`)で編集ファイルを即整形、pre-commit hook(`.githooks/pre-commit` + `core.hooksPath`)で staged を整形・再 stage。AGENTS.md に「フォーマット」節を追加。
+
+## [2026-06-25] summarise | 114th TC39 Meeting (2026-05)
+
+- tc39/notes の未マージ PR #411(2026 May transcript)を submodule で checkout し、114th(Amsterdam, JetBrains)を日次要約。`wiki/meetings/2026-05/` に Day 1-3 + index.md を生成。Day 1 の Temporal/Decorators トピックは提案ページへリンク。submodule のポインタ変更はコミットしない(未マージ PR のため)。
