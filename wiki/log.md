@@ -65,3 +65,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-06-25] wiki | コミットプレフィックス [wiki] を追加
 
 - 操作(ingest/query/lint/update)に起因しない wiki 全体の変更(コマンドの追加・変更、tools/ の変更、リポジトリ構成や AGENTS.md の構造変更など)は `[wiki]` プレフィックスでコミットする規約を追加。
+
+## [2026-06-25] wiki | Summarise コマンドを追加
+
+- 会合を話題単位で日次要約する `/summarise` を追加(出力 `wiki/meetings/<YYYY-MM>/`、日ごとに 1 ファイル + index.md)。フォーマット定義は AGENTS.md の「ワークフロー > Summarise」。コミットプレフィックスに `[summarise]` を追加。
