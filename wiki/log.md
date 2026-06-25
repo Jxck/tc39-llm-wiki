@@ -173,3 +173,8 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - `tools/extract_proposals.py` を新設。`raw/proposals/`(canonical: README=Stage 3/2.7/2、finished=4、stage-1、stage-0、inactive と ecma402/ 同構成)から全提案を抽出し、ECMA-262 / ECMA-402 ごとに stage 別の完全一覧 [proposals/index.md](proposals/index.md) を生成(ECMA-262 286 件 / ECMA-402 34 件)。精読済み 9 ページはタイトル一致で各ページへリンク(別名は generator の ALIASES で吸収)。
 - **生成物として常時最新化**: Update(`raw/proposals` pull)の step 4 再生成チェーンに `extract_proposals.py` を追加し、`raw/proposals` が動いたら必ず再生成する旨を AGENTS.md に明記。Generated レイヤ定義・ディレクトリ構成・Lint の再生成手順・wiki/index.md の導線も更新。
 - churn 回避のため `wiki/proposals/index.md` を `.oxfmtrc.json` の ignore に追加(出力は generator が authoritative)。
+
+## [2026-06-26] wiki | Update 再定義の整合(規約反映は [wiki] に集約)
+
+- 別プロセスが `### Update` を「運用方針の反映」→「raw ソースの同期」に再定義済み(コミット ba4c278 に巻き込まれて記録)。新定義は AGENTS.md・`/update` コマンド・ワークフロー一覧で整合済みと確認。
+- 抜けていた「規約合意の AGENTS.md 反映」の住所を明文化: コミット規約の `[wiki]` 行に「AGENTS.md への規約反映も `[wiki]`、専用操作・コマンドは設けず明示依頼時に行う、`/update` は raw 同期専用」を追記。
