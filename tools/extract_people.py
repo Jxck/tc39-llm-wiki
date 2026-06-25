@@ -45,7 +45,7 @@ PEOPLE_LINK = re.compile(r"/people/([A-Z][A-Z0-9]{1,4})\.md")
 NON_PERSON = {
     "API", "JS", "JSON", "CSS", "HTML", "IDL", "RFC", "GC", "DOM", "URL",
     "UTC", "ISO", "TG", "ES", "IO", "OS", "UI", "ID", "ECMA", "IETF", "CLDR",
-    "WHATWG", "CSP", "PR", "TC", "CLI", "AO", "JIT", "TS",
+    "WHATWG", "CSP", "PR", "TC", "CLI", "AO", "JIT", "TS", "VM",
 }
 
 

@@ -130,3 +130,9 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - **メンバーシップは双方向**: 提案 frontmatter に `families: [...]`、family ページに `members: [...]` を持ち、lint で不一致を検出する。未作成提案は family の `members` 側にだけ slug で載る。
 - `extract_people.py` / `link_people.py` を `wiki/families/` も走査するよう拡張(family ページの人物リンクが解決・生成されるように)。人物ページに「言及される family」行を追加。これにより [GCL](people/GCL.md) が新規生成され 53 名に。
 - 最初の family として [Iterator helpers and friends](families/iterator.md) を作成([MF](people/MF.md) の 2026-05 ロードマップを骨子に、helpers/concat/zip/chunking/includes/async 系など 11 提案を stage 付きで一覧化)。[joint-iteration](proposals/joint-iteration.md) に `families: [iterator]` を付与。index.md に families セクションを追加。
+
+## [2026-06-25] ingest | modules (module harmony) family を作成
+
+- 「module harmony」系(ES Modules と派生提案群)を [Modules](families/modules.md) family にまとめた。subagent で agenda-index + raw を横断調査し、ES Modules / dynamic import / import.meta / top-level await / import attributes / JSON modules / export-from(Stage 4)、source phase imports / import defer / import text(Stage 3)、ESM phase imports(2.7)、export defer(2、2.7 提案中)、export all from / module scope ceiling / module declarations / compartments(Stage 1〜停滞)の計 16 提案を現ステージ付きで一覧化。横断テーマ(import の phase、評価遅延、ホスト統合、`assert`→`with` 改名)を整理。
+- 各提案ページは未作成のため members はコード表記。新規人物 [GB](people/GB.md)(Guy Bedford)を生成(54 名)。`vm`(Node module)を delegate 略号 `VM` と誤検出してリンク化したため `extract_people.py` の `NON_PERSON` に `VM` を追記し、誤生成ページを除去・本文をコード表記へ修正(`TS` と同種の対処)。
+- index.md の families セクションに modules を追加。

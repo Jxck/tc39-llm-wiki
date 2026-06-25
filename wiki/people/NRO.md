@@ -12,6 +12,7 @@ tags: [person]
 - **所属**: Babel - Invited Expert / Babel-InvitedExpert / Igalia / Igalia, S.L / Invited Expert / Invited Expert - Babel
 - **担当ドラフト (champion)**: [Records & Tuples](../proposals/records-and-tuples.md)
 - **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../proposals/decorators.md), [Records & Tuples](../proposals/records-and-tuples.md)
+- **言及される family ページ**: [Modules (module harmony)](../families/modules.md)
 - **参加したミーティング**: 全 27 回
 
 ## 参加したミーティング
