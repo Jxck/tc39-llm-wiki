@@ -167,3 +167,9 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - **champion 整合**(方針: 歴史的 champion 込みを維持し canonical の不足のみ補う): [Temporal](proposals/temporal.md) に canonical の champion 4 名 [PDL](people/PDL.md)(Philipp Dunkel)・[MAJ](people/MAJ.md)(Matt Johnson-Pint)・[BT](people/BT.md)(Brian Terlson)・[JWS](people/JWS.md)(Jason Williams)を追加(計 9 名)。Decorators/Upsert/Intl Era・Month は canonical champion が既に揃っており追加なし(YK/EPR 等の歴史的 champion は据え置き)。
 - 副次: 人物ページ再生成で PDL/MAJ を新規生成(57→59 名)。index.md の人物数は 54 と stale だった(intl-messageformat ingest 時の更新漏れ、実際は 57)→ 59 に是正。
 - fmt・デッドリンク・family 双方向整合は全てクリーン。
+
+## [2026-06-26] wiki | 全提案ステージ一覧 proposals/index.md を生成化
+
+- `tools/extract_proposals.py` を新設。`raw/proposals/`(canonical: README=Stage 3/2.7/2、finished=4、stage-1、stage-0、inactive と ecma402/ 同構成)から全提案を抽出し、ECMA-262 / ECMA-402 ごとに stage 別の完全一覧 [proposals/index.md](proposals/index.md) を生成(ECMA-262 286 件 / ECMA-402 34 件)。精読済み 9 ページはタイトル一致で各ページへリンク(別名は generator の ALIASES で吸収)。
+- **生成物として常時最新化**: Update(`raw/proposals` pull)の step 4 再生成チェーンに `extract_proposals.py` を追加し、`raw/proposals` が動いたら必ず再生成する旨を AGENTS.md に明記。Generated レイヤ定義・ディレクトリ構成・Lint の再生成手順・wiki/index.md の導線も更新。
+- churn 回避のため `wiki/proposals/index.md` を `.oxfmtrc.json` の ignore に追加(出力は generator が authoritative)。
