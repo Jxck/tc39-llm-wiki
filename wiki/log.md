@@ -73,3 +73,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-06-25] update | Summarise に既存提案ページへのリンク規約を追加
 
 - 要約のトピックが既存の提案ページ(`wiki/proposals/<slug>.md`)に該当する場合、Slides の次に `- 提案ページ: [Title](../../proposals/<slug>.md)` を置く規約を AGENTS.md の Summarise に追加。
+
+## [2026-06-25] summarise | 113th TC39 Meeting (2026-03)
+
+- 最新会合 2026-03(113th, New York)を日次要約。`wiki/meetings/2026-03/` に Day 1-3 + index.md を生成。index は tc39/agendas 2026/03 へリンクし、会期・開催地・概要・参加者をまとめた。Day 2 の Temporal トピックは [Temporal](proposals/temporal.md) 提案ページへリンク。
