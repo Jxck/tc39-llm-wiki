@@ -4,7 +4,7 @@ slug: records-and-tuples
 status: withdrawn
 current_stage: 2
 ecma: [262]
-champions: [RRI, RBU, NRO, ACE]
+champions: [RRD, RBU, NRO, ACE]
 first_seen: "2019-10"
 withdrawn: "2025-04"
 tags: [proposal, immutable, value-types]
@@ -28,7 +28,7 @@ Stage 2 到達後、これらの根本制約が長期間動かせず、最終的
 
 | 会合 | できごと | Stage |
 | --- | --- | --- |
-| 2019-10 | Records & Tuples for Stage 1。[RRI](../people/RRI.md)/[RBU](../people/RBU.md) が初登壇。`===` の構造比較、`#{}`/`#[]` 構文、JSON 連携の可能性が議論され Stage 1 合意 | 1 |
+| 2019-10 | Records & Tuples for Stage 1。[RRD](../people/RRD.md)(Robin Ricard)/[RBU](../people/RBU.md)(Rick Button)が初登壇。`===` の構造比較、`#{}`/`#[]` 構文、JSON 連携の可能性が議論され Stage 1 合意(※この回の出席者表は Robin Ricard に別 delegate と同じ略号を割り当てているが、本 wiki では Robin Ricard を一貫して [RRD](../people/RRD.md) とする) | 1 |
 | 2020-03 | Record and Tuple Update(中間報告) | 1 |
 | 2020-07 | Record and Tuple for Stage 2。`Object.is`/`===` のセマンティクス、Symbol をキーにできない件を整理し Stage 2 合意。ただし [KG](../people/KG.md)/[SYG](../people/SYG.md)/[YSV](../people/YSV.md)/Moddable が「Stage 3 前に実装可能性の実証が必須」と条件付け | 2 |
 | 2020-09 / 2021-03 / 2021-10 | updates。設計の細部調整が続くが基本設計は不変 | 2 |

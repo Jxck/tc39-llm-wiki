@@ -10,7 +10,7 @@ tags: [person]
 
 - **フルネーム**: Robin Ricard
 - **所属**: BLoomberg / Bloomberg
-- **担当ドラフト (champion)**: (精読済みページ内では該当なし)
+- **担当ドラフト (champion)**: [Records & Tuples](../proposals/records-and-tuples.md)
 - **言及される提案ページ**: [Records & Tuples](../proposals/records-and-tuples.md)
 - **参加したミーティング**: 全 15 回
 

@@ -22,3 +22,13 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 
 - ステージ推移グラフを [Decorators](proposals/decorators.md)(2016-2021 が Stage 2 横ばい→2022 Stage 3)と [Records & Tuples](proposals/records-and-tuples.md)(2025-04 撤回で線を止める)にも追加。
 - **VSCode の markdown プレビューは Obsidian `[[wikilink]]` を遷移できない**ため、wiki 内のリンクをすべて標準 markdown 相対リンクに変更。`link_people.py` は人物略号を `[ABBR](../people/ABBR.md)` にリンク(既存 `[[ABBR]]` も自動移行)、`extract_people.py` は人物ページの提案リンクを `[Title](../proposals/slug.md)` 出力に変更。未作成提案向けの `[[slug]]` はデッドリンク回避でコード表記の素テキストに。AGENTS.md のリンク規約を更新。
+
+## [2026-06-25] lint | 精読3ページの事実検証と修正
+
+各提案ページの主張を引用元逐語録と突合(誤りを探す検証)。発見した誤りを修正:
+
+- **Temporal**: (1) 「V8 はこの scope reduction を…」の引用は JGT ではなく **SYG の prepared statement** → 発話者を明記。(2) IDL/JSIDL 節は Temporal 審議ではなく同会合の**別アジェンダ「IDL for JavaScript」** → その旨補正。(3) 2025-04 は「Firefox 139 で出荷」ではなく**出荷予定** → 修正。
+- **Decorators**: (1) `@` 文法衝突の AWB 指摘は 2014-01 ではなく **2015-01**。(2) 2016-09 sigil swap の反対理由を EFT/AWB に誤帰属していた点を補正(EFT は疑問提起のみ、AWB の論拠は逆向き)。(3) export ordering の `toString` 論拠の主唱者は **MM**、WH 引用は **2018-05** かつ条件付き → 修正。(4) 2021-07「reviewer 任命」→「募集」。
+- **Records & Tuples**: champion の**人物取り違えを修正**。`RRI`(delegates.txt=Reefath Rajali)を Robin Ricard と混同していた。Robin Ricard は本 wiki では `RRD` に統一(2019-10 の出席者表が局所的に Robin へ別 delegate と同じ略号を当てていたのが原因)。frontmatter・本文・people ページを再生成し、誤った人物ページ RRI.md を除去(人物 42 名)。
+
+ステージ遷移の骨格・大半の発言帰属は逐語録と整合しており、致命的な事実誤認はなし。

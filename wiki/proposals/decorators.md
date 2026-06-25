@@ -42,7 +42,7 @@ champion は初期の Yehuda Katz ([YK](../people/YK.md)) / Brian Terlson ([BT](
 | [2019-01](../../raw/notes/meetings/2019-01/jan-30.md) | Stage 3 を提案するも**失敗**。「too complex」([MLS](../people/MLS.md))・「non-optimizable」([SGN](../people/SGN.md))・「changes every month」([AK](../people/AK.md)) | 2 |
 | [2019-03](../../raw/notes/meetings/2019-03/mar-27.md) | "Yet Another Decorators" = static decorators へ全面**再設計**。「decorator は value ではない」 | 2 |
 | [2020-09](../../raw/notes/meetings/2020-09/sept-23.md) | static decorators から離れた **new proposal iteration**(現行 function-based 案の原型) | 2 |
-| [2021-07](../../raw/notes/meetings/2021-07/july-14.md) | function-based 設計を提示。Stage 3 reviewer 任命 | 2 |
+| [2021-07](../../raw/notes/meetings/2021-07/july-14.md) | function-based 設計を提示。Stage 3 reviewer 募集 | 2 |
 | [2021-12](../../raw/notes/meetings/2021-12/dec-15.md) | `@init` modifier を撤去し initialization を core capability 化 | 2 |
 | [2022-03](../../raw/notes/meetings/2022-03/mar-28.md) | **Decorators が Stage 3 到達**(metadata を別 Stage 2 提案へ分離する条件付き) | 2 → 3 |
 | [2022-03](../../raw/notes/meetings/2022-03/mar-30.md), [31](../../raw/notes/meetings/2022-03/mar-31.md) | minor followups(`isPrivate`→`private`、`@(expr)()` 禁止、`@a.#b` 許可ほか) | 3 |
@@ -66,9 +66,9 @@ xychart-beta
 
 ### `@` sigil と class fields / private fields の競合
 
-decorators は当初から `@` を使い、後発の private fields proposal が同じ `@` を欲しがったため衝突しました。2014-01 で既に [AWB](../people/AWB.md) が「Is using @ going to cause grammar issues with using @ for private state」と指摘。Stage 2 で [YK](../people/YK.md) は「private state could use the @ sign ... this is reserved for decorators」と `@` を decorators 用に予約する意図を明言しました。
+decorators は当初から `@` を使い、後発の private fields proposal が同じ `@` を欲しがったため衝突しました。2015-01 で既に [AWB](../people/AWB.md) が「Is using @ going to cause grammar issues with using @ for private state」と指摘。Stage 2 で [YK](../people/YK.md) は「private state could use the @ sign ... this is reserved for decorators」と `@` を decorators 用に予約する意図を明言しました。
 
-2016-09 の `Sigil swap` で「`@`→private、`#`→decorator」への入れ替えが提案され、[KS](../people/KS.md) は `@` が private を表すのに直感的と賛成しましたが、[EFT](../people/EFT.md)/[AWB](../people/AWB.md) は他言語の多くが `@` を annotation/decorator に使う点を、[RW](../people/RW.md) は「Babel/TypeScript の既存利用が ES の進化を縛る悪しき前例」を挙げて反対。結論は **swap せず**(decorators が `@`、private fields が `#`)で確定しました。[WH](../people/WH.md) は sigil の選択とは独立に object-literal property への decorator が文法衝突を起こす点を繰り返し指摘しています。なお現行案でも [WH](../people/WH.md) は pipeline operator との `@` 競合を 2022-03 で再提起しています。
+2016-09 の `Sigil swap` で「`@`→private、`#`→decorator」への入れ替えが提案され、[KS](../people/KS.md) は `@` が private を表すのに直感的と賛成しました。一方 [RW](../people/RW.md) は「Babel/TypeScript の既存利用が ES の進化を縛る悪しき前例」を挙げて swap に反対し、[AWB](../people/AWB.md) は「`@` を private のような特殊変数の sigil に使う言語は多い」と論じました([EFT](../people/EFT.md) は他言語の annotation/decorator 用法について疑問を投げかけた程度)。結論は **swap せず**(decorators が `@`、private fields が `#`)で確定しました。[WH](../people/WH.md) は sigil の選択とは独立に object-literal property への decorator が文法衝突を起こす点を繰り返し指摘しています。なお現行案でも [WH](../people/WH.md) は pipeline operator との `@` 競合を 2022-03 で再提起しています。
 
 ### Descriptor 露出 vs performance / static analysis
 
@@ -96,7 +96,7 @@ metadata は dependency injection の必須機能([KHG](../people/KHG.md)「With
 
 `export @dec class` か `@dec export class` か、で 2018〜2023 にわたり紛糾した最長の bikeshed です。
 
-- **export-first 派**([JHD](../people/JHD.md)/[WH](../people/WH.md)/[BM](../people/BM.md)/[MM](../people/MM.md)): `export` は binding/module を変える statement であり、decorator は value を装飾するので `export @dec class`。[WH](../people/WH.md) の決め手は「`Function.prototype.toString` は class の decorator を含むべきだが `export` は含むべきでない ... that strongly argues for putting the decorators after `export`」。
+- **export-first 派**([JHD](../people/JHD.md)/[WH](../people/WH.md)/[BM](../people/BM.md)/[MM](../people/MM.md)): `export` は binding/module を変える statement であり、decorator は value を装飾するので `export @dec class`。`Function.prototype.toString`/`eval` を根拠に後置を強く主張したのは主に [MM](../people/MM.md)。[WH](../people/WH.md) は 2018-05 で「toString は `export` を含むべきでない。decorator を含めるかは議論の余地があるが、もし含めるなら `export` の後ろに置くことが強く示唆される」と条件付きで述べた。
 - **decorator-first 派**([RBN](../people/RBN.md)/[DRR](../people/DRR.md)/Angular): `export` を modifier 扱いし keyword をまとめる。TypeScript/Babel の数年の前例([RBN](../people/RBN.md)「~2800 classes ... use export in this way」)。
 
 [DH](../people/DH.md) が 2018-09 に「I think this is so zerosum that we can't progress. I'd rather ship the worst outcome than not ship」と漏らすほど膠着しました。最終決着は 2023-01 で **option 2**:`export`/`export default` の**前か後ろのどちらか一方のみ**可(両方指定は Syntax Error、`export` と `default` の間は不可)。さらに `export` の**前**に置いた decorator は `Function.prototype.toString()` に含めない、という source text cutoff も合意されました。
