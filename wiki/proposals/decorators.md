@@ -56,19 +56,14 @@ champion は初期の Yehuda Katz ([YK](../people/YK.md)) / Brian Terlson ([BT](
 | [2026-05](../../raw/notes/meetings/2026-05/may-19.md)                                                     | **Stage 2.7 へ降格 (regress)**。出荷実装ゼロ・Test262 未完・active champion 不在。Decorator Metadata も lockstep で 2.7 へ                                           | 3 → 2.7          |
 
 ```mermaid
-gantt
-    title Decorators stage timeline
-    dateFormat YYYY-MM
-    axisFormat %Y
-    todayMarker off
-    Stage 0 : 2014-04, 2015-03
-    Stage 1 : 2015-03, 2016-07
-    Stage 2 : 2016-07, 2022-03
-    Stage 3 : 2022-03, 2026-05
-    Stage 2.7 : 2026-05, 2026-06
+xychart-beta
+    title "Decorators stage 2012-2026"
+    x-axis [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+    y-axis "Stage" 0 --> 4
+    line [0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 2.7]
 ```
 
-> 各 Stage の横棒 = その stage に居た期間(横軸 = 実時間)。2014-04 Stage 0 → 2015-03 Stage 1 → 2016-07 Stage 2 →(descriptor 案 → static 案 → function 案と再設計を重ねた約 6 年の停滞、**Stage 2 の棒が突出して長い**)→ 2022-03 Stage 3 → **2026-05 に Stage 2.7 へ降格**(出荷実装ゼロ・Test262 未完)。Stage 4 は未到達。
+> 横軸=2012-2026、縦軸=Stage。各年末時点の stage。2014 に strawman (Stage 0)、2015-03 に Stage 1、2016-07 に Stage 2。**2016〜2021 は Stage 2 のまま横ばい**で、descriptor 案 → static 案 → function 案と再設計を重ねた難航期。2022-03 に Stage 3 到達後 4 年維持したが、**2026-05 に Stage 2.7 へ降格**(出荷実装ゼロ・Test262 未完)。Stage 4 は未到達。
 
 ## 主な論点
 

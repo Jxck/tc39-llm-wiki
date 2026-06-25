@@ -29,18 +29,14 @@ tags: [proposal, concurrency, atomics, shared-memory]
 | [2026-05](../../raw/notes/meetings/2026-05/may-19.md)     | **Stage 4 到達**。未使用の optional 引数を削除する normative change を承認した上で advance           | 3 → 4   |
 
 ```mermaid
-gantt
-    title Atomics.pause stage timeline
-    dateFormat YYYY-MM
-    axisFormat %Y
-    todayMarker off
-    Stage 1 : 2024-02, 2024-06
-    Stage 2.7 : 2024-06, 2024-10
-    Stage 3 : 2024-10, 2026-05
-    Stage 4 : 2026-05, 2026-06
+xychart-beta
+    title "Atomics.pause stage 2012-2026"
+    x-axis [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+    y-axis "Stage" 0 --> 4
+    line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 4]
 ```
 
-> 各 Stage の横棒 = その stage に居た期間(横軸 = 実時間)。2024-02 Stage 1(2024-04 の Stage 2 申請は withdraw)→ 2024-06 Stage 2.7(**記録上の Stage 2 は経ず**)→ 2024-10 Stage 3 →(約 1 年半)→ 2026-05 Stage 4。
+> 横軸=2012-2026、縦軸=Stage。初出は 2024-02。2024 年内に Stage 1 →(Stage 2 申請は withdraw)→ Stage 2.7(2024-06)→ Stage 3(2024-10)と進んだため年末値は 3。記録上の Stage 2 は経ていない(唯一の Stage 2 申請 2024-04 は withdraw、6 月に 1 → 2.7)。2025 はコーパス上の議題なしで横ばい、2026-05 に Stage 4。
 
 ## 主な論点
 

@@ -201,8 +201,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - ステージ遷移を notes で裏取り: 2024-10 に "Measure" として **Stage 1**(agenda-index は "stage 0" 表記だが Conclusion は Stage 1 承認 → notes を正とした)、2025-07 に Amount へ改名、Stage 2 は 2025-07/09 に未達で 2026-05 に到達。論点: Decimal との unified vision(merge せず)、i18n 用途 vs 汎用、conversion math の精度(WH 指摘)、no-unit/serialization。
 - index.md の精読済みカタログに Amount を追加。extract_people/link_people/extract_proposals 再生成(人物 60 名、generated index が amount.md をリンク)。
 
-## [2026-06-26] wiki | ステージ推移グラフを mermaid gantt へ移行
+## [2026-06-26] wiki | ステージグラフを折れ線(xychart-beta)へ戻す
 
-- 全 10 提案ページのステージ推移グラフを `xychart-beta` 折れ線から **mermaid `gantt`** に変更。各 Stage を 1 タスク(行ラベル=`Stage N` 文字列)とし、その stage に居た期間を横棒で表現。`dateFormat YYYY-MM` / `axisFormat %Y` / `todayMarker off`。
-- 動機: xychart-beta は数値 y 軸で目盛りが 0.5 刻みになり Stage 値(0/1/2/2.7/3/4)を表せず、VSCode 既定の mermaid 拡張でも空描画だった。gantt は Stage 番号を文字ラベルで出せ・0.5 が出ず・標準描画される。棒の長さで「どの stage に何年いたか」も読める。撤回/降格は期間で自然に表現。
-- AGENTS.md「提案ページの形式」の項目 3(ステージ推移グラフ)を gantt 仕様に差し替え。
+- gantt 移行(1ff1489)を revert し、全 10 提案ページのステージ推移グラフを `xychart-beta` 折れ線へ復帰。AGENTS.md のグラフ規約も折れ線に戻した。
+- 補足: 「目盛りを 1 刻みにしたい」は **xychart-beta では不可**(mermaid 公式ドキュメントで確認。y 軸は数値専用で tick interval/count/custom 値の指定オプションが無く、0–4 範囲では自動で 0.5 刻み。設定可能なのは show/hide のみ)。半端値は 2.7 のみで、2 と 3 の間に正しくプロットされる。0.5 グリッドが気になる場合の選択肢は「y 軸ラベル非表示」のみ。

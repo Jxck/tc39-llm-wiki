@@ -40,16 +40,14 @@ Stage 2 到達後、これらの根本制約が長期間動かせず、最終的
 | 2025-04                     | Withdrawing Records & Tuples。再設計は Composites として別途 Stage 1 へ。本提案は撤回で consensus                                                                                                                                                                                                                                                | withdrawn |
 
 ```mermaid
-gantt
-    title Records and Tuples stage timeline
-    dateFormat YYYY-MM
-    axisFormat %Y
-    todayMarker off
-    Stage 1 : 2019-10, 2020-07
-    Stage 2 : 2020-07, 2025-04
+xychart-beta
+    title "Records and Tuples stage 2012-2026"
+    x-axis [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+    y-axis "Stage" 0 --> 4
+    line [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2]
 ```
 
-> 各 Stage の横棒 = その stage に居た期間(横軸 = 実時間)。2019-10 Stage 1 → 2020-07 Stage 2。以後 Stage 3 に進めず約 5 年 **Stage 2 のまま**(実装可能性・等値セマンティクスの壁)、2025-04 に**撤回**したため棒はそこで終わる。
+> 横軸=2012-2026、縦軸=Stage。2019-10 に Stage 1、2020-07 に Stage 2 到達後、**Stage 2 のまま横ばい**(実装可能性・等値セマンティクスの壁で Stage 3 に進めず)。2025-04 に**撤回**したため線はそこで終わる(以降は描かない)。
 
 ## 主な論点
 

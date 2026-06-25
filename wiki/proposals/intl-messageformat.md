@@ -29,15 +29,14 @@ tags: [proposal, i18n]
 | [2024-06](../../raw/notes/meetings/2024-06/june-11.md)      | Stage 1 open question。error handling の設計パターン(option 1〜6)を議論。新 option を champion group へ。遷移なし                                | 1     |
 
 ```mermaid
-gantt
-    title Intl.MessageFormat stage timeline
-    dateFormat YYYY-MM
-    axisFormat %Y
-    todayMarker off
-    Stage 1 : 2022-03, 2026-06
+xychart-beta
+    title "Intl.MessageFormat stage 2012-2026"
+    x-axis [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+    y-axis "Stage" 0 --> 4
+    line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
 ```
 
-> 各 Stage の横棒 = その stage に居た期間(横軸 = 実時間)。2022-03 に Stage 1 到達後、2026 まで **Stage 1 のまま停滞**(単一の長い棒)。2024-02 の「parser を外してデータモデルのみで Stage 2」案も 2024-04 に TG2 の反対で頓挫し前進せず。
+> 2022-03 に Stage 1 到達。以降 2026 まで Stage 1 のまま停滞。2024-02 に「parser を外してデータモデルのみで Stage 2」案が出たが、2024-04 に TG2 の反対で頓挫し、現在まで前進していない(横ばい)。
 
 ## 主な論点
 
