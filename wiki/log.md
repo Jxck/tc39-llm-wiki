@@ -48,3 +48,16 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-06-25] update | Query に file back 確認ステップを追加
 
 - Query の手順に「回答が価値ある分析を含む場合は、最後にユーザへ wiki ページとして残すか確認する(勝手に追加しない)」を明記。残す場合は synthesis ページとして file back し index/log を更新。
+
+## [2026-06-25] update | Ingest/Lint をスラッシュコマンド化
+
+- `.claude/commands/ingest.md`・`lint.md` を追加し、`/ingest <提案>`・`/lint [対象]` で起動可能に。中身は AGENTS.md の該当ワークフローを正本として参照する薄いラッパ。AGENTS.md のワークフロー冒頭にも存在を明記。
+
+## [2026-06-25] update | 全ワークフローをコマンド化・定義を AGENTS.md に一本化
+
+- `/query`・`/update` を追加し、4 操作(ingest/query/lint/update)すべてをスラッシュコマンド化。
+- 既存の ingest/lint コマンドから再掲していた手順を削除し、**全コマンドを「AGENTS.md の該当セクションを読んで実行するだけ」のポインタに統一**。定義の正本は AGENTS.md のみ(二重メンテ解消)。
+
+## [2026-06-25] update | コミット規約を追加
+
+- AGENTS.md ワークフローに「各操作の完了時に、操作名プレフィックス付きメッセージでコミットする(`[ingest]`/`[query]`/`[lint]`/`[update]`)」を全操作共通ルールとして追加。定義は AGENTS.md の1か所のみ(各コマンドは参照)。

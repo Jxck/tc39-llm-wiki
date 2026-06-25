@@ -88,6 +88,10 @@ tags: [proposal, date-time]
 
 ## ワークフロー
 
+各操作は Claude Code のスラッシュコマンドとしても用意してある(`.claude/commands/`): **`/ingest <提案>`**、**`/query <質問>`**、**`/lint [対象]`**、**`/update [合意]`**。コマンドは手順を持たず、本ファイルの該当ワークフローを読んで実行するだけのポインタ(定義は AGENTS.md が唯一の正本。コマンド側に再掲しない)。
+
+**コミット規約(全操作共通)**: 各操作の完了時に、その操作で生成・変更したファイルを **操作名をプレフィックスにしたメッセージ**でコミットする —— `[ingest]` / `[query]` / `[lint]` / `[update]`(例: `[lint] fix champion attribution in records-and-tuples`)。メッセージ本文は英語。コミットはリポジトリ/環境の git 規約(署名・rebase・必要な trailer 等)に従う。Query で file back しなかった場合などコミットすべき変更が無いときはスキップしてよい。
+
 ### Ingest(素材の取り込み)
 
 1. 対象会合 or 提案を決める。`wiki/_generated/agenda-index.md` を grep して関連議題と会合を特定する(例: `grep -i -A4 decorators wiki/_generated/agenda-index.md`)。
