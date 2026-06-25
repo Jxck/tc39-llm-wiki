@@ -150,3 +150,20 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - ステージ: 2022-03 に Stage 1 到達後、2026 まで Stage 1 で停滞。2024-02 に「parser を外しデータモデルのみで Stage 2」案、2024-04 に TG2(Google i18n)反対で頓挫し stuck に。論点は「実績の乏しい DSL/parser を言語に入れる是非」「error handling(throw しないモデル / option 1〜6)」「`message` 語の混乱」「`Intl.MessageResource` への分離(2022-11)」。
 - champion は canonical の `raw/proposals/ecma402/README.md`(Stage 1 節)に従い EAO のみとした(DLM の co-champion 関与は経緯として本文に保持)。
 - `extract_people.py` / `link_people.py` 実行、`index.md` に行追加。
+
+## [2026-06-26] wiki | /update を「raw ソースの同期」コマンドへ再定義
+
+- `/update` の役割を変更: 旧「会話で決まった運用合意を AGENTS.md に反映」を廃止し、**`raw/` 配下の submodule(notes / proposals)を最新に pull し、前回同期(コミット済みポインタ)からの差分を表示する**同期コマンドに置き換えた。
+- AGENTS.md「### Update」を全面書き換え(手順: OLD ポインタ控え → pull → `OLD..HEAD` 差分提示 → `[update]` でポインタ commit + 生成物再生成 → log 記録)。Summarise 節の「以後の運用」を /update へ委譲し、ルーチン同期のポインタ commit を `[update]`(臨時 checkout は従来どおり `[wiki]`)と整理。
+- `.claude/commands/update.md` と workflow 一覧の引数ヒントを更新。
+
+## [2026-06-26] lint | raw/proposals 突き合わせ(stage/champion)と相互リンク補完
+
+新 precedence(`raw/proposals` が現ステージ/champion の一次)に従い wiki 全体を点検。
+
+- **提案 9 ページの現ステージ/status は全て canonical 一致**(Decorators=Stage 2.7 も canonical の 2.7 節で確認、Records & Tuples=inactive、Stage 4 群=finished、Intl.MessageFormat=Stage 1)。別セッション ingest の [intl-messageformat](proposals/intl-messageformat.md) も champion `EAO`・Stage 1 ともに canonical 一致で健全。
+- **family の stage 誤りを修正**(canonical 照合): iterator の `iterator-join` を `1〜2`→**3**、modules の `module-declarations` を `1(停滞)`→**2** に訂正し、別 Stage 2 提案 `module-expressions` を分離・members 追加。
+- **相互リンク漏れを補完**(前回 lint からの持ち越し): 2026-03/2026-05 要約の該当トピックに `- 提案ページ:` を 5 件追加(ERM×2・Intl Era/Month・Joint Iteration・Atomics.pause)。
+- **champion 整合**(方針: 歴史的 champion 込みを維持し canonical の不足のみ補う): [Temporal](proposals/temporal.md) に canonical の champion 4 名 [PDL](people/PDL.md)(Philipp Dunkel)・[MAJ](people/MAJ.md)(Matt Johnson-Pint)・[BT](people/BT.md)(Brian Terlson)・[JWS](people/JWS.md)(Jason Williams)を追加(計 9 名)。Decorators/Upsert/Intl Era・Month は canonical champion が既に揃っており追加なし(YK/EPR 等の歴史的 champion は据え置き)。
+- 副次: 人物ページ再生成で PDL/MAJ を新規生成(57→59 名)。index.md の人物数は 54 と stale だった(intl-messageformat ingest 時の更新漏れ、実際は 57)→ 59 に是正。
+- fmt・デッドリンク・family 双方向整合は全てクリーン。

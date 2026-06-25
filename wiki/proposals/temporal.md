@@ -4,7 +4,7 @@ slug: temporal
 status: shipped
 current_stage: 4
 ecma: [262, 402]
-champions: [PFC, MPT, JGT, SFC, USA]
+champions: [PFC, MPT, MAJ, JGT, SFC, USA, PDL, BT, JWS]
 first_seen: "2017-03"
 reached_stage4: "2026-03"
 tags: [proposal, date-time]

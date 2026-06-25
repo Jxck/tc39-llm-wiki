@@ -21,7 +21,7 @@ tags: [family, iterator]
 | [Joint Iteration](../proposals/joint-iteration.md)(`Iterator.zip`/`zipKeyed`) | 4          | 複数 iterator を位置対応でまとめる(2026-05 到達)                          |
 | `iterator-chunking`(`chunks`/`windows`)                                       | 3          | 複数値をまとめて消費(重なり無し=chunks / 重なり有り=windows)              |
 | `iterator-includes`                                                           | 3          | `Array.prototype.includes` 相当                                           |
-| `iterator-join`                                                               | 1〜2       | `Array.prototype.join` 相当([KG](../people/KG.md) champion)               |
+| `iterator-join`                                                               | 3          | `Array.prototype.join` 相当([KG](../people/KG.md) champion)               |
 | `async-iterator-helpers`                                                      | 2          | iterator helpers の async 版。全 method の並行 pull 対応 spec を作業中    |
 | `iterator-range`(`Iterator.range`)                                            | 2          | 数値レンジ生成。長期停滞                                                  |
 | `concurrency-control`                                                         | 1          | async iterator の並行数制御。async helpers の進行待ち                     |

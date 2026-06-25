@@ -1,21 +1,17 @@
 ---
-abbr: BT
-name: Brian Terlson
-orgs: [Microsoft]
-meetings_attended: 3
+abbr: MAJ
+name: Matt Johnson
+orgs: []
+meetings_attended: 0
 tags: [person]
 ---
 
-# BT — Brian Terlson
+# MAJ — Matt Johnson
 
-- **フルネーム**: Brian Terlson
-- **所属**: Microsoft
+- **フルネーム**: Matt Johnson
+- **所属**: (出席者テーブルから特定できず)
 - **担当ドラフト (champion)**: [Temporal](../proposals/temporal.md)
-- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Temporal](../proposals/temporal.md)
-- **参加したミーティング**: 全 3 回
-
-## 参加したミーティング
-
-2020-06 2021-03 2021-04
+- **言及される提案ページ**: [Temporal](../proposals/temporal.md)
+- **参加したミーティング**: 全 0 回
 
 > このページは `tools/extract_people.py` による生成物。フルネーム/所属/参加会合は `raw/notes`(delegates.txt と各会合の出席者テーブル)由来、担当ドラフトは提案ページ frontmatter の `champions` から相互参照。手で編集せず再生成すること。

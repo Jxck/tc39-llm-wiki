@@ -1,9 +1,9 @@
 ---
-description: 会話で決まった wiki 運用の合意を AGENTS.md に反映する
-argument-hint: "[反映する合意の要約 (省略時はこの会話で決まった方針)]"
+description: raw/ 配下の submodule を最新に pull し、前回同期からの差分を表示する
+argument-hint: "[対象 submodule (省略時は raw/ 配下すべて)]"
 ---
 
-`AGENTS.md` の「## ワークフロー > ### Update」を読み、その手順に従って実行してください。対象の合意: **$ARGUMENTS**(未指定ならこの会話で決まった wiki 運用の合意を対象)。
+`AGENTS.md` の「## ワークフロー > ### Update」を読み、その手順に従って実行してください。対象: **$ARGUMENTS**(未指定なら `raw/` 配下のすべての submodule)。
 
-- 反映先・判断基準(他エージェントにも必要な運用上の取り決めか)・log 記録の定義は `AGENTS.md` が正本。ここには再掲しない。
-- 矛盾する旧記述は追記でなく置き換える。
+- 手順・コミット規約・log 記録の定義は `AGENTS.md` が正本。ここには再掲しない。
+- 前回同期の状態はコミット済みの submodule ポインタが基準。差分が無ければ「最新」と表示し commit はスキップする。
