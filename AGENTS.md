@@ -104,13 +104,22 @@ tags: [proposal, date-time]
 ### Query(質問への回答)
 
 1. `wiki/index.md` → 関連提案ページ → 必要なら `agenda-index.md` → `raw/notes` の順で掘る。
-2. 回答は出典(会合リンク)付き。価値ある分析は新しい wiki ページとして還元してよい。
+2. 回答は出典(会合リンク)付き。
+3. 回答が価値ある分析(横断比較・新しい発見・再利用したい整理など)を含む場合は、**最後にユーザへ「これを wiki ページとして残すか」を確認する**(勝手に追加しない)。残すなら synthesis ページとして file back し、`wiki/index.md`・`wiki/log.md` を更新する。
 
 ### Lint(健全性チェック)
 
+wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」と区別していた出典突き合わせも Lint に統合する)。
+
+**(a) 内部健全性**(wiki 内部を見る)
 - ページ間の矛盾、古くなった記述(新しい会合で覆された主張)、孤立ページ、相互リンク漏れ、論点の決着漏れを点検。
 - `agenda-index.md` に出てくるが提案ページが無い重要提案を洗い出す。
-- 素材更新時(submodule pull 後)は `python3 tools/extract_agenda.py`、続けて `python3 tools/extract_people.py && python3 tools/link_people.py` で再生成。
+
+**(b) 出典との整合性**(wiki ↔ raw を突き合わせる)
+- 各提案ページの主張を引用元の逐語録に照らして検証する。**誤りを探す姿勢**で点検し、見つけたら raw を真として修正する。
+- 特に誤りが出やすい箇所: ステージ遷移の年月・方向、champion の人物特定、発言の帰属、引用の正確性。
+
+素材更新時(submodule pull 後)は `python3 tools/extract_agenda.py`、続けて `python3 tools/extract_people.py && python3 tools/link_people.py` で再生成。
 
 ### Update(運用方針の反映)
 
