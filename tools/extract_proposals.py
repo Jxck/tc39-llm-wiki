@@ -11,6 +11,7 @@ frontmatter title matches a canonical proposal; everything else is plain text
 (meaning: not yet read in depth here, only catalogued).
 """
 
+import datetime
 import pathlib
 import re
 
@@ -19,10 +20,17 @@ PROP = ROOT / "raw" / "proposals"
 WIKI_PROP = ROOT / "wiki" / "proposals"
 OUT = WIKI_PROP / "index.md"
 
+# Stage 4 is filtered to proposals not yet in a ratified ECMAScript edition,
+# i.e. those whose "Expected Publication Year" is the current year or later
+# (the latest ratified edition is the previous year's). This keeps the Stage 4
+# section to the recently-finished, not-yet-shipped batch.
+CURRENT_YEAR = datetime.date.today().year
+
 LINK_TEXT = re.compile(r"\[([^\]]+)\]")
 STAGE_HEADER = re.compile(r"^###\s*Stage\s*([0-9.]+)")
 ROW = re.compile(r"^\|\s*\[")
 STATUS_WORD = re.compile(r"^([A-Za-z]+)")
+YEAR = re.compile(r"\b(20\d{2})\b")
 
 # Stage display order.
 ORDER = ["4", "3", "2.7", "2", "1", "0", "inactive"]
@@ -61,7 +69,7 @@ def parse_readme(path):
             stage = h.group(1)
             continue
         if ROW.match(line) and stage:
-            out.append((stage, title_of(cells_of(line)[1]), ""))
+            out.append((stage, title_of(cells_of(line)[1]), "", None))
     return out
 
 
@@ -76,10 +84,14 @@ def parse_flat(path, stage):
         cells = cells_of(line)
         title = title_of(cells[1])
         note = ""
+        year = None
         if stage == "inactive" and len(cells) > 3:
             m = STATUS_WORD.match(cells[3].strip())
             note = m.group(1) if m else ""
-        out.append((stage, title, note))
+        if stage == "4":
+            ym = YEAR.search(cells[-2]) if len(cells) >= 2 else None
+            year = int(ym.group(1)) if ym else None
+        out.append((stage, title, note, year))
     return out
 
 
@@ -125,23 +137,38 @@ def wiki_page_map():
 
 def render_section(rows, pages):
     by_stage = {}
-    for stage, title, note in rows:
-        by_stage.setdefault(stage, []).append((title, note))
+    for stage, title, note, year in rows:
+        by_stage.setdefault(stage, []).append((title, note, year))
     lines = []
+    shown = 0
     for stage in ORDER:
         items = by_stage.get(stage)
         if not items:
             continue
         items.sort(key=lambda x: x[0].lower())
-        lines.append(f"### {LABEL[stage]} ({len(items)})")
+        if stage == "4":
+            # Only Stage 4 not yet in a ratified edition (pub year >= 当年).
+            total = len(items)
+            items = [it for it in items if it[2] and it[2] >= CURRENT_YEAR]
+            heading = (
+                f"### Stage 4 — まだ ECMAScript 未収載({CURRENT_YEAR} 年以降に出版予定)"
+                f"({len(items)} / 出荷済み含む全 {total} 件)"
+            )
+        else:
+            heading = f"### {LABEL[stage]} ({len(items)})"
+        if not items:
+            continue
+        shown += len(items)
+        lines.append(heading)
         lines.append("")
-        for title, note in items:
+        for title, note, year in items:
             page = pages.get(norm(title))
             label = f"[{title}]({page})" if page else title
-            suffix = f" — {note}" if note else ""
+            bits = [b for b in (note, f"出版予定 {year}" if year else "") if b]
+            suffix = f" — {' / '.join(bits)}" if bits else ""
             lines.append(f"- {label}{suffix}")
         lines.append("")
-    return lines, sum(len(v) for v in by_stage.values())
+    return lines, shown
 
 
 def main():
@@ -163,7 +190,11 @@ def main():
         "> 現ステージの一次ソースは raw/proposals。精読済みの提案は "
         "`[Title](<slug>.md)` でページへリンク、未リンクは本 wiki で未精読(カタログのみ)。"
     )
-    out.append(f"> 集計: ECMA-262 {n262} 件 / ECMA-402 {n402} 件。")
+    out.append(
+        f"> **Stage 4 はまだ ECMAScript に入っていないもの({CURRENT_YEAR} 年以降に出版予定)だけを掲載**"
+        "(出荷済みの finished は省略)。Stage 3 以下は全件。"
+    )
+    out.append(f"> 掲載件数: ECMA-262 {n262} 件 / ECMA-402 {n402} 件。")
     out.append("")
     out.append("## ECMA-262")
     out.append("")

@@ -178,3 +178,9 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 
 - 別プロセスが `### Update` を「運用方針の反映」→「raw ソースの同期」に再定義済み(コミット ba4c278 に巻き込まれて記録)。新定義は AGENTS.md・`/update` コマンド・ワークフロー一覧で整合済みと確認。
 - 抜けていた「規約合意の AGENTS.md 反映」の住所を明文化: コミット規約の `[wiki]` 行に「AGENTS.md への規約反映も `[wiki]`、専用操作・コマンドは設けず明示依頼時に行う、`/update` は raw 同期専用」を追記。
+
+## [2026-06-26] wiki | proposals/index.md の Stage 4 を未収載分のみに絞り込み
+
+- Stage 4 セクションを「まだ ECMAScript に入っていない=Expected Publication Year が当年以降」のものだけに限定(出荷済みの finished は省略)。`extract_proposals.py` が finished テーブルの出版予定年を読み、`>= 今年` で filter。Stage 3 以下は従来どおり全件。
+- 結果: Stage 4 は ECMA-262 11 件 / ECMA-402 2 件(全 finished 77 / 18 件中)。当年判定は datetime ベースで自動繰り上がり。
+- 注: 「今年 Stage 4 到達」の厳密判定は canonical に stage-4 日付列が無いため、出版予定年(ES エディション)を proxy にしている。pub 2026 には 2025 末に finished し ES2026 に入る分も含まれる。

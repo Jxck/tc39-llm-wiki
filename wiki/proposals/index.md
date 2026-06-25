@@ -2,89 +2,24 @@
 
 > **生成物**。`tools/extract_proposals.py` が `raw/proposals/`(canonical)から生成。手で編集しない(Update で `raw/proposals` を pull するたび再生成)。
 > 現ステージの一次ソースは raw/proposals。精読済みの提案は `[Title](<slug>.md)` でページへリンク、未リンクは本 wiki で未精読(カタログのみ)。
-> 集計: ECMA-262 286 件 / ECMA-402 34 件。
+> **Stage 4 はまだ ECMAScript に入っていないもの(2026 年以降に出版予定)だけを掲載**(出荷済みの finished は省略)。Stage 3 以下は全件。
+> 掲載件数: ECMA-262 220 件 / ECMA-402 18 件。
 
 ## ECMA-262
 
-### Stage 4 (finished) (77)
+### Stage 4 — まだ ECMAScript 未収載(2026 年以降に出版予定)(11 / 出荷済み含む全 77 件)
 
-- .at()
-- Accessible Object.prototype.hasOwnProperty
-- Array find from last
-- Array Grouping
-- Array.fromAsync
-- Array.prototype.includes
-- Array.prototype.{flat,flatMap}
-- ArrayBuffer transfer
-- Async functions
-- Asynchronous Iteration
-- [Atomics.pause](atomics-pause.md)
-- Atomics.waitAsync
-- BigInt
-- Change Array by Copy
-- Class Static Block
-- Duplicate named capture groups
-- Ergonomic brand checks for Private Fields
-- Error Cause
-- Error.isError
-- [Explicit Resource Management](explicit-resource-management.md)
-- Exponentiation operator
-- Float16 on TypedArrays, DataView, Math.f16round
-- for-in mechanics
-- Function.prototype.toString revision
-- globalThis
-- Hashbang Grammar
-- Import Attributes
-- import()
-- import.meta
-- Iterator Sequencing
-- [Joint Iteration](joint-iteration.md)
-- JSON Modules
-- JSON superset
-- JSON.parse source text access
-- Lifting template literal restriction
-- Logical Assignment Operators
-- Math.sumPrecise
-- New Set methods
-- Nullish coalescing Operator
-- Numeric separators
-- Object.fromEntries
-- Object.getOwnPropertyDescriptors
-- Object.values/Object.entries
-- Optional catch binding
-- Optional Chaining
-- Promise.allSettled
-- Promise.any
-- Promise.prototype.finally
-- Promise.try
-- Promise.withResolvers
-- Redeclarable global eval-introduced vars
-- RegExp Lookbehind Assertions
-- RegExp Match Indices
-- RegExp Modifiers
-- RegExp named capture groups
-- RegExp Unicode Property Escapes
-- RegExp v flag with set notation + properties of strings
-- RegExp.escape
-- Resizable and growable ArrayBuffers
-- Rest/Spread Properties
-- s (dotAll) flag for regular expressions
-- Shared memory and atomics
-- String padding
-- String.prototype.matchAll
-- String.prototype.replaceAll
-- String.prototype.{trimStart,trimEnd}
-- Symbol.prototype.description
-- Symbols as WeakMap keys
-- Sync Iterator helpers
-- [Temporal](temporal.md)
-- Top-level await
-- Trailing commas in function parameter lists and calls
-- Uint8Array to/from Base64
-- [Upsert](upsert.md)
-- WeakRefs
-- Well-formed JSON.stringify
-- Well-Formed Unicode Strings
+- Array.fromAsync — 出版予定 2026
+- [Atomics.pause](atomics-pause.md) — 出版予定 2027
+- Error.isError — 出版予定 2026
+- [Explicit Resource Management](explicit-resource-management.md) — 出版予定 2027
+- Iterator Sequencing — 出版予定 2026
+- [Joint Iteration](joint-iteration.md) — 出版予定 2027
+- JSON.parse source text access — 出版予定 2026
+- Math.sumPrecise — 出版予定 2026
+- [Temporal](temporal.md) — 出版予定 2027
+- Uint8Array to/from Base64 — 出版予定 2026
+- [Upsert](upsert.md) — 出版予定 2026
 
 ### Stage 3 (11)
 
@@ -315,26 +250,10 @@
 
 ## ECMA-402
 
-### Stage 4 (finished) (18)
+### Stage 4 — まだ ECMAScript 未収載(2026 年以降に出版予定)(2 / 出荷済み含む全 18 件)
 
-- DateTimeFormat dateStyle & timeStyle
-- Extend TimeZoneName Option Proposal
-- Intl Enumeration API
-- [Intl Era and MonthCode Proposal](intl-era-month-code.md)
-- Intl Locale Info
-- Intl.DateFormat.prototype.formatRange
-- Intl.DateTimeFormat.prototype.formatToParts
-- Intl.DisplayNames
-- Intl.DisplayNames v2
-- Intl.DurationFormat
-- Intl.ListFormat
-- Intl.Locale
-- Intl.NumberFormat Unified API Proposal
-- Intl.NumberFormat V3
-- Intl.NumberFormat.prototype.formatToParts
-- Intl.PluralRules
-- Intl.RelativeTimeFormat
-- Intl.Segmenter: Unicode Segmentation in JavaScript
+- [Intl Era and MonthCode Proposal](intl-era-month-code.md) — 出版予定 2026
+- Intl Locale Info — 出版予定 2026
 
 ### Stage 3 (1)
 
