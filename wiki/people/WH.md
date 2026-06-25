@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Waldemar Horwat
 - **所属**: Google / Invited Expert
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../proposals/decorators.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Upsert](../proposals/upsert.md)
+- **言及される提案ページ**: [Amount](../proposals/amount.md), [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../proposals/decorators.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Upsert](../proposals/upsert.md)
 - **参加したミーティング**: 全 38 回
 
 ## 参加したミーティング

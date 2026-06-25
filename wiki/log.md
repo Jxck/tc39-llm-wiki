@@ -189,3 +189,9 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 
 - `proposals/index.md` の記述を実態に整合: 「完全ステージ一覧」→「Stage 4 は未収載分のみ」。新セクション「全提案ステージ一覧(proposals/index.md)」を追加し、Stage 4 フィルタ(Expected Publication Year ≥ 当年)と ES エディション規則(3 月末 freeze + 6 月 GA、pub year=どの ES 版か=収載判定の確定信号)を明文化。
 - Lint の champion 整合方針を追記: canonical の現 champion は満たす(不足は補う)が、canonical に無い歴史的 champion は削除せず残す(canonical に無い=誤りとしない)。
+
+## [2026-06-26] ingest | Amount(旧 Measure)を精読
+
+- `Amount`(`proposal-amount`、旧 `proposal-measure`)の提案ページ [amount.md](proposals/amount.md) を作成。数値+単位の immutable value type(`value`/`unit`/`convertTo()`/`toLocaleString()`)。ECMA-262、champion [BAN](people/BAN.md)、現 Stage 2(canonical で確認、reviewer WH/JHD)。
+- ステージ遷移を notes で裏取り: 2024-10 に "Measure" として **Stage 1**(agenda-index は "stage 0" 表記だが Conclusion は Stage 1 承認 → notes を正とした)、2025-07 に Amount へ改名、Stage 2 は 2025-07/09 に未達で 2026-05 に到達。論点: Decimal との unified vision(merge せず)、i18n 用途 vs 汎用、conversion math の精度(WH 指摘)、no-unit/serialization。
+- index.md の精読済みカタログに Amount を追加。extract_people/link_people/extract_proposals 再生成(人物 60 名、generated index が amount.md をリンク)。

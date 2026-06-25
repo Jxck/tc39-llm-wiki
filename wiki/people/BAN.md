@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Ben Allen
 - **所属**: Igalia
-- **担当ドラフト (champion)**: [Intl Era/Month Code](../proposals/intl-era-month-code.md)
-- **言及される提案ページ**: [Intl Era/Month Code](../proposals/intl-era-month-code.md)
+- **担当ドラフト (champion)**: [Amount](../proposals/amount.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md)
+- **言及される提案ページ**: [Amount](../proposals/amount.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md)
 - **参加したミーティング**: 全 14 回
 
 ## 参加したミーティング

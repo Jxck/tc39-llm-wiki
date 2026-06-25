@@ -48,7 +48,7 @@
 ### Stage 2 (27)
 
 - "Discard" (void) Bindings
-- Amount
+- [Amount](amount.md)
 - Async Context
 - Async Iterator helpers
 - collection normalization
