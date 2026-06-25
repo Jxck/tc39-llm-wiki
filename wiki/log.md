@@ -184,3 +184,8 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - Stage 4 セクションを「まだ ECMAScript に入っていない=Expected Publication Year が当年以降」のものだけに限定(出荷済みの finished は省略)。`extract_proposals.py` が finished テーブルの出版予定年を読み、`>= 今年` で filter。Stage 3 以下は従来どおり全件。
 - 結果: Stage 4 は ECMA-262 11 件 / ECMA-402 2 件(全 finished 77 / 18 件中)。当年判定は datetime ベースで自動繰り上がり。
 - 注: 「今年 Stage 4 到達」の厳密判定は canonical に stage-4 日付列が無いため、出版予定年(ES エディション)を proxy にしている。pub 2026 には 2025 末に finished し ES2026 に入る分も含まれる。
+
+## [2026-06-26] wiki | AGENTS.md にセッションの取り決めを反映
+
+- `proposals/index.md` の記述を実態に整合: 「完全ステージ一覧」→「Stage 4 は未収載分のみ」。新セクション「全提案ステージ一覧(proposals/index.md)」を追加し、Stage 4 フィルタ(Expected Publication Year ≥ 当年)と ES エディション規則(3 月末 freeze + 6 月 GA、pub year=どの ES 版か=収載判定の確定信号)を明文化。
+- Lint の champion 整合方針を追記: canonical の現 champion は満たす(不足は補う)が、canonical に無い歴史的 champion は削除せず残す(canonical に無い=誤りとしない)。
