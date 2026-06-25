@@ -1,0 +1,34 @@
+# TC39 Wiki — Index
+
+TC39 plenary 議事録(`raw/notes`、2012-05〜2026-03 / 86 会合 / 334 ファイル)から、**各提案のステージ遷移の経緯と策定中の論点**を辿るための wiki です。運用規約は [AGENTS.md](../AGENTS.md)、設計思想は [llm-wiki.md](../llm-wiki.md) を参照。
+
+## 使い方
+
+- **特定の提案を辿る** → 下の「精読済みの提案」から該当ページへ。各ページに `## ステージ遷移`(時系列テーブル)と `## 主な論点` がある。
+- **未精読の提案/会合を探す** → [_generated/agenda-index.md](_generated/agenda-index.md) を grep。全 86 会合・2737 議題を機械抽出したバックボーン。例: `grep -i -A4 'pattern matching' wiki/_generated/agenda-index.md`。
+- **新しい提案を ingest** → AGENTS.md の「ワークフロー > Ingest」に従う。
+
+## 精読済みの提案
+
+| 提案 | 現ステージ | 状態 | 概要 |
+|------|-----------|------|------|
+| [Temporal](proposals/temporal.md) | Stage 4 (2026-03) | shipped | `Date` を置き換える immutable な日付時刻 API。約 9 年がかりで Stage 4 到達。 |
+| [Decorators](proposals/decorators.md) | Stage 3 (2022-03) | stage3 | class への `@expr` 注釈。3 度の全面再設計を経た難航案。 |
+| [Records & Tuples](proposals/records-and-tuples.md) | Stage 2(撤回) | withdrawn | deeply immutable な value type `#{}` / `#[]`。2025-04 に撤回。 |
+
+## 未作成(リンク先候補)
+
+精読済みページから参照されているが、まだ作成されていない提案ページ:
+
+- `[[class-fields]]` — Decorators と sigil(`@` / `#`)を巡って密接に関係。
+- `[[private-methods]]` — class fields 関連。
+- `[[intl-era-month-code]]` — Temporal と同時に Stage 4。
+- `[[pipeline-operator]]` — Decorators の議論で言及。
+
+## バックボーン(機械抽出)
+
+[_generated/agenda-index.md](_generated/agenda-index.md) — 全会合の議題見出し・Stage シグナル・Conclusion を `tools/extract_agenda.py` で抽出したもの。手で編集しない(再生成で上書き)。素材(submodule)更新後は `python3 tools/extract_agenda.py` で更新。
+
+## 状態の凡例
+
+`stage0`〜`stage3` / `shipped`(Stage 4 到達) / `withdrawn`(撤回) / `inactive`(長期停滞)。各ページ frontmatter の `status` と対応。

@@ -1,0 +1,3987 @@
+# Agenda Index (generated)
+
+> Mechanically extracted from `raw/notes`. Do not hand-edit; regenerate via `tools/extract_agenda.py`.
+> One block per meeting. Each agenda item shows its heading, stage signals, and conclusion.
+> To trace a proposal: `grep -i -A4 'temporal' wiki/_generated/agenda-index.md`.
+
+
+## 2012-05
+
+- **Royalty Free Status**  `raw/notes/meetings/2012-05/may-21.md`
+- **Internationalization**  `raw/notes/meetings/2012-05/may-21.md`
+- **Binary Data**  `raw/notes/meetings/2012-05/may-22.md`
+- **Override Mistake (Allen Wirfs-Brock, Mark Miller)**  `raw/notes/meetings/2012-05/may-23.md`
+- **4.14, Unicode (Norbert Lindenderg)**  `raw/notes/meetings/2012-05/may-23.md`
+- **4.11, Daylight Savings (Luke Hoban)**  `raw/notes/meetings/2012-05/may-23.md`
+- **4.10 Object.observe (Rafeal Weinstein)**  `raw/notes/meetings/2012-05/may-23.md`
+- **Spec Issues**  `raw/notes/meetings/2012-05/may-23.md`
+- **Moustache**  `raw/notes/meetings/2012-05/may-23.md`
+- **Computed Keys**  `raw/notes/meetings/2012-05/may-23.md`
+- **SealedObjectLiteral**  `raw/notes/meetings/2012-05/may-23.md`
+- **String.prototype.toArray**  `raw/notes/meetings/2012-05/may-23.md`
+- **Weak Refs**  `raw/notes/meetings/2012-05/may-23.md`
+- **Value Objects**  `raw/notes/meetings/2012-05/may-23.md`
+
+## 2012-07
+
+- **4.1 AWB Presents changes resulting in latest drafts**  `raw/notes/meetings/2012-07/july-24.md`
+- **4.5 RegEx "Web Reality"**  `raw/notes/meetings/2012-07/july-24.md`
+- **4.7 Adding forEach to Map and Set**  `raw/notes/meetings/2012-07/july-24.md`
+- **4.9 getClassNameOf**  `raw/notes/meetings/2012-07/july-24.md`
+- **6 Internationalization Standard**  `raw/notes/meetings/2012-07/july-24.md`
+- **6.1 Last call for feedback before final draft**  `raw/notes/meetings/2012-07/july-24.md`
+- **6.2 Microsoft and Google are implementing prototypes**  `raw/notes/meetings/2012-07/july-24.md`
+- **Unicode support**  `raw/notes/meetings/2012-07/july-24.md`
+- **4.1 (cont) Processing full Unicode Source Code**  `raw/notes/meetings/2012-07/july-24.md`
+- **4.13 Destructuring Issues**  `raw/notes/meetings/2012-07/july-24.md`
+- **Scoping Rules for Global Lexical Declaration**  `raw/notes/meetings/2012-07/july-25.md`
+- **Object.observe**  `raw/notes/meetings/2012-07/july-25.md`
+- **Weak References**  `raw/notes/meetings/2012-07/july-25.md`
+- **Script Concat Issue**  `raw/notes/meetings/2012-07/july-25.md`
+- **Fix "override mistake", aka. The can put check**  `raw/notes/meetings/2012-07/july-25.md`
+- **Maxmin class semantics**  `raw/notes/meetings/2012-07/july-26.md`
+- **getPrototypeOf trap**  `raw/notes/meetings/2012-07/july-26.md`
+- **Proxies and private names**  `raw/notes/meetings/2012-07/july-26.md`
+- **VirtualHandler**  `raw/notes/meetings/2012-07/july-26.md`
+- **Template strings**  `raw/notes/meetings/2012-07/july-26.md`
+- **Map and Set methods: conclusion**  `raw/notes/meetings/2012-07/july-26.md`
+- **Wiki**  `raw/notes/meetings/2012-07/july-26.md`
+- **Scoping for C-style loops**  `raw/notes/meetings/2012-07/july-26.md`
+
+## 2012-09
+
+- **Internationalization**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Review and Approve Final Draft of Internationalization API Specification**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Don't Use Year 0 in Date/Time Formatting**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Conformance Tests**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Implementor's Report**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Approvals**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Annex**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Intl 2nd Edition**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Parallel JavaScript**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Define Properties Operator ":="**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Concise Method Definition, Revisited**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Scoping of the Top Level**  `raw/notes/meetings/2012-09/sept-18.md`
+- **var and the window.prototype issue**  `raw/notes/meetings/2012-09/sept-18.md`
+- **let, const, module, class**  `raw/notes/meetings/2012-09/sept-18.md`
+- **Proxy**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Enumerate Traps Return Types**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Revokable Proxies**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Proxy and Private Names**  `raw/notes/meetings/2012-09/sept-19.md`
+- **WeakSet**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Syntactic Support for Private Names**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Private Names & @Names**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Optional Feature: Class-scoped name declarations**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Renaming Name to Symbol**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Early Errors That Possibly Should Not Be**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Performance Costs of Temporal Dead Zone**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Global Scope Revisit**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Test262**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Create Archival Utility for ECMA Wiki**  `raw/notes/meetings/2012-09/sept-19.md`
+- **Object.observe Update**  `raw/notes/meetings/2012-09/sept-20.md`
+- **Grammar Validation**  `raw/notes/meetings/2012-09/sept-20.md`
+- **Formal Parameter Scope**  `raw/notes/meetings/2012-09/sept-20.md`
+- **Array.of Rename?**  `raw/notes/meetings/2012-09/sept-20.md`
+- **Thin Arrow?**  `raw/notes/meetings/2012-09/sept-20.md`
+- **Existential Operator (strawman discussion)**  `raw/notes/meetings/2012-09/sept-20.md`
+- **Generators**  `raw/notes/meetings/2012-09/sept-20.md`
+- **Supplemental tests for Tests 262**  `raw/notes/meetings/2012-09/sept-20.md`
+- **Goals**  `raw/notes/meetings/2012-09/sept-20.md`
+
+## 2012-11
+
+- **ES6 feedback via TypeScript**  `raw/notes/meetings/2012-11/nov-27.md`
+- **Review Proposals for inclusion in ES6**  `raw/notes/meetings/2012-11/nov-27.md`
+- **Spread Operation accepting Iterables**  `raw/notes/meetings/2012-11/nov-27.md`
+- **Review of new draft spec**  `raw/notes/meetings/2012-11/nov-27.md`
+- **Break.**  `raw/notes/meetings/2012-11/nov-27.md`
+- **Internationalization Update**  `raw/notes/meetings/2012-11/nov-27.md`
+- **String Normalization**  `raw/notes/meetings/2012-11/nov-27.md`
+- **String Case Conversion**  `raw/notes/meetings/2012-11/nov-27.md`
+- **Eliminate ToUInt32() warping on array access**  `raw/notes/meetings/2012-11/nov-27.md`
+- **The prototype/constructor object model supporting Generators/use of instanceof with generators and generator instances**  `raw/notes/meetings/2012-11/nov-27.md`
+- **Syntactic Support for Private Names**  `raw/notes/meetings/2012-11/nov-28.md`
+- **Experience With TypeScript**  `raw/notes/meetings/2012-11/nov-28.md`
+- **Modules Update**  `raw/notes/meetings/2012-11/nov-28.md`
+- **Scoping for default arguments revisited**  `raw/notes/meetings/2012-11/nov-29.md`
+- **Cascading this returns**  `raw/notes/meetings/2012-11/nov-29.md`
+- **Issues With Eval**  `raw/notes/meetings/2012-11/nov-29.md`
+- **Eliminate functions returning Reference values from the specification.**  `raw/notes/meetings/2012-11/nov-29.md`
+- **Revisit Nov. 27 Resolution on iterables in spread.**  `raw/notes/meetings/2012-11/nov-29.md`
+- **Collection APIs review...**  `raw/notes/meetings/2012-11/nov-29.md`
+- **The syntax of let**  `raw/notes/meetings/2012-11/nov-29.md`
+- **Extend new let grammar restriction?**  `raw/notes/meetings/2012-11/nov-29.md`
+- **Extending Array Comprehension**  `raw/notes/meetings/2012-11/nov-29.md`
+- **yield, the identifier?**  `raw/notes/meetings/2012-11/nov-29.md`
+- **Function Poison Pill Methods and new Function Syntactic Forms**  `raw/notes/meetings/2012-11/nov-29.md`
+- **Conventions make non-standard properties configurable**  `raw/notes/meetings/2012-11/nov-29.md`
+
+## 2013-01
+
+- **Added: 4.14 Modules Update**  `raw/notes/meetings/2013-01/jan-29.md`
+- **Added: 4.15 Proxy Issues**  `raw/notes/meetings/2013-01/jan-29.md`
+- **November 2012 Minutes Approved**  `raw/notes/meetings/2013-01/jan-29.md`
+- **`__proto__`.**  `raw/notes/meetings/2013-01/jan-29.md`
+- **4.1 is/isnt operators**  `raw/notes/meetings/2013-01/jan-29.md`
+- **4.4 Is there are need for Number.isNaN if we have Object.is available?**  `raw/notes/meetings/2013-01/jan-29.md`
+- **4.2 SameValue for Map/Set equivalence?**  `raw/notes/meetings/2013-01/jan-29.md`
+- **4.3 Parameterize the equivalence operator for Map/Set?**  `raw/notes/meetings/2013-01/jan-29.md`
+- **6 Second Edition of ECMA-402 (Internationalization)**  `raw/notes/meetings/2013-01/jan-29.md`
+- **4.5 Why standardizing on `__proto__` and not `__define(G|S)etter__`, `__lookup(G|S)etter__`?**  `raw/notes/meetings/2013-01/jan-29.md`
+- **4.8 Refactored new operator and the @@create method**  `raw/notes/meetings/2013-01/jan-29.md`
+- **4.10 Data collection/analysis: Function-in-block, duplicate parameter names, const, strict mode, var let/let[x]=1, and maybe more**  `raw/notes/meetings/2013-01/jan-29.md`
+- **Function In Block Options**  `raw/notes/meetings/2013-01/jan-30.md`
+- **Static/Class Side Methods**  `raw/notes/meetings/2013-01/jan-30.md`
+- **Revising The Array Subclassing "Kind" Issue**  `raw/notes/meetings/2013-01/jan-30.md`
+- **4.7  Fail-fast destructuring with ?-syntax for irrefutable opt-in**  `raw/notes/meetings/2013-01/jan-30.md`
+- **4.11 Name Property of Functions**  `raw/notes/meetings/2013-01/jan-30.md`
+- **4.12 Typed Arrays Update**  `raw/notes/meetings/2013-01/jan-30.md`
+- **4.14 Module Update**  `raw/notes/meetings/2013-01/jan-31.md`
+- **New Scope of the Royalty-Free Task Group (TC39TG1)**  `raw/notes/meetings/2013-01/jan-31.md`
+- **Class extends: Throw on non-constructor?**  `raw/notes/meetings/2013-01/jan-31.md`
+- **Map/Set comparator**  `raw/notes/meetings/2013-01/jan-31.md`
+- **Comprehensions/Generator Syntax**  `raw/notes/meetings/2013-01/jan-31.md`
+
+## 2013-03
+
+- **Logistics**  `raw/notes/meetings/2013-03/mar-12.md`
+- **Adobe**  `raw/notes/meetings/2013-03/mar-12.md`
+- **4.9 JSON, IETF changes**  `raw/notes/meetings/2013-03/mar-12.md`
+- **4.12 StopIteration/Generator**  `raw/notes/meetings/2013-03/mar-12.md`
+- **4.2 Modules**  `raw/notes/meetings/2013-03/mar-12.md`
+- **4.14 Make new Date(dateObj)**  `raw/notes/meetings/2013-03/mar-13.md`
+- **4.4 Spec Update**  `raw/notes/meetings/2013-03/mar-13.md`
+- **4.5 Private Symbols, WeakMaps, and Relationships**  `raw/notes/meetings/2013-03/mar-13.md`
+- **4.3 Proxy**  `raw/notes/meetings/2013-03/mar-13.md`
+- **4.16 Current Status of ES6**  `raw/notes/meetings/2013-03/mar-13.md`
+- **4.7 Runtime costs of the override mistake**  `raw/notes/meetings/2013-03/mar-13.md`
+- **4.8 Object.observe Implementation Report**  `raw/notes/meetings/2013-03/mar-14.md`
+- **4.6 Symbols**  `raw/notes/meetings/2013-03/mar-14.md`
+- **4.17 Legacy Compatibility for Block Level Function Declarations**  `raw/notes/meetings/2013-03/mar-14.md`
+- **8.1 Comments from István, stated by John Neumann**  `raw/notes/meetings/2013-03/mar-14.md`
+- **4.10 Array Extras**  `raw/notes/meetings/2013-03/mar-14.md`
+- **4.15 Template Strings**  `raw/notes/meetings/2013-03/mar-14.md`
+
+## 2013-05
+
+- **4.1 Object.freeze**  `raw/notes/meetings/2013-05/may-21.md`
+- **4.2 WeakSet**  `raw/notes/meetings/2013-05/may-21.md`
+- **4.4 Proxies**  `raw/notes/meetings/2013-05/may-21.md`
+- **Proxy Invoke Trap and wrong |this|-binding on built-in methods**  `raw/notes/meetings/2013-05/may-21.md`
+- **4.11**  `raw/notes/meetings/2013-05/may-21.md`
+- **4.13 Endianness of Typed array**  `raw/notes/meetings/2013-05/may-21.md`
+- **4.18 __proto__**  `raw/notes/meetings/2013-05/may-21.md`
+- **Naming of @@iterator**  `raw/notes/meetings/2013-05/may-21.md`
+- **Generators and iterators**  `raw/notes/meetings/2013-05/may-21.md`
+- **4.16 Spec update**  `raw/notes/meetings/2013-05/may-22.md`
+- **4.9 Template Strings (Template Literals)**  `raw/notes/meetings/2013-05/may-22.md`
+- **JSON**  `raw/notes/meetings/2013-05/may-22.md`
+- **4.10 Modules**  `raw/notes/meetings/2013-05/may-22.md`
+- **Promises vs Monads**  `raw/notes/meetings/2013-05/may-23.md`
+- **ES6, ES7, ES8... Mark's Strawman Roadmap**  `raw/notes/meetings/2013-05/may-23.md`
+
+## 2013-07
+
+- **4.1 ES6 Status Report**  `raw/notes/meetings/2013-07/july-23.md`
+- **4.3 Array.prototype.values**  `raw/notes/meetings/2013-07/july-23.md`
+- **3 Approval of the minutes from May 2013 (2013/029)**  `raw/notes/meetings/2013-07/july-23.md`
+- **9 JSON**  `raw/notes/meetings/2013-07/july-23.md`
+- **4.2 Add fill and copySlice methods to Array.prototype and Typed Arrays**  `raw/notes/meetings/2013-07/july-23.md`
+- **4.4 Consider deferring ES6 Refutable Matching.**  `raw/notes/meetings/2013-07/july-23.md`
+- **x.x Review of Proposed Features**  `raw/notes/meetings/2013-07/july-23.md`
+- **4.7 Math**  `raw/notes/meetings/2013-07/july-23.md`
+- **4.8 Stable Array.prototype.sort**  `raw/notes/meetings/2013-07/july-23.md`
+- **4.9 Time zones 1: Bugs or spec issues?**  `raw/notes/meetings/2013-07/july-23.md`
+- **4.10 Time zones 2: Time zone as property**  `raw/notes/meetings/2013-07/july-23.md`
+- **Date/Timezone**  `raw/notes/meetings/2013-07/july-23.md`
+- **4.6 Binary Data Update**  `raw/notes/meetings/2013-07/july-24.md`
+- **9 JSON (Continued)**  `raw/notes/meetings/2013-07/july-24.md`
+- **Test262 Update**  `raw/notes/meetings/2013-07/july-24.md`
+- **5.2 Can computed properties name in object literals produce string prop names? Duplicates?**  `raw/notes/meetings/2013-07/july-24.md`
+- **5.3 Special syntax for `__proto__` in an object literal**  `raw/notes/meetings/2013-07/july-24.md`
+- **5.4 Are TypedArray insances born non-extensible?**  `raw/notes/meetings/2013-07/july-24.md`
+- **5.5 concat and typed arrays**  `raw/notes/meetings/2013-07/july-24.md`
+- **5.11 ToUint32(length) and Array.prototype methods**  `raw/notes/meetings/2013-07/july-24.md`
+- **5.14 keys(), entries() return numbers for array index properties**  `raw/notes/meetings/2013-07/july-24.md`
+- **5.7 Does Object.freeze need an extensibility hook?**  `raw/notes/meetings/2013-07/july-24.md`
+- **5.4 Typed Array MOP behaviours (Continued)**  `raw/notes/meetings/2013-07/july-24.md`
+- **5.6 Can let/const/class/function* in non-strict code bind "eval" and "arguments"**  `raw/notes/meetings/2013-07/july-25.md`
+- **5.9 Semantics and bounds of Number.isInteger and Number.MAX_INTEGER**  `raw/notes/meetings/2013-07/july-25.md`
+- **5.8 Number.prototype.clz or Math.clz?**  `raw/notes/meetings/2013-07/july-25.md`
+- **5.13 Which existing built-in properties that are read-only/non-configurable do we want to make read-only/configurable?**  `raw/notes/meetings/2013-07/july-25.md`
+- **TC39 + W3C**  `raw/notes/meetings/2013-07/july-25.md`
+- **5.1 Symbol primitive value or object? One more time.**  `raw/notes/meetings/2013-07/july-25.md`
+- **5.12 Should we remove [[Construct]] from the MOP and Proxy handler API?**  `raw/notes/meetings/2013-07/july-25.md`
+- **Anti-Pattern to call a constructor without new**  `raw/notes/meetings/2013-07/july-25.md`
+- **JSON**  `raw/notes/meetings/2013-07/july-25.md`
+- **6.2 Interfacing ECMAScript & HTML/DOM Event Loops**  `raw/notes/meetings/2013-07/july-25.md`
+- **Value Objects Update**  `raw/notes/meetings/2013-07/july-25.md`
+- **6.5 Parallel JavaScript (River Trail)**  `raw/notes/meetings/2013-07/july-25.md`
+- **RWS Proposal For Specification Process (for ES7 process)**  `raw/notes/meetings/2013-07/july-25.md`
+- **7 Internationalization**  `raw/notes/meetings/2013-07/july-25.md`
+- **Future Meetings**  `raw/notes/meetings/2013-07/july-25.md`
+
+## 2013-09
+
+- **11. Status Report 262**  `raw/notes/meetings/2013-09/sept-17.md`
+- **4.1 Arrow Functions**  `raw/notes/meetings/2013-09/sept-17.md`
+- **4.3 Math.hypot**  `raw/notes/meetings/2013-09/sept-17.md`
+- **4.7 JSON.stringify and unpaired surrogates**  `raw/notes/meetings/2013-09/sept-17.md`
+- **5.1 splice, cross-realm Arrays and subclassing**  `raw/notes/meetings/2013-09/sept-17.md`
+- **5.2 Evaluation Order and The [[Invoke]] Operation**  `raw/notes/meetings/2013-09/sept-17.md`
+- **5.3 @@unscopeable**  `raw/notes/meetings/2013-09/sept-17.md`
+- **5.5 Math.roundFloat32**  `raw/notes/meetings/2013-09/sept-17.md`
+- **5.6 Backwards compatability, Unicode UTR31, and ES identifiers (U2e2f)**  `raw/notes/meetings/2013-09/sept-17.md`
+- **5.7 note in 11.6 WRT Unicode versions, update to Unicode 5.1**  `raw/notes/meetings/2013-09/sept-17.md`
+- **5.8 line terminators in template strings. Should they be normalized?**  `raw/notes/meetings/2013-09/sept-17.md`
+- **5.9 12.2.4 note says we decided (Jan 2012) tail calls only in strict mode. Is this still correct?**  `raw/notes/meetings/2013-09/sept-17.md`
+- **5.11 Disallow? let undefined; const undefined; class undefined {}; module undefined from "foo";**  `raw/notes/meetings/2013-09/sept-17.md`
+- **4.2 Reconsider decision to make Typed Arrays non-extensible**  `raw/notes/meetings/2013-09/sept-17.md`
+- **4.2 Reconsider decision to make Typed Arrays non-extensible (Cont)**  `raw/notes/meetings/2013-09/sept-18.md`
+- **4.4 Symbols**  `raw/notes/meetings/2013-09/sept-18.md`
+- **6. Post ES6 Spec Process**  `raw/notes/meetings/2013-09/sept-18.md`
+- **5.10 Function parameter scoping and instantiation**  `raw/notes/meetings/2013-09/sept-18.md`
+- **4.5 Modules Update**  `raw/notes/meetings/2013-09/sept-18.md`
+- **4.6 Unbound variable checking**  `raw/notes/meetings/2013-09/sept-18.md`
+- **Module loading**  `raw/notes/meetings/2013-09/sept-18.md`
+- **Back to Static Checking**  `raw/notes/meetings/2013-09/sept-18.md`
+- **9. Promises**  `raw/notes/meetings/2013-09/sept-19.md`
+- **7. Object.observe status report.**  `raw/notes/meetings/2013-09/sept-19.md`
+- **Newly Added to Global Object**  `raw/notes/meetings/2013-09/sept-19.md`
+
+## 2013-11
+
+- **ES6 Status**  `raw/notes/meetings/2013-11/nov-19.md`
+- **4.4 Finalizing the Proxy API for ES6**  `raw/notes/meetings/2013-11/nov-19.md`
+- **ES6 Status (cont)**  `raw/notes/meetings/2013-11/nov-19.md`
+- **4.1 Review Latest Specification Draft**  `raw/notes/meetings/2013-11/nov-19.md`
+- **Class/optional yield arg ambiguity**  `raw/notes/meetings/2013-11/nov-19.md`
+- **Cross-Realm Symbol Registration**  `raw/notes/meetings/2013-11/nov-19.md`
+- **Introduce a Prototype object that contains sloppy arguments object @@iterator function?**  `raw/notes/meetings/2013-11/nov-19.md`
+- **Conventions for ignore over-ride of @@iterator**  `raw/notes/meetings/2013-11/nov-19.md`
+- **(function Foo() {}).bind(x).name?**  `raw/notes/meetings/2013-11/nov-19.md`
+- **9 ECMA-404 W3C TAG / TPAC report**  `raw/notes/meetings/2013-11/nov-19.md`
+- **4.9 Reconsidering Object.is**  `raw/notes/meetings/2013-11/nov-19.md`
+- **Report from the Ecma Secretariat (CC Report)**  `raw/notes/meetings/2013-11/nov-20.md`
+- **4.2 Clarification of the interaction of unicode escapes and identification syntax**  `raw/notes/meetings/2013-11/nov-20.md`
+- **Performance impact of Tail Calls**  `raw/notes/meetings/2013-11/nov-20.md`
+- **super and object literals**  `raw/notes/meetings/2013-11/nov-20.md`
+- **Reconsidering the Map custom comparator API**  `raw/notes/meetings/2013-11/nov-20.md`
+- **Math.hypot() and precision**  `raw/notes/meetings/2013-11/nov-20.md`
+- **4.10 Generator arrow function syntax**  `raw/notes/meetings/2013-11/nov-20.md`
+- **for-let**  `raw/notes/meetings/2013-11/nov-20.md`
+- **5 Post ES6 Spec Process.**  `raw/notes/meetings/2013-11/nov-20.md`
+- **Ordering of scheduling of microtasks**  `raw/notes/meetings/2013-11/nov-20.md`
+- **Follow Up on IETF JSON WG Communication document**  `raw/notes/meetings/2013-11/nov-21.md`
+- **4.5 Modules**  `raw/notes/meetings/2013-11/nov-21.md`
+- **4.6 The global scope contour**  `raw/notes/meetings/2013-11/nov-21.md`
+
+## 2014-01
+
+- **Aside on detecting Module vs. Script (see http://esdiscuss.org/topic/detecting-js-language-mode-for-tools)**  `raw/notes/meetings/2014-01/jan-28.md`
+- **Task and Tasks Queues**  `raw/notes/meetings/2014-01/jan-28.md`
+- **Process for ratifying ES6?**  `raw/notes/meetings/2014-01/jan-28.md`
+- **Concise methods and Enumerability**  `raw/notes/meetings/2014-01/jan-28.md`
+- **More on toMethod**  `raw/notes/meetings/2014-01/jan-28.md`
+- **Clz (count leading zeros)**  `raw/notes/meetings/2014-01/jan-28.md`
+- **Array.from**  `raw/notes/meetings/2014-01/jan-28.md`
+- **Test262**  `raw/notes/meetings/2014-01/jan-28.md`
+- **Yield and its precendence**  `raw/notes/meetings/2014-01/jan-28.md`
+- **Newborn generator behavior**  `raw/notes/meetings/2014-01/jan-28.md`
+- **ECMA-404 and IETF interactions**  `raw/notes/meetings/2014-01/jan-28.md`
+- **Function in Blocks in non strict mode.**  `raw/notes/meetings/2014-01/jan-29.md`
+- **Object.observe Status Report**  `raw/notes/meetings/2014-01/jan-29.md`
+- **Post ES6 process**  `raw/notes/meetings/2014-01/jan-29.md`
+- **Do Expression**  `raw/notes/meetings/2014-01/jan-29.md`
+- **Security Review for Loaders/Realms**  `raw/notes/meetings/2014-01/jan-29.md`
+- **Typed Objects**  `raw/notes/meetings/2014-01/jan-29.md`
+- **Value Objects**  `raw/notes/meetings/2014-01/jan-29.md`
+- **Parallel JavaScript**  `raw/notes/meetings/2014-01/jan-30.md`
+- **Structured Clone**  `raw/notes/meetings/2014-01/jan-30.md`
+- **defineGetter, defineSetter etc in Annex B?**  `raw/notes/meetings/2014-01/jan-30.md`
+- **Process document**  `raw/notes/meetings/2014-01/jan-30.md`
+- **Scheduling for next meeting**  `raw/notes/meetings/2014-01/jan-30.md`
+- **Async/await**  `raw/notes/meetings/2014-01/jan-30.md`
+- **Promises discussion**  `raw/notes/meetings/2014-01/jan-30.md`
+
+## 2014-04
+
+- **Process Discussion**  `raw/notes/meetings/2014-04/apr-10.md`
+- **4.10 Modules Feedback**  `raw/notes/meetings/2014-04/apr-10.md`
+- **Reviewer sign up**  `raw/notes/meetings/2014-04/apr-10.md`
+- **Revisiting: Initializer in for-in**  `raw/notes/meetings/2014-04/apr-10.md`
+- **Revisiting: Generator Issues**  `raw/notes/meetings/2014-04/apr-10.md`
+- **Decorators for ES7**  `raw/notes/meetings/2014-04/apr-10.md`
+- **Preview of asnyc/await**  `raw/notes/meetings/2014-04/apr-10.md`
+- **Minutes**  `raw/notes/meetings/2014-04/apr-8.md`
+- **4.1 Review Latest Spec Draft**  `raw/notes/meetings/2014-04/apr-8.md`
+- **Presentation by Samsung Representatives**  `raw/notes/meetings/2014-04/apr-8.md`
+- **[[SetPrototypeOf]] circularity invariant**  `raw/notes/meetings/2014-04/apr-8.md`
+- **Promise then issue**  `raw/notes/meetings/2014-04/apr-8.md`
+- **@@iterator for arguments object**  `raw/notes/meetings/2014-04/apr-8.md`
+- **Default parameters**  `raw/notes/meetings/2014-04/apr-8.md`
+- **Initializer in for-in**  `raw/notes/meetings/2014-04/apr-8.md`
+- **Function "as" Block**  `raw/notes/meetings/2014-04/apr-8.md`
+- **Name property of bound functions and toMethod functions**  `raw/notes/meetings/2014-04/apr-8.md`
+- **new %TypedArray%(iterable)**  `raw/notes/meetings/2014-04/apr-8.md`
+- **new %TypedArray%("2")**  `raw/notes/meetings/2014-04/apr-8.md`
+- **Map Constructor and Duplicate Keys**  `raw/notes/meetings/2014-04/apr-8.md`
+- **RF Status**  `raw/notes/meetings/2014-04/apr-9.md`
+- **RF/TG Item**  `raw/notes/meetings/2014-04/apr-9.md`
+- **Object.observe Update**  `raw/notes/meetings/2014-04/apr-9.md`
+- **Royalty Free Status**  `raw/notes/meetings/2014-04/apr-9.md`
+- **Parallel JS Spec Report**  `raw/notes/meetings/2014-04/apr-9.md`
+- **Signature of Array.from map callback**  `raw/notes/meetings/2014-04/apr-9.md`
+- **Bug 1571 RegExp Syntax**  `raw/notes/meetings/2014-04/apr-9.md`
+- **Change "EscapeSequence 0 [lookahead ∉ DecimalDigit]" to match reality**  `raw/notes/meetings/2014-04/apr-9.md`
+- **Implementation Dependencies in String.prototype.replace**  `raw/notes/meetings/2014-04/apr-9.md`
+- **RegExp toString escaping not fully specified**  `raw/notes/meetings/2014-04/apr-9.md`
+- **Allen's TODO Summary**  `raw/notes/meetings/2014-04/apr-9.md`
+- **ES7 Process, New Proposal Home**  `raw/notes/meetings/2014-04/apr-9.md`
+- **4.4 Object.getOwnPropertyDescriptors**  `raw/notes/meetings/2014-04/apr-9.md`
+- **4.5 Array.prototype.contains**  `raw/notes/meetings/2014-04/apr-9.md`
+- **4.6 Updates to parseInt**  `raw/notes/meetings/2014-04/apr-9.md`
+- **4.3, Update Object.assign to accept multiple sources**  `raw/notes/meetings/2014-04/apr-9.md`
+- **5.1 Object.entries, Object.values**  `raw/notes/meetings/2014-04/apr-9.md`
+- **Test262 Update**  `raw/notes/meetings/2014-04/apr-9.md`
+- **Async Functions Question**  `raw/notes/meetings/2014-04/apr-9.md`
+
+## 2014-06
+
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Scheduling of TC39 meeting**  `raw/notes/meetings/2014-06/jun-4.md`
+- **4.2 Schedule Review**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Update on changes to spec since last meeting**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **4.3 `arguments` and `caller` poisoning & static class methods of same name**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution:**  `raw/notes/meetings/2014-06/jun-4.md`
+- **4.4 `return` on generator/iterator types**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **4.6 Reserving additional words (`yield`, `async`, and `await` in particular)**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **4.7 Removal of Realms API from ES6 (postponement to ES7)**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **4.8 ArrayBuffer neutering**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **6 Test-262 Status**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Object.observe status**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **IO Streams**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Web APIs that could move to ES(7+)**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-4.md`
+- **Current Open Issues**  `raw/notes/meetings/2014-06/jun-5-modules.md`
+- **Discussion**  `raw/notes/meetings/2014-06/jun-5-modules.md`
+- **Tasks**  `raw/notes/meetings/2014-06/jun-5-modules.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-5.md`
+- **JSDoc*, JSIDL*, Code Editors**  `raw/notes/meetings/2014-06/jun-5.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-5.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-5.md`
+- **Generator comprehensions (slides plz)**  `raw/notes/meetings/2014-06/jun-5.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-5.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-5.md`
+- **7.3 HTML Imports**  `raw/notes/meetings/2014-06/jun-5.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-5.md`
+- **7.2 Event loop**  `raw/notes/meetings/2014-06/jun-5.md`
+- **Conclusion/Resolution:**  `raw/notes/meetings/2014-06/jun-5.md`
+- **Two or Three-day TC39 meetings in the future?**  `raw/notes/meetings/2014-06/jun-5.md`
+- **Modules breakout session:**  `raw/notes/meetings/2014-06/jun-5.md`
+- **Follow up on deferring comprehensions**  `raw/notes/meetings/2014-06/jun-6.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-6.md`
+- **Block scoping issues**  `raw/notes/meetings/2014-06/jun-6.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-6.md`
+- **Initializer in for-in**  `raw/notes/meetings/2014-06/jun-6.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-6.md`
+- **Rest properties and spread properties (Sebastian Markbåge)**  `raw/notes/meetings/2014-06/jun-6.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-6.md`
+- **Async Generator Functions (Jafar presenting)**  `raw/notes/meetings/2014-06/jun-6.md`
+- **Conclusion/Resolution**  `raw/notes/meetings/2014-06/jun-6.md`
+
+## 2014-07
+
+- **4.1 Review Latest Draft**  `raw/notes/meetings/2014-07/jul-29.md`
+- **4.6 Unscopables**  `raw/notes/meetings/2014-07/jul-29.md`
+- **4.8 Consider if Object.assign should silently ignore null/undefined sources**  `raw/notes/meetings/2014-07/jul-29.md`
+- **Short discussion about making generator.return() throw a special exception.**  `raw/notes/meetings/2014-07/jul-29.md`
+- **Yield ***  `raw/notes/meetings/2014-07/jul-29.md`
+- **4.11 Consider adding "attribute event handlers" to ANNEX B**  `raw/notes/meetings/2014-07/jul-29.md`
+- **4.9 Arguments/caller poisoning on new syntactic forms - Arrows, Generators**  `raw/notes/meetings/2014-07/jul-29.md`
+- **4.10 Signaling stability of existing features**  `raw/notes/meetings/2014-07/jul-29.md`
+- **Postpone Realm API to ES7**  `raw/notes/meetings/2014-07/jul-29.md`
+- **Revisit Object.assign()**  `raw/notes/meetings/2014-07/jul-29.md`
+- **Test262 Update**  `raw/notes/meetings/2014-07/jul-29.md`
+- **RFTG Admin: ES6 Opt-out period.**  `raw/notes/meetings/2014-07/jul-30.md`
+- **4.4 Instantiation Reform (Review @@create design rationale and possible alternatives)**  `raw/notes/meetings/2014-07/jul-30.md`
+- **5.2 SIMD.JS**  `raw/notes/meetings/2014-07/jul-30.md`
+- **4.3 Function parameter/let declaration name conflict rules**  `raw/notes/meetings/2014-07/jul-30.md`
+- **4.7 Revisit Comprehension decision from last meeting.**  `raw/notes/meetings/2014-07/jul-30.md`
+- **4.12 Revisit spread and destructuring of string**  `raw/notes/meetings/2014-07/jul-30.md`
+- **4.5 Import-into-namespace syntax (Dave)**  `raw/notes/meetings/2014-07/jul-30.md`
+- **Notes from secretariat**  `raw/notes/meetings/2014-07/jul-31.md`
+- **9.1-8 Date and place of the next meeting(s)**  `raw/notes/meetings/2014-07/jul-31.md`
+- **4.4 Follow up: Instantiation Reform (@@create)**  `raw/notes/meetings/2014-07/jul-31.md`
+- **ES7 Items?**  `raw/notes/meetings/2014-07/jul-31.md`
+- **5.7 Array.prototype.contains**  `raw/notes/meetings/2014-07/jul-31.md`
+- **5.1 Math.TAU**  `raw/notes/meetings/2014-07/jul-31.md`
+- **Exponentiation Operator**  `raw/notes/meetings/2014-07/jul-31.md`
+- **Precision of Math trig functions**  `raw/notes/meetings/2014-07/jul-31.md`
+
+## 2014-09
+
+- **4.1 Spec status report**  `raw/notes/meetings/2014-09/sept-23.md`
+- **4.3 Legacy Decimal Integer Literals starting with 0 and containing 8 or 9.**  `raw/notes/meetings/2014-09/sept-23.md`
+- **4.4 Number('0b0101'). NaN or not?**  `raw/notes/meetings/2014-09/sept-23.md`
+- **4.5 More Function-in-Block**  `raw/notes/meetings/2014-09/sept-23.md`
+- **Intro to Matt Miller from IETF (Liaison manager)**  `raw/notes/meetings/2014-09/sept-23.md`
+- **Revisiting 16.1, Forbidden Extensions**  `raw/notes/meetings/2014-09/sept-23.md`
+- **Somehow we started talking about Test262**  `raw/notes/meetings/2014-09/sept-23.md`
+- **Test262 Update**  `raw/notes/meetings/2014-09/sept-23.md`
+- **5.1 Trailing Commas in Function Call Expressions and Declarations**  `raw/notes/meetings/2014-09/sept-23.md`
+- **?.? Process**  `raw/notes/meetings/2014-09/sept-23.md`
+- **5.2 Flush denorm to zero**  `raw/notes/meetings/2014-09/sept-23.md`
+- **5.3 ArrayBuffer.transfer**  `raw/notes/meetings/2014-09/sept-23.md`
+- **5.6 NoSuchProperty built-in proxy**  `raw/notes/meetings/2014-09/sept-23.md`
+- **5.8 Exponentiation Operator Update**  `raw/notes/meetings/2014-09/sept-23.md`
+- **5.5 Math.iaddh, etc. polyfillable 64-bit int helpers**  `raw/notes/meetings/2014-09/sept-23.md`
+- **Object Instantiation Redo**  `raw/notes/meetings/2014-09/sept-24.md`
+- **5.1 Trailing Commas in Function Call Expressions and Declarations**  `raw/notes/meetings/2014-09/sept-24.md`
+- **RegExp Globals**  `raw/notes/meetings/2014-09/sept-24.md`
+- **5.8 Object Rest Destructuring and Spread Properties**  `raw/notes/meetings/2014-09/sept-25.md`
+- **Loader pipeline**  `raw/notes/meetings/2014-09/sept-25.md`
+- **Train Schedule**  `raw/notes/meetings/2014-09/sept-25.md`
+- **Types**  `raw/notes/meetings/2014-09/sept-25.md`
+- **5.10 global.asap for enqueuing a microtask**  `raw/notes/meetings/2014-09/sept-25.md`
+
+## 2014-11
+
+- **4.2 End Game Planning**  `raw/notes/meetings/2014-11/nov-18.md`
+- **4.3 Assignment to a const: static error?**  `raw/notes/meetings/2014-11/nov-18.md`
+- **4.4 Array.prototype.contains breaks MooTools**  `raw/notes/meetings/2014-11/nov-18.md`
+- **4.5 Global let shadowing of global object properties**  `raw/notes/meetings/2014-11/nov-18.md`
+- **4.6 Zepto broken by new this.construct usage in some Array.prototype methods**  `raw/notes/meetings/2014-11/nov-18.md`
+- **5.1 & 4.4 Array.prototype.contains and String.prototype.contains**  `raw/notes/meetings/2014-11/nov-18.md`
+- **4.8 Template literal call site object caching.**  `raw/notes/meetings/2014-11/nov-18.md`
+- **What is the `this` binding at the top of a module?**  `raw/notes/meetings/2014-11/nov-18.md`
+- **4.9 Array.isArray(new Proxy([], {}))**  `raw/notes/meetings/2014-11/nov-18.md`
+- **4.10 RegExp subclassing fixes**  `raw/notes/meetings/2014-11/nov-18.md`
+- **4.13 Add async as FutureReservedWord**  `raw/notes/meetings/2014-11/nov-18.md`
+- **4.11 Performance issue: `Object.defineProperties`, `Object.create`, `Object.assign`.**  `raw/notes/meetings/2014-11/nov-18.md`
+- **6. Test262 Status**  `raw/notes/meetings/2014-11/nov-19.md`
+- **4.11 Performance issue: `Object.defineProperties`, `Object.create`, `Object.assign`.**  `raw/notes/meetings/2014-11/nov-19.md`
+- **4.12 Should WeakMap/WeakSet have a .clear method? (MarkM)**  `raw/notes/meetings/2014-11/nov-19.md`
+- **4.7 Clarify the syntax reserved?**  `raw/notes/meetings/2014-11/nov-19.md`
+- **5.8 Map.prototype.map and Map.prototype.filter (spec) + Set**  `raw/notes/meetings/2014-11/nov-19.md`
+- **5.9 Revisit Set API (possible exclusion of entries and keys)**  `raw/notes/meetings/2014-11/nov-19.md`
+- **Abstract references as a solution to LTR composition and private state**  `raw/notes/meetings/2014-11/nov-19.md`
+- **5.7 Can security monitors reliably detect monkey-patching of primordials?**  `raw/notes/meetings/2014-11/nov-19.md`
+- **5.2 Pure Functions**  `raw/notes/meetings/2014-11/nov-19.md`
+- **5.5 Array.prototype.includes() proposal to move to Stage 2.** — stage: 2  `raw/notes/meetings/2014-11/nov-20.md`
+- **5.6 Object.observe: proposal to move to Stage 3.** — stage: 3  `raw/notes/meetings/2014-11/nov-20.md`
+- **Break out sesssions**  `raw/notes/meetings/2014-11/nov-20.md`
+- **5.4 I/O Streams as part of the ES standard library**  `raw/notes/meetings/2014-11/nov-20.md`
+- **Async Generators**  `raw/notes/meetings/2014-11/nov-20.md`
+
+## 2015-01
+
+- **4.1 ES6 End-game schedule review**  `raw/notes/meetings/2015-01/jan-27.md`
+- **4.3 ES6 draft status report**  `raw/notes/meetings/2015-01/jan-27.md`
+- **4.4 Subclass instantiation reformation: status and open issues**  `raw/notes/meetings/2015-01/jan-27.md`
+- **super() outside class constructor body**  `raw/notes/meetings/2015-01/jan-27.md`
+- **Methods in class bodies enumerability?**  `raw/notes/meetings/2015-01/jan-27.md`
+- **Report from the Ecma Secretariat**  `raw/notes/meetings/2015-01/jan-28.md`
+- **ES6: Generator issues**  `raw/notes/meetings/2015-01/jan-28.md`
+- **4.5 @@toStringTag**  `raw/notes/meetings/2015-01/jan-28.md`
+- **Super revisited**  `raw/notes/meetings/2015-01/jan-28.md`
+- **Experimental new directions for JavaScript at Google**  `raw/notes/meetings/2015-01/jan-28.md`
+- **6.3 Decorators**  `raw/notes/meetings/2015-01/jan-28.md`
+- **ES6 Introduction text**  `raw/notes/meetings/2015-01/jan-29.md`
+- **List of contributors?**  `raw/notes/meetings/2015-01/jan-29.md`
+- **March meeting**  `raw/notes/meetings/2015-01/jan-29.md`
+- **const in sloppy mode**  `raw/notes/meetings/2015-01/jan-29.md`
+- **Object.observe**  `raw/notes/meetings/2015-01/jan-29.md`
+- **ecmarkup**  `raw/notes/meetings/2015-01/jan-29.md`
+- **Interfacing with the Loader Spec**  `raw/notes/meetings/2015-01/jan-29.md`
+
+## 2015-03
+
+- **4 ECMA-262 6th Edition**  `raw/notes/meetings/2015-03/mar-24.md`
+- **Module Namespace Exotic Objects**  `raw/notes/meetings/2015-03/mar-24.md`
+- **Function Name Issue**  `raw/notes/meetings/2015-03/mar-24.md`
+- **Let's Ship This Thing**  `raw/notes/meetings/2015-03/mar-24.md`
+- **What to do with compact profile (ECMA-327) and E4X (ECMA-357)**  `raw/notes/meetings/2015-03/mar-24.md`
+- **ECMA-404 RF?**  `raw/notes/meetings/2015-03/mar-24.md`
+- **Fast track ECMA-404**  `raw/notes/meetings/2015-03/mar-24.md`
+- **6.1 ES6 Class Properties**  `raw/notes/meetings/2015-03/mar-24.md`
+- **6.2 Decorators**  `raw/notes/meetings/2015-03/mar-24.md`
+- **6.3 ReverseIterable interface**  `raw/notes/meetings/2015-03/mar-24.md`
+- **6(iv) A Declarative Alternative to toMethod (Allen Wirfs-Brock)**  `raw/notes/meetings/2015-03/mar-25.md`
+- **6(v) Additional Meta-Properties in ES7 (Allen Wirfs-Brock)**  `raw/notes/meetings/2015-03/mar-25.md`
+- **Initial Value Passed to first call of a Generator next function**  `raw/notes/meetings/2015-03/mar-25.md`
+- **Report on 402**  `raw/notes/meetings/2015-03/mar-25.md`
+- **6(vi) Function Bind and Private Fields Redux (Kevin Smith)**  `raw/notes/meetings/2015-03/mar-25.md`
+- **Part 2 of KS presentation: Private Fields**  `raw/notes/meetings/2015-03/mar-25.md`
+- **Private state continued**  `raw/notes/meetings/2015-03/mar-26.md`
+- **Immutable Records, Tuples, Maps and Sets**  `raw/notes/meetings/2015-03/mar-26.md`
+- **Composition Functions**  `raw/notes/meetings/2015-03/mar-26.md`
+- **Additional export __ from statements**  `raw/notes/meetings/2015-03/mar-26.md`
+- **64-bit math**  `raw/notes/meetings/2015-03/mar-26.md`
+
+## 2015-05
+
+- **Approve minutes from previous meeting**  `raw/notes/meetings/2015-05/may-27.md`
+- **ES6 Updates (AWB presenting)**  `raw/notes/meetings/2015-05/may-27.md`
+- **Module export-from additions (LB presenting)**  `raw/notes/meetings/2015-05/may-27.md`
+- **SIMD.js Stage 2 (PJ, JM presenting)** — stage: 2  `raw/notes/meetings/2015-05/may-27.md`
+- **Generator function.next Meta Property (AWB presenting)**  `raw/notes/meetings/2015-05/may-27.md`
+- **Test262 Update (BT presenting)**  `raw/notes/meetings/2015-05/may-27.md`
+- **ECMA Update (István)**  `raw/notes/meetings/2015-05/may-28.md`
+- **Function.prototype.toString revision (Michael Ficarra presenting)**  `raw/notes/meetings/2015-05/may-28.md`
+- **Decorators (Yehuda Katz, Jonathan Turner) (Need slides)**  `raw/notes/meetings/2015-05/may-28.md`
+- **Relaxed semantics for Promise.resolve nominal check (MM)**  `raw/notes/meetings/2015-05/may-29.md`
+- **Fresh realms breakout ##**  `raw/notes/meetings/2015-05/may-29.md`
+- **async await extensibility**  `raw/notes/meetings/2015-05/may-29.md`
+
+## 2015-07
+
+- **Report from Ecma Secretariat**  `raw/notes/meetings/2015-07/july-28.md`
+- **4.i Status of ISO/IEC Fast Track of ECMA-262 Ed.6, ECMA-402 Ed.2 and ECMA-404**  `raw/notes/meetings/2015-07/july-28.md`
+- **Propose Life Membership for Allen Wirfs-Brock**  `raw/notes/meetings/2015-07/july-28.md`
+- **5 ECMA-262, Editorship**  `raw/notes/meetings/2015-07/july-28.md`
+- **Discussion of the Manager Role**  `raw/notes/meetings/2015-07/july-28.md`
+- **Exponentiation Operator**  `raw/notes/meetings/2015-07/july-28.md`
+- **6.2 RegExp.escape**  `raw/notes/meetings/2015-07/july-28.md`
+- **6.i Advance Array.prototype.includes to stage 3** — stage: 3  `raw/notes/meetings/2015-07/july-28.md`
+- **Introduce promise rejection tracking proposal**  `raw/notes/meetings/2015-07/july-28.md`
+- **9 Tooling Updates**  `raw/notes/meetings/2015-07/july-28.md`
+- **6.6 BindingRestElement should allow a BindingPattern ala AssignmentRestElement**  `raw/notes/meetings/2015-07/july-28.md`
+- **6.7 new & GeneratorFunction**  `raw/notes/meetings/2015-07/july-28.md`
+- **6.12 String.prototype.split, its limit argument, and ToLength vs ToUint32**  `raw/notes/meetings/2015-07/july-28.md`
+- **6.11 The scope of "use strict" with respect to destructuring in parameter lists**  `raw/notes/meetings/2015-07/july-29.md`
+- **6.9 Reconsidering the Number.prototype-as-an-ordinary-object change**  `raw/notes/meetings/2015-07/july-29.md`
+- **6.12 Spec defacto String.prototype.trimLeft/trimRight**  `raw/notes/meetings/2015-07/july-29.md`
+- **REVISIT: 6.11 The scope of "use strict" with respect to destructuring in parameter lists**  `raw/notes/meetings/2015-07/july-29.md`
+- **REVISIT: 6.7 new & GeneratorFunction**  `raw/notes/meetings/2015-07/july-29.md`
+- **Process Document discussion (to settle things once and for all)**  `raw/notes/meetings/2015-07/july-29.md`
+- **What is an "implementation"?**  `raw/notes/meetings/2015-07/july-29.md`
+- **6.8 SIMD.js: Start the process to move towards Stage 3** — stage: 3  `raw/notes/meetings/2015-07/july-29.md`
+- **7 Test262 Updates**  `raw/notes/meetings/2015-07/july-30.md`
+- **Meeting Schedule**  `raw/notes/meetings/2015-07/july-30.md`
+- **6.4 Advance Async Functions to Stage 2** — stage: 2  `raw/notes/meetings/2015-07/july-30.md`
+- **6.5 Proposed Changes to Observable API**  `raw/notes/meetings/2015-07/july-30.md`
+- **6.13 Advance Rest/Spread Properties to Stage 2** — stage: 2  `raw/notes/meetings/2015-07/july-30.md`
+
+## 2015-09
+
+- **Secretariat Report**  `raw/notes/meetings/2015-09/sept-22.md`
+- **5.1 Shared memory and atomics**  `raw/notes/meetings/2015-09/sept-22.md`
+- **5.2 SIMD.js Stage 3 proposal** — stage: 3  `raw/notes/meetings/2015-09/sept-22.md`
+- **10 Tooling Update**  `raw/notes/meetings/2015-09/sept-22.md`
+- **5.4 Updates on class-properties proposal**  `raw/notes/meetings/2015-09/sept-22.md`
+- **5.5 Decorators Update**  `raw/notes/meetings/2015-09/sept-23.md`
+- **5.3 Async Functions**  `raw/notes/meetings/2015-09/sept-23.md`
+- **ECMA-402 Update**  `raw/notes/meetings/2015-09/sept-23.md`
+- **5.10 Proposal: String#padLeft / String#padRight**  `raw/notes/meetings/2015-09/sept-23.md`
+- **5.11 Proposal: Object.values / Object.entries**  `raw/notes/meetings/2015-09/sept-23.md`
+- **5.12 Proposal: String#matchAll**  `raw/notes/meetings/2015-09/sept-23.md`
+- **5.9 Trailing commas in function parameter lists**  `raw/notes/meetings/2015-09/sept-23.md`
+- **Process Discussion**  `raw/notes/meetings/2015-09/sept-23.md`
+- **Exponentiation Operator**  `raw/notes/meetings/2015-09/sept-24.md`
+- **8. Test262 Update**  `raw/notes/meetings/2015-09/sept-24.md`
+- **5.6 Proposal: call constructor**  `raw/notes/meetings/2015-09/sept-24.md`
+- **Secretariat**  `raw/notes/meetings/2015-09/sept-24.md`
+- **Meeting Schedule**  `raw/notes/meetings/2015-09/sept-24.md`
+- **5.13 Updates on rest properties proposal**  `raw/notes/meetings/2015-09/sept-24.md`
+- **6. Updates on Loader**  `raw/notes/meetings/2015-09/sept-24.md`
+
+## 2015-11
+
+- **Async functions (Stage 4 Process Discussion) (BT)** — stage: 4  `raw/notes/meetings/2015-11/nov-17.md`
+- **Object.values/entries**  `raw/notes/meetings/2015-11/nov-17.md`
+- **String.pad{Left,Right}**  `raw/notes/meetings/2015-11/nov-17.md`
+- **Array.prototype.includes**  `raw/notes/meetings/2015-11/nov-17.md`
+- **function.sent**  `raw/notes/meetings/2015-11/nov-17.md`
+- **Object.observe update**  `raw/notes/meetings/2015-11/nov-17.md`
+- **Should destructuring declarations without bindings throw?**  `raw/notes/meetings/2015-11/nov-17.md`
+- **legacy function hoisting semantics in sloppy mode (DE)**  `raw/notes/meetings/2015-11/nov-17.md`
+- **RegExp simplication semantics (DE)**  `raw/notes/meetings/2015-11/nov-17.md`
+- **Remove generator `.return`? (DE)**  `raw/notes/meetings/2015-11/nov-17.md`
+- **RegExp Buffet**  `raw/notes/meetings/2015-11/nov-17.md`
+- **RegExp Buffet**  `raw/notes/meetings/2015-11/nov-18.md`
+- **Unicode++ - Syntax & Semantics (BT)**  `raw/notes/meetings/2015-11/nov-18.md`
+- **AWB: Summarizes some OO Concepts**  `raw/notes/meetings/2015-11/nov-18.md`
+- **Improving consistency of @@species**  `raw/notes/meetings/2015-11/nov-18.md`
+- **Promise Rejection Hooks**  `raw/notes/meetings/2015-11/nov-18.md`
+- **Proposal Repos, and where they live + editor update**  `raw/notes/meetings/2015-11/nov-18.md`
+- **Trailing commas in function parameter lists**  `raw/notes/meetings/2015-11/nov-18.md`
+- **Proxy [[Enumerate]] ocerconstrains implementations (AK)**  `raw/notes/meetings/2015-11/nov-18.md`
+- **Function.sent (BT)**  `raw/notes/meetings/2015-11/nov-18.md`
+- **Observables (JH)**  `raw/notes/meetings/2015-11/nov-19.md`
+- **INTL**  `raw/notes/meetings/2015-11/nov-19.md`
+- **Abstract Locale Operations**  `raw/notes/meetings/2015-11/nov-19.md`
+
+## 2016-01
+
+- **5. Proposals for Future Editions**  `raw/notes/meetings/2016-01/jan-26.md`
+- **5.i Zones**  `raw/notes/meetings/2016-01/jan-26.md`
+- **5.iii Shared memory and Atomics (proposal)**  `raw/notes/meetings/2016-01/jan-26.md`
+- **Weak References**  `raw/notes/meetings/2016-01/jan-26.md`
+- **5.viii Async Generators**  `raw/notes/meetings/2016-01/jan-26.md`
+- **5.xiv Object.values Object.entries**  `raw/notes/meetings/2016-01/jan-26.md`
+- **`String#padStart`/`padEnd` (JHD)**  `raw/notes/meetings/2016-01/jan-26.md`
+- **Unicode fix: https://github.com/tc39/ecma262/pull/300 (DE)**  `raw/notes/meetings/2016-01/jan-26.md`
+- **Object.getOwnPropertyDescriptors proposal email (JHD)**  `raw/notes/meetings/2016-01/jan-26.md`
+- **Object.getOwnPropertyDescriptors object: null or Object.prototype as [[Prototype]]?**  `raw/notes/meetings/2016-01/jan-26.md`
+- **5.xi Daniel, presenting SIMD changes since December**  `raw/notes/meetings/2016-01/jan-26.md`
+- **FastTrack**  `raw/notes/meetings/2016-01/jan-27.md`
+- **ECMA-262/402 2016 End-Game**  `raw/notes/meetings/2016-01/jan-27.md`
+- **Ecma archiving and web hosting issues: Github, wiki.ecmascript.org, etc.**  `raw/notes/meetings/2016-01/jan-27.md`
+- **TC39 Invited Experts Fund - Proposal** — stage: 0  `raw/notes/meetings/2016-01/jan-27.md`
+  - AWB + MM + YK will break out.
+- **quick interjection: method param decorators, function expression decorators (YK, MH)**  `raw/notes/meetings/2016-01/jan-27.md`
+- **Function#toString && Function#isPortable (MF)**  `raw/notes/meetings/2016-01/jan-27.md`
+- **Function#toString && Function#isPortable (MF)**  `raw/notes/meetings/2016-01/jan-28.md`
+- **larse**  `raw/notes/meetings/2016-01/jan-28.md`
+- **5.xix Proxy Enumerate - revisit decision to exhaust iterator**  `raw/notes/meetings/2016-01/jan-28.md`
+- **5.xviii Exponentiation Operator (RW)**  `raw/notes/meetings/2016-01/jan-28.md`
+- **Afternoon Agenda**  `raw/notes/meetings/2016-01/jan-28.md`
+- **402 needs reviewers (20min)**  `raw/notes/meetings/2016-01/jan-28.md`
+- **5.xix (Revisit) Proxy Enumerate - revisit decision to exhaust iterator**  `raw/notes/meetings/2016-01/jan-28.md`
+- **8 Ecma 402, Edition 3, Advance stage 2** — stage: 2  `raw/notes/meetings/2016-01/jan-28.md`
+- **formatToParts**  `raw/notes/meetings/2016-01/jan-28.md`
+- **Intl.PluralRules**  `raw/notes/meetings/2016-01/jan-28.md`
+- **Abstract Locale Operations**  `raw/notes/meetings/2016-01/jan-28.md`
+- **Intl Formatter preview**  `raw/notes/meetings/2016-01/jan-28.md`
+- **Async generator functions**  `raw/notes/meetings/2016-01/jan-28.md`
+- **Strong Mode Discussion**  `raw/notes/meetings/2016-01/jan-28.md`
+- **Test262 Updates**  `raw/notes/meetings/2016-01/jan-28.md`
+- **Progress review: Callable class constructors (Allen)**  `raw/notes/meetings/2016-01/jan-28.md`
+
+## 2016-03
+
+- **Dial-in**  `raw/notes/meetings/2016-03/march-29.md`
+- **Approving minutes from last meeting**  `raw/notes/meetings/2016-03/march-29.md`
+- **Object.values & Object.entries**  `raw/notes/meetings/2016-03/march-29.md`
+- **System.global**  `raw/notes/meetings/2016-03/march-29.md`
+- **String.prototype.padStart/padEnd**  `raw/notes/meetings/2016-03/march-29.md`
+- **Object.getOwnPropertyDescriptors**  `raw/notes/meetings/2016-03/march-29.md`
+- **Error.isError**  `raw/notes/meetings/2016-03/march-29.md`
+- **Zones update**  `raw/notes/meetings/2016-03/march-29.md`
+- **Function.prototype.toString()**  `raw/notes/meetings/2016-03/march-29.md`
+- **Reference type and the implementation reality**  `raw/notes/meetings/2016-03/march-29.md`
+- **Async Iteration**  `raw/notes/meetings/2016-03/march-29.md`
+- **Shared Memory and atomics**  `raw/notes/meetings/2016-03/march-29.md`
+- **Aynsc Functions**  `raw/notes/meetings/2016-03/march-29.md`
+- **TCO**  `raw/notes/meetings/2016-03/march-29.md`
+- **Length argument normalization for TypedArrays, ArrayBuffer and DataView constructors**  `raw/notes/meetings/2016-03/march-30.md`
+- **Duplicate sloppy mode function in block web compatibility fix**  `raw/notes/meetings/2016-03/march-30.md`
+- **Make RegExps more consistent in their treatment of flags**  `raw/notes/meetings/2016-03/march-30.md`
+- **RegExp feature testing and web compat**  `raw/notes/meetings/2016-03/march-30.md`
+- **Private fields**  `raw/notes/meetings/2016-03/march-30.md`
+- **Revisiting Function.prototype.toString**  `raw/notes/meetings/2016-03/march-30.md`
+- **Map/Set to JSON**  `raw/notes/meetings/2016-03/march-30.md`
+- **Draft Proposed Frozen Realm API**  `raw/notes/meetings/2016-03/march-30.md`
+- **Final Draft Standards Approval**  `raw/notes/meetings/2016-03/march-31.md`
+- **Tail Calls**  `raw/notes/meetings/2016-03/march-31.md`
+- **Reference type and implementation reality (double-evaluation of computed property expression)**  `raw/notes/meetings/2016-03/march-31.md`
+- **Intl**  `raw/notes/meetings/2016-03/march-31.md`
+- **Public class fields**  `raw/notes/meetings/2016-03/march-31.md`
+- **Weak References**  `raw/notes/meetings/2016-03/march-31.md`
+- **Template Literals Are Broken**  `raw/notes/meetings/2016-03/march-31.md`
+- **Map.prototype.toJSON/Set.prototype.toJSON**  `raw/notes/meetings/2016-03/march-31.md`
+- **Aggregated FOSS parser pass-fail and equivalence tests**  `raw/notes/meetings/2016-03/march-31.md`
+
+## 2016-05
+
+- **Discussion of the agenda and timing**  `raw/notes/meetings/2016-05/may-23.md`
+- **Class Evaluation Order**  `raw/notes/meetings/2016-05/may-23.md`
+- **Updates from István**  `raw/notes/meetings/2016-05/may-23.md`
+- **[Standardize a RangeError for call stack overflow](https://github.com/tc39/ecma262/pull/319)**  `raw/notes/meetings/2016-05/may-23.md`
+- **[\w and \W semantics in case-insensitive Unicode RegExps](https://github.com/tc39/ecma262/pull/525)**  `raw/notes/meetings/2016-05/may-23.md`
+- **[Function names](https://github.com/tc39/ecma262/pull/575)**  `raw/notes/meetings/2016-05/may-23.md`
+- **[TypedArray/ArrayBuffer/DataView constructor changes](https://github.com/tc39/ecma262/pull/410)**  `raw/notes/meetings/2016-05/may-23.md`
+- **[Revisiting "Duplicate Function Declarations in Blocks"](https://github.com/tc39/ecma262/pull/453) (DE, SG)**  `raw/notes/meetings/2016-05/may-23.md`
+- **[Throwing an error for returning primitives from base class constructors](https://github.com/tc39/ecma262/pull/469)**  `raw/notes/meetings/2016-05/may-23.md`
+- **[Always update object properties if property descriptor is applicable (NaN issue)](https://github.com/tc39/ecma262/pull/353)**  `raw/notes/meetings/2016-05/may-23.md`
+- **Attendee Update**  `raw/notes/meetings/2016-05/may-24.md`
+- **[Always update object properties if property descriptor is applicable (NaN issue)](https://github.com/tc39/ecma262/pull/353) (DE)**  `raw/notes/meetings/2016-05/may-24.md`
+- **Syntactic Tail Calls (BT)**  `raw/notes/meetings/2016-05/may-24.md`
+- **[Decorators](https://github.com/tc39/proposal-decorators) (YK, BT)**  `raw/notes/meetings/2016-05/may-25.md`
+- **Private Fields (KS)**  `raw/notes/meetings/2016-05/may-25.md`
+- **JSExplain (AS & TW)**  `raw/notes/meetings/2016-05/may-25.md`
+- **String.prototype.pad{Start,End} (JHD)**  `raw/notes/meetings/2016-05/may-25.md`
+- **Object.getOwnPropertyDescriptors (JHD)**  `raw/notes/meetings/2016-05/may-25.md`
+- **Template Literals (http://slides.com/disnet/template-literal-problems-7) (TD)**  `raw/notes/meetings/2016-05/may-25.md`
+- **Observables (JH)**  `raw/notes/meetings/2016-05/may-25.md`
+- **[Cancelable Promises](https://docs.google.com/presentation/d/1V4vmC54gJkwAss1nfEt9ywc-QOVOfleRxD5qtpMpc8U/edit?usp=sharing) (DD)**  `raw/notes/meetings/2016-05/may-25.md`
+- **[Definitive decision for Test262 python runner](https://github.com/tc39/test262/issues/647) (Mike Pennisi)**  `raw/notes/meetings/2016-05/may-25.md`
+
+## 2016-07
+
+- **3 Agenda Adoption**  `raw/notes/meetings/2016-07/jul-26.md`
+- **4 May Minutes Approval**  `raw/notes/meetings/2016-07/jul-26.md`
+- **5. Report from the Ecma Secretariat**  `raw/notes/meetings/2016-07/jul-26.md`
+- **8. Test262 Update Revisit**  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.i.a Reintroduce for-in-initializer**  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.i.b Update on Async Iteration**  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.i.e Trailing commas in functions**  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.i.f Unify String and Array maximum lengths**  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.i.h Standardize Date.UTC when called with < 2 arguments**  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.i.d Revisiting NaN**  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.ii.a Object.getOwnPropertyDescriptors: when a Proxy returns an undefined descriptor?**  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.ii.b Object.enumerable{Keys,Values,Entries}**  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.ii.c RegExp Unicode Property Escapes**  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.ii.d Async Functions for Stage 4** — stage: 4  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.ii.e Math extensions**  `raw/notes/meetings/2016-07/jul-26.md`
+- **9.i.g Date.parse fallback semantics**  `raw/notes/meetings/2016-07/jul-27.md`
+- **9.iii.a System.global**  `raw/notes/meetings/2016-07/jul-27.md`
+- **10.ii.b Template literal revision to stage 3** — stage: 3  `raw/notes/meetings/2016-07/jul-27.md`
+- **9.i.i ECMA-402 formatToParts**  `raw/notes/meetings/2016-07/jul-27.md`
+- **9.i.j ECMA-402 Intl.PluralRules**  `raw/notes/meetings/2016-07/jul-27.md`
+- **10.i.a Require Unicode 9.0.0**  `raw/notes/meetings/2016-07/jul-27.md`
+- **10.ii.c trimStart/trimEnd**  `raw/notes/meetings/2016-07/jul-27.md`
+- **Array.prototype.values**  `raw/notes/meetings/2016-07/jul-27.md`
+- **10.iv.a Class Field Initializers: this semantics**  `raw/notes/meetings/2016-07/jul-27.md`
+- **10.iii.c [Nested import declaration](https://github.com/benjamn/reify/blob/master/PROPOSAL.md)**  `raw/notes/meetings/2016-07/jul-27.md`
+- **10.ii.a Shared Memory And Atomics**  `raw/notes/meetings/2016-07/jul-28.md`
+- **10.i.b Disregard lastIndex for non-global non-sticky regexps**  `raw/notes/meetings/2016-07/jul-28.md`
+- **10.iii.d Object.shallowEqual**  `raw/notes/meetings/2016-07/jul-28.md`
+- **10.iii.b Promise.prototype.finally**  `raw/notes/meetings/2016-07/jul-28.md`
+- **10.iv.b Cancelable promises update**  `raw/notes/meetings/2016-07/jul-28.md`
+- **10.iv Async functions**  `raw/notes/meetings/2016-07/jul-28.md`
+- **9.iii.c Decorators**  `raw/notes/meetings/2016-07/jul-28.md`
+- **9.iii.b Private State**  `raw/notes/meetings/2016-07/jul-28.md`
+
+## 2016-09
+
+- **Contributor Agreement for Guests**  `raw/notes/meetings/2016-09/sept-27.md`
+- **7 ECMA-262 Status**  `raw/notes/meetings/2016-09/sept-27.md`
+- **Stage 4 Process Update** — stage: 4  `raw/notes/meetings/2016-09/sept-27.md`
+- **8 ECMA-402 Status**  `raw/notes/meetings/2016-09/sept-27.md`
+- **9 Test262 Status**  `raw/notes/meetings/2016-09/sept-27.md`
+- **11.2.f OrdinarySetPrototypeOf fix / Prototype loops and Proxy objects**  `raw/notes/meetings/2016-09/sept-27.md`
+- **11.i.a ArrayBuffer.transfer retraction**  `raw/notes/meetings/2016-09/sept-27.md`
+- **10.2.a Legacy RegExp Features**  `raw/notes/meetings/2016-09/sept-27.md`
+- **11.i.d ULEO, Undefined-Like Exotic Object**  `raw/notes/meetings/2016-09/sept-27.md`
+- **HostObjectDefinePropertyReturnFalse**  `raw/notes/meetings/2016-09/sept-27.md`
+- **global (Jordan Harband)**  `raw/notes/meetings/2016-09/sept-27.md`
+- **11.i.b Mixins or class extends plain object**  `raw/notes/meetings/2016-09/sept-27.md`
+- **11.i.c Generator arrow functions**  `raw/notes/meetings/2016-09/sept-27.md`
+- **11.2.a Named Capture Groups**  `raw/notes/meetings/2016-09/sept-27.md`
+- **11.ii.e Unicode property escapes in regular expressions**  `raw/notes/meetings/2016-09/sept-27.md`
+- **ES Modules Lifecycle**  `raw/notes/meetings/2016-09/sept-28.md`
+- **11.3.a import()**  `raw/notes/meetings/2016-09/sept-28.md`
+- **Revisit System.global => global**  `raw/notes/meetings/2016-09/sept-28.md`
+- **11.2.b Intl.Segmenter**  `raw/notes/meetings/2016-09/sept-28.md`
+- **Secretariat's Report**  `raw/notes/meetings/2016-09/sept-29.md`
+- **11.iv.c Consolidating Proxy integrity checks,**  `raw/notes/meetings/2016-09/sept-29.md`
+- **10.ii.b Rest/Spread Properties**  `raw/notes/meetings/2016-09/sept-29.md`
+- **10.v.b Date.UTC when called with one argument**  `raw/notes/meetings/2016-09/sept-29.md`
+- **12.i.a Remove arguments.caller**  `raw/notes/meetings/2016-09/sept-29.md`
+- **Revisit ECMA414, 2nd Edition**  `raw/notes/meetings/2016-09/sept-29.md`
+- **11.iv.b Cancelable Promises**  `raw/notes/meetings/2016-09/sept-29.md`
+- **11.iii.c Observables**  `raw/notes/meetings/2016-09/sept-29.md`
+- **11.ii.d Sigil swap: decorators <-> private fields**  `raw/notes/meetings/2016-09/sept-29.md`
+- **11.iii.b Async Iteration**  `raw/notes/meetings/2016-09/sept-29.md`
+- **11.ii.c Set, Map, WeakSet, and WeakMap: of and from methods**  `raw/notes/meetings/2016-09/sept-29.md`
+- **Arrow Generator Revisit**  `raw/notes/meetings/2016-09/sept-29.md`
+- **11.iv.c Built-in Modules - Let's Pick a Syntax**  `raw/notes/meetings/2016-09/sept-29.md`
+
+## 2016-11
+
+- **4 Approval minutes from last meeting**  `raw/notes/meetings/2016-11/dec-1.md`
+- **6.i Determine 2017 TC39 meeting dates, locations, and hosts.**  `raw/notes/meetings/2016-11/dec-1.md`
+- **12.ii.c Promise.prototype.finally**  `raw/notes/meetings/2016-11/dec-1.md`
+- **12.ii.e Variation on UnambiguousJavaScriptGrammar**  `raw/notes/meetings/2016-11/dec-1.md`
+- **14.ii import() open issues and stage 3 discussion** — stage: 3  `raw/notes/meetings/2016-11/dec-1.md`
+- **13.ii.b Private State**  `raw/notes/meetings/2016-11/dec-1.md`
+- **13.vi Process proposal: require an implementation to land a normative PR to the spec**  `raw/notes/meetings/2016-11/dec-1.md`
+- **13.vii Open-ended: How can we promote diversity and inclusion in TC39**  `raw/notes/meetings/2016-11/dec-1.md`
+- **3 Adoption of the agenda**  `raw/notes/meetings/2016-11/nov-29.md`
+- **4 Approval of the minutes from last meeting**  `raw/notes/meetings/2016-11/nov-29.md`
+- **5 Report from ECMA Secretariat**  `raw/notes/meetings/2016-11/nov-29.md`
+- **6 Administrative matters**  `raw/notes/meetings/2016-11/nov-29.md`
+- **9 ECMA-404 and ECMA414 Updates**  `raw/notes/meetings/2016-11/nov-29.md`
+- **13.i Needs-consensus PRs**  `raw/notes/meetings/2016-11/nov-29.md`
+- **11.i.a RegExp s/dotAll flag proposal**  `raw/notes/meetings/2016-11/nov-29.md`
+- **11.ii.b Promise.try**  `raw/notes/meetings/2016-11/nov-29.md`
+- **12.i.a Promise.resolve constructor check**  `raw/notes/meetings/2016-11/nov-29.md`
+- **12.i.b ArrayIterator tweak for detached TypedArrays**  `raw/notes/meetings/2016-11/nov-29.md`
+- **12.ii.b Module Namespace Objects: Various Oddities**  `raw/notes/meetings/2016-11/nov-29.md`
+- **12.ii.d Proposal to reform the spec to include default export in export * from 'module'**  `raw/notes/meetings/2016-11/nov-29.md`
+- **12.iv.a import()**  `raw/notes/meetings/2016-11/nov-29.md`
+- **5 Report from the Ecma Secretariat**  `raw/notes/meetings/2016-11/nov-30.md`
+- **6.i Meeting scheduling**  `raw/notes/meetings/2016-11/nov-30.md`
+- **4 Approval minutes from last meeting**  `raw/notes/meetings/2016-11/nov-30.md`
+- **13.ii.a SharedArrayBuffer**  `raw/notes/meetings/2016-11/nov-30.md`
+- **10 Test262 update**  `raw/notes/meetings/2016-11/nov-30.md`
+- **12.ii.a. Proposal to reform the spec to solve Node.js ecosystem compatibility breaks w/ ES Modules**  `raw/notes/meetings/2016-11/nov-30.md`
+- **12.iv.b LineTerminator normalization: implementation feedback for F.p.toString**  `raw/notes/meetings/2016-11/nov-30.md`
+- **13.v Progress report and request for comments on 64-bit int support**  `raw/notes/meetings/2016-11/nov-30.md`
+- **12.iv.c RegExp lookbehind**  `raw/notes/meetings/2016-11/nov-30.md`
+- **12.ii.f Intl.Segmenter**  `raw/notes/meetings/2016-11/nov-30.md`
+- **11.ii.a Revisit NaN Again!**  `raw/notes/meetings/2016-11/nov-30.md`
+
+## 2017-01
+
+- **Adopting the agenda**  `raw/notes/meetings/2017-01/jan-24.md`
+- **Adopting the minutes**  `raw/notes/meetings/2017-01/jan-24.md`
+- **[Needs Consensus PRs](https://github.com/tc39/ecma262/labels/needs%20consensus)**  `raw/notes/meetings/2017-01/jan-24.md`
+- **6.i Confirm logistics for March meeting**  `raw/notes/meetings/2017-01/jan-24.md`
+- **Scheduling aside**  `raw/notes/meetings/2017-01/jan-24.md`
+- **13.i.f Seeking Stage 4 for SharedArrayBuffer** — stage: 4  `raw/notes/meetings/2017-01/jan-24.md`
+- **Other time boxed items / Looking for stage 3 reviewers** — stage: 3  `raw/notes/meetings/2017-01/jan-24.md`
+- **Scheduling aside**  `raw/notes/meetings/2017-01/jan-24.md`
+- **13.i.b Discussion of some oddities around classes extending null**  `raw/notes/meetings/2017-01/jan-24.md`
+- **13.i.c Seeking stage-1 for Null Propagation Operator**  `raw/notes/meetings/2017-01/jan-24.md`
+- **13.i.e Discussion of Annex B.3.3.3 EvalDeclarationInstantiation overwriting bindings**  `raw/notes/meetings/2017-01/jan-24.md`
+- **13.ii.b Function.prototype.toString updates**  `raw/notes/meetings/2017-01/jan-24.md`
+- **13.ii.c Seeking Stage 2 for named capture groups** — stage: 2  `raw/notes/meetings/2017-01/jan-24.md`
+- **Report from the ECMA secretariat**  `raw/notes/meetings/2017-01/jan-25.md`
+- **Who should be the chair?**  `raw/notes/meetings/2017-01/jan-25.md`
+- **13.ii.a Proposed Grammar change to ES Modules**  `raw/notes/meetings/2017-01/jan-25.md`
+- **15.iv Progress report and request for comments on 64-bit int support**  `raw/notes/meetings/2017-01/jan-25.md`
+- **13.i.d Seeking stage -0.0 for IEEE-754 sign bit**  `raw/notes/meetings/2017-01/jan-25.md`
+- **13.ii.f Promise.prototype.finally to stage 3?** — stage: 3  `raw/notes/meetings/2017-01/jan-25.md`
+- **15.iii.a Error stacks (seeking stage 1)** — stage: 1  `raw/notes/meetings/2017-01/jan-25.md`
+- **Discuss non-technical long-term vision for ECMAScript**  `raw/notes/meetings/2017-01/jan-25.md`
+- **Looking at the proposal list**  `raw/notes/meetings/2017-01/jan-26.md`
+- **13.ii.e Seeking Stage-1 for "do expressions"**  `raw/notes/meetings/2017-01/jan-26.md`
+- **13.ii.d Seeking Stage 1 for Realms** — stage: 1  `raw/notes/meetings/2017-01/jan-26.md`
+- **Meeting Minutes**  `raw/notes/meetings/2017-01/jan-26.md`
+- **global**  `raw/notes/meetings/2017-01/jan-26.md`
+- **Public and Private Class Fields (Daniel Ehrenberg, Jeff Morrison and Kevin Gibbons)**  `raw/notes/meetings/2017-01/jan-26.md`
+- **ECMA-404**  `raw/notes/meetings/2017-01/jan-26.md`
+- **Conclusions / Resolutions**  `raw/notes/meetings/2017-01/jan-26.md`
+
+## 2017-03
+
+- **Adopting the agenda**  `raw/notes/meetings/2017-03/mar-21.md`
+- **Adopting the minutes**  `raw/notes/meetings/2017-03/mar-21.md`
+- **5. Report from the Ecma Secretariat**  `raw/notes/meetings/2017-03/mar-21.md`
+- **6.ii Vote to accept ECMA-262 2017 final draft and forward it to Ecma GA (approval subject to completion of RF opt-out period with no opt-outs)**  `raw/notes/meetings/2017-03/mar-21.md`
+- **Any items for the 2018 edition?**  `raw/notes/meetings/2017-03/mar-21.md`
+- **10.i.a. Template Literal Updates**  `raw/notes/meetings/2017-03/mar-21.md`
+- **10.i.b RegExp Lookbehind Assertions**  `raw/notes/meetings/2017-03/mar-21.md`
+- **10.i.g ECMA-402 Presentation of the three formatters for stage 2** — stage: 2  `raw/notes/meetings/2017-03/mar-21.md`
+- **6. Addendum to Test262 item**  `raw/notes/meetings/2017-03/mar-21.md`
+- **10.i.c RegExp Unicode Property Escapes for stage 3** — stage: 3  `raw/notes/meetings/2017-03/mar-21.md`
+- **10.i.d RegExp dotAll Flag for stage 2** — stage: 2  `raw/notes/meetings/2017-03/mar-21.md`
+- **10.ii.b RegExp Named Groups for stage 3** — stage: 3  `raw/notes/meetings/2017-03/mar-21.md`
+- **10.i.e RegExp Legacy Features for stage 3** — stage: 3  `raw/notes/meetings/2017-03/mar-21.md`
+- **10.i.h Intl.Segmenter (requesting stage 3)** — stage: 3  `raw/notes/meetings/2017-03/mar-21.md`
+- **10.i.i Test262: using root license as default for files**  `raw/notes/meetings/2017-03/mar-21.md`
+- **Day ending.....**  `raw/notes/meetings/2017-03/mar-21.md`
+- **Report from the Ecma Secretariat**  `raw/notes/meetings/2017-03/mar-22.md`
+- **Review of Code of Conduct**  `raw/notes/meetings/2017-03/mar-22.md`
+- **General**  `raw/notes/meetings/2017-03/mar-22.md`
+- **10.iii.a Orthogonal Classes**  `raw/notes/meetings/2017-03/mar-22.md`
+- **8.iv. Approve TR-104 draft and forward it to Ecma GA**  `raw/notes/meetings/2017-03/mar-22.md`
+- **12.i. Needs-Consensus PRs**  `raw/notes/meetings/2017-03/mar-22.md`
+- **General Discussion**  `raw/notes/meetings/2017-03/mar-23.md`
+- **10.ii.a Dynamic Module Reform for stage 2** — stage: 2  `raw/notes/meetings/2017-03/mar-23.md`
+- **10.ii.c Realms update**  `raw/notes/meetings/2017-03/mar-23.md`
+- **10.iv.a Arbitrary precision integer type for stage 2** — stage: 2  `raw/notes/meetings/2017-03/mar-23.md`
+- **[PR #778: Make LocalTZA take 't' and 'isUTC' and drop DSTA(t)](https://github.com/tc39/ecma262/pull/778)**  `raw/notes/meetings/2017-03/mar-23.md`
+- **12.ii.a Date Proposal - NodaTime as a built-in Module for stage 1** — stage: 1  `raw/notes/meetings/2017-03/mar-23.md`
+
+## 2017-05
+
+- **6. Agenda Adoption**  `raw/notes/meetings/2017-05/may-23.md`
+- **16.i.a RegExp Legacy Features for Stage 3** — stage: 3  `raw/notes/meetings/2017-05/may-23.md`
+- **16.i.b. Math.signbit proposal**  `raw/notes/meetings/2017-05/may-23.md`
+- **16.i.d Intl.Segmenter for Stage 3** — stage: 3  `raw/notes/meetings/2017-05/may-23.md`
+- **Normative ICU Reference**  `raw/notes/meetings/2017-05/may-23.md`
+- **16.i.e Standardizing Date.prototype.toString**  `raw/notes/meetings/2017-05/may-23.md`
+- **16.i.g Float16 on TypedArrays, DataView, Math.hfround for stage 1** — stage: 1  `raw/notes/meetings/2017-05/may-23.md`
+- **16.i.h Why allow BindingPattern for BindingRestParameter for object rest. Maybe we should just allow identifiers.**  `raw/notes/meetings/2017-05/may-23.md`
+- **16.ii.a Atomics.waitNonblocking for Stage 1** — stage: 1  `raw/notes/meetings/2017-05/may-23.md`
+- **16.ii.b Module import options discussion, potentially for stage 1** — stage: 1  `raw/notes/meetings/2017-05/may-23.md`
+- **16.ii.c Importing modules which failed evaluation**  `raw/notes/meetings/2017-05/may-23.md`
+- **16.ii.e Advance Numeric separators proposal to Stage 1** — stage: 1  `raw/notes/meetings/2017-05/may-23.md`
+- **16.iii.a Accessing host-specific module metadata from inside a module**  `raw/notes/meetings/2017-05/may-23.md`
+- **14.i Towards Trustworthy Verification of JavaScript**  `raw/notes/meetings/2017-05/may-24.md`
+- **14.ii Shape Security**  `raw/notes/meetings/2017-05/may-24.md`
+- **14.ii Daniel Ehrenberg**  `raw/notes/meetings/2017-05/may-24.md`
+- **14.iii**  `raw/notes/meetings/2017-05/may-24.md`
+- **14.iv Role of Babel in JS**  `raw/notes/meetings/2017-05/may-24.md`
+- **14.v TC39/ECMAScript: The Next 20 Years**  `raw/notes/meetings/2017-05/may-24.md`
+- **15.iv BigInt towards Stage 3** — stage: 3  `raw/notes/meetings/2017-05/may-24.md`
+- **7. Approval of the minutes from last meeting**  `raw/notes/meetings/2017-05/may-25.md`
+- **8. Report from the Ecma Secretariat**  `raw/notes/meetings/2017-05/may-25.md`
+- **18i. Code of Conduct follow-up.**  `raw/notes/meetings/2017-05/may-25.md`
+- **11. ECMA-404 (JSON) ISO fast-track. Review/approve disposition of comments responses and 404 2nd edition draft.**  `raw/notes/meetings/2017-05/may-25.md`
+- **17.ii Web compatibility issues / Needs-consensus PRs**  `raw/notes/meetings/2017-05/may-25.md`
+- **Prohibit async methods named 'function' #884**  `raw/notes/meetings/2017-05/may-25.md`
+- **Normative: Specify RegExp malformed character class behavior #864**  `raw/notes/meetings/2017-05/may-25.md`
+- **Relax [[DefineOwnProperty]] on module namespace exotic objects. #858**  `raw/notes/meetings/2017-05/may-25.md`
+- **Normative: Define particular precision for toFixed and friends #857**  `raw/notes/meetings/2017-05/may-25.md`
+- **Normative: Date.prototype.toString throws on non-Date receiver #850**  `raw/notes/meetings/2017-05/may-25.md`
+- **15.i.a RegExp Legacy Features for Stage 3** — stage: 3  `raw/notes/meetings/2017-05/may-25.md`
+- **15.ii.f import.meta for stage 2** — stage: 2  `raw/notes/meetings/2017-05/may-25.md`
+- **15.iii.b Updates on class-field proposals (both public and private).**  `raw/notes/meetings/2017-05/may-25.md`
+- **15.iv.a. Revisiting async generator yield behavior**  `raw/notes/meetings/2017-05/may-25.md`
+- **15.iv.b Updates on Cancellation Proposals**  `raw/notes/meetings/2017-05/may-25.md`
+- **15.i.h. BigInt for Stage 3** — stage: 3  `raw/notes/meetings/2017-05/may-25.md`
+- **17.iii.a Observable proposal to Stage 2** — stage: 2  `raw/notes/meetings/2017-05/may-25.md`
+
+## 2017-07
+
+- **Note taking**  `raw/notes/meetings/2017-07/jul-25.md`
+- **10.ii Vision Thing**  `raw/notes/meetings/2017-07/jul-25.md`
+- **11.i.a. Intl.Segmenter for Stage 3** — stage: 3  `raw/notes/meetings/2017-07/jul-25.md`
+- **9.iv.a. Cancellation**  `raw/notes/meetings/2017-07/jul-25.md`
+- **10.iii Expanding Vision for TC39**  `raw/notes/meetings/2017-07/jul-25.md`
+- **11.ii.a. Function.prototype.toString looking for stage 4** — stage: 4  `raw/notes/meetings/2017-07/jul-25.md`
+- **11.ii.b. Symbol.prototype.description**  `raw/notes/meetings/2017-07/jul-25.md`
+- **11.ii.c. Promise.prototype.finally seeking stage 3** — stage: 3  `raw/notes/meetings/2017-07/jul-25.md`
+- **11.ii.d. Intl.RelativeTimeFormat for Stage 2** — stage: 2  `raw/notes/meetings/2017-07/jul-25.md`
+- **13.iii.c Binary AST**  `raw/notes/meetings/2017-07/jul-26.md`
+- **10.iv JavaScript - Composition and Compliance**  `raw/notes/meetings/2017-07/jul-26.md`
+- **5. Report from the Ecma Secretariat**  `raw/notes/meetings/2017-07/jul-26.md`
+- **9.iv.b. Module/script pragma, for stage 2** — stage: 2  `raw/notes/meetings/2017-07/jul-26.md`
+- **10.i Extremely Modular Distributed JavaScript**  `raw/notes/meetings/2017-07/jul-26.md`
+- **11.iii.a. BigInt for Stage 3** — stage: 3  `raw/notes/meetings/2017-07/jul-26.md`
+- **13.ii.b. Consider changing Number.parseInt and Number.parseFloat**  `raw/notes/meetings/2017-07/jul-26.md`
+- **11.ii.g. Numeric separators for Stage 2** — stage: 2  `raw/notes/meetings/2017-07/jul-27.md`
+- **11.ii.e. export-ns-from and export-default-from for Stage 2** — stage: 2  `raw/notes/meetings/2017-07/jul-27.md`
+- **11.ii.f. Temporal Proposal updates**  `raw/notes/meetings/2017-07/jul-27.md`
+- **13.i. Needs-Consensus PRs**  `raw/notes/meetings/2017-07/jul-27.md`
+- **13.v. Meeting schedule for 2018**  `raw/notes/meetings/2017-07/jul-27.md`
+- **11.iv.b Unified introduction of class features**  `raw/notes/meetings/2017-07/jul-27.md`
+- **11.iv.c Class fields for Stage 3** — stage: 3  `raw/notes/meetings/2017-07/jul-27.md`
+- **11.iv.d. Private methods and accessors for Stage 2** — stage: 2  `raw/notes/meetings/2017-07/jul-27.md`
+- **11.iv.e. Interaction of privacy, fields and decorators**  `raw/notes/meetings/2017-07/jul-27.md`
+- **13.ii.a Optional Chaining Operator**  `raw/notes/meetings/2017-07/jul-27.md`
+- **11.iv.a Optional Catch Binding**  `raw/notes/meetings/2017-07/jul-27.md`
+- **11.iii.b Array.prototype.flat{ten, Map}**  `raw/notes/meetings/2017-07/jul-27.md`
+- **13.iii.f Throw Expressions**  `raw/notes/meetings/2017-07/jul-27.md`
+- **General**  `raw/notes/meetings/2017-07/summary.md`
+- **New Proposals**  `raw/notes/meetings/2017-07/summary.md`
+- **Moving Forward**  `raw/notes/meetings/2017-07/summary.md`
+- **Needs work**  `raw/notes/meetings/2017-07/summary.md`
+
+## 2017-09
+
+- **5. Report from ECMA Secretariat**  `raw/notes/meetings/2017-09/sept-26.md`
+- **6. Meeting Schedule**  `raw/notes/meetings/2017-09/sept-26.md`
+- **11.ii.a Pipeline Operator**  `raw/notes/meetings/2017-09/sept-26.md`
+- **11.ii.b How should ECMA-402 proceed in light of "ICU standardization" concerns**  `raw/notes/meetings/2017-09/sept-26.md`
+- **11.ii.c Extensible literals**  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.a Intl.NumberFormat.prototype.formatToParts for Stage 4** — stage: 4  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.b Intl.Segmenter for Stage 3** — stage: 3  `raw/notes/meetings/2017-09/sept-26.md`
+- **Secretariat**  `raw/notes/meetings/2017-09/sept-26.md`
+- **11.iv.a First Class Protocols**  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.g  Atomics.waitAsync for stage 2** — stage: 2  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.g Intl.PluralRules for Stage 4** — stage: 4  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.c Intl.RelativeTimeFormat for Stage 3** — stage: 3  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.f flatMap for stage 2** — stage: 2  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.i Early Errors for RegExp literals**  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.j Timezone tweak**  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.k Sloppy function hoisting web reality tweak**  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.l export-ns-from**  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.m Iteration protocol change**  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.ii.a Introducing Intl.Locale for Stage 2** — stage: 2  `raw/notes/meetings/2017-09/sept-26.md`
+- **12.i.e Make EcmaScript a syntactic superset of JSON for stage 1** — stage: 1  `raw/notes/meetings/2017-09/sept-27.md`
+- **12.ii.c Needs Consensus PR: Template literal memory leak fix**  `raw/notes/meetings/2017-09/sept-27.md`
+- **12.ii.d Throw Expressions for Stage 2** — stage: 2  `raw/notes/meetings/2017-09/sept-27.md`
+- **12.iii.a String.prototype.matchAll**  `raw/notes/meetings/2017-09/sept-27.md`
+- **12.iii.b Optional chaining operator for Stage 2** — stage: 2  `raw/notes/meetings/2017-09/sept-27.md`
+- **12.iii.c import.meta for stage 3** — stage: 3  `raw/notes/meetings/2017-09/sept-27.md`
+- **12.iv.a Private methods and accessors for Stage 3** — stage: 3  `raw/notes/meetings/2017-09/sept-27.md`
+- **12.iv.b Decorators: detailed discussion of proposed semantics**  `raw/notes/meetings/2017-09/sept-27.md`
+- **Other Test262 updates**  `raw/notes/meetings/2017-09/sept-28.md`
+- **Updates on the Code of Conduct Enforcement Committee**  `raw/notes/meetings/2017-09/sept-28.md`
+- **15.i flatMap for stage 3** — stage: 3  `raw/notes/meetings/2017-09/sept-28.md`
+- **15.iii String.prototype.matchAll for Stage 2** — stage: 2  `raw/notes/meetings/2017-09/sept-28.md`
+- **12.iv.b Decorators: detailed discussion of proposed semantics (cont)**  `raw/notes/meetings/2017-09/sept-28.md`
+- **13.i Object Shorthand Improvements**  `raw/notes/meetings/2017-09/sept-28.md`
+- **13.iii Nullary coalescing operator**  `raw/notes/meetings/2017-09/sept-28.md`
+- **13.i Partial application**  `raw/notes/meetings/2017-09/sept-28.md`
+- **12.iii.c import.meta for stage 3** — stage: 3  `raw/notes/meetings/2017-09/sept-28.md`
+- **14.i.a Builtins.typeOf() and Builtins.is()**  `raw/notes/meetings/2017-09/sept-28.md`
+- **Numeric Literal Separator to Stage 3** — stage: 3  `raw/notes/meetings/2017-09/sept-28.md`
+- **RegExp proposals to Stage 4** — stage: 4  `raw/notes/meetings/2017-09/sept-28.md`
+- **Another RegExp Annex B 3.3 sloppy mode function hoisting edge case https://github.com/tc39/ecma262/issues/480**  `raw/notes/meetings/2017-09/sept-28.md`
+- **BigInt ToPropertyKey**  `raw/notes/meetings/2017-09/sept-28.md`
+- **Process for adding agenda items**  `raw/notes/meetings/2017-09/sept-28.md`
+- **ArrayBuffer.transfer**  `raw/notes/meetings/2017-09/sept-28.md`
+- **Float16 Typed Arrays**  `raw/notes/meetings/2017-09/sept-28.md`
+- **Meeting concluded**  `raw/notes/meetings/2017-09/sept-28.md`
+- **General**  `raw/notes/meetings/2017-09/summary.md`
+
+## 2017-11
+
+- **10 Timeboxed agenda items (15 Minute Items)**  `raw/notes/meetings/2017-11/nov-28.md`
+- **10.i.a Array.prototype.flatten & Array.prototype.flatMap for Stage 3** — stage: 3  `raw/notes/meetings/2017-11/nov-28.md`
+- **10.i.c Numeric separators for Stage 3** — stage: 3  `raw/notes/meetings/2017-11/nov-28.md`
+- **10.i.f InterpreterDirective**  `raw/notes/meetings/2017-11/nov-28.md`
+- **10.i.h String.prototype.replaceAll for Stage 1** — stage: 1  `raw/notes/meetings/2017-11/nov-28.md`
+- **10.i.i Throw expressions request for reviewers for Stage 3** — stage: 3  `raw/notes/meetings/2017-11/nov-28.md`
+  - Till Schneidereit & Keith Cirkel to review
+- **10.ii.a Clarify/redefine Stage 4 requirements** — stage: 4  `raw/notes/meetings/2017-11/nov-28.md`
+- **9.i.l Intl.ListFormat find Stage 3 reviewers** — stage: 3  `raw/notes/meetings/2017-11/nov-28.md`
+- **9.i.m Intl.RelativeTimeFormat for Stage 3** — stage: 3  `raw/notes/meetings/2017-11/nov-28.md`
+- **9.ii.c Make ECMAScript a syntactic superset of JSON for Stage 2** — stage: 2  `raw/notes/meetings/2017-11/nov-28.md`
+- **9.ii.e Discuss module order instantiation/evaluation guarantees**  `raw/notes/meetings/2017-11/nov-28.md`
+- **Array[@@Species], Array Index Accessors and Security**  `raw/notes/meetings/2017-11/nov-28.md`
+- **9.ii.h Intl.Locale for Stage 2** — stage: 2  `raw/notes/meetings/2017-11/nov-28.md`
+- **9.i.n XS engine (embedded JavaScript) update on conformance, source code availability, and graphical user interface capabilities**  `raw/notes/meetings/2017-11/nov-29.md`
+- **9.ii.i Pipeline Operator for Stage 2** — stage: 2  `raw/notes/meetings/2017-11/nov-29.md`
+- **9.ii.d Revisiting parameter initializers and sloppy eval**  `raw/notes/meetings/2017-11/nov-29.md`
+- **9.i.d String.prototype.codePoints for Stage 1** — stage: 1  `raw/notes/meetings/2017-11/nov-29.md`
+- **9.ii.k Grammar constraints**  `raw/notes/meetings/2017-11/nov-29.md`
+- **9.iv.c Distinguishing literal strings proposal for Stage 0** — stage: 0  `raw/notes/meetings/2017-11/nov-29.md`
+- **Inheriting private static class elements discussion and resolution**  `raw/notes/meetings/2017-11/nov-29.md`
+- **9.iv.b Decimal for Stage 0** — stage: 0  `raw/notes/meetings/2017-11/nov-29.md`
+- **10.iv.d Object.freeze + Object.seal syntax proposal for Stage 0** — stage: 0  `raw/notes/meetings/2017-11/nov-30.md`
+- **9.iii.a Block Params to Stage 1** — stage: 1  `raw/notes/meetings/2017-11/nov-30.md`
+- **8.i.a ArrayBuffer error reporting tweak by Andre Bargull**  `raw/notes/meetings/2017-11/nov-30.md`
+- **8.i.b Avoid detached DataView in edge case by Jeff Walden**  `raw/notes/meetings/2017-11/nov-30.md`
+- **10.iv.a (Continued) Inheriting private static class elements discussion and resolution**  `raw/notes/meetings/2017-11/nov-30.md`
+- **10.iv.f Class fields ASI discussion and resolution**  `raw/notes/meetings/2017-11/nov-30.md`
+- **10.iv.e Block Params to Stage 1** — stage: 1  `raw/notes/meetings/2017-11/nov-30.md`
+- **TC39 Community Engagement Discussion**  `raw/notes/meetings/2017-11/nov-30.md`
+
+## 2018-01
+
+- **5. Report from the Ecma Secretariat**  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.i.a. TC39 Logo**  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.ii.a. Making eshost workflow more accessible with jsvu**  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.ii.b. Make ECMAScript a syntactic superset of JSON for Stage 3** — stage: 3  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.ii.c. {BigInt,Number}.fromString for Stage 1** — stage: 1  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.ii.d. String.prototype.{trimStart,trimEnd} for stage 3** — stage: 3  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.ii.e Code of Conduct Committee update (PRs, call for participants)**  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.ii.f Math.seededRandoms() for Stage 1** — stage: 1  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.ii.g. Invited expert/specification contributor forms**  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.ii.h Async iteration for stage 4** — stage: 4  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.ii.i Followup to discussion from previous meeting: identifying risk areas**  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.ii.j RegExp lookbehind assertions for Stage 4?** — stage: 4  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.iii.a Promise.prototype.finally for stage 4** — stage: 4  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.iii.b String.prototype.matchAll for stage 3?** — stage: 3  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.iii.c Function.prototype.toString (PR) for stage 4** — stage: 4  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.iii.d Symbol.prototype.description**  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.iii.e Maximally minimal mixins proposal**  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.iii.f PR: Making nullish values iterable, or at least array-spreadable**  `raw/notes/meetings/2018-01/jan-23.md`
+- **Rest/Spread properties for stage 4** — stage: 4  `raw/notes/meetings/2018-01/jan-23.md`
+- **Function.prototype.toString() censorship for stage 1** — stage: 1  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.iii.k new Set builtin methods for stage 2** — stage: 2  `raw/notes/meetings/2018-01/jan-23.md`
+- **13.ii.j RegExp lookbehind assertions for Stage 4** — stage: 4  `raw/notes/meetings/2018-01/jan-24.md`
+- **13.ii.k RegExp Unicode property escapes for Stage 4** — stage: 4  `raw/notes/meetings/2018-01/jan-24.md`
+- **13.iii.a Promise.prototype.finally for stage 4** — stage: 4  `raw/notes/meetings/2018-01/jan-24.md`
+- **13.iii.n Optional Chaining update**  `raw/notes/meetings/2018-01/jan-24.md`
+- **13.iii.m Getting last item from Array for stage 2** — stage: 2  `raw/notes/meetings/2018-01/jan-24.md`
+- **6.i Chair group in 2018**  `raw/notes/meetings/2018-01/jan-24.md`
+- **6.ii Editor Group**  `raw/notes/meetings/2018-01/jan-24.md`
+- **13.iii.o Intl proposals for stage 3: Intl.ListFormat, Intl.RelativeTimeFormat** — stage: 3  `raw/notes/meetings/2018-01/jan-24.md`
+- **13.iii.i throw expressions for stage 3** — stage: 3  `raw/notes/meetings/2018-01/jan-24.md`
+- **13.v.d Operator Overloading for Stage 1** — stage: 1  `raw/notes/meetings/2018-01/jan-24.md`
+- **15.iii.a TC39 should endorse use of a (one-of-several, not one specific recommended) parsing linter or actual compiler, not any particular semicolon style**  `raw/notes/meetings/2018-01/jan-24.md`
+- **13.iii.j Decorators use cases**  `raw/notes/meetings/2018-01/jan-24.md`
+- **13.iv.a Discussion of cache timing attack (Meltdown and Spectre being just the latest examples) consequences**  `raw/notes/meetings/2018-01/jan-24.md`
+- **Revisiting mixins-vs-protocols proposal**  `raw/notes/meetings/2018-01/jan-24.md`
+- **13.ii.h Async Iteration for stage 4** — stage: 4  `raw/notes/meetings/2018-01/jan-25.md`
+- **13.iii.o Intl.RelativeTimeFormat, Intl.Locale for Stage 3** — stage: 3  `raw/notes/meetings/2018-01/jan-25.md`
+- **13.v.c Decorators: towards Stage 3** — stage: 3  `raw/notes/meetings/2018-01/jan-25.md`
+- **13.v.b Static class features proposal**  `raw/notes/meetings/2018-01/jan-25.md`
+- **Open-ended discussion: Exploring Statements as Expressions.**  `raw/notes/meetings/2018-01/jan-25.md`
+- **issue about process, coordinating with other standards bodies**  `raw/notes/meetings/2018-01/jan-25.md`
+- **General**  `raw/notes/meetings/2018-01/summary.md`
+
+## 2018-03
+
+- **5. Next meeting host and logistics**  `raw/notes/meetings/2018-03/mar-20.md`
+- **6. Report from the Ecma Secretariat**  `raw/notes/meetings/2018-03/mar-20.md`
+- **7. Project Editors' Reports**  `raw/notes/meetings/2018-03/mar-20.md`
+- **8.i.a Normative: add RegExp lookbehind to annex-B**  `raw/notes/meetings/2018-03/mar-20.md`
+- **8.i.b Normative: Fix length property of TypedArrays, DataView, and ArrayBuffer constructors**  `raw/notes/meetings/2018-03/mar-20.md`
+- **8.i.d Strengthen Atomics.wait/wake synchronization**  `raw/notes/meetings/2018-03/mar-20.md`
+- **8.i.e Array Buffer Detach layering improvement**  `raw/notes/meetings/2018-03/mar-20.md`
+- **9.i.v Open-ended discussion: How should we evolve the JavaScript standard library over time?**  `raw/notes/meetings/2018-03/mar-20.md`
+- **6. Report from the Ecma Secretariat**  `raw/notes/meetings/2018-03/mar-20.md`
+- **10.i.a Update on Frozen Realms in light of Meltdown and Spectre**  `raw/notes/meetings/2018-03/mar-20.md`
+- **10.i.b Meeting planning for 2019**  `raw/notes/meetings/2018-03/mar-20.md`
+- **10.i.c Getting last item of Array for stage 2** — stage: 2  `raw/notes/meetings/2018-03/mar-20.md`
+- **10.i.d Debugger operands for stage 1** — stage: 1  `raw/notes/meetings/2018-03/mar-20.md`
+- **10.i.e Logical Assignment Operators for Stage 1** — stage: 1  `raw/notes/meetings/2018-03/mar-20.md`
+- **10.i.f Object.fromEntries for Stage 1** — stage: 1  `raw/notes/meetings/2018-03/mar-20.md`
+- **10.i.g Update on Array.prototype.flatten web incompatibility**  `raw/notes/meetings/2018-03/mar-20.md`
+- **10.i.h Update on WASM ES modules**  `raw/notes/meetings/2018-03/mar-20.md`
+- **10.i.i Update on improved TC39 documentation efforts**  `raw/notes/meetings/2018-03/mar-20.md`
+- **10.i.j Await in parameter defaults for non-arrow async functions**  `raw/notes/meetings/2018-03/mar-20.md`
+- **10.ii.c Hashbang Grammar for Stage 2** — stage: 2  `raw/notes/meetings/2018-03/mar-21.md`
+- **10.ii.b Richer Keys for stage 1** — stage: 1  `raw/notes/meetings/2018-03/mar-21.md`
+- **10.iv.b JavaScript Classes 1.1**  `raw/notes/meetings/2018-03/mar-21.md`
+- **10.iv.c Static public fields for Stage 3** — stage: 3  `raw/notes/meetings/2018-03/mar-21.md`
+- **Decorators towards Stage 3** — stage: 3  `raw/notes/meetings/2018-03/mar-21.md`
+- **12.iii.b. What does 1JS mean in a world of transpilers?**  `raw/notes/meetings/2018-03/mar-21.md`
+- **Meeting planning**  `raw/notes/meetings/2018-03/mar-22.md`
+- **10.i.g Update on Array.prototype.flatten web incompatibility**  `raw/notes/meetings/2018-03/mar-22.md`
+- **Slice notation for Stage 1** — stage: 1  `raw/notes/meetings/2018-03/mar-22.md`
+- **Weak References for stage 2** — stage: 2  `raw/notes/meetings/2018-03/mar-22.md`
+- **Optional chaining for stage 2** — stage: 2  `raw/notes/meetings/2018-03/mar-22.md`
+- **10.i.e Logical Assignment Operators for Stage 1 (cont)** — stage: 1  `raw/notes/meetings/2018-03/mar-22.md`
+- **8.i.c Expand text included in "function code"**  `raw/notes/meetings/2018-03/mar-22.md`
+- **10.ii.f Nullish coalescing for stage 2** — stage: 2  `raw/notes/meetings/2018-03/mar-22.md`
+- **Summarize classes**  `raw/notes/meetings/2018-03/mar-22.md`
+- **10.iv.a. Weak References for stage 2** — stage: 2  `raw/notes/meetings/2018-03/mar-22.md`
+- **12.iii.c function.sent needs a champion**  `raw/notes/meetings/2018-03/mar-22.md`
+- **10.iv.e Pipeline operator**  `raw/notes/meetings/2018-03/mar-22.md`
+- **General**  `raw/notes/meetings/2018-03/summary.md`
+
+## 2018-05
+
+- **Dates for next meetings**  `raw/notes/meetings/2018-05/may-22.md`
+- **Project Editors' Reports**  `raw/notes/meetings/2018-05/may-22.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2018-05/may-22.md`
+- **Normative: Cleanup Time Values and Time Range Needs Consensus PR**  `raw/notes/meetings/2018-05/may-22.md`
+- **Array.prototype.values web compat update**  `raw/notes/meetings/2018-05/may-22.md`
+- **9.i.b. Normative: Add export * as ns from "mod" to Export production and Module Semantics**  `raw/notes/meetings/2018-05/may-22.md`
+- **11.i.c 2019/2020 meeting scheduling update**  `raw/notes/meetings/2018-05/may-22.md`
+- **11.i.d. Optional catch binding for stage 4** — stage: 4  `raw/notes/meetings/2018-05/may-22.md`
+- **`catch ({})`**  `raw/notes/meetings/2018-05/may-22.md`
+- **11.i.e ECMAScript as a superset of JSON**  `raw/notes/meetings/2018-05/may-22.md`
+- **11.i.a Sequence properties in Unicode property escapes**  `raw/notes/meetings/2018-05/may-22.md`
+- **11.i.f. Update to the How We Work Documentation project and Website**  `raw/notes/meetings/2018-05/may-22.md`
+- **Rename Atomics.wake**  `raw/notes/meetings/2018-05/may-22.md`
+- **Updates and a question to resolve on String.prototype.matchAll**  `raw/notes/meetings/2018-05/may-22.md`
+- **Function.prototype.toString revision updates (slides) and stage 4** — stage: 4  `raw/notes/meetings/2018-05/may-22.md`
+- **Array.prototype.flatten rename**  `raw/notes/meetings/2018-05/may-22.md`
+- **Symbol.prototype.description for stage 3** — stage: 3  `raw/notes/meetings/2018-05/may-22.md`
+- **Object.fromEntries to stage 2** — stage: 2  `raw/notes/meetings/2018-05/may-22.md`
+- **Top Level Await**  `raw/notes/meetings/2018-05/may-22.md`
+- **Intl Updates**  `raw/notes/meetings/2018-05/may-22.md`
+- **Function.prototype.toString() censorship for stage 2** — stage: 2  `raw/notes/meetings/2018-05/may-22.md`
+- **Set Methods**  `raw/notes/meetings/2018-05/may-22.md`
+- **String.prototype.codePoints for Stage 2** — stage: 2  `raw/notes/meetings/2018-05/may-22.md`
+- **Well-formed `JSON.stringify`**  `raw/notes/meetings/2018-05/may-22.md`
+- **Revisiting `String.prototype.matchAll`**  `raw/notes/meetings/2018-05/may-22.md`
+- **Stopping exfiltration: Massive privacy violations vs boundaries**  `raw/notes/meetings/2018-05/may-23.md`
+- **Module Keys Strawman for Stage 1** — stage: 1  `raw/notes/meetings/2018-05/may-23.md`
+- **Realms**  `raw/notes/meetings/2018-05/may-23.md`
+- **ECMA Secretariat Update**  `raw/notes/meetings/2018-05/may-23.md`
+- **Expanding Group of Editors**  `raw/notes/meetings/2018-05/may-23.md`
+- **Supporting other languages in ES module graphs updates**  `raw/notes/meetings/2018-05/may-23.md`
+- **Static class features for Stage 3** — stage: 3  `raw/notes/meetings/2018-05/may-23.md`
+- **Decorators towards Stage 3** — stage: 3  `raw/notes/meetings/2018-05/may-23.md`
+- **Decorators towards Stage 3, Additional Notes** — stage: 3  `raw/notes/meetings/2018-05/may-23.md`
+- **Class Static Block**  `raw/notes/meetings/2018-05/may-23.md`
+- **Class Access Expressions**  `raw/notes/meetings/2018-05/may-23.md`
+- **Further Secretariat Updates**  `raw/notes/meetings/2018-05/may-24.md`
+- **Numeric separators update**  `raw/notes/meetings/2018-05/may-24.md`
+- **Pattern Matching for Stage 1** — stage: 1  `raw/notes/meetings/2018-05/may-24.md`
+- **Tagged Collection Literals for Stage 1** — stage: 1  `raw/notes/meetings/2018-05/may-24.md`
+- **Binary AST**  `raw/notes/meetings/2018-05/may-24.md`
+- **Function.prototype.toString() censorship for stage 2 (continued discussion)** — stage: 2  `raw/notes/meetings/2018-05/may-24.md`
+- **SuperProperty evaluation order**  `raw/notes/meetings/2018-05/may-24.md`
+- **Symbol.thenable for stage 1 (or 2?)** — stage: 1  `raw/notes/meetings/2018-05/may-24.md`
+- **"Blöcks" syntax for Stage 0** — stage: 0  `raw/notes/meetings/2018-05/may-24.md`
+- **RegExp Match array offsets for Stage 1** — stage: 1  `raw/notes/meetings/2018-05/may-24.md`
+- **Meeting Planning Update**  `raw/notes/meetings/2018-05/may-24.md`
+- **New Proposals**  `raw/notes/meetings/2018-05/summary.md`
+- **Existing Proposals**  `raw/notes/meetings/2018-05/summary.md`
+- **Changes to existing specification**  `raw/notes/meetings/2018-05/summary.md`
+- **General Discussions**  `raw/notes/meetings/2018-05/summary.md`
+- **Organizational update**  `raw/notes/meetings/2018-05/summary.md`
+
+## 2018-07
+
+- **Dates for next meetings**  `raw/notes/meetings/2018-07/july-24.md`
+- **Report from the Ecma Secretariat**  `raw/notes/meetings/2018-07/july-24.md`
+- **Project Editors' Reports**  `raw/notes/meetings/2018-07/july-24.md`
+- **Atomics.notify()**  `raw/notes/meetings/2018-07/july-24.md`
+- **ArrayBuffer.prototype.transfer()**  `raw/notes/meetings/2018-07/july-24.md`
+- **Report on Realms shim Security Review**  `raw/notes/meetings/2018-07/july-24.md`
+- **Intl.DateTimeFormat.prototype.formatRange**  `raw/notes/meetings/2018-07/july-24.md`
+- **Explicit Resource Management**  `raw/notes/meetings/2018-07/july-24.md`
+- **Management/infrastructure tasks; invited expert policy; meeting planning**  `raw/notes/meetings/2018-07/july-24.md`
+- **TC53 introduction for TC39**  `raw/notes/meetings/2018-07/july-24.md`
+- **Update on `do`-expressions**  `raw/notes/meetings/2018-07/july-24.md`
+- **New name for global**  `raw/notes/meetings/2018-07/july-24.md`
+- **Object.fromEntries to stage 3** — stage: 3  `raw/notes/meetings/2018-07/july-24.md`
+- **User testing (e.g. usability or learnability): call for resources**  `raw/notes/meetings/2018-07/july-24.md`
+- **Dynamic Modules**  `raw/notes/meetings/2018-07/july-25.md`
+- **Website and Documentation project update**  `raw/notes/meetings/2018-07/july-25.md`
+- **Reduce the number of ticks in async/await**  `raw/notes/meetings/2018-07/july-25.md`
+- **Decorators towards Stage 3** — stage: 3  `raw/notes/meetings/2018-07/july-25.md`
+- **RegExp Match Offsets**  `raw/notes/meetings/2018-07/july-25.md`
+- **Cancellation Update**  `raw/notes/meetings/2018-07/july-25.md`
+- **Partial Application**  `raw/notes/meetings/2018-07/july-25.md`
+- **Updates on First-class Protocols**  `raw/notes/meetings/2018-07/july-25.md`
+- **Revisit `global` name**  `raw/notes/meetings/2018-07/july-25.md`
+- **Temporal Proposal update**  `raw/notes/meetings/2018-07/july-26.md`
+- **Abstractions for membranes**  `raw/notes/meetings/2018-07/july-26.md`
+- **Reviewing the future JS syntax throughout the current proposals (overflow)**  `raw/notes/meetings/2018-07/july-26.md`
+- **Package name maps**  `raw/notes/meetings/2018-07/july-26.md`
+- **Layered APIs**  `raw/notes/meetings/2018-07/july-26.md`
+- **Get Originals**  `raw/notes/meetings/2018-07/july-26.md`
+- **September 2019 Meeting Location**  `raw/notes/meetings/2018-07/july-26.md`
+- **Intl.NumberFormat Unified Feature Proposal for Stage 2** — stage: 2  `raw/notes/meetings/2018-07/july-26.md`
+- **JavaScript Standard Library**  `raw/notes/meetings/2018-07/july-26.md`
+- **New Proposals**  `raw/notes/meetings/2018-07/summary.md`
+- **Existing Proposals**  `raw/notes/meetings/2018-07/summary.md`
+- **Changes to existing specification**  `raw/notes/meetings/2018-07/summary.md`
+- **General Discussions**  `raw/notes/meetings/2018-07/summary.md`
+- **Updates from ECMA-262 Editors Group**  `raw/notes/meetings/2018-07/summary.md`
+- **Organizational update**  `raw/notes/meetings/2018-07/summary.md`
+
+## 2018-09
+
+- **1. Welcome**  `raw/notes/meetings/2018-09/sept-25.md`
+- **3. Agenda Scheduling**  `raw/notes/meetings/2018-09/sept-25.md`
+- **4. Approval of the minutes from last meeting**  `raw/notes/meetings/2018-09/sept-25.md`
+- **5. Dates for next meetings**  `raw/notes/meetings/2018-09/sept-25.md`
+- **8. Updates from the CoC Committee (15m)**  `raw/notes/meetings/2018-09/sept-25.md`
+- **9. Report from the Ecma Secretariat**  `raw/notes/meetings/2018-09/sept-25.md`
+- **Announcing a Tests Reports Project**  `raw/notes/meetings/2018-09/sept-25.md`
+- **Introducing: Ad-hoc TC39 History Group - Archival data and you!**  `raw/notes/meetings/2018-09/sept-25.md`
+- **ECMA Fellows Nominations**  `raw/notes/meetings/2018-09/sept-25.md`
+- **Normative: allow ArraySpeciesCreate to create non-arrays**  `raw/notes/meetings/2018-09/sept-25.md`
+- **Normative: Reduce the number of ticks in async/await**  `raw/notes/meetings/2018-09/sept-25.md`
+- **Normative: Use array indices instead of integer indices in OrdinaryOwnPropertyKeys**  `raw/notes/meetings/2018-09/sept-25.md`
+- **Normative: Use GetMethod instead of GetV to get iterator next**  `raw/notes/meetings/2018-09/sept-25.md`
+- **Array.prototype.sort stability**  `raw/notes/meetings/2018-09/sept-25.md`
+- **Update on String.prototype.matchAll**  `raw/notes/meetings/2018-09/sept-25.md`
+- **September 2019 Meeting**  `raw/notes/meetings/2018-09/sept-25.md`
+- **for-in mechanics**  `raw/notes/meetings/2018-09/sept-25.md`
+- **Consistent Behavior Delegation for Configurable Properties & Extensible Values**  `raw/notes/meetings/2018-09/sept-25.md`
+- **Normative: Use array indices instead of integer indices in OrdinaryOwnPropertyKeys**  `raw/notes/meetings/2018-09/sept-26.md`
+- **Well-formed JSON.stringify for Stage 3** — stage: 3  `raw/notes/meetings/2018-09/sept-26.md`
+- **Sequence properties in Unicode property escapes for Stage 2** — stage: 2  `raw/notes/meetings/2018-09/sept-26.md`
+- **Hashbang for Stage 2** — stage: 2  `raw/notes/meetings/2018-09/sept-26.md`
+- **September 2019 Location**  `raw/notes/meetings/2018-09/sept-26.md`
+- **Array.prototype.flat{,Map} for Stage 4 🎉** — stage: 4  `raw/notes/meetings/2018-09/sept-26.md`
+- **Ecma policy discussion next steps**  `raw/notes/meetings/2018-09/sept-26.md`
+- **Groups Update**  `raw/notes/meetings/2018-09/sept-26.md`
+- **2019 Chair Group Nominations**  `raw/notes/meetings/2018-09/sept-26.md`
+- **Include static in `static` method `toString`**  `raw/notes/meetings/2018-09/sept-26.md`
+- **Decorators Stage 2 update** — stage: 2  `raw/notes/meetings/2018-09/sept-26.md`
+- **Revisiting Private Symbols**  `raw/notes/meetings/2018-09/sept-26.md`
+- **Class fields and private methods Stage 3 update** — stage: 3  `raw/notes/meetings/2018-09/sept-26.md`
+- **Uniform parsing of quasi-standard Date.parse input**  `raw/notes/meetings/2018-09/sept-26.md`
+- **Normative: Add export * as ns from "mod" (cont'd)**  `raw/notes/meetings/2018-09/sept-27.md`
+- **Promise.allSettled for Stage 1** — stage: 1  `raw/notes/meetings/2018-09/sept-27.md`
+- **Normative: GetExportedNames adjustments for Dynamic Modules**  `raw/notes/meetings/2018-09/sept-27.md`
+- **Temporal for Stage 2** — stage: 2  `raw/notes/meetings/2018-09/sept-27.md`
+- **IDL for JavaScript**  `raw/notes/meetings/2018-09/sept-27.md`
+- **JSON.parse source text access**  `raw/notes/meetings/2018-09/sept-27.md`
+- **Editor in Chief**  `raw/notes/meetings/2018-09/sept-27.md`
+- **RegExp.prototype.matchAll**  `raw/notes/meetings/2018-09/sept-27.md`
+- **BFS has too many proposals.**  `raw/notes/meetings/2018-09/sept-27.md`
+- **Future syntax space for other languages**  `raw/notes/meetings/2018-09/sept-27.md`
+- **Export Decorator Ordering**  `raw/notes/meetings/2018-09/sept-27.md`
+- **Same-realm internal slots for specs**  `raw/notes/meetings/2018-09/sept-27.md`
+- **Matchall issue**  `raw/notes/meetings/2018-09/sept-27.md`
+- **Modules**  `raw/notes/meetings/2018-09/sept-27.md`
+- **Temporal**  `raw/notes/meetings/2018-09/sept-27.md`
+- **New Proposals**  `raw/notes/meetings/2018-09/summary.md`
+- **Existing Proposals**  `raw/notes/meetings/2018-09/summary.md`
+- **Changes to existing specification**  `raw/notes/meetings/2018-09/summary.md`
+- **Breakout Sessions**  `raw/notes/meetings/2018-09/summary.md`
+- **General Discussions**  `raw/notes/meetings/2018-09/summary.md`
+- **Updates from ECMA-262 Editors Group**  `raw/notes/meetings/2018-09/summary.md`
+- **Organizational update**  `raw/notes/meetings/2018-09/summary.md`
+
+## 2018-11
+
+- **1. Welcome**  `raw/notes/meetings/2018-11/nov-27.md`
+- **3. Agenda Scheduling**  `raw/notes/meetings/2018-11/nov-27.md`
+- **4. Approval of the minutes from last meeting**  `raw/notes/meetings/2018-11/nov-27.md`
+- **5. Next meeting host and logistics**  `raw/notes/meetings/2018-11/nov-27.md`
+- **7. Project Editors' Reports**  `raw/notes/meetings/2018-11/nov-27.md`
+- **8. Updates from the CoC Committee**  `raw/notes/meetings/2018-11/nov-27.md`
+- **6. Report from the Ecma Secretariat**  `raw/notes/meetings/2018-11/nov-27.md`
+- **9. Ad-hoc TC39 History Group - Archival data and you!**  `raw/notes/meetings/2018-11/nov-27.md`
+- **13. Management group refresh slides**  `raw/notes/meetings/2018-11/nov-27.md`
+- **Modules layering/naming for WebAssembly**  `raw/notes/meetings/2018-11/nov-27.md`
+- **New intermediate class "circular module records"**  `raw/notes/meetings/2018-11/nov-27.md`
+- **A name change from "Module.Instantiate" to "Module.Link".**  `raw/notes/meetings/2018-11/nov-27.md`
+- **Dynamic modules layering change**  `raw/notes/meetings/2018-11/nov-27.md`
+- **ECMA TC53**  `raw/notes/meetings/2018-11/nov-27.md`
+- **ECMA-262**  `raw/notes/meetings/2018-11/nov-27.md`
+- **Stable sort for Array.prototype.sort**  `raw/notes/meetings/2018-11/nov-27.md`
+- **2019 Meeting planning follow-up**  `raw/notes/meetings/2018-11/nov-27.md`
+- **Policy Update Reflector Issue#187**  `raw/notes/meetings/2018-11/nov-27.md`
+- **Outreach group update**  `raw/notes/meetings/2018-11/nov-27.md`
+- **Symbol.description for Stage 4** — stage: 4  `raw/notes/meetings/2018-11/nov-27.md`
+- **Function.prototype.toString revision for Stage 4** — stage: 4  `raw/notes/meetings/2018-11/nov-27.md`
+- **Intl.NumberFormat Feature Proposal for Stage 3** — stage: 3  `raw/notes/meetings/2018-11/nov-27.md`
+- **Memory Model bug DRF-SC bug**  `raw/notes/meetings/2018-11/nov-28.md`
+- **Hash Bang grammar**  `raw/notes/meetings/2018-11/nov-28.md`
+- **Decorators Stage 2 update** — stage: 2  `raw/notes/meetings/2018-11/nov-28.md`
+- **Withdrawing Distinguishing Literal Strings**  `raw/notes/meetings/2018-11/nov-28.md`
+- **Distinguishing templates: PR Phase 1, Spec Phase 2**  `raw/notes/meetings/2018-11/nov-28.md`
+- **dateStyle/timeStyle for Stage 2** — stage: 2  `raw/notes/meetings/2018-11/nov-28.md`
+- **Update on Optional Chaining**  `raw/notes/meetings/2018-11/nov-28.md`
+- **Editor in Chief selection**  `raw/notes/meetings/2018-11/nov-28.md`
+- **Asset References for Stage 1** — stage: 1  `raw/notes/meetings/2018-11/nov-28.md`
+- **isRegExp change**  `raw/notes/meetings/2018-11/nov-28.md`
+- **JSExplain (10am Breakout Session), summary of discussion (AS)**  `raw/notes/meetings/2018-11/nov-29.md`
+- **Private Symbols (10am Breakout)**  `raw/notes/meetings/2018-11/nov-29.md`
+- **Dynamic Modules (11am Breakout Session)**  `raw/notes/meetings/2018-11/nov-29.md`
+- **JS Explain — AS**  `raw/notes/meetings/2018-11/nov-29.md`
+- **Typed Objects 10:00 am**  `raw/notes/meetings/2018-11/nov-29.md`
+- **Kevin's 1pm Talk**  `raw/notes/meetings/2018-11/nov-29.md`
+- **Standard Libraries (1pm breakout)**  `raw/notes/meetings/2018-11/nov-29.md`
+- **WeakRef Session**  `raw/notes/meetings/2018-11/nov-29.md`
+- **Summary Session 3:30pm**  `raw/notes/meetings/2018-11/nov-29.md`
+- **End of Meeting**  `raw/notes/meetings/2018-11/nov-29.md`
+- **New Proposals**  `raw/notes/meetings/2018-11/summary.md`
+- **Existing Proposals**  `raw/notes/meetings/2018-11/summary.md`
+- **Changes to existing specification**  `raw/notes/meetings/2018-11/summary.md`
+- **Breakout Sessions**  `raw/notes/meetings/2018-11/summary.md`
+- **Organizational update**  `raw/notes/meetings/2018-11/summary.md`
+
+## 2019-01
+
+- **TC39 to transition from RFTG to RFTC**  `raw/notes/meetings/2019-01/jan-29.md`
+- **Report from the Ecma Secretariat**  `raw/notes/meetings/2019-01/jan-29.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2019-01/jan-29.md`
+- **Normative: Treat IterationStatements uniformly in Annex B.3.5**  `raw/notes/meetings/2019-01/jan-29.md`
+- **Add "name" property for classes as part of ClassDefinitionEvaluation**  `raw/notes/meetings/2019-01/jan-29.md`
+- **%TypedArray%.prototype.sort stability**  `raw/notes/meetings/2019-01/jan-29.md`
+- **Edge/Chakra Q&A from Microsoft (Brian Terlson & Kevin Smith)**  `raw/notes/meetings/2019-01/jan-29.md`
+- **Security Implications of Error.prototype.stack**  `raw/notes/meetings/2019-01/jan-29.md`
+- **Publishing the website**  `raw/notes/meetings/2019-01/jan-29.md`
+- **The Community and Us**  `raw/notes/meetings/2019-01/jan-29.md`
+- **Object.fromEntries for Stage 4** — stage: 4  `raw/notes/meetings/2019-01/jan-29.md`
+- **Well-formed JSON.stringify for Stage 4** — stage: 4  `raw/notes/meetings/2019-01/jan-29.md`
+- **String.prototype.{trimStart,trimEnd} for Stage 4** — stage: 4  `raw/notes/meetings/2019-01/jan-29.md`
+- **Array.prototype.{flat,flatMap} for Stage 4** — stage: 4  `raw/notes/meetings/2019-01/jan-29.md`
+- **Community (developers and educators) feedback over globalThis, advocating for Global**  `raw/notes/meetings/2019-01/jan-29.md`
+- **Update on Set methods**  `raw/notes/meetings/2019-01/jan-29.md`
+- **Amending the memory model to support ARMv8 LDA/STL codegen**  `raw/notes/meetings/2019-01/jan-30.md`
+- **Dynamic Modules Layering**  `raw/notes/meetings/2019-01/jan-30.md`
+- **Promise.allSettled**  `raw/notes/meetings/2019-01/jan-30.md`
+- **Decorators for Stage 3** — stage: 3  `raw/notes/meetings/2019-01/jan-30.md`
+- **Private fields and methods refresher**  `raw/notes/meetings/2019-01/jan-30.md`
+- **Richer keys for Stage 2** — stage: 2  `raw/notes/meetings/2019-01/jan-30.md`
+- **Freezing prototypes for stage 1** — stage: 1  `raw/notes/meetings/2019-01/jan-31.md`
+- **Intl.DisplayNames for stage 1** — stage: 1  `raw/notes/meetings/2019-01/jan-31.md`
+- **new.initialize for stage 1** — stage: 1  `raw/notes/meetings/2019-01/jan-31.md`
+- **Private declarations**  `raw/notes/meetings/2019-01/jan-31.md`
+- **Iterator helpers for Stage 1** — stage: 1  `raw/notes/meetings/2019-01/jan-31.md`
+- **Update on sequence properties in Unicode property escapes**  `raw/notes/meetings/2019-01/jan-31.md`
+- **Private Symbols for Stage 1** — stage: 1  `raw/notes/meetings/2019-01/jan-31.md`
+- **TC39 rationale - a proposed starting point**  `raw/notes/meetings/2019-01/jan-31.md`
+- **Overloading method parameters between BigInt and Number: Just Say No?**  `raw/notes/meetings/2019-01/jan-31.md`
+- **Simplifying Set constructor**  `raw/notes/meetings/2019-01/jan-31.md`
+- **Module specifier for builtins**  `raw/notes/meetings/2019-01/jan-31.md`
+- **Communications: Discourse Strategy**  `raw/notes/meetings/2019-01/jan-31.md`
+- **globalThis Follow-up**  `raw/notes/meetings/2019-01/jan-31.md`
+- **New Proposals**  `raw/notes/meetings/2019-01/summary.md`
+- **Existing Proposals**  `raw/notes/meetings/2019-01/summary.md`
+- **Changes to existing specification**  `raw/notes/meetings/2019-01/summary.md`
+- **Open Discussions**  `raw/notes/meetings/2019-01/summary.md`
+- **Updates from ECMA-262 Editors Group**  `raw/notes/meetings/2019-01/summary.md`
+- **Organizational updates**  `raw/notes/meetings/2019-01/summary.md`
+
+## 2019-03
+
+- **1. Welcome**  `raw/notes/meetings/2019-03/mar-26.md`
+- **3. Agenda Scheduling**  `raw/notes/meetings/2019-03/mar-26.md`
+- **4. Approval of the minutes from last meeting**  `raw/notes/meetings/2019-03/mar-26.md`
+- **5. Next meeting host and logistics**  `raw/notes/meetings/2019-03/mar-26.md`
+- **6. Report from the Ecma Secretariat**  `raw/notes/meetings/2019-03/mar-26.md`
+- **ECMA-402 Updates**  `raw/notes/meetings/2019-03/mar-26.md`
+- **Committee Updates**  `raw/notes/meetings/2019-03/mar-26.md`
+- **Ecma TC53 Report**  `raw/notes/meetings/2019-03/mar-26.md`
+- **Normative: CreateDynamicFunction early concatenates body**  `raw/notes/meetings/2019-03/mar-26.md`
+- **Normative: Remove implementation-defined typeof behavior**  `raw/notes/meetings/2019-03/mar-26.md`
+- **Normative: Make Async-from-Sync iterator object inaccessible to ECMAScript code**  `raw/notes/meetings/2019-03/mar-26.md`
+- **Normative: Suppress GetMethod errors in IteratorClose**  `raw/notes/meetings/2019-03/mar-26.md`
+- **Normative: Add export * as ns from "mod" to Export production and Module Semantic**  `raw/notes/meetings/2019-03/mar-26.md`
+- **Normative: Require at least four digits in string representations of negative years**  `raw/notes/meetings/2019-03/mar-26.md`
+- **String.prototype.matchAll for Stage 4** — stage: 4  `raw/notes/meetings/2019-03/mar-26.md`
+- **dateStyle/timeStyle for Stage 3** — stage: 3  `raw/notes/meetings/2019-03/mar-26.md`
+- **Intl.DateTimeFormat.prototype.formatRange for Stage 3** — stage: 3  `raw/notes/meetings/2019-03/mar-26.md`
+- **Uniform parsing of quasi-standard Date.parse input for Stage 2** — stage: 2  `raw/notes/meetings/2019-03/mar-26.md`
+- **Promise.allSettled for Stage 3** — stage: 3  `raw/notes/meetings/2019-03/mar-26.md`
+- **String.prototype.replaceAll for Stage 2** — stage: 2  `raw/notes/meetings/2019-03/mar-26.md`
+- **Private declarations for Stage 1** — stage: 1  `raw/notes/meetings/2019-03/mar-26.md`
+- **Function implementation hiding (Stage 2 update)** — stage: 2  `raw/notes/meetings/2019-03/mar-27.md`
+- **BigInt function parameter overloading and Intl.NumberFormat.prototype.format**  `raw/notes/meetings/2019-03/mar-27.md`
+- **Promise.result (no longer for Stage 1)** — stage: 1  `raw/notes/meetings/2019-03/mar-27.md`
+- **BigInt follow up conversation**  `raw/notes/meetings/2019-03/mar-27.md`
+- **Yet Another Decorators Stage 2 update** — stage: 2  `raw/notes/meetings/2019-03/mar-27.md`
+- **Temporal stage 2 update** — stage: 2  `raw/notes/meetings/2019-03/mar-27.md`
+- **Let's ship it: replace es-discuss with moderateable forum**  `raw/notes/meetings/2019-03/mar-27.md`
+- **Promise.any**  `raw/notes/meetings/2019-03/mar-27.md`
+- **`Date.parse` follow-up**  `raw/notes/meetings/2019-03/mar-27.md`
+- **Error stacks for Stage 2** — stage: 2  `raw/notes/meetings/2019-03/mar-28.md`
+- **Dynamic import() for Stage 4 (in June?)** — stage: 4  `raw/notes/meetings/2019-03/mar-28.md`
+- **Top-level await with a vengeance**  `raw/notes/meetings/2019-03/mar-28.md`
+- **WeakRef update (currently a Stage 2 proposal)** — stage: 2  `raw/notes/meetings/2019-03/mar-28.md`
+- **Intl.Segmenter Stage 3 to Stage 2** — stage: 2/3  `raw/notes/meetings/2019-03/mar-28.md`
+- **Update: PR: Normative: CreateDynamicFunction early concatenates bodyText**  `raw/notes/meetings/2019-03/mar-28.md`
+- **Private declarations for Stage 1** — stage: 1  `raw/notes/meetings/2019-03/mar-28.md`
+- **New Proposals**  `raw/notes/meetings/2019-03/summary.md`
+- **Existing Proposals**  `raw/notes/meetings/2019-03/summary.md`
+- **Changes to existing specification**  `raw/notes/meetings/2019-03/summary.md`
+- **Open Discussions**  `raw/notes/meetings/2019-03/summary.md`
+- **Organizational updates**  `raw/notes/meetings/2019-03/summary.md`
+
+## 2019-06
+
+- **7. Report from the ECMA Secretariat**  `raw/notes/meetings/2019-06/june-4.md`
+- **8. Reports from Project Editors**  `raw/notes/meetings/2019-06/june-4.md`
+- **Dynamic import() for stage 4** — stage: 4  `raw/notes/meetings/2019-06/june-4.md`
+- **Let all early errors be Syntax Errors**  `raw/notes/meetings/2019-06/june-4.md`
+- **For-in enumeration order for Stage 2** — stage: 2  `raw/notes/meetings/2019-06/june-4.md`
+- **BigInt to Stage 4** — stage: 4  `raw/notes/meetings/2019-06/june-4.md`
+- **eval(nonString) should not side effect**  `raw/notes/meetings/2019-06/june-4.md`
+- **Atomics.waitAsync asking for stage 3 reviewers** — stage: 3  `raw/notes/meetings/2019-06/june-4.md`
+- **Annex B reform**  `raw/notes/meetings/2019-06/june-4.md`
+- **How should we specify Jobs precisely?**  `raw/notes/meetings/2019-06/june-4.md`
+- **Set "name" property for anonymous functions**  `raw/notes/meetings/2019-06/june-4.md`
+- **Trusted types**  `raw/notes/meetings/2019-06/june-4.md`
+- **JavaScript Standard Library for Stage 2** — stage: 2  `raw/notes/meetings/2019-06/june-4.md`
+- **ECMA-402: Add quarter option**  `raw/notes/meetings/2019-06/june-5.md`
+- **ECMA-402: add dayPeriod option**  `raw/notes/meetings/2019-06/june-5.md`
+- **ECMA-402: add millisecondsDigits option**  `raw/notes/meetings/2019-06/june-5.md`
+- **ECMA-402: Intl.DisplayNames**  `raw/notes/meetings/2019-06/june-5.md`
+- **Emitter for Stage 1** — stage: 1  `raw/notes/meetings/2019-06/june-5.md`
+- **Array.isTemplateObject for Stage 1 or 2** — stage: 1  `raw/notes/meetings/2019-06/june-5.md`
+- **evalable for Stage 1 or 2** — stage: 1  `raw/notes/meetings/2019-06/june-5.md`
+- **Host compile value adjustment for Stage 1 or 2** — stage: 1  `raw/notes/meetings/2019-06/june-5.md`
+- **JavaScript Standard Library for Stage 2 ( part 2? )** — stage: 2  `raw/notes/meetings/2019-06/june-5.md`
+- **A JavaScript Commons**  `raw/notes/meetings/2019-06/june-5.md`
+- **Optional Chaining for Stage 2** — stage: 2  `raw/notes/meetings/2019-06/june-5.md`
+- **Nullish Coalescing for Stage 2** — stage: 2  `raw/notes/meetings/2019-06/june-5.md`
+- **Promise.any**  `raw/notes/meetings/2019-06/june-5.md`
+- **Top-level await for Stage 3** — stage: 3  `raw/notes/meetings/2019-06/june-6.md`
+- **Empirical Evidence for Programming Language Design**  `raw/notes/meetings/2019-06/june-6.md`
+- **JavaScript and Syntax Research Methods**  `raw/notes/meetings/2019-06/june-6.md`
+- **Lookup constructor.resolve only once in PerformPromise{All, Race}**  `raw/notes/meetings/2019-06/june-6.md`
+- **WeakRefs**  `raw/notes/meetings/2019-06/june-6.md`
+- **Continuation of Layering Job Queue**  `raw/notes/meetings/2019-06/june-6.md`
+- **Note taking**  `raw/notes/meetings/2019-06/june-6.md`
+- **How we work**  `raw/notes/meetings/2019-06/june-6.md`
+- **New Proposals**  `raw/notes/meetings/2019-06/summary.md`
+- **Existing Proposals**  `raw/notes/meetings/2019-06/summary.md`
+- **Changes to existing specification**  `raw/notes/meetings/2019-06/summary.md`
+- **Open Discussions**  `raw/notes/meetings/2019-06/summary.md`
+- **Organizational updates**  `raw/notes/meetings/2019-06/summary.md`
+
+## 2019-07
+
+- **Report from the Ecma Secretariat**  `raw/notes/meetings/2019-07/july-23.md`
+- **?**  `raw/notes/meetings/2019-07/july-23.md`
+- **Test262 Updates**  `raw/notes/meetings/2019-07/july-23.md`
+- **Making function.sent inactive**  `raw/notes/meetings/2019-07/july-23.md`
+- **TC53 Liaison Report**  `raw/notes/meetings/2019-07/july-23.md`
+- **Fix spec bug in `RegExp.prototype[Symbol.matchAll]`**  `raw/notes/meetings/2019-07/july-23.md`
+- **Guard `TypedArray` methods from non-exotic receivers**  `raw/notes/meetings/2019-07/july-23.md`
+- **Disallow internal methods returning `continue`|`break`|`return`**  `raw/notes/meetings/2019-07/july-23.md`
+- **Disallow BigInt literals for Annex-B non-octal digits**  `raw/notes/meetings/2019-07/july-23.md`
+- **Explicit Resource Management**  `raw/notes/meetings/2019-07/july-23.md`
+- **Nullish coalescing**  `raw/notes/meetings/2019-07/july-23.md`
+- **Symbol.reverse**  `raw/notes/meetings/2019-07/july-23.md`
+- **Inconsistency between Array.from and %TypedArray%.from**  `raw/notes/meetings/2019-07/july-23.md`
+- **Promise.allSettled**  `raw/notes/meetings/2019-07/july-24.md`
+- **Promise.any**  `raw/notes/meetings/2019-07/july-24.md`
+- **`String.prototype.replaceAll`**  `raw/notes/meetings/2019-07/july-24.md`
+- **Reduce the amount of implementation-defined behavior in `Array.prototype.sort`**  `raw/notes/meetings/2019-07/july-24.md`
+- **RegExp Match Offsets Update**  `raw/notes/meetings/2019-07/july-24.md`
+- **Iterator Methods Update / Stage 2** — stage: 2  `raw/notes/meetings/2019-07/july-24.md`
+- **Built-In Modules aka JavaScript Standard Library**  `raw/notes/meetings/2019-07/july-24.md`
+- **Collection Normalization update**  `raw/notes/meetings/2019-07/july-24.md`
+- **Update on function implementation hiding**  `raw/notes/meetings/2019-07/july-24.md`
+- **Casing Conventions**  `raw/notes/meetings/2019-07/july-24.md`
+- **Web built-in module convention guidance from TC39**  `raw/notes/meetings/2019-07/july-24.md`
+- **Optional Chaining for Stage 3** — stage: 3  `raw/notes/meetings/2019-07/july-25.md`
+- **Dynamic Import Host Adjustment for Stage 1 or 2** — stage: 1  `raw/notes/meetings/2019-07/july-25.md`
+- **Dynamic Code Brand Checks for Stage 2** — stage: 2  `raw/notes/meetings/2019-07/july-25.md`
+- **Loosening idempotency requirements for HostImportModuleDynamically to enable retrying failed fetches**  `raw/notes/meetings/2019-07/july-25.md`
+- **MetaMask, safe modules, and Sesify**  `raw/notes/meetings/2019-07/july-25.md`
+- **Status of Secure EcmaScript**  `raw/notes/meetings/2019-07/july-25.md`
+- **Infix Bang**  `raw/notes/meetings/2019-07/july-25.md`
+- **`Map#updateOrInsert`**  `raw/notes/meetings/2019-07/july-25.md`
+- **Explicit Resource Management for Stage 2 (continuation from [Tuesday](https://github.com/tc39/tc39-notes/blob/master/meetings/2019-07/july-23.md#explicit-resource-management))** — stage: 2  `raw/notes/meetings/2019-07/july-25.md`
+
+## 2019-10
+
+- **Report from the ECMA Secretariat**  `raw/notes/meetings/2019-10/october-1.md`
+- **Test262**  `raw/notes/meetings/2019-10/october-1.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2019-10/october-1.md`
+- **Evaluate all computed names before any values in object literals needs a champion**  `raw/notes/meetings/2019-10/october-1.md`
+- **Remove ToUint32 from array literal evaluation**  `raw/notes/meetings/2019-10/october-1.md`
+- **Prevent DFS invariants from being broken**  `raw/notes/meetings/2019-10/october-1.md`
+- **Redefine CatchParameter as FormalParameter**  `raw/notes/meetings/2019-10/october-1.md`
+- **Strengthening Atomics.wait and Atomics.notify (PR)**  `raw/notes/meetings/2019-10/october-1.md`
+- **Update on Optional Chaining and Nullish Coalescing**  `raw/notes/meetings/2019-10/october-1.md`
+- **`Object.map` for Stage 1** — stage: 1  `raw/notes/meetings/2019-10/october-1.md`
+- **Records & Tuples for Stage 1** — stage: 1  `raw/notes/meetings/2019-10/october-1.md`
+- **Grammar validity**  `raw/notes/meetings/2019-10/october-1.md`
+- **Top-Level await: almost resolved**  `raw/notes/meetings/2019-10/october-1.md`
+- **globalThis to stage 4** — stage: 4  `raw/notes/meetings/2019-10/october-1.md`
+- **for-in order for stage 3** — stage: 3  `raw/notes/meetings/2019-10/october-1.md`
+- **Promise.any for Stage 3** — stage: 3  `raw/notes/meetings/2019-10/october-2.md`
+- **Reduce the amount of implementation-defined behavior in Array.prototype.sort**  `raw/notes/meetings/2019-10/october-2.md`
+- **String.prototype.replaceAll for Stage 3** — stage: 3  `raw/notes/meetings/2019-10/october-2.md`
+- **Update on sequence property escapes in Unicode regular expressions**  `raw/notes/meetings/2019-10/october-2.md`
+- **Proposal disclosure policy**  `raw/notes/meetings/2019-10/october-2.md`
+- **Revisit ECMA-402 casing conventions**  `raw/notes/meetings/2019-10/october-2.md`
+- **Map.upsert , previously Map.insertOrUpdate**  `raw/notes/meetings/2019-10/october-2.md`
+- **An update on Temporal**  `raw/notes/meetings/2019-10/october-2.md`
+- **Declarations in conditionals**  `raw/notes/meetings/2019-10/october-2.md`
+- **Intl.DisplayNames**  `raw/notes/meetings/2019-10/october-2.md`
+- **RegExp Match Indices**  `raw/notes/meetings/2019-10/october-2.md`
+- **Proposal Disclosure Policy 2: Electric Lawyeroo**  `raw/notes/meetings/2019-10/october-2.md`
+- **Unifying private field errors**  `raw/notes/meetings/2019-10/october-2.md`
+- **UUID for stage 1** — stage: 1  `raw/notes/meetings/2019-10/october-3.md`
+- **Readonly Collections for stage 1** — stage: 1  `raw/notes/meetings/2019-10/october-3.md`
+- **Eventual-Send: Support for distributed promise pipelining**  `raw/notes/meetings/2019-10/october-3.md`
+- **Wavy Dot syntax for promise pipelining for stage 1** — stage: 1  `raw/notes/meetings/2019-10/october-3.md`
+- **OOM Fails Fast for Stage 1** — stage: 1  `raw/notes/meetings/2019-10/october-3.md`
+- **Promise.any Reprise**  `raw/notes/meetings/2019-10/october-3.md`
+- **Redux: Update on sequence property escapes in Unicode regular expressions**  `raw/notes/meetings/2019-10/october-3.md`
+
+## 2019-12
+
+- **Report from the ECMA Secretariat**  `raw/notes/meetings/2019-12/december-3.md`
+- **TC39 Editor Update**  `raw/notes/meetings/2019-12/december-3.md`
+- **ECMA-402 Report**  `raw/notes/meetings/2019-12/december-3.md`
+- **Test262 Updates**  `raw/notes/meetings/2019-12/december-3.md`
+- **Discussion of Secretary role (15m, chairs)**  `raw/notes/meetings/2019-12/december-3.md`
+- **Formal nominations for Chair, Editor, and Secretary**  `raw/notes/meetings/2019-12/december-3.md`
+- **Normative: Make super() throw after evaluating args** — stage: 3  `raw/notes/meetings/2019-12/december-3.md`
+  - Effectively this is "Stage 3". Ready to merge contingent on tests.
+- **Normative: Fix extending null**  `raw/notes/meetings/2019-12/december-3.md`
+  - Address the concern that the static semantics are being changed to runtime semantics such that SYG is satisfied, which will then trigger WH, BT, DE, and KM’s approval and thus consensus.
+- **Normative: make async iterators next/return/throw not pass undefined when value is absent**  `raw/notes/meetings/2019-12/december-3.md`
+  - Consensus reached to address this assuming webcompat and YSV’s confirmation of Mozilla’s willingness to implement a fix (expected by EOD on 12/3) (YSV confirmed)
+- **Normative: Eliminate extra environment for eval in parameter initializers redux**  `raw/notes/meetings/2019-12/december-3.md`
+  - Consensus reached to change this
+- **Normative: TypedArray on prototypes web reality**  `raw/notes/meetings/2019-12/december-3.md`
+  - Consensus to change `set` but not `get`
+- **Normative: make EnumerableOwnPropertyNames ordered**  `raw/notes/meetings/2019-12/december-3.md`
+  - Consensus reached
+- **async-of grammar ambiguity**  `raw/notes/meetings/2019-12/december-3.md`
+  - We can solve this problem by disallowing for of loops that begin with `async`, but we need a solution for two-token lookahead in the future.
+- **JSExplain demo**  `raw/notes/meetings/2019-12/december-3.md`
+- **Topic Policy on published code/polyfills in proposal repos**  `raw/notes/meetings/2019-12/december-3.md`
+  - Consider BT proposal: 1) TC39 does not maintain official polyfills. 2) TC39 proposals may include and publish polyfills which are not production ready (semver 0.x, readme disclaimer), but can be forke
+- **RegExp match indices performance feedback**  `raw/notes/meetings/2019-12/december-3.md`
+  - Seems like the committee consents with the performance regression noted in SYG's presentation.
+- **Intl.RelativeTimeFormat for stage 4** — stage: 4  `raw/notes/meetings/2019-12/december-4.md`
+  - → advance to stage 4
+- **For-in order for stage 4** — stage: 4  `raw/notes/meetings/2019-12/december-4.md`
+  - → Approved for Stage 4
+- **Atomics.waitAsync for Stage 3** — stage: 3  `raw/notes/meetings/2019-12/december-4.md`
+  - → Approved for Stage 3
+- **Array.isTemplateObject update**  `raw/notes/meetings/2019-12/december-4.md`
+  - Discussions will continue offline.
+- **Optional Chaining for Stage 4** — stage: 4  `raw/notes/meetings/2019-12/december-4.md`
+  - → Approved for Stage 4!
+- **UUID Updates**  `raw/notes/meetings/2019-12/december-4.md`
+  - BCE will take this feedback.  Will have a meeting with the W3C Web Crypto folks.
+- **Nullish Coalescing for Stage 4** — stage: 4  `raw/notes/meetings/2019-12/december-4.md`
+  - → No objections, advanced to stage 4
+- **Update on Function Implementation Hiding**  `raw/notes/meetings/2019-12/december-4.md`
+  - Won't touch name and length
+- **Standard Library Task Group for TC39**  `raw/notes/meetings/2019-12/december-4.md`
+  - SYG: Actions items for me after the feedback I’ll draft with other people that would like to collaborate to come up with a framework like Shane proposed. And I will go through inflight proposals and w
+- **Array select/reject for Stage 1** — stage: 1  `raw/notes/meetings/2019-12/december-4.md`
+- **Update on SES**  `raw/notes/meetings/2019-12/december-5.md`
+- **Update on OOM Must Fail Fast**  `raw/notes/meetings/2019-12/december-5.md`
+- **Update on Promise Pipelining**  `raw/notes/meetings/2019-12/december-5.md`
+- **Array ~select~/reject for stage 1** — stage: 1  `raw/notes/meetings/2019-12/december-5.md`
+  - stage 1 for exploring more ergonomic ways to filter arrays
+- **Dynamic Code Brand Checks for Stage 2** — stage: 2  `raw/notes/meetings/2019-12/december-5.md`
+  - → NOT approved for Stage 2.  MSL will work with MM and other relevant parties for next meeting.
+- **Dynamic Import Host Adjustment for Stage 2** — stage: 2/3  `raw/notes/meetings/2019-12/december-5.md`
+  - → Approved for Stage 2
+- **Module attributes for Stage 1** — stage: 1  `raw/notes/meetings/2019-12/december-5.md`
+- **Operator Overloading for Stage 1** — stage: 1  `raw/notes/meetings/2019-12/december-5.md`
+  - Stage 1 for operator overloading.
+- **Module Attributes (continuation of earlier discussion)** — stage: 1  `raw/notes/meetings/2019-12/december-5.md`
+  - To explore inline metadata for module imports, and separately guarantees for not executing modules that you’ve imported
+- **Preserve Host Virtualizability for Stage 1** — stage: 1  `raw/notes/meetings/2019-12/december-5.md`
+
+## 2020-02
+
+- **Process changes to accommodate US members and US delegates**  `raw/notes/meetings/2020-02/february-4.md`
+- **Conclusion**  `raw/notes/meetings/2020-02/february-4.md`
+- **Test262 Report**  `raw/notes/meetings/2020-02/february-4.md`
+- **Elections at TC39: Introducing a process**  `raw/notes/meetings/2020-02/february-4.md`
+  - Adopted as amended above
+- **Meeting Location Elections**  `raw/notes/meetings/2020-02/february-4.md`
+- **Conclusion**  `raw/notes/meetings/2020-02/february-4.md`
+- **Editor’s Report (ECMA262)**  `raw/notes/meetings/2020-02/february-4.md`
+- **ECMA Secretariat Report**  `raw/notes/meetings/2020-02/february-4.md`
+- **ECMA-402 Update**  `raw/notes/meetings/2020-02/february-4.md`
+- **Update from the COC Committee**  `raw/notes/meetings/2020-02/february-4.md`
+- **ToInteger normalizes -0 to +0**  `raw/notes/meetings/2020-02/february-4.md`
+  - Consensus reached
+- **Remove steps 2 and 4 from ProxyCreate**  `raw/notes/meetings/2020-02/february-4.md`
+  - consensus reached
+- **Async initialization for stage 1** — stage: 1  `raw/notes/meetings/2020-02/february-4.md`
+  - → Consensus reached for stage 1
+- **BigDecimal for Stage 1** — stage: 1  `raw/notes/meetings/2020-02/february-4.md`
+- **Conclusion**  `raw/notes/meetings/2020-02/february-4.md`
+- **Preserve Host Virtualizability**  `raw/notes/meetings/2020-02/february-4.md`
+- **Preserve Host Virtualizability (Continue from Day 1)** — stage: 1  `raw/notes/meetings/2020-02/february-5.md`
+  - → Consensus reached for stage 1
+- **Update on Realms** — stage: 3  `raw/notes/meetings/2020-02/february-5.md`
+  - Not seeking stage advancement this meeting.
+- **Unified Number Format for stage 4** — stage: 4  `raw/notes/meetings/2020-02/february-5.md`
+  - → Approved for Stage 4
+- **`Intl.Segmenter` Stage 2 update** — stage: 2  `raw/notes/meetings/2020-02/february-5.md`
+  - Update done, no stage advancement requested. Likely being requested at next meeting
+- **`Intl.Locale` for Stage 4** — stage: 4  `raw/notes/meetings/2020-02/february-5.md`
+  - → Consensus reached for Stage 4
+- **Legacy reflection features for functions in JavaScript for Stage 1** — stage: 1  `raw/notes/meetings/2020-02/february-5.md`
+  - → Consensus reached for stage 1
+- **Updates on Explicit Resource Management**  `raw/notes/meetings/2020-02/february-5.md`
+  - Update complete without asking for stage advancement.
+- **Object iteration for Stage 2** — stage: 2  `raw/notes/meetings/2020-02/february-5.md`
+  - Not requested for stage advancement.
+- **Logical Assignment for Stage 2** — stage: 2  `raw/notes/meetings/2020-02/february-5.md`
+  - → Consensus reached for Stage 2
+- **`JSON.parse` source text access for Stage 2** — stage: 2  `raw/notes/meetings/2020-02/february-5.md`
+  - Given the objections, not requesting stage advancement. But will pursue further
+- **`ArrayBuffer.fillRandom` for Stage 1** — stage: 1  `raw/notes/meetings/2020-02/february-5.md`
+  - → Advancement to stage 1 assuming changes:
+- **ArrayBuffer view stride argument for Stage 1** — stage: 1  `raw/notes/meetings/2020-02/february-5.md`
+  - → Consensus reached for stage 1
+- **Update on Weakrefs**  `raw/notes/meetings/2020-02/february-5.md`
+- **SES Compartments**  `raw/notes/meetings/2020-02/february-6.md`
+  - Update without stage advancement
+- **Time Duration Format Proposal for Stage 1** — stage: 1  `raw/notes/meetings/2020-02/february-6.md`
+  - → Consensus reached for stage 1
+- **Request for reviewers for Logical Assignment**  `raw/notes/meetings/2020-02/february-6.md`
+- **Syntax for Explicitly this argument for Stage 1** — stage: 1  `raw/notes/meetings/2020-02/february-6.md`
+- **Remote plenaries and SLTG/incubator calls**  `raw/notes/meetings/2020-02/february-6.md`
+  - For incubation calls, SYG will formally ask for participants and ask for a “charter” at the end of the next plenary meeting. Some folks from IRC expressed interest in starting the incubation calls bef
+- **function thisArgumentExpected property** — stage: 1  `raw/notes/meetings/2020-02/february-6.md`
+  - → `thisArgumentExpected` proposal not advanced to stage 1, waiting for additional clarification of intent of proposal and renaming explainer.
+  - → explicit this parameter - did not reach consensus for stage 1.
+- **Strings or symbols for Temporal.Calendar protocol**  `raw/notes/meetings/2020-02/february-6.md`
+  - SFC will follow up with RBN regarding using a similar pattern to cancellation tokens, where one symbol is used, returning this.
+
+## 2020-03
+
+- **Record and Tuple Update**  `raw/notes/meetings/2020-03/april-1.md`
+  - https://github.com/rricard/proposal-refcollection/
+- **Number.range and BigInt.range for Stage 1** — stage: 1  `raw/notes/meetings/2020-03/april-1.md`
+  - → Number.range and BigInt.range advances to Stage 1.
+- **Introducing: `this` argument reflection functions for stage 1** — stage: 1  `raw/notes/meetings/2020-03/april-1.md`
+  - Not proposed for Stage 1, will discuss offline JHX/SYG
+- **Relax hashbang syntax for Stage 1** — stage: 1  `raw/notes/meetings/2020-03/april-1.md`
+  - Not proposed for stage advancement
+- **WeakRefs FinalizationRegistry API change**  `raw/notes/meetings/2020-03/april-1.md`
+  - consensus to remove FinalizationRegistry cleanup iterators and pass values directly
+- **Temporal update**  `raw/notes/meetings/2020-03/april-1.md`
+- **Ergonomic brand checks for Private Fields for Stage 1** — stage: 1  `raw/notes/meetings/2020-03/april-1.md`
+  - → Consensus reached for Stage 1
+- **Compartments for Stage 1** — stage: 1  `raw/notes/meetings/2020-03/april-1.md`
+  - → Consensus reached for Compartments to Stage 1.
+- **Intl.NumberFormat v3 for Stage 1** — stage: 1  `raw/notes/meetings/2020-03/april-1.md`
+  - → Consensus reached for Intl.NumberFormat V3 for Stage 1.
+- **import.meta for Stage 4 ([continued from previous day](https://github.com/tc39/notes/blob/master/meetings/2020-03/march-31.md#importmeta-for-stage-4))** — stage: 4  `raw/notes/meetings/2020-03/april-1.md`
+  - Consensus to move import.meta to Stage 4, as is currently in the PR.
+- **Return of Surrogate pairs in RegExp capture group names**  `raw/notes/meetings/2020-03/april-1.md`
+  - Consensus that both kinds of escape sequences in both kinds of regular expression, as well as unescaped identifier characters even outside BMP, will be legal and will be included in the 2020 cut of th
+- **engine262**  `raw/notes/meetings/2020-03/april-1.md`
+- **Remote Plenaries**  `raw/notes/meetings/2020-03/april-2.md`
+- **Atomics.waitAsync error rejection PR**  `raw/notes/meetings/2020-03/april-2.md`
+  - Consensus reached for Option 3.
+- **Revisit WeakRefs FinalizationRegistry API change**  `raw/notes/meetings/2020-03/april-2.md`
+  - Consensus on making cleanup on FinalizationRegistration.prototype literally normative optional.
+- **Decorators update / Call for participation**  `raw/notes/meetings/2020-03/april-2.md`
+- **Vote on ECMA262 2020 spec draft**  `raw/notes/meetings/2020-03/april-2.md`
+  - The vote for ECMAScript 2020 passes
+- **Incubator call chartering**  `raw/notes/meetings/2020-03/april-2.md`
+  - SYG will create a Reflector thread, move the agenda repo into the TC39 org, and reach out to stakeholders interested in attending the incubator calls.
+- **Discuss process changes we implemented in February to accommodate US members and US delegates**  `raw/notes/meetings/2020-03/april-2.md`
+  - Further discussion will continue on the reflector for now.
+- **Hubs Hubs Hubs**  `raw/notes/meetings/2020-03/april-2.md`
+- **Secretary’s Report**  `raw/notes/meetings/2020-03/march-31.md`
+- **ECMA-402 7th Edition (2020) RC Cut**  `raw/notes/meetings/2020-03/march-31.md`
+- **Updates from Coc Committee**  `raw/notes/meetings/2020-03/march-31.md`
+- **Generically forbid extensions of all 402 methods**  `raw/notes/meetings/2020-03/march-31.md`
+  - Consensus to land
+- **Aligning atomics with wasm: allow it on non-shared ArrayBuffers**  `raw/notes/meetings/2020-03/march-31.md`
+  - No objections, consensus on the PR.
+- **PSA: Chrome freezing release train**  `raw/notes/meetings/2020-03/march-31.md`
+- **Surrogate pairs in RegExp capture groups**  `raw/notes/meetings/2020-03/march-31.md`
+  - Return to this discussion later.
+- **Make SharedArrayBuffer optional**  `raw/notes/meetings/2020-03/march-31.md`
+  - Consensus is to make the global property SharedArrayBuffer strictly optional for the host, without contingencies.
+- **Add support for 'OptionalChain'.PrivateIdentifier in class features proposals**  `raw/notes/meetings/2020-03/march-31.md`
+  - Consensus for both syntax forms
+- **Process: require public repo for stage 1** — stage: 1  `raw/notes/meetings/2020-03/march-31.md`
+  - → Consensus reached to require public repos for stage 1 proposals.
+- **TypedArray stride parameter for Stage 2** — stage: 2  `raw/notes/meetings/2020-03/march-31.md`
+  - Not asking for Stage 2.
+- **import.meta for stage 4** — stage: 4  `raw/notes/meetings/2020-03/march-31.md`
+  - Will continue discussion [tomorrow](https://github.com/tc39/notes/blob/master/meetings/2020-03/april-1.md#importmeta-for-stage-4-continued-from-previous-day) in a 15 minute timebox.
+- **Decimal update**  `raw/notes/meetings/2020-03/march-31.md`
+- **LogicalAssignment for stage 3** — stage: 3  `raw/notes/meetings/2020-03/march-31.md`
+  - Stage 3.
+- **Pattern Matching Update**  `raw/notes/meetings/2020-03/march-31.md`
+- **Surrogate pairs in RegExp capture groups 2: Electric Matchaloo**  `raw/notes/meetings/2020-03/march-31.md`
+
+## 2020-06
+
+- **Secretary’s report**  `raw/notes/meetings/2020-06/june-1.md`
+- **Test262**  `raw/notes/meetings/2020-06/june-1.md`
+- **Updates from CoC committee**  `raw/notes/meetings/2020-06/june-1.md`
+- **Promise.{all,allSettled,race} should check "resolve" before iterating**  `raw/notes/meetings/2020-06/june-1.md`
+- **Ergonomic brand checks for private fields for stage 2** — stage: 2  `raw/notes/meetings/2020-06/june-1.md`
+  - Stage 2
+- **Iterator Helpers**  `raw/notes/meetings/2020-06/june-1.md`
+  - Feedback given; no approach has consensus yet. Please see this [issue](https://github.com/tc39/proposal-iterator-helpers/issues/97)
+- **Do expressions for stage 2** — stage: 2  `raw/notes/meetings/2020-06/june-1.md`
+  - → Not advancing yet to Stage 2
+- **Hallway track update**  `raw/notes/meetings/2020-06/june-2.md`
+- **String.prototype.replaceAll for Stage 4** — stage: 4  `raw/notes/meetings/2020-06/june-2.md`
+  - Consensus for Stage 4!
+- **`AggregateError` `errors` update**  `raw/notes/meetings/2020-06/june-2.md`
+  - Consensus on PR 64.
+- **`AggregateError` constructor update**  `raw/notes/meetings/2020-06/june-2.md`
+  - New semantics for AggregateError constructor received consensus
+- **Temporal Update**  `raw/notes/meetings/2020-06/june-2.md`
+- **Introducing: Unicode support**  `raw/notes/meetings/2020-06/june-2.md`
+- **Decorators update**  `raw/notes/meetings/2020-06/june-2.md`
+- **Function Implementation Hiding for stage 3** — stage: 3  `raw/notes/meetings/2020-06/june-2.md`
+  - → “hide source” Blocked from advancement for stage 3
+- **Intl.NumberFormat V3 for stage 2** — stage: 2/3  `raw/notes/meetings/2020-06/june-2.md`
+  - Stage 2
+- **Intl.DurationFormat for Stage 2** — stage: 2/3  `raw/notes/meetings/2020-06/june-2.md`
+  - Stage 2
+- **Symbols as WeakMap keys for Stage 1** — stage: 1  `raw/notes/meetings/2020-06/june-2.md`
+  - Stage 1!
+- **Arbitrary Module Namespace Names**  `raw/notes/meetings/2020-06/june-2.md`
+- **Module Attributes for Stage 2** — stage: 2  `raw/notes/meetings/2020-06/june-3.md`
+  - → No consensus on stage 2, but people will talk offline to potentially revisit tomorrow.
+- **Built in modules Update Towards Stage 2** — stage: 2  `raw/notes/meetings/2020-06/june-3.md`
+- **Deep path properties** — stage: 1  `raw/notes/meetings/2020-06/june-3.md`
+  - Consensus on Stage 1
+- **Restrict subclassing support for built-in methods Stage 1** — stage: 1  `raw/notes/meetings/2020-06/june-3.md`
+  - Stage 1
+- **Async Context** — stage: 1  `raw/notes/meetings/2020-06/june-3.md`
+  - Stage 1 not achieved.
+- **Intl Enumeration API for Stage 1** — stage: 1  `raw/notes/meetings/2020-06/june-3.md`
+  - Stage 1 achieved.
+- **Iterator helpers update**  `raw/notes/meetings/2020-06/june-4.md`
+- **Realms, Stage 2 update** — stage: 2/3  `raw/notes/meetings/2020-06/june-4.md`
+  - → Capture thumbs up reviews from the HTML and W3C TAG groups before Stage 3 advancement
+- **Smart Unit Preferences in Intl.NumberFormat for Stage 1** — stage: 1  `raw/notes/meetings/2020-06/june-4.md`
+  - Stage 1
+- **Intl.Segmenter for Stage 3** — stage: 3  `raw/notes/meetings/2020-06/june-4.md`
+- **Announcements**  `raw/notes/meetings/2020-06/june-4.md`
+- **Generic Comparison** — stage: 1  `raw/notes/meetings/2020-06/june-4.md`
+  - Stage 1 with reframing to array equality
+- **.item() for Stage 1** — stage: 1  `raw/notes/meetings/2020-06/june-4.md`
+  - Stage 1
+- **Incubation call chartering**  `raw/notes/meetings/2020-06/june-4.md`
+  - SYG: Thanks. To sum up, the five topics we have identified are UUID, security at large, generic comparison, deep path properties, and Temporal. If you are a stakeholder in any of these topics, please 
+- **(Continuation) Module attributes for Stage 2** — stage: 2  `raw/notes/meetings/2020-06/june-4.md`
+  - → Reached consensus for Stage 2.
+- **Editorial Direction**  `raw/notes/meetings/2020-06/june-4.md`
+  - We will define "implementation-defined" to mean that there is a range of possible behaviors and the spec does not express a preference between them, "implementation-dependent" to mean that there is a 
+
+## 2020-07
+
+- **Update from the Code of Conduct Committee**  `raw/notes/meetings/2020-07/july-20.md`
+- **Retroactive consensus on Unicode 13 property names and aliases (#1896, #1939)**  `raw/notes/meetings/2020-07/july-20.md`
+- **Specify \8 and \9 in sloppy (non-template) strings (#2054)**  `raw/notes/meetings/2020-07/july-20.md`
+- **Adding Reflect[Symbol.toStringTag] (#2057)**  `raw/notes/meetings/2020-07/july-20.md`
+- **Should eval?.() be direct eval? (#2062, #2063)**  `raw/notes/meetings/2020-07/july-20.md`
+  - Keep spec as it is (indirect eval).
+- **Forbid Numeric Separators in NonOctalDecimalIntegerLiteral fractional / exponent parts**  `raw/notes/meetings/2020-07/july-20.md`
+- **Cognitive Dimensions of Notation: a framework for reflecting on language design**  `raw/notes/meetings/2020-07/july-20.md`
+- **Class static blocks for Stage 2** — stage: 2  `raw/notes/meetings/2020-07/july-20.md`
+  - Not advancing at this meeting.
+- **Host hooks for Job callbacks**  `raw/notes/meetings/2020-07/july-20.md`
+  - Meet together offline to continue discussing the issue
+- **Handle awkward rounding behaviour**  `raw/notes/meetings/2020-07/july-20.md`
+  - Consensus
+- **Promise.any & AggregateError for stage 4** — stage: 4  `raw/notes/meetings/2020-07/july-21.md`
+  - Stage 4!
+- **Strictness check for object's SetMutableBinding**  `raw/notes/meetings/2020-07/july-21.md`
+  - Consensus on the PR.
+- **Intl.ListFormat for Stage 4** — stage: 4  `raw/notes/meetings/2020-07/july-21.md`
+  - Stage 4!
+- **Intl.DateTimeFormat dateStyle/timeStyle for Stage 4** — stage: 4  `raw/notes/meetings/2020-07/july-21.md`
+  - Stage 4!
+- **Fix Function.toString for builtins**  `raw/notes/meetings/2020-07/july-21.md`
+- **WeakRefs for Stage 4 / CleanupSome for Stage 2/3** — stage: 2/4  `raw/notes/meetings/2020-07/july-21.md`
+  - Stage 2 for cleanupSome
+- **Logical Assignment for Stage 4** — stage: 4  `raw/notes/meetings/2020-07/july-21.md`
+  - Stage 4!
+- **NumericLiteralSeparator for Stage 4** — stage: 4  `raw/notes/meetings/2020-07/july-21.md`
+  - Stage 4!
+- **Slice notation for Stage 2** — stage: 1/2  `raw/notes/meetings/2020-07/july-21.md`
+  - → Remains at Stage 1
+- **Temporal stage 2 update** — stage: 2  `raw/notes/meetings/2020-07/july-21.md`
+- **Import Conditions for Stage 3** — stage: 2/3  `raw/notes/meetings/2020-07/july-21.md`
+  - → Proposal remains at Stage 2
+- **Intl.Segmenter for Stage 3** — stage: 3  `raw/notes/meetings/2020-07/july-21.md`
+  - Stage 3!
+- **Iterator Helpers update**  `raw/notes/meetings/2020-07/july-21.md`
+  - RGN and MPC are reviewers
+- **.item() for Stage 2** — stage: 2/3  `raw/notes/meetings/2020-07/july-21.md`
+  - Stage 2!
+- **Ergonomic brand checks for private fields for stage 3** — stage: 3  `raw/notes/meetings/2020-07/july-22.md`
+  - Will be discussed offline
+- **Upsert (now renamed emplace) updates ~& for Stage 3~** — stage: 3  `raw/notes/meetings/2020-07/july-22.md`
+  - Follow up on conflicts on the repo.
+- **Number.range for Stage 2** — stage: 2  `raw/notes/meetings/2020-07/july-22.md`
+  - → No consensus for Stage 2
+- **await operations for Stage 1** — stage: 1  `raw/notes/meetings/2020-07/july-22.md`
+  - → Approved for Stage 1
+- **Array.prototype.unique() proposal for Stage 1** — stage: 1  `raw/notes/meetings/2020-07/july-22.md`
+  - Stage 1
+- **Record and Tuple for Stage 2** — stage: 2  `raw/notes/meetings/2020-07/july-22.md`
+  - → Approved for Stage 2!
+- **Symbols as WeakMap keys for stage 2** — stage: 2  `raw/notes/meetings/2020-07/july-22.md`
+  - → No Stage 2 advancement
+- **JSON.parse source text access for Stage 2** — stage: 2/3  `raw/notes/meetings/2020-07/july-22.md`
+  - Stage 2!
+- **Arbitrary Module Namespace Identifiers**  `raw/notes/meetings/2020-07/july-22.md`
+  - This can be presented as a "Needs consensus" PR
+- **Host hooks for Job callbacks (consensus-seeking continuation from day 1)**  `raw/notes/meetings/2020-07/july-22.md`
+  - Host hooks for job callbacks has Consensus
+- **Function toString for builtins (consensus-seeking continuation from day 1)**  `raw/notes/meetings/2020-07/july-22.md`
+  - Consensus to merge the PR
+- **Examining Structural Racism in TC39**  `raw/notes/meetings/2020-07/july-23.md`
+- ***continuation* Ergonomic brand checks for private fields for stage 3** — stage: 3  `raw/notes/meetings/2020-07/july-23.md`
+  - → ~~Advance to stage 3?~~ Nope, challenged in IRC
+- **Async Context updates & for Stage 1** — stage: 1  `raw/notes/meetings/2020-07/july-23.md`
+  - Not going to stage 1
+- ***continuation* Ergonomic brand checks for private fields for stage 3** — stage: 2/3  `raw/notes/meetings/2020-07/july-23.md`
+  - → Does not yet advance; remains at stage 2
+- **Flex Incubator Calls to weekly meetings**  `raw/notes/meetings/2020-07/july-23.md`
+  - Incubator calls remain bi-weekly
+- **Incubation call chartering**  `raw/notes/meetings/2020-07/july-23.md`
+- **ResizableArrayBuffer and GrowableSharedArrayBuffer for Stage 1** — stage: 1  `raw/notes/meetings/2020-07/july-23.md`
+  - Stage 1!
+- **Documenting invariants**  `raw/notes/meetings/2020-07/july-23.md`
+  - We will start work on documenting invariants.
+- **Many specific invariants to consider**  `raw/notes/meetings/2020-07/july-23.md`
+- **Broad presentations**  `raw/notes/meetings/2020-07/summary.md`
+- **Updates**  `raw/notes/meetings/2020-07/summary.md`
+- **Advancing Proposals**  `raw/notes/meetings/2020-07/summary.md`
+- **Non Advancing proposals**  `raw/notes/meetings/2020-07/summary.md`
+- **PRs w/ consensus**  `raw/notes/meetings/2020-07/summary.md`
+- **PRs rejected or without consensus**  `raw/notes/meetings/2020-07/summary.md`
+
+## 2020-09
+
+- **Secretary’s Report**  `raw/notes/meetings/2020-09/sept-21.md`
+- **ECMA TC53 Liaison Report**  `raw/notes/meetings/2020-09/sept-21.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2020-09/sept-21.md`
+- **The last 5 years of Test262, a brief review**  `raw/notes/meetings/2020-09/sept-21.md`
+- **Explicitly specify order of operations in MakeTime**  `raw/notes/meetings/2020-09/sept-21.md`
+  - Consensus Reached.
+- **Move __proto__ out of Annex B**  `raw/notes/meetings/2020-09/sept-21.md`
+  - The __proto__ syntax will be required and not marked as discouraged
+- **Align detached buffer semantics with web reality**  `raw/notes/meetings/2020-09/sept-21.md`
+  - PR Approved.
+- **Specify order of name and length for built-in functions**  `raw/notes/meetings/2020-09/sept-21.md`
+  - Consensus.
+- **Arbitrary Strings as export/import names**  `raw/notes/meetings/2020-09/sept-21.md`
+  - Approved, pending the Test262 and implementations.
+- **Numeric literal suffixes update: separate namespace version**  `raw/notes/meetings/2020-09/sept-21.md`
+- **Need another stage 3 reviewer for iterator helpers** — stage: 3  `raw/notes/meetings/2020-09/sept-21.md`
+  - YSV/JTO will review
+- **Withdrawing TypedArray stride**  `raw/notes/meetings/2020-09/sept-21.md`
+  - Proposal will be withdrawn
+- **F.p.bind with infinite-length functions**  `raw/notes/meetings/2020-09/sept-21.md`
+  - Consensus. We will use Infinity.
+- **Date arithmetic**  `raw/notes/meetings/2020-09/sept-21.md`
+  - Consensus on part 1: IEEE arithmetic in Dates
+- **Move outreach groups to the TC39 org, like incubator calls?**  `raw/notes/meetings/2020-09/sept-21.md`
+  - The outreach calls will be moved into the TC39 org.
+- **Intl.DisplayNames for Stage 4** — stage: 4  `raw/notes/meetings/2020-09/sept-22.md`
+  - Stage 4!
+- **.item() for Stage 3** — stage: 3  `raw/notes/meetings/2020-09/sept-22.md`
+  - Stage 3 including String.prototype.item with code unit indexing.
+- **Numeric literal suffixes - continued**  `raw/notes/meetings/2020-09/sept-22.md`
+- **Import Assertions for Stage 3** — stage: 3  `raw/notes/meetings/2020-09/sept-22.md`
+  - Stage 3 for the status quo spec.
+- **JSON Modules update** — stage: 3  `raw/notes/meetings/2020-09/sept-22.md`
+  - Further discussion on immutability vs mutability to occur on proposal repo
+- **GetOption in ECMA-262**  `raw/notes/meetings/2020-09/sept-22.md`
+- **Intl Enumeration API for Stage 2** — stage: 2  `raw/notes/meetings/2020-09/sept-22.md`
+  - Consensus on Stage 2!
+- **Records & Tuples**  `raw/notes/meetings/2020-09/sept-22.md`
+- **Class static initialization block for Stage 2** — stage: 2  `raw/notes/meetings/2020-09/sept-22.md`
+  - Stage 2
+- **Process document clarifications**  `raw/notes/meetings/2020-09/sept-22.md`
+- **Class Access Expressions for Stage 2** — stage: 2  `raw/notes/meetings/2020-09/sept-22.md`
+- **Ergonomic brand checks for private fields for stage 3** — stage: 3  `raw/notes/meetings/2020-09/sept-23.md`
+  - Decision deferred until JHX can review notes.
+- **Decorators: A new proposal iteration**  `raw/notes/meetings/2020-09/sept-23.md`
+- **String.dedent for Stage 1** — stage: 1  `raw/notes/meetings/2020-09/sept-23.md`
+  - Stage 1
+- **Temporal Stage 2 Update** — stage: 2  `raw/notes/meetings/2020-09/sept-23.md`
+- **Intl.DisplayNames V2 for Stage 1** — stage: 1  `raw/notes/meetings/2020-09/sept-23.md`
+  - Stage 1
+- **Intl Locale Info for stage 1** — stage: 1  `raw/notes/meetings/2020-09/sept-23.md`
+  - Stage 1
+- **Conformance for enumerable options in 262 and 402**  `raw/notes/meetings/2020-09/sept-23.md`
+- **Revisit Ergonomic Brand Checks for Private Fields**  `raw/notes/meetings/2020-09/sept-24.md`
+  - Proposal does not yet have consensus.
+- **Resizable and growable ArrayBuffers for Stage 2** — stage: 2  `raw/notes/meetings/2020-09/sept-24.md`
+  - Stage 2. Reviewer companies:
+- **Builtin Modules for Stage 2** — stage: 2  `raw/notes/meetings/2020-09/sept-24.md`
+  - The proposal will not advance.
+- **Error Cause for Stage 1** — stage: 1  `raw/notes/meetings/2020-09/sept-24.md`
+  - Stage 1
+- **Double-Ended Iterator and Destructuring for Stage 1** — stage: 1  `raw/notes/meetings/2020-09/sept-24.md`
+  - Stage 1
+- **Standardized Debug for Stage 1** — stage: 1  `raw/notes/meetings/2020-09/sept-24.md`
+  - → Stage 1 reached.
+- **Unused Function Parameters for Stage 1** — stage: 1  `raw/notes/meetings/2020-09/sept-24.md`
+  - Not advancing
+- **Modulus and Additional Integer Math for Stage 1** — stage: 1  `raw/notes/meetings/2020-09/sept-24.md`
+  - Stage 1!
+- **Incubation call chartering**  `raw/notes/meetings/2020-09/sept-24.md`
+- **Mechanisms to lighten the load on note takers**  `raw/notes/meetings/2020-09/sept-24.md`
+
+## 2020-11
+
+- **Plenary Scheduling**  `raw/notes/meetings/2020-11/nov-16.md`
+- **ECMA Secretary's Report**  `raw/notes/meetings/2020-11/nov-16.md`
+- **Handling of NaN & side effects in Date. prototype.set* methods**  `raw/notes/meetings/2020-11/nov-16.md`
+- **Handling await in left operands of exponentiation**  `raw/notes/meetings/2020-11/nov-16.md`
+- **__proto__ normative optional options**  `raw/notes/meetings/2020-11/nov-16.md`
+- **Re-resolve unresolvable bindings in PutValue**  `raw/notes/meetings/2020-11/nov-16.md`
+- **IntegerIndexedElementSet should always indicate success**  `raw/notes/meetings/2020-11/nov-16.md`
+- **clarifying conclusion to __proto__ normative optional agenda item**  `raw/notes/meetings/2020-11/nov-16.md`
+- **Give %TypedArray% methods explicit algorithms**  `raw/notes/meetings/2020-11/nov-16.md`
+- **Concurrent JS: A JS vision**  `raw/notes/meetings/2020-11/nov-16.md`
+- **RegExp Matches Indices JSC Implementation feedback**  `raw/notes/meetings/2020-11/nov-16.md`
+- **Supporting MDN's documentation about TC39's output**  `raw/notes/meetings/2020-11/nov-16.md`
+- **Default constructors and spread operations**  `raw/notes/meetings/2020-11/nov-17.md`
+  - Consensus for both normative changes.
+- **.item() rename + revisit inclusion on String** — stage: 3  `raw/notes/meetings/2020-11/nov-17.md`
+  - Consensus on Stage 3 for arrays and typed arrays and strings, pending a rename
+- **Standardized Debug for Stage 2** — stage: 2  `raw/notes/meetings/2020-11/nov-17.md`
+  - No stage advancement
+- **Grouped Accessors and Auto-Accessors**  `raw/notes/meetings/2020-11/nov-17.md`
+  - Revisit before the end of the meeting
+- **Realms for Stage 3** — stage: 3  `raw/notes/meetings/2020-11/nov-17.md`
+- **JSON modules for Stage 3** — stage: 3  `raw/notes/meetings/2020-11/nov-18.md`
+  - We will revisit this topic later
+- **Tour of Temporal**  `raw/notes/meetings/2020-11/nov-18.md`
+- **Intl Enumeration API update**  `raw/notes/meetings/2020-11/nov-18.md`
+  - No change
+- **JS Module Blocks** — stage: 1  `raw/notes/meetings/2020-11/nov-18.md`
+  - Stage 1
+- **Process Update**  `raw/notes/meetings/2020-11/nov-18.md`
+  - PR to be merged
+- **Adopting Unicode behavior for set notation in regular expressions**  `raw/notes/meetings/2020-11/nov-18.md`
+  - No advancement due to late addition to the agenda
+- **Extensions for stage 1** — stage: 1  `raw/notes/meetings/2020-11/nov-19.md`
+  - → proposal advances to stage 1
+- **Dealing with TC39 data**  `raw/notes/meetings/2020-11/nov-19.md`
+- **JSON modules for Stage 3 (cont.)** — stage: 3  `raw/notes/meetings/2020-11/nov-19.md`
+- **Supporting MDN's documentation about TC39's output (redux)**  `raw/notes/meetings/2020-11/nov-19.md`
+- **Continuation: Grouped Accessors and Auto-Accessors** — stage: 1  `raw/notes/meetings/2020-11/nov-19.md`
+  - → proposal advances to stage 1
+- **Incubator Chartering**  `raw/notes/meetings/2020-11/nov-19.md`
+- **Error cause for Stage 2** — stage: 2  `raw/notes/meetings/2020-11/nov-19.md`
+  - → proposal advances to stage 2
+- **Batch preloading and JavaScript**  `raw/notes/meetings/2020-11/nov-19.md`
+
+## 2021-01
+
+- **Editors Update**  `raw/notes/meetings/2021-01/jan-25.md`
+- **ECMA-402 editor’s report**  `raw/notes/meetings/2021-01/jan-25.md`
+  - Consensus on #429; will follow up with YSV on #500 - YSV followed up, and confirmed that it is fine offline
+- **TC53 liaison report**  `raw/notes/meetings/2021-01/jan-25.md`
+- **Runtime Semantics for MemberExpression do not conform to web reality**  `raw/notes/meetings/2021-01/jan-25.md`
+  - Consensus on the PR
+- **RegExp match indices**  `raw/notes/meetings/2021-01/jan-25.md`
+  - Consensus on the `d` flag for match indices.
+- **JSON Modules for stage 3** — stage: 3  `raw/notes/meetings/2021-01/jan-25.md`
+  - Outcome: Consensus for stage 3, with mutable semantics
+- **Array.isTemplateObject**  `raw/notes/meetings/2021-01/jan-25.md`
+  - Conclusion: No advancement
+- **JS Module blocks** — stage: 2  `raw/notes/meetings/2021-01/jan-25.md`
+  - Conclusion: stage 2
+- **class static initialization block** — stage: 3  `raw/notes/meetings/2021-01/jan-25.md`
+  - → Conclusion: Conditional advancement to Stage 3 based on the following conditions:
+- **`Intl.DateTimeFormat` for stage 4** — stage: 4  `raw/notes/meetings/2021-01/jan-26.md`
+- **Conclusion**  `raw/notes/meetings/2021-01/jan-26.md`
+  - Was not seeking advancement
+- **Dynamic host brand checks for stage 2** — stage: 2  `raw/notes/meetings/2021-01/jan-26.md`
+  - Not advancing
+- **Realms update**  `raw/notes/meetings/2021-01/jan-26.md`
+  - Discussion continues internally at chrome and elsewhere.
+- **Intl Locale Info for stage 2** — stage: 2  `raw/notes/meetings/2021-01/jan-26.md`
+  - Stage 2 without the unit info part.
+- **`Intl.DisplayNames` for stage 2** — stage: 2  `raw/notes/meetings/2021-01/jan-26.md`
+  - Stage 2
+- **Chartering Security TG**  `raw/notes/meetings/2021-01/jan-26.md`
+- **Do Expressions**  `raw/notes/meetings/2021-01/jan-26.md`
+  - Proposal does not advance.
+- **Temporal** — stage: 3  `raw/notes/meetings/2021-01/jan-27.md`
+  - Proposal is camera-ready, will go for Stage 3 in March.
+- **Async do expressions** — stage: 1  `raw/notes/meetings/2021-01/jan-27.md`
+  - Stage 1
+- **Class Brand Checks** — stage: 1  `raw/notes/meetings/2021-01/jan-27.md`
+  - Stage 1, with the explicit understanding that it will not be a replacement for Ergonomic Brand Checks
+- **Ergonomic Brand Checks** — stage: 3  `raw/notes/meetings/2021-01/jan-27.md`
+  - Stage 3
+- **Extend TimeZoneName Option Proposal for stage 1** — stage: 1  `raw/notes/meetings/2021-01/jan-27.md`
+  - Stage 1
+- **Brand checking** — stage: 1  `raw/notes/meetings/2021-01/jan-27.md`
+  - → Did not seek advancement; JHD/BFS and others will bring a proposal in the future seeking stage 1.
+- **Relative indexing method**  `raw/notes/meetings/2021-01/jan-27.md`
+  - Not advancing, waiting on outreach to bricklink.
+- **EraDisplay for Stage 1** — stage: 1  `raw/notes/meetings/2021-01/jan-27.md`
+  - Stage 1
+- **Alleviating the cost of spec complexity**  `raw/notes/meetings/2021-01/jan-27.md`
+  - Topic remains open for discussion.
+- **JSON Modules Revisit** — stage: 3  `raw/notes/meetings/2021-01/jan-27.md`
+  - → JSON modules is conditionally stage 3 pending reviews from BFS and YSV.
+- **PSA about Blink's new "developer signals" requirement**  `raw/notes/meetings/2021-01/jan-27.md`
+  - No official conclusion.
+- **RegExp set notation for stage 1** — stage: 1  `raw/notes/meetings/2021-01/jan-28.md`
+  - Stage 1
+- **Revisiting RegExp escape** — stage: 1  `raw/notes/meetings/2021-01/jan-28.md`
+  - Stage 1
+- **Index From End Syntax**  `raw/notes/meetings/2021-01/jan-28.md`
+  - Not advancing on its own, Hax to talk to Sathya about advancing this as part of the slice syntax proposal.
+- **Array find from last for stage 1** — stage: 1  `raw/notes/meetings/2021-01/jan-28.md`
+  - Stage 1
+- **Defer module import eval** — stage: 1  `raw/notes/meetings/2021-01/jan-28.md`
+  - Stage 1
+- **Intl LocaleMatcher for Stage 1** — stage: 1  `raw/notes/meetings/2021-01/jan-28.md`
+  - Stage 1
+- **Inclusion working group updates**  `raw/notes/meetings/2021-01/jan-28.md`
+- **Incubation Chartering**  `raw/notes/meetings/2021-01/jan-28.md`
+- **Protocols in JavaScript**  `raw/notes/meetings/2021-01/jan-28.md`
+  - Temporal remains with current semantics; future cases to be discussed as they arise.
+
+## 2021-03
+
+- **RegExp set notation: Update**  `raw/notes/meetings/2021-03/mar-10.md`
+  - No changes, was not seeking any
+- **Error.prototype.cause for stage 3** — stage: 3  `raw/notes/meetings/2021-03/mar-10.md`
+  - Stage 3
+- **Promise.anySettled**  `raw/notes/meetings/2021-03/mar-10.md`
+  - Does not advance.
+- **Array find from last** — stage: 2  `raw/notes/meetings/2021-03/mar-10.md`
+  - → Stage advancement to stage 2
+- **ResizableArrayBuffer for Stage 3** — stage: 3  `raw/notes/meetings/2021-03/mar-10.md`
+  - not stage 3 yet
+- **Incubation call chartering**  `raw/notes/meetings/2021-03/mar-10.md`
+  - chartered:
+- **Intl.Segmenter for Stage 4** — stage: 4  `raw/notes/meetings/2021-03/mar-10.md`
+  - was not seeking advancement, awaiting future feedback from Mozilla re: implementing this using ICU4X
+- **Top-level await**  `raw/notes/meetings/2021-03/mar-10.md`
+  - Consensus for post-ordering change
+- **Temporal Pt 2** — stage: 3  `raw/notes/meetings/2021-03/mar-10.md`
+  - stage 3, pending:
+- **Pipeline Operator**  `raw/notes/meetings/2021-03/mar-10.md`
+- **Opt-Out Period**  `raw/notes/meetings/2021-03/mar-10.md`
+- **Editors Update**  `raw/notes/meetings/2021-03/mar-9.md`
+  - Unanimous consent for 2021 Candidate
+- **Introducing: Make B.1.{1,2} (octal literals & escapes) normative for sloppy code**  `raw/notes/meetings/2021-03/mar-9.md`
+  - Consensus
+- **Normative: specify creation order for capturing group properties**  `raw/notes/meetings/2021-03/mar-9.md`
+  - Consensus
+- **Backup incumbent tracking for FinalizationRegistry jobs**  `raw/notes/meetings/2021-03/mar-9.md`
+  - Consensus
+- **Class Static Initialization Blocks** — stage: 3  `raw/notes/meetings/2021-03/mar-9.md`
+  - Still stage 3
+- **Records and Tuples update**  `raw/notes/meetings/2021-03/mar-9.md`
+  - New proposal suggested
+- **Async Do update towards stage 2** — stage: 2  `raw/notes/meetings/2021-03/mar-9.md`
+  - Not asking for advancement; Kevin to proceed with study design
+- **ECMA Recognition Awards**  `raw/notes/meetings/2021-03/mar-9.md`
+  - Consensus on 3 nominations
+- **Module Fragments (For Stage 1)** — stage: 1  `raw/notes/meetings/2021-03/mar-9.md`
+  - Stage 1
+- **Collection normalization methods**  `raw/notes/meetings/2021-03/mar-9.md`
+- **Temporal for Stage 3** — stage: 3  `raw/notes/meetings/2021-03/mar-9.md`
+
+## 2021-04
+
+- **Secretary Report**  `raw/notes/meetings/2021-04/apr-19.md`
+- **`Temporal` Update**  `raw/notes/meetings/2021-04/apr-19.md`
+- **Security TG**  `raw/notes/meetings/2021-04/apr-19.md`
+  - TG3 is chartered
+- **`Intl.NumberFormat` V3 Stage 2 Update** — stage: 2  `raw/notes/meetings/2021-04/apr-19.md`
+  - Proposal was not seeking advancement, but will likely come back for advancement with the changes presented here
+- **Class fields, Private methods, and Static class features for Stage 4** — stage: 4  `raw/notes/meetings/2021-04/apr-19.md`
+  - → All three proposals advance to Stage 4
+- **Import Assertions update**  `raw/notes/meetings/2021-04/apr-19.md`
+- **Requests for services from Ecma for TC39**  `raw/notes/meetings/2021-04/apr-19.md`
+- **Intl Locale Info for Stage 3** — stage: 3  `raw/notes/meetings/2021-04/apr-20.md`
+  - Stage 3
+- **Intl Display Names v2 for Stage 3** — stage: 3  `raw/notes/meetings/2021-04/apr-20.md`
+  - proposal does not advance, will discuss further with DE, Anba, and ZB and return next likely at meeting
+- **RegExp unicode set notation + properties of strings update**  `raw/notes/meetings/2021-04/apr-20.md`
+  - Was not seeking advancement but no expressed objections to the described syntax
+- **Extend TimeZoneName Option Proposal for Stage 2** — stage: 2  `raw/notes/meetings/2021-04/apr-20.md`
+  - Stage 2
+- **Resizable Buffers**  `raw/notes/meetings/2021-04/apr-20.md`
+  - will overflow to discuss remaining queue items
+- **Change Array By Copy**  `raw/notes/meetings/2021-04/apr-20.md`
+- **Object.has for Stage 1** — stage: 1/2  `raw/notes/meetings/2021-04/apr-20.md`
+  - → Reached Stage 2 consensus
+- **Pattern matching update**  `raw/notes/meetings/2021-04/apr-20.md`
+- **Move test262 requirement to Stage 3** — stage: 3  `raw/notes/meetings/2021-04/apr-21.md`
+- **NVC Training Proposal**  `raw/notes/meetings/2021-04/apr-21.md`
+- **Read-only ArrayBuffer and Fixed view of ArrayBuffer for Stage 1** — stage: 1  `raw/notes/meetings/2021-04/apr-21.md`
+  - Both proposals progress to stage 1
+- **Intl Enumeration API update**  `raw/notes/meetings/2021-04/apr-21.md`
+  - Richard Gibson & JHD will review
+- **Reviewers for the Object.hasOwn proposal**  `raw/notes/meetings/2021-04/apr-21.md`
+  - JHD & Leo Balter & Felienne Hermans will review
+- **Isolated Realms update** — stage: 3  `raw/notes/meetings/2021-04/apr-21.md`
+  - → Signed Intention to request advancement for Stage 3 in the next TC39 plenary
+- **Symbols as WeakMap keys for Stage 2** — stage: 2  `raw/notes/meetings/2021-04/apr-21.md`
+  - → YSV: it was promoted to stage 2 and three reviewers signed up. That was it think DE, JHD, and BSH, I don't know his last name. Thank you.
+- **Resizable ArrayBuffer Overflow** — stage: 2.9  `raw/notes/meetings/2021-04/apr-21.md`
+  - Stage 2.95
+
+## 2021-05
+
+- **Inclusion WG Update (Chat Platform)**  `raw/notes/meetings/2021-05/may-25.md`
+- **SharedArrayBuffer `.length`**  `raw/notes/meetings/2021-05/may-25.md`
+  - Consensus
+- **RegExp Match Indices** — stage: 4  `raw/notes/meetings/2021-05/may-25.md`
+  - Stage 4
+- **Top Level Await** — stage: 4  `raw/notes/meetings/2021-05/may-25.md`
+  - Stage 4
+- **Temporal Normative PRs**  `raw/notes/meetings/2021-05/may-25.md`
+  - All normative changes achieved consensus
+- **Accessible Object.prototype.hasOwnProperty() for Stage 3** — stage: 3  `raw/notes/meetings/2021-05/may-25.md`
+  - Stage 3
+- **Symbols as Weak Keys for Stage 3** — stage: 3  `raw/notes/meetings/2021-05/may-25.md`
+  - No conclusion
+- **Intl Displaynames** — stage: 3  `raw/notes/meetings/2021-05/may-25.md`
+  - Stage 3
+- **Extend timeZoneName Option for stage 3** — stage: 3  `raw/notes/meetings/2021-05/may-25.md`
+  - Stage 3
+- **Intl Enumeration API Stage 2 Update** — stage: 2  `raw/notes/meetings/2021-05/may-25.md`
+  - Not attempting to advance
+- **Resizable ArrayBuffers for stage 3** — stage: 3  `raw/notes/meetings/2021-05/may-25.md`
+  - Stage 3, with a change to the locking semantics for growing loops as proposed by WH
+- **Symbols as Weak Keys, pt 2**  `raw/notes/meetings/2021-05/may-25.md`
+  - LEO to have a thread on Github to discuss allowing Symbol.for symbols and well-known symbols.
+- **Discussion of globals and guidance for future proposals**  `raw/notes/meetings/2021-05/may-26.md`
+  - New globals are ok.
+- **Resizable Buffers (Continuation)** — stage: 3  `raw/notes/meetings/2021-05/may-26.md`
+  - → Proposal is unconditionally stage 3
+- **Admin: Realtime Chat Networks**  `raw/notes/meetings/2021-05/may-26.md`
+  - We have moved from Freenode to Matrix
+- **Admin: Meeting frequency**  `raw/notes/meetings/2021-05/may-26.md`
+  - No conclusion
+- **Incubator call chartering**  `raw/notes/meetings/2021-05/may-26.md`
+  - Pipeline remains chartered
+- **Realms** — stage: 3  `raw/notes/meetings/2021-05/may-26.md`
+  - → Proposal does not reach Stage 3
+- **RegExp Unicode set notation + properties of strings for Stage 2** — stage: 2  `raw/notes/meetings/2021-05/may-26.md`
+  - Stage 2
+
+## 2021-07
+
+- **Election of TG3 Security Task Group Chair**  `raw/notes/meetings/2021-07/july-13.md`
+- **ECMA Proposal**  `raw/notes/meetings/2021-07/july-13.md`
+- **Remove "Designed to be subclassable"**  `raw/notes/meetings/2021-07/july-13.md`
+  - Consensus for tc39#2360.
+- **Intl Locale Info update**  `raw/notes/meetings/2021-07/july-13.md`
+  - Consensus for removing “standard” and “search” from Intl.Locale.prototype.collations.
+- **Intl.Displaynames**  `raw/notes/meetings/2021-07/july-13.md`
+  - No questions were raised.
+- **Extend timezone name option**  `raw/notes/meetings/2021-07/july-13.md`
+  - No questions were raised.
+- **Intl Enumeration API for Stage 3** — stage: 3  `raw/notes/meetings/2021-07/july-13.md`
+  - Stage 3.
+- **Realms for Stage 3** — stage: 3  `raw/notes/meetings/2021-07/july-13.md`
+  - Continue conversation later in the week
+- **Ergonomic Brand Checks for Stage 4** — stage: 4  `raw/notes/meetings/2021-07/july-14.md`
+  - Stage 4
+- **Accessible Object hasOwnProperty update**  `raw/notes/meetings/2021-07/july-14.md`
+  - No changes sought or made
+- **Import assertions update**  `raw/notes/meetings/2021-07/july-14.md`
+  - No changes sought or made, general agreement on the status quo
+- **Decorators update** — stage: 3  `raw/notes/meetings/2021-07/july-14.md`
+  - Stage 3 reviewers: Richard Gibson, Shu-yu Guo, Jordan Harband, Leo Balter
+- **Array find-from-last** — stage: 3  `raw/notes/meetings/2021-07/july-14.md`
+  - Proposal achieves stage 3
+- **Guidance for nested namespaces**  `raw/notes/meetings/2021-07/july-14.md`
+  - No conclusion, will revisit later this meeting if there is time
+- **Restricting callables to only be able to return normal and throw completions**  `raw/notes/meetings/2021-07/july-14.md`
+  - Consensus on both PRs
+- **Guidance for nested namespaces again**  `raw/notes/meetings/2021-07/july-14.md`
+  - Consensus to use fully qualified name in `@@toStringTag`
+- **Renaming Strawperson to Concept or something better**  `raw/notes/meetings/2021-07/july-14.md`
+  - Remove "name" column from process document
+- **ArrayBuffer to/from Base64** — stage: 1  `raw/notes/meetings/2021-07/july-14.md`
+  - consensus on Stage 1 with stated reservations from PHE
+- **Module fragments**  `raw/notes/meetings/2021-07/july-14.md`
+  - More discussion later
+- **Array filtering / grouping for stage 2** — stage: 1/2  `raw/notes/meetings/2021-07/july-14.md`
+  - → filterReject does **not** get Stage 2
+- **Intl.NumberFormat v3 for stage 3** — stage: 3  `raw/notes/meetings/2021-07/july-15.md`
+  - Stage 3, KG to review the specification of the string grammar (and WH if interested).
+- **Module fragments (continuation)**  `raw/notes/meetings/2021-07/july-15.md`
+  - Did not seek stage advancement, interest in variable style but more thinking to be done
+- **Incubator call chartering**  `raw/notes/meetings/2021-07/july-15.md`
+  - chartered pattern matching
+- **Capitalization of nested namespace objects (continuation)**  `raw/notes/meetings/2021-07/july-15.md`
+  - Namespace objects will be capitalized, including when nested.
+- **Realms for Stage 3 (continued)** — stage: 3  `raw/notes/meetings/2021-07/july-15.md`
+  - No resolution
+- **Realms for Stage 3 (Continued)** — stage: 3  `raw/notes/meetings/2021-07/july-15.md`
+  - Stage 3
+- **`getOriginals` for stage 1** — stage: 1  `raw/notes/meetings/2021-07/july-15.md`
+- **Realms (Continuation)**  `raw/notes/meetings/2021-07/july-15.md`
+  - See earlier Realms item
+
+## 2021-08
+
+- **262 Editor's Report**  `raw/notes/meetings/2021-08/aug-31.md`
+- **402 Editor's Report**  `raw/notes/meetings/2021-08/aug-31.md`
+- **404 Editor's Report**  `raw/notes/meetings/2021-08/aug-31.md`
+- **Mark `with` as legacy**  `raw/notes/meetings/2021-08/aug-31.md`
+  - Consensus
+- **Relative indexing .at() method for Stage 4** — stage: 4  `raw/notes/meetings/2021-08/aug-31.md`
+  - Consensus
+- **Accessible Object hasOwnProperty for Stage 4** — stage: 4  `raw/notes/meetings/2021-08/aug-31.md`
+  - Consensus
+- **Class static initialization blocks for Stage 4** — stage: 4  `raw/notes/meetings/2021-08/aug-31.md`
+  - Consensus
+- **Change Array by Copy** — stage: 2  `raw/notes/meetings/2021-08/aug-31.md`
+  - Consensus for Stage 2
+- **DurationFormat Update**  `raw/notes/meetings/2021-08/aug-31.md`
+  - Was not seeking changes
+- **Realms Renaming Bikeshedding Thread**  `raw/notes/meetings/2021-08/aug-31.md`
+  - Consensus for the ShadowRealm name
+- **Pipeline operator for Stage 2** — stage: 2  `raw/notes/meetings/2021-08/aug-31.md`
+  - Consensus for Stage 2.
+- **Iterator Helpers**  `raw/notes/meetings/2021-08/aug-31.md`
+  - Update given
+- **Temporal**  `raw/notes/meetings/2021-08/aug-31.md`
+  - No objection to changes
+- **RegExp set notation + properties of strings**  `raw/notes/meetings/2021-08/aug-31.md`
+  - Status Update – comments received
+- **String is USV String** — stage: 1  `raw/notes/meetings/2021-08/aug-31.md`
+  - Stage 1 achieved
+- **Array.fromAsync** — stage: 1  `raw/notes/meetings/2021-08/aug-31.md`
+  - Stage 1 achieved
+- **continue labels should not pass through blocks**  `raw/notes/meetings/2021-08/aug-31.md`
+  - Change is approved
+- **The Realm for the error when tail-calling a revoked Proxy**  `raw/notes/meetings/2021-08/aug-31.md`
+  - Change is approved
+- **BigInt Math for Stage 1** — stage: 1  `raw/notes/meetings/2021-08/sept-01.md`
+  - Stage 1 for a more limited set of math functions than originally proposed
+- **Get Intrinsic for Stage 1** — stage: 1  `raw/notes/meetings/2021-08/sept-01.md`
+  - Stage 1
+- **RegExp Feature Parity**  `raw/notes/meetings/2021-08/sept-01.md`
+  - more discussion offline
+- **Fixed layout objects** — stage: 1  `raw/notes/meetings/2021-08/sept-01.md`
+  - Stage 1
+- **Resizable buffers**  `raw/notes/meetings/2021-08/sept-01.md`
+  - Consensus reached
+- **Incubation call chartering**  `raw/notes/meetings/2021-08/sept-01.md`
+- **Conclusion**  `raw/notes/meetings/2021-08/sept-01.md`
+
+## 2021-10
+
+- **Plenary Scheduling**  `raw/notes/meetings/2021-10/oct-25.md`
+- **ECMA Recognition Awards**  `raw/notes/meetings/2021-10/oct-25.md`
+- **TypedArray prototype methods and resize in the middle behavior**  `raw/notes/meetings/2021-10/oct-25.md`
+  - Consensus for PR 75.
+- **Intl.Segmenter for Stage 4** — stage: 4  `raw/notes/meetings/2021-10/oct-25.md`
+  - Stage 4
+- **Taking over maintainership of structured clone**  `raw/notes/meetings/2021-10/oct-25.md`
+  - consensus for TC39 adopting it but not necessarily putting it in 262
+- **Clarify validity of negative expanded year 0**  `raw/notes/meetings/2021-10/oct-25.md`
+  - Temporal should not accept negative year zero
+- **Partial function application for Stage 2** — stage: 2  `raw/notes/meetings/2021-10/oct-25.md`
+  - Does not advance at this time
+- **JS Module Blocks Update**  `raw/notes/meetings/2021-10/oct-25.md`
+  - reviewers will be:
+- **DurationFormat** — stage: 3  `raw/notes/meetings/2021-10/oct-25.md`
+  - → Stage 3 conditional on discussion of whether fractional digits sets minimum as well
+- **Intl Locale Info update**  `raw/notes/meetings/2021-10/oct-26.md`
+  - Consensus on all three PRs:
+- **JSON.parse source text access update**  `raw/notes/meetings/2021-10/oct-26.md`
+  - Discussion to continue on github
+- **Specifying order of lists returned from Intl APIs**  `raw/notes/meetings/2021-10/oct-26.md`
+- **Tightening host restrictions to improve testing**  `raw/notes/meetings/2021-10/oct-26.md`
+- **Extending Null**  `raw/notes/meetings/2021-10/oct-26.md`
+  - GCL to explore more details of runtime requirements and explore alternatives
+- **Error Cause for Stage 4** — stage: 4  `raw/notes/meetings/2021-10/oct-26.md`
+  - stage 4
+- **Array.fromAsync update**  `raw/notes/meetings/2021-10/oct-26.md`
+  - Update given; no TypedArray.fromAsync in this proposal
+- **BigInt Math update**  `raw/notes/meetings/2021-10/oct-26.md`
+  - Update given
+- **Destructuring Private Fields** — stage: 2  `raw/notes/meetings/2021-10/oct-27.md`
+  - Stage 2
+- **Explicit Resource Management Update**  `raw/notes/meetings/2021-10/oct-27.md`
+  - just an update
+- **Change Array by Copy**  `raw/notes/meetings/2021-10/oct-27.md`
+  - JHD, SRV and JRL to review
+- **RegExp modifiers for Stage 1** — stage: 1  `raw/notes/meetings/2021-10/oct-27.md`
+  - Stage 1
+- **RegExp Conditionals for Stage 1** — stage: 1  `raw/notes/meetings/2021-10/oct-27.md`
+  - not advancing right now, will plan to revisit later this meeting
+- **String.cooked** — stage: 1  `raw/notes/meetings/2021-10/oct-27.md`
+  - Stage 1
+- **Bind-this operator for Stage 1** — stage: 1  `raw/notes/meetings/2021-10/oct-27.md`
+  - Stage 1
+- **Array Grouping for Stage 2** — stage: 2  `raw/notes/meetings/2021-10/oct-27.md`
+  - Stage 2
+- **Normative PRs for Temporal**  `raw/notes/meetings/2021-10/oct-27.md`
+  - Consensus for adding a string overload to the `round` and `total` methods, which will mean the smallest unit
+- **RegExp extended mode and comments** — stage: 1  `raw/notes/meetings/2021-10/oct-27.md`
+  - Stage 1
+- **Records & Tuples update**  `raw/notes/meetings/2021-10/oct-28.md`
+- **RegExp `\R` Escape for Stage 1** — stage: 1  `raw/notes/meetings/2021-10/oct-28.md`
+  - Stage 1
+- **RegExp Buffer Boundaries (\A, \z, \Z) for Stage 1** — stage: 1  `raw/notes/meetings/2021-10/oct-28.md`
+  - Stage 1
+- **RegExp atomic operations** — stage: 1  `raw/notes/meetings/2021-10/oct-28.md`
+  - → Not Stage 1​​ (does not advance)
+- **Evaluator Attributes** — stage: 1  `raw/notes/meetings/2021-10/oct-28.md`
+  - Stage 1
+- **Function Helpers**  `raw/notes/meetings/2021-10/oct-28.md`
+  - JSC to split into multiple proposals and bring back
+- **Temporal (overflow)**  `raw/notes/meetings/2021-10/oct-28.md`
+  - consensus only on mentioned bugfix
+- **Evaluator Attributes (continued)** — stage: 1  `raw/notes/meetings/2021-10/oct-28.md`
+  - Stage 1 holds
+- **CoC Update**  `raw/notes/meetings/2021-10/oct-28.md`
+- **Incubator Call Solicitation**  `raw/notes/meetings/2021-10/oct-28.md`
+- **TC39 Chair Nominations**  `raw/notes/meetings/2021-10/oct-28.md`
+
+## 2021-12
+
+- **ECMA-262 Editor's Update**  `raw/notes/meetings/2021-12/dec-14.md`
+- **ECMA-402 Status**  `raw/notes/meetings/2021-12/dec-14.md`
+- **ECMA-404 Status**  `raw/notes/meetings/2021-12/dec-14.md`
+- **Updates from the CoC committee**  `raw/notes/meetings/2021-12/dec-14.md`
+- **Add import.meta[Symbol.toStringTag]**  `raw/notes/meetings/2021-12/dec-14.md`
+  - PR to be closed and revisited later
+- **RegExp set notation + Unicode properties of strings ready for Stage 3 reviews** — stage: 3  `raw/notes/meetings/2021-12/dec-14.md`
+  - proposal is ready for stage 3 reviewers
+- **Array Grouping for Stage 3** — stage: 3  `raw/notes/meetings/2021-12/dec-14.md`
+  - Stage 3
+- **ShadowRealms updates and potential normative changes**  `raw/notes/meetings/2021-12/dec-14.md`
+  - wrapped functions to use the target function's name/length as in <https://github.com/tc39/proposal-shadowrealm/pull/339>
+- **Unblocking tc39/ecma262#2515 and other RegExp Unicode update PRs**  `raw/notes/meetings/2021-12/dec-14.md`
+  - Consensus that we will document the strategy by which we name them, and pursue options 5 and 4 in parallel.
+- **Extend timeZoneName option for stage 4** — stage: 4  `raw/notes/meetings/2021-12/dec-14.md`
+  - Consensus for stage 4
+- **Intl.DisplayNames v2 option for stage 4** — stage: 4  `raw/notes/meetings/2021-12/dec-14.md`
+  - Consensus for stage 4
+- **Intl Enumeration API Update in Stage 3** — stage: 3  `raw/notes/meetings/2021-12/dec-14.md`
+- **Intl Locale Info Stage 3 Update** — stage: 3  `raw/notes/meetings/2021-12/dec-14.md`
+  - #60 and #61 approved
+- **Array.fromAsync for Stage 2** — stage: 2/3  `raw/notes/meetings/2021-12/dec-14.md`
+  - Stage 2!
+- **Temporal Update**  `raw/notes/meetings/2021-12/dec-14.md`
+  - Got Consensus on normative changes
+- **Destructuring Private Fields**  `raw/notes/meetings/2021-12/dec-14.md`
+  - Update Given
+- **RegExp \R Escape for Stage 2** — stage: 2  `raw/notes/meetings/2021-12/dec-14.md`
+  - Not advancing at this time
+- **Records and Tuples**  `raw/notes/meetings/2021-12/dec-15.md`
+  - Update Given
+- **`Promise.prototype.finally` should use onFinally's realm for newly creating functions**  `raw/notes/meetings/2021-12/dec-15.md`
+  - Return at a later time for conclusion
+- **Decorators Update: Removing @init**  `raw/notes/meetings/2021-12/dec-15.md`
+  - Topic Presented
+- **Decimals**  `raw/notes/meetings/2021-12/dec-15.md`
+- **RegExp Modifiers for Stage 2** — stage: 2  `raw/notes/meetings/2021-12/dec-15.md`
+  - stage 2
+- **RegExp Buffer Boundaries for Stage 2** — stage: 2/3  `raw/notes/meetings/2021-12/dec-15.md`
+  - stage 2 without `\Z`
+- **Intl.Segmenter v2** — stage: 1  `raw/notes/meetings/2021-12/dec-15.md`
+  - Stage 1
+- **`Promise.prototype.finally` should use `onFinally`'s realm for newly creating functions (continued)**  `raw/notes/meetings/2021-12/dec-15.md`
+  - YSV will update the PR / issue on github to refer to Mozilla's bug
+- **Incubation chartering**  `raw/notes/meetings/2021-12/dec-15.md`
+  - SYG: Cool. Thank you. Let me bring up the current charger. So first of all, I made a reflector post about this, but I like to post a question verbally as well. I am looking for volunteers to help faci
+- **Master->Main rename**  `raw/notes/meetings/2021-12/dec-15.md`
+
+## 2022-01
+
+- **Admin**  `raw/notes/meetings/2022-01/jan-24.md`
+- **TC39 Chairs Election**  `raw/notes/meetings/2022-01/jan-24.md`
+  - Elected:
+- **TC39 Administrator**  `raw/notes/meetings/2022-01/jan-24.md`
+- **Secretary’s update**  `raw/notes/meetings/2022-01/jan-24.md`
+- **Test262**  `raw/notes/meetings/2022-01/jan-24.md`
+- **Process Document: clarify stage 1 polyfill recommendation (PR)** — stage: 1  `raw/notes/meetings/2022-01/jan-24.md`
+  - No objection to modifying the Stage 1 cell for this purpose
+- **Process Clarification** — stage: 3  `raw/notes/meetings/2022-01/jan-24.md`
+  - consensus to document that normative changes in stage 3 require consensus
+- **Array.fromAsync for Stage 3** — stage: 3  `raw/notes/meetings/2022-01/jan-24.md`
+  - Not advancing, discussion of double-await to continue in <https://github.com/tc39/proposal-array-from-async/issues/19>
+- **Taking ownership of Structured Clone round 2**  `raw/notes/meetings/2022-01/jan-24.md`
+  - Draft a separate document with structured clone, owned by TC39 but not initially part of 262, with necessary editorial (but not normative) changes.
+- **Close sync iterator when async wrapper yields rejection**  `raw/notes/meetings/2022-01/jan-25.md`
+  - consensus for change to close underlying iterator when yielding a rejected promise (both for `next` and `throw`)
+- **Symbols as WeakMap Keys updates and discuss the usage of registered and well-known keys**  `raw/notes/meetings/2022-01/jan-25.md`
+  - None
+- **Reversible string split** — stage: 1  `raw/notes/meetings/2022-01/jan-25.md`
+  - Stage 1
+- **Class brand check for Stage 2** — stage: 2  `raw/notes/meetings/2022-01/jan-25.md`
+  - schedule time to continue tomorrow
+- **TC39 & copyright**  `raw/notes/meetings/2022-01/jan-25.md`
+  - TC39 has reviewed the proposed license text and approved of its general intent and wording modulo any changes proposed by the IPR group. TC39 intends to use this alternative license for its specificat
+- **Class Brand Check for Stage 2 [extension slot]** — stage: 2  `raw/notes/meetings/2022-01/jan-25.md`
+  - No advancement - bring back at another meeting
+- **Enum for Stage 1** — stage: 1  `raw/notes/meetings/2022-01/jan-25.md`
+  - → Does not reach stage 1
+- **Presentation from KAIST research group**  `raw/notes/meetings/2022-01/jan-26.md`
+- **Holistic discussion of TC39 dataflow proposals**  `raw/notes/meetings/2022-01/jan-26.md`
+- **Let’s talk about test262 maintenance and contribution**  `raw/notes/meetings/2022-01/jan-26.md`
+  - formalizing maintainer group of test262
+- **Intl.Segmenter v2** — stage: 2  `raw/notes/meetings/2022-01/jan-26.md`
+  - → Consensus not reached for stage 2
+- **Continuing symbols as weakmap keys**  `raw/notes/meetings/2022-01/jan-26.md`
+  - WH expresses blocking objection to allowing registered symbols
+- **Incubator call scheduling**  `raw/notes/meetings/2022-01/jan-26.md`
+
+## 2022-03
+
+- **TC39 And Copyright Update from Special GA**  `raw/notes/meetings/2022-03/mar-28.md`
+  - TC39 votes by unanimous consent to adopt the alternative copyright license for 262, 402, and 404.
+- **Secretary’s report**  `raw/notes/meetings/2022-03/mar-28.md`
+  - List
+- **Remove tables of Unicode property values and aliases**  `raw/notes/meetings/2022-03/mar-28.md`
+  - Consensus to remove those tables
+- **Remove callerRealm from HostEnsureCanCompileStrings**  `raw/notes/meetings/2022-03/mar-28.md`
+  - callerRealm parameter to be removed
+- **Can we try to remove gross use of @@species in the TypedArray constructor**  `raw/notes/meetings/2022-03/mar-28.md`
+  - This specific use of Symbol.species will be removed, and a normal AB unconditionally created without getting a custom prototype
+- **Handle broken promises in AsyncGenerator.prototype.return**  `raw/notes/meetings/2022-03/mar-28.md`
+  - Process with change
+- **Pattern matching for Stage 2** — stage: 2  `raw/notes/meetings/2022-03/mar-28.md`
+  - Not advancing at this time
+- **Decorators for Stage 3** — stage: 2/3  `raw/notes/meetings/2022-03/mar-28.md`
+  - → To Stage 3 on the condition that metadata is moved to a new stage 2 proposal
+- **Function.prototype.once for Stage 1** — stage: 1  `raw/notes/meetings/2022-03/mar-29.md`
+  - Stage 1
+- **ShadowRealms Updates**  `raw/notes/meetings/2022-03/mar-29.md`
+  - None - purely an update
+- **Temporal update and normative changes**  `raw/notes/meetings/2022-03/mar-29.md`
+  - Consensus on presented changes.
+- **Bikeshedding call-this syntax**  `raw/notes/meetings/2022-03/mar-29.md`
+- **Bikeshedding the pipe operator topic token**  `raw/notes/meetings/2022-03/mar-29.md`
+  - `@` was popular
+- **RegExp set notation + Unicode properties of strings for Stage 3** — stage: 3  `raw/notes/meetings/2022-03/mar-29.md`
+  - Stage 3 (usual condition of editors sign off)
+- **Types as Comments for Stage 1** — stage: 1  `raw/notes/meetings/2022-03/mar-29.md`
+  - Continued on 2022-03-31
+- **Units Conversion** — stage: 1  `raw/notes/meetings/2022-03/mar-30.md`
+  - Stage 1 - should have clear problem statement
+- **Intl.MessageFormat for Stage 1** — stage: 1  `raw/notes/meetings/2022-03/mar-30.md`
+  - Stage 1
+- **New integrity level**  `raw/notes/meetings/2022-03/mar-30.md`
+  - No formal advancement, but committee expresses a preference for doing this in an ad-hoc way
+- **Minor decorators followups**  `raw/notes/meetings/2022-03/mar-30.md`
+  - "isPrivate" and "isStatic" renamed to "private" and "static"
+- **Resizable buffers**  `raw/notes/meetings/2022-03/mar-30.md`
+  - Removing the per-iteration detached checks in the existing .set and .sort
+- **Change array by copy** — stage: 3  `raw/notes/meetings/2022-03/mar-30.md`
+  - change-array-by-copy proposal achieved Stage 3
+- **Incubation chartering**  `raw/notes/meetings/2022-03/mar-30.md`
+- **Extending built-ins**  `raw/notes/meetings/2022-03/mar-31.md`
+- **Holistic discussion of TC39 dataflow proposals**  `raw/notes/meetings/2022-03/mar-31.md`
+  - no specific conclusion
+- **Minor decorator tweaks, part 2**  `raw/notes/meetings/2022-03/mar-31.md`
+  - No conclusions
+- **Types as comments (continuation)** — stage: 1  `raw/notes/meetings/2022-03/mar-31.md`
+  - Stage 1
+
+## 2022-06
+
+- **Secretary’s Report**  `raw/notes/meetings/2022-06/jun-06.md`
+- **TC39 editors report**  `raw/notes/meetings/2022-06/jun-06.md`
+- **Updates from the Code of Conduct committee**  `raw/notes/meetings/2022-06/jun-06.md`
+- **What did we decide for #1556?**  `raw/notes/meetings/2022-06/jun-06.md`
+  - Approval of PR, specifically: for IIEO `[[Set]]`, if receiver != target, in-bounds numeric property keys fall through to OrdinarySet, and out-of-bounds numeric property keys do not (i.e. no proto chai
+- **Remove Job from Promise Resolve Functions** — stage: 1  `raw/notes/meetings/2022-06/jun-06.md`
+  - Stage 1 proposal investigating removing 1 tick from promise adoption, without causing reentrancy hazards.
+- **Where do you get your default time zone?**  `raw/notes/meetings/2022-06/jun-06.md`
+  - consensus for TODO details
+- **Array Grouping rename groupBy to group**  `raw/notes/meetings/2022-06/jun-06.md`
+  - Merge PR, attempt using ‘group’
+- **findLast/findLastIndex for stage 4** — stage: 4  `raw/notes/meetings/2022-06/jun-06.md`
+  - Stage 4
+- **ShadowRealm: Implementation Status and normate updates**  `raw/notes/meetings/2022-06/jun-06.md`
+- **Temporal normative changes**  `raw/notes/meetings/2022-06/jun-06.md`
+  - Consensus
+- **Errors across the ShadowRealm boundary**  `raw/notes/meetings/2022-06/jun-06.md`
+- **Duplicate named capture groups for stage 1, 2 or 3** — stage: 1  `raw/notes/meetings/2022-06/jun-06.md`
+  - Stage 1, or 2 pending WH spec review
+- **Decorators Normative Change: Flexible Initializers**  `raw/notes/meetings/2022-06/jun-06.md`
+- **String.dedent** — stage: 2  `raw/notes/meetings/2022-06/jun-07.md`
+  - Stage 2
+- **JSON.parse source text access** — stage: 3  `raw/notes/meetings/2022-06/jun-07.md`
+  - → Conditional stage 3 (spec review pending)
+- **Grouped and Auto-Accessors**  `raw/notes/meetings/2022-06/jun-07.md`
+  - Proposal does not advance at this time
+- **Symbols as WeakMap keys** — stage: 3  `raw/notes/meetings/2022-06/jun-07.md`
+  - Stage 3
+- **Making TypedArray.prototype.with simpler in the change Array by copy proposal**  `raw/notes/meetings/2022-06/jun-07.md`
+  - Consensus for proposed change
+- **Duplicate named capture groups redux** — stage: 2  `raw/notes/meetings/2022-06/jun-07.md`
+  - → Proposal is unconditionally stage 2
+- **Intl.DurationFormat Stage 3 Update** — stage: 3  `raw/notes/meetings/2022-06/jun-07.md`
+- **function.sent update**  `raw/notes/meetings/2022-06/jun-07.md`
+- **RegExp Modifiers** — stage: 3  `raw/notes/meetings/2022-06/jun-07.md`
+  - Stage 3
+- **this parameter for Stage 1** — stage: 1  `raw/notes/meetings/2022-06/jun-07.md`
+- **RegEx atomic operators** — stage: 1  `raw/notes/meetings/2022-06/jun-08.md`
+  - Stage 1
+- **Incubator calls**  `raw/notes/meetings/2022-06/jun-08.md`
+
+## 2022-07
+
+- **Secretary Report**  `raw/notes/meetings/2022-07/jul-19.md`
+- **GitHub Org Audit**  `raw/notes/meetings/2022-07/jul-19.md`
+- **ECMA-402 Status**  `raw/notes/meetings/2022-07/jul-19.md`
+- **Change Array By Copy Update (Issue 95)**  `raw/notes/meetings/2022-07/jul-19.md`
+  - TA.p.toSpliced is removed
+- **Resizable buffer's TypedArray.prototype.transfer detach check fix**  `raw/notes/meetings/2022-07/jul-19.md`
+  - PR has consensus
+- **Only coerce once in the BigInt Constructor**  `raw/notes/meetings/2022-07/jul-19.md`
+  - PR to be merged
+- **Record & Tuple Update**  `raw/notes/meetings/2022-07/jul-19.md`
+  - JHD and RKG to review
+- **Import Reflections** — stage: 2  `raw/notes/meetings/2022-07/jul-19.md`
+  - Stage 2
+- **Compartments as Module Loaders**  `raw/notes/meetings/2022-07/jul-19.md`
+- **Professional Stenography**  `raw/notes/meetings/2022-07/jul-20.md`
+- **Avoid triggering throw in corner case in async generators or Avoid mostly-redundant await in async yield***  `raw/notes/meetings/2022-07/jul-20.md`
+  - Consensus on removing the await
+- **Always check regular expression flags by “flags”**  `raw/notes/meetings/2022-07/jul-20.md`
+  - PR/change accepted
+- **Allow toString of a built-in function to output a computed property name**  `raw/notes/meetings/2022-07/jul-20.md`
+  - RGN to create a proposal: <https://github.com/tc39/proposal-stricter-function-tostring>
+- **Well-formatted PDFs for TC39 Standards in 2022 and Beyond**  `raw/notes/meetings/2022-07/jul-20.md`
+  - AWB will need to document work done to produce the PDF
+- **Shebang Grammar** — stage: 4  `raw/notes/meetings/2022-07/jul-20.md`
+  - Consensus for stage 4
+- **Intl Fallback Symbol**  `raw/notes/meetings/2022-07/jul-20.md`
+  - Keeping current spec. Of per-realm.
+- **Remove Order Check in NumberFormat v3 and ECMA402 DateTimeFormat**  `raw/notes/meetings/2022-07/jul-20.md`
+  - Consensus for both PRs
+- **Temporal Update**  `raw/notes/meetings/2022-07/jul-20.md`
+  - Consensus on the following normative changes:
+- **NumberFormat V3 update**  `raw/notes/meetings/2022-07/jul-20.md`
+- **Set Methods: how to access properties of the argument**  `raw/notes/meetings/2022-07/jul-20.md`
+  - No consensus, needs to come back for resolution
+- **Duplicate Named capturing groups for Stage 3** — stage: 3  `raw/notes/meetings/2022-07/jul-20.md`
+  - Stage 3
+- **Symbol Predicates** — stage: 1  `raw/notes/meetings/2022-07/jul-20.md`
+  - Stage 1
+- **Allow hosts to reject private fields**  `raw/notes/meetings/2022-07/jul-20.md`
+  - Consensus on the PR, given editorial tweaks
+- **Iterator Helpers Update**  `raw/notes/meetings/2022-07/jul-21.md`
+  - JHD and RBN to review
+- **Policy Maps and Sets for Stage 1** — stage: 1  `raw/notes/meetings/2022-07/jul-21.md`
+  - Stage 1
+- **Function Memoization for Stage 1** — stage: 1  `raw/notes/meetings/2022-07/jul-21.md`
+  - Stage 1
+- **Ergonomic Dynamic Object Restructuring** — stage: 1  `raw/notes/meetings/2022-07/jul-21.md`
+  - Stage 1
+- **Function.pipe & flow for Stage 1** — stage: 1  `raw/notes/meetings/2022-07/jul-21.md`
+  - No advancement
+- **Stenography**  `raw/notes/meetings/2022-07/jul-21.md`
+- **Clarify the layering relationship between ECMA-262 and ECMA-402**  `raw/notes/meetings/2022-07/jul-21.md`
+  - consensus on presented PRs
+- **Incubation chartering**  `raw/notes/meetings/2022-07/jul-21.md`
+  - Charter between this meeting and next meeting:
+
+## 2022-09
+
+- **Find volunteers for note taking**  `raw/notes/meetings/2022-09/sep-13.md`
+- **Secretariat Report**  `raw/notes/meetings/2022-09/sep-13.md`
+- **Updates from the Code of Conduct committee**  `raw/notes/meetings/2022-09/sep-13.md`
+- **Intl.DurationFormat Stage 3 Update** — stage: 3  `raw/notes/meetings/2022-09/sep-13.md`
+  - Consensus for presented normative changes:
+- **Temporal update**  `raw/notes/meetings/2022-09/sep-13.md`
+  - Consensus on
+- **String.dedent**  `raw/notes/meetings/2022-09/sep-13.md`
+  - KG to submit PR fixing the `${` issue, consensus on PR otherwise
+- **ShadowRealm Update**  `raw/notes/meetings/2022-09/sep-13.md`
+  - ShadowRealms should not be shipped until resolutions to HTML and the error issues are resolved
+- **Record and Tuple update**  `raw/notes/meetings/2022-09/sep-13.md`
+  - No advancement
+- **Well-formed Unicode strings** — stage: 2  `raw/notes/meetings/2022-09/sep-13.md`
+  - Stage 2 with both methods included
+- **Iterable functions instead of iterator helper methods**  `raw/notes/meetings/2022-09/sep-14.md`
+- **Iterator Helpers update** — stage: 2  `raw/notes/meetings/2022-09/sep-14.md`
+  - → proposal remains at stage 2
+- **Array.fromAsync for stage 3** — stage: 3  `raw/notes/meetings/2022-09/sep-14.md`
+  - → Stage 3, conditional on editor review
+- **Set Methods, part III**  `raw/notes/meetings/2022-09/sep-14.md`
+  - Going with option 2
+- **Temporal extension**  `raw/notes/meetings/2022-09/sep-15.md`
+  - Consensus for the proposed behavior in <https://github.com/tc39/proposal-temporal/pull/2397>
+- **Explicit resource management for stage 3** — stage: 3  `raw/notes/meetings/2022-09/sep-15.md`
+  - Proposal is not advancing at this time. DLM to discuss more with Mozilla, other people to continue discussion on GitHub.
+- **Extractor Objects** — stage: 1  `raw/notes/meetings/2022-09/sep-15.md`
+  - Stage 1
+- **Refactor of import-related Host Hooks**  `raw/notes/meetings/2022-09/sep-15.md`
+  - Consensus to pursue this refactoring
+- **R&T revisited**  `raw/notes/meetings/2022-09/sep-15.md`
+  - Champions plan to merge PR sometime soon
+- **Incubator calls**  `raw/notes/meetings/2022-09/sep-15.md`
+
+## 2022-11
+
+- **Iterator Helpers for Stage 3** — stage: 3  `raw/notes/meetings/2022-11/dec-01.md`
+  - → Stage 3 - conditional on changing the Iterator.from handling of strings
+- **Async operations** — stage: 2  `raw/notes/meetings/2022-11/dec-01.md`
+  - → Did not advance to stage 2
+- **Intl era and monthCode proposal for Stage 1** — stage: 1  `raw/notes/meetings/2022-11/dec-01.md`
+  - Stage 1
+- **Intl DurationFormat Stage 3 Update** — stage: 3  `raw/notes/meetings/2022-11/dec-01.md`
+  - Consensus for the minor bug fix PRs
+- **Mass Proxy Revocation for Stage 1** — stage: 1  `raw/notes/meetings/2022-11/dec-01.md`
+  - Stage 1
+- **Explicit Resource Management for Stage 3** — stage: 2/3  `raw/notes/meetings/2022-11/dec-01.md`
+  - → The following parts remain at Stage 2:
+  - → The following does not remain at Stage 2:
+- **Module Expressions**  `raw/notes/meetings/2022-11/dec-01.md`
+- **Module declarations**  `raw/notes/meetings/2022-11/dec-01.md`
+  - State 2
+- **ShadowRealm** — stage: 3  `raw/notes/meetings/2022-11/dec-01.md`
+  - Stage 3
+- **Intl NumberFormat V3 - Stage 3 Update** — stage: 3  `raw/notes/meetings/2022-11/dec-01.md`
+- **Intro**  `raw/notes/meetings/2022-11/nov-29.md`
+- **Updates on Code of Conduct committee**  `raw/notes/meetings/2022-11/nov-29.md`
+- **Speccing liveness of template objects**  `raw/notes/meetings/2022-11/nov-29.md`
+  - Normative semantics have agreement (can’t collect template objects if the code which produced them might get evaluated)
+- **Array grouping WebCompat issue** — stage: 3  `raw/notes/meetings/2022-11/nov-29.md`
+  - → Proposal stays at stage 3
+- **Should we set a lower bound on the resolution of timers**  `raw/notes/meetings/2022-11/nov-29.md`
+  - Consensus to allow any finite amount of waiting which is longer than the specified time
+- **IPR Clarification for past commits**  `raw/notes/meetings/2022-11/nov-29.md`
+- **Motivating use cases for Module Harmony proposals**  `raw/notes/meetings/2022-11/nov-29.md`
+- **Is ECMA402 allowed to extend ECMA262 prototypes?**  `raw/notes/meetings/2022-11/nov-29.md`
+  - Consensus for the "narrow yes" solution.
+- **Intl NumberFormat v3**  `raw/notes/meetings/2022-11/nov-29.md`
+  - Consensus for the presented PRs
+- **eraDisplay option for Intl.DateTimeFormat** — stage: 2/3  `raw/notes/meetings/2022-11/nov-29.md`
+  - → Advancement to stage 2
+- **Resizable buffers bug fixes (#104, #106, #108) and transfer future proofing** — stage: 2  `raw/notes/meetings/2022-11/nov-29.md`
+  - Proposal split, .transfer goes to stage 2
+- **Intl MessageResource for Stage 1** — stage: 1  `raw/notes/meetings/2022-11/nov-29.md`
+  - Stage 1 for MessageResource
+- **Temporal status overview and normative changes**  `raw/notes/meetings/2022-11/nov-29.md`
+  - No objections to any normative changes (and explicit support for DE and DLM)
+- **Is ECMA402 allowed to extend ECMA262 prototypes? - What does "narrow yes" mean?**  `raw/notes/meetings/2022-11/nov-29.md`
+  - We as a committee do not allow such extensions by specifications under our control except where indicated in the text of ECMA-262.
+- **Intl Enumeration for Stage 4** — stage: 4  `raw/notes/meetings/2022-11/nov-30.md`
+  - Stage 4
+- **Intl Locale Info stage 3 update** — stage: 3  `raw/notes/meetings/2022-11/nov-30.md`
+  - Getters to become functions
+- **Records and Tuples**  `raw/notes/meetings/2022-11/nov-30.md`
+  - Implementers and champions to further discuss tradeoffs
+- **Module and ModuleSource Constructors**  `raw/notes/meetings/2022-11/nov-30.md`
+- **String.dedent for Stage 3** — stage: 3  `raw/notes/meetings/2022-11/nov-30.md`
+- **Set Methods** — stage: 3  `raw/notes/meetings/2022-11/nov-30.md`
+  - Stage 3
+- **String.isWellFormed \** — stage: 3  `raw/notes/meetings/2022-11/nov-30.md`
+  - Stage 3
+- **Import Reflection**  `raw/notes/meetings/2022-11/nov-30.md`
+  - List
+- **Deferred Module Evaluation**  `raw/notes/meetings/2022-11/nov-30.md`
+  - List
+- **An introduction to the LibJS JavaScript engine**  `raw/notes/meetings/2022-11/nov-30.md`
+
+## 2023-01
+
+- **Async Context for Stage 1** — stage: 1  `raw/notes/meetings/2023-01/feb-01.md`
+  - → AsyncContext is promoted to Stage 1, with explicit support from several delegates.
+- **ArrayBuffer transfer for Stage 3** — stage: 3  `raw/notes/meetings/2023-01/feb-01.md`
+  - Stage 3 with the names  `transfer` and `transferToFixedLength`.
+- **Intl era and monthCode for Stage 2** — stage: 2/3  `raw/notes/meetings/2023-01/feb-01.md`
+  - → Got explicit support and consensus to advanced into Stage 2
+- **Temporal, naming of `.calendarId` and `.timeZoneId`**  `raw/notes/meetings/2023-01/feb-01.md`
+  - Consensus on `Id` spelling in properties as presented yesterday
+- **Symbol predicates** — stage: 2  `raw/notes/meetings/2023-01/feb-01.md`
+  - Stage 2 for static methods
+- **Decorator/export ordering**  `raw/notes/meetings/2023-01/feb-01.md`
+  - To be discussed further
+- **Async explicit resource management** — stage: 2/3/4  `raw/notes/meetings/2023-01/feb-01.md`
+  - → Conditional Advancement to Stage 3 pending outcome of investigation of ‘async using’ vs. ‘using await’ syntax. Condition to be resolved no later than the March plenary, with the currently proposed ‘using await’ syntax as the default choice if we don’t arrive at another conclusion. (For now, the proposal will stay in the Stage 2 section of the proposals repo, as that repo does not represent conditional advancement.)
+  - → Following Stage 3 advancement, consensus is to merge the “Explicit Resource Management” and “Async Resource Management” proposals to simplify the work involved in reaching Stage 4.
+- **getIntrinsic for stage 2** — stage: 1/2  `raw/notes/meetings/2023-01/feb-02.md`
+  - Remaining at stage 1
+- **Import Assertions** — stage: 2/3  `raw/notes/meetings/2023-01/feb-02.md`
+  - → To reflect the scope of expected future changes, the committee reached consensus to demote the proposal to Stage 2.
+- **Decorator `context.access` object API**  `raw/notes/meetings/2023-01/feb-02.md`
+  - Consensus for target moving to be the first param rather than receiver
+- **Temporal Stage 3 update continuation** — stage: 3  `raw/notes/meetings/2023-01/feb-02.md`
+  - Consensus on merging https://github.com/tc39/proposal-temporal/pull/2447
+- **Decorators and export Ordering continuation**  `raw/notes/meetings/2023-01/feb-02.md`
+  - Consensus on allowing decorators before the `export` keyword in addition to after the `export` or `export default` keywords, but with a Syntax Error if you specify decorators in both positions (i.e., 
+- **Feedback on transcription**  `raw/notes/meetings/2023-01/feb-02.md`
+- **Intro**  `raw/notes/meetings/2023-01/jan-30.md`
+- **Report from the TC39 Secretariat**  `raw/notes/meetings/2023-01/jan-30.md`
+- **Update from Chairs**  `raw/notes/meetings/2023-01/jan-30.md`
+- **Updates from CoC Committee**  `raw/notes/meetings/2023-01/jan-30.md`
+- **Documenting Stage 3 proposals which are not ready to ship** — stage: 2/3/4  `raw/notes/meetings/2023-01/jan-30.md`
+  - There was detailed discussion about the state of the TC39 stage process. Different JavaScript implementations have different policies about which Stage 3 proposals are shipped, but all ship Stage 4 pr
+- **A procedure for multiple active supporters in committee to achieve consensus**  `raw/notes/meetings/2023-01/jan-30.md`
+  - A version of this consensus procedure is adopted. Multiple committee members from outside of the champion group need to explicitly voice support for a proposal to achieve consensus. This can be in the
+- **Reminder to audit Github delegate team**  `raw/notes/meetings/2023-01/jan-30.md`
+- **Prototype pollution mitigation / Symbol.proto** — stage: 1  `raw/notes/meetings/2023-01/jan-30.md`
+  - Stage 1
+- **Reducing Annex B monkey-patching**  `raw/notes/meetings/2023-01/jan-30.md`
+  - Editors will make this change, with WH's objection noted.
+- **Symbols as WeakMap keys** — stage: 4  `raw/notes/meetings/2023-01/jan-30.md`
+  - Stage 4
+- **JSON.parse source text access**  `raw/notes/meetings/2023-01/jan-30.md`
+  - Merge the fix for issues #35 and #39
+- **Change Array by Copy** — stage: 4  `raw/notes/meetings/2023-01/jan-30.md`
+  - Stage 4
+- **Intl.NumberFormat V3 for Stage 4** — stage: 4  `raw/notes/meetings/2023-01/jan-31.md`
+- **Intl DurationFormat Stage 3 update** — stage: 3  `raw/notes/meetings/2023-01/jan-31.md`
+  - TC39 consensus for normative PR https://github.com/tc39/proposal-intl-duration-format/pull/126. This pull request alters the output of `formatToParts` in many ways: fixes bugs, makes the output more g
+- **Problems with import assertions for module types and a possible general solution + downgrade to Stage 2** — stage: 2/3  `raw/notes/meetings/2023-01/jan-31.md`
+  - → There will be an overflow topic to attempt to draw a conclusion. For now, the proposal remains at Stage 3, but there is a shared understanding that changes need to be made.
+- **Explicit Resource Management Stage 3 update** — stage: 3  `raw/notes/meetings/2023-01/jan-31.md`
+  - Ban ‘await’ as Identifier in ‘using’ (PR #138): Approved
+- **Discuss SuppressedError argument overlap: error and cause**  `raw/notes/meetings/2023-01/jan-31.md`
+  - Previously, the `SuppressedError` constructor had an optional `options` argument which could be used to install a `cause` property. The committee reached consensus to remove the logic which reads the 
+- **Intl Locale Info API Stage 3 update** — stage: 3  `raw/notes/meetings/2023-01/jan-31.md`
+  - Reached consensus to Merge PR 67  https://github.com/tc39/proposal-intl-locale-info/pull/67
+- **Parallel async iterators via a tweak to iterator helpers** — stage: 2/3  `raw/notes/meetings/2023-01/jan-31.md`
+  - → In order to reconsider how to enable better parallelism, the committee reached consensus that async iterator helpers to be split out from iterator helpers proposal and demoted to stage 2; sync helpers remain stage 3
+- **Temporal Stage 3 update and normative PRs** — stage: 3  `raw/notes/meetings/2023-01/jan-31.md`
+  - Temporal is advancing towards a goal of being able to say that it no longer “requires implementer coordination”, with a goal from the champion group of March 2023.
+
+## 2023-03
+
+- **Committee Housekeeping**  `raw/notes/meetings/2023-03/mar-21.md`
+- **TC39 Editor’s Update**  `raw/notes/meetings/2023-03/mar-21.md`
+- **Test262 funding status**  `raw/notes/meetings/2023-03/mar-21.md`
+- **Test262 Updates** — stage: 3/4  `raw/notes/meetings/2023-03/mar-21.md`
+  - Test262 has updated tests, and landed async test helpers.
+- **Reminder to enable GitHub 2FA**  `raw/notes/meetings/2023-03/mar-21.md`
+- **Iterator helpers**  `raw/notes/meetings/2023-03/mar-21.md`
+- **Temporal update and normative changes**  `raw/notes/meetings/2023-03/mar-21.md`
+  - Barring any showstoppers raised by implementors, we expect to present one more normative change to avoid unbounded integer arithmetic in the next plenary.
+- **Set methods: What to do about `intersection` order?**  `raw/notes/meetings/2023-03/mar-21.md`
+  - Although the sort order based on argument vs receiver size is a weird sharp edge, it is simple, has the best performance, and the alternatives are too complicated.
+- **Async Explicit Resource Management**  `raw/notes/meetings/2023-03/mar-21.md`
+  - Various grammars for async resource disposal were considered, including results from polls. The champion's preference became `await using`, and several delegates were swayed to prefer this option base
+- **Decorator: Normative update**  `raw/notes/meetings/2023-03/mar-21.md`
+  - Consensus of all 6 changes:
+- **Decorator Metadata Update** — stage: 2/3  `raw/notes/meetings/2023-03/mar-21.md`
+  - Metadata is necessary for several core use cases of class decorators. It was omitted from the Stage 3 decorators proposal for excessive complexity, and it is now at Stage 2, with hopes to progress to 
+- **Election of the 2023 Chair Group**  `raw/notes/meetings/2023-03/mar-22.md`
+  - Chair group and facilitators group accepted by acclamation.
+- **Import reflection update**  `raw/notes/meetings/2023-03/mar-22.md`
+  - Topic will be resumed in an overflow slot
+- **Import assertions/attributes for Stage 3** — stage: 3  `raw/notes/meetings/2023-03/mar-22.md`
+  - → Conditional consensus for Stage 3 on this proposal, with the conditions:
+- **Async Explicit Resource Management**  `raw/notes/meetings/2023-03/mar-22.md`
+  - SYG, WH and editors to review new grammar for `await using` syntax, to be proposed for consensus tomorrow
+- **Iterator.range for Stage 2** — stage: 2  `raw/notes/meetings/2023-03/mar-22.md`
+  - DE: There were arguments on both sides. On one side there is a footgun. On the other side people argued that it is more in keeping with the language. We decided to proceed to Stage 2 as it is now. Doe
+- **Float16Array for Stage 2 & 3** — stage: 2  `raw/notes/meetings/2023-03/mar-22.md`
+  - Stage 2. Explicit support from JHD, CDA (on behalf of IBM), MLS and SYG
+- **Decimal Stage 1 Update** — stage: 1  `raw/notes/meetings/2023-03/mar-22.md`
+- **Next steps for RegExp escaping**  `raw/notes/meetings/2023-03/mar-22.md`
+  - MM to revisit whether a single Escape function can be made safe, but still thinks that the template tag is unambiguously better and would not like it deprioritized even if Escape advances
+- **Type Annotations Proposal Update** — stage: 1  `raw/notes/meetings/2023-03/mar-22.md`
+  - → The proposal remains at Stage 1; no consensus was requested of the committee.
+- **Type Annotations Delimiting Concerns** — stage: 1  `raw/notes/meetings/2023-03/mar-22.md`
+  - → The proposal remains at Stage 1; no consensus was requested of the committee.
+- **Await Dictionary for stage 1** — stage: 1  `raw/notes/meetings/2023-03/mar-22.md`
+  - Stage 1
+- **Shared Structs update** — stage: 1  `raw/notes/meetings/2023-03/mar-23.md`
+  - Shu-yu Guo of Google has been progressing on a prototype implementation as a dev trial in Chromium of Stage 1 Shared Structs, in collaboration with large partners, e.g., Microsoft.
+- **Async Context** — stage: 2  `raw/notes/meetings/2023-03/mar-23.md`
+  - Stage 2
+- **Promise.withResolvers** — stage: 1  `raw/notes/meetings/2023-03/mar-23.md`
+  - Stage 1
+- **Quick Regex Escaping update**  `raw/notes/meetings/2023-03/mar-23.md`
+  - MM’s security concerns have been addressed, looks like we can progress with a `RegExp.escape` API
+- **Temporal nanoseconds precision follow-up**  `raw/notes/meetings/2023-03/mar-23.md`
+- **Time Zone Canonicalization for Stage 1** — stage: 1  `raw/notes/meetings/2023-03/mar-23.md`
+  - → Proposal reaches Stage 1
+- **Class constructor and method parameter decorators** — stage: 1/2  `raw/notes/meetings/2023-03/mar-23.md`
+  - → Important to consider Function Decorators before this can advance to Stage 2.
+- **Import reflection discussion continuation** — stage: 3  `raw/notes/meetings/2023-03/mar-23.md`
+  - Plan is for import reflection to come back in the next meeting in May to ask for Stage 3.
+- **Async Explicit Resource Management again** — stage: 2/3  `raw/notes/meetings/2023-03/mar-23.md`
+  - → Stage 3, conditionally on final review of cover grammar by WH
+- **Incubator Call**  `raw/notes/meetings/2023-03/mar-23.md`
+- **Non-violent communication course (NVC)**  `raw/notes/meetings/2023-03/mar-23.md`
+
+## 2023-05
+
+- **TC39 Secretary’s update**  `raw/notes/meetings/2023-05/may-15.md`
+- **Secretary General introduction**  `raw/notes/meetings/2023-05/may-15.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2023-05/may-15.md`
+- **TC39 Public Calendar**  `raw/notes/meetings/2023-05/may-15.md`
+  - Proceed as outlined in the GH issue
+- **Needs consensus: #3052 limit ArrayBuffer size to 2^53 bytes**  `raw/notes/meetings/2023-05/may-15.md`
+  - There exists a theoretical edge case where an ArrayBuffer is created that is so large that not all bytes it contains can be accessed.
+- **`Array.fromAsync` #41: avoid double construction of this value**  `raw/notes/meetings/2023-05/may-15.md`
+  - Implementers found this edge case where the constructor is called twice, and we discussed improvement of making that happen only once.
+- **Well-Formed Unicode Strings for Stage 4** — stage: 4  `raw/notes/meetings/2023-05/may-15.md`
+  - Consensus for stage 4 for Well-Formed Unicode Strings
+- **Atomics.waitAsync for Stage 4** — stage: 4  `raw/notes/meetings/2023-05/may-15.md`
+  - Consensus for Stage 4 on Atomics.waitAsync
+- **Base64 for Uint8Array for Stage 2** — stage: 2  `raw/notes/meetings/2023-05/may-15.md`
+  - The proposal achieved consensus for stage 2
+- **Symbol Predicates**  `raw/notes/meetings/2023-05/may-15.md`
+  - Spec reviewers: DLM, NRO, MAH
+- **Module Harmony: interaction semantics of the different proposals**  `raw/notes/meetings/2023-05/may-15.md`
+  - Module harmony champions will set up a “module harmony epic” repository to continue developing documentation about cross-cutting module proposal concerns.
+- **Source Phase Imports for Stage 3** — stage: 2/3  `raw/notes/meetings/2023-05/may-15.md`
+  - → Import source phase remains at Stage 2
+- **RegExp v flag for Stage 4** — stage: 4  `raw/notes/meetings/2023-05/may-16.md`
+  - Consensus for stage 4 with explicit support from CDA, DLM, MF
+- **Add Implementation status to proposal pages**  `raw/notes/meetings/2023-05/may-16.md`
+  - SYG and MLS to update proposal template to have implementation status section - <https://github.com/tc39/template-for-proposals>
+- **Decorator field/accessor initializer order**  `raw/notes/meetings/2023-05/may-16.md`
+  - Consensus on option 1: To reverse the initializer order for fields and accessors, conceptually treating them like an update to the value, the same order that setters run in.
+- **Decorator Metadata for Stage 3** — stage: 3  `raw/notes/meetings/2023-05/may-16.md`
+  - There’s a constraint from implementers that it be syntactically determinable whether a class should be given a Symbol.metadata property. This means it can be conditional based on the presence of decor
+- **Iterator Helpers: should Symbol.iterator fallback be a callable check or an undefined/null check?** — stage: 3  `raw/notes/meetings/2023-05/may-16.md`
+  - Consensus on change #272 of changing the Stage 3 iterator helpers proposal to make fallback for non-iterable things to be based on null/undefined, rather than callability. This PR will be merged.
+- **iterator helpers: should malformed iterators fail early or fail only when iterated?**  `raw/notes/meetings/2023-05/may-16.md`
+  - Consensus on option 3
+- **Array.prototype.group rename for web compatibility** — stage: 2  `raw/notes/meetings/2023-05/may-16.md`
+  - JHD will be a co-champion of this proposal and present it towards the end of this meeting or next meeting for investigating static methods.
+- **Float16Array for stage 3** — stage: 3  `raw/notes/meetings/2023-05/may-16.md`
+  - Consensus for stage 3
+- **Source maps: Should TC39 standardize and improve them?**  `raw/notes/meetings/2023-05/may-16.md`
+  - Continue discussion on Thursday
+- **ES2023 plenary vote**  `raw/notes/meetings/2023-05/may-17.md`
+  - TC39 has approved ES2023 (ECMA-262 + ECMA-402) by acclamation. Subject to no objections being raised during the 60-day opt-out, this will be proposed to the Ecma GA for formal approval in June 2023.
+- **Intl.ZonedDateTimeFormat for Stage 1** — stage: 1  `raw/notes/meetings/2023-05/may-17.md`
+  - Stage 1 for finding an efficient and ergonomic API for Intl formatting on Temporal.ZonedDateTime objects
+- **AsyncContext Stage 2 Updates** — stage: 2  `raw/notes/meetings/2023-05/may-17.md`
+  - → AsyncContext remains at Stage 2 with some small updates.
+- **Intl.DurationFormat Stage 3 Update** — stage: 3  `raw/notes/meetings/2023-05/may-17.md`
+  - Consensus for changes, with explicit support from DLM and PFC
+- **Temporal updates**  `raw/notes/meetings/2023-05/may-17.md`
+  - Consensus on making normative changes to:
+- **Time Zone Canonicalization for stage 2** — stage: 2/3  `raw/notes/meetings/2023-05/may-17.md`
+  - → The proposal reaches Stage 2, including both the new API, the removed canonicalization of timezone IDs, and a strong endorsement of the new project to come to a common definition of canonical timezone names.
+  - → For future Stage 3: We should not block on the latter, more difficult project of standardizing timezone names; we can go to Stage 3 with just the new API and patched-out canonicalization, leaving the other part for later.
+- **Promise.withResolvers for Stage 2** — stage: 2  `raw/notes/meetings/2023-05/may-17.md`
+  - Proposal achieves Stage 2
+- **Continuation: Source Phase Imports for Stage 3** — stage: 2/3  `raw/notes/meetings/2023-05/may-17.md`
+  - → The proposal remains at Stage 2 and is likely to be proposed for Stage 3 at the next TC39 plenary.
+- **Async iterator Stage 2 feedback needed on design/tradeoffs** — stage: 2/3  `raw/notes/meetings/2023-05/may-18.md`
+  - → Async iterator helpers remains at Stage 3
+- **`Promise.withResolvers` - call for stage 3 reviewers** — stage: 3  `raw/notes/meetings/2023-05/may-18.md`
+  - JRL and JHD will be Stage 3 reviewers for Promise.withResolvers()
+- **Incubator Chartering: Call for helpers**  `raw/notes/meetings/2023-05/may-18.md`
+- **Continuation: Source maps: Should TC39 standardize and improve them?**  `raw/notes/meetings/2023-05/may-18.md`
+  - Consensus for forming `TG4: Source Maps`, with explicit support from DE (Bloomberg), CDA (IBM), JRL (Vercel), SYG (Google), DLM (Mozilla), MLS (Apple), and ZB (Amazon)
+- **Continuation: Array.prototype.group rename for web compatibility** — stage: 2/3  `raw/notes/meetings/2023-05/may-18.md`
+  - This proposal goes down to Stage 2.
+- **Decorator metadata final spec text review for Stage 3** — stage: 3  `raw/notes/meetings/2023-05/may-18.md`
+  - Decorator metadata is at Stage 3
+- **General procedural comment**  `raw/notes/meetings/2023-05/may-18.md`
+- **TG3**  `raw/notes/meetings/2023-05/may-18.md`
+- **Conclusion**  `raw/notes/meetings/2023-05/may-18.md`
+
+## 2023-07
+
+- **Secretary’s Report**  `raw/notes/meetings/2023-07/july-11.md`
+  - The slides were reviewed, and suggested to read the documents of interest as noted in the Annex. Congratulations: Standards approved by GA 27 June and posted on website:
+- **ECMA-404 update**  `raw/notes/meetings/2023-07/july-11.md`
+  - ECMA404 is stable as usual. No news to report.
+- **test262 update** — stage: 3  `raw/notes/meetings/2023-07/july-11.md`
+  - Since the update at the March plenary, TC39 still lacking maintainer resources. But we have gotten some good contributions since the last time from the delegates and community members and the bottlene
+- **ECMA-402 needs-consensus PRs**  `raw/notes/meetings/2023-07/july-11.md`
+  - Four PRs needing consensus were presented based on TG2 work and findings.
+- **Import Attributes** — stage: 3  `raw/notes/meetings/2023-07/july-11.md`
+  - → The import attributes proposal is at Stage 3, having reached the conditions expressed at the previous meeting for “conditional stage 3”. Consensus was reached on three normative changes for import attributes [listed above].
+- **Explicit Resource Management Stage 3 Update and Normative PR** — stage: 3  `raw/notes/meetings/2023-07/july-11.md`
+  - This is work in progress. An Update has been given since what has happened since the March 2023 TC39 meeting, what has been completed, what not, what the open issues are.
+- **TG3 update and chair appointment**  `raw/notes/meetings/2023-07/july-11.md`
+  - An update on TG3 has been given:
+- **TG4 charter and chair appointment**  `raw/notes/meetings/2023-07/july-11.md`
+  - JKP presented the draft TG4 charter including proposal for the TG4 Convener.
+- **Updates from the CoC committee**  `raw/notes/meetings/2023-07/july-11.md`
+  - An update on the CoC committee was given. TC39 Plenary noted the update.
+- **TC39 Public Calendar update**  `raw/notes/meetings/2023-07/july-11.md`
+  - An Update on the praxis regarding TC39 Public Calendar was given and discussed. Tc39 noted the discussion.
+- **Resizable buffers bug fixes (#120, #126), grow refactor, then maybe for Stage 4** — stage: 3/4  `raw/notes/meetings/2023-07/july-11.md`
+  - → The committee discussed being “conditional Stage 4” (on reviews and tests), but multiple people voiced preference for a more cautious approach of sticking with Stage 3 for now.
+- **Array Grouping for Stage 3** — stage: 3  `raw/notes/meetings/2023-07/july-11.md`
+  - → 2. Stage 3 is conditionally approved pending the remaining review from MLS (tonight). No particular issues are anticipated.
+- **Public calendar continuation**  `raw/notes/meetings/2023-07/july-11.md`
+- **Deferred import evaluation** — stage: 2/3  `raw/notes/meetings/2023-07/july-11.md`
+  - → Deferred imports reached Stage 2. Before Stage 3, the champions need to investigate how this interacts with WebAssembly modules and how the "use dynamic import (possibly with top-level await) to optimize performance" and "use `import defer` (and avoid top-level await) to optimize performance" stories fit together.
+- **Iterator Helpers: small optimisation to avoid String wrapper objects** — stage: 3  `raw/notes/meetings/2023-07/july-11.md`
+  - An Update and small improvement has been proposed by MF
+- **Integer and Modulus Math**  `raw/notes/meetings/2023-07/july-11.md`
+  - This was an update about `Math.imod` and other integer operations. The idea was to get feedback. and TC39 has received useful input how to proceed.
+- **Promise.withResolvers** — stage: 2/3  `raw/notes/meetings/2023-07/july-11.md`
+  - → The Promise.withResolvers is a new proposed static method on the Promise class which produces a plain object with a `promise` key, which maps to a Promise, and `resolve` and `reject` keys which map to the corresponding resolving functions for the promise. Since this proposal advanced to stage 2, there were two developments: 1) the name `withResolvers` was confirmed (the champion acknowledged it may be an imperfect name but no superior alternative arose) and 2) the subclassing/binding behavior was affirmed as matching other Promise statics: when the receiver is a subclass of Promise, the method will produce instances of the subclass, and if there is no receiver `withResolvers` will throw.
+  - → The committee approved this proposal for Stage 3.
+- **2024 meeting planning**  `raw/notes/meetings/2023-07/july-11.md`
+  - TC39 chairs have started the usual Meeting planning exercise for the the following year, 2024. It was noted that for in-person meetings a good plan is to hold them each four months apart. It was noted
+- **Conversation on note summaries** — stage: 3  `raw/notes/meetings/2023-07/july-12.md`
+  - → The discussion summary and conclusions needs to include the salient points, agreements reached and next steps. The summary should not be as short as: “this was discussed, we agree to go to Stage 3.” It should highlight the most essential items so not to lose track of what is ongoing. The summary should indicate the issues discussed and important points and provide clear indication of what to consider when anyone reviews the summary in future.
+- **Stage 3 update of Intl Locale Info API** — stage: 3/4  `raw/notes/meetings/2023-07/july-12.md`
+  - → Currently in Stage 3, already for a while, including the current issue there are three more issues and will be discussed, Issue 30, issue 71. Issue 73, in the coming TG2 and hopefully reach Stage 4 by November. Noting both Chrome and Safari have shipped this version, but not Mozilla.
+- **Stage 3 update for Intl.DurationFormat** — stage: 3  `raw/notes/meetings/2023-07/july-12.md`
+  - Two normative changes ([PR#150](https://github.com/tc39/proposal-intl-duration-format/pull/150), [PR#158](https://github.com/tc39/proposal-intl-duration-format/pull/158)) achieved consensus
+- **Base64** — stage: 3  `raw/notes/meetings/2023-07/july-12.md`
+  - A method for writing to an existing buffer as part of the streaming API, was presented, which had a couple of open questions including whether to have offset parameters. The committee was split on hav
+- **Explicit Resource Management (continuation)** — stage: 3  `raw/notes/meetings/2023-07/july-12.md`
+  - No specific direction is concluded. There may be interest in investigating in async enter or in even the full context manager protocol. Not sure what impact this has on the stage of the proposal based
+- **Temporal Stage 3 update and normative PRs** — stage: 3  `raw/notes/meetings/2023-07/july-12.md`
+  - Consensus on making normative changes to:
+- **Time Zone Canonicalization for Stage 3** — stage: 2/3  `raw/notes/meetings/2023-07/july-12.md`
+  - → Stage 3 reviewers: approved
+  - → Proposal reaches Stage 3 🚀🚀🚀
+- **Source Phase Imports for Stage 3** — stage: 3  `raw/notes/meetings/2023-07/july-12.md`
+  - → Stage 3 has been reached conditionally on the above name bikeshed concluding.
+  - → Stage 3 has been reached conditionally on the above name bikeshed concluding.
+- **Set methods: deferring callability check / handling negative sizes**  `raw/notes/meetings/2023-07/july-12.md`
+  - The committee was in favor of removing the callability check for the `next` method for consistency with the rest of the language, but keeping the callability checks for `has` and `keys` methods since 
+- **Decimal: Open-ended discussion**  `raw/notes/meetings/2023-07/july-12.md`
+  - Key Points:
+- **Meta-review of Stage 3 proposals** — stage: 3  `raw/notes/meetings/2023-07/july-12.md`
+  - Six (6) Stage 3 proposals were presented during this meeting:
+- **Using WebAssembly as a polyfill for ECMAScript proposals**  `raw/notes/meetings/2023-07/july-13.md`
+  - The purpose of this presentation is to layout a user building of Wasm library, and highlight the challenges and road blocks encountered. Various, five to seven, proposals are noted in the slide deck. 
+- **Optional chaining in assignment LHS for stage 1 or 2** — stage: 1  `raw/notes/meetings/2023-07/july-13.md`
+  - This new proposal explores syntax to optionally assign to properties of variables which might be null. The proposed syntax is a?.b = c, but given that it is an early proposal the syntax could still ch
+- **Stage 2 Proposals Meta Review** — stage: 2  `raw/notes/meetings/2023-07/july-13.md`
+  - → Ten (10) Stage 2 Proposals have been presented recently and did not need to be discussed:
+- **Reducing wasted effort due to proposal churn**  `raw/notes/meetings/2023-07/july-13.md`
+  - Generally positive feedback from the committee that this will help reduce costs effectively, and should be continued to pursue. Naming and numbering still has not made any progress. More feedback is r
+- **DataView get/set Uint8Clamped methods for stage 1 or 2 or 3** — stage: 1  `raw/notes/meetings/2023-07/july-13.md`
+  - Detailed discussion were had and Stage 1 was achieved.
+- **Stop Coercing Things** — stage: 3/4  `raw/notes/meetings/2023-07/july-13.md`
+  - KG: I do want to comment on the next steps. I will review existing Stage 3 proposals and come back with normative changes where appropriate to have them follow these rules. I’ll also glance at anythin
+- **Reducing wasted effort due to proposal churn (continuation)** — stage: 2.7  `raw/notes/meetings/2023-07/july-13.md`
+  - RE the "spiraling", the thing we need to keep in mind is that it's fine if we have *an* implementation during stage 2.75 (DE suggested polyfills/transpilers, but it can also be an engine), it's just t
+
+## 2023-09
+
+- **Secretary general report**  `raw/notes/meetings/2023-09/september-26.md`
+  - Ecma/TC39/2023/040 Report from the TC39 Secretariat, September 2023 was presented and provided the following highlights and information from Ecma: The slides were reviewed, and suggested to read the d
+- **ECMA-402 update**  `raw/notes/meetings/2023-09/september-26.md`
+- **ECMA-404 update**  `raw/notes/meetings/2023-09/september-26.md`
+- **Test262 update**  `raw/notes/meetings/2023-09/september-26.md`
+- **TC39-TG3 status report**  `raw/notes/meetings/2023-09/september-26.md`
+  - MF: The things that were being asked were the TG3 repo is made public, the GitHub vulnerability reporting process is enabled for our org, and the vulnerability reporting document that I shared is the 
+- **TC39-TG4 Source maps – Report**  `raw/notes/meetings/2023-09/september-26.md`
+  - TC39-TG4, the new source maps task group, has continued to make good progress towards its goals of improving correctness/precision of the specification, implementing a test suite, and designing new fe
+- **Normative updates to ECMA-402**  `raw/notes/meetings/2023-09/september-26.md`
+- **Normative: Change the hourCycle default logic**  `raw/notes/meetings/2023-09/september-26.md`
+  - This patch fixes a bug in options processing where Intl.DateTimeFormat would sometimes use hours from 1-24, when the right answer would be 0-23.
+- **Normative: Added note about sets of locales for web browser implementations needing to not change as a result of user behaviour**  `raw/notes/meetings/2023-09/september-26.md`
+  - Consensus on this normative change (pending improved wording where it’s not in a note) with explicit support from DE, MM, KG, DLM, MS, JHD
+- **Normative: Fix order of rounding* option reads and resolvedOptions()**  `raw/notes/meetings/2023-09/september-26.md`
+  - Consensus on this normative change with explicit support from Dan Minor
+- **Update GetSubstitution to match reality**  `raw/notes/meetings/2023-09/september-26.md`
+  - RegExp replace with a string replacement, including a $ followed by two digits, has long had a specification which didn’t match what JS engines, including browsers, shipped. A specification PR has bee
+- **Import Attributes Implementer Feedback**  `raw/notes/meetings/2023-09/september-26.md`
+  - Consensus on the change to only allow Identifiers and Strings as keys in Import Attributes. It’s agreed that this will never happen in user code anyway, and removing support for BigInt and number simp
+- **Array grouping update** — stage: 3  `raw/notes/meetings/2023-09/september-26.md`
+  - Array grouping is at Stage 3 and gradually shipping in browsers
+- **Array Buffer transfer update** — stage: 3  `raw/notes/meetings/2023-09/september-26.md`
+  - `ArrayBuffer.prototype.transfer` ad friends are at stage 3 and gradually shipping in browsers.
+- **Symbol predicates update** — stage: 1  `raw/notes/meetings/2023-09/september-26.md`
+  - → Symbol predicates remain at stage 1; still looking for more arguments for the isWellKnownSymbol predicate that would convince those with concerns.
+- **Pattern matching updates**  `raw/notes/meetings/2023-09/september-26.md`
+  - Pattern matching has gained momentum again, but there are still some things to be solved in the group of champions and once those are settled, there will be a presentation about the changed proposal r
+- **JSON.parse source text access update**  `raw/notes/meetings/2023-09/september-26.md`
+  - The proposal is ready for implementation, and a test262 PR will be up this week.
+- **Iterator helper web incompat**  `raw/notes/meetings/2023-09/september-26.md`
+  - We'll wait until the next meeting to see if Transcend can upgrade their customers. If so, Chrome will attempt to re-ship the proposal as-is. If not, we'll discuss options at that meeting.
+- **Resizable buffers for Stage 4** — stage: 4  `raw/notes/meetings/2023-09/september-26.md`
+  - → Consensus for Stage 4 Once merged into ecma262, Wasm/JS integration will be unblocked
+- **Stage 3 update of Intl Locale Info API** — stage: 3  `raw/notes/meetings/2023-09/september-26.md`
+  - Consensus reach for merging PR 70
+- **Throw Expressions for Stage 3** — stage: 3  `raw/notes/meetings/2023-09/september-26.md`
+- **Intl.MessageFormat: Stage 1 update and discussion** — stage: 1  `raw/notes/meetings/2023-09/september-26.md`
+  - General approval for the proposal’s progress.
+- **RegExp.escape for stage 2** — stage: 2  `raw/notes/meetings/2023-09/september-26.md`
+  - → `RegExp.escape` reaches Stage 2
+- **Reviving export default from; for stage 2? (JHD)** — stage: 2  `raw/notes/meetings/2023-09/september-26.md`
+  - Prior to requesting stage 2, JHD will make it very clear what the use cases are in 2023, including motivations. The repo prose here needs to be reworded to be clearer about the two different pieces of
+- **DataView get/set Uint8Clamped methods for stage 2  (JHD)** — stage: 2  `raw/notes/meetings/2023-09/september-26.md`
+  - While there is strong support for this proposal with both a getter and a setter, there continues to be concern around providing a getUint8Clamped that’s identical to getUint8, and an additional sugges
+- **Withdrawing Symbol.thenable**  `raw/notes/meetings/2023-09/september-26.md`
+  - Some aspects of the TC39 process need to be clarified.
+- **ShadowRealm: Implementer Feedback and Demotion to Stage 2** — stage: 2/3  `raw/notes/meetings/2023-09/september-27.md`
+  - → ShadowRealms is a proposal at Stage 3 offering somewhat isolated contexts for JavaScript code to run in. ShadowRealms let JS execute in a fresh global context, including all of the ECMA-262 built-ins, as well as, optionally, APIs that the embedder provides. Prior to reaching Stage 3, the champions made a concrete proposal for which web APIs would be provided for ShadowRealms, and although this integration received high-level signoff from browsers, it did not come backed with thorough-enough web-platform-tests or a thorough audit of the implications of all of the APIs which it proposed adding. Mozilla has found this gap to mean that the proposal is not yet implementable, and the proposal has been at a stalemate for years since it reached this point, with the champions not yet filling in the gaps.
+  - → For advancement back to Stage 3 we’ll look for explicit support from at least two implementations that the testing and list of APIs to be exposed to ShadowRealms are sufficient.
+  - → Consensus for demotion to Stage 2, with advancement to Stage 3 dependent upon having a list of suitable APIs to be exposed to ShadowRealms, along with sufficient tests to ensure correct behaviour in implementations.
+- **Stage 3 Reviewers for RegExp.escape** — stage: 3  `raw/notes/meetings/2023-09/september-27.md`
+- **AsyncContext update** — stage: 2  `raw/notes/meetings/2023-09/september-27.md`
+  - → AsyncContext remains at Stage 2; development will continue
+- **Get Intrinsics for stage 2, with two possible shapes/paths?** — stage: 1/2  `raw/notes/meetings/2023-09/september-27.md`
+  - → The proposal remains at Stage 1
+- **iterator sequencing for Stage 1** — stage: 1  `raw/notes/meetings/2023-09/september-27.md`
+  - → Iterator sequencing reached stage 1
+- **Structs and shared structs update** — stage: 1/2  `raw/notes/meetings/2023-09/september-27.md`
+  - → Shared structs remain at Stage 1
+- **Type Annotations: Stage 1 update and discussion** — stage: 1  `raw/notes/meetings/2023-09/september-27.md`
+  - → The proposal remains at Stage 1 and is expected to be discussed in future committee meetings, as well as in open community calls.
+- **Decimal: Stage 1 update and discussion** — stage: 1  `raw/notes/meetings/2023-09/september-27.md`
+  - → Decimal remains at Stage 1
+- **Joint iteration for Stage 1** — stage: 1  `raw/notes/meetings/2023-09/september-27.md`
+  - Joint iteration is the ability to “zip” two iterators, possibly mapping over them at the same time.
+- **TDZ, what is it good for**  `raw/notes/meetings/2023-09/september-27.md`
+  - Years after ES6, let and const still commonly cause performance regressions vs var, and transpilers do not implement TDZ. The result is that let and const are avoided in shipped JS code.
+- **Stable Formatting for Stage 1** — stage: 1  `raw/notes/meetings/2023-09/september-27.md`
+  - → The proposal advances to Stage 1
+- **Uint8Array-Base64** — stage: 3  `raw/notes/meetings/2023-09/september-28.md`
+  - → PHE blocked the proposal from advancing to Stage 3 because, in embedded platforms such as Moddable, some use cases require a streaming approach to base64 encoding, and this proposal does not provide that built-in
+- **Negated in and instanceof operators for Stage 1** — stage: 1  `raw/notes/meetings/2023-09/september-28.md`
+  - Proposal achieves Stage 1 with widespread committee support
+- **Locale Extensions for Stage 1** — stage: 1  `raw/notes/meetings/2023-09/september-28.md`
+  - To
+- **Withdrawing finalization registry cleanupSome**  `raw/notes/meetings/2023-09/september-28.md`
+  - The FinalizationRegistry.prototype.cleanupSome API was created to enable long Wasm tasks to observe garbage collection without yielding to the web’s event loop.
+- **Stop coercing things pt 2**  `raw/notes/meetings/2023-09/september-28.md`
+  - KG explained the various problems caused by coercion, and raised several concrete questions to the committee about which aspects of coercion we should limit for future proposals.
+- **reducing wasted effort due to proposal churn (continued)** — stage: 3  `raw/notes/meetings/2023-09/september-28.md`
+  - MF proposed that we add an additional stage between 2 and 3, where stage 3 entrance requires test262 tests. The new stage would have current stage 3 entrance requirements. Maintaining the name “stage 
+- **Throw expression (continued)** — stage: 2  `raw/notes/meetings/2023-09/september-28.md`
+  - → The throw expressions proposal remains at Stage 2 with no conclusion on syntax questions.
+- **Incubator Call**  `raw/notes/meetings/2023-09/september-28.md`
+- **Future meeting planning**  `raw/notes/meetings/2023-09/september-28.md`
+
+## 2023-11
+
+- **Github Delegate Teams**  `raw/notes/meetings/2023-11/november-27.md`
+- **Secretary Report**  `raw/notes/meetings/2023-11/november-27.md`
+- **Test262 Update**  `raw/notes/meetings/2023-11/november-27.md`
+- **TG3: Security Updates**  `raw/notes/meetings/2023-11/november-27.md`
+- **Publishing an FAQs document**  `raw/notes/meetings/2023-11/november-27.md`
+- **Requesting collaborators for writing and publishing a paper on the TC39 Process at IEEE**  `raw/notes/meetings/2023-11/november-27.md`
+- **Array Grouping for Stage 4** — stage: 4  `raw/notes/meetings/2023-11/november-27.md`
+  - Achieved Stage 4
+- **Promise.withResolvers for Stage 4** — stage: 4  `raw/notes/meetings/2023-11/november-27.md`
+  - Achieved Stage 4
+- **ShadowRealm Stage 2 update** — stage: 2/3  `raw/notes/meetings/2023-11/november-27.md`
+  - → ShadowRealms remain at Stage 2. Multiple concerns were raised in discussion, and these will also be addressed as part of ongoing work towards Stage 3:
+- **RegExp Modifiers Stage 3 update** — stage: 3  `raw/notes/meetings/2023-11/november-27.md`
+  - → RegExp Modifiers remains at Stage 3 as no advancement was sought at this time.
+- **Provide source text to HostEnsureCanCompileStrings PR #3222**  `raw/notes/meetings/2023-11/november-27.md`
+- **Base64 Uint8Arrays discussion**  `raw/notes/meetings/2023-11/november-27.md`
+- **Decimal Stage 1 Update & Request for feedback** — stage: 1  `raw/notes/meetings/2023-11/november-27.md`
+  - → The decimal proposal remains at Stage 1
+- **TCQ Reloaded**  `raw/notes/meetings/2023-11/november-28.md`
+- **Stage 3 update of Intl Locale Info API** — stage: 2/3  `raw/notes/meetings/2023-11/november-28.md`
+  - → The proposal remains at Stage 3 for now, but may be downgraded to Stage 2 if outstanding issues aren’t fixed promptly.
+- **Temporal normative PR #2718 & general update**  `raw/notes/meetings/2023-11/november-28.md`
+- **Intl.DurationFormat stage 3 update and normative PRs** — stage: 3  `raw/notes/meetings/2023-11/november-28.md`
+  - TG1 consensus on all PRs
+- **Math.sum** — stage: 1  `raw/notes/meetings/2023-11/november-28.md`
+  - Stage 1 KG to read more about Shewchuk's algorithm for precise floating point summation
+- **Iterator helpers web compat continuation**  `raw/notes/meetings/2023-11/november-28.md`
+  - Continued on day 4
+- **Joint iteration stage 1 update** — stage: 1/2  `raw/notes/meetings/2023-11/november-28.md`
+  - MF presented a preview of the `Iterator.zip` API that will be proposed for Stage 2 in a future meeting
+- **Iterator sequencing** — stage: 1  `raw/notes/meetings/2023-11/november-28.md`
+  - → The proposal stays at Stage 1
+- **Allow users to specify rounding based on cash denominations in common use**  `raw/notes/meetings/2023-11/november-28.md`
+  - BAN will bring this proposal back at a future meeting for consensus as a PR, so delegates have more time to review.
+- **Withdrawing Operator Overloading**  `raw/notes/meetings/2023-11/november-28.md`
+  - TC39 reached consensus to withdraw the operator overloading proposal, pending SYG’s confirmation, which was given after the meeting.
+- **Withdrawing custom numeric suffixes**  `raw/notes/meetings/2023-11/november-28.md`
+  - Custom numerical suffixes were proposed to enable more numeric-like data types to be usable with better ergonomics.
+- **Decimal overflow**  `raw/notes/meetings/2023-11/november-28.md`
+- **Recruiting people interested in JSX to join the matrix room**  `raw/notes/meetings/2023-11/november-29.md`
+- **JSON.tryParse** — stage: 1  `raw/notes/meetings/2023-11/november-29.md`
+  - → Not going to stage 1. Listed in the rejected proposals.
+- **Module sync assert for stage 1** — stage: 1  `raw/notes/meetings/2023-11/november-29.md`
+  - Achieved Stage 1
+- **Decorators normative update re: extra initializers**  `raw/notes/meetings/2023-11/november-29.md`
+  - Achieved consensus for changing the order
+- **Deferred import evaluation: deferred re-exports**  `raw/notes/meetings/2023-11/november-29.md`
+  - List
+- **TG4 Sourcemaps update**  `raw/notes/meetings/2023-11/november-29.md`
+- **TG4 Proposals Process**  `raw/notes/meetings/2023-11/november-29.md`
+  - There is support for the proposed process and relation between TG1 and TG4
+- **Provide source text to HostEnsureCanCompileStrings PR [continuation]**  `raw/notes/meetings/2023-11/november-29.md`
+  - HostEnsureCanCompileStrings will be updated following either opinion 1 (preferred) or, if not possible, option 2. This will be discussed offline.
+- **Slice notation stage 1 update and `[^a]`** — stage: 1  `raw/notes/meetings/2023-11/november-29.md`
+  - List
+- **Stop Coercing Things (pt 3)**  `raw/notes/meetings/2023-11/november-29.md`
+- **continuation of the new stage discussion** — stage: 2.7  `raw/notes/meetings/2023-11/november-30.md`
+  - new stage officially adopted, numbered 2.7, sits between stages 2 and 3
+- **Continuation of Temporal**  `raw/notes/meetings/2023-11/november-30.md`
+  - A normative change to overflow behavior in PlainYearMonth/PlainMonthDay.p.toPlainDate (PR #2718) reached consensus.
+- **Iterator helpers (continued)**  `raw/notes/meetings/2023-11/november-30.md`
+  - Merge iterator-helpers PR #287
+- **Incubation call chartering**  `raw/notes/meetings/2023-11/november-30.md`
+
+## 2024-02
+
+- **TG3 (Security) Report**  `raw/notes/meetings/2024-02/feb-6.md`
+- **TG4 (Source Maps) Report**  `raw/notes/meetings/2024-02/feb-6.md`
+- **Updates from CoC committee**  `raw/notes/meetings/2024-02/feb-6.md`
+- **Needs consensus PR: refactoring the process document**  `raw/notes/meetings/2024-02/feb-6.md`
+  - Consensus on merging the PR.
+- **Down with [[VarNames]]** — stage: 2  `raw/notes/meetings/2024-02/feb-6.md`
+  - Stage 2 Reviewers: RGN, DRR Delegates to consider implications before next plenary: MM, MLS
+- **Allow Annex B scripts to start with -->**  `raw/notes/meetings/2024-02/feb-6.md`
+  - Consensus on merging the PR
+- **Allow locale based ignorePunctuation default for Collator**  `raw/notes/meetings/2024-02/feb-6.md`
+  - FYT: Okay, so I think the conclusion for these notes is that we conclude that we got consensus for merge ECMA 402 PR 833.
+- **ApplyUnicodeExtensionToTag and ResolveLocale set the result record's internal slots to non-canonical values**  `raw/notes/meetings/2024-02/feb-6.md`
+  - FYT: The conclusion is that we reach consensus to merge ECMA 402 PR 846, which was accidentally mentioned last night, so we’re not going to revert it. Thank you.
+- **Iterator sequencing for Stage 2** — stage: 1/2  `raw/notes/meetings/2024-02/feb-6.md`
+  - → Did not seek consensus for Stage 2, due to critical feedback. The proposal remains at Stage 1.
+- **Iterator unique for stage 1** — stage: 1  `raw/notes/meetings/2024-02/feb-6.md`
+  - Consensus on stage 1
+- **Intl.MessageFormat: I have some questions**  `raw/notes/meetings/2024-02/feb-6.md`
+  - We will have an overflow topic to cover the second half of the slides, and
+- **status of the IEEE Software paper about TC39**  `raw/notes/meetings/2024-02/feb-6.md`
+- **chartering TG5 on “Experiments in Programming Language Standardization”**  `raw/notes/meetings/2024-02/feb-6.md`
+  - TG5 is convened with the stated scope/program.
+- **ArrayBuffer transfer for stage 4** — stage: 4  `raw/notes/meetings/2024-02/feb-6.md`
+  - → Reaches stage 4
+- **Set Methods bugfix and update**  `raw/notes/meetings/2024-02/feb-6.md`
+  - Consensus on the bugfix https://github.com/tc39/proposal-set-methods/pull/105
+- **Temporal update & proposed normative changes**  `raw/notes/meetings/2024-02/feb-6.md`
+- **Micro and mini waits in JS for stage 1** — stage: 1  `raw/notes/meetings/2024-02/feb-6.md`
+- **Promise.try for stage 2** — stage: 2  `raw/notes/meetings/2024-02/feb-6.md`
+- **Joint iteration for stage 2** — stage: 2  `raw/notes/meetings/2024-02/feb-6.md`
+- **revisit Promise.try** — stage: 2  `raw/notes/meetings/2024-02/feb-6.md`
+  - Stage 2.
+- **Math.sum**  `raw/notes/meetings/2024-02/feb-6.md`
+- **Continuation: Intl.MessageFormat update and discussion** — stage: 2  `raw/notes/meetings/2024-02/feb-7.md`
+  - In a future TC39 meeting, there will be a presentation on Intl.MessageFormat for Stage 2, leaving out the parser. The committee has not expressed any concerns about this approach, but it remains to be
+- **RegExp.escape hex escape discussion + for stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-02/feb-7.md`
+  - Will incorporate hex escaping, and return at a future meeting to request stage 2.7.
+- **WasmGC shared memory proposal and shared structs proposal convergence update**  `raw/notes/meetings/2024-02/feb-7.md`
+- **iterator chunking for stage 1** — stage: 1  `raw/notes/meetings/2024-02/feb-7.md`
+  - Stage 1
+- **Can we reach consensus on what is Consensus?**  `raw/notes/meetings/2024-02/feb-7.md`
+- **ShadowRealms update** — stage: 2.7/3  `raw/notes/meetings/2024-02/feb-7.md`
+  - Consensus for Stage 2.7 Proposal champions will seek external signoff from WHATWG HTML stakeholders and Mathew Gaudet (Mozilla) regarding the proposed list of suitable APIs to be exposed to ShadowReal
+- **Raw String Literals for Stage 1** — stage: 1  `raw/notes/meetings/2024-02/feb-7.md`
+  - → Proposal reaches Stage 1 with the scope of “an investigation on how to deal with the limits of template strings, especially when it comes to including backticks or escapes for raw strings” and the new title “improve escaped template literals”.
+- **Uint8Array Base64 for stages 2.7 and 3** — stage: 3  `raw/notes/meetings/2024-02/feb-7.md`
+  - → The base64 proposal reaches Stage 3
+- **Extractors update**  `raw/notes/meetings/2024-02/feb-7.md`
+  - Only an update, no consensus needed at this time.
+- **Intl.MessageFormat** — stage: 1  `raw/notes/meetings/2024-02/feb-7.md`
+  - RPR: Okay, all wrapped up. Thank you. Okay. I think we’ve kind of come to end of the normal agenda. I know Chris wanted to do ECMA recognition awards, but I think we’ve actually got now at least a 20 
+- **Scrub Stage 1 proposals** — stage: 1  `raw/notes/meetings/2024-02/feb-7.md`
+- **Ecma Recognition Awards**  `raw/notes/meetings/2024-02/feb-7.md`
+- **call for reviewers for Promise.try**  `raw/notes/meetings/2024-02/feb-8.md`
+  - RGN and RKG have volunteered to review.
+- **Intl.DurationFormat stage 3 update** — stage: 3  `raw/notes/meetings/2024-02/feb-8.md`
+  - Consensus on
+- **ESM Phase Imports for stage 1** — stage: 1  `raw/notes/meetings/2024-02/feb-8.md`
+  - Stage 1
+- **Throw expressions update or stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-02/feb-8.md`
+  - List
+- **Incubation call chartering**  `raw/notes/meetings/2024-02/feb-8.md`
+- **Function and Object Literal Element Decorators for stage 1** — stage: 1  `raw/notes/meetings/2024-02/feb-8.md`
+  - → Function and object property decorators reaches Stage 1
+- **Decorated Function Declarations and Hoisting**  `raw/notes/meetings/2024-02/feb-8.md`
+- **"Discard" (void) Bindings for stage 1** — stage: 1  `raw/notes/meetings/2024-02/feb-8.md`
+
+## 2024-04
+
+- **Ecma recognition awards reminder**  `raw/notes/meetings/2024-04/april-08.md`
+- **update on automatically producing print-quality PDFs**  `raw/notes/meetings/2024-04/april-08.md`
+  - MF has incorporated AWB’s PDF generation advice, and found that it will still take a week or two of manual work to produce a high-quality PDF. There are no volunteers among the committee or editors to
+- **TG3: Security update**  `raw/notes/meetings/2024-04/april-08.md`
+  - KKL has joined the conveners group for TG3
+- **TG4: Source Maps**  `raw/notes/meetings/2024-04/april-08.md`
+- **TG5: Experiments in Programming Language Standardization**  `raw/notes/meetings/2024-04/april-08.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2024-04/april-08.md`
+- **“array last” proposal withdrawn**  `raw/notes/meetings/2024-04/april-08.md`
+  - The ‘array.last’ proposal has been withdrawn
+- **TC39 website - call for translators**  `raw/notes/meetings/2024-04/april-08.md`
+- **Temporal normative bugfix**  `raw/notes/meetings/2024-04/april-08.md`
+- **Duplicate named capture groups for stage 4** — stage: 4  `raw/notes/meetings/2024-04/april-08.md`
+  - Stage 4
+- **Set methods for stage 4** — stage: 4  `raw/notes/meetings/2024-04/april-08.md`
+  - Stage 4 achieved
+- **Joint-iteration: confirm our stance on issue 1**  `raw/notes/meetings/2024-04/april-08.md`
+- **Promise.try for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-04/april-08.md`
+  - Promise.try has stage 2.7.
+- **`RegExp.escape` for stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-04/april-08.md`
+  - Will make additional changes and return in a future meeting:
+- **Make eval-introduced global vars redeclarable for stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-04/april-08.md`
+  - Stage 2.7
+- **Atomics.microwait() (without mini wait) for stage 2** — stage: 2  `raw/notes/meetings/2024-04/april-08.md`
+  - → Atomics.microwait withdrawn for Stage 2 consensus, for now.
+- **Explicit Resource Management Normative Updates and Needs Consensus PRs**  `raw/notes/meetings/2024-04/april-09.md`
+  - PR#194 - Editorial only. No consensus required.
+- **AsyncContext Stage 2 updates** — stage: 2  `raw/notes/meetings/2024-04/april-09.md`
+- **Deferred import evaluation for Stage 2.7 (without "tree-shakeable" exports)** — stage: 2.7  `raw/notes/meetings/2024-04/april-09.md`
+  - The presenter didn't ask for stage advancement due to the feedback received during the discussion
+- **Iterator.range for stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-04/april-09.md`
+  - Wait for the discussion about floating point numbers, and come back next time
+- **`Math.sumExact` for stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-04/april-09.md`
+  - Stage 2.7 under the name "sumPrecise"
+- **Discussing new directions for R&T**  `raw/notes/meetings/2024-04/april-09.md`
+  - Lots of good feedback was received, with contrasting views in the committee.
+- **Reality and spec differ on property key resolution timing for o[p] = f()**  `raw/notes/meetings/2024-04/april-10.md`
+  - Normative PR has consensus to merge.
+- **Discard Bindings for Stage 2** — stage: 2  `raw/notes/meetings/2024-04/april-10.md`
+  - Did not advance due to cover grammar concerns.
+- **Extractors for Stage 2** — stage: 2  `raw/notes/meetings/2024-04/april-10.md`
+  - Continued on Day 4.
+- **eval/new Function changes for Trusted Types as Normative PR or Stage 3** — stage: 3  `raw/notes/meetings/2024-04/april-10.md`
+  - → This change has been approved as a Stage 3 proposal
+- **Array.isTemplateObject next steps** — stage: 2  `raw/notes/meetings/2024-04/april-10.md`
+  - → Array.isTemplateObject remains at Stage 2.
+- **Module sync assert for stage 2** — stage: 2  `raw/notes/meetings/2024-04/april-10.md`
+  - Engines don’t believe it is useful enough to implement it in the browser, looks like it will be better in the toolings
+- **bringing back Error.isError, for stage 1 or 2 (or even 2.7)** — stage: 1  `raw/notes/meetings/2024-04/april-10.md`
+  - Proposal has stage 1.
+- **Decimal for stage 2** — stage: 1/2  `raw/notes/meetings/2024-04/april-11.md`
+  - → Decimal stays at stage 1
+- **Shared Structs Discussion** — stage: 2  `raw/notes/meetings/2024-04/april-11.md`
+  - Champions will engage Mark Miller more to recap how they arrived at adding methods
+- **Strict Enforcement of 'using'** — stage: 1  `raw/notes/meetings/2024-04/april-11.md`
+  - Adopted for Stage 1.
+- **Stop Coercing Things pt 4**  `raw/notes/meetings/2024-04/april-11.md`
+  - Consensus on the non-binding guidelines proposed in the slides
+- **(continuation) joint iteration: confirm our stance on #1**  `raw/notes/meetings/2024-04/april-11.md`
+  - It wouldn’t be a blocker in either direction whether array zip was included or excluded to joint iteration in an upcoming meeting.
+- **(continuation) Make eval-introduced global vars redeclarable** — stage: 3  `raw/notes/meetings/2024-04/april-11.md`
+  - Stage 3
+- **(continuation) Extractors** — stage: 2  `raw/notes/meetings/2024-04/april-11.md`
+  - → Did not advance due issues in grammar that must be resolved before Stage 2.
+- **Signals for Stage 1** — stage: 1  `raw/notes/meetings/2024-04/april-11.md`
+  - → Signals reach Stage 1
+
+## 2024-06
+
+- **ECMA-404**  `raw/notes/meetings/2024-06/june-11.md`
+  - Nothing new to report. The standard remains stable and unchanging
+- **Updates from the CoC Committee**  `raw/notes/meetings/2024-06/june-11.md`
+- **Needs Consensus PR: ECMA-402: Specify time zone IDs to reduce divergence between engines**  `raw/notes/meetings/2024-06/june-11.md`
+  - ECMA-402 PR #787 is approved to align ECMA-402 with the "web reality" of CLDR data and ICU behaviour used by many large ECMAScript engines. This will reduce current and future divergence between engin
+- **Status of TCQ reloaded**  `raw/notes/meetings/2024-06/june-11.md`
+  - If only software development weren’t so hard. TCQ reloaded got off the track a little bit by focussing on architecture instead of getting it to run. We have figured out now that reproducibility is now
+- **eval() changes for trusted types update**  `raw/notes/meetings/2024-06/june-11.md`
+  - In the 2024-04 TC39 meeting we decided to _not_ expose the built string to the host, under the assumption that that string was spec-internal only. Our recommendation was that instead the host should r
+- **Avoid second pass/buffer in base64 setFromBase64/setFromHex methods**  `raw/notes/meetings/2024-06/june-11.md`
+  - The committee has reached consensus on the proposed change which would make it so that you still write decoded data up to the occurrence of the first error, in the set fromBase64 and set of hex method
+- **Option to omit padding in toBase64**  `raw/notes/meetings/2024-06/june-11.md`
+  - The PR adds an options bag argument, "omitPadding," which defaults to false, which is to say defaults to including padding, which allows specifying omit padding true to not generate the = padding, whe
+- **Iterator sequencing** — stage: 2/2.7  `raw/notes/meetings/2024-06/june-11.md`
+  - The previous proposal was attempting to solve multiple cases, including a small finite case, and an unbounded/infinite case. Trying to solve the infinite case was both difficult and harder to justify.
+- **Async Iterators Update**  `raw/notes/meetings/2024-06/june-11.md`
+  - Proposal was not seeking advancement, but the committee is in favor of this direction.
+- **`Intl.MessageFormat` Stage 1 open question involving error handling design patterns** — stage: 1  `raw/notes/meetings/2024-06/june-11.md`
+  - The Unicode MessageFormat specification emphasizes error handling with two types of errors: message errors (handled during message processing) and resolution errors (detected during message formatting
+- **Proposal Scrub**  `raw/notes/meetings/2024-06/june-11.md`
+- **`Promise.try` for Stage 3** — stage: 3  `raw/notes/meetings/2024-06/june-11.md`
+  - `Promise.try` has merged test262 tests and has received consensus for stage 3.
+- **RegExp Escaping** — stage: 2.7  `raw/notes/meetings/2024-06/june-11.md`
+  - → Keep character escapes (no change). Advances to stage 2.7
+- **`Error.isError`** — stage: 2  `raw/notes/meetings/2024-06/june-11.md`
+  - → advances to Stage 2
+- **`Promise.try` and `Regex.escape` addenda**  `raw/notes/meetings/2024-06/june-11.md`
+- **Deferred import evaluation for stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-06/june-11.md`
+  - We had consensus for Stage 2.7, including the two additional proposed changes.
+- **GitHub Teams Notice**  `raw/notes/meetings/2024-06/june-11.md`
+- **ShadowRealm Update**  `raw/notes/meetings/2024-06/june-12.md`
+- **Sourcemaps Progress Updates**  `raw/notes/meetings/2024-06/june-12.md`
+- **Nova JavaScript Engine—Exploring a data-oriented engine design**  `raw/notes/meetings/2024-06/june-12.md`
+- **Smart units progress update**  `raw/notes/meetings/2024-06/june-12.md`
+  - BAN: Yeah. I mean, it is something, remarkably difficult to summarize. Because it seems to me that the sense in the room, is, oh, yes, this is something that would be very useful and the sort of pitfa
+- **Cancellation: Room for improvement**  `raw/notes/meetings/2024-06/june-12.md`
+  - DE raised several issues with `AbortController`/`AbortSignal` which affect its reliability and usability.
+- **Joint Iteration for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-06/june-12.md`
+  - → MF: I’ll do it real quick. On the naming issue, we choose to rename zipToArrays to zip. On the string iteration issue, we chose to not iterate strings that were given as input. And on the mode selection issue, we chose to replace the two Booleans with a single mode option, which is one of three strings: "shortest", "longest", or "strict". And that’s it, advance to Stage 2.7.
+- **Temporal Stage 3 update and scope reduction** — stage: 3  `raw/notes/meetings/2024-06/june-12.md`
+  - Consensus reached on fixing an arithmetic bug, https://github.com/tc39/proposal-temporal/pull/2838.
+- **Decimal for Stage 2** — stage: 2  `raw/notes/meetings/2024-06/june-13.md`
+  - Another round of iteration on the spec text is needed.
+- **ESM Phase Imports** — stage: 2/2.7  `raw/notes/meetings/2024-06/june-13.md`
+  - → Proposal advanced to Stage 2.
+- **Intl.DurationFormat Stage 3 update and normative PRs** — stage: 3  `raw/notes/meetings/2024-06/june-13.md`
+  - USA: All right, you have consensus. Fantastic.
+- **Continuation from previous meeting: Explicit Resource Management Normative Updates and Needs Consensus PRs**  `raw/notes/meetings/2024-06/june-13.md`
+  - Consensus on PR #219
+- **Discard Bindings update or stage 2** — stage: 2  `raw/notes/meetings/2024-06/june-13.md`
+  - → Consensus on advancement to Stage 2.
+- **Algorithms for Signals**  `raw/notes/meetings/2024-06/june-13.md`
+  - The goal of signal algorithms, which many frameworks have gradually reinvented, is to accurately recalculate parts of the function from the model to the view, as if the whole thing were run from scrat
+- **Atomics.pause** — stage: 2.7  `raw/notes/meetings/2024-06/june-13.md`
+  - Consensus for Stage 2.7
+- **Shared Structs discussion around methods**  `raw/notes/meetings/2024-06/june-13.md`
+  - Stakeholders to continue methods discussion in the already regularly scheduled shared structs working session call
+
+## 2024-07
+
+- **ECMA-402 editors appointment**  `raw/notes/meetings/2024-07/july-29.md`
+- **TG3: Security**  `raw/notes/meetings/2024-07/july-29.md`
+- **TG4: Source Maps**  `raw/notes/meetings/2024-07/july-29.md`
+- **TG4 convenors appointment**  `raw/notes/meetings/2024-07/july-29.md`
+- **TG5: Experiments in Programming Language Standardization**  `raw/notes/meetings/2024-07/july-29.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2024-07/july-29.md`
+- **Intl.DurationFormat: Display negative sign on leading numeric-style zeroes**  `raw/notes/meetings/2024-07/july-29.md`
+  - Consensus to fix `Intl.DurationFormat` spec bug that drops negative sign erroneously
+- **Source phase imports update**  `raw/notes/meetings/2024-07/july-29.md`
+- **Normative Conventions: pretend primitives aren't iterable**  `raw/notes/meetings/2024-07/july-29.md`
+  - Consensus on the normative convention, but with all existing violations documented alongside.
+- **Normative: Make DefaultNumberOption in ECMA-402 truncate options before validating range Presenter: Ben Allen (BAN)**  `raw/notes/meetings/2024-07/july-29.md`
+  - ECMA-262 to remain unchanged
+- **RegExp.escape for Stage 3** — stage: 3  `raw/notes/meetings/2024-07/july-29.md`
+  - → RegExp.escape promoted with consensus to stage 3
+- **Drop assert from import attributes**  `raw/notes/meetings/2024-07/july-29.md`
+  - The committee has consensus for removing `assert` from the proposal
+- **Atomics.pause for Stage 3** — stage: 3  `raw/notes/meetings/2024-07/july-29.md`
+- **Concurrency Control Presenter: MF and LCA**  `raw/notes/meetings/2024-07/july-29.md`
+- **AsyncContext Presenter: Chengzhong Wu, Andreu Botella**  `raw/notes/meetings/2024-07/july-29.md`
+- **Normative: fully define Math.sqrt**  `raw/notes/meetings/2024-07/july-30.md`
+  - Consensus on PR #3345
+- **Intl.Locale Update in Stage 3** — stage: 3  `raw/notes/meetings/2024-07/july-30.md`
+  - Intl.Locale Update PR has consensus
+- **unordered async iterator helpers for Stage 1** — stage: 1  `raw/notes/meetings/2024-07/july-30.md`
+- **Error.isError for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-07/july-30.md`
+  - PR removing proxy piercing will be merged
+- **Temporal update & bug fixes** — stage: 3  `raw/notes/meetings/2024-07/july-30.md`
+  - Consensus was reached on two normative changes: one to fix a TZDB corner case in calculating the start-of-day of March 31, 1919, in Ontario, Canada, and another to disallow a particular ambiguous comb
+- **Joint Iteration naming discussion issue 27** — stage: 2.7  `raw/notes/meetings/2024-07/july-30.md`
+  - → `Iterator.zipToObject` has been renamed to `Iterator.zipKeyed`. The proposal remains at stage 2.7.
+- **Scrub of Stage 2 Proposals** — stage: 2  `raw/notes/meetings/2024-07/july-30.md`
+- **Normative: Add text about locale installation in browser implementations as fingerprinting vector**  `raw/notes/meetings/2024-07/july-30.md`
+- **Propagate active ScriptOrModule with JobCallback Record**  `raw/notes/meetings/2024-07/july-31.md`
+  - This topic is revisited later in the day.
+- **Decimal for Stage 2** — stage: 2  `raw/notes/meetings/2024-07/july-31.md`
+- **Avoid capturing lexical context in indirect eval** — stage: 2.7  `raw/notes/meetings/2024-07/july-31.md`
+  - NRO: And the conclusion is that we got consensus for having it as a Stage 2.7 proposal. I just have a question. Do I have to create a repository or is it fine to just keep the request and nothing else
+- **Continuation: Propagate active ScriptOrModule with JobCallback Record**  `raw/notes/meetings/2024-07/july-31.md`
+- **Array.isTemplateObject for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-07/july-31.md`
+- **Continuation: Atomics.pause for Stage 3** — stage: 2/3  `raw/notes/meetings/2024-07/july-31.md`
+  - CDA: We neither have consensus for Stage 3 nor Stage 2. So I say we just call it and let’s move on to the next topic.
+- **Updates from TypeScript: deferred and immediate**  `raw/notes/meetings/2024-07/july-31.md`
+
+## 2024-10
+
+- **262 Editor’s Update**  `raw/notes/meetings/2024-10/october-08.md`
+  - In addition to ongoing editorial and infrastructure work, the editors have landed the following normative changes:
+- **402 Editor’s Update**  `raw/notes/meetings/2024-10/october-08.md`
+- **404 Editor's Update**  `raw/notes/meetings/2024-10/october-08.md`
+- **TG3 Report**  `raw/notes/meetings/2024-10/october-08.md`
+- **TG4 Report**  `raw/notes/meetings/2024-10/october-08.md`
+  - Consensus on changes and improvements to the spec, pending one [outstanding PR](https://github.com/tc39/source-map/pull/122) and MM's approval.
+- **TG5 Report**  `raw/notes/meetings/2024-10/october-08.md`
+- **Iterator sequencing for stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-10/october-08.md`
+  - Proposal achieved Stage 2.7
+- **RegExp Modifiers for Stage 4** — stage: 4  `raw/notes/meetings/2024-10/october-08.md`
+  - Stage 4 without the proposed normative change
+- **Import Attributes and JSON Modules for Stage 4** — stage: 4  `raw/notes/meetings/2024-10/october-08.md`
+  - Stage 4 for JSON Modules and Import Attributes
+- **Iterator Helpers for Stage 4** — stage: 4  `raw/notes/meetings/2024-10/october-08.md`
+  - Stage 4.
+- **Source Phase Imports**  `raw/notes/meetings/2024-10/october-08.md`
+  - Consensus for changing to the syntax error early error form ([PR](https://github.com/tc39/proposal-source-phase-imports/pull/65)), and we’ll update the proposal accordingly.
+- **ESM Phase Imports**  `raw/notes/meetings/2024-10/october-08.md`
+- **Structs and Shared Structs for Stage 2** — stage: 2  `raw/notes/meetings/2024-10/october-08.md`
+  - → Stage 2, with the explicit understanding of the open questions listed above, all of which (except probably the Mutex.lockIfAvailable) may block the proposal from happening
+- **Porffor JS engine**  `raw/notes/meetings/2024-10/october-08.md`
+- **JSSugar/JS0**  `raw/notes/meetings/2024-10/october-08.md`
+  - Champions requested delegates take problem statement to heart.
+- **Three normative Ecma-204 changes**  `raw/notes/meetings/2024-10/october-08.md`
+  - CDA: Consensus for the three normative changes?
+- **Exploring an Idea of a Proposal Management and Technical Arbitration Tool**  `raw/notes/meetings/2024-10/october-08.md`
+  - Got positive feedback from the committee on the idea of the tool. The work on the tool implementation continues.
+- **`Intl.DurationFormat` do not include grouping separators in numeric-like styles**  `raw/notes/meetings/2024-10/october-09.md`
+  - We have consensus for the normative change removing grouping separators when using the digital format in DurationFormat.
+- **Normative: Allow use of non-ISO 4217 data in CurrencyDigits AO**  `raw/notes/meetings/2024-10/october-09.md`
+  - List
+- **Temporal progress update**  `raw/notes/meetings/2024-10/october-09.md`
+- **Make toSorted methods stable**  `raw/notes/meetings/2024-10/october-09.md`
+  - Consensus on the PR: toSorted methods will use a stable sort, matching Array.prototype.sort.
+- **`Math.sumPrecise` for stage 3 & last chance to suggest other names** — stage: 3  `raw/notes/meetings/2024-10/october-09.md`
+  - Proposal has Stage 3.
+- **`Map.emplace` stage 2 update** — stage: 2  `raw/notes/meetings/2024-10/october-09.md`
+  - A new design was presented, focusing on the use case of inserting a default value into a Map during a get.
+- **Extractors for Stage 2** — stage: 2/3  `raw/notes/meetings/2024-10/october-09.md`
+  - Stage 2. Reviewers for Stage 3: Jordan Harband, Justin Ridgewell
+- **Decimal: Stage 1 Update** — stage: 1  `raw/notes/meetings/2024-10/october-09.md`
+  - Feedback was expressed that it is unclear whether the current design, with canonicalized decimals, meets the stated needs of the proposal.
+- **ArrayBuffer construction step order**  `raw/notes/meetings/2024-10/october-09.md`
+  - The semantics of the ArrayBuffer constructor remain as currently specified. Test262 maintainers will consider new patterns for increasing coverage of such cases.
+- **`Promise.try` for Stage 4** — stage: 4  `raw/notes/meetings/2024-10/october-09.md`
+  - Congratulations on Stage 4.
+- **Explicit compile hints**  `raw/notes/meetings/2024-10/october-09.md`
+- **`Atomics.pause` for stage 3** — stage: 3  `raw/notes/meetings/2024-10/october-09.md`
+  - Stage 3
+- **Discard (void) Bindings update**  `raw/notes/meetings/2024-10/october-09.md`
+- **AsyncContext updates**  `raw/notes/meetings/2024-10/october-09.md`
+- **`Array.zip` for stage 1, or 2, or 2.7** — stage: 1  `raw/notes/meetings/2024-10/october-09.md`
+  - Stage 1
+- **Iterator chunking for Stage 2** — stage: 2  `raw/notes/meetings/2024-10/october-09.md`
+  - Stage 2 reviewers: ACE, JHD, JMN
+- **`Error.isError` for stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-10/october-09.md`
+  - RPR: Just as to check, do we have any objections to Stage 2.7? Congratulations, JHD. You have Stage 2.7.
+- **Restricting subclassing of built-ins**  `raw/notes/meetings/2024-10/october-09.md`
+  - Mozilla gathered telemetry on real-world use of species. We were surprised that the number of pages using species could be as high as 26% for some of the builtins. Every case we investigated was CoreJ
+- **Immutable ArrayBuffers for Stage 1** — stage: 1  `raw/notes/meetings/2024-10/october-10.md`
+- **DataView get/set Uint8Clamped methods for stage 2** — stage: 1/2  `raw/notes/meetings/2024-10/october-10.md`
+  - → The proposal does not advance to Stage 2 and remains at Stage 1.
+- **Discard (void) Bindings: Request for Stage 3 reviewers** — stage: 3  `raw/notes/meetings/2024-10/october-10.md`
+- **Smart Units stage 1 update** — stage: 1  `raw/notes/meetings/2024-10/october-10.md`
+- **Measure object stage 0** — stage: 0  `raw/notes/meetings/2024-10/october-10.md`
+- **import defer updates regarding evaluation triggers**  `raw/notes/meetings/2024-10/october-10.md`
+- **Continuation: TG4: Source Map Specification, 2024 edition approval**  `raw/notes/meetings/2024-10/october-10.md`
+  - Resolved MM’s issue by adding an editorial note to the specification
+- **Continuation: JSSugar/JS0**  `raw/notes/meetings/2024-10/october-10.md`
+  - No conclusion; continued discussion.
+
+## 2024-12
+
+- **Secretary’s Report**  `raw/notes/meetings/2024-12/december-02.md`
+- **TG3 (Security) Updates**  `raw/notes/meetings/2024-12/december-02.md`
+- **TG4 (Source Maps) Updates**  `raw/notes/meetings/2024-12/december-02.md`
+- **TG5 (Experiments in Programming Language Standardization) Updates**  `raw/notes/meetings/2024-12/december-02.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2024-12/december-02.md`
+- **Call for reviewers - ESM Phase Imports**  `raw/notes/meetings/2024-12/december-02.md`
+- **Process document fixes and corrections**  `raw/notes/meetings/2024-12/december-02.md`
+- **More Currency Display Choices** — stage: 2  `raw/notes/meetings/2024-12/december-02.md`
+  - “More Currency Display Choices” was accepted for Stage 2, with JHD and NRO as committed spec reviews.
+- **Upsert (formerly Map.emplace) Update and request for Stage 2 reviewers** — stage: 2  `raw/notes/meetings/2024-12/december-02.md`
+  - Committee was in favour of the non-throwing solution to issue #40 (https://github.com/tc39/proposal-upsert/pull/71)
+- **`Intl.DurationFormat` for Stage 4** — stage: 4  `raw/notes/meetings/2024-12/december-02.md`
+  - → DurationFormat reached Stage 4 with supporting comments from DLM and PFC.
+- **`Error.isError` to stage 3** — stage: 3  `raw/notes/meetings/2024-12/december-02.md`
+  - Consensus for stage 3
+- **Iterator helpers close receiver on argument validation failure**  `raw/notes/meetings/2024-12/december-02.md`
+  - Approved.
+- **AsyncContext request for Stage 2.7 reviewers** — stage: 2.7  `raw/notes/meetings/2024-12/december-02.md`
+  - JSL & MM will review `AsyncContext`
+- **The importance of supporting materials**  `raw/notes/meetings/2024-12/december-02.md`
+  - Not asking for any process changes at the time, just trying to highlight the importance of supporting materials for people who are evaluating proposals, in particular implementers who spend a lot of t
+- **re-using IteratorResult objects in iterator helpers**  `raw/notes/meetings/2024-12/december-02.md`
+- **iterator sequencing for Stage 3** — stage: 3  `raw/notes/meetings/2024-12/december-02.md`
+  - MF will wait until the test262 tests have been merged before asking for Stage 3 again.
+- **ShadowRealm for Stage 3** — stage: 3  `raw/notes/meetings/2024-12/december-02.md`
+- **Briefing on the formation and goals of TC55 (or, All About Moving the WinterCG into Ecma)**  `raw/notes/meetings/2024-12/december-03.md`
+- **Stabilize to stage 1** — stage: 1  `raw/notes/meetings/2024-12/december-03.md`
+  - MM: Okay. So I see on the TCQ explicit support from SYG. Thank you. Weak support from JWK. Okay. I think I have Stage 1.
+- **Module Harmony: where we are**  `raw/notes/meetings/2024-12/december-03.md`
+- **Immutable ArrayBuffer to stage 2** — stage: 2  `raw/notes/meetings/2024-12/december-03.md`
+- **import defer updates**  `raw/notes/meetings/2024-12/december-03.md`
+- **Error Stacks Structure for Stage 2** — stage: 2  `raw/notes/meetings/2024-12/december-03.md`
+  - planning to bring a new, smaller proposal with just the existing stack accessor
+- **Import Sync discussion, request for Stage 1?** — stage: 1  `raw/notes/meetings/2024-12/december-04.md`
+  - Presented a number of use cases where synchronous access to modules and their execution could be valuable
+- **ESM phase imports for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2024-12/december-04.md`
+  - → We obtained Stage 2.7 based on conditional approval from Mark for further interrogation of the semantics, through meetings at TG3, which will happen before the next meeting.
+- **Vision for numeric types in ECMAScript**  `raw/notes/meetings/2024-12/december-05.md`
+- **Measure Stage 1 update** — stage: 1  `raw/notes/meetings/2024-12/december-05.md`
+- **Continuation: Error Stacks Structure for Stage 2** — stage: 2  `raw/notes/meetings/2024-12/december-05.md`
+- **Continuation: import defer updates**  `raw/notes/meetings/2024-12/december-05.md`
+- **Adjournment**  `raw/notes/meetings/2024-12/december-05.md`
+
+## 2025-02
+
+- **Secretariat comments**  `raw/notes/meetings/2025-02/february-18.md`
+- **TC39 Chair Election**  `raw/notes/meetings/2025-02/february-18.md`
+  - The proposed chairs and facilitators group has been elected by acclamation:
+- **ECMA-262 Update**  `raw/notes/meetings/2025-02/february-18.md`
+- **ECMA-402 Update**  `raw/notes/meetings/2025-02/february-18.md`
+- **ECMA-404 Update**  `raw/notes/meetings/2025-02/february-18.md`
+- **Test262 Update**  `raw/notes/meetings/2025-02/february-18.md`
+  - We have tests for Iterator helpers and/or iterator sequencing
+- **TG3 Report**  `raw/notes/meetings/2025-02/february-18.md`
+- **TG4 Report**  `raw/notes/meetings/2025-02/february-18.md`
+  - ECMA-426, 1st edition approved by the Ecma GA
+- **TG5 Report**  `raw/notes/meetings/2025-02/february-18.md`
+  - TG5 has had regular monthly meetings since it was chartered one year ago. In addition, TG5 has arranged three Workshops co-located with hybrid meetings, and currently plans another Workshop in Spain t
+- **Updates from the CoC Committee**  `raw/notes/meetings/2025-02/february-18.md`
+- **Don't call well-known Symbol methods for RegExp on primitive values**  `raw/notes/meetings/2025-02/february-18.md`
+  - Consensus
+- **Float16Array for stage 4** — stage: 4  `raw/notes/meetings/2025-02/february-18.md`
+  - Stage 4
+- **Redeclarable global eval vars for stage 4** — stage: 4  `raw/notes/meetings/2025-02/february-18.md`
+  - Stage 4
+- **RegExp Escaping for stage 4** — stage: 4  `raw/notes/meetings/2025-02/february-18.md`
+  - stage 4
+- **import defer for Stage 3** — stage: 3  `raw/notes/meetings/2025-02/february-18.md`
+  - Consensus for Stage 3
+- **Explicit Resource Needs Consensus PR**  `raw/notes/meetings/2025-02/february-18.md`
+  - Consensus reached
+- **Decorators implementation updates**  `raw/notes/meetings/2025-02/february-18.md`
+  - Status quo remains the same, no one plans to ship currently.
+- **Curtailing the power of "Thenables" for Stage 1** — stage: 1  `raw/notes/meetings/2025-02/february-18.md`
+  - Stage 1 achieved
+- **`Math.clamp` for Stage 1 or 2** — stage: 1  `raw/notes/meetings/2025-02/february-18.md`
+  - Consensus on stage 1
+- **Immutable ArrayBuffer** — stage: 2.7/3  `raw/notes/meetings/2025-02/february-18.md`
+  - Got all approvals needed
+- **Limited ArrayBuffer** — stage: 1  `raw/notes/meetings/2025-02/february-18.md`
+  - Many of delegates expressed support, so not withdrawing.
+- **`Number.isSafeNumeric`**  `raw/notes/meetings/2025-02/february-18.md`
+  - Required to provide a 'problem statement' which succinctly describes the problem your proposal is intended to solve
+- **A unified vision for measure and decimal**  `raw/notes/meetings/2025-02/february-19.md`
+  - There is little to no support for outright merging of the proposals from outside of the champion group. There was some uncertainty about use cases for Measure. Adding conversion between units (measure
+- **Stable Formatting update**  `raw/notes/meetings/2025-02/february-19.md`
+  - Stable Formatting [PR #18](https://github.com/tc39/proposal-stable-formatting/pull/18) can be merged.
+- **`Error.captureStackTrace()` for Stage 1** — stage: 1  `raw/notes/meetings/2025-02/february-19.md`
+  - → Stage 1 advanced
+- **Discussion about shipping non-standard features**  `raw/notes/meetings/2025-02/february-19.md`
+  - The committee discussed preferences for notification when implementers are shipping features that don't currently exist in the language.
+- **Error Stack Accessor** — stage: 2/2.7/3  `raw/notes/meetings/2025-02/february-19.md`
+  - → HTML integration PR must be directionally approved, and possibly merged, prior to stage 2.7 (and certainly prior to stage 3)
+- **Intl Locale Info API Update in Stage 3** — stage: 3  `raw/notes/meetings/2025-02/february-19.md`
+  - Reached consensus on PR 99
+- **Records and Tuples future directions**  `raw/notes/meetings/2025-02/february-19.md`
+  - Feedback was generally positive to continue exploring this direction.
+- **Use cases for ShadowRealm**  `raw/notes/meetings/2025-02/february-19.md`
+  - None
+- **Decision Making through Consensus - take 2**  `raw/notes/meetings/2025-02/february-20.md`
+- **Continuation: A unified vision for measure and decimal**  `raw/notes/meetings/2025-02/february-20.md`
+- **Continuation: `Number.isSafeNumeric`** — stage: 1  `raw/notes/meetings/2025-02/february-20.md`
+  - withhold consensus for Stage 1
+- **Language design goal for consensus: Things should layer**  `raw/notes/meetings/2025-02/february-20.md`
+  - DE argued that:
+- **Continuation: [Decision Making through Consensus - take 2]**  `raw/notes/meetings/2025-02/february-20.md`
+
+## 2025-04
+
+- **TC39 Editors’ Update**  `raw/notes/meetings/2025-04/april-14.md`
+- **ECMA-402 Editors’ Update**  `raw/notes/meetings/2025-04/april-14.md`
+- **TG5: Experiments in Programming Language Standardization**  `raw/notes/meetings/2025-04/april-14.md`
+- **Updates from the CoC**  `raw/notes/meetings/2025-04/april-14.md`
+- **Normative: add notation to PluralRules**  `raw/notes/meetings/2025-04/april-14.md`
+  - The committee reached consensus on [the pull request](https://github.com/tc39/ecma402/pull/989), with explicit support from DE and DLM.
+- **Normative: Mark sync module evaluation promise as handled**  `raw/notes/meetings/2025-04/april-14.md`
+  - When using some types of non-JavaScript modules that throw during evaluation, the current spec does not call the HostPromiseRejectionTraker hook to mark the promise returned by .Evaluate() as handled.
+- **Note about changed behavior of `Array.fromAsync` after landing #2600**  `raw/notes/meetings/2025-04/april-14.md`
+  - The committee is advised that landing [tc39/ecma262#2600](https://github.com/tc39/ecma262/pull/2600/) resulted in a change in the behavior of the widely implemented `Array.fromAsync` proposal despite 
+- **`AsyncContext` Stage 2 Update** — stage: 2  `raw/notes/meetings/2025-04/april-14.md`
+  - Multiple frontend web frameworks are eagerly waiting for `AsyncContext` to ship in browsers, to enable async/await in developers’ codebases without breaking framework-level tracking. However, while th
+- **Temporal Update** — stage: 3  `raw/notes/meetings/2025-04/april-14.md`
+  - Temporal is at Stage 3 and ready to ship
+- **Composite Keys for stage 1** — stage: 1  `raw/notes/meetings/2025-04/april-14.md`
+  - Consensus for stage 1 was achieved
+- **Immutable ArrayBuffer for Stage 3** — stage: 2.7/3  `raw/notes/meetings/2025-04/april-14.md`
+  - → The proposal will be brought for Stage 3 at a future meeting, once tests are landed and known coverage gaps are filled. For now, it remains at Stage 2.7.
+- **Upsert for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2025-04/april-14.md`
+  - → The upsert proposal advanced to Stage 2.7.
+- **Withdrawing Records & Tuples**  `raw/notes/meetings/2025-04/april-14.md`
+  - The Records and Tuples proposal has been withdrawn
+- **Don't Remember Panicking Stage 1 Update** — stage: 1  `raw/notes/meetings/2025-04/april-15.md`
+  - See topic continuation for summary.
+- **Enums for Stage 1** — stage: 1  `raw/notes/meetings/2025-04/april-15.md`
+  - → Advanced to Stage 1
+- **`Object.propertyCount` for stage 1 or 2** — stage: 1  `raw/notes/meetings/2025-04/april-15.md`
+  - Not everyone in committee was convinced of some of the aspect of the broader scope and some people wanted the scope to be narrower.
+- **Explicit Resource Management**  `raw/notes/meetings/2025-04/april-15.md`
+  - Allowing the `using` statement in a switch statement with fallthrough complicates implementations. If we disallow this use case, implementations can desugar to try/finally blocks which is simpler and 
+- **Non-extensible applies to Private for stage 1, 2, 2.7** — stage: 1/2/2.7  `raw/notes/meetings/2025-04/april-15.md`
+  - → The proposal reached Stage 1.
+  - → And it reached Stage 2 (reviewers JHD and DE, who already have signed off).
+  - → And it reached conditional Stage 2.7 (conditional on pending editor approval from MF; editor approval from KG and SYG already were given).
+  - → And it reached stage 2.7 later in the meeting when it got that approval from MF.
+- **Continuation of Object.propertyCount for stage 1 or 2** — stage: 1  `raw/notes/meetings/2025-04/april-15.md`
+  - Consensus to progress to Stage 1.
+- **Continuation: Don't Remember Panicking** — stage: 1  `raw/notes/meetings/2025-04/april-15.md`
+  - Extensive discussion.
+- **Intl Era Month Code Stage 2 Update** — stage: 2  `raw/notes/meetings/2025-04/april-16.md`
+  - An update was given.
+- **Compare Strings by Codepoint for stage 1 or 2** — stage: 1  `raw/notes/meetings/2025-04/april-16.md`
+  - Stage 1
+- **Update to Consensus policy**  `raw/notes/meetings/2025-04/april-16.md`
+- **Stage 1 update for decimal & measure: Amounts** — stage: 1  `raw/notes/meetings/2025-04/april-16.md`
+  - There was some concern about the commutativity of the application of a unit and a precision
+- **Guidelines for Locale-Sensitive Testing in Test262**  `raw/notes/meetings/2025-04/april-16.md`
+  - Please feel free to continue the discussion on [tc39/test262#3786](https://github.com/tc39/test262/issues/3786).
+- **`export defer` extracted from `import defer`: stage 2 update or for stage 1** — stage: 1/2  `raw/notes/meetings/2025-04/april-16.md`
+  - Reaffirmed that `export defer` is at stage two, continuing from when it was when `import defer` was split off to proceed on its own
+- **Disposable AsyncContext for Stage 1** — stage: 1  `raw/notes/meetings/2025-04/april-17.md`
+  - → Proposal advances to stage 1
+- **WHATWG Observables**  `raw/notes/meetings/2025-04/april-17.md`
+  - Positive overall feedback.
+- **Continuation: Normative: Mark sync module evaluation promise as handled (#3535)**  `raw/notes/meetings/2025-04/april-17.md`
+  - Positive consensus for the pull request.
+- **Continuation: Reviewers for Export Defer**  `raw/notes/meetings/2025-04/april-17.md`
+  - CZW and ACE will review. USA will also help.
+- **Plenary conclusion**  `raw/notes/meetings/2025-04/april-17.md`
+
+## 2025-05
+
+- **Secretary’s Report**  `raw/notes/meetings/2025-05/may-28.md`
+- **TG4: Source Maps**  `raw/notes/meetings/2025-05/may-28.md`
+- **TG5: Experiments in Programming Language Standardization**  `raw/notes/meetings/2025-05/may-28.md`
+- **Normative: Add "Late Errors for Function Call Assignment Targets" to Annex B ([\#3568](https://github.com/tc39/ecma262/pull/3568))**  `raw/notes/meetings/2025-05/may-28.md`
+  - This discussion was around a PR specifying the web reality that certain errors would not be early errors in sloppy mode on browser-hosted engines. It aligns with the new Annex B editorial convention d
+- **Normative: Added note about sets of locales for web browser implementations needing to not change as a result of user behaviour ([ecma402\#780](https://github.com/tc39/ecma402/pull/780))**  `raw/notes/meetings/2025-05/may-28.md`
+  - The purpose of this pull request is to add language into ECMA-402 that explains expected behavior by browsers to prevent user fingerprinting by tracking available locales
+- **Normative: Add 8 new numbering systems for Unicode 16 ([ecma402\#929](https://github.com/tc39/ecma402/pull/929))**  `raw/notes/meetings/2025-05/may-28.md`
+  - ECMA-402 needs to regularly update its table of numbering systems to align with the table published by the Unicode Consortium
+- **Intl Locale Info Stage 3 Update: Normative: Return undefined if direction is unknown** — stage: 3  `raw/notes/meetings/2025-05/may-28.md`
+  - TG1 approves adding the return value of undefined to the return value of gettext info, but the committee would like more time to consider adding other string values to the enumerations. So TG2 will go
+- **Maintaining Proposal Topics**  `raw/notes/meetings/2025-05/may-28.md`
+  - This was a conversation about how we as a committee manage tracking, labeling, auditing, and supporting all current staged proposals. TG5 is interested in providing a technology solution for this.
+- **AsyncContext web integration brainstorming**  `raw/notes/meetings/2025-05/may-28.md`
+  - This was a discussion, not a consensus-seeking change; further discussion is necessary.
+- **Normative: Add `Intl.Locale.prototype.variants` ([ecma402\#960](https://github.com/tc39/ecma402/pull/960))**  `raw/notes/meetings/2025-05/may-28.md`
+  - The committee agreed to add `variants` strings to the ECMA-402 `Intl.Locale` constructor options and prototype by merging [ecma402\#960](https://github.com/tc39/ecma402/pull/960).
+- **Explicit Resource Management for Stage 4** — stage: 4  `raw/notes/meetings/2025-05/may-28.md`
+  - Topic discussed later in the meeting.
+- **`Array.fromAsync` for Stage 4** — stage: 4  `raw/notes/meetings/2025-05/may-28.md`
+  - → Achieved conditional Stage 4 from plenary: Stage 4 as soon as all three editors sign off on Ecma262 [pull request \#3581](https://github.com/tc39/ecma262/pull/3581).
+- **`Error.isError` for Stage 4** — stage: 4  `raw/notes/meetings/2025-05/may-28.md`
+  - → Proposal has reached Stage 4
+- **Keep trailing zeros in `Intl.NumberFormat` and `Intl.PluralRules` for Stage 1** — stage: 1  `raw/notes/meetings/2025-05/may-28.md`
+  - The proposal was accepted for Stage 1.
+- **`Decimal` Stage 1 update** — stage: 1  `raw/notes/meetings/2025-05/may-28.md`
+  - We will continue discussion in a continuation topic on the matter.
+- **Iterator Sequencing for Stage 3** — stage: 3  `raw/notes/meetings/2025-05/may-28.md`
+- **Explicit resource management continuation** — stage: 4  `raw/notes/meetings/2025-05/may-28.md`
+  - → Conditionally advanced to Stage 4 pending final Test262 and editor sign-off.
+- **IDL for ECMAScript with WebIDL**  `raw/notes/meetings/2025-05/may-29.md`
+- **ECMAScript Framework**  `raw/notes/meetings/2025-05/may-29.md`
+- **Moving TCQ forward**  `raw/notes/meetings/2025-05/may-29.md`
+- **Continuation: `Decimal` Stage 1 Update** — stage: 1  `raw/notes/meetings/2025-05/may-29.md`
+- **Math.clamp for stage 2** — stage: 1/2  `raw/notes/meetings/2025-05/may-29.md`
+  - → When `Math.clamp` reached stage 1, the biggest concerns expressed by the committee were how it would be accessed and how it would work with `BigInt`.
+  - → This presentation was intended to propose stage 2 or 2.7 advancement, with preferences to the above blockers expressed by the proposal's champion
+- **SeededPRNG for Stage 2** — stage: 2/2.7  `raw/notes/meetings/2025-05/may-29.md`
+  - → Approved for Stage 2.
+- **More Random Functions for Stage 1** — stage: 1  `raw/notes/meetings/2025-05/may-29.md`
+  - Stage 1 for a new Random namespace object with *some* of the new methods—the more complicated design questions (array stuff, non-uniform stuff) should be pushed to a new proposal.
+- **Immutable `ArrayBuffer` for Stage 3** — stage: 3  `raw/notes/meetings/2025-05/may-29.md`
+  - → test262 pull requests completing the testing plan should satisfy requirements for Stage 3 advancement in the next meeting.
+- **Iterator Chunking for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2025-05/may-29.md`
+  - Option 1 (yielding no windows) and Option 3 (yielding undersized windows) are both useful for different use cases that we care about
+- **Continuation: `Math.clamp` for Stage 2** — stage: 2  `raw/notes/meetings/2025-05/may-29.md`
+  - Stage 2
+- **TG3: Security**  `raw/notes/meetings/2025-05/may-30.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2025-05/may-30.md`
+- **Reviewers needed for SeededPRNG**  `raw/notes/meetings/2025-05/may-30.md`
+- **Comparisons (né Assertions) for Stage 1** — stage: 1  `raw/notes/meetings/2025-05/may-30.md`
+  - Modes is especially enticing for its broader applicability.
+- **JS Numerics breakout session** — stage: 2  `raw/notes/meetings/2025-05/may-30.md`
+  - The champions and some members of plenary commit to discussing the merits of a String-backed version of Amount.
+- **Revisiting Comparison for Stage 1** — stage: 1  `raw/notes/meetings/2025-05/may-30.md`
+
+## 2025-07
+
+- **Secretary’s Report**  `raw/notes/meetings/2025-07/july-28.md`
+  - SHN provided a brief update since the last TC39 Plenary meeting, supported by AKI, covering recognitions, standards approvals, new projects and members. Four individuals were honored with Ecma Recogni
+- **ECMA-262 Editor's Report**  `raw/notes/meetings/2025-07/july-28.md`
+- **TG5: Experiments in Programming Language Standardization**  `raw/notes/meetings/2025-07/july-28.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2025-07/july-28.md`
+- **Preparing Summary and Conclusions**  `raw/notes/meetings/2025-07/july-28.md`
+  - There was agreement to try this framework during the ongoing TC39 meeting, with feedback invited to refine the process. Attendees were reminded to clearly state their summaries and conclusions during 
+- **`F.p.toString` incompat for builtin accessors**  `raw/notes/meetings/2025-07/july-28.md`
+  - The resolution reached was that was not the intended meaning of normative optional. Given this, there’s no change to the spec needed to accommodate jsc’s behavior here. Additionally, we may want to re
+- **Spec/implementations divergence on module evaluation promises settlement order**  `raw/notes/meetings/2025-07/july-28.md`
+  - We’ve heard strong pushback to the third option. And given that SpiderMonkey has the current spec behavior, they would prefer not to change. But they would be okay with it, if it committee as a whole 
+- **TypedArray copyWithin inconsistently responds to midstream shrinking**  `raw/notes/meetings/2025-07/july-28.md`
+  - RGN: We agreed to the normative change of #3619 that establishes copying the maximal prefix requested for an `ArrayBuffer` copyWithin regardless of iteration direction.
+- **Missing name property for `%IntlSegmentsPrototype%[%Symbol.iterator%]`**  `raw/notes/meetings/2025-07/july-28.md`
+  - Due to oversight, we are missing, we were missing a name property for `Intl.Segments.prototype[Symbol.iterator]`. It doesn’t break, because of the code block, but you know, what’s it supposed to be.
+- **Freezing the Array Iterator**  `raw/notes/meetings/2025-07/july-28.md`
+  - KG: Making certain parts of the language frozen might be worth it to make code easier to reason about and optimize. This would make the language consistent, but it is in my view worth doing. One place
+- **Proposed code of conduct addition: "write your own comments"**  `raw/notes/meetings/2025-07/july-28.md`
+  - KG argues that posting LLM outputs for other people to read is something which should be forbidden by the code of conduct, on the grounds that this is mostly a waste of the reader's time. ISO policy m
+- **`Math.sumPrecise` for Stage 4** — stage: 4  `raw/notes/meetings/2025-07/july-28.md`
+  - Proposal has stage 4.
+- **[Temporal](https://github.com/tc39/proposal-temporal) normative PR**  `raw/notes/meetings/2025-07/july-28.md`
+  - we have consensus for the change.
+- **[Uint8Array base64+hex](https://github.com/tc39/proposal-arraybuffer-base64) for Stage 4** — stage: 4  `raw/notes/meetings/2025-07/july-28.md`
+  - → Proposal reaches stage 4.
+- **Iterator Sequencing for Stage 3** — stage: 3  `raw/notes/meetings/2025-07/july-28.md`
+  - → Proposal advanced to Stage 3.
+- **Upsert for Stage 3** — stage: 3  `raw/notes/meetings/2025-07/july-28.md`
+  - → Proposal advanced to Stage 3.
+- **AsyncContext web integration update**  `raw/notes/meetings/2025-07/july-28.md`
+  - This was a short update on what changed on the web integration side since the May plenary. No decisions were made.
+- **How to make thenables safer?**  `raw/notes/meetings/2025-07/july-29.md`
+  - (conversation continues)
+- **Error.captureStackTrace**  `raw/notes/meetings/2025-07/july-29.md`
+  - Will bring this discussion to TG3.
+- **Non-extensible Applies to Private** — stage: 3  `raw/notes/meetings/2025-07/july-29.md`
+  - To ask for Stage 3 next plenary, we need to
+- **Immutable `ArrayBuffer` for stage 3** — stage: 3  `raw/notes/meetings/2025-07/july-29.md`
+  - → Immutable `ArrayBuffer` has Stage 3, conditional upon test262 PRs merging
+- **Iterator Chunking for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2025-07/july-29.md`
+  - MF: It sounds like we are leaning as a committee towards a single method with an option of some sort. Undecided yet on what that option is. Hopefully, we can resolve this via the issue tracker in the 
+- **[Keep trailing zeros in `Intl.NumberFormat` and Intl.PluralRules](https://github.com/tc39/proposal-intl-keep-trailing-zeros) for Stage 2 or 2.7** — stage: 2/2.7  `raw/notes/meetings/2025-07/july-29.md`
+  - The proposal and its specification was presented, and was accepted for Stage 2. RGN and SFC volunteered to act as its Stage 2.7 reviewers, and completed their reviews during the meeting. In the contin
+- **[~~Measure~~Amount](https://github.com/tc39/proposal-measure) for Stage 2** — stage: 2  `raw/notes/meetings/2025-07/july-29.md`
+  - → The proposal was renamed, but did not advance to Stage 2. Discussions continue on the open topics.
+- **Intl Era and month code**  `raw/notes/meetings/2025-07/july-30.md`
+  - The champions requested stage advancement and consensus was reached after a brief discussion around the last remaining editorial change
+- **Module Import Hook and new Global for Stage 1** — stage: 1  `raw/notes/meetings/2025-07/july-30.md`
+  - After debating the proposal on various levels of details we’ve reached our time limit, along with a conclusion that we need to refine our problem statement to better represent what we are trying to ac
+- **Import Buffer for Stage 1** — stage: 1/2  `raw/notes/meetings/2025-07/july-30.md`
+  - Import Bytes has Stage 2
+- **Continuation: How to make thenables safer?**  `raw/notes/meetings/2025-07/july-30.md`
+  - I think we’ve eliminated the most general form of extra ticks approach from the running. Still some possible designs to explore: Justin proposes that we could explore something akin to `NewSafePromise
+- **Continuation: [Keep trailing zeros in `Intl.NumberFormat` and Intl.PluralRules](https://github.com/tc39/proposal-intl-keep-trailing-zeros) for Stage 2 or 2.7** — stage: 2/2.7  `raw/notes/meetings/2025-07/july-30.md`
+  - → The proposal reached Stage 2.7.
+- **Continuation: Module Import Hook and new Global for Stage 1** — stage: 1  `raw/notes/meetings/2025-07/july-30.md`
+  - → With the new problem statement and clarification to the proposal scope the proposal was approved for Stage 1
+- **Continuation: Non-extensible applies to private**  `raw/notes/meetings/2025-07/july-30.md`
+  - No more blockers. Modulo test262 integration the proposal should be able to advance at the next occasion.
+- **Continuation: [~~Measure~~Amount](https://github.com/tc39/proposal-measure) for Stage 2** — stage: 2  `raw/notes/meetings/2025-07/july-30.md`
+  - List
+- **Import Buffer—reviewers**  `raw/notes/meetings/2025-07/july-30.md`
+  - Designated reviewers: NRO, EAO, and JSL
+- **"write your own comments" continuation**  `raw/notes/meetings/2025-07/july-30.md`
+- **`Object.propertyCount` for Stage 2** — stage: 2  `raw/notes/meetings/2025-07/july-31.md`
+  - (see end of day)
+- **`Array.isSparse` for Stage 1** — stage: 1  `raw/notes/meetings/2025-07/july-31.md`
+  - (see end of day)
+- **`Array.getNonIndexStringProperties` for Stage 1** — stage: 1  `raw/notes/meetings/2025-07/july-31.md`
+  - (see end of day)
+- **`Object.getOwnPropertySymbols` options for Stage 1** — stage: 1  `raw/notes/meetings/2025-07/july-31.md`
+  - → CDA: Okay. I already called for objections. Not seeing anything on the queue. Okay. I think that we will say that you have Stage 1 for this proposal as well. Okay. Hang on, ZTZ has a comment, not convinced it will be used in the wild, but support stage one, fair enough. All right. Congratulations, you have stage one. It gets a bit of a mixed bag for the efforts today. But congratulations on the ones that advanced.
+
+## 2025-09
+
+- **TG3: Security**  `raw/notes/meetings/2025-09/september-22.md`
+- **TG4: Source Maps**  `raw/notes/meetings/2025-09/september-22.md`
+- **TG5: Experiments in Programming Language Standardization**  `raw/notes/meetings/2025-09/september-22.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2025-09/september-22.md`
+- **Convention: strings-as-enums are kebab-case**  `raw/notes/meetings/2025-09/september-22.md`
+  - No conclusion at this time
+- **Normative: Add `[[CompactDisplay]]` slot to `Intl.PluralRules`**  `raw/notes/meetings/2025-09/september-22.md`
+  - Consensus for the proposed change.
+- **Normative: Make `Intl.PluralRules` ResolvePlural and associated AOs take Intl mathematical values rather than Numbers**  `raw/notes/meetings/2025-09/september-22.md`
+  - Consensus for the proposed change.
+- **Amount for Stage 2** — stage: 2  `raw/notes/meetings/2025-09/september-22.md`
+  - Continuation
+- **Iterator Chunking for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2025-09/september-22.md`
+  - → proposal advanced to Stage 2.7, including the last-minute change to kebab casing
+- **`Array.prototype.pushAll` for Stage 1** — stage: 1  `raw/notes/meetings/2025-09/september-22.md`
+  - Problem statement: It should be straightforward and safe to bulk-add multiple elements to an existing array.
+- **Normative: change PromiseResolve species check**  `raw/notes/meetings/2025-09/september-22.md`
+  - Approval in principle, pending measurements by engines that this change is web compatible.
+- **Native Promise Adoption for stage 1** — stage: 1  `raw/notes/meetings/2025-09/september-22.md`
+  - → Native Promise Adoption advances to Stage 1
+- **Native Promise Predicate for stage 1 or 2** — stage: 1/2  `raw/notes/meetings/2025-09/september-22.md`
+  - Stage 2, name bikeshed before next stage. JHD, JSL, JRL as reviewers.
+- **Non-extensible Applies to Private for stage 3** — stage: 3  `raw/notes/meetings/2025-09/september-22.md`
+  - And with support and no objections, we are now at Stage 3.
+- **Intl Era Month Code Stage 2.7 Update** — stage: 2.7  `raw/notes/meetings/2025-09/september-23.md`
+  - Just an update.. No comments from queue
+- **Deferred re-exports update**  `raw/notes/meetings/2025-09/september-23.md`
+  - Consensus on reviewers: ACE, CZW, GB
+- **AsyncContext yield***  `raw/notes/meetings/2025-09/september-23.md`
+  - There were no concerns with the proposed change.
+- **Continuation: Intl Era Month Code—Normative changes**  `raw/notes/meetings/2025-09/september-23.md`
+  - The committee provided consensus to make the requested changes
+- **Update on proposal-await-dictionary**  `raw/notes/meetings/2025-09/september-23.md`
+  - We agreed that we should include an additional method for `allSettledKeyed`
+- **Import Bytes for stage 2.7** — stage: 2.7/3  `raw/notes/meetings/2025-09/september-23.md`
+  - Stage 2.7 achieved
+- **Continuation: Convention: strings-as-enums are kebab-case**  `raw/notes/meetings/2025-09/september-23.md`
+  - The committee reached consensus on merging the PR adding kebab-case to the normative conventions document, with several caveats—not the least of which excluding ECMA-402 from this convention. The conv
+- **Update on proposal-module-global**  `raw/notes/meetings/2025-09/september-23.md`
+  - We are seeking feedback from specific individuals and appeal for additional feedback, regarding paths to evaluation and minimizing the concern of making additional globals and module maps.
+- **Continuation: Update on proposal-module-global**  `raw/notes/meetings/2025-09/september-23.md`
+  - (conclusion of original topic covers all continuations)
+- **Temporal update and normative change**  `raw/notes/meetings/2025-09/september-23.md`
+  - The committee reached consensus on the proposed normative change to `ZonedDateTime`.
+- **Continuation: Update on proposal-module-global (again)**  `raw/notes/meetings/2025-09/september-23.md`
+  - (conclusion of original topic covers all continuations)
+- **How Websites are Put Together**  `raw/notes/meetings/2025-09/september-23.md`
+- **Continuation: Amount for Stage 2** — stage: 2  `raw/notes/meetings/2025-09/september-24.md`
+  - Continuation requested
+- **Increase limits on Intl MV**  `raw/notes/meetings/2025-09/september-24.md`
+  - Both of those parts achieved consensus.
+- **Continuation: Amount for Stage 2 (again)** — stage: 2  `raw/notes/meetings/2025-09/september-24.md`
+- **Continuation: Update on proposal-module-global**  `raw/notes/meetings/2025-09/september-24.md`
+  - (conclusion of original topic covers all continuations)
+- **Amount continuation**  `raw/notes/meetings/2025-09/september-24.md`
+  - Continue to iterate offline and return in Tokyo
+
+## 2025-11
+
+- **TG3: Security**  `raw/notes/meetings/2025-11/november-18.md`
+- **TG4: Source Maps**  `raw/notes/meetings/2025-11/november-18.md`
+- **TG5: Experiments in Programming Language Standardization**  `raw/notes/meetings/2025-11/november-18.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2025-11/november-18.md`
+- **Normative: In PluralRules, set compactDisplay only if notation is "compact"**  `raw/notes/meetings/2025-11/november-18.md`
+  - TG1 approve the PR
+- **Normative: make re-exporting a namespace object in 2 steps behave like 1 step**  `raw/notes/meetings/2025-11/november-18.md`
+  - The normative PR has consensus.
+- **Normative: Extend `JSON.parse` and `JSON.stringify` for interaction with the source text of primitive values** — stage: 4  `raw/notes/meetings/2025-11/november-18.md`
+  - `JSON.parse` source text access is at Stage 4.
+- **Temporal status report and normative PR (slides) (30m, Philip Chimento)**  `raw/notes/meetings/2025-11/november-18.md`
+  - A normative change to address an edge case in `Temporal.Duration` rounding (https://github.com/tc39/proposal-temporal/pull/3172) reached consensus.
+- **`Error.captureStackTrace` for Stage 2** — stage: 2/2.7  `raw/notes/meetings/2025-11/november-18.md`
+  - Support for Stage 2 with text about the accessor based approach being not recommended for new implementations.
+- **Intl Locale Info API for Stage 4** — stage: 4  `raw/notes/meetings/2025-11/november-18.md`
+  - TG1 agree to merge PR92
+- **Iterator Sequencing for Stage 4** — stage: 4  `raw/notes/meetings/2025-11/november-18.md`
+  - Stage 4
+- **Keep trailing zeros in `Intl.NumberFormat` and `Intl.PluralRules` update**  `raw/notes/meetings/2025-11/november-18.md`
+- **Joint Iteration for Stage 3** — stage: 3  `raw/notes/meetings/2025-11/november-18.md`
+  - Stage 3.
+- **export defer for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2025-11/november-18.md`
+  - We didn't reach consensus on advancement to 2.7
+- **`Error.prototype.stack` accessor for stage 2.7** — stage: 2.7  `raw/notes/meetings/2025-11/november-18.md`
+  - setter throws for non-strings
+- **Declarations in Conditionals for Stage 2** — stage: 2  `raw/notes/meetings/2025-11/november-18.md`
+  - → More work is needed on the spec before advancing to stage 2.
+- **await dictionary for Stage 2 or 2.7** — stage: 2/2.7  `raw/notes/meetings/2025-11/november-18.md`
+  - No objections
+- **Intl Unit Protocol** — stage: 1  `raw/notes/meetings/2025-11/november-18.md`
+  - Stage 1 for “explore associating a unit with a number”
+- **Import Text** — stage: 1/2/2.7  `raw/notes/meetings/2025-11/november-18.md`
+  - → Conditional Stage 2.7 support was received with reviewer and editor approval, pending on a confirmation from SFC that no encoding concerns remain.
+- **TypedArray Concatenation** — stage: 1  `raw/notes/meetings/2025-11/november-18.md`
+  - → Conditional stage 1 was accepting pending the creation of the github repo for the proposal.
+- **TypedArray Find Within** — stage: 1  `raw/notes/meetings/2025-11/november-18.md`
+  - Stage 1 is accepted pending the creation of the github repo
+- **TypedArray byteOffset Mistake**  `raw/notes/meetings/2025-11/november-18.md`
+  - There is an existing proposal that can be progressed to address it. See https://github.com/tc39/proposal-immutable-arraybuffer
+- **Async iterator helpers recap/update/polyfill**  `raw/notes/meetings/2025-11/november-19.md`
+  - No conclusion sought. Interested parties are invited to continue participation on GitHub.
+- **Iterator Join for stage 1, 2, or 2.7** — stage: 1/2.7  `raw/notes/meetings/2025-11/november-19.md`
+  - Stage 2.7
+- **Composites comparator choice**  `raw/notes/meetings/2025-11/november-19.md`
+  - (discussion continues on [day three](./november-20.md))
+- **Concurrency Control stage 1 update** — stage: 1  `raw/notes/meetings/2025-11/november-19.md`
+  - Committee has been updated and some feedback has been given
+- **`Object.propertyCount` for Stage 2** — stage: 1/2/2.7  `raw/notes/meetings/2025-11/november-19.md`
+  - → Object property count remains at Stage 1. Object.key\[sLength|Count] is separated out to be a new Stage 2 proposal and we will continue to iterate on both of these—the entire problem area which spans both of these proposals. The name will need to be decided before Stage 2.7.
+- **WHATWG Stages** — stage: 2.7  `raw/notes/meetings/2025-11/november-19.md`
+  - → The WHATWG stage process will not be an official criteria for advancement in the TC39 process. Stage 2.7 in TC39 should be a strong signal on the HTML side to move ahead.
+- **Spec-defined or Implementation-defined limits**  `raw/notes/meetings/2025-11/november-19.md`
+  - Future proposals that involve unbounded operations should refer to these principles.
+- **Module-declaration like proposals in other areas of the web**  `raw/notes/meetings/2025-11/november-19.md`
+- **Comparisons** — stage: 0  `raw/notes/meetings/2025-11/november-19.md`
+  - → Comparisons remains at Stage 0
+- **Intl Era Monthcode for Stage 3** — stage: 3  `raw/notes/meetings/2025-11/november-20.md`
+  - Review open issues and return to next plenary
+- **Amount Stage 1 update** — stage: 1  `raw/notes/meetings/2025-11/november-20.md`
+  - Research appropriate units to include
+- **Intl Energy Units for Stage 1** — stage: 1/2  `raw/notes/meetings/2025-11/november-20.md`
+  - → The proposal advanced to Stage 1
+- **`Object.getNonIndexStringProperties` for Stage 1 or 2** — stage: 1  `raw/notes/meetings/2025-11/november-20.md`
+  - → `Object.getNonIndexStringProperties` advances to Stage 1
+- **Class composition: Past, present, and future**  `raw/notes/meetings/2025-11/november-20.md`
+  - Let's keep working on this.
+- **Class spread syntax for Stage 1** — stage: 0/1  `raw/notes/meetings/2025-11/november-20.md`
+  - → Class spread syntax remains at Stage 0.
+- **Class field introspection for Stage 1** — stage: 0/1  `raw/notes/meetings/2025-11/november-20.md`
+  - → Public fields introspection remains at Stage 0.
+- **Continuation: Declarations in Conditionals for Stage 2** — stage: 2  `raw/notes/meetings/2025-11/november-20.md`
+  - With the added support for the new using keyword, we have to answer this question now in order to know when to dispose.
+- **Continuation: Composites comparator choice**  `raw/notes/meetings/2025-11/november-20.md`
+  - Throwing for invalid Composite WeakMap keys got the most support.
+- **Meeting closing**  `raw/notes/meetings/2025-11/november-20.md`
+
+## 2026-01
+
+- **TG3: Security**  `raw/notes/meetings/2026-01/january-20.md`
+- **TG4: Source Maps**  `raw/notes/meetings/2026-01/january-20.md`
+- **TG5: Experiments in Programming Language Standardization**  `raw/notes/meetings/2026-01/january-20.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2026-01/january-20.md`
+- **Normative: Add 1 new numbering system "tols" for Unicode 17 #1035**  `raw/notes/meetings/2026-01/january-20.md`
+  - ECMA-402 Pull Request #1035 is approved by TC39-TG1.
+- **Upsert for Stage 4** — stage: 4  `raw/notes/meetings/2026-01/january-20.md`
+  - → Proposal Upsert has been approved for Stage 4.
+- **Temporal update and needs-consensus PRs**  `raw/notes/meetings/2026-01/january-20.md`
+  - PR [tc39/proposal-temporal#3253](https://github.com/tc39/proposal-temporal/pull/3253) reached consensus.
+- **Intl Era/Month Code for Stage 3** — stage: 3  `raw/notes/meetings/2026-01/january-20.md`
+  - All PRs approved
+- **Deferred re-exports update**  `raw/notes/meetings/2026-01/january-20.md`
+  - No conclusion
+- **Withdraw function.sent**  `raw/notes/meetings/2026-01/january-20.md`
+  - Conditionally withdrawn, pending JHX’s approval, and no other delegates stepping up to champion
+- **Withdrawing Intl.UnitFormat**  `raw/notes/meetings/2026-01/january-20.md`
+  - Proposal is withdrawn
+- **Import Sync for Stage 2** — stage: 2/2.7  `raw/notes/meetings/2026-01/january-20.md`
+  - Stage 2 obtained, with Stage 2.7 criteria as outlined
+- **Error option limit for stage 1** — stage: 1  `raw/notes/meetings/2026-01/january-20.md`
+  - List
+- **Error option framesAbove for Stage 1** — stage: 1  `raw/notes/meetings/2026-01/january-20.md`
+  - List
+- **Composable value-backed accessors for Stage 1** — stage: 1  `raw/notes/meetings/2026-01/january-21.md`
+  - Conversation continued later in the day, see below for conclusion.
+- **Stage 3 Proposal Review (Stage 2/2.7 time permitting)** — stage: 2/3/4  `raw/notes/meetings/2026-01/january-21.md`
+  - Action items:
+- **Composable value-backed accessors for Stage 1 (cont.)** — stage: 1  `raw/notes/meetings/2026-01/january-21.md`
+  - Stage 1 for composable accessors via built-in decorators
+
+## 2026-03
+
+- **Election of the 2026 Chair Group, Convenors, and Editors**  `raw/notes/meetings/2026-03/march-10.md`
+  - Unanimous approval for the full slate, Election of the 2026 Chair Group, Convenors, and Editors.
+- **TG4 Source Maps**  `raw/notes/meetings/2026-03/march-10.md`
+- **import defer interaction with tc39/ecma262#3715, and normative PR Shield dynamic import defer against `Promise.prototype` monkey patch**  `raw/notes/meetings/2026-03/march-10.md`
+  - Both changes had consensus.
+- **Withdraw Dynamic Import Host Adjustment**  `raw/notes/meetings/2026-03/march-10.md`
+  - Proposal withdrawn
+- **Abort Protocol Discussion**  `raw/notes/meetings/2026-03/march-10.md`
+  - Yes, there's general agreement it should be part of the language
+- **Introducing: Intl Era/Month Code for Stage 4** — stage: 4  `raw/notes/meetings/2026-03/march-10.md`
+  - Stage 4 achieved!
+- **Meta: Proposals repo now lists all times a proposal was presented**  `raw/notes/meetings/2026-03/march-10.md`
+- **Error Stack Accessor for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2026-03/march-10.md`
+  - → Advances to stage 2.7
+- **TypedArray concat for Stage 2** — stage: 2  `raw/notes/meetings/2026-03/march-10.md`
+  - Objections on the current wording of the problem statement
+- **RegExp Buffer Boundaries for Stage 2.7** — stage: 2.7  `raw/notes/meetings/2026-03/march-10.md`
+  - Blocked from advancement due to insufficient time to review
+- **Amount for Stage 2** — stage: 2  `raw/notes/meetings/2026-03/march-10.md`
+  - Continue to work with WH on rounding issues
+- **Intl: Keep Trailing Zeros for Stage 3** — stage: 3  `raw/notes/meetings/2026-03/march-10.md`
+  - Issue #15 should be resolved with a change as requested.
+- **`JSON.parseImmutable` update**  `raw/notes/meetings/2026-03/march-10.md`
+  - There was consensus in the committee for keeping this proposal going forward return a vanilla deeply frozen object; although concerns about sharability across realms were raised
+- **TypedArray find within for Stage 2** — stage: 2  `raw/notes/meetings/2026-03/march-10.md`
+- **Iterator Includes for Stage 1, 2, or 2.7** — stage: 1/2.7  `raw/notes/meetings/2026-03/march-10.md`
+  - → Advances to stage 2.7
+- **Temporal for Stage 4** — stage: 4  `raw/notes/meetings/2026-03/march-11.md`
+  - → Temporal advances to stage 4.
+- **Import Text for stage 2.7 or 3** — stage: 2.7/3  `raw/notes/meetings/2026-03/march-11.md`
+  - → The proposal advanced through stage 2.7 to stage 3.
+- **Intl Unit Protocol for Stage 2** — stage: 2  `raw/notes/meetings/2026-03/march-11.md`
+  - → Approved for Stage 2
+- **Intl Energy Units Stage 1 Update** — stage: 1/2  `raw/notes/meetings/2026-03/march-11.md`
+  - Will seek Stage 2 in a future meeting.
+- **Error code property for Stage 1, 2, or 2.7** — stage: 1  `raw/notes/meetings/2026-03/march-11.md`
+  - → Stage 1 approved. James will initiate move to tc39 tonight
+- **Update on ESM Phase Imports**  `raw/notes/meetings/2026-03/march-11.md`
+  - While there were no objections for the normative changes in PRs 58 and 61, consensus for these changes ie deferred until the next meeting due to the late details provided and to ensure adequate review
+- **First-class Protocols Update**  `raw/notes/meetings/2026-03/march-11.md`
+  - (continued)
+- **TG3 Security Update**  `raw/notes/meetings/2026-03/march-11.md`
+- **First-class Protocols Update (continuation)** — stage: 2  `raw/notes/meetings/2026-03/march-12.md`
+  - Champions received feedback to help inform their design on the way to Stage 2.
+- **test262 coverage strategies**  `raw/notes/meetings/2026-03/march-12.md`
+  - Further progress will take the form of a test262 PR
+- **TypedArray concat**  `raw/notes/meetings/2026-03/march-12.md`
+  - No iterables
+- **Amsterdam: Rust/JS meetup**  `raw/notes/meetings/2026-03/march-12.md`
+- **Tree-shakeable methods**  `raw/notes/meetings/2026-03/march-12.md`
+  - Several proposals were mentioned as potentially helpful in this space: protocols, call this, pipeline, extensions, a new idea for deferring code in async functions.
+- **TypedArray findWithin continuation**  `raw/notes/meetings/2026-03/march-12.md`
+  - No iterables like concat
+- **Call for hosts**  `raw/notes/meetings/2026-03/march-12.md`
+- **Thenable Curtailment for Stage 2** — stage: 2  `raw/notes/meetings/2026-03/march-12.md`
+  - Stage 2.
+- **Iterator Includes**  `raw/notes/meetings/2026-03/march-12.md`
+  - PR is approved
+- **Towards Structured Concurrency**  `raw/notes/meetings/2026-03/march-12.md`
+  - General support from the committee for this direction.
