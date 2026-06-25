@@ -1,0 +1,3 @@
+[submodule "raw/notes"]
+	path = raw/notes
+	url = https://github.com/tc39/notes
