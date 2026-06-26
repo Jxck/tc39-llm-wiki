@@ -205,3 +205,9 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 
 - gantt 移行(1ff1489)を revert し、全 10 提案ページのステージ推移グラフを `xychart-beta` 折れ線へ復帰。AGENTS.md のグラフ規約も折れ線に戻した。
 - 補足: 「目盛りを 1 刻みにしたい」は **xychart-beta では不可**(mermaid 公式ドキュメントで確認。y 軸は数値専用で tick interval/count/custom 値の指定オプションが無く、0–4 範囲では自動で 0.5 刻み。設定可能なのは show/hide のみ)。半端値は 2.7 のみで、2 と 3 の間に正しくプロットされる。0.5 グリッドが気になる場合の選択肢は「y 軸ラベル非表示」のみ。
+
+## [2026-06-26] lint | wiki 全体(Amount 追加・gantt 往復後の点検)
+
+- **内部健全性**: fmt クリーン、全 10 提案ページが xychart-beta 折れ線(gantt 残存なし)、人物数 60 が index 記載と一致、proposals/index.md は再生成で差分なし(最新)、デッドリンクなし、family 双方向メンバーシップ整合。
+- **出典整合**: 全 11 提案ページの `current_stage`/`status` を raw/proposals(canonical)と照合し全て一致(Amount=Stage 2、Decorators=Stage 2.7、R&T=withdrawn ほか)。
+- **修正(相互リンク漏れ)**: amount.md 作成後にできた会合トピックへのリンク漏れを補完。2026-03-10・2026-05-20 の「Amount for Stage 2」に `- 提案ページ: [Amount](../../proposals/amount.md)` を追加。
