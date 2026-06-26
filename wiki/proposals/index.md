@@ -24,15 +24,15 @@
 ### Stage 3 (11)
 
 - Deferring Module Evaluation
-- Dynamic Code Brand Checks
-- Error Stack Accessor
+- [Dynamic Code Brand Checks](dynamic-code-brand-checks.md)
+- [Error Stack Accessor](error-stack-accessor.md)
 - Import Text
-- iterator chunking
-- Iterator Includes
-- Iterator Join
+- [iterator chunking](iterator-chunking.md)
+- [Iterator Includes](iterator-includes.md)
+- [Iterator Join](iterator-join.md)
 - Legacy RegExp features in JavaScript
 - Non-extensible Applies to Private
-- RegExp Buffer Boundaries (\A, \z, \Z)
+- [RegExp Buffer Boundaries (\A, \z, \Z)](regexp-buffer-boundaries.md)
 - Source Phase Imports
 
 ### Stage 2.7 (7)
@@ -98,7 +98,7 @@
 - Class Method Parameter Decorators
 - Collection methods
 - Compare Strings by Codepoint
-- Comparisons
+- [Comparisons](comparisons.md)
 - Compartments
 - Composable Accessors via built-in decorators
 - Composites
@@ -117,7 +117,7 @@
 - Error option framesAbove
 - Error option limit
 - Error stacks
-- export all from
+- [export all from](export-all-from.md)
 - export v from "mod"; statements
 - Extensions
 - Faster Promise adoption
@@ -222,7 +222,7 @@
 - Generic Comparison — Withdrawn
 - Getting last element of Array — Withdrawn
 - Improving iteration on Objects — Withdrawn
-- isTemplateObject — Withdrawn
+- [isTemplateObject](is-template-object.md) — Withdrawn
 - JSON.tryParse — Rejected
 - Math Extensions — Withdrawn
 - Math.signbit: IEEE-754 sign bit — Withdrawn
@@ -257,7 +257,7 @@
 
 ### Stage 3 (1)
 
-- Keep trailing zeros in Intl.NumberFormat and Intl.PluralRules
+- [Keep trailing zeros in Intl.NumberFormat and Intl.PluralRules](intl-keep-trailing-zeros.md)
 
 ### Stage 2 (2)
 
@@ -266,16 +266,16 @@
 
 ### Stage 1 (10)
 
-- Default Behaviours for some Intl APIs
+- [Default Behaviours for some Intl APIs](intl-default-behaviours.md)
 - explore associating a unit with a number
 - Intl LocaleMatcher
-- Intl Sequence Units
+- [Intl Sequence Units](intl-sequence-units.md)
 - [Intl.MessageFormat](intl-messageformat.md)
 - Intl.MessageResource
 - Intl.Segmenter v2
 - Intl.ZonedDateTimeFormat
 - Smart Unit Preferences in Intl.NumberFormat
-- Stable Formatting
+- [Stable Formatting](stable-formatting.md)
 
 ### Stage 0 (2)
 

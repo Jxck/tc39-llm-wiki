@@ -14,25 +14,25 @@ ES2015 で入った `import`/`export` の静的 module system(かつて "module 
 
 ## メンバー
 
-| 提案                                      | 現ステージ    | 一言                                                                                         |
-| ----------------------------------------- | ------------- | -------------------------------------------------------------------------------------------- |
-| `es-modules`                              | 4 (ES2015)    | `import`/`export` の静的 module system。すべての module 提案の土台                           |
-| `dynamic-import`(`import()`)              | 4 (2019-06)   | 実行時に specifier を渡して module を非同期 import する関数形式                              |
-| `import-meta`(`import.meta`)              | 4 (2020-03)   | 実行中 module のホスト固有メタ情報(`import.meta.url` 等)へのアクセス                         |
-| `top-level-await`                         | 4 (2021-05)   | module トップレベルで `await` を許可し、module を非同期依存として待機可能に                  |
-| `import-attributes`(旧 import assertions) | 4 (2024-10)   | `with { type: "json" }` 形式で import 時にホストへ属性を渡す。`assert`→`with` に改名         |
-| `json-modules`                            | 4 (2024-10)   | `import data from "./x.json" with { type: "json" }` で JSON を module として import          |
-| `export-from`(`export * as ns from`)      | 4 (ES2020)    | `export * as ns from "mod"` 等の re-export 構文                                              |
-| `source-phase-imports`                    | 3 (2023-07)   | `import source x from` で instance でなく compile 済み source phase を取得(Wasm 等)          |
-| `import-defer`                            | 3 (2025-02)   | `import defer * as ns from` で評価を遅延し、初回アクセス時に同期評価。起動性能向け           |
-| `import-text`(`type: "text"`)             | 3 (2026-03)   | `with { type: "text" }` でファイルを文字列として import。仕様の大半は HTML/Fetch/CSP 側      |
-| `esm-phase-imports`                       | 2.7 (2024-12) | source phase を ESM/Wasm へ拡張。compiled module を得て custom import で instantiate         |
-| `export-defer`                            | 2(2.7 提案中) | `import defer` から分離。re-export 経路でも評価/読み込み遅延を伝播。barrel file 向け         |
-| `export-all-from`                         | 1 (2026-05)   | `export * from` が `default` を再 export しない問題を解決(proxy/CDN module 用途)             |
-| `module-scope-ceiling`                    | 1             | module の lexical lookup を global に到達させない scope 差し替え。supply-chain security 動機 |
-| `module-expressions`                      | 2             | module をファイル外で式としてインライン定義(`module { ... }`)。worker への受け渡し等が動機   |
-| `module-declarations`                     | 2             | module をファイル内で宣言的に定義(module expressions の姉妹提案)                             |
-| `compartments`                            | 1(停滞)       | SES 由来の module loader / 分離実行環境。module harmony の loading 層。現在は他提案へ分流    |
+| 提案                                               | 現ステージ    | 一言                                                                                         |
+| -------------------------------------------------- | ------------- | -------------------------------------------------------------------------------------------- |
+| `es-modules`                                       | 4 (ES2015)    | `import`/`export` の静的 module system。すべての module 提案の土台                           |
+| `dynamic-import`(`import()`)                       | 4 (2019-06)   | 実行時に specifier を渡して module を非同期 import する関数形式                              |
+| `import-meta`(`import.meta`)                       | 4 (2020-03)   | 実行中 module のホスト固有メタ情報(`import.meta.url` 等)へのアクセス                         |
+| `top-level-await`                                  | 4 (2021-05)   | module トップレベルで `await` を許可し、module を非同期依存として待機可能に                  |
+| `import-attributes`(旧 import assertions)          | 4 (2024-10)   | `with { type: "json" }` 形式で import 時にホストへ属性を渡す。`assert`→`with` に改名         |
+| `json-modules`                                     | 4 (2024-10)   | `import data from "./x.json" with { type: "json" }` で JSON を module として import          |
+| `export-from`(`export * as ns from`)               | 4 (ES2020)    | `export * as ns from "mod"` 等の re-export 構文                                              |
+| `source-phase-imports`                             | 3 (2023-07)   | `import source x from` で instance でなく compile 済み source phase を取得(Wasm 等)          |
+| `import-defer`                                     | 3 (2025-02)   | `import defer * as ns from` で評価を遅延し、初回アクセス時に同期評価。起動性能向け           |
+| `import-text`(`type: "text"`)                      | 3 (2026-03)   | `with { type: "text" }` でファイルを文字列として import。仕様の大半は HTML/Fetch/CSP 側      |
+| `esm-phase-imports`                                | 2.7 (2024-12) | source phase を ESM/Wasm へ拡張。compiled module を得て custom import で instantiate         |
+| `export-defer`                                     | 2(2.7 提案中) | `import defer` から分離。re-export 経路でも評価/読み込み遅延を伝播。barrel file 向け         |
+| [export all from](../proposals/export-all-from.md) | 1 (2026-05)   | `export * from` が `default` を再 export しない問題を解決(proxy/CDN module 用途)             |
+| `module-scope-ceiling`                             | 1             | module の lexical lookup を global に到達させない scope 差し替え。supply-chain security 動機 |
+| `module-expressions`                               | 2             | module をファイル外で式としてインライン定義(`module { ... }`)。worker への受け渡し等が動機   |
+| `module-declarations`                              | 2             | module をファイル内で宣言的に定義(module expressions の姉妹提案)                             |
+| `compartments`                                     | 1(停滞)       | SES 由来の module loader / 分離実行環境。module harmony の loading 層。現在は他提案へ分流    |
 
 > ステージは各提案を最後に審議した会合の結論に基づく(`agenda-index.md` の `stage:` は「その回で要求された stage」で現ステージとは限らない)。`export-defer` は 2025-11 に Stage 2.7 を提案したが [GB](../people/GB.md) が Stage 3 への留保を表明し、2026-05 時点でも Stage 2 の status update 扱い。`source-phase-imports` は Stage 3 のまま(直近会合は normative change の審議で advancement ではない)。リンクの無い提案は本 wiki で未精読。
 >

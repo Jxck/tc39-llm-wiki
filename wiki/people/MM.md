@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Mark S. Miller
 - **所属**: Agoric
-- **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Joint Iteration](../proposals/joint-iteration.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
+- **担当ドラフト (champion)**: [Error Stack Accessor](../proposals/error-stack-accessor.md)
+- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Error Stack Accessor](../proposals/error-stack-accessor.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Joint Iteration](../proposals/joint-iteration.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 15 回
 
 ## 参加したミーティング

@@ -14,19 +14,19 @@ tags: [family, iterator]
 
 ## メンバー
 
-| 提案                                                                          | 現ステージ | 一言                                                                      |
-| ----------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------- |
-| `iterator-helpers`                                                            | 4          | MVP。`map`/`filter`/`take`/`drop`/`flatMap`/`reduce`/`toArray` ほか遅延版 |
-| `iterator-sequencing`(`Iterator.concat`)                                      | 4          | 0 個以上の iterator を連結し、その yield をすべて流す                     |
-| [Joint Iteration](../proposals/joint-iteration.md)(`Iterator.zip`/`zipKeyed`) | 4          | 複数 iterator を位置対応でまとめる(2026-05 到達)                          |
-| `iterator-chunking`(`chunks`/`windows`)                                       | 3          | 複数値をまとめて消費(重なり無し=chunks / 重なり有り=windows)              |
-| `iterator-includes`                                                           | 3          | `Array.prototype.includes` 相当                                           |
-| `iterator-join`                                                               | 3          | `Array.prototype.join` 相当([KG](../people/KG.md) champion)               |
-| `async-iterator-helpers`                                                      | 2          | iterator helpers の async 版。全 method の並行 pull 対応 spec を作業中    |
-| `iterator-range`(`Iterator.range`)                                            | 2          | 数値レンジ生成。長期停滞                                                  |
-| `concurrency-control`                                                         | 1          | async iterator の並行数制御。async helpers の進行待ち                     |
-| `unordered-async-iterator-helpers`                                            | 1          | 順序保証を捨てて性能を取る async helpers                                  |
-| `iterator-unique`(`Iterator.prototype.unique`)                                | 1          | 重複除去。[GCL](../people/GCL.md) の指摘(隠れたコスト)で stalled          |
+| 提案                                                                          | 現ステージ | 一言                                                                          |
+| ----------------------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------- |
+| `iterator-helpers`                                                            | 4          | MVP。`map`/`filter`/`take`/`drop`/`flatMap`/`reduce`/`toArray` ほか遅延版     |
+| `iterator-sequencing`(`Iterator.concat`)                                      | 4          | 0 個以上の iterator を連結し、その yield をすべて流す                         |
+| [Joint Iteration](../proposals/joint-iteration.md)(`Iterator.zip`/`zipKeyed`) | 4          | 複数 iterator を位置対応でまとめる(2026-05 到達)                              |
+| [Iterator Chunking](../proposals/iterator-chunking.md)(`chunks`/`windows`)    | 3          | 複数値をまとめて消費(重なり無し=chunks / 重なり有り=windows)。2026-05 Stage 3 |
+| [Iterator Includes](../proposals/iterator-includes.md)                        | 3          | `Array.prototype.includes` 相当。2026-05 Stage 3                              |
+| [Iterator Join](../proposals/iterator-join.md)                                | 3          | `Array.prototype.join` 相当([KG](../people/KG.md) champion)。2026-05 Stage 3  |
+| `async-iterator-helpers`                                                      | 2          | iterator helpers の async 版。全 method の並行 pull 対応 spec を作業中        |
+| `iterator-range`(`Iterator.range`)                                            | 2          | 数値レンジ生成。長期停滞                                                      |
+| `concurrency-control`                                                         | 1          | async iterator の並行数制御。async helpers の進行待ち                         |
+| `unordered-async-iterator-helpers`                                            | 1          | 順序保証を捨てて性能を取る async helpers                                      |
+| `iterator-unique`(`Iterator.prototype.unique`)                                | 1          | 重複除去。[GCL](../people/GCL.md) の指摘(隠れたコスト)で stalled              |
 
 > ステージは [MF](../people/MF.md) のロードマップ([2026-05-19](../meetings/2026-05/2026-05-19.md))と直近会合の結論に基づく。リンクの無い提案は本 wiki で未精読(`proposals/` ページ未作成)。`agenda-index.md` の `stage:` 値は「その回で要求/議論された stage」であり現ステージとは限らない点に注意。
 

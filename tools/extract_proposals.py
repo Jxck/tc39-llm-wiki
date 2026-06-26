@@ -111,6 +111,9 @@ def collect(base):
 ALIASES = {
     "recordtuple": "records-and-tuples.md",
     "intleraandmonthcodeproposal": "intl-era-month-code.md",
+    "regexpbufferboundariesazz": "regexp-buffer-boundaries.md",
+    "keeptrailingzerosinintlnumberformatandintlpluralrules": "intl-keep-trailing-zeros.md",
+    "istemplateobject": "is-template-object.md",
 }
 
 

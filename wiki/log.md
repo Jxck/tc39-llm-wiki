@@ -211,3 +211,20 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - **内部健全性**: fmt クリーン、全 10 提案ページが xychart-beta 折れ線(gantt 残存なし)、人物数 60 が index 記載と一致、proposals/index.md は再生成で差分なし(最新)、デッドリンクなし、family 双方向メンバーシップ整合。
 - **出典整合**: 全 11 提案ページの `current_stage`/`status` を raw/proposals(canonical)と照合し全て一致(Amount=Stage 2、Decorators=Stage 2.7、R&T=withdrawn ほか)。
 - **修正(相互リンク漏れ)**: amount.md 作成後にできた会合トピックへのリンク漏れを補完。2026-03-10・2026-05-20 の「Amount for Stage 2」に `- 提案ページ: [Amount](../../proposals/amount.md)` を追加。
+
+## [2026-06-27] ingest | 2026-05 会合のステージ変更討議トピックを提案ごとに取り込み
+
+- 対象: 114th meeting (2026-05) で「ステージ変更を議論した」トピック(移動の有無不問)。status update のみ・normative PR・needs-consensus PR は除外。
+- 新規提案ページ 13 件: iterator-chunking(S3)・iterator-includes(S3)・iterator-join(S3)・regexp-buffer-boundaries(S3)・dynamic-code-brand-checks(S3 据置/normative)・error-stack-accessor(S3)・intl-keep-trailing-zeros(S3)・stable-formatting(S2)・intl-sequence-units(S2)・intl-default-behaviours(S1)・export-all-from(S1)・comparisons(S1)・is-template-object(inactive 化)。
+- 既存ページは 2026-05 行が反映済みのため更新不要を確認: joint-iteration(S4)・atomics-pause(S4)・decorators(+ metadata, 3→2.7)・amount(S2)・explicit-resource-management(S4 finished)。
+- frontmatter は raw/proposals(canonical)で現ステージ・champion を裏取り。過去経緯は agenda-index と各 notes で確認(ユーザ指定によりスコープは 2026-05 中心、深掘りは後続)。
+- family 整合: iterator.md の chunking/includes/join 行をページへリンク、modules.md の export-all-from 行をリンク(members は既存で一致)。
+- tools 再生成: extract_people.py(64 人)・link_people.py 実行。index.md カタログに 13 行追加。
+
+## [2026-06-27] ingest | 深堀り修正: 3 提案の Stage 遷移を notes で裏取りし訂正
+
+- 前回 ingest で「裏取りが浅い」と明示した 2 留意点を raw/notes の `### Conclusion` で確定。
+- **dynamic-code-brand-checks**: Stage 2 には未到達(2019-07「no for stage 2」/ 2019-12「NOT approved」/ 2021-01「Not advancing」)。2024-04 に NRO が「Stage 1 版を Stage 3 へ」と要求し **1 → 3 へ直接前進**。誤りだった「2021-01 Stage 2 到達」を訂正、mermaid を 2019-2023 を 1 に修正、論点・出典を追補。
+- **is-template-object (Array.isTemplateObject)**: 2019-06 june-5 の結論が "Stage 2 acceptance" で **Stage 1 を経ず直接 Stage 2**。誤りだった「Stage 1 → 2020 年前後に Stage 2(推定)」を訂正、mermaid を 2019 から 2 に修正、出典を追補。
+- **intl-keep-trailing-zeros**: 2025-07 で同会期中に **Stage 2(day 1 july-29)→ Stage 2.7(day 3 july-30)** を連続通過(WH の ToIntlMathematicalValue 懸念はスコープ外として分離)。誤りだった「2 → 3 直接」を訂正、Stage 2.7 行を追加、mermaid 2025 年末値を 2.7 に修正、論点追補。
+- tools 再生成(extract_people / link_people)。mermaid は全 3 ページ 15 点を維持。index カタログのステージ値は不変(訂正は中間遷移のため)。

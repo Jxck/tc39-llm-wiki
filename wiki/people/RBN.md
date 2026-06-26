@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Ron Buckton
 - **所属**: F5 / IE / Microsoft
-- **担当ドラフト (champion)**: [Decorators](../proposals/decorators.md), [Explicit Resource Management](../proposals/explicit-resource-management.md)
-- **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../proposals/decorators.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Upsert](../proposals/upsert.md)
+- **担当ドラフト (champion)**: [Decorators](../proposals/decorators.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [RegExp Buffer Boundaries](../proposals/regexp-buffer-boundaries.md)
+- **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../proposals/decorators.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [RegExp Buffer Boundaries](../proposals/regexp-buffer-boundaries.md), [Upsert](../proposals/upsert.md)
 - **参加したミーティング**: 全 24 回
 
 ## 参加したミーティング

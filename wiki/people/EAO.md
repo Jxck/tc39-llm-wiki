@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Eemeli Aro
 - **所属**: Mozilla
-- **担当ドラフト (champion)**: [Intl.MessageFormat](../proposals/intl-messageformat.md)
-- **言及される提案ページ**: [Amount](../proposals/amount.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl.MessageFormat](../proposals/intl-messageformat.md)
+- **担当ドラフト (champion)**: [Default Behaviours for some Intl APIs](../proposals/intl-default-behaviours.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Stable Formatting](../proposals/stable-formatting.md)
+- **言及される提案ページ**: [Amount](../proposals/amount.md), [Default Behaviours for some Intl APIs](../proposals/intl-default-behaviours.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Stable Formatting](../proposals/stable-formatting.md)
 - **参加したミーティング**: 全 20 回
 
 ## 参加したミーティング

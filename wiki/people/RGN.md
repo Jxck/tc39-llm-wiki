@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Richard Gibson
 - **所属**: Agoric / Open JS Foundation / OpenJS Foundation
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Intl.MessageFormat](../proposals/intl-messageformat.md), [Temporal](../proposals/temporal.md)
+- **言及される提案ページ**: [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 29 回
 
 ## 参加したミーティング
