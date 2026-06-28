@@ -127,13 +127,13 @@ def main():
     attendance = scan_attendance()
     roster = set(delegates) | set(attendance)
 
-    # Meetings that have a wiki summary (wiki/meetings/<YYYY-MM>/index.md).
+    # Meetings that have a wiki summary (wiki/meetings/<YYYY-MM>/README.md).
     # Attendance entries for these get linked; the rest stay plain text.
     summarised = set()
     if WIKI_MEETINGS.is_dir():
         summarised = {
             d.name for d in WIKI_MEETINGS.iterdir()
-            if d.is_dir() and (d / "index.md").exists()
+            if d.is_dir() and (d / "README.md").exists()
         }
 
     # Gather proposal metadata + referenced abbreviations.
@@ -228,7 +228,7 @@ def main():
             lines.append("")
             for ym in reversed(meetings):
                 if ym in summarised:
-                    lines.append(f"- [{ym}](../meetings/{ym}/index.md)")
+                    lines.append(f"- [{ym}](../meetings/{ym}/README.md)")
                 else:
                     lines.append(f"- {ym}")
             lines.append("")

@@ -53,5 +53,5 @@ iterator helpers 系の多くは「`Array.prototype` に既にある操作を、
 ## 出典
 
 - [2026-05-19](../meetings/2026-05/2026-05-19.md) — [MF](../people/MF.md) の iterator ロードマップ(本 family の骨子)
-- [2026-05 会合 index](../meetings/2026-05/index.md) — Iterator Chunking / Includes が Stage 3 へ
+- [2026-05 会合 index](../meetings/2026-05/README.md) — Iterator Chunking / Includes が Stage 3 へ
 - [agenda-index](../_generated/agenda-index.md) — 各提案の議題・stage シグナル(索引)

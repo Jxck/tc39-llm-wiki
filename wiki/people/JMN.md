@@ -16,8 +16,8 @@ tags: [person]
 
 ## 参加したミーティング
 
-- [2026-05](../meetings/2026-05/index.md)
-- [2026-03](../meetings/2026-03/index.md)
+- [2026-05](../meetings/2026-05/README.md)
+- [2026-03](../meetings/2026-03/README.md)
 - 2025-11
 - 2025-09
 - 2025-07
