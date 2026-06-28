@@ -226,7 +226,7 @@ def main():
         if meetings:
             lines.append("## 参加したミーティング")
             lines.append("")
-            for ym in meetings:
+            for ym in reversed(meetings):
                 if ym in summarised:
                     lines.append(f"- [{ym}](../meetings/{ym}/index.md)")
                 else:
