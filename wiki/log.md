@@ -10,7 +10,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
   - [Temporal](proposals/temporal.md) — shipped(Stage 4 / 2026-03)。「長期で出荷に至った大型提案」の実例。
   - [Decorators](proposals/decorators.md) — stage3(Stage 3 / 2022-03)。「3 度再設計した難航提案」の実例。
   - [Records & Tuples](proposals/records-and-tuples.md) — withdrawn(2025-04)。「停滞の末に撤回された提案」の実例。
-- [index.md](index.md) を作成。
+- [README.md](README.md) を作成。
 
 ## [2026-06-25] update | 人物ページ・引用翻訳・ステージ推移グラフ
 
@@ -127,7 +127,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
   - [Explicit Resource Management](proposals/explicit-resource-management.md)(`using`、ECMA-262、Stage 4 2026-05。2025-05 conditional Stage 4)
 - 各ページに frontmatter・ステージ遷移テーブル・mermaid グラフ・主な論点・出典を整備。発言引用は日本語訳。
 - `extract_people.py` / `link_people.py` を実行し人物ページを 44 → 52 名に拡充(新規: BAN/BFS/EAO/EPR/FYT/KM/LCA/RPR)。誤検出なし。
-- [index.md](index.md) のカタログに 5 行追加、`intl-era-month-code` を未作成リストから除去、人物数を 52 に更新。[Temporal](proposals/temporal.md) の関連提案を Intl Era/Month Code ページへリンク化。
+- [README.md](README.md) のカタログに 5 行追加、`intl-era-month-code` を未作成リストから除去、人物数を 52 に更新。[Temporal](proposals/temporal.md) の関連提案を Intl Era/Month Code ページへリンク化。
 
 ## [2026-06-25] update | families レイヤを新設(カテゴリ横断のまとめ)
 
