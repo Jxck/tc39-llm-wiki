@@ -238,6 +238,14 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - **修正(3) 人物数**: index.md「60 名」→「65 名」(JRL/JSH/KOT/MSL/ZTZ 追加分の反映漏れ)。
 - **未解決(保留)**: Stable Formatting / Intl Sequence Units の現ステージで notes と canonical が食い違い。2026-05 notes は両者を「Stage 2 で consensus」と明記するが、canonical ecma402/README は両者を `### Stage 1` セクションに据え置き(2026-05 note 付き、`### Stage 2` は空)。section 移動の lag と推定。wiki は Stage 2 を維持し、次回 /update で raw/proposals を pull して section が Stage 2 へ移動したか確認のうえ確定する。
 
+## [2026-06-29] lint | wiki 全体 + raw/proposals 突き合わせ
+
+- **内部健全性**: リンク切れの実体破損なし(検出7件は `ABBR`/`slug`/`<slug>` プレースホルダか agenda-index 生成物・log 履歴記述)。直近の index.md→README.md リネームは健全。family の双方向整合(members ↔ 提案 frontmatter families)も問題なし。
+- **出典整合(raw/proposals)**: 全23提案の stage/champion を canonical と照合。
+  - **修正1件**: `is-template-object` の status を `inactive` → `withdrawn`。may-19 で champion JHD・CDA が "withdrawn" と明示、canonical inactive-proposals も "Withdrawn" 区分、同種の `records-and-tuples` も withdrawn。frontmatter / ステージ遷移セル(2 → withdrawn)/ 概要 / 論点見出し / README カタログ行を統一。
+  - **canonical 追従遅れ(wiki が正・修正なし)**: `intl-sequence-units`・`stable-formatting` は wiki=stage2。`ecma402/README` は Stage 1 のままだが、2026-05 議事録(may-20 line 290 / 475-476)で Stage 2 consensus を確認。canonical README が 2026-05 の ECMA-402 結果を未反映なだけ。次回 lint で誤って降格しないこと。
+  - champion 確認: `comparisons` の `JSH`=Jacob Smith(canonical 一致)、`temporal`/`decorators`/`intl-era-month-code` の歴史的 champion は方針どおり保持。
+
 ## [2026-06-30] summarise | 109th TC39 Meeting (2025-07)
 
 - 2025-07(109th, リモート)を日次要約。`wiki/meetings/2025-07/` に Day 1-4(2025-07-28〜31)+ index.md を生成。Stage advancement: `Math.sumPrecise`・Uint8Array base64+hex が Stage 4、Iterator Sequencing・Upsert が Stage 3、Intl Era and Month Code・Intl Keep Trailing Zeros が Stage 2.7、Import Buffer が Stage 1→2、Module Import Hook/new Global・`Array.getNonIndexStringProperties`・`Object.getOwnPropertySymbols` options が Stage 1。Amount(旧 Measure)・`Object.propertyCount`・`Array.isSparse` は objection により不成立。既存提案ページ(temporal, upsert, iterator-chunking, intl-keep-trailing-zeros, amount, intl-era-month-code)へリンク。
