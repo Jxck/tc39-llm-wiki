@@ -10,7 +10,9 @@ For each referenced abbreviation it collects:
   - organization(s)  (from attendee tables across all meetings)
   - 担当ドラフト       (proposals whose frontmatter `champions` lists the abbr)
   - 言及された提案     (proposal pages whose body references the abbr)
-  - 参加したミーティング (meetings whose attendee table lists the abbr)
+  - 参加したミーティング (meetings whose attendee table lists the abbr; rendered
+                          as a list, linked to wiki/meetings/<YYYY-MM>/ when a
+                          summary exists)
 
 Output: wiki/people/<ABBR>.md (filename = abbreviation, so Obsidian `[[ABBR]]`
 links resolve). These files are GENERATED -- do not hand-edit; re-run instead.
@@ -27,6 +29,7 @@ MEETINGS = NOTES / "meetings"
 DELEGATES = NOTES / "delegates.txt"
 PROPOSALS = ROOT / "wiki" / "proposals"
 FAMILIES = ROOT / "wiki" / "families"
+WIKI_MEETINGS = ROOT / "wiki" / "meetings"
 OUT_DIR = ROOT / "wiki" / "people"
 
 ABBR_TOKEN = re.compile(r"[A-Z][A-Z0-9]{1,4}")
@@ -124,6 +127,15 @@ def main():
     attendance = scan_attendance()
     roster = set(delegates) | set(attendance)
 
+    # Meetings that have a wiki summary (wiki/meetings/<YYYY-MM>/index.md).
+    # Attendance entries for these get linked; the rest stay plain text.
+    summarised = set()
+    if WIKI_MEETINGS.is_dir():
+        summarised = {
+            d.name for d in WIKI_MEETINGS.iterdir()
+            if d.is_dir() and (d / "index.md").exists()
+        }
+
     # Gather proposal metadata + referenced abbreviations.
     proposals = []  # (slug, title, champions, referenced_set)
     referenced = set()
@@ -214,7 +226,11 @@ def main():
         if meetings:
             lines.append("## 参加したミーティング")
             lines.append("")
-            lines.append(" ".join(meetings))
+            for ym in meetings:
+                if ym in summarised:
+                    lines.append(f"- [{ym}](../meetings/{ym}/index.md)")
+                else:
+                    lines.append(f"- {ym}")
             lines.append("")
         lines.append("> このページは `tools/extract_people.py` による生成物。"
                      "フルネーム/所属/参加会合は `raw/notes`(delegates.txt と各会合の出席者テーブル)由来、"
