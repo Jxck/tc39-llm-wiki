@@ -6,7 +6,6 @@ current_stage: 3
 ecma: [262]
 champions: [RBN]
 first_seen: "2021-10"
-families: [regexp]
 tags: [proposal, regexp]
 ---
 
@@ -24,9 +23,7 @@ champion は [RBN](../people/RBN.md)(Ron Buckton)。
 | [2021-12](../../raw/notes/meetings/2021-12/dec-15.md)   | Stage 2 到達                                                                       | 1 → 2   |
 | [2026-03](../../raw/notes/meetings/2026-03/march-10.md) | Stage 2.7 を要求(継続へ)                                                           | 2       |
 | [2026-05](../../raw/notes/meetings/2026-05/may-19.md)   | `\A`/`\z` を 2.7 へ、`\Z` 再導入を提案。**conditional Stage 2.7**(`\Z` 込みが条件) | 2       |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)   | `\Z` の意味を `(?=(?:\r\n\|\n\|\r\|
-\|
-)?(?-m:$))` で確定                          | 2.7     |
+| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)   | `\Z` の意味を `(?=(?:\r\n\|\n\|\r\|\u2028\|\u2029)?(?-m:$))` で確定                | 2.7     |
 | [2026-05](../../raw/notes/meetings/2026-05/may-21.md)   | **Stage 3 到達**(`\Z` 込みで spec・test262 承認)                                   | 2.7 → 3 |
 
 ```mermaid
@@ -43,9 +40,7 @@ xychart-beta
 
 ### `\Z` の再導入と意味論(2026-05)
 
-当初 `\A`/`\z` のみで 2.7 を目指しましたが、会期中に `\Z`(末尾の改行を 1 つ許す buffer 末尾)の再導入に consensus。意味は「末尾の `LineTerminatorSequence` を任意に挟んだ上での buffer 末尾」、すなわち `(?=(?:\r\n|\n|\r|
-|
-)?(?-m:$))` と確定しました。`\Z` 込みで spec とテストが承認され、同会期の day 3 で Stage 3 に到達しています。
+当初 `\A`/`\z` のみで 2.7 を目指しましたが、会期中に `\Z`(末尾の改行を 1 つ許す buffer 末尾)の再導入に consensus。意味は「末尾の `LineTerminatorSequence` を任意に挟んだ上での buffer 末尾」、すなわち `(?=(?:\r\n|\n|\r|\u2028|\u2029)?(?-m:$))` と確定しました。`\Z` 込みで spec とテストが承認され、同会期の day 3 で Stage 3 に到達しています。
 
 ### multiline flag からの独立性
 

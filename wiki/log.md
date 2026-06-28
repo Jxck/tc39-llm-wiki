@@ -228,3 +228,12 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - **is-template-object (Array.isTemplateObject)**: 2019-06 june-5 の結論が "Stage 2 acceptance" で **Stage 1 を経ず直接 Stage 2**。誤りだった「Stage 1 → 2020 年前後に Stage 2(推定)」を訂正、mermaid を 2019 から 2 に修正、出典を追補。
 - **intl-keep-trailing-zeros**: 2025-07 で同会期中に **Stage 2(day 1 july-29)→ Stage 2.7(day 3 july-30)** を連続通過(WH の ToIntlMathematicalValue 懸念はスコープ外として分離)。誤りだった「2 → 3 直接」を訂正、Stage 2.7 行を追加、mermaid 2025 年末値を 2.7 に修正、論点追補。
 - tools 再生成(extract_people / link_people)。mermaid は全 3 ページ 15 点を維持。index カタログのステージ値は不変(訂正は中間遷移のため)。
+
+## [2026-06-28] lint | wiki 全体
+
+- **内部健全性**: oxfmt クリーン、mermaid 全提案 15 点(records-and-tuples の 14 は撤回年止めで正常)、proposals/index.md 再生成で差分なし、デッドリンク無し(検出は説明用プレースホルダのみ)、family 双方向整合 OK。
+- **出典整合**: ECMA-262 新規(iterator-chunking/includes/join・regexp-buffer-boundaries・dynamic-code-brand-checks・error-stack-accessor)は canonical の Stage 3 と一致。champions も canonical 一致(EAO/SFC ほか)。
+- **修正(1) バグ**: regexp-buffer-boundaries.md の `\Z` 正規表現に実 U+2028/U+2029(行区切り)が混入しテーブルを破壊していた → ASCII テキスト `\u2028` / `\u2029` に置換。
+- **修正(2) family 整合**: regexp-buffer-boundaries の `families: [regexp]` は families/regexp.md 不在のため frontmatter から除去。
+- **修正(3) 人物数**: index.md「60 名」→「65 名」(JRL/JSH/KOT/MSL/ZTZ 追加分の反映漏れ)。
+- **未解決(保留)**: Stable Formatting / Intl Sequence Units の現ステージで notes と canonical が食い違い。2026-05 notes は両者を「Stage 2 で consensus」と明記するが、canonical ecma402/README は両者を `### Stage 1` セクションに据え置き(2026-05 note 付き、`### Stage 2` は空)。section 移動の lag と推定。wiki は Stage 2 を維持し、次回 /update で raw/proposals を pull して section が Stage 2 へ移動したか確認のうえ確定する。
