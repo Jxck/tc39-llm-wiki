@@ -241,3 +241,8 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-06-30] summarise | 109th TC39 Meeting (2025-07)
 
 - 2025-07(109th, リモート)を日次要約。`wiki/meetings/2025-07/` に Day 1-4(2025-07-28〜31)+ index.md を生成。Stage advancement: `Math.sumPrecise`・Uint8Array base64+hex が Stage 4、Iterator Sequencing・Upsert が Stage 3、Intl Era and Month Code・Intl Keep Trailing Zeros が Stage 2.7、Import Buffer が Stage 1→2、Module Import Hook/new Global・`Array.getNonIndexStringProperties`・`Object.getOwnPropertySymbols` options が Stage 1。Amount(旧 Measure)・`Object.propertyCount`・`Array.isSparse` は objection により不成立。既存提案ページ(temporal, upsert, iterator-chunking, intl-keep-trailing-zeros, amount, intl-era-month-code)へリンク。
+
+## [2026-06-30] summarise | 110th TC39 Meeting (2025-09)
+
+- 2025-09(110th, リモート)を日次要約。`wiki/meetings/2025-09/` に Day 1-3(2025-09-22〜24)+ index.md を生成。Stage advancement: Iterator Chunking・Import Bytes が Stage 2.7、Non-extensible Applies to Private が Stage 3、`Array.prototype.pushAll`・Native Promise Adoption・Native Promise Predicate(直後に Stage 2 へも)が新規 Stage 1。Amount は Stage 2 を目指したが significant digits・命名・数値変換メソッド等の懸念が late-breaking で噴出し3日間継続審議の末 Stage 2 未達(次回 Tokyo plenary へ持ち越し)。既存提案ページ(amount, iterator-chunking, intl-era-month-code, temporal)へリンク。
+- **要注意**: `wiki/proposals/amount.md` の frontmatter は `status: stage2` / `current_stage: 2` だが、本会合の議事録では Amount は Stage 2 に到達していない(continuation のまま)。次回 lint で raw/proposals と突き合わせて要確認。
