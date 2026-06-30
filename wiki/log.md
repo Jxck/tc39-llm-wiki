@@ -237,3 +237,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - **修正(2) family 整合**: regexp-buffer-boundaries の `families: [regexp]` は families/regexp.md 不在のため frontmatter から除去。
 - **修正(3) 人物数**: index.md「60 名」→「65 名」(JRL/JSH/KOT/MSL/ZTZ 追加分の反映漏れ)。
 - **未解決(保留)**: Stable Formatting / Intl Sequence Units の現ステージで notes と canonical が食い違い。2026-05 notes は両者を「Stage 2 で consensus」と明記するが、canonical ecma402/README は両者を `### Stage 1` セクションに据え置き(2026-05 note 付き、`### Stage 2` は空)。section 移動の lag と推定。wiki は Stage 2 を維持し、次回 /update で raw/proposals を pull して section が Stage 2 へ移動したか確認のうえ確定する。
+
+## [2026-06-30] summarise | 109th TC39 Meeting (2025-07)
+
+- 2025-07(109th, リモート)を日次要約。`wiki/meetings/2025-07/` に Day 1-4(2025-07-28〜31)+ index.md を生成。Stage advancement: `Math.sumPrecise`・Uint8Array base64+hex が Stage 4、Iterator Sequencing・Upsert が Stage 3、Intl Era and Month Code・Intl Keep Trailing Zeros が Stage 2.7、Import Buffer が Stage 1→2、Module Import Hook/new Global・`Array.getNonIndexStringProperties`・`Object.getOwnPropertySymbols` options が Stage 1。Amount(旧 Measure)・`Object.propertyCount`・`Array.isSparse` は objection により不成立。既存提案ページ(temporal, upsert, iterator-chunking, intl-keep-trailing-zeros, amount, intl-era-month-code)へリンク。
