@@ -258,3 +258,13 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-06-30] summarise | 111th TC39 Meeting (2025-11)
 
 - 2025-11(111th, Tokyo・Bloomberg ホスト)を日次要約。`wiki/meetings/2025-11/` に Day 1-3(2025-11-18〜20)+ index.md を生成。Stage advancement: Intl Locale Info API・Iterator Sequencing が Stage 4、Joint Iteration が Stage 3、await dictionary が Stage 2 を経ず直接 Stage 2.7、Import Text が Stage 1/2(条件付き2.7)、Intl Unit Protocol・Intl Energy Units・`Object.getNonIndexStringProperties` が新規 Stage 1、TypedArray Concatenation/Find Within が条件付き Stage 1(専用リポジトリ作成待ち)、`Object.keysLength` が Stage 2(`Object.propertyCount` は分離して Stage 1 のまま)。export defer は Stage 2.7 不成立、Declarations in Conditionals は Day Three まで継続も未決着、Class spread syntax・Class field introspection は Stage 0 のまま。Decorators は Test262 不足と実装間不一致で Stage 2.7 維持、Intl Era Monthcode は Stage 3 判断を2026年1月へ持ち越し。既存提案ページ(temporal, intl-keep-trailing-zeros, joint-iteration, error-stack-accessor, comparisons, intl-era-month-code, amount, decorators, iterator-join)へリンク。
+
+## [2026-07-02] lint | wiki 全体(2025 年 3 会合の要約取り込み後)
+
+- **修正(1) 規約違反**: 別セッション由来の summarise 3 会合(2025-07/09/11)が旧規約の `index.md` で生成されていた → `README.md` へ `git mv`(現行規約 + `extract_people.py` のリンク化判定が README.md 前提)。被リンクは自ファイル内出典行のみでリンク切れなし。
+- **修正(2) 再実行漏れ**: 同 summarise 後の `extract_people.py` 未実行(Summarise 手順 4 違反)→ 再実行。人物ページ約 40 件の「参加したミーティング」で 2025-07/09/11 がリンク化。`link_people.py` で is-template-object.md の前回 lint 編集分(JHD/CDA)の略号リンク漏れも補完。
+- **修正(3) 生成物の鮮度**: `agenda-index.md` / `.jsonl` に 2026-05 会合の議題が未反映(80+43 行)→ `extract_agenda.py` で再生成。`extract_proposals.py` は差分なし。
+- **修正(4) fmt**: `wiki/meetings/2025-07/` の 2 ファイルが oxfmt 未整形 → 整形。全 123 ファイル clean。
+- **解消**: 2025-09 summarise の「要注意」(amount frontmatter stage2 との食い違い懸念)は時系列上矛盾なし。遷移テーブルは 2025-09 不成立(1 のまま)を含み、`stage2` は 2026-05 到達の現在値で canonical(Stage 2 テーブル、champion Ben Allen)と一致。
+- **据置**: stable-formatting / intl-sequence-units は `raw/proposals` が前回 lint から未更新(同一 SHA)のため「canonical 追従遅れ・wiki が正(Stage 2)」を維持。次回 /update 後に再確認。
+- **内部健全性**: リンク切れ実体なし(検出はプレースホルダとインラインコード引用のみ)、family 双方向整合 OK、mermaid 全 15 点(records-and-tuples の 14 は撤回年止めで正常)、README カタログ 23 件と proposals/ 実体一致。

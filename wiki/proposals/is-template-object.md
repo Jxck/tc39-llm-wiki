@@ -17,14 +17,14 @@ champion は [MSL](../people/MSL.md)(Mike Samuel)・[KOT](../people/KOT.md)(Krzy
 
 ## ステージ遷移
 
-| 会合                                                      | できごと                                                                                                                       | Stage         |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------- |
-| [2019-06](../../raw/notes/meetings/2019-06/june-5.md)     | **Stage 2 到達**(`for Stage 1 or 2` を要求し直接 Stage 2)。Stage 3 reviewer に [MM](../people/MM.md) / [JRL](../people/JRL.md) | → 2           |
-| [2019-12](../../raw/notes/meetings/2019-12/december-4.md) | update。Stage 2 据え置き                                                                                                       | 2             |
-| [2021-01](../../raw/notes/meetings/2021-01/jan-25.md)     | 継続討議。same/cross-realm の扱いが論点。Stage 2 据え置き                                                                      | 2             |
-| [2024-04](../../raw/notes/meetings/2024-04/april-10.md)   | next steps。Stage 2 据え置き                                                                                                   | 2             |
-| [2024-07](../../raw/notes/meetings/2024-07/july-31.md)    | Stage 2.7 を要求(未達)                                                                                                         | 2             |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)     | **withdrawn に consensus**(JHD・CDA が "withdrawn" と明示。実装側の需要・関心不足 + realm 関連の懸念)                          | 2 → withdrawn |
+| 会合                                                      | できごと                                                                                                                                      | Stage         |
+| --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| [2019-06](../../raw/notes/meetings/2019-06/june-5.md)     | **Stage 2 到達**(`for Stage 1 or 2` を要求し直接 Stage 2)。Stage 3 reviewer に [MM](../people/MM.md) / [JRL](../people/JRL.md)                | → 2           |
+| [2019-12](../../raw/notes/meetings/2019-12/december-4.md) | update。Stage 2 据え置き                                                                                                                      | 2             |
+| [2021-01](../../raw/notes/meetings/2021-01/jan-25.md)     | 継続討議。same/cross-realm の扱いが論点。Stage 2 据え置き                                                                                     | 2             |
+| [2024-04](../../raw/notes/meetings/2024-04/april-10.md)   | next steps。Stage 2 据え置き                                                                                                                  | 2             |
+| [2024-07](../../raw/notes/meetings/2024-07/july-31.md)    | Stage 2.7 を要求(未達)                                                                                                                        | 2             |
+| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)     | **withdrawn に consensus**([JHD](../people/JHD.md)・[CDA](../people/CDA.md) が "withdrawn" と明示。実装側の需要・関心不足 + realm 関連の懸念) | 2 → withdrawn |
 
 ```mermaid
 xychart-beta
@@ -44,7 +44,7 @@ template object の同一性を realm をまたいで判定する設計が、好
 
 ### withdrawn(2026-05)
 
-実装側の必要性・関心が乏しく、加えて realm 関連の懸念が残ったため、proposal を取り下げることに consensus。議事録の Conclusion 文面は umbrella 用語の "inactive" だが、JHD は「This one I'm going to mark as withdrawn」、CDA も「this one is withdrawn」と明示しており、canonical の inactive proposals でも "Withdrawn" 区分。したがって status は `withdrawn`。
+実装側の必要性・関心が乏しく、加えて realm 関連の懸念が残ったため、proposal を取り下げることに consensus。議事録の Conclusion 文面は umbrella 用語の "inactive" だが、[JHD](../people/JHD.md) は「This one I'm going to mark as withdrawn」、[CDA](../people/CDA.md) も「this one is withdrawn」と明示しており、canonical の inactive proposals でも "Withdrawn" 区分。したがって status は `withdrawn`。
 
 ## 関連提案
 

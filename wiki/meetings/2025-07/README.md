@@ -21,40 +21,40 @@ ECMA-262 / ECMA-402 の提案審議が中心の4日間リモート会合。**`Ma
 
 `raw/notes/meetings/2025-07/july-28.md` の attendees より(略号 — 氏名 — 所属):
 
-| 略号 | 氏名                   | 所属                |
-| ---- | ---------------------- | ------------------- |
-| JMN  | Jesse Alama            | Igalia              |
-| DJM  | Dmitry Makhnev         | JetBrains           |
-| WH   | Waldemar Horwat        | Invited Expert      |
-| GB   | Guy Bedford            | Cloudflare          |
-| DLM  | Daniel Minor           | Mozilla             |
-| ZTZ  | Zbyszek Tenerowicz     | Consensys           |
-| JHD  | Jordan Harband         | HeroDevs            |
-| SRV  | Sergey Rubanov         | Invited Expert      |
-| CM   | Chip Morningstar       | Consensys           |
-| NRO  | Nicolò Ribaudo         | Igalia              |
-| MBH  | Mikhail Barash         | Univ. of Bergen     |
-| KM   | Keith Miller           | Apple Inc.          |
-| AKI  | Aki Rose Braun         | Ecma International  |
-| SHN  | Samina Husain          | Ecma International  |
-| OFR  | Olivier Flückiger      | Google              |
-| RGN  | Richard Gibson         | Agoric              |
-| RMH  | Rezvan Mahdavi Hezaveh | Google              |
-| JSC  | J. S. Choi             | Invited Expert      |
-| EAO  | Eemeli Aro             | Mozilla             |
-| TAB  | Tab Atkins-Bittner     | Google              |
-| IS   | Istvan Sebestyen       | Ecma                |
-| DRR  | Daniel Rosenwasser     | Microsoft           |
-| ABO  | Andreu Botella         | Igalia              |
-| CDA  | Chris de Almeida       | IBM                 |
-| CZW  | Chengzhong Wu          | Bloomberg           |
-| JRL  | Justin Ridgewell       | Google              |
-| KG   | Kevin Gibbons          | F5                  |
-| MAH  | Mathieu Hofman         | Agoric              |
-| MF   | Michael Ficarra        | F5                  |
-| MM   | Mark S. Miller         | Agoric              |
-| RPR  | Rob Palmer             | Bloomberg           |
-| SHS  | Stephen Hicks          | Google              |
-| USA  | Ujjwal Sharma          | Igalia              |
+| 略号 | 氏名                   | 所属               |
+| ---- | ---------------------- | ------------------ |
+| JMN  | Jesse Alama            | Igalia             |
+| DJM  | Dmitry Makhnev         | JetBrains          |
+| WH   | Waldemar Horwat        | Invited Expert     |
+| GB   | Guy Bedford            | Cloudflare         |
+| DLM  | Daniel Minor           | Mozilla            |
+| ZTZ  | Zbyszek Tenerowicz     | Consensys          |
+| JHD  | Jordan Harband         | HeroDevs           |
+| SRV  | Sergey Rubanov         | Invited Expert     |
+| CM   | Chip Morningstar       | Consensys          |
+| NRO  | Nicolò Ribaudo         | Igalia             |
+| MBH  | Mikhail Barash         | Univ. of Bergen    |
+| KM   | Keith Miller           | Apple Inc.         |
+| AKI  | Aki Rose Braun         | Ecma International |
+| SHN  | Samina Husain          | Ecma International |
+| OFR  | Olivier Flückiger      | Google             |
+| RGN  | Richard Gibson         | Agoric             |
+| RMH  | Rezvan Mahdavi Hezaveh | Google             |
+| JSC  | J. S. Choi             | Invited Expert     |
+| EAO  | Eemeli Aro             | Mozilla            |
+| TAB  | Tab Atkins-Bittner     | Google             |
+| IS   | Istvan Sebestyen       | Ecma               |
+| DRR  | Daniel Rosenwasser     | Microsoft          |
+| ABO  | Andreu Botella         | Igalia             |
+| CDA  | Chris de Almeida       | IBM                |
+| CZW  | Chengzhong Wu          | Bloomberg          |
+| JRL  | Justin Ridgewell       | Google             |
+| KG   | Kevin Gibbons          | F5                 |
+| MAH  | Mathieu Hofman         | Agoric             |
+| MF   | Michael Ficarra        | F5                 |
+| MM   | Mark S. Miller         | Agoric             |
+| RPR  | Rob Palmer             | Bloomberg          |
+| SHS  | Stephen Hicks          | Google             |
+| USA  | Ujjwal Sharma          | Igalia             |
 
 > 出典: [raw/notes/meetings/2025-07](../../../raw/notes/meetings/2025-07/)。会期・開催地・概要は [tc39/agendas 2025/07](https://github.com/tc39/agendas/blob/main/2025/07.md) と各日逐語録より。

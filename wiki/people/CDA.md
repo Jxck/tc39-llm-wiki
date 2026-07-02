@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Chris de Almeida
 - **所属**: IBM / International Business Machines Corporation
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Temporal](../proposals/temporal.md)
+- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 25 回
 
 ## 参加したミーティング
@@ -19,9 +19,9 @@ tags: [person]
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01
-- 2025-11
-- 2025-09
-- 2025-07
+- [2025-11](../meetings/2025-11/README.md)
+- [2025-09](../meetings/2025-09/README.md)
+- [2025-07](../meetings/2025-07/README.md)
 - 2025-04
 - 2025-02
 - 2024-12

@@ -3985,3 +3985,83 @@
   - PR is approved
 - **Towards Structured Concurrency**  `raw/notes/meetings/2026-03/march-12.md`
   - General support from the committee for this direction.
+
+## 2026-05
+
+- **Overview of communication tools**  `raw/notes/meetings/2026-05/may-19.md`
+- **Task Group Reports: TG3: Security**  `raw/notes/meetings/2026-05/may-19.md`
+- **Task Group Reports: TG4: Source Maps**  `raw/notes/meetings/2026-05/may-19.md`
+- **Task Group Reports: TG5: Experiments in Programming Language Standardization**  `raw/notes/meetings/2026-05/may-19.md`
+- **Updates from the CoC Committee**  `raw/notes/meetings/2026-05/may-19.md`
+- **Reminder to review Github Delegate teams**  `raw/notes/meetings/2026-05/may-19.md`
+- **Needs-consensus PR: use Numbers instead of reals as counters in Iterator builtins (#3776)**  `raw/notes/meetings/2026-05/may-19.md`
+  - Consensus to merge the PR.
+- **Needs-consensus PR: Support BigInt coercion of integers expressed as exponential-notation strings (#3857)**  `raw/notes/meetings/2026-05/may-19.md`
+  - This will be discussed in the next meeting as a needs-consensus PR.
+- **Needs-consensus PR: Require internal consistency w.r.t. prefixing {get,set} in SetFunctionName (#3855)**  `raw/notes/meetings/2026-05/may-19.md`
+  - The PR did not reach consensus, but will be discussed again next meeting.
+- **discussion/feedback around Iterator-related proposal roadmap**  `raw/notes/meetings/2026-05/may-19.md`
+  - None
+- **Joint Iteration for Stage 4** — stage: 4  `raw/notes/meetings/2026-05/may-19.md`
+  - → Joint iteration advanced to Stage 4
+- **Dynamic Code Brand Checks for stage 4, or normative change (PR #23)** — stage: 4  `raw/notes/meetings/2026-05/may-19.md`
+  - Committee reached consensus on the normative change
+- **`Atomics.pause` for Stage 4** — stage: 4  `raw/notes/meetings/2026-05/may-19.md`
+  - → `Atomics.pause` advanced to Stage 4 with the normative change accepted
+- **Decorators for Stage 2.7** — stage: 2.7/4  `raw/notes/meetings/2026-05/may-19.md`
+  - → Committee achieved consensus to move to take the normative PR removing the optional parameter and progressing to stage 4. There was some concern around engines not being able to utilize the parameter if they want to start doing so in the future. This wasn’t a blocking concern and enough of the committee felt re-adding the parameter in the future would still be possible.
+- **Explicit Resource Management Stage 4 progress update** — stage: 4  `raw/notes/meetings/2026-05/may-19.md`
+  - All conditions met for Stage 4
+- **RegExp Buffer Boundaries for Stage 2.7 or 3** — stage: 2.7/3  `raw/notes/meetings/2026-05/may-19.md`
+  - → Consensus on conditional advancement to Stage 2.7 pending inclusion of `\\Z`
+  - → Will follow up with potential Stage 3 advancement by Thursday
+- **Intl: Keep Trailing Zeros for Stage 3** — stage: 3  `raw/notes/meetings/2026-05/may-19.md`
+  - → The proposal got support for advancing to Stage 3, with PRs #19 and #20 merged.
+- **Temporal progress update**  `raw/notes/meetings/2026-05/may-19.md`
+  - The two proposed fixes achieved consensus and will be integrated into the spec PRs.
+- **Decorators continuation: decorator metadata to Stage 2.7** — stage: 2.7  `raw/notes/meetings/2026-05/may-19.md`
+  - Decorator Metadata also moved back to stage 2.7, to align with Decorators itself.
+- **Error stack accessor for stage 3** — stage: 3  `raw/notes/meetings/2026-05/may-19.md`
+  - Will revisit later in the week; see continuation on day 3.
+- **Iterator Chunking for Stage 3** — stage: 3  `raw/notes/meetings/2026-05/may-20.md`
+  - consensus for stage 3
+- **Iterator Includes for Stage 3** — stage: 3  `raw/notes/meetings/2026-05/may-20.md`
+  - consensus for stage 3
+- **Stable Formatting for Stage 2** — stage: 2  `raw/notes/meetings/2026-05/may-20.md`
+  - → The proposal was approved for Stage 2.
+- **Default Behaviours for some Intl APIs for Stage 1** — stage: 1  `raw/notes/meetings/2026-05/may-20.md`
+  - → The proposal was approved for Stage 1.
+- **Intl Sequence Units for Stage 1 or 2** — stage: 1/2/2.7  `raw/notes/meetings/2026-05/may-20.md`
+  - Consensus for Stage 1.
+- **SetFunctionName refinement**  `raw/notes/meetings/2026-05/may-20.md`
+  - The editor group has discretion for https://github.com/tc39/ecma262/pull/3874 .
+- **Amount for Stage 2** — stage: 2  `raw/notes/meetings/2026-05/may-20.md`
+  - → The proposal was approved for Stage 2, with WH and JHD as reviewers.
+- **export all from for Stage 1** — stage: 1  `raw/notes/meetings/2026-05/may-20.md`
+  - The speaker did not provide a conclusion.
+- **Module Scope Ceiling**  `raw/notes/meetings/2026-05/may-20.md`
+  - None, just an update
+- **Iterator Join** — stage: 3  `raw/notes/meetings/2026-05/may-20.md`
+  - consensus for stage 3
+- **RegExp Buffer Boundaries Continuation**  `raw/notes/meetings/2026-05/may-20.md`
+  - Consensus on `\\Z` matches `(?=(?:\\r\\n|\\n|\\r|\\u2028|\\u2029)?(?-m:$))`
+- **Source Phase Imports, Request for Consensus for Normative Change: Ambiguous re-export handling for Source Phase Imports**  `raw/notes/meetings/2026-05/may-20.md`
+  - The speaker did not provide a conclusion.
+- **ESM Phase Imports normative PRs**  `raw/notes/meetings/2026-05/may-20.md`
+- **Comparisons for Stage 1** — stage: 1  `raw/notes/meetings/2026-05/may-21.md`
+  - Motivation was generally accepted
+- **An introduction to the EU CRA & how it matters to all of you**  `raw/notes/meetings/2026-05/may-21.md`
+- **Error stack accessor for stage 3** — stage: 2.7/3  `raw/notes/meetings/2026-05/may-21.md`
+  - → Error stack accessor reaches stage 3
+- **agreeing to consider impact of RegExp proposals to linear implementations**  `raw/notes/meetings/2026-05/may-21.md`
+  - There was broad support for considering the impact of new proposals on linearity, and excitement for addressing ReDoS in a predictable way.
+- **Tooling for navigating the ECMA-262 specification and reviewing API proposals**  `raw/notes/meetings/2026-05/may-21.md`
+  - None.
+- **Continuation: Comparisons for Stage 1** — stage: 1  `raw/notes/meetings/2026-05/may-21.md`
+  - → Consensus was reached for stage 1
+- **export all from Stage 2 reviewers** — stage: 2  `raw/notes/meetings/2026-05/may-21.md`
+- **Continuation: ESM Phase Imports normative PRs**  `raw/notes/meetings/2026-05/may-21.md`
+  - Consensus was obtained for PR #61—supporting cross-realm imports of module sources
+- **Continuation: RegExp Buffer Boundaries** — stage: 3  `raw/notes/meetings/2026-05/may-21.md`
+  - → Advanced to Stage 3
+- **Call for hosts for 2027 (AMER and APAC)**  `raw/notes/meetings/2026-05/may-21.md`
