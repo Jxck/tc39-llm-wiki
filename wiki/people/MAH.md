@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Mathieu Hofman
 - **所属**: Agoric / Stripe
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Records & Tuples](../proposals/records-and-tuples.md)
+- **言及される提案ページ**: [Comparisons](../proposals/comparisons.md), [Records & Tuples](../proposals/records-and-tuples.md)
 - **参加したミーティング**: 全 11 回
 
 ## 参加したミーティング

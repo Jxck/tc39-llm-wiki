@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Michael Ficarra
 - **所属**: ?? / F5 / F5 Networks
 - **担当ドラフト (champion)**: [Iterator Chunking](../proposals/iterator-chunking.md), [Iterator Includes](../proposals/iterator-includes.md), [Joint Iteration](../proposals/joint-iteration.md)
-- **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Iterator Chunking](../proposals/iterator-chunking.md), [Iterator Includes](../proposals/iterator-includes.md), [Joint Iteration](../proposals/joint-iteration.md), [Temporal](../proposals/temporal.md)
+- **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Comparisons](../proposals/comparisons.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Iterator Chunking](../proposals/iterator-chunking.md), [Iterator Includes](../proposals/iterator-includes.md), [Joint Iteration](../proposals/joint-iteration.md), [Temporal](../proposals/temporal.md)
 - **言及される family ページ**: [Iterator helpers and friends](../families/iterator.md)
 - **参加したミーティング**: 全 15 回
 

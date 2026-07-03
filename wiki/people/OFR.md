@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Olivier Flückiger
 - **所属**: Google
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Decorators](../proposals/decorators.md)
+- **言及される提案ページ**: [Comparisons](../proposals/comparisons.md), [Decorators](../proposals/decorators.md)
 - **参加したミーティング**: 全 6 回
 
 ## 参加したミーティング

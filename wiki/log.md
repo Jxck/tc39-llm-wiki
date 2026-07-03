@@ -268,3 +268,9 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - **解消**: 2025-09 summarise の「要注意」(amount frontmatter stage2 との食い違い懸念)は時系列上矛盾なし。遷移テーブルは 2025-09 不成立(1 のまま)を含み、`stage2` は 2026-05 到達の現在値で canonical(Stage 2 テーブル、champion Ben Allen)と一致。
 - **据置**: stable-formatting / intl-sequence-units は `raw/proposals` が前回 lint から未更新(同一 SHA)のため「canonical 追従遅れ・wiki が正(Stage 2)」を維持。次回 /update 後に再確認。
 - **内部健全性**: リンク切れ実体なし(検出はプレースホルダとインラインコード引用のみ)、family 双方向整合 OK、mermaid 全 15 点(records-and-tuples の 14 は撤回年止めで正常)、README カタログ 23 件と proposals/ 実体一致。
+
+## [2026-07-03] query | Comparisons(file back で提案ページを拡充)
+
+- 質問「Comparisons」に既存ページ + 会合要約 + agenda-index で回答。ユーザ指示により file back。
+- `proposals/comparisons.md` を 2026-05 may-21 の raw で裏取りして拡充: 概要に production use-case(HTTP patch delta / React state / logging)と API 2 モード案(`compare` fast/full、`deepEqual`/`compare` 分割代替)を追記。論点に「equality の定義そのもの(OFR)」「性能上の優位性への懐疑(KM・OFR)」「walk と filter の分離は複雑さを減らすか(MM・KM・MAH)」「encapsulation の漏洩(OFR)」を新設、「動機の受容と AI 文脈」に EAO の motivation statement 経緯と SFC の正しさ論を統合、「Stage 2 へ向けた懸念」に MF/MAH の forewarning と SFC の Collator モデル示唆を帰属付きで追記。
+- extract_people / link_people 再実行(新規略号なし、EAO/KM/MAH/MF/MM/OFR/SFC の言及提案に comparisons が追加)。
