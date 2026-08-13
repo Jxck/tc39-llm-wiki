@@ -3,7 +3,7 @@
 > **生成物**。`tools/extract_proposals.py` が `raw/proposals/`(canonical)から生成。手で編集しない(Update で `raw/proposals` を pull するたび再生成)。
 > 現ステージの一次ソースは raw/proposals。精読済みの提案は `[Title](<slug>.md)` でページへリンク、未リンクは本 wiki で未精読(カタログのみ)。
 > **Stage 4 はまだ ECMAScript に入っていないもの(2026 年以降に出版予定)だけを掲載**(出荷済みの finished は省略)。Stage 3 以下は全件。
-> 掲載件数: ECMA-262 220 件 / ECMA-402 18 件。
+> 掲載件数: ECMA-262 225 件 / ECMA-402 20 件。
 
 ## ECMA-262
 
@@ -21,8 +21,9 @@
 - Uint8Array to/from Base64 — 出版予定 2026
 - [Upsert](upsert.md) — 出版予定 2026
 
-### Stage 3 (11)
+### Stage 3 (12)
 
+- Await Dictionary
 - Deferring Module Evaluation
 - [Dynamic Code Brand Checks](dynamic-code-brand-checks.md)
 - [Error Stack Accessor](error-stack-accessor.md)
@@ -35,9 +36,8 @@
 - [RegExp Buffer Boundaries (\A, \z, \Z)](regexp-buffer-boundaries.md)
 - Source Phase Imports
 
-### Stage 2.7 (7)
+### Stage 2.7 (6)
 
-- Await Dictionary
 - Decorator Metadata
 - [Decorators](decorators.md)
 - ESM Phase Imports
@@ -45,7 +45,7 @@
 - Import Bytes
 - ShadowRealm
 
-### Stage 2 (27)
+### Stage 2 (29)
 
 - "Discard" (void) Bindings
 - [Amount](amount.md)
@@ -55,10 +55,12 @@
 - Curtailing the power of "Thenables"
 - Deferred Re-exports
 - Destructure Private Fields
+- Error code property
 - Error.captureStackTrace
 - Extractors
 - Function implementation hiding
 - function.sent metaproperty
+- Fused Multiply-Add
 - Iterator.range
 - JSON.parseImmutable
 - Math.clamp
@@ -75,7 +77,7 @@
 - Sync Imports
 - throw expressions
 
-### Stage 1 (105)
+### Stage 1 (108)
 
 - Alias Accessors
 - Array Equality
@@ -86,6 +88,7 @@
 - async do expressions
 - Async initialization
 - await operations
+- Bigint from exponential
 - BigInt Math
 - Binary AST
 - Block Params
@@ -134,7 +137,9 @@
 - Iterator unique
 - Legacy reflection features for functions in JavaScript
 - Limited ArrayBuffer
+- Linear Matching
 - Locale Extensions
+- Map get and delete
 - Mass Proxy Revocation
 - Maximally minimal mixins
 - Module Global
@@ -264,12 +269,14 @@
 - eraDisplay option for Intl.DateTimeFormat
 - More Currency Display Choices
 
-### Stage 1 (10)
+### Stage 1 (12)
 
 - [Default Behaviours for some Intl APIs](intl-default-behaviours.md)
 - explore associating a unit with a number
+- Intl Energy Units
 - Intl LocaleMatcher
 - [Intl Sequence Units](intl-sequence-units.md)
+- Intl.DateTimeFormat Alignment With Other Standards
 - [Intl.MessageFormat](intl-messageformat.md)
 - Intl.MessageResource
 - Intl.Segmenter v2

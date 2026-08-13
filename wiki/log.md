@@ -274,3 +274,13 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - 質問「Comparisons」に既存ページ + 会合要約 + agenda-index で回答。ユーザ指示により file back。
 - `proposals/comparisons.md` を 2026-05 may-21 の raw で裏取りして拡充: 概要に production use-case(HTTP patch delta / React state / logging)と API 2 モード案(`compare` fast/full、`deepEqual`/`compare` 分割代替)を追記。論点に「equality の定義そのもの(OFR)」「性能上の優位性への懐疑(KM・OFR)」「walk と filter の分離は複雑さを減らすか(MM・KM・MAH)」「encapsulation の漏洩(OFR)」を新設、「動機の受容と AI 文脈」に EAO の motivation statement 経緯と SFC の正しさ論を統合、「Stage 2 へ向けた懸念」に MF/MAH の forewarning と SFC の Collator モデル示唆を帰属付きで追記。
 - extract_people / link_people 再実行(新規略号なし、EAO/KM/MAH/MF/MM/OFR/SFC の言及提案に comparisons が追加)。
+
+## [2026-08-13] update | raw/notes・raw/proposals を同期
+
+- 同期前ポインタ: `raw/notes` ced9ef3(pr-411)→ **8b76916**(origin/main、7 commits)。`raw/proposals` 1eb7ced → **600a427**(13 commits)。
+- **raw/notes**: 新規会合ファイルなし。`delegates.txt` に delegate 3 名追加(roster 597→600)。`meetings/2026-05/may-21.md` の closing remarks 話者名を軽微訂正(要約対象外、影響なし)。旧 pr-411(2026-05 議事録の未マージ PR)は ff できず(`merge-base --is-ancestor` NO)だが、内容は PR #415 等で実質同一(diff は上記 may-21 の 3 行のみ)として main へ反映済みと確認。detached HEAD は `git submodule update --remote` の仕様どおり(AGENTS.md 記載の許容形態)。
+- **raw/proposals**: 差分は主に過去会合への notes リンクの遡及的な埋め戻し(stage 変更ではない)。`extract_proposals.py` 再生成で ECMA-262 220→225 件・ECMA-402 18→20 件(未追跡の新規/新 Stage: Await Dictionary が Stage 3、Fused Multiply-Add が Stage 2、Error code property・Map get and delete・Bigint from exponential・Linear Matching・Intl.DateTimeFormat Alignment・Intl Energy Units が新規、いずれも wiki 未精読の catalog-only 提案)。
+- **precedence 注記**: 上記 proposals の stage 変更コミットは `per 2026.07.2{0,1,2} TC39` 会合由来だが、raw/notes には該当会合(2026-07)がまだ存在しない(notes 未公開/未 pull)。次回 `/summarise` や `/ingest` で 2026-07 を扱う際は raw/notes 側の到着を待つ。
+- **精読済み 23 提案への影響なし**: grep 突き合わせで全件 stage/section 不変を確認。特に保留中の `stable-formatting`・`intl-sequence-units` は今回も `ecma402/README.md` の `### Stage 1` に留まったままで **未解消**(wiki は Stage 2 を維持、次々回に再確認)。
+- 生成物再生成: `extract_agenda.py`(87 会合・2780 議題、既に鮮度は前回 lint で最新化済みのため差分なし)、`extract_proposals.py`(上記)、`extract_people.py` / `link_people.py`(delegate 表記修正 1 件: `wiki/people/SGN.md` の Sathya Gunasekaran のスペル訂正)。
+- oxfmt clean(全 123 ファイル)。submodule ポインタと生成物をまとめて `[update]` でコミット。

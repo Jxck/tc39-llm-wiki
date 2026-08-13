@@ -1,14 +1,14 @@
 ---
 abbr: SGN
-name: Sathya Gunasekasan
+name: Sathya Gunasekaran
 orgs: []
 meetings_attended: 0
 tags: [person]
 ---
 
-# SGN — Sathya Gunasekasan
+# SGN — Sathya Gunasekaran
 
-- **フルネーム**: Sathya Gunasekasan
+- **フルネーム**: Sathya Gunasekaran
 - **所属**: (出席者テーブルから特定できず)
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
 - **言及される提案ページ**: [Decorators](../proposals/decorators.md)
