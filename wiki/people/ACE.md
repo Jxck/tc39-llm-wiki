@@ -2,7 +2,7 @@
 abbr: ACE
 name: Ashley Claymore
 orgs: [Bloomberg]
-meetings_attended: 21
+meetings_attended: 22
 tags: [person]
 ---
 
@@ -12,10 +12,11 @@ tags: [person]
 - **所属**: Bloomberg
 - **担当ドラフト (champion)**: [Records & Tuples](../proposals/records-and-tuples.md)
 - **言及される提案ページ**: [Records & Tuples](../proposals/records-and-tuples.md)
-- **参加したミーティング**: 全 21 回
+- **参加したミーティング**: 全 22 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - [2025-11](../meetings/2025-11/README.md)
 - [2025-09](../meetings/2025-09/README.md)

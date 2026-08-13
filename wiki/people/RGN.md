@@ -2,7 +2,7 @@
 abbr: RGN
 name: Richard Gibson
 orgs: [Agoric, Open JS Foundation, OpenJS Foundation]
-meetings_attended: 29
+meetings_attended: 30
 tags: [person]
 ---
 
@@ -12,10 +12,11 @@ tags: [person]
 - **所属**: Agoric / Open JS Foundation / OpenJS Foundation
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
 - **言及される提案ページ**: [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Temporal](../proposals/temporal.md)
-- **参加したミーティング**: 全 29 回
+- **参加したミーティング**: 全 30 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

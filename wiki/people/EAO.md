@@ -2,7 +2,7 @@
 abbr: EAO
 name: Eemeli Aro
 orgs: [Mozilla]
-meetings_attended: 20
+meetings_attended: 21
 tags: [person]
 ---
 
@@ -12,10 +12,11 @@ tags: [person]
 - **所属**: Mozilla
 - **担当ドラフト (champion)**: [Default Behaviours for some Intl APIs](../proposals/intl-default-behaviours.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Stable Formatting](../proposals/stable-formatting.md)
 - **言及される提案ページ**: [Amount](../proposals/amount.md), [Comparisons](../proposals/comparisons.md), [Default Behaviours for some Intl APIs](../proposals/intl-default-behaviours.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Stable Formatting](../proposals/stable-formatting.md)
-- **参加したミーティング**: 全 20 回
+- **参加したミーティング**: 全 21 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - [2025-11](../meetings/2025-11/README.md)

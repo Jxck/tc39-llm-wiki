@@ -2,7 +2,7 @@
 abbr: CDA
 name: Chris de Almeida
 orgs: [IBM, International Business Machines Corporation]
-meetings_attended: 25
+meetings_attended: 26
 tags: [person]
 ---
 
@@ -12,10 +12,11 @@ tags: [person]
 - **所属**: IBM / International Business Machines Corporation
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
 - **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Temporal](../proposals/temporal.md)
-- **参加したミーティング**: 全 25 回
+- **参加したミーティング**: 全 26 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

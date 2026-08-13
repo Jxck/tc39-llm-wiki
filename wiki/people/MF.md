@@ -2,7 +2,7 @@
 abbr: MF
 name: Michael Ficarra
 orgs: [??, F5, F5 Networks]
-meetings_attended: 15
+meetings_attended: 16
 tags: [person]
 ---
 
@@ -13,10 +13,11 @@ tags: [person]
 - **担当ドラフト (champion)**: [Iterator Chunking](../proposals/iterator-chunking.md), [Iterator Includes](../proposals/iterator-includes.md), [Joint Iteration](../proposals/joint-iteration.md)
 - **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Comparisons](../proposals/comparisons.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Iterator Chunking](../proposals/iterator-chunking.md), [Iterator Includes](../proposals/iterator-includes.md), [Joint Iteration](../proposals/joint-iteration.md), [Temporal](../proposals/temporal.md)
 - **言及される family ページ**: [Iterator helpers and friends](../families/iterator.md)
-- **参加したミーティング**: 全 15 回
+- **参加したミーティング**: 全 16 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

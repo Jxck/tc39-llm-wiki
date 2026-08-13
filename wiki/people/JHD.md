@@ -2,7 +2,7 @@
 abbr: JHD
 name: Jordan Harband
 orgs: [Coinbase, HeroDevs, Herodevs, Invited Expert, Invited expert, Socket, Socket Inc, Socket, Inc, invited expert]
-meetings_attended: 34
+meetings_attended: 35
 tags: [person]
 ---
 
@@ -12,10 +12,11 @@ tags: [person]
 - **所属**: Coinbase / HeroDevs / Herodevs / Invited Expert / Invited expert / Socket / Socket Inc / Socket, Inc / invited expert
 - **担当ドラフト (champion)**: [Error Stack Accessor](../proposals/error-stack-accessor.md), [Array.isTemplateObject](../proposals/is-template-object.md)
 - **言及される提案ページ**: [Amount](../proposals/amount.md), [Decorators](../proposals/decorators.md), [Error Stack Accessor](../proposals/error-stack-accessor.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Joint Iteration](../proposals/joint-iteration.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
-- **参加したミーティング**: 全 34 回
+- **参加したミーティング**: 全 35 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

@@ -2,7 +2,7 @@
 abbr: NRO
 name: Nicolò Ribaudo
 orgs: [Babel - Invited Expert, Babel-InvitedExpert, Igalia, Igalia, S.L, Invited Expert, Invited Expert - Babel]
-meetings_attended: 27
+meetings_attended: 28
 tags: [person]
 ---
 
@@ -13,10 +13,11 @@ tags: [person]
 - **担当ドラフト (champion)**: [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [export all from](../proposals/export-all-from.md), [Records & Tuples](../proposals/records-and-tuples.md)
 - **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../proposals/decorators.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [export all from](../proposals/export-all-from.md), [Records & Tuples](../proposals/records-and-tuples.md)
 - **言及される family ページ**: [Modules (module harmony)](../families/modules.md)
-- **参加したミーティング**: 全 27 回
+- **参加したミーティング**: 全 28 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

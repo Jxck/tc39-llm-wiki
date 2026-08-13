@@ -2,7 +2,7 @@
 abbr: WH
 name: Waldemar Horwat
 orgs: [Google, Invited Expert]
-meetings_attended: 38
+meetings_attended: 39
 tags: [person]
 ---
 
@@ -12,10 +12,11 @@ tags: [person]
 - **所属**: Google / Invited Expert
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
 - **言及される提案ページ**: [Amount](../proposals/amount.md), [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../proposals/decorators.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Upsert](../proposals/upsert.md)
-- **参加したミーティング**: 全 38 回
+- **参加したミーティング**: 全 39 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

@@ -1,22 +1,23 @@
 ---
 abbr: KG
 name: Kevin Gibbons
-orgs: [F5, F5 Networks]
-meetings_attended: 20
+orgs: [F5, F5 Networks, Invited Expert]
+meetings_attended: 21
 tags: [person]
 ---
 
 # KG — Kevin Gibbons
 
 - **フルネーム**: Kevin Gibbons
-- **所属**: F5 / F5 Networks
+- **所属**: F5 / F5 Networks / Invited Expert
 - **担当ドラフト (champion)**: [Iterator Join](../proposals/iterator-join.md)
 - **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Iterator Join](../proposals/iterator-join.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Upsert](../proposals/upsert.md)
 - **言及される family ページ**: [Iterator helpers and friends](../families/iterator.md)
-- **参加したミーティング**: 全 20 回
+- **参加したミーティング**: 全 21 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01
 - [2025-11](../meetings/2025-11/README.md)

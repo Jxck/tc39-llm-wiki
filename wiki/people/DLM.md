@@ -1,21 +1,22 @@
 ---
 abbr: DLM
 name: Dan Minor
-orgs: [Mozilla]
-meetings_attended: 24
+orgs: [Mozilla, Mozilla Foundation]
+meetings_attended: 25
 tags: [person]
 ---
 
 # DLM — Dan Minor
 
 - **フルネーム**: Dan Minor
-- **所属**: Mozilla
+- **所属**: Mozilla / Mozilla Foundation
 - **担当ドラフト (champion)**: [Upsert](../proposals/upsert.md)
 - **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Upsert](../proposals/upsert.md)
-- **参加したミーティング**: 全 24 回
+- **参加したミーティング**: 全 25 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

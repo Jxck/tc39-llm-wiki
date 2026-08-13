@@ -4065,3 +4065,67 @@
 - **Continuation: RegExp Buffer Boundaries** — stage: 3  `raw/notes/meetings/2026-05/may-21.md`
   - → Advanced to Stage 3
 - **Call for hosts for 2027 (AMER and APAC)**  `raw/notes/meetings/2026-05/may-21.md`
+
+## 2026-07
+
+- **Editors Report**  `raw/notes/meetings/2026-07/july-20.md`
+- **Test262 Update**  `raw/notes/meetings/2026-07/july-20.md`
+- **TG3 (Security) Update**  `raw/notes/meetings/2026-07/july-20.md`
+- **TG4 (Source Maps) update**  `raw/notes/meetings/2026-07/july-20.md`
+- **TG5 Update**  `raw/notes/meetings/2026-07/july-20.md`
+- **Needs-consensus PR: Support BigInt coercion of integers expressed as exponential-notation strings** — stage: 1  `raw/notes/meetings/2026-07/july-20.md`
+  - → The PR was converted into proposal-bigint-from-exponential, which reached Stage 1.
+- **Needs-consensus PR: require hosts that provide a custom global object to allow initializing ECMA-262 built-ins on it**  `raw/notes/meetings/2026-07/july-20.md`
+  - Approval for pr 3728
+- **Machine-readable source of truth for proposal info, delegate info, and maybe more**  `raw/notes/meetings/2026-07/july-20.md`
+  - MF will work with JHD to start making our datasets available as structured data
+- **Needs-consensus PR: make `Promise.try` use PromiseResolve in non-error case**  `raw/notes/meetings/2026-07/july-20.md`
+  - Committee supports this change.
+- **Await Dictionary for Stage 3** — stage: 3  `raw/notes/meetings/2026-07/july-20.md`
+  - → Consensus to advance to Stage 3
+- **Import Defer Stage 3 updates** — stage: 3  `raw/notes/meetings/2026-07/july-20.md`
+  - Regarding the issue #85, we got consensus of applying the fix that was proposed by champion group, which changes the check the status of the `[[CycleRoot]]` instead of the module itself.
+- **Thenable Curtailment for 2.7**  `raw/notes/meetings/2026-07/july-20.md`
+  - Stage advancement deferred to continuation on Wednesday after Host hook is written
+- **Map take for stage 1, 2, or 2.7** — stage: 1  `raw/notes/meetings/2026-07/july-20.md`
+- **Continuation: Map take for stage 1, 2, or 2.7** — stage: 1  `raw/notes/meetings/2026-07/july-21.md`
+  - Accepted as Stage 1
+- **JSON.parseImmutable**  `raw/notes/meetings/2026-07/july-21.md`
+  - No consensus was formally obtained but there was general positive reaction to moving to an options-bag API
+- **Error code property for Stage 2 or 2.7** — stage: 2  `raw/notes/meetings/2026-07/july-21.md`
+  - Stage 2
+- **Declarations in Conditionals for Stage 2 or 2.7** — stage: 2  `raw/notes/meetings/2026-07/july-21.md`
+  - Need to meet with champion of Pattern Matching proposal.
+- **Async iterator helpers open questions**  `raw/notes/meetings/2026-07/july-21.md`
+  - the committee supports skipping `await` for primitive values returned by the mapper/predicate functions
+- **Composites update** — stage: 2  `raw/notes/meetings/2026-07/july-21.md`
+  - Proposal will pivot to an interning based approach, and not allow Composites to be held weakly
+- **call for stage 2 reviewers for 'error code property'** — stage: 2  `raw/notes/meetings/2026-07/july-22.md`
+  - JHD and RGN will be Stage 2 reviewers
+- **Decimal stage 1 update** — stage: 1  `raw/notes/meetings/2026-07/july-22.md`
+  - There are major concerns with the current Object API and not being primitive. There are also major concerns from browsers to introduce the proposal as a Primitive. Since there was not enough time to d
+- **Duration units in Amount and Intl Sequence Units**  `raw/notes/meetings/2026-07/july-22.md`
+  - Continue iterating on the proposal, taking the new perspectives into consideration.
+- **Linear Matching** — stage: 1  `raw/notes/meetings/2026-07/july-22.md`
+  - Stage 1
+- **`Intl.DateTimeFormat` Alignment With Other Standards** — stage: 1  `raw/notes/meetings/2026-07/july-22.md`
+  - The proposal was accepted for Stage 1 with no discussion.
+- **Private declarations**  `raw/notes/meetings/2026-07/july-22.md`
+  - We will need to discuss this at greater length.
+- **Fused Multiply-Add for Stage 1 or 2** — stage: 1/2  `raw/notes/meetings/2026-07/july-22.md`
+  - → Approved for stage 2
+- **Needs-consensus PR: Normative: Take language subtag into account in locale hour cycle lookup**  `raw/notes/meetings/2026-07/july-22.md`
+  - ECMA-402 PR 1086 is approved.
+- **Needs-consensus PR: Normative: Allow `Locale.p.getNumberingSystems` to return >1 item**  `raw/notes/meetings/2026-07/july-22.md`
+  - ECMA-402 PR 1074 is approved.
+- **Needs-consensus PR: Normative: Don't fall back to default locale in Locale.p.getCollations()**  `raw/notes/meetings/2026-07/july-22.md`
+  - ECMA-402 PR 1072 is approved.
+- **Needs-consensus PR: Normative: Call RegionPreference in WeekInfoOfLocale**  `raw/notes/meetings/2026-07/july-22.md`
+  - ECMA-402 PR 1051 is approved.
+- **Continuation: Thenable Curtailment for 2.7** — stage: 2.7  `raw/notes/meetings/2026-07/july-22.md`
+  - Consensus for Stage 2.7
+- **temperature checks relating to https://github.com/tc39/proposal-bigint-from-exponential**  `raw/notes/meetings/2026-07/july-22.md`
+  - Results will be considered in future development of proposal-bigint-from-exponential.
+- **Continuation: Async iterator helpers open questions**  `raw/notes/meetings/2026-07/july-22.md`
+  - Committee prefers inner-first, does not resolve the question of concurrently or sequentially
+- **Adjournment**  `raw/notes/meetings/2026-07/july-22.md`

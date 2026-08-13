@@ -284,3 +284,13 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - **精読済み 23 提案への影響なし**: grep 突き合わせで全件 stage/section 不変を確認。特に保留中の `stable-formatting`・`intl-sequence-units` は今回も `ecma402/README.md` の `### Stage 1` に留まったままで **未解消**(wiki は Stage 2 を維持、次々回に再確認)。
 - 生成物再生成: `extract_agenda.py`(87 会合・2780 議題、既に鮮度は前回 lint で最新化済みのため差分なし)、`extract_proposals.py`(上記)、`extract_people.py` / `link_people.py`(delegate 表記修正 1 件: `wiki/people/SGN.md` の Sathya Gunasekaran のスペル訂正)。
 - oxfmt clean(全 123 ファイル)。submodule ポインタと生成物をまとめて `[update]` でコミット。
+
+## [2026-08-13] summarise | 115th TC39 Meeting (2026-07)
+
+- 未マージ PR tc39/notes#420(2026 July transcript)を `pr-420` として checkout し、ポインタを `[wiki]` でコミット(base は main の 8b76916 なので ff 相当)。
+- 2026-07(115th、リモート、3 日間)を日次要約。`wiki/meetings/2026-07/` に Day 1-3(2026-07-20〜22)+ README.md を生成。
+- Stage advancement: **Await Dictionary が Stage 3**、**Thenable Curtailment が Stage 2.7**(Day 1 で host hook 化を宿題に持ち越し → Day 3 continuation で consensus)、**Error code property・Fused Multiply-Add(`Math.fma`)が Stage 2**、**bigint-from-exponential(needs-consensus PR #3857 から転換)・Map take(`getAndDelete` へ rename)・Linear Matching・`Intl.DateTimeFormat` Alignment With Other Standards が Stage 1**。Declarations in Conditionals は pattern matching との調整未了で advancement 見送り。前回 /update で確認した raw/proposals 側の stage 変更(2026.07 会合由来)と全件整合。
+- normative: `Promise.try` の PromiseResolve 化、custom global への built-ins 定義強制(#3728)、Import Defer の `[[CycleRoot]]` バグ修正、ECMA-402 の 4 PR(1086/1074/1072/1051)。GA で ES2026(262 17th / 402 13th)承認、KG が Ecma Recognition Award。
+- 該当する既存提案ページへのリンク: joint-iteration / atomics-pause / explicit-resource-management(Editors Report)、amount(BigInt 指数表記・FMA・Duration units)、intl-sequence-units・temporal・intl-keep-trailing-zeros(Day 3)、records-and-tuples(JSON.parseImmutable・Composites)。
+- Day 2/3 のドラフトはサブエージェントで並列作成し、全議題の `### Conclusion` を raw と突き合わせて検証のうえ採用。
+- 生成物再生成: `extract_agenda.py`(88 会合・2814 議題、2026-07 の 34 議題を追加)、`extract_people.py` / `link_people.py`(人物ページの参加会合に 2026-07 がリンク付きで追加)。wiki/README.md の会合数記述を 88 会合 / 340 ファイル / 2814 議題に更新。

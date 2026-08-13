@@ -1,13 +1,13 @@
 # TC39 Wiki — Index
 
-TC39 plenary 議事録(`raw/notes`、2012-05〜2026-03 / 86 会合 / 334 ファイル)から、**各提案のステージ遷移の経緯と策定中の論点**を辿るための wiki です。運用規約は [AGENTS.md](../AGENTS.md)、設計思想は [llm-wiki.md](../llm-wiki.md) を参照。
+TC39 plenary 議事録(`raw/notes`、2012-05〜2026-07 / 88 会合 / 340 ファイル)から、**各提案のステージ遷移の経緯と策定中の論点**を辿るための wiki です。運用規約は [AGENTS.md](../AGENTS.md)、設計思想は [llm-wiki.md](../llm-wiki.md) を参照。
 
 ## 使い方
 
 - **全提案の現ステージを一覧する** → [proposals/index.md](proposals/index.md)(`raw/proposals` から生成した全提案の完全ステージ一覧。精読済みはページへリンク)。
 - **特定の提案を辿る** → 下の「精読済みの提案」から該当ページへ。各ページに `## ステージ遷移`(時系列テーブル + mermaid グラフ)と `## 主な論点` がある。
 - **人物を辿る** → 提案ページ中の人物リンク(例: `[PFC](people/PFC.md)`)をたどると [people/](people/) の人物ページ(フルネーム・所属・担当ドラフト・参加会合)へ。
-- **未精読の提案/会合を探す** → [\_generated/agenda-index.md](_generated/agenda-index.md) を grep。全 86 会合・2737 議題を機械抽出したバックボーン。例: `grep -i -A4 'pattern matching' wiki/_generated/agenda-index.md`。
+- **未精読の提案/会合を探す** → [\_generated/agenda-index.md](_generated/agenda-index.md) を grep。全 88 会合・2814 議題を機械抽出したバックボーン。例: `grep -i -A4 'pattern matching' wiki/_generated/agenda-index.md`。
 - **新しい提案を ingest** → AGENTS.md の「ワークフロー > Ingest」に従う。
 
 ## 精読済みの提案

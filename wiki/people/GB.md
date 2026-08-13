@@ -2,7 +2,7 @@
 abbr: GB
 name: Guy Bedford
 orgs: [Bloomberg, Cloudflare, OpenJS Foundation, OpenJSF]
-meetings_attended: 10
+meetings_attended: 11
 tags: [person]
 ---
 
@@ -12,10 +12,11 @@ tags: [person]
 - **所属**: Bloomberg / Cloudflare / OpenJS Foundation / OpenJSF
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
 - **言及される family ページ**: [Modules (module harmony)](../families/modules.md)
-- **参加したミーティング**: 全 10 回
+- **参加したミーティング**: 全 11 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

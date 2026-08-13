@@ -2,7 +2,7 @@
 abbr: OFR
 name: Olivier Flückiger
 orgs: [Google]
-meetings_attended: 6
+meetings_attended: 7
 tags: [person]
 ---
 
@@ -12,10 +12,11 @@ tags: [person]
 - **所属**: Google
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
 - **言及される提案ページ**: [Comparisons](../proposals/comparisons.md), [Decorators](../proposals/decorators.md)
-- **参加したミーティング**: 全 6 回
+- **参加したミーティング**: 全 7 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

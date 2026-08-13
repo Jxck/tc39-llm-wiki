@@ -2,7 +2,7 @@
 abbr: JRL
 name: Justin Ridgewell
 orgs: [Google, Vercel]
-meetings_attended: 19
+meetings_attended: 20
 tags: [person]
 ---
 
@@ -12,10 +12,11 @@ tags: [person]
 - **所属**: Google / Vercel
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
 - **言及される提案ページ**: [Array.isTemplateObject](../proposals/is-template-object.md)
-- **参加したミーティング**: 全 19 回
+- **参加したミーティング**: 全 20 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

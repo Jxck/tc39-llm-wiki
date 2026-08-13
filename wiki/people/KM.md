@@ -2,7 +2,7 @@
 abbr: KM
 name: Keith Miller
 orgs: [Apple, Apple Inc, Apple Inc.]
-meetings_attended: 16
+meetings_attended: 17
 tags: [person]
 ---
 
@@ -12,10 +12,11 @@ tags: [person]
 - **所属**: Apple / Apple Inc / Apple Inc.
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
 - **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Comparisons](../proposals/comparisons.md), [Upsert](../proposals/upsert.md)
-- **参加したミーティング**: 全 16 回
+- **参加したミーティング**: 全 17 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

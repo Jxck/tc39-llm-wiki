@@ -2,7 +2,7 @@
 abbr: SFC
 name: Shane Carr
 orgs: [Google]
-meetings_attended: 25
+meetings_attended: 26
 tags: [person]
 ---
 
@@ -12,10 +12,11 @@ tags: [person]
 - **所属**: Google
 - **担当ドラフト (champion)**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Temporal](../proposals/temporal.md)
 - **言及される提案ページ**: [Comparisons](../proposals/comparisons.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Temporal](../proposals/temporal.md)
-- **参加したミーティング**: 全 25 回
+- **参加したミーティング**: 全 26 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01

@@ -1,21 +1,22 @@
 ---
 abbr: CM
 name: Chip Morningstar
-orgs: [Agoric, Consensys, Invited expert, MetaMask, tbd]
-meetings_attended: 32
+orgs: [Agoric, Consensys, Consensys (MetaMask), Invited expert, MetaMask, tbd]
+meetings_attended: 33
 tags: [person]
 ---
 
 # CM — Chip Morningstar
 
 - **フルネーム**: Chip Morningstar
-- **所属**: Agoric / Consensys / Invited expert / MetaMask / tbd
+- **所属**: Agoric / Consensys / Consensys (MetaMask) / Invited expert / MetaMask / tbd
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
 - **言及される提案ページ**: [Intl.MessageFormat](../proposals/intl-messageformat.md)
-- **参加したミーティング**: 全 32 回
+- **参加したミーティング**: 全 33 回
 
 ## 参加したミーティング
 
+- [2026-07](../meetings/2026-07/README.md)
 - [2026-05](../meetings/2026-05/README.md)
 - [2026-03](../meetings/2026-03/README.md)
 - 2026-01
