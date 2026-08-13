@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Philip Chimento
 - **所属**: Igalia / Igalia S.L. / Igalia, S.L
 - **担当ドラフト (champion)**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Temporal](../proposals/temporal.md)
-- **言及される提案ページ**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Temporal](../proposals/temporal.md)
+- **言及される提案ページ**: [Amount](../proposals/amount.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Linear Matching](../proposals/linear-matching.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 37 回
 
 ## 参加したミーティング

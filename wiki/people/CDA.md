@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Chris de Almeida
 - **所属**: IBM / International Business Machines Corporation
-- **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Temporal](../proposals/temporal.md)
+- **担当ドラフト (champion)**: [Await Dictionary](../proposals/await-dictionary.md)
+- **言及される提案ページ**: [Await Dictionary](../proposals/await-dictionary.md), [Decorators](../proposals/decorators.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Linear Matching](../proposals/linear-matching.md), [Map get and delete](../proposals/map-get-and-delete.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 26 回
 
 ## 参加したミーティング

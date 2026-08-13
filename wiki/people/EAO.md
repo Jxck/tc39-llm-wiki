@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Eemeli Aro
 - **所属**: Mozilla
-- **担当ドラフト (champion)**: [Default Behaviours for some Intl APIs](../proposals/intl-default-behaviours.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Stable Formatting](../proposals/stable-formatting.md)
-- **言及される提案ページ**: [Amount](../proposals/amount.md), [Comparisons](../proposals/comparisons.md), [Default Behaviours for some Intl APIs](../proposals/intl-default-behaviours.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Stable Formatting](../proposals/stable-formatting.md)
+- **担当ドラフト (champion)**: [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Default Behaviours for some Intl APIs](../proposals/intl-default-behaviours.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Stable Formatting](../proposals/stable-formatting.md)
+- **言及される提案ページ**: [Amount](../proposals/amount.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Comparisons](../proposals/comparisons.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Default Behaviours for some Intl APIs](../proposals/intl-default-behaviours.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Stable Formatting](../proposals/stable-formatting.md)
 - **参加したミーティング**: 全 21 回
 
 ## 参加したミーティング

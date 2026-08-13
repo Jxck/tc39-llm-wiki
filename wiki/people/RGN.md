@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Richard Gibson
 - **所属**: Agoric / Open JS Foundation / OpenJS Foundation
-- **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Temporal](../proposals/temporal.md)
+- **担当ドラフト (champion)**: [BigInt from exponential](../proposals/bigint-from-exponential.md)
+- **言及される提案ページ**: [Amount](../proposals/amount.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Error code property](../proposals/error-code-property.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Linear Matching](../proposals/linear-matching.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 30 回
 
 ## 参加したミーティング

@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Luca Casonato
 - **所属**: Deno / Deno Land / Deno Land Inc / Invited Expert
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Joint Iteration](../proposals/joint-iteration.md)
+- **言及される提案ページ**: [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Joint Iteration](../proposals/joint-iteration.md)
 - **言及される family ページ**: [Iterator helpers and friends](../families/iterator.md)
 - **参加したミーティング**: 全 16 回
 

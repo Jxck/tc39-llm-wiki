@@ -294,3 +294,14 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - 該当する既存提案ページへのリンク: joint-iteration / atomics-pause / explicit-resource-management(Editors Report)、amount(BigInt 指数表記・FMA・Duration units)、intl-sequence-units・temporal・intl-keep-trailing-zeros(Day 3)、records-and-tuples(JSON.parseImmutable・Composites)。
 - Day 2/3 のドラフトはサブエージェントで並列作成し、全議題の `### Conclusion` を raw と突き合わせて検証のうえ採用。
 - 生成物再生成: `extract_agenda.py`(88 会合・2814 議題、2026-07 の 34 議題を追加)、`extract_people.py` / `link_people.py`(人物ページの参加会合に 2026-07 がリンク付きで追加)。wiki/README.md の会合数記述を 88 会合 / 340 ファイル / 2814 議題に更新。
+
+## [2026-08-13] ingest | 2026-07 会合(115th)で stage が動いた 8 提案 + 既存 2 ページ更新
+
+- 新規提案ページ 8 件: await-dictionary(S3。2023-03 S1 → 2025-11 に 2 を跳ばし 2.7 → 2026-07 S3)・thenable-curtailment(S2.7。2025-02 S1 → 2026-03 S2 → 2026-07 2.7)・error-code-property(S2。DOMException 整合が advancement 条件)・fused-multiply-add(S2。初提示で 0 → 2 直行)・bigint-from-exponential(S1。needs-consensus PR #3857 から転換)・map-get-and-delete(S1。旧 Map take、`getAndDelete` へ rename)・linear-matching(S1。ReDoS 対策、champion group MF+AUR+CPC)・intl-datetimeformat-alignment(S1、ECMA-402)。
+- 経緯は各会合 notes の `### Conclusion` で裏取り(2023-03 mar-22 / 2025-02 feb-18 / 2025-09 sep-23 / 2025-11 nov-18 / 2026-03 mar-11・mar-12 / 2026-05 may-19〜21 / 2026-07 全 3 日)。frontmatter は canonical(raw/proposals)と照合。
+- **canonical 追従遅れ(wiki が正)**: thenable-curtailment は canonical README が Stage 2 セクションのまま(2026-07 の 2.7 consensus 未反映)。wiki は notes を根拠に stage2.7。次回 /update 後の lint で降格しないこと(stable-formatting / intl-sequence-units と同型)。
+- **champion 注記**: linear-matching の frontmatter champions は canonical の MF に加え、2026-07 notes で MF が champion group と明言した AUR(Aurèle Barrière)・CPC(Clément Pit-Claudel)を含む。
+- 既存ページ更新: amount.md(2026-07 行 + 論点「波及した周辺提案」+ 関連提案に bigint-from-exponential / fused-multiply-add)・intl-sequence-units.md(2026-07 行 + 論点「time/duration units を含めるか(未決)」)。
+- tools: `extract_proposals.py` の ALIASES に "Curtailing the power of Thenables" → thenable-curtailment.md を追加(canonical 名と wiki title の乖離対応)。index.md 再生成で 8 ページ全てリンク化。`extract_people.py`(65 → 75 名。AUR/AVK/CPC/DJM/DRO/JFI/JSL/LVU/MAG/SHS 追加)/ `link_people.py`(8 ページの略号リンク化)。
+- README カタログに 8 行追加(精読済み 23 → 31 提案)。oxfmt clean(全 145 ファイル)。
+- 運用メモ: ページ下書きの並列サブエージェント 8 本が全て API 529(Overloaded)で失敗したため、raw のセクションを直接精読してインラインで執筆した。

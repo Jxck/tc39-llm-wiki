@@ -114,6 +114,7 @@ ALIASES = {
     "regexpbufferboundariesazz": "regexp-buffer-boundaries.md",
     "keeptrailingzerosinintlnumberformatandintlpluralrules": "intl-keep-trailing-zeros.md",
     "istemplateobject": "is-template-object.md",
+    "curtailingthepowerofthenables": "thenable-curtailment.md",
 }
 
 

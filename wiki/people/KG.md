@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Kevin Gibbons
 - **所属**: F5 / F5 Networks / Invited Expert
 - **担当ドラフト (champion)**: [Iterator Join](../proposals/iterator-join.md)
-- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Iterator Join](../proposals/iterator-join.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Upsert](../proposals/upsert.md)
+- **言及される提案ページ**: [Await Dictionary](../proposals/await-dictionary.md), [Decorators](../proposals/decorators.md), [Error code property](../proposals/error-code-property.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Iterator Join](../proposals/iterator-join.md), [Linear Matching](../proposals/linear-matching.md), [Map get and delete](../proposals/map-get-and-delete.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Thenable Curtailment](../proposals/thenable-curtailment.md), [Upsert](../proposals/upsert.md)
 - **言及される family ページ**: [Iterator helpers and friends](../families/iterator.md)
 - **参加したミーティング**: 全 21 回
 

@@ -12,31 +12,39 @@ TC39 plenary 議事録(`raw/notes`、2012-05〜2026-07 / 88 会合 / 340 ファ�
 
 ## 精読済みの提案
 
-| 提案                                                                      | 現ステージ          | 状態      | 概要                                                                                             |
-| ------------------------------------------------------------------------- | ------------------- | --------- | ------------------------------------------------------------------------------------------------ |
-| [Temporal](proposals/temporal.md)                                         | Stage 4 (2026-03)   | shipped   | `Date` を置き換える immutable な日付時刻 API。約 9 年がかりで Stage 4 到達。                     |
-| [Decorators](proposals/decorators.md)                                     | Stage 2.7 (2026-05) | stage2.7  | class への `@expr` 注釈。3 度の再設計を経て 2022 Stage 3 も、出荷ゼロで 2026-05 に 2.7 へ降格。  |
-| [Records & Tuples](proposals/records-and-tuples.md)                       | Stage 2(撤回)       | withdrawn | deeply immutable な value type `#{}` / `#[]`。2025-04 に撤回。                                   |
-| [Upsert](proposals/upsert.md)                                             | Stage 4 (2026-01)   | shipped   | `Map.prototype.getOrInsert` / `getOrInsertComputed`。命名と責務分割で約 6 年難航。               |
-| [Intl Era/Month Code](proposals/intl-era-month-code.md)                   | Stage 4 (2026-03)   | shipped   | 非 ISO 8601 カレンダーの era/monthCode を ECMA-402 に規定。Temporal と同時に Stage 4。           |
-| [Joint Iteration](proposals/joint-iteration.md)                           | Stage 4 (2026-05)   | shipped   | `Iterator.zip` / `Iterator.zipKeyed`。複数 iterator を位置対応でまとめる。                       |
-| [Atomics.pause](proposals/atomics-pause.md)                               | Stage 4 (2026-05)   | shipped   | spin loop 向けの CPU pause ヒント(x86 PAUSE / ARM ISB)。                                         |
-| [Explicit Resource Management](proposals/explicit-resource-management.md) | Stage 4 (2026-05)   | shipped   | `using` / `await using` による決定的リソース解放。約 8 年がかり。                                |
-| [Intl.MessageFormat](proposals/intl-messageformat.md)                     | Stage 1 (2022-03)   | stage1    | MessageFormat 2.0 (MF2) を JS に公開。DSL/parser を言語に入れる是非で stuck。                    |
-| [Amount](proposals/amount.md)                                             | Stage 2 (2026-05)   | stage2    | 数値+単位の immutable value type(旧 Measure)。`convertTo()` と i18n 連携。                       |
-| [Iterator Chunking](proposals/iterator-chunking.md)                       | Stage 3 (2026-05)   | stage3    | `Iterator.prototype.chunks` / `windows`。固定長/スライディングで複数値消費。                     |
-| [Iterator Includes](proposals/iterator-includes.md)                       | Stage 3 (2026-05)   | stage3    | `Array.prototype.includes` の iterator 版。                                                      |
-| [Iterator Join](proposals/iterator-join.md)                               | Stage 3 (2026-05)   | stage3    | `Array.prototype.join` の iterator 版。                                                          |
-| [RegExp Buffer Boundaries](proposals/regexp-buffer-boundaries.md)         | Stage 3 (2026-05)   | stage3    | `\A` / `\z` / `\Z` の buffer 境界アンカー(`m` flag 非依存)。2026-05 に一気に Stage 3。           |
-| [Dynamic Code Brand Checks](proposals/dynamic-code-brand-checks.md)       | Stage 3 (2024-04)   | stage3    | `eval` / `new Function` の Trusted Types 連携。2026-05 は normative change で Stage 4 持ち越し。 |
-| [Error Stack Accessor](proposals/error-stack-accessor.md)                 | Stage 3 (2026-05)   | stage3    | `Error.prototype.stack` を accessor として標準化(Error Stacks からの carve-out)。                |
-| [Intl Keep Trailing Zeros](proposals/intl-keep-trailing-zeros.md)         | Stage 3 (2026-05)   | stage3    | `Intl.NumberFormat` / `PluralRules` で末尾の小数ゼロを保持。                                     |
-| [Stable Formatting](proposals/stable-formatting.md)                       | Stage 2 (2026-05)   | stage2    | `zxx` ロケールで locale 非依存の安定整形。`Intl` の誤用/テスト用途の代替。                       |
-| [Intl Sequence Units](proposals/intl-sequence-units.md)                   | Stage 2 (2026-05)   | stage2    | 複合単位の並び(例 `6 ft 0 in`)整形。object ベース入力で Stage 2。                                |
-| [Intl Default Behaviours](proposals/intl-default-behaviours.md)           | Stage 1 (2026-05)   | stage1    | `Collator` / `Segmenter` の locale 非依存デフォルト(`und` root)。Stable Formatting の補完。      |
-| [export all from](proposals/export-all-from.md)                           | Stage 1 (2026-05)   | stage1    | `export * from` 系の re-export 構文拡張。                                                        |
-| [Comparisons](proposals/comparisons.md)                                   | Stage 1 (2026-05)   | stage1    | 深い比較と差分報告(deviation)を native 化。旧 "Assertions"。                                     |
-| [Array.isTemplateObject](proposals/is-template-object.md)                 | Stage 2(withdrawn)  | withdrawn | template call-site object の判定。2026-05 に withdrawn(需要不足 + realm 懸念)。                  |
+| 提案                                                                        | 現ステージ          | 状態      | 概要                                                                                             |
+| --------------------------------------------------------------------------- | ------------------- | --------- | ------------------------------------------------------------------------------------------------ |
+| [Temporal](proposals/temporal.md)                                           | Stage 4 (2026-03)   | shipped   | `Date` を置き換える immutable な日付時刻 API。約 9 年がかりで Stage 4 到達。                     |
+| [Decorators](proposals/decorators.md)                                       | Stage 2.7 (2026-05) | stage2.7  | class への `@expr` 注釈。3 度の再設計を経て 2022 Stage 3 も、出荷ゼロで 2026-05 に 2.7 へ降格。  |
+| [Records & Tuples](proposals/records-and-tuples.md)                         | Stage 2(撤回)       | withdrawn | deeply immutable な value type `#{}` / `#[]`。2025-04 に撤回。                                   |
+| [Upsert](proposals/upsert.md)                                               | Stage 4 (2026-01)   | shipped   | `Map.prototype.getOrInsert` / `getOrInsertComputed`。命名と責務分割で約 6 年難航。               |
+| [Intl Era/Month Code](proposals/intl-era-month-code.md)                     | Stage 4 (2026-03)   | shipped   | 非 ISO 8601 カレンダーの era/monthCode を ECMA-402 に規定。Temporal と同時に Stage 4。           |
+| [Joint Iteration](proposals/joint-iteration.md)                             | Stage 4 (2026-05)   | shipped   | `Iterator.zip` / `Iterator.zipKeyed`。複数 iterator を位置対応でまとめる。                       |
+| [Atomics.pause](proposals/atomics-pause.md)                                 | Stage 4 (2026-05)   | shipped   | spin loop 向けの CPU pause ヒント(x86 PAUSE / ARM ISB)。                                         |
+| [Explicit Resource Management](proposals/explicit-resource-management.md)   | Stage 4 (2026-05)   | shipped   | `using` / `await using` による決定的リソース解放。約 8 年がかり。                                |
+| [Intl.MessageFormat](proposals/intl-messageformat.md)                       | Stage 1 (2022-03)   | stage1    | MessageFormat 2.0 (MF2) を JS に公開。DSL/parser を言語に入れる是非で stuck。                    |
+| [Amount](proposals/amount.md)                                               | Stage 2 (2026-05)   | stage2    | 数値+単位の immutable value type(旧 Measure)。`convertTo()` と i18n 連携。                       |
+| [Iterator Chunking](proposals/iterator-chunking.md)                         | Stage 3 (2026-05)   | stage3    | `Iterator.prototype.chunks` / `windows`。固定長/スライディングで複数値消費。                     |
+| [Iterator Includes](proposals/iterator-includes.md)                         | Stage 3 (2026-05)   | stage3    | `Array.prototype.includes` の iterator 版。                                                      |
+| [Iterator Join](proposals/iterator-join.md)                                 | Stage 3 (2026-05)   | stage3    | `Array.prototype.join` の iterator 版。                                                          |
+| [RegExp Buffer Boundaries](proposals/regexp-buffer-boundaries.md)           | Stage 3 (2026-05)   | stage3    | `\A` / `\z` / `\Z` の buffer 境界アンカー(`m` flag 非依存)。2026-05 に一気に Stage 3。           |
+| [Dynamic Code Brand Checks](proposals/dynamic-code-brand-checks.md)         | Stage 3 (2024-04)   | stage3    | `eval` / `new Function` の Trusted Types 連携。2026-05 は normative change で Stage 4 持ち越し。 |
+| [Error Stack Accessor](proposals/error-stack-accessor.md)                   | Stage 3 (2026-05)   | stage3    | `Error.prototype.stack` を accessor として標準化(Error Stacks からの carve-out)。                |
+| [Intl Keep Trailing Zeros](proposals/intl-keep-trailing-zeros.md)           | Stage 3 (2026-05)   | stage3    | `Intl.NumberFormat` / `PluralRules` で末尾の小数ゼロを保持。                                     |
+| [Stable Formatting](proposals/stable-formatting.md)                         | Stage 2 (2026-05)   | stage2    | `zxx` ロケールで locale 非依存の安定整形。`Intl` の誤用/テスト用途の代替。                       |
+| [Intl Sequence Units](proposals/intl-sequence-units.md)                     | Stage 2 (2026-05)   | stage2    | 複合単位の並び(例 `6 ft 0 in`)整形。object ベース入力で Stage 2。                                |
+| [Intl Default Behaviours](proposals/intl-default-behaviours.md)             | Stage 1 (2026-05)   | stage1    | `Collator` / `Segmenter` の locale 非依存デフォルト(`und` root)。Stable Formatting の補完。      |
+| [export all from](proposals/export-all-from.md)                             | Stage 1 (2026-05)   | stage1    | `export * from` 系の re-export 構文拡張。                                                        |
+| [Comparisons](proposals/comparisons.md)                                     | Stage 1 (2026-05)   | stage1    | 深い比較と差分報告(deviation)を native 化。旧 "Assertions"。                                     |
+| [Array.isTemplateObject](proposals/is-template-object.md)                   | Stage 2(withdrawn)  | withdrawn | template call-site object の判定。2026-05 に withdrawn(需要不足 + realm 懸念)。                  |
+| [Await Dictionary](proposals/await-dictionary.md)                           | Stage 3 (2026-07)   | stage3    | `Promise.allKeyed` / `allSettledKeyed`。名前付き `Promise.all`。2025-11 に 2 を跳ばし 2.7。      |
+| [Thenable Curtailment](proposals/thenable-curtailment.md)                   | Stage 2.7 (2026-07) | stage2.7  | user code を走らせない `SafePromiseResolve`。thenable 経由の CVE 対策。WebIDL 採用が狙い。       |
+| [Error code property](proposals/error-code-property.md)                     | Stage 2 (2026-07)   | stage2    | `Error` に `code` を options bag で。DOMException との整合が advancement 条件。                  |
+| [Fused Multiply-Add](proposals/fused-multiply-add.md)                       | Stage 2 (2026-07)   | stage2    | `Math.fma`(IEEE 754-2008 必須演算)。初提示で 0 → 2 直行。Amount の conversion 精度が契機。       |
+| [BigInt from exponential](proposals/bigint-from-exponential.md)             | Stage 1 (2026-07)   | stage1    | 指数表記文字列の `BigInt` 受理。needs-consensus PR #3857 から転換。                              |
+| [Map get and delete](proposals/map-get-and-delete.md)                       | Stage 1 (2026-07)   | stage1    | `Map.prototype.getAndDelete`(旧 take)。取得と削除を 1 hash lookup で。                           |
+| [Linear Matching](proposals/linear-matching.md)                             | Stage 1 (2026-07)   | stage1    | ReDoS への組み込み対策。linear 保証の regexp 実行を探る。                                        |
+| [Intl.DateTimeFormat Alignment](proposals/intl-datetimeformat-alignment.md) | Stage 1 (2026-07)   | stage1    | HTML `<time format>` / MessageFormat と datetime formatting options を整合。                     |
 
 ## family(カテゴリ横断のまとめ)
 

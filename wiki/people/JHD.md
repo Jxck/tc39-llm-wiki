@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Jordan Harband
 - **所属**: Coinbase / HeroDevs / Herodevs / Invited Expert / Invited expert / Socket / Socket Inc / Socket, Inc / invited expert
-- **担当ドラフト (champion)**: [Error Stack Accessor](../proposals/error-stack-accessor.md), [Array.isTemplateObject](../proposals/is-template-object.md)
-- **言及される提案ページ**: [Amount](../proposals/amount.md), [Decorators](../proposals/decorators.md), [Error Stack Accessor](../proposals/error-stack-accessor.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Joint Iteration](../proposals/joint-iteration.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
+- **担当ドラフト (champion)**: [Await Dictionary](../proposals/await-dictionary.md), [Error Stack Accessor](../proposals/error-stack-accessor.md), [Array.isTemplateObject](../proposals/is-template-object.md)
+- **言及される提案ページ**: [Amount](../proposals/amount.md), [Await Dictionary](../proposals/await-dictionary.md), [Decorators](../proposals/decorators.md), [Error code property](../proposals/error-code-property.md), [Error Stack Accessor](../proposals/error-stack-accessor.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Joint Iteration](../proposals/joint-iteration.md), [Linear Matching](../proposals/linear-matching.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
 - **参加したミーティング**: 全 35 回
 
 ## 参加したミーティング

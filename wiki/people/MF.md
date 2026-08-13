@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Michael Ficarra
 - **所属**: ?? / F5 / F5 Networks
-- **担当ドラフト (champion)**: [Iterator Chunking](../proposals/iterator-chunking.md), [Iterator Includes](../proposals/iterator-includes.md), [Joint Iteration](../proposals/joint-iteration.md)
-- **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Comparisons](../proposals/comparisons.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Iterator Chunking](../proposals/iterator-chunking.md), [Iterator Includes](../proposals/iterator-includes.md), [Joint Iteration](../proposals/joint-iteration.md), [Temporal](../proposals/temporal.md)
+- **担当ドラフト (champion)**: [Iterator Chunking](../proposals/iterator-chunking.md), [Iterator Includes](../proposals/iterator-includes.md), [Joint Iteration](../proposals/joint-iteration.md), [Linear Matching](../proposals/linear-matching.md)
+- **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Await Dictionary](../proposals/await-dictionary.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Comparisons](../proposals/comparisons.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Iterator Chunking](../proposals/iterator-chunking.md), [Iterator Includes](../proposals/iterator-includes.md), [Joint Iteration](../proposals/joint-iteration.md), [Linear Matching](../proposals/linear-matching.md), [Map get and delete](../proposals/map-get-and-delete.md), [Temporal](../proposals/temporal.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
 - **言及される family ページ**: [Iterator helpers and friends](../families/iterator.md)
 - **参加したミーティング**: 全 16 回
 

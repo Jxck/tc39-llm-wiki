@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Waldemar Horwat
 - **所属**: Google / Invited Expert
-- **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Amount](../proposals/amount.md), [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../proposals/decorators.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Upsert](../proposals/upsert.md)
+- **担当ドラフト (champion)**: [Fused Multiply-Add](../proposals/fused-multiply-add.md)
+- **言及される提案ページ**: [Amount](../proposals/amount.md), [Atomics.pause](../proposals/atomics-pause.md), [Await Dictionary](../proposals/await-dictionary.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Decorators](../proposals/decorators.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Linear Matching](../proposals/linear-matching.md), [Map get and delete](../proposals/map-get-and-delete.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Upsert](../proposals/upsert.md)
 - **参加したミーティング**: 全 39 回
 
 ## 参加したミーティング

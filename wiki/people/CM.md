@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Chip Morningstar
 - **所属**: Agoric / Consensys / Consensys (MetaMask) / Invited expert / MetaMask / tbd
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Intl.MessageFormat](../proposals/intl-messageformat.md)
+- **言及される提案ページ**: [Intl.MessageFormat](../proposals/intl-messageformat.md), [Map get and delete](../proposals/map-get-and-delete.md)
 - **参加したミーティング**: 全 33 回
 
 ## 参加したミーティング

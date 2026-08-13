@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Keith Miller
 - **所属**: Apple / Apple Inc / Apple Inc.
 - **担当ドラフト (champion)**: (精読済みページ内では該当なし)
-- **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [Comparisons](../proposals/comparisons.md), [Upsert](../proposals/upsert.md)
+- **言及される提案ページ**: [Atomics.pause](../proposals/atomics-pause.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Comparisons](../proposals/comparisons.md), [Error code property](../proposals/error-code-property.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Linear Matching](../proposals/linear-matching.md), [Upsert](../proposals/upsert.md)
 - **参加したミーティング**: 全 17 回
 
 ## 参加したミーティング

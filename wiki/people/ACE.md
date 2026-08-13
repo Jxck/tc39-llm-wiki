@@ -10,8 +10,8 @@ tags: [person]
 
 - **フルネーム**: Ashley Claymore
 - **所属**: Bloomberg
-- **担当ドラフト (champion)**: [Records & Tuples](../proposals/records-and-tuples.md)
-- **言及される提案ページ**: [Records & Tuples](../proposals/records-and-tuples.md)
+- **担当ドラフト (champion)**: [Await Dictionary](../proposals/await-dictionary.md), [Records & Tuples](../proposals/records-and-tuples.md)
+- **言及される提案ページ**: [Await Dictionary](../proposals/await-dictionary.md), [Map get and delete](../proposals/map-get-and-delete.md), [Records & Tuples](../proposals/records-and-tuples.md)
 - **参加したミーティング**: 全 22 回
 
 ## 参加したミーティング

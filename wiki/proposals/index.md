@@ -23,7 +23,7 @@
 
 ### Stage 3 (12)
 
-- Await Dictionary
+- [Await Dictionary](await-dictionary.md)
 - Deferring Module Evaluation
 - [Dynamic Code Brand Checks](dynamic-code-brand-checks.md)
 - [Error Stack Accessor](error-stack-accessor.md)
@@ -52,15 +52,15 @@
 - Async Context
 - Async Iterator helpers
 - collection normalization
-- Curtailing the power of "Thenables"
+- [Curtailing the power of "Thenables"](thenable-curtailment.md)
 - Deferred Re-exports
 - Destructure Private Fields
-- Error code property
+- [Error code property](error-code-property.md)
 - Error.captureStackTrace
 - Extractors
 - Function implementation hiding
 - function.sent metaproperty
-- Fused Multiply-Add
+- [Fused Multiply-Add](fused-multiply-add.md)
 - Iterator.range
 - JSON.parseImmutable
 - Math.clamp
@@ -88,7 +88,7 @@
 - async do expressions
 - Async initialization
 - await operations
-- Bigint from exponential
+- [Bigint from exponential](bigint-from-exponential.md)
 - BigInt Math
 - Binary AST
 - Block Params
@@ -137,9 +137,9 @@
 - Iterator unique
 - Legacy reflection features for functions in JavaScript
 - Limited ArrayBuffer
-- Linear Matching
+- [Linear Matching](linear-matching.md)
 - Locale Extensions
-- Map get and delete
+- [Map get and delete](map-get-and-delete.md)
 - Mass Proxy Revocation
 - Maximally minimal mixins
 - Module Global
@@ -276,7 +276,7 @@
 - Intl Energy Units
 - Intl LocaleMatcher
 - [Intl Sequence Units](intl-sequence-units.md)
-- Intl.DateTimeFormat Alignment With Other Standards
+- [Intl.DateTimeFormat Alignment With Other Standards](intl-datetimeformat-alignment.md)
 - [Intl.MessageFormat](intl-messageformat.md)
 - Intl.MessageResource
 - Intl.Segmenter v2

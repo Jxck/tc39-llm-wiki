@@ -17,9 +17,10 @@ champion は [SFC](../people/SFC.md)(Shane Carr)。
 
 ## ステージ遷移
 
-| 会合                                                  | できごと                                                                                                                | Stage   |
-| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md) | **Stage 1 と Stage 2 に到達**(object ベースの入力設計で)。reviewer は [EAO](../people/EAO.md) / [DLM](../people/DLM.md) | → 1 → 2 |
+| 会合                                                   | できごと                                                                                                                | Stage   |
+| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)  | **Stage 1 と Stage 2 に到達**(object ベースの入力設計で)。reviewer は [EAO](../people/EAO.md) / [DLM](../people/DLM.md) | → 1 → 2 |
+| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | Duration units の扱いを plenary で両論提示(TG2 で二分)。iteration 継続                                                  | 2       |
 
 ```mermaid
 xychart-beta
@@ -41,6 +42,10 @@ xychart-beta
 
 [WH](../people/WH.md) はゼロ値(例: `6 ft 0 in`)を表示するか隠すか、開発者が選べるかを質問(follow-up issue 化)。arc 分・秒は現状 `Intl` 非対応でスコープ外と整理されました。
 
+### time/duration units を含めるか(未決)
+
+2026-07 に [SFC](../people/SFC.md) が「hours-and-minutes のような時間系 sequence units を扱うか」を提起。TG2 で見解が二分したため推奨なしで plenary に両論を提示しました。除外派([PFC](../people/PFC.md) ら)は duration の footgun(DST・暦月長)と、[Temporal](../proposals/temporal.md) + `Intl.DurationFormat` という正道が既にあることを重視し、Temporal と異なる第 2 の duration 変換規則を作らないことを求めました。包含派([WH](../people/WH.md)、[RGN](../people/RGN.md))は CLDR units.xml との整合と、[Amount](../proposals/amount.md) が任意の well-formed unit を許す以上 time units だけ拒否するのは一貫しないことを挙げました。hybrid 案(format 時に NumberFormat/DurationFormat を自動選択)も含め iteration 継続で未決です。
+
 ## 関連提案
 
 - [Amount](../proposals/amount.md) — 数値+単位を束ねる container 提案。単位整形という点で隣接。
@@ -48,3 +53,4 @@ xychart-beta
 ## 出典
 
 - [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 1 / Stage 2
+- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — Duration units の両論提示(iteration 継続)

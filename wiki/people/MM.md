@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Mark S. Miller
 - **所属**: Agoric
 - **担当ドラフト (champion)**: [Error Stack Accessor](../proposals/error-stack-accessor.md)
-- **言及される提案ページ**: [Comparisons](../proposals/comparisons.md), [Decorators](../proposals/decorators.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Error Stack Accessor](../proposals/error-stack-accessor.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Joint Iteration](../proposals/joint-iteration.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
+- **言及される提案ページ**: [Await Dictionary](../proposals/await-dictionary.md), [Comparisons](../proposals/comparisons.md), [Decorators](../proposals/decorators.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Error code property](../proposals/error-code-property.md), [Error Stack Accessor](../proposals/error-stack-accessor.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Joint Iteration](../proposals/joint-iteration.md), [Linear Matching](../proposals/linear-matching.md), [Map get and delete](../proposals/map-get-and-delete.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
 - **参加したミーティング**: 全 16 回
 
 ## 参加したミーティング

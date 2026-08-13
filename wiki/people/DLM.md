@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Dan Minor
 - **所属**: Mozilla / Mozilla Foundation
 - **担当ドラフト (champion)**: [Upsert](../proposals/upsert.md)
-- **言及される提案ページ**: [Decorators](../proposals/decorators.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Upsert](../proposals/upsert.md)
+- **言及される提案ページ**: [Await Dictionary](../proposals/await-dictionary.md), [Decorators](../proposals/decorators.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Upsert](../proposals/upsert.md)
 - **参加したミーティング**: 全 25 回
 
 ## 参加したミーティング

@@ -11,7 +11,7 @@ tags: [person]
 - **フルネーム**: Shane Carr
 - **所属**: Google
 - **担当ドラフト (champion)**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Temporal](../proposals/temporal.md)
-- **言及される提案ページ**: [Comparisons](../proposals/comparisons.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Temporal](../proposals/temporal.md)
+- **言及される提案ページ**: [Await Dictionary](../proposals/await-dictionary.md), [Comparisons](../proposals/comparisons.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Linear Matching](../proposals/linear-matching.md), [Temporal](../proposals/temporal.md)
 - **参加したミーティング**: 全 26 回
 
 ## 参加したミーティング
