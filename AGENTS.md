@@ -225,7 +225,8 @@ wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」�
 
 **note(submodule)と wiki の同期**: `raw/notes` を pull したり PR を checkout したら、**必ずその submodule ポインタの変更をコミットする**(`[wiki]`)。wiki が要約・参照した note の状態を常に記録し、両者を同期させるため(ポインタを未コミットのまま放置しない)。
 
-- 未マージ PR にしかない会合を要約する場合: `cd raw/notes && git fetch origin pull/<PR>/head:pr-<PR> && git checkout pr-<PR>` で checkout → **ポインタをコミット**(`[wiki]`)→ 要約を生成し `[summarise]` でコミット。
+- 未マージ PR にしかない会合を要約する場合:
+- `cd raw/notes && git fetch origin pull/<PR>/head:pr-<PR> && git checkout pr-<PR>` で checkout → **ポインタをコミット**(`[wiki]`)→ 要約を生成し `[summarise]` でコミット。
 - 以後のルーチン同期(更新確認・差分表示・PR マージ後の main 追跡への復帰)は **/update**(「Update(raw ソースの同期)」)で行う。その同期操作で動いたポインタのコミットは `[update]`(Summarise 中の臨時 checkout で動いたポインタは上記のとおり `[wiki]`)。
 - 注意: PR head のコミットは fork 由来だと plain な `git submodule update` で取得できないことがある(別クローンでの完全な再現性はマージ後に確保される)。
 
