@@ -42,7 +42,7 @@ tools/
   extract_proposals.py      raw/proposals から全提案ステージ一覧 wiki/proposals/index.md を生成(Stage 4 は未収載分のみに filter)
   extract_people.py         提案ページに登場する人物の people/ ページ生成
   link_people.py            提案・family・会合要約ページ中の略号を [ABBR](<rel>/people/ABBR.md) にリンク
-  link_proposals.py         会合要約中の提案名を提案ページにリンクし、トピック先頭の「提案ページ:」行を保証
+  link_proposals.py         会合要約中の提案名を提案ページにリンクし、トピック冒頭の meta 行(wiki → proposal → Slides)を保証
 ```
 
 ## 言語規約
@@ -213,8 +213,10 @@ wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」�
 1. 対象会合の各日ファイル `raw/notes/meetings/<YYYY-MM>/<month-DD>.md` を読む。
 2. **日ごとに 1 ファイル** `wiki/meetings/<YYYY-MM>/<YYYY-MM-DD>.md` を生成。各日の議題(`## <topic>`)ごとに:
    - 見出しは原文のトピック名(英語のまま、`##`)。
-   - そのトピックが議論している**既存の提案ページ**(`wiki/proposals/<slug>.md`)があれば、**必ず最初の箇条書き**に `- 提案ページ: [Title](../../proposals/<slug>.md)` を置く(Slides より前。該当が無ければ付けない)。見出しが提案名を含む分は `tools/link_proposals.py` が自動で補完・先頭へ移動するが、見出しに提案名が無いトピック(needs-consensus PR 等)は手で付ける。
-   - 発表者のスライドリンク(`* [slides](URL)`)があれば、その次に `- Slides: [link](URL)` として置く。
+   - 冒頭の meta 箇条書きは **wiki → proposal → Slides の順**で置く(いずれも該当が無ければ付けない):
+     - `- wiki: [Title](../../proposals/<slug>.md)` — そのトピックが議論している**既存の提案ページ**。**必ず最初**。見出しが提案名を含む分は `tools/link_proposals.py` が自動で補完・先頭へ移動するが、見出しに提案名が無いトピック(needs-consensus PR 等)は手で付ける。
+     - `- proposal: [name](URL)` — 原文の提案リポジトリへのリンク(`* [proposal](URL)`)。
+     - `- Slides: [link](URL)` — 発表者のスライドリンク(`* [slides](URL)`)。
    - 続けて **3〜5 行**で日本語要約(地の文は日本語・用語/API/略号は英語、wiki 共通の言語規約に従う)。本文中の人物略号と既存提案ページの提案名は**素テキストで書いてよい**(手順 4 のスクリプトがリンク化する)。
    - `### Conclusion` / `### Speaker's Summary of Key Points` があれば、**その結論を必ず要約に含める**(stage 遷移・consensus の有無など)。
    - 委員会の定型(Opening & Welcome / Secretary's Report / 各種 Status Update など議論性の薄いもの)は省いてよい。
@@ -225,7 +227,7 @@ wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」�
 4. **リンクの生成**(要約を書き終えたら必ず実行):
    - `python3 tools/extract_people.py` — people ページの「参加したミーティング」は要約(`wiki/meetings/<YYYY-MM>/README.md`)の有無でリンク化を切り替えるため、新しい会合を要約したら再生成しないと既存の人物ページが素テキストのまま取り残される。
    - `python3 tools/link_people.py` — 要約本文中の人物略号を `[ABBR](../../people/ABBR.md)` にリンク(冪等。ページのある略号のみ。JSC など多義の略号は自動リンクせず、人物の場合だけ手でリンクする)。
-   - `python3 tools/link_proposals.py` — 要約本文中の提案名を `[Title](../../proposals/<slug>.md)` にリンクし、トピック先頭の `- 提案ページ:` 行を保証(冪等。ページのある提案のみ。表記揺れは script の `ALIASES` に追記)。
+   - `python3 tools/link_proposals.py` — 要約本文中の提案名を `[Title](../../proposals/<slug>.md)` にリンクし、トピック冒頭の meta 箇条書き(`- wiki:` を先頭に wiki → proposal → Slides の順)を保証(冪等。ページのある提案のみ。表記揺れは script の `ALIASES` に追記)。
 5. 完了後 `[summarise]` でコミットし、`wiki/log.md` に記録。
 
 **note(submodule)と wiki の同期**: `raw/notes` を pull したり PR を checkout したら、**必ずその submodule ポインタの変更をコミットする**(`[wiki]`)。wiki が要約・参照した note の状態を常に記録し、両者を同期させるため(ポインタを未コミットのまま放置しない)。

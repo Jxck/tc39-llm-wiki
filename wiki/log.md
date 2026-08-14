@@ -315,3 +315,9 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - **AGENTS.md**: Summarise の対象指定に tc39/notes の PR 番号/URL を明記(checkout 手順へ接続)。手順 2 を「提案ページ bullet を最初(Slides より前)」に改訂、手順 4 を「リンクの生成」として extract_people / link_people / link_proposals の 3 点セットに拡張。Ingest 手順 4・Lint/Update の再生成手順にも link_proposals.py を追加。人物ページ節に meetings 対応と AMBIGUOUS 方針を追記。
 - **コマンド**: `.claude/commands/summarise.md` の argument-hint を「会合 (YYYY-MM) | PR 番号/URL」に更新。
 - wiki/README.md の人物ページ節を現状(75 名・meetings 対応・link_proposals)に同期。
+
+## [2026-08-15] wiki | 会合要約の meta 行を「wiki → proposal → Slides」に統一
+
+- ラベルを `- 提案ページ:` から `- wiki:` へ変更し、トピック冒頭の meta 箇条書きの順序を **wiki → proposal → Slides** に統一(ユーザ指定)。
+- `link_proposals.py` を改訂: 旧ラベルの自動移行と meta 3 種の抽出・並べ替えを実装(oxfmt との固定点を維持、冪等)。全 6 会合 18 ファイルに適用し、`提案ページ:` の残存 0 件を確認。
+- AGENTS.md の Summarise 手順 2(meta 行の定義と順序)・手順 4・tools 一覧を新規約に同期。

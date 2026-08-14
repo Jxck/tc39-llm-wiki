@@ -97,11 +97,23 @@ def page_title_of(fname):
 
 
 DAILY = re.compile(r"^\d{4}-\d{2}-\d{2}")
-PAGE_BULLET = re.compile(r"^- 提案ページ:")
+# "提案ページ" is the legacy label; existing bullets are migrated to "wiki".
+WIKI_BULLET = re.compile(r"^- (?:wiki|提案ページ):")
+PROPOSAL_BULLET = re.compile(r"^- proposal:")
+SLIDES_BULLET = re.compile(r"^- Slides:")
+
+
+def take_first(core, pat):
+    """Remove and return the first line matching pat (or None)."""
+    for j, l in enumerate(core):
+        if pat.match(l):
+            return core.pop(j)
+    return None
 
 
 def ensure_topic_bullets(lines, token_re, titles_ci, rel):
-    """Daily files: put a 提案ページ bullet first in heading-matched topics.
+    """Daily files: order each topic's meta bullets as wiki > proposal >
+    Slides, with the wiki bullet added from the heading when missing.
 
     The section is rebuilt in oxfmt's canonical shape (one blank line after
     the heading, one blank line between a list and a following paragraph) so
@@ -133,18 +145,22 @@ def ensure_topic_bullets(lines, token_re, titles_ci, rel):
             core.pop(0)
         while core and core[-1] == "":
             core.pop()
-        existing = next((l for l in core if PAGE_BULLET.match(l)), None)
-        if not existing and not fnames:
-            out.extend(section)  # nothing to place; keep the topic verbatim
+        wiki = take_first(core, WIKI_BULLET)
+        if wiki:
+            wiki = WIKI_BULLET.sub("- wiki:", wiki)  # migrate legacy label
+        elif fnames:
+            wiki = "- wiki: " + "、".join(
+                f"[{page_title_of(f)}]({rel}/{f})" for f in fnames
+            )
+        proposal = take_first(core, PROPOSAL_BULLET)
+        slides = take_first(core, SLIDES_BULLET)
+        header = [b for b in (wiki, proposal, slides) if b]
+        if not header:
+            out.extend(section)  # nothing to order; keep the topic verbatim
             continue
-        bullet = existing or "- 提案ページ: " + "、".join(
-            f"[{page_title_of(f)}]({rel}/{f})" for f in fnames
-        )
-        if existing:
-            core.remove(existing)
-            while core and core[0] == "":
-                core.pop(0)
-        rebuilt = [bullet]
+        while core and core[0] == "":
+            core.pop(0)
+        rebuilt = list(header)
         if core and not core[0].startswith("- "):
             rebuilt.append("")  # blank line between the list and prose
         rebuilt.extend(core)
