@@ -8,7 +8,7 @@
 
 ## 概要
 
-Amsterdam での3日間。**Stage 4 到達**は Joint Iteration / `Atomics.pause`(Dynamic Code Brand Checks は normative change の consensus のみで Stage 4 は次回再要求、Explicit Resource Management は条件達成で finished)。Stage 3 へ Iterator Chunking・Iterator Includes・Error stack accessor が進む一方、**Decorators(本体)と Decorator Metadata は Stage 3 → Stage 2.7 へ降格(regress)**するなど iterator 系・decorators 周りの動きが目立った。ほかに Intl(Stable Formatting / Sequence Units / Default Behaviours)、ESM/Source Phase Imports の normative PR、AsyncContext の web 統合、`export defer` / `export all from` / Module Scope Ceiling など module 系を議論。Stage 1 の "Comparisons"(deep comparison/deviation reporting)や、規制動向として **EU CRA(Cyber Resilience Act)** の解説セッションもあった。
+Amsterdam での3日間。**Stage 4 到達**は [Joint Iteration](../../proposals/joint-iteration.md) / `Atomics.pause`([Dynamic Code Brand Checks](../../proposals/dynamic-code-brand-checks.md) は normative change の consensus のみで Stage 4 は次回再要求、[Explicit Resource Management](../../proposals/explicit-resource-management.md) は条件達成で finished)。Stage 3 へ [Iterator Chunking](../../proposals/iterator-chunking.md)・[Iterator Includes](../../proposals/iterator-includes.md)・[Error stack accessor](../../proposals/error-stack-accessor.md) が進む一方、**[Decorators](../../proposals/decorators.md)(本体)と Decorator Metadata は Stage 3 → Stage 2.7 へ降格(regress)**するなど iterator 系・[decorators](../../proposals/decorators.md) 周りの動きが目立った。ほかに Intl([Stable Formatting](../../proposals/stable-formatting.md) / Sequence Units / Default Behaviours)、ESM/Source Phase Imports の normative PR、AsyncContext の web 統合、`export defer` / `export all from` / Module Scope Ceiling など module 系を議論。Stage 1 の "[Comparisons](../../proposals/comparisons.md)"(deep comparison/deviation reporting)や、規制動向として **EU CRA(Cyber Resilience Act)** の解説セッションもあった。
 
 ## 日次サマリー
 
@@ -20,50 +20,50 @@ Amsterdam での3日間。**Stage 4 到達**は Joint Iteration / `Atomics.pause
 
 `raw/notes/meetings/2026-05/may-19.md` の attendees より(略号 — 氏名 — 所属):
 
-| 略号 | 氏名                   | 所属               |
-| ---- | ---------------------- | ------------------ |
-| DLM  | Daniel Minor           | Mozilla            |
-| USA  | Ujjwal Sharma          | Igalia             |
-| SHN  | Samina Husain          | Ecma               |
-| CDA  | Chris de Almeida       | IBM                |
-| WH   | Waldemar Horwat        | Invited Expert     |
-| GTO  | Gustavo Tonietto       | Mozilla            |
-| ZTZ  | Zbyszek Tenerowicz     | Consensys          |
-| YSZ  | Yusuke Suzuki          | Apple              |
-| DJM  | Dmitry Makhnev         | JetBrains          |
-| LGH  | Linus Groh             | Bloomberg          |
-| JRL  | Justin Ridgewell       | Google             |
-| OFR  | Olivier Flückiger      | Google             |
-| AUR  | Aurèle Barrière        | CNRS               |
-| LPR  | Luna Pfeiffer          | Yavashark          |
-| CLA  | Caio Lima              | Igalia             |
-| RGN  | Richard Gibson         | Agoric             |
-| JHD  | Jordan Harband         | Socket             |
-| KM   | Keith Miller           | Apple              |
-| BSH  | Bradford C. Smith      | Google             |
-| MAH  | Mathieu Hofman         | Agoric             |
-| CM   | Chip Morningstar       | Consensys          |
-| MBH  | Mikhail Barash         | Univ. of Bergen    |
-| RBN  | Ron Buckton            | F5                 |
-| RBR  | Ruben Bridgewater      | Datadog            |
-| GCL  | Gus Caplan             | Deno               |
-| OMT  | Oliver Medhurst        | IE (Porffor)       |
-| ABO  | Andreu Botella         | Igalia             |
-| CHU  | Christian Ulbrich      | Zalari             |
-| TKP  | Tom Kopp               | Zalari             |
-| SRV  | Sergey Rubanov         | Invited Expert     |
-| EAO  | Eemeli Aro             | Mozilla            |
-| LVU  | Lea Verou              | OpenJS             |
-| JGT  | Justin Grant           | Invited Expert     |
-| NRO  | Nicolò Ribaudo         | Igalia             |
-| IS   | Istvan Sebestyen       | Ecma               |
-| PFC  | Philip Chimento        | Igalia             |
-| AKI  | Aki Braun              | Ecma International |
-| KHG  | Kristen Hewell Garrett | Invited Expert     |
-| CPC  | Clément Pit-Claudel    | EPFL               |
-| LCA  | Luca Casonato          | Invited Expert     |
-| MF   | Michael Ficarra        | F5                 |
-| PST  | Patrick Soquet         | Moddable           |
-| SFC  | Shane Carr             | Google             |
+| 略号                       | 氏名                   | 所属               |
+| -------------------------- | ---------------------- | ------------------ |
+| [DLM](../../people/DLM.md) | Daniel Minor           | Mozilla            |
+| [USA](../../people/USA.md) | Ujjwal Sharma          | Igalia             |
+| SHN                        | Samina Husain          | Ecma               |
+| [CDA](../../people/CDA.md) | Chris de Almeida       | IBM                |
+| [WH](../../people/WH.md)   | Waldemar Horwat        | Invited Expert     |
+| GTO                        | Gustavo Tonietto       | Mozilla            |
+| [ZTZ](../../people/ZTZ.md) | Zbyszek Tenerowicz     | Consensys          |
+| YSZ                        | Yusuke Suzuki          | Apple              |
+| [DJM](../../people/DJM.md) | Dmitry Makhnev         | JetBrains          |
+| LGH                        | Linus Groh             | Bloomberg          |
+| [JRL](../../people/JRL.md) | Justin Ridgewell       | Google             |
+| [OFR](../../people/OFR.md) | Olivier Flückiger      | Google             |
+| [AUR](../../people/AUR.md) | Aurèle Barrière        | CNRS               |
+| LPR                        | Luna Pfeiffer          | Yavashark          |
+| CLA                        | Caio Lima              | Igalia             |
+| [RGN](../../people/RGN.md) | Richard Gibson         | Agoric             |
+| [JHD](../../people/JHD.md) | Jordan Harband         | Socket             |
+| [KM](../../people/KM.md)   | Keith Miller           | Apple              |
+| BSH                        | Bradford C. Smith      | Google             |
+| [MAH](../../people/MAH.md) | Mathieu Hofman         | Agoric             |
+| [CM](../../people/CM.md)   | Chip Morningstar       | Consensys          |
+| MBH                        | Mikhail Barash         | Univ. of Bergen    |
+| [RBN](../../people/RBN.md) | Ron Buckton            | F5                 |
+| RBR                        | Ruben Bridgewater      | Datadog            |
+| [GCL](../../people/GCL.md) | Gus Caplan             | Deno               |
+| OMT                        | Oliver Medhurst        | IE (Porffor)       |
+| ABO                        | Andreu Botella         | Igalia             |
+| CHU                        | Christian Ulbrich      | Zalari             |
+| TKP                        | Tom Kopp               | Zalari             |
+| SRV                        | Sergey Rubanov         | Invited Expert     |
+| [EAO](../../people/EAO.md) | Eemeli Aro             | Mozilla            |
+| [LVU](../../people/LVU.md) | Lea Verou              | OpenJS             |
+| [JGT](../../people/JGT.md) | Justin Grant           | Invited Expert     |
+| [NRO](../../people/NRO.md) | Nicolò Ribaudo         | Igalia             |
+| IS                         | Istvan Sebestyen       | Ecma               |
+| [PFC](../../people/PFC.md) | Philip Chimento        | Igalia             |
+| AKI                        | Aki Braun              | Ecma International |
+| [KHG](../../people/KHG.md) | Kristen Hewell Garrett | Invited Expert     |
+| [CPC](../../people/CPC.md) | Clément Pit-Claudel    | EPFL               |
+| [LCA](../../people/LCA.md) | Luca Casonato          | Invited Expert     |
+| [MF](../../people/MF.md)   | Michael Ficarra        | F5                 |
+| PST                        | Patrick Soquet         | Moddable           |
+| [SFC](../../people/SFC.md) | Shane Carr             | Google             |
 
 > 出典: tc39/notes PR #411(2026 May transcript、未マージ)を checkout して要約。会期・開催地・概要は [tc39/agendas 2026/05](https://github.com/tc39/agendas/blob/main/2026/05.md) と各日逐語録より。

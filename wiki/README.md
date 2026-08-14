@@ -63,7 +63,7 @@ TC39 plenary 議事録(`raw/notes`、2012-05〜2026-07 / 88 会合 / 340 ファ�
 
 ## 人物ページ(people/)
 
-提案ページ・family ページに登場する人物を [people/](people/) に集約(現在 65 名)。各ページは略号をファイル名とし、フルネーム・所属・担当ドラフト(champion)・言及される提案/family・参加したミーティングを持つ。`tools/extract_people.py` が提案・family ページから登場略号を検出して生成し、`tools/link_people.py` が本文の略号を `[ABBR](../people/ABBR.md)` にリンクする(VSCode プレビューで遷移できる標準 markdown リンク)。登場人物のみを対象とし、ページの追加に追従して自動で増える。
+提案ページ・family ページに登場する人物を [people/](people/) に集約(現在 75 名)。各ページは略号をファイル名とし、フルネーム・所属・担当ドラフト(champion)・言及される提案/family・参加したミーティングを持つ。`tools/extract_people.py` が提案・family ページから登場略号を検出して生成し、`tools/link_people.py` が提案・family・会合要約の本文中の略号を `[ABBR](<rel>/people/ABBR.md)` にリンクする(VSCode プレビューで遷移できる標準 markdown リンク)。会合要約中の提案名は `tools/link_proposals.py` が提案ページへリンクする。登場人物のみを対象とし、ページの追加に追従して自動で増える。
 
 ## バックボーン(機械抽出)
 

@@ -77,7 +77,7 @@ decorators は当初から `@` を使い、後発の private fields proposal が
 
 descriptor-based 設計では decorator が element descriptor object(`PrivateName`、finisher、initializer を含む)を授受しました。これが engine implementer の最大の障壁になりました。
 
-2018-11 で [SGN](../people/SGN.md) (V8) は「startup performance ... Looking at the spec it looks like this will kill static analysis」、[MLS](../people/MLS.md) ([JSC](../people/JSC.md)) は「We have to change the object model to account for decorators」と懸念。2019-01 の Stage 3 bid では [SGN](../people/SGN.md) が「Initializer functions in class fields ... we can currently optimize away in V8, but with decorators ... that optimization becomes impossible」「I'm not convinced I should implement and ship the currently specified proposal in Chrome」と表明、[MLS](../people/MLS.md) は「too complex」、[AK](../people/AK.md) は「this proposal changes every month and that seems to me not ready」と stability を問題視し、**Stage 3 は不成立**。[YK](../people/YK.md) は「To me it does not seem like Decorators are happening」と落胆を述べました。
+2018-11 で [SGN](../people/SGN.md) (V8) は「startup performance ... Looking at the spec it looks like this will kill static analysis」、[MLS](../people/MLS.md) (JSC) は「We have to change the object model to account for decorators」と懸念。2019-01 の Stage 3 bid では [SGN](../people/SGN.md) が「Initializer functions in class fields ... we can currently optimize away in V8, but with decorators ... that optimization becomes impossible」「I'm not convinced I should implement and ship the currently specified proposal in Chrome」と表明、[MLS](../people/MLS.md) は「too complex」、[AK](../people/AK.md) は「this proposal changes every month and that seems to me not ready」と stability を問題視し、**Stage 3 は不成立**。[YK](../people/YK.md) は「To me it does not seem like Decorators are happening」と落胆を述べました。
 
 この失敗が次の再設計の直接の引き金です。
 
@@ -110,7 +110,7 @@ private/public element への imperative な get/set/has を与える `access` o
 
 ### Stage 2.7 への降格(2026-05)
 
-Stage 3 到達(2022-03)から 4 年が経っても**どのエンジンも出荷せず**、SpiderMonkey/V8/[JSC](../people/JSC.md) とも実装を halt していました。`Iterator.prototype.includes` の実装過程などで V8 が spec issue・complexity の具体的フィードバックを示し、Test262 も未完であることが顕在化します。2026-05 に [DLM](../people/DLM.md) が Stage 3 → Stage 2.7 への降格を提案しました。
+Stage 3 到達(2022-03)から 4 年が経っても**どのエンジンも出荷せず**、SpiderMonkey/V8/JSC とも実装を halt していました。`Iterator.prototype.includes` の実装過程などで V8 が spec issue・complexity の具体的フィードバックを示し、Test262 も未完であることが顕在化します。2026-05 に [DLM](../people/DLM.md) が Stage 3 → Stage 2.7 への降格を提案しました。
 
 [JHD](../people/JHD.md) は「Stage 3 入り時点で 2.7 があれば、テストが十分になるまで Stage 3 に上げるべきではなかった。実装の意欲が無いなら Stage 2 を超えるべきでなかった」と process failure を指摘。[KHG](../people/KHG.md)(champion)は engine 側の stonewall が停滞の一因としつつ、簡素化を含めた再開に前向きでした。降格先を Stage 2 にするか 2.7 にするかが争点となり、[JHD](../people/JHD.md)/[NRO](../people/NRO.md)/[CDA](../people/CDA.md) は「現状の課題は test 不足であり、大規模な再設計が判明するまでは 2.7 が適切。必要なら後に Stage 2 へ戻す」とし、**Stage 2.7 へ降格で consensus**。直後に [JHD](../people/JHD.md) が point of order で **Decorator Metadata も lockstep で 2.7 へ**降格させ consensus を得ました。
 
@@ -121,7 +121,7 @@ Stage 3 到達(2022-03)から 4 年が経っても**どのエンジンも出荷�
 Decorators の停滞と降格を貫く構造的な問題は、**「欲しがる層」と「実装する層」が別々**だという点に尽きます。
 
 - **欲しがっている層(ユーザーランド)**: フレームワーク作者(Angular・Ember・MobX の dependency injection / observe / computed property が初期からの動機)、TypeScript / Babel エコシステムと既存ユーザー。legacy decorators は transpiler 経由で何年も実運用され、巨大な既存利用がある([RBN](../people/RBN.md)「~2800 classes がこの形で `export` を使う」, 2023-01)。TypeScript は `ESNext` で native decorators をサポートし、それ以外は vanilla JS へ downlevel する(2026-05)。champion も Ember の [YK](../people/YK.md) → 現行の [KHG](../people/KHG.md)、TypeScript 側の [RBN](../people/RBN.md)/[DRR](../people/DRR.md) と、いずれもユーザーランド寄りの面々が駆動してきた。
-- **欲しがっていない層(実装者)**: ブラウザエンジン(V8 / SpiderMonkey / [JSC](../people/JSC.md))は誰も出荷に動かなかった。[OFR](../people/OFR.md)(V8)は「spec のバグ・未整備のテスト・性能最適化が必要で、実装を続けられる形になっていない。実装は halt」と説明(2026-05)。[KHG](../people/KHG.md) は「最後の数点を直せば進めるかと何度も尋ねたが、ことごとく stonewall だった」と証言し、[JHD](../people/JHD.md) は「ブラウザはこの 10 年 merge する気の無さを telegraph してきた。distasteful disinterest だ」と process failure を指摘した。
+- **欲しがっていない層(実装者)**: ブラウザエンジン(V8 / SpiderMonkey / JSC)は誰も出荷に動かなかった。[OFR](../people/OFR.md)(V8)は「spec のバグ・未整備のテスト・性能最適化が必要で、実装を続けられる形になっていない。実装は halt」と説明(2026-05)。[KHG](../people/KHG.md) は「最後の数点を直せば進めるかと何度も尋ねたが、ことごとく stonewall だった」と証言し、[JHD](../people/JHD.md) は「ブラウザはこの 10 年 merge する気の無さを telegraph してきた。distasteful disinterest だ」と process failure を指摘した。
 
 結果として「transpiler 経由で広く使われているのにネイティブ実装は 4 年経っても出荷ゼロ」という逆説が生じ、2026-05 の Stage 2.7 降格に至った。今後 Stage 3 へ戻れるかは、設計の簡素化を通じて**エンジンの buy-in を取り戻せるか**にかかっている([KHG](../people/KHG.md)「エンジンが本当に出荷する気が無いなら、これ以上時間を投じたくない」)。
 

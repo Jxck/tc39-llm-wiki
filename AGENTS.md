@@ -41,7 +41,8 @@ tools/
   extract_agenda.py         agenda-index の生成スクリプト
   extract_proposals.py      raw/proposals から全提案ステージ一覧 wiki/proposals/index.md を生成(Stage 4 は未収載分のみに filter)
   extract_people.py         提案ページに登場する人物の people/ ページ生成
-  link_people.py            提案ページ中の略号を [ABBR](../people/ABBR.md) にリンク
+  link_people.py            提案・family・会合要約ページ中の略号を [ABBR](<rel>/people/ABBR.md) にリンク
+  link_proposals.py         会合要約中の提案名を提案ページにリンクし、トピック先頭の「提案ページ:」行を保証
 ```
 
 ## 言語規約
@@ -159,7 +160,8 @@ markdown / json は **oxfmt** で整形する(設定 `.oxfmtrc.json`、`proseWra
    - **champion の確定は delegates.txt だけで決めない**。当該会合の Presenter 行・本文で裏取りする。略号は会合ごとに振り直されることがある(例: 2019-10 は Robin Ricard を RRI と表記するが、delegates.txt の RRI=Reefath Rajali は別人)。発言の帰属・年月も原文で確認する(誤帰属が起きやすい箇所)。
 4. **人物の生成とリンク**(提案ページを書き終えたら必ず実行):
    - `python3 tools/extract_people.py` — 提案ページに登場する略号を検出し、`wiki/people/<ABBR>.md` を生成/再生成(フルネーム=delegates.txt、所属・参加会合=出席者テーブル、担当ドラフト=各提案 frontmatter の `champions` を相互参照)。
-   - `python3 tools/link_people.py` — 提案ページ本文中の略号を `[ABBR](../people/ABBR.md)` にリンク(冪等)。frontmatter・コードブロック・mermaid・既存リンクは保護。
+   - `python3 tools/link_people.py` — 提案・family・会合要約の本文中の略号を `[ABBR](<rel>/people/ABBR.md)` にリンク(冪等)。frontmatter・コードブロック・mermaid・既存リンクは保護。
+   - `python3 tools/link_proposals.py` — 会合要約中の提案名を新規ページへリンク(冪等)。**新しい提案ページを作ったら必ず実行**する(過去の要約に散らばる素テキストの提案名がリンクに変わる)。
    - 語と衝突する略号(`API`, `JS` 等)は `extract_people.py` の `NON_PERSON` で除外している。新たな誤検出が出たら追記する。
 5. `wiki/README.md` のカタログ行を更新。
 6. `wiki/log.md` に 1 行追記。
@@ -190,7 +192,7 @@ wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」�
   - **champion の整合方針**: frontmatter `champions` は canonical の現 champion を**満たす**こと(不足は補う)。ただし **canonical に無い歴史的 champion(離脱した初代など)は削除せず残す**(canonical は現スナップショットで過去の champion を持たないため)。「canonical に無い名前=誤り」とはしない。
   - 注意: proposals リストは現在のスナップショットなので**過去の遷移そのものは検証できない**。経緯テーブルの中間ステージは引き続き notes で確認する。
 
-素材更新時(submodule pull 後)は `python3 tools/extract_agenda.py`、`python3 tools/extract_proposals.py`、続けて `python3 tools/extract_people.py && python3 tools/link_people.py` で再生成。
+素材更新時(submodule pull 後)は `python3 tools/extract_agenda.py`、`python3 tools/extract_proposals.py`、続けて `python3 tools/extract_people.py && python3 tools/link_people.py && python3 tools/link_proposals.py` で再生成。
 
 ### Update(raw ソースの同期)
 
@@ -201,26 +203,29 @@ wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」�
    - 通常(main 追跡): `git -C raw/<sub> checkout main && git -C raw/<sub> pull --ff-only`(まとめてなら `git submodule update --remote`)。
    - `raw/notes` が未マージ PR ブランチ(例 `pr-411`)に居る場合: その PR が main にマージ済みなら main 追跡へ戻してから pull、未マージなら PR を fetch して更新する(PR 運用の詳細は Summarise 節を参照)。
 3. **差分を表示**する: 各 submodule で `git -C raw/<sub> log --oneline OLD..HEAD` と `git -C raw/<sub> diff --stat OLD..HEAD`。特に**追加された会合ファイル(`meetings/<YYYY-MM>/`)と提案ステータスの変化**を抜き出して要約提示する。差分が無ければ「最新(変更なし)」と表示し、以降の commit はスキップする。
-4. ポインタが動いたら超プロジェクトでコミット(`[update]`)。続けて生成物を再生成する: `python3 tools/extract_agenda.py`(notes 由来)、**`python3 tools/extract_proposals.py`(proposals 由来。全提案ステージ一覧 `wiki/proposals/index.md` を常に最新化)**、`python3 tools/extract_people.py && python3 tools/link_people.py`。`raw/proposals` が動いたら `extract_proposals.py` は必ず再実行する。
+4. ポインタが動いたら超プロジェクトでコミット(`[update]`)。続けて生成物を再生成する: `python3 tools/extract_agenda.py`(notes 由来)、**`python3 tools/extract_proposals.py`(proposals 由来。全提案ステージ一覧 `wiki/proposals/index.md` を常に最新化)**、`python3 tools/extract_people.py && python3 tools/link_people.py && python3 tools/link_proposals.py`。`raw/proposals` が動いたら `extract_proposals.py` は必ず再実行する。
 5. `wiki/log.md` に 1 行記録(同期した範囲・新規会合や提案ステータス変化の有無)。
 
 ### Summarise(会合の日次要約)
 
-会合まるごとを話題単位で日本語要約する(提案中心の Ingest とは別物)。出力は `wiki/meetings/<YYYY-MM>/`。既定の対象は `raw/notes/meetings/` の**最新会合**。
+会合まるごとを話題単位で日本語要約する(提案中心の Ingest とは別物)。出力は `wiki/meetings/<YYYY-MM>/`。対象の指定は **会合(YYYY-MM)** か **tc39/notes の未マージ PR(番号または URL)**。PR が指定されたら下記「未マージ PR にしかない会合を要約する場合」の手順で `pr-<PR>` を checkout してから、その PR が追加する会合を対象にする。未指定なら `raw/notes/meetings/` の**最新会合**。
 
 1. 対象会合の各日ファイル `raw/notes/meetings/<YYYY-MM>/<month-DD>.md` を読む。
 2. **日ごとに 1 ファイル** `wiki/meetings/<YYYY-MM>/<YYYY-MM-DD>.md` を生成。各日の議題(`## <topic>`)ごとに:
    - 見出しは原文のトピック名(英語のまま、`##`)。
-   - 発表者のスライドリンク(`* [slides](URL)`)があれば、**最初の箇条書き**に `- Slides: [link](URL)` として置く。
-   - そのトピックに**該当する既存の提案ページ**(`wiki/proposals/<slug>.md`)があれば、Slides の次に `- 提案ページ: [Title](../../proposals/<slug>.md)` を置く(該当が無ければ付けない)。
-   - 続けて **3〜5 行**で日本語要約(地の文は日本語・用語/API/略号は英語、wiki 共通の言語規約に従う)。
+   - そのトピックが議論している**既存の提案ページ**(`wiki/proposals/<slug>.md`)があれば、**必ず最初の箇条書き**に `- 提案ページ: [Title](../../proposals/<slug>.md)` を置く(Slides より前。該当が無ければ付けない)。見出しが提案名を含む分は `tools/link_proposals.py` が自動で補完・先頭へ移動するが、見出しに提案名が無いトピック(needs-consensus PR 等)は手で付ける。
+   - 発表者のスライドリンク(`* [slides](URL)`)があれば、その次に `- Slides: [link](URL)` として置く。
+   - 続けて **3〜5 行**で日本語要約(地の文は日本語・用語/API/略号は英語、wiki 共通の言語規約に従う)。本文中の人物略号と既存提案ページの提案名は**素テキストで書いてよい**(手順 4 のスクリプトがリンク化する)。
    - `### Conclusion` / `### Speaker's Summary of Key Points` があれば、**その結論を必ず要約に含める**(stage 遷移・consensus の有無など)。
    - 委員会の定型(Opening & Welcome / Secretary's Report / 各種 Status Update など議論性の薄いもの)は省いてよい。
 3. `wiki/meetings/<YYYY-MM>/README.md` を生成:
    - **必ず tc39/agenda リポジトリの該当ページへのリンク**を貼る(`https://github.com/tc39/agendas/blob/main/<YYYY>/<MM>.md`)。
    - そこから引いた**概要**、会合名(例: 113th TC39 Meeting)、開催地、ホスト、参加者などをまとめる(会合名・参加者は raw の各日先頭 attendees テーブル、開催地は Opening の記述からも補える)。
    - 各日ファイルへのリンク一覧を置く。
-4. **`python3 tools/extract_people.py` を再実行**する。people ページの「参加したミーティング」は要約(`wiki/meetings/<YYYY-MM>/README.md`)の有無でリンク化を切り替えるため、新しい会合を要約したら再生成しないと既存の人物ページが素テキストのまま取り残される。
+4. **リンクの生成**(要約を書き終えたら必ず実行):
+   - `python3 tools/extract_people.py` — people ページの「参加したミーティング」は要約(`wiki/meetings/<YYYY-MM>/README.md`)の有無でリンク化を切り替えるため、新しい会合を要約したら再生成しないと既存の人物ページが素テキストのまま取り残される。
+   - `python3 tools/link_people.py` — 要約本文中の人物略号を `[ABBR](../../people/ABBR.md)` にリンク(冪等。ページのある略号のみ。JSC など多義の略号は自動リンクせず、人物の場合だけ手でリンクする)。
+   - `python3 tools/link_proposals.py` — 要約本文中の提案名を `[Title](../../proposals/<slug>.md)` にリンクし、トピック先頭の `- 提案ページ:` 行を保証(冪等。ページのある提案のみ。表記揺れは script の `ALIASES` に追記)。
 5. 完了後 `[summarise]` でコミットし、`wiki/log.md` に記録。
 
 **note(submodule)と wiki の同期**: `raw/notes` を pull したり PR を checkout したら、**必ずその submodule ポインタの変更をコミットする**(`[wiki]`)。wiki が要約・参照した note の状態を常に記録し、両者を同期させるため(ポインタを未コミットのまま放置しない)。
@@ -232,7 +237,10 @@ wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」�
 
 ## 人物ページ(people/)
 
-`wiki/people/<ABBR>.md` は**生成物**。提案ページと family ページに登場する略号について作られ、「フルネーム / 所属 / 担当ドラフト(champion)/ 言及される提案 / 言及される family / 参加したミーティング」を集約する。filename を略号にしてあるので `[ABBR](../people/ABBR.md)` がそのまま解決する(提案・family いずれも `../people/` で同じ深さ)。提案・family ページが増えるたび `extract_people.py` を再実行すれば対象人物も自動で増える。
+`wiki/people/<ABBR>.md` は**生成物**。提案ページと family ページに登場する略号について作られ、「フルネーム / 所属 / 担当ドラフト(champion)/ 言及される提案 / 言及される family / 参加したミーティング」を集約する。filename を略号にしてあるので `[ABBR](../people/ABBR.md)` がそのまま解決する(提案・family は `../people/`、会合要約は `../../people/`。`link_people.py` がファイル位置から自動で算出する)。提案・family ページが増えるたび `extract_people.py` を再実行すれば対象人物も自動で増える。
+
+- `link_people.py` のリンク対象は提案・family・**会合要約**(`wiki/meetings/<YYYY-MM>/`)。ページのある略号のみリンクするので、会合にしか登場しない人物は素テキストのまま残る(デッドリンクを作らない)。
+- **多義の略号は自動リンクしない**: `JSC` は大半が engine(JavaScriptCore)を指すため `link_people.py` の `AMBIGUOUS` で除外している。人物(J. S. Choi)を指す箇所だけ手でリンクする。同種の衝突が出たら `AMBIGUOUS` に追記する。
 
 - 全 578+ の delegate を作るのではなく、**登場した人物だけ**を扱う方針。
 - フルネーム/所属/参加会合は `raw/notes`(delegates.txt と各会合の出席者テーブル)由来。早期の会合は出席者テーブルが略号列を持たないため `参加したミーティング: 0` になる人物がいる(フルネームは delegates.txt から補完)。これは抽出の限界であり誤りではない。

@@ -305,3 +305,13 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - tools: `extract_proposals.py` の ALIASES に "Curtailing the power of Thenables" → thenable-curtailment.md を追加(canonical 名と wiki title の乖離対応)。index.md 再生成で 8 ページ全てリンク化。`extract_people.py`(65 → 75 名。AUR/AVK/CPC/DJM/DRO/JFI/JSL/LVU/MAG/SHS 追加)/ `link_people.py`(8 ページの略号リンク化)。
 - README カタログに 8 行追加(精読済み 23 → 31 提案)。oxfmt clean(全 145 ファイル)。
 - 運用メモ: ページ下書きの並列サブエージェント 8 本が全て API 529(Overloaded)で失敗したため、raw のセクションを直接精読してインラインで執筆した。
+
+## [2026-08-14] wiki | 会合要約のリンク規約(人物/提案)と Summarise の PR 対応
+
+- **link_people.py 拡張**: リンク対象に `wiki/meetings/<YYYY-MM>/` を追加(相対パスはファイル位置から自動算出)。ページのある略号のみリンクするため、会合にしか登場しない人物は素テキストのまま(デッドリンクなし)。多義の略号を除外する `AMBIGUOUS` を新設し `JSC`(大半が JavaScriptCore engine)を登録。
+- **link_proposals.py 新設**: 会合要約中の提案名(frontmatter title + `ALIASES` の表記揺れ)を提案ページへリンク。加えて日次ファイルでは、`##` 見出しが提案名を含むトピックの**最初の箇条書き**に `- 提案ページ:` 行を保証(Slides より前。既存 bullet は先頭へ移動)。冪等。
+- **既存の全会合要約(2025-07〜2026-07 の 6 会合・25 ファイル)に適用**: 人物略号・提案名をリンク化し、`- 提案ページ:` 行を先頭に統一。見出しに提案名を含まない 2 議題(2026-07 の BigInt needs-consensus PR / temperature checks)は手動で追加。
+- **誤リンク修正**: engine の JavaScriptCore を指す `JSC` の人物リンク 17 箇所を素テキストへ戻した(meetings 14 + decorators.md 3。人物 J. S. Choi を指す 4 箇所は維持)。decorators.md の 3 箇所は今回以前からの誤リンク。
+- **AGENTS.md**: Summarise の対象指定に tc39/notes の PR 番号/URL を明記(checkout 手順へ接続)。手順 2 を「提案ページ bullet を最初(Slides より前)」に改訂、手順 4 を「リンクの生成」として extract_people / link_people / link_proposals の 3 点セットに拡張。Ingest 手順 4・Lint/Update の再生成手順にも link_proposals.py を追加。人物ページ節に meetings 対応と AMBIGUOUS 方針を追記。
+- **コマンド**: `.claude/commands/summarise.md` の argument-hint を「会合 (YYYY-MM) | PR 番号/URL」に更新。
+- wiki/README.md の人物ページ節を現状(75 名・meetings 対応・link_proposals)に同期。
