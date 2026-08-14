@@ -321,3 +321,4 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - ラベルを `- 提案ページ:` から `- wiki:` へ変更し、トピック冒頭の meta 箇条書きの順序を **wiki → proposal → Slides** に統一(ユーザ指定)。
 - `link_proposals.py` を改訂: 旧ラベルの自動移行と meta 3 種の抽出・並べ替えを実装(oxfmt との固定点を維持、冪等)。全 6 会合 18 ファイルに適用し、`提案ページ:` の残存 0 件を確認。
 - AGENTS.md の Summarise 手順 2(meta 行の定義と順序)・手順 4・tools 一覧を新規約に同期。
+- 追記: スライドのラベルは小文字・単数の `- slide:` を規約とする(AGENTS.md と link_proposals.py の認識を更新。既存ファイルの一括変換はユーザが実施)。

@@ -100,7 +100,9 @@ DAILY = re.compile(r"^\d{4}-\d{2}-\d{2}")
 # "提案ページ" is the legacy label; existing bullets are migrated to "wiki".
 WIKI_BULLET = re.compile(r"^- (?:wiki|提案ページ):")
 PROPOSAL_BULLET = re.compile(r"^- proposal:")
-SLIDES_BULLET = re.compile(r"^- Slides:")
+# Lowercase singular "slide:" is the convention; match the legacy forms
+# (Slides/slides) too so reordering still works until files are converted.
+SLIDES_BULLET = re.compile(r"^- [Ss]lides?:")
 
 
 def take_first(core, pat):
