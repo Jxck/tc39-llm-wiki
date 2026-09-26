@@ -336,3 +336,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-09-27] wiki | 英語訳 wiki/en に 2025-09
 
 - `wiki/en/meetings/2025-09/` を追加。リンク先の提案は既に `wiki/en/proposals/` にあった。
+
+## [2026-09-27] wiki | 英語訳 wiki/en に 2025-07
+
+- `wiki/en/meetings/2025-07/` を追加。未訳だった [Upsert](en/proposals/upsert.md) も訳し、既存英語ページからのリンクを付け替えた。これで要約済み会合はすべて `wiki/en/meetings/` にある。

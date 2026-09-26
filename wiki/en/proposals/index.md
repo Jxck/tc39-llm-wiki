@@ -19,7 +19,7 @@
 - Math.sumPrecise — expected publication 2026
 - [Temporal](temporal.md) — expected publication 2027
 - Uint8Array to/from Base64 — expected publication 2026
-- [Upsert](../upsert.md) — expected publication 2026
+- [Upsert](upsert.md) — expected publication 2026
 
 ### Stage 3 (12)
 

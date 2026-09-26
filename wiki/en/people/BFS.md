@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Bradley Farias
 - **Affiliation**: GoDaddy
 - **Champion drafts**: (none on ingested pages)
-- **Mentioned on proposal pages**: [Upsert](../../proposals/upsert.md)
+- **Mentioned on proposal pages**: [Upsert](../proposals/upsert.md)
 - **Meetings attended**: 2
 
 ## Meetings attended

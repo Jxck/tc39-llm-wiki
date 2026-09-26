@@ -52,7 +52,7 @@ The return value of `take` alone cannot tell "the key was absent" from "the valu
 
 ## Related proposals
 
-- [Upsert](../../proposals/upsert.md) — `Map.prototype.getOrInsert` / `getOrInsertComputed`. A proposal in the same family that bundles "lookup + mutation" into one operation (this one on the insert side).
+- [Upsert](upsert.md) — `Map.prototype.getOrInsert` / `getOrInsertComputed`. A proposal in the same family that bundles "lookup + mutation" into one operation (this one on the insert side).
 
 ## Sources
 

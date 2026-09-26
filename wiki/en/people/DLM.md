@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Dan Minor
 - **Affiliation**: Mozilla / Mozilla Foundation
-- **Champion drafts**: [Upsert](../../proposals/upsert.md)
-- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Decorators](../proposals/decorators.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl.MessageFormat](../../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Upsert](../../proposals/upsert.md)
+- **Champion drafts**: [Upsert](../proposals/upsert.md)
+- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Decorators](../proposals/decorators.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl.MessageFormat](../../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Upsert](../proposals/upsert.md)
 - **Meetings attended**: 25
 
 ## Meetings attended
