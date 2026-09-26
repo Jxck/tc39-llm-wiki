@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Zbigniew Tenerowicz
 - **Affiliation**: Consensys / MetaMask
-- **Champion drafts**: [Array.isTemplateObject](../../proposals/is-template-object.md)
-- **Mentioned on proposal pages**: [Array.isTemplateObject](../../proposals/is-template-object.md)
+- **Champion drafts**: [Array.isTemplateObject](../proposals/is-template-object.md)
+- **Mentioned on proposal pages**: [Array.isTemplateObject](../proposals/is-template-object.md)
 - **Meetings attended**: 4
 
 ## Meetings attended

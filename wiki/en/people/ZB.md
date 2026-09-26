@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Zibi Braniecki
 - **Affiliation**: Invited Expert / Mozilla
 - **Champion drafts**: (none on ingested pages)
-- **Mentioned on proposal pages**: [Intl.MessageFormat](../../proposals/intl-messageformat.md)
+- **Mentioned on proposal pages**: [Intl.MessageFormat](../proposals/intl-messageformat.md)
 - **Meetings attended**: 3
 
 ## Meetings attended

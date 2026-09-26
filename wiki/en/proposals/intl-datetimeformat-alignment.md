@@ -44,7 +44,7 @@ The HTML-side PR is at stage 1 of the WHATWG process, and Unicode MessageFormat 
 ## Related proposals
 
 - [Stable Formatting](../proposals/stable-formatting.md) — likewise a proposal by [EAO](../people/EAO.md), in the line of making Intl output easier to use from other layers of the web stack.
-- [Intl.MessageFormat](../../proposals/intl-messageformat.md) — a proposal to expose Unicode MessageFormat to JS. This proposal's datetime options aim to line up with MessageFormat's formatting functions.
+- [Intl.MessageFormat](intl-messageformat.md) — a proposal to expose Unicode MessageFormat to JS. This proposal's datetime options aim to line up with MessageFormat's formatting functions.
 - [Intl Sequence Units](../proposals/intl-sequence-units.md) — an ECMA-402 proposal from the same period.
 
 ## Sources

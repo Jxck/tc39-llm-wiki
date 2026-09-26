@@ -227,7 +227,7 @@
 - Generic Comparison — Withdrawn
 - Getting last element of Array — Withdrawn
 - Improving iteration on Objects — Withdrawn
-- [isTemplateObject](../is-template-object.md) — Withdrawn
+- [isTemplateObject](is-template-object.md) — Withdrawn
 - JSON.tryParse — Rejected
 - Math Extensions — Withdrawn
 - Math.signbit: IEEE-754 sign bit — Withdrawn
@@ -277,7 +277,7 @@
 - Intl LocaleMatcher
 - [Intl Sequence Units](intl-sequence-units.md)
 - [Intl.DateTimeFormat Alignment With Other Standards](intl-datetimeformat-alignment.md)
-- [Intl.MessageFormat](../intl-messageformat.md)
+- [Intl.MessageFormat](intl-messageformat.md)
 - Intl.MessageResource
 - Intl.Segmenter v2
 - Intl.ZonedDateTimeFormat

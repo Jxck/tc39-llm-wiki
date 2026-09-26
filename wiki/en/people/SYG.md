@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Shu-yu Guo
 - **Affiliation**: Google
 - **Champion drafts**: [Atomics.pause](../proposals/atomics-pause.md)
-- **Mentioned on proposal pages**: [Atomics.pause](../proposals/atomics-pause.md), [Comparisons](../proposals/comparisons.md), [Decorators](../proposals/decorators.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Intl.MessageFormat](../../proposals/intl-messageformat.md), [Joint Iteration](../proposals/joint-iteration.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Upsert](../proposals/upsert.md)
+- **Mentioned on proposal pages**: [Atomics.pause](../proposals/atomics-pause.md), [Comparisons](../proposals/comparisons.md), [Decorators](../proposals/decorators.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Joint Iteration](../proposals/joint-iteration.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Upsert](../proposals/upsert.md)
 - **Meetings attended**: 11
 
 ## Meetings attended

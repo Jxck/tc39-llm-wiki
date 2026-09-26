@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Ujjwal Sharma
 - **Affiliation**: Igalia / Igalia S.L. / Igalia, S.L
 - **Champion drafts**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Temporal](../proposals/temporal.md)
-- **Mentioned on proposal pages**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl.MessageFormat](../../proposals/intl-messageformat.md), [Temporal](../proposals/temporal.md)
+- **Mentioned on proposal pages**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Temporal](../proposals/temporal.md)
 - **Meetings attended**: 32
 
 ## Meetings attended

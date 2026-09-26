@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Justin Ridgewell
 - **Affiliation**: Google / Vercel
 - **Champion drafts**: (none on ingested pages)
-- **Mentioned on proposal pages**: [Array.isTemplateObject](../../proposals/is-template-object.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
+- **Mentioned on proposal pages**: [Array.isTemplateObject](../proposals/is-template-object.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
 - **Meetings attended**: 20
 
 ## Meetings attended

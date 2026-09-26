@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Krzysztof Kotowicz
 - **Affiliation**: Google
-- **Champion drafts**: [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Array.isTemplateObject](../../proposals/is-template-object.md)
-- **Mentioned on proposal pages**: [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Array.isTemplateObject](../../proposals/is-template-object.md)
+- **Champion drafts**: [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Array.isTemplateObject](../proposals/is-template-object.md)
+- **Mentioned on proposal pages**: [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [Array.isTemplateObject](../proposals/is-template-object.md)
 - **Meetings attended**: 1
 
 ## Meetings attended

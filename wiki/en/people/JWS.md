@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Jason Williams
 - **Affiliation**: Bloomberg
 - **Champion drafts**: [Temporal](../proposals/temporal.md)
-- **Mentioned on proposal pages**: [Intl.MessageFormat](../../proposals/intl-messageformat.md), [Temporal](../proposals/temporal.md)
+- **Mentioned on proposal pages**: [Intl.MessageFormat](../proposals/intl-messageformat.md), [Temporal](../proposals/temporal.md)
 - **Meetings attended**: 12
 
 ## Meetings attended

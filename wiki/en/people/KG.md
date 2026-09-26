@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Kevin Gibbons
 - **Affiliation**: F5 / F5 Networks / Invited Expert
 - **Champion drafts**: [Iterator Join](../proposals/iterator-join.md)
-- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Decorators](../proposals/decorators.md), [Error code property](../proposals/error-code-property.md), [Intl.MessageFormat](../../proposals/intl-messageformat.md), [Iterator Join](../proposals/iterator-join.md), [Linear Matching](../proposals/linear-matching.md), [Map get and delete](../proposals/map-get-and-delete.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Thenable Curtailment](../proposals/thenable-curtailment.md), [Upsert](../proposals/upsert.md)
+- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Decorators](../proposals/decorators.md), [Error code property](../proposals/error-code-property.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Iterator Join](../proposals/iterator-join.md), [Linear Matching](../proposals/linear-matching.md), [Map get and delete](../proposals/map-get-and-delete.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md), [Thenable Curtailment](../proposals/thenable-curtailment.md), [Upsert](../proposals/upsert.md)
 - **Mentioned on family pages**: [Iterator helpers and friends](../families/iterator.md)
 - **Meetings attended**: 21
 
