@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Frank Yung-Fong Tang
 - **Affiliation**: Google
-- **Champion drafts**: [Intl Era/Month Code](../../proposals/intl-era-month-code.md)
-- **Mentioned on proposal pages**: [Intl Era/Month Code](../../proposals/intl-era-month-code.md)
+- **Champion drafts**: [Intl Era/Month Code](../proposals/intl-era-month-code.md)
+- **Mentioned on proposal pages**: [Intl Era/Month Code](../proposals/intl-era-month-code.md)
 - **Meetings attended**: 21
 
 ## Meetings attended

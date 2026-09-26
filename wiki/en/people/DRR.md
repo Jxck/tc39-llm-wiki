@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Daniel Rosenwasser
 - **Affiliation**: Microsoft
 - **Champion drafts**: (none on ingested pages)
-- **Mentioned on proposal pages**: [Decorators](../../proposals/decorators.md)
+- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md)
 - **Meetings attended**: 17
 
 ## Meetings attended

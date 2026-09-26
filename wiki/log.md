@@ -328,3 +328,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 - 英語訳は `wiki/` を置き換えず `wiki/en/` に同じ相対パスで置く規約を AGENTS.md の言語規約へ追加。
 - 訳済みは会合 2026-07 / 2026-05 / 2026-03、そこからリンクした提案・family、人物ページ、提案 index、英語の README。未訳ページへのリンクは日本語版を指す。
 - 2025-11 / 2025-09 / 2025-07 と、未到達の提案(`decorators` ほか)は未訳。
+
+## [2026-09-27] wiki | 英語訳 wiki/en に 2025-11
+
+- `wiki/en/meetings/2025-11/` を追加。リンク先のうち未訳だった [Decorators](en/proposals/decorators.md)、[Comparisons](en/proposals/comparisons.md)、[Intl Era/Month Code](en/proposals/intl-era-month-code.md) も訳し、既存英語ページからのリンクを `wiki/en` 側へ付け替えた。

@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Yulia Startsev
 - **Affiliation**: Mozilla
 - **Champion drafts**: (none on ingested pages)
-- **Mentioned on proposal pages**: [Decorators](../../proposals/decorators.md), [Records & Tuples](../proposals/records-and-tuples.md), [Upsert](../../proposals/upsert.md)
+- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md), [Records & Tuples](../proposals/records-and-tuples.md), [Upsert](../../proposals/upsert.md)
 - **Meetings attended**: 16
 
 ## Meetings attended

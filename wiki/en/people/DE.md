@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Daniel Ehrenberg
 - **Affiliation**: Bloomberg / Igalia
-- **Champion drafts**: [Decorators](../../proposals/decorators.md)
-- **Mentioned on proposal pages**: [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../../proposals/decorators.md), [Intl.MessageFormat](../../proposals/intl-messageformat.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
+- **Champion drafts**: [Decorators](../proposals/decorators.md)
+- **Mentioned on proposal pages**: [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../proposals/decorators.md), [Intl.MessageFormat](../../proposals/intl-messageformat.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
 - **Meetings attended**: 22
 
 ## Meetings attended

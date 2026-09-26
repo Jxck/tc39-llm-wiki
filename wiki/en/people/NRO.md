@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Nicolò Ribaudo
 - **Affiliation**: Babel - Invited Expert / Babel-InvitedExpert / Igalia / Igalia, S.L / Invited Expert / Invited Expert - Babel
 - **Champion drafts**: [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [export all from](../proposals/export-all-from.md), [Records & Tuples](../proposals/records-and-tuples.md)
-- **Mentioned on proposal pages**: [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../../proposals/decorators.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [export all from](../proposals/export-all-from.md), [Map get and delete](../proposals/map-get-and-delete.md), [Records & Tuples](../proposals/records-and-tuples.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
+- **Mentioned on proposal pages**: [Atomics.pause](../proposals/atomics-pause.md), [Decorators](../proposals/decorators.md), [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md), [export all from](../proposals/export-all-from.md), [Map get and delete](../proposals/map-get-and-delete.md), [Records & Tuples](../proposals/records-and-tuples.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
 - **Mentioned on family pages**: [Modules (module harmony)](../families/modules.md)
 - **Meetings attended**: 28
 

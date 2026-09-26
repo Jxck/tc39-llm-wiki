@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Olivier Flückiger
 - **Affiliation**: Google
 - **Champion drafts**: (none on ingested pages)
-- **Mentioned on proposal pages**: [BigInt from exponential](../proposals/bigint-from-exponential.md), [Comparisons](../../proposals/comparisons.md), [Decorators](../../proposals/decorators.md), [Linear Matching](../proposals/linear-matching.md)
+- **Mentioned on proposal pages**: [BigInt from exponential](../proposals/bigint-from-exponential.md), [Comparisons](../proposals/comparisons.md), [Decorators](../proposals/decorators.md), [Linear Matching](../proposals/linear-matching.md)
 - **Meetings attended**: 7
 
 ## Meetings attended

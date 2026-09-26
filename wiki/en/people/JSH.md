@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Jacob Smith
 - **Affiliation**: Open JS / OpenJS
-- **Champion drafts**: [Comparisons](../../proposals/comparisons.md)
-- **Mentioned on proposal pages**: [Comparisons](../../proposals/comparisons.md)
+- **Champion drafts**: [Comparisons](../proposals/comparisons.md)
+- **Mentioned on proposal pages**: [Comparisons](../proposals/comparisons.md)
 - **Meetings attended**: 4
 
 ## Meetings attended

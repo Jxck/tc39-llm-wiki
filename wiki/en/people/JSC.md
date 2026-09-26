@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Joshua S. Choi
 - **Affiliation**: IE (Univ. of Utah ) / Indiana University / Invited Expert / Invited expert
 - **Champion drafts**: (none on ingested pages)
-- **Mentioned on proposal pages**: [Decorators](../../proposals/decorators.md)
+- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md)
 - **Meetings attended**: 10
 
 ## Meetings attended

@@ -39,7 +39,7 @@
 ### Stage 2.7 (6)
 
 - Decorator Metadata
-- [Decorators](../decorators.md)
+- [Decorators](decorators.md)
 - ESM Phase Imports
 - Immutable ArrayBuffers
 - Import Bytes
@@ -101,7 +101,7 @@
 - Class Method Parameter Decorators
 - Collection methods
 - Compare Strings by Codepoint
-- [Comparisons](../comparisons.md)
+- [Comparisons](comparisons.md)
 - Compartments
 - Composable Accessors via built-in decorators
 - Composites
@@ -257,7 +257,7 @@
 
 ### Stage 4 — not yet in ECMAScript (publication year 2026 or later)(2 / 18 including already shipped)
 
-- [Intl Era and MonthCode Proposal](../intl-era-month-code.md) — expected publication 2026
+- [Intl Era and MonthCode Proposal](intl-era-month-code.md) — expected publication 2026
 - Intl Locale Info — expected publication 2026
 
 ### Stage 3 (1)

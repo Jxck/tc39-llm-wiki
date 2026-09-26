@@ -20,8 +20,8 @@ Temporal is one of the largest proposals in TC39 history, and its champion group
 
 ## Stage history
 
-| Meeting                                                 | What happened                                                                                                 | Stage             |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Meeting                                                    | What happened                                                                                                 | Stage             |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------- |
 | [2017-03](../../../raw/notes/meetings/2017-03/mar-23.md)   | [MPT](../people/MPT.md) proposed it as "Date Proposal - NodaTime as a built-in Module" and it reached Stage 1 | → 1               |
 | [2018-09](../../../raw/notes/meetings/2018-09/sept-27.md)  | Reached Stage 2. Approved after cutting back `valueOf` and `Now`                                              | 1 → 2             |
 | [2021-03](../../../raw/notes/meetings/2021-03/mar-9.md)    | [PFC](../people/PFC.md) requested Stage 3. Withdrew making `Calendar.from()`/`TimeZone.from()` observable     | 2 → 3 (continued) |
@@ -88,7 +88,7 @@ At Stage 4 (2026-03) there was no objection to the proposal itself (nobody defen
 
 ## Related proposals
 
-- [Intl Era/Month Code](../../proposals/intl-era-month-code.md) — locale-dependent behavior of era / month code. Standardized on the ECMA-402 side in parallel with Temporal, and reached Stage 4 in 2026-03.
+- [Intl Era/Month Code](intl-era-month-code.md) — locale-dependent behavior of era / month code. Standardized on the ECMA-402 side in parallel with Temporal, and reached Stage 4 in 2026-03.
 
 ## Sources
 

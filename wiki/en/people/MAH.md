@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Mathieu Hofman
 - **Affiliation**: Agoric / Stripe
 - **Champion drafts**: (none on ingested pages)
-- **Mentioned on proposal pages**: [Comparisons](../../proposals/comparisons.md), [Records & Tuples](../proposals/records-and-tuples.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
+- **Mentioned on proposal pages**: [Comparisons](../proposals/comparisons.md), [Records & Tuples](../proposals/records-and-tuples.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
 - **Meetings attended**: 11
 
 ## Meetings attended

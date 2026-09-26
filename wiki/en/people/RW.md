@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Rick Waldron
 - **Affiliation**: Bocoup / Salesforce
 - **Champion drafts**: (none on ingested pages)
-- **Mentioned on proposal pages**: [Decorators](../../proposals/decorators.md)
+- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md)
 - **Meetings attended**: 4
 
 ## Meetings attended

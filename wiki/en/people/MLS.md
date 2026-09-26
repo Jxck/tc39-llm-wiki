@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Michael Saboff
 - **Affiliation**: Apple / Apple Inc / Apple Inc. / Invited Expert / Observer
 - **Champion drafts**: (none on ingested pages)
-- **Mentioned on proposal pages**: [Decorators](../../proposals/decorators.md)
+- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md)
 - **Meetings attended**: 32
 
 ## Meetings attended
