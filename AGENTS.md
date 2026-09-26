@@ -27,6 +27,7 @@ raw/proposals/finished-proposals.md          Stage 4(出荷済み)
 raw/proposals/stage-1-proposals.md           Stage 1
 raw/proposals/inactive-proposals.md          withdrawn / inactive
 wiki/
+  en/                       英語訳。日本語ページは残し、同じ相対パスで置く
   README.md                 提案カタログ(現ステージ付き、カテゴリ別)
   log.md                    時系列の ingest/query/lint ログ(append-only)
   proposals/<slug>.md       提案ごとの精読ページ(経緯+論点)
@@ -47,7 +48,7 @@ tools/
 
 ## 言語規約
 
-- 地の文(概要・経緯・論点の説明)は **日本語**。
+- 地の文(概要・経緯・論点の説明)は **日本語**。英語訳は `wiki/` を置き換えず、同じ相対パスで `wiki/en/` に置く(例: `wiki/meetings/2026-07/README.md` の訳は `wiki/en/meetings/2026-07/README.md`)。`wiki/en` からは `raw/`・`AGENTS.md`・`wiki/_generated/` への相対リンクを 1 段深くする。未訳の提案・人物ページへのリンクは日本語版(`wiki/`)を指す。
 - **提案名・Stage 表記・API 名・spec 用語・人物の略号(略号は原文のまま)は英語**。例: `Temporal`, `Stage 2.7`, `Array.fromAsync`, `[[Get]]`, `PFC`。
 - **議事録から発言(セリフ)を引用するときは日本語に翻訳する**。原文が英文一文以上のときは訳文を載せる(例: WH「変えないでほしい」)。単語・短い専門句(`muddled`, `uninitialized function` 等)は英語のままでよい。提案名やアジェンダ項目名のような固有のタイトルは原文のまま。
 
