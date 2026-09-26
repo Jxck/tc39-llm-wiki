@@ -332,3 +332,7 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-09-27] wiki | 英語訳 wiki/en に 2025-11
 
 - `wiki/en/meetings/2025-11/` を追加。リンク先のうち未訳だった [Decorators](en/proposals/decorators.md)、[Comparisons](en/proposals/comparisons.md)、[Intl Era/Month Code](en/proposals/intl-era-month-code.md) も訳し、既存英語ページからのリンクを `wiki/en` 側へ付け替えた。
+
+## [2026-09-27] wiki | 英語訳 wiki/en に 2025-09
+
+- `wiki/en/meetings/2025-09/` を追加。リンク先の提案は既に `wiki/en/proposals/` にあった。
