@@ -1,9 +1,9 @@
 ---
-description: 提案を1本 ingest して wiki に entity ページを作る
-argument-hint: <提案名 or 会合 (例: pattern matching)>
+description: Ingest one proposal and create an entity page in the wiki
+argument-hint: <proposal name or meeting (e.g. pattern matching)>
 ---
 
-`AGENTS.md` の「## ワークフロー > ### Ingest」を読み、その手順に厳密に従って次の対象を取り込んでください: **$ARGUMENTS**
+Read `AGENTS.md`'s "## Workflow > ### Ingest" and follow those steps exactly to ingest the following target: **$ARGUMENTS**
 
-- 手順・規約の定義はすべて `AGENTS.md` が正本。ここには再掲しない(関連する提案ページ形式・リンク規約・言語規約・人物ページ生成も AGENTS.md を参照)。
-- 対象が曖昧、または範囲が大きい場合は、着手前に「この解釈・範囲でやる」と一言宣言してから進める。
+- `AGENTS.md` is the source of truth for all procedures and conventions. Do not repeat them here (see `AGENTS.md` for related proposal page format, link conventions, language conventions, and person page generation).
+- If the target is ambiguous or the scope is large, state once before starting that you will proceed with this interpretation and scope.

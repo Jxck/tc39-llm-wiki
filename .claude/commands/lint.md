@@ -1,9 +1,9 @@
 ---
-description: wiki の健全性チェック(内部整合 + 出典突き合わせ)
-argument-hint: "[対象ページ/提案 (省略時は wiki 全体)]"
+description: Check wiki health (internal consistency plus source cross-checks)
+argument-hint: "[target page/proposal (defaults to the whole wiki)]"
 ---
 
-`AGENTS.md` の「## ワークフロー > ### Lint」を読み、その手順に従って健全性チェックを実行してください。対象: **$ARGUMENTS**(未指定なら wiki 全体)。
+Read `AGENTS.md`'s "## Workflow > ### Lint" and follow those steps to run the health check. Target: **$ARGUMENTS** (if omitted, the whole wiki).
 
-- 点検観点(内部健全性 / 出典との整合性)の定義は `AGENTS.md` が正本。ここには再掲しない。
-- 発見事項を一覧で報告し、修正してよいか確認してから直す(明らかな誤りは直してから報告でも可)。最後に `wiki/log.md` に `lint` として記録。
+- `AGENTS.md` is the source of truth for the review criteria (internal consistency and source consistency). Do not repeat them here.
+- Report findings as a list, confirm before fixing them, and then make the fixes (obvious mistakes may be fixed before reporting). Finally, record the run in `wiki/log.md` as `lint`.

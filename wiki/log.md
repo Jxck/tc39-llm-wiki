@@ -1,354 +1,394 @@
 # Log
 
-wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [YYYY-MM-DD] <種別> | <内容>` で始める。`grep "^## \[" wiki/log.md | tail -5` で直近を確認できる。
+Chronological append-only record of ingest / query / lint operations. Each line starts with `## [YYYY-MM-DD] <type> | <content>`. You can check the latest entries with `grep "^## \[" wiki/log.md | tail -5`.
 
-## [2026-06-25] setup | wiki 初期構築
+## [2026-06-25] setup | Initial wiki bootstrap
 
-- 運用規約 [AGENTS.md](../AGENTS.md) を策定(レイヤ・提案ページ形式・言語規約・ワークフロー)。
-- `tools/extract_agenda.py` を作成し、全 86 会合 / 2737 議題のバックボーン [\_generated/agenda-index.md](_generated/agenda-index.md) を生成。
-- 代表 3 提案を精読してページ化:
-  - [Temporal](proposals/temporal.md) — shipped(Stage 4 / 2026-03)。「長期で出荷に至った大型提案」の実例。
-  - [Decorators](proposals/decorators.md) — stage3(Stage 3 / 2022-03)。「3 度再設計した難航提案」の実例。
-  - [Records & Tuples](proposals/records-and-tuples.md) — withdrawn(2025-04)。「停滞の末に撤回された提案」の実例。
-- [README.md](README.md) を作成。
+- Established the operating rules in [AGENTS.md](../AGENTS.md) (layers, proposal page format, language rules, workflow).
+- Created `tools/extract_agenda.py` and generated the backbone [\_generated/agenda-index.md](_generated/agenda-index.md) for all 86 meetings / 2737 agenda items.
+- Deep-read and turned three representative proposals into pages:
+  - [Temporal](proposals/temporal.md) — shipped (Stage 4 / 2026-03). A large proposal that ultimately reached shipping.
+  - [Decorators](proposals/decorators.md) — stage3 (Stage 3 / 2022-03). A difficult proposal redesigned three times.
+  - [Records & Tuples](proposals/records-and-tuples.md) — withdrawn (2025-04). A proposal withdrawn after stalling.
+- Created [README.md](README.md).
 
-## [2026-06-25] update | 人物ページ・引用翻訳・ステージ推移グラフ
+## [2026-06-25] update | People pages, quote translation, and stage-history graphs
 
-- 提案ページの英文引用(セリフ)を日本語訳に統一。AGENTS.md の言語規約に翻訳ルールを追記。
-- `tools/extract_people.py` / `tools/link_people.py` を追加。提案ページに登場する 43 名の人物ページを [people/](people/) に生成し、本文の略号を `[[ABBR]]` にリンク。語と衝突する `API`/`JS` は denylist で除外。
-- [Temporal](proposals/temporal.md) のステージ遷移テーブル下に mermaid `xychart-beta` のステージ推移グラフ(横軸=2012-2026 全区間、縦軸=Stage、下から積み上がる折れ線)を追加。bierner.markdown-mermaid では空描画だったが別の mermaid 拡張で描画可と確認。AGENTS.md に xychart-beta 形式を規約化(title は ASCII 推奨)。
+- Standardized quoted dialogue on proposal pages to English. Added translation rules to the language policy in AGENTS.md.
+- Added `tools/extract_people.py` and `tools/link_people.py`. Generated person pages for the 43 people appearing on proposal pages under [people/](people/) and linked inline abbreviations as `[[ABBR]]`. The ambiguous abbreviations `API` and `JS` were excluded via a denylist.
+- Added a mermaid `xychart-beta` stage-history graph below Temporal's stage-transition table (x-axis = full 2012-2026 span, y-axis = Stage, line stacked from the bottom). It rendered blank in bierner.markdown-mermaid, but did render in another mermaid extension. Codified `xychart-beta` in AGENTS.md (title should preferably be ASCII).
 
-## [2026-06-25] update | グラフを全提案へ展開・リンクを markdown 化
+## [2026-06-25] update | Expanded the graph to all proposals and converted links to markdown
 
-- ステージ推移グラフを [Decorators](proposals/decorators.md)(2016-2021 が Stage 2 横ばい→2022 Stage 3)と [Records & Tuples](proposals/records-and-tuples.md)(2025-04 撤回で線を止める)にも追加。
-- **VSCode の markdown プレビューは Obsidian `[[wikilink]]` を遷移できない**ため、wiki 内のリンクをすべて標準 markdown 相対リンクに変更。`link_people.py` は人物略号を `[ABBR](../people/ABBR.md)` にリンク(既存 `[[ABBR]]` も自動移行)、`extract_people.py` は人物ページの提案リンクを `[Title](../proposals/slug.md)` 出力に変更。未作成提案向けの `[[slug]]` はデッドリンク回避でコード表記の素テキストに。AGENTS.md のリンク規約を更新。
+- Added the stage-history graph to [Decorators](proposals/decorators.md) (flat at Stage 2 through 2016-2021, then Stage 3 in 2022) and [Records & Tuples](proposals/records-and-tuples.md) (line stops at the 2025-04 withdrawal).
+- Because **VS Code's markdown preview cannot navigate Obsidian `[[wikilink]]` links**, all wiki links were converted to standard markdown relative links. `link_people.py` links person abbreviations as `[ABBR](../people/ABBR.md)` (and automatically migrates existing `[[ABBR]]` links), and `extract_people.py` now emits proposal links on person pages as `[Title](../proposals/slug.md)`. Uncreated proposals stay plain text instead of dead links. AGENTS.md's link conventions were updated.
 
-## [2026-06-25] lint | 精読3ページの事実検証と修正
+## [2026-06-25] lint | Fact-checking and correcting three deep-read pages
 
-各提案ページの主張を引用元逐語録と突合(誤りを探す検証)。発見した誤りを修正:
+Cross-checked the claims on each proposal page against the source transcripts and fixed the errors found:
 
-- **Temporal**: (1) 「V8 はこの scope reduction を…」の引用は JGT ではなく **SYG の prepared statement** → 発話者を明記。(2) IDL/JSIDL 節は Temporal 審議ではなく同会合の**別アジェンダ「IDL for JavaScript」** → その旨補正。(3) 2025-04 は「Firefox 139 で出荷」ではなく**出荷予定** → 修正。
-- **Decorators**: (1) `@` 文法衝突の AWB 指摘は 2014-01 ではなく **2015-01**。(2) 2016-09 sigil swap の反対理由を EFT/AWB に誤帰属していた点を補正(EFT は疑問提起のみ、AWB の論拠は逆向き)。(3) export ordering の `toString` 論拠の主唱者は **MM**、WH 引用は **2018-05** かつ条件付き → 修正。(4) 2021-07「reviewer 任命」→「募集」。
-- **Records & Tuples**: champion の**人物取り違えを修正**。`RRI`(delegates.txt=Reefath Rajali)を Robin Ricard と混同していた。Robin Ricard は本 wiki では `RRD` に統一(2019-10 の出席者表が局所的に Robin へ別 delegate と同じ略号を当てていたのが原因)。frontmatter・本文・people ページを再生成し、誤った人物ページ RRI.md を除去(人物 42 名)。
+- **Temporal**: (1) The quote about "V8 ... this scope reduction" was a SYG prepared statement, not JGT's, so the speaker was clarified. (2) The IDL/JSIDL section was not part of the Temporal discussion; it belonged to the separate agenda item "IDL for JavaScript" in the same meeting, so that was corrected. (3) 2025-04 was a planned shipping date, not "shipped in Firefox 139".
+- **Decorators**: (1) AWB's note about the `@` syntax collision was in 2015-01, not 2014-01. (2) The resistance to the 2016-09 sigil swap had been misattributed to EFT/AWB; EFT only raised a question, and AWB's argument pointed in the opposite direction. (3) The `toString` argument for export ordering was originally made by **MM**; the WH quote was from 2018-05 and was conditional. (4) Updated 2021-07 from "reviewer appointment" to "reviewer call".
+- **Records & Tuples**: Corrected a **person mix-up** in the champion attribution. `RRI` (Reefath Rajali in delegates.txt) had been confused with Robin Ricard. On this wiki Robin Ricard is normalized to `RRD` (a local attendee table in 2019-10 reused the same abbreviation for a different delegate, which caused the confusion). Regenerated the frontmatter, body, and people pages, and removed the incorrect person page RRI.md (42 people total).
 
-ステージ遷移の骨格・大半の発言帰属は逐語録と整合しており、致命的な事実誤認はなし。
+The stage-transition skeleton and most speaker attributions matched the transcripts; there were no fatal factual errors.
 
-## [2026-06-25] update | 運用合意を AGENTS.md に反映・Update コマンド追加
+## [2026-06-25] update | Reflected the operating agreements in AGENTS.md and added the Update command
 
-- 今セッションで決まった wiki 運用の合意を AGENTS.md に明文化:
-  - ステージ推移グラフは **xychart-beta 折れ線**(横軸 2012-2026 固定・下から積み上げ)、**撤回は撤回年で線を止める**・停滞は横ばい。
-  - **champion の確定は delegates.txt だけで決めず、当該会合の Presenter 行で裏取り**する(略号は会合ごとに振り直されうる。RRI/RRD の教訓)。発言帰属・年月も原文確認。
-  - (既反映)発言引用は日本語訳/リンクは標準 markdown 相対リンク/人物ページは登場者のみ生成。
-- ワークフローに **Update** を追加:会話で決まった「wiki の動き方に関する取り決め」を AGENTS.md に反映し log に記録する操作。判断基準は「他エージェントにも必要な運用上の取り決めか」。
+- Documented the wiki operating agreements reached in this session in AGENTS.md:
+  - Stage-history graphs should use **xychart-beta line charts** (fixed 2012-2026 x-axis, stacked from the bottom); **withdrawn proposals stop the line at the withdrawal year**, and stalls remain flat.
+  - **Champions must not be decided from delegates.txt alone; they must be verified against the Presenter line in the relevant meeting** (abbreviations can be reassigned per meeting. Lesson from RRI/RRD). Speaker attribution and dates should also be checked against the original text.
+  - (Already reflected) quotes should be translated into English; links should use standard markdown relative links; person pages should be generated only for people who actually appear.
+- Added **Update** to the workflow: an operation that reflects agreed wiki behavior changes into AGENTS.md and records them in the log. The criterion is whether the change is an operational rule other agents need.
 
-## [2026-06-25] update | Lint の定義拡張(Verify を統合)
+## [2026-06-25] update | Expanded the definition of Lint (integrating Verify)
 
-- Lint の定義を拡張し、(a) 内部健全性(矛盾・孤立・陳腐化・カバレッジ)に加え、(b) 出典との整合性(wiki ↔ raw の突き合わせ検証=旧 Verify)の両方を含むものとした。独立した Verify 操作は設けず Lint に一本化。
+- Expanded Lint so it now includes both (a) internal health checks (inconsistencies, orphaned pages, staleness, and coverage) and (b) consistency with sources (cross-checking wiki against raw, formerly Verify). There is no separate Verify operation anymore; it was folded into Lint.
 
-## [2026-06-25] update | Query に file back 確認ステップを追加
+## [2026-06-25] update | Added the file-back confirmation step to Query
 
-- Query の手順に「回答が価値ある分析を含む場合は、最後にユーザへ wiki ページとして残すか確認する(勝手に追加しない)」を明記。残す場合は synthesis ページとして file back し index/log を更新。
+- Added an explicit Query step: if the answer contains valuable analysis, ask the user at the end whether it should be kept as a wiki page instead of adding it unprompted. If it should be kept, file it back as a synthesis page and update the index/log.
 
-## [2026-06-25] update | Ingest/Lint をスラッシュコマンド化
+## [2026-06-25] update | Turned Ingest/Lint into slash commands
 
-- `.claude/commands/ingest.md`・`lint.md` を追加し、`/ingest <提案>`・`/lint [対象]` で起動可能に。中身は AGENTS.md の該当ワークフローを正本として参照する薄いラッパ。AGENTS.md のワークフロー冒頭にも存在を明記。
+- Added `.claude/commands/ingest.md` and `lint.md` so `/ingest <proposal>` and `/lint [target]` can be used to invoke them. Each is a thin wrapper that points to the corresponding AGENTS.md workflow. The workflow introduction in AGENTS.md also mentions them.
 
-## [2026-06-25] update | 全ワークフローをコマンド化・定義を AGENTS.md に一本化
+## [2026-06-25] update | Turned all workflows into commands and centralized the definitions in AGENTS.md
 
-- `/query`・`/update` を追加し、4 操作(ingest/query/lint/update)すべてをスラッシュコマンド化。
-- 既存の ingest/lint コマンドから再掲していた手順を削除し、**全コマンドを「AGENTS.md の該当セクションを読んで実行するだけ」のポインタに統一**。定義の正本は AGENTS.md のみ(二重メンテ解消)。
+- Added `/query` and `/update`, so all four operations (ingest/query/lint/update) now have slash commands.
+- Removed the duplicated workflow text from the existing ingest/lint commands and **consolidated all commands into pointers that simply say "read the relevant AGENTS.md section and execute it"**. AGENTS.md is now the single source of truth.
 
-## [2026-06-25] update | コミット規約を追加
+## [2026-06-25] update | Added the commit convention
 
-- AGENTS.md ワークフローに「各操作の完了時に、操作名プレフィックス付きメッセージでコミットする(`[ingest]`/`[query]`/`[lint]`/`[update]`)」を全操作共通ルールとして追加。定義は AGENTS.md の1か所のみ(各コマンドは参照)。
+- Added a shared workflow rule to AGENTS.md: after each operation, commit with a message prefix matching the operation (`[ingest]`, `[query]`, `[lint]`, `[update]`). The definition lives in one place in AGENTS.md, with the commands only referring to it.
 
-## [2026-06-25] wiki | コミットプレフィックス [wiki] を追加
+## [2026-06-25] wiki | Added the `[wiki]` commit prefix
 
-- 操作(ingest/query/lint/update)に起因しない wiki 全体の変更(コマンドの追加・変更、tools/ の変更、リポジトリ構成や AGENTS.md の構造変更など)は `[wiki]` プレフィックスでコミットする規約を追加。
+- Added a convention that wiki-wide changes not caused by an operation (command additions/changes, changes under `tools/`, repository structure changes, AGENTS.md structure changes, etc.) should be committed with the `[wiki]` prefix.
 
-## [2026-06-25] wiki | Summarise コマンドを追加
+## [2026-06-25] wiki | Added the Summarise command
 
-- 会合を話題単位で日次要約する `/summarise` を追加(出力 `wiki/meetings/<YYYY-MM>/`、日ごとに 1 ファイル + index.md)。フォーマット定義は AGENTS.md の「ワークフロー > Summarise」。コミットプレフィックスに `[summarise]` を追加。
+- Added `/summarise` to produce daily topic-by-topic meeting summaries (output under `wiki/meetings/<YYYY-MM>/`, one file per day plus index.md). The format is defined in AGENTS.md under Workflow > Summarise. Added `[summarise]` as the commit prefix.
 
-## [2026-06-25] update | Summarise に既存提案ページへのリンク規約を追加
+## [2026-06-25] update | Added the link rule from Summarise to existing proposal pages
 
-- 要約のトピックが既存の提案ページ(`wiki/proposals/<slug>.md`)に該当する場合、Slides の次に `- 提案ページ: [Title](../../proposals/<slug>.md)` を置く規約を AGENTS.md の Summarise に追加。
+- Added a rule to AGENTS.md's Summarise workflow: when a summary topic corresponds to an existing proposal page (`wiki/proposals/<slug>.md`), place `- proposal page: [Title](../../proposals/<slug>.md)` after Slides.
 
 ## [2026-06-25] summarise | 113th TC39 Meeting (2026-03)
 
-- 最新会合 2026-03(113th, New York)を日次要約。`wiki/meetings/2026-03/` に Day 1-3 + index.md を生成。index は tc39/agendas 2026/03 へリンクし、会期・開催地・概要・参加者をまとめた。Day 2 の Temporal トピックは [Temporal](proposals/temporal.md) 提案ページへリンク。
+- Summarized the latest meeting, 2026-03 (113th, New York), into daily files. Generated Day 1-3 plus index.md under `wiki/meetings/2026-03/`. The index links to tc39/agendas 2026/03 and summarizes the venue, dates, attendees, and overview. The Temporal topic on Day 2 links to [Temporal](proposals/temporal.md).
 
-## [2026-06-25] wiki | markdown フォーマッタ oxfmt を導入
+## [2026-06-25] wiki | Introduced the oxfmt markdown formatter
 
-- `oxfmt`(Rust 製・markdown 対応)を devDependency 導入。設定 `.oxfmtrc.json`(`proseWrap: preserve`、`embeddedLanguageFormatting: off`、除外 `raw/**`・`wiki/_generated/**`)。
-- 既存の wiki 全 markdown を整形(表の桁揃え・見出し後の空行など。mermaid・日本語長文・リンクは保持)。
-- **自動強制**: PostToolUse hook(`.claude/settings.json`)で編集ファイルを即整形、pre-commit hook(`.githooks/pre-commit` + `core.hooksPath`)で staged を整形・再 stage。AGENTS.md に「フォーマット」節を追加。
+- Added `oxfmt` (Rust-based, markdown-aware) as a devDependency. Configuration lives in `.oxfmtrc.json` (`proseWrap: preserve`, `embeddedLanguageFormatting: off`, excludes `raw/**` and `wiki/_generated/**`).
+- Formatted the existing wiki markdown (table alignment, blank lines after headings, etc.); mermaid, long Japanese text, and links were preserved.
+- **Automatic enforcement**: editing files are formatted immediately via the PostToolUse hook (`.claude/settings.json`), and staged files are formatted and re-staged via the pre-commit hook (`.githooks/pre-commit` + `core.hooksPath`). Added a "Formatting" section to AGENTS.md.
 
 ## [2026-06-25] summarise | 114th TC39 Meeting (2026-05)
 
-- tc39/notes の未マージ PR #411(2026 May transcript)を submodule で checkout し、114th(Amsterdam, JetBrains)を日次要約。`wiki/meetings/2026-05/` に Day 1-3 + index.md を生成。Day 1 の Temporal/Decorators トピックは提案ページへリンク。submodule のポインタ変更はコミットしない(未マージ PR のため)。
+- Checked out tc39/notes pull request #411 (the 2026 May transcript) as a submodule and summarized the 114th meeting (Amsterdam, JetBrains) daily. Generated Day 1-3 plus index.md under `wiki/meetings/2026-05/`. The Temporal/Decorators topics on Day 1 link to proposal pages. The submodule pointer change was not committed because this was an unmerged PR.
 
-## [2026-06-25] update | 未マージ PR からの要約と submodule 運用を明文化
+## [2026-06-25] update | Documented the summarizing-of-unmerged-PRs workflow and submodule handling
 
-- Summarise に submodule 運用を追加: 未マージ PR にしかない会合は `raw/notes` で PR を checkout して要約し、ポインタはコミットしない。定期的に submodule を update し、**PR が main にマージされたら submodule を main 追跡へ戻して**ポインタを通常更新(`[wiki]`)する。
+- Added submodule handling to Summarise: meetings that exist only in an unmerged PR are summarized by checking out the PR in `raw/notes`, and the pointer is not committed. Submodules are updated regularly, and **once the PR merges to main, the submodule is returned to tracking main** so the pointer can be updated normally (`[wiki]`).
 
-## [2026-06-25] update | submodule ポインタは必ずコミット(note↔wiki 同期)
+## [2026-06-25] update | Always commit submodule pointers (keep notes and wiki in sync)
 
-- 方針変更: 「未マージ PR のポインタはコミットしない」を撤回。**submodule を pull / PR checkout したら必ずポインタをコミットする**(`[wiki]`)ことに統一。wiki が参照した note の状態を常に記録し同期させるため。AGENTS.md の該当節を置き換え。
+- Changed policy: the previous rule of "do not commit pointers for unmerged PRs" was withdrawn. The rule is now to **always commit the submodule pointer after a pull / PR checkout** (`[wiki]`). This keeps a permanent record of the notes state the wiki referenced and keeps them in sync. Replaced the relevant AGENTS.md section.
 
-## [2026-06-25] lint | wiki 全体の健全性チェック(Decorators 降格の反映ほか)
+## [2026-06-25] lint | Health check for the whole wiki (including Decorators downgrading)
 
-内部健全性と出典(2026-05 は PR #411)を突合。発見と修正:
+Cross-checked internal health and the source material for 2026-05 (PR #411). Findings and fixes:
 
-- **Decorators が陳腐化**: 2026-05(114th)で Stage 3 → **Stage 2.7 へ降格**(Decorator Metadata も lockstep)していたが提案ページが 2023-05 で止まっていた([raw may-19.md:1194](../raw/notes/meetings/2026-05/may-19.md) で確認)。frontmatter(`status: stage2.7` / `current_stage: 2.7`)・ステージ遷移テーブル(2026-05 行追加)・mermaid グラフ(2026 を 2.7 に)・概要・`### Stage 2.7 への降格` 論点・出典・index.md 行を更新。
-- **AGENTS.md**: `status` enum に `stage2.7` を新設(降格を表現できなかったため。本 lint で合意し反映)。index.md の凡例も更新。
-- **2026-05 index 概要の事実誤り 2 点**: (1) Dynamic Code Brand Checks を「Stage 4 到達」に誤記(実際は normative change の consensus のみ・次回再要求)→ 除外。(2) Decorators の 2.7 移行を「advancement/進む」と誤記 → 降格(regress)へ訂正。
-- **人物数**: index.md 「43 名」は lint 開始時点では 42 ページとの不整合だったが、Decorators ページに [DLM](people/DLM.md) が登場し再生成で 43 ページとなったため 43 のまま整合(extract_people/link_people 実行済み)。
-- 内部リンク・人物略号(43)・会合↔提案リンクは全て解決。Temporal の Stage 4(2026-03)は出典と整合。
+- **Decorators became stale**: In 2026-05 (114th), it was **downgraded from Stage 3 to Stage 2.7** (Decorator Metadata moved in lockstep), but the proposal page had stopped at 2023-05 ([verified in raw may-19.md:1194](../raw/notes/meetings/2026-05/may-19.md)). Updated frontmatter (`status: stage2.7` / `current_stage: 2.7`), the stage-transition table (added the 2026-05 row), the mermaid graph (set 2026 to 2.7), the overview, the `### Stage 2.7 downgrade` issue, the sources, and the index.md row.
+- **AGENTS.md**: Added `stage2.7` to the `status` enum (the downgrade could not be expressed before, and we agreed to reflect it in this lint pass). Updated the index legend as well.
+- **Two factual errors in the 2026-05 index summary**: (1) Dynamic Code Brand Checks had been incorrectly described as reaching Stage 4, when in fact there was only consensus on a normative change and it was re-requested later. (2) Decorators' 2.7 move had been described as an advancement; corrected to a downgrade (regress).
+- **Person count**: index.md said "43 people"; at the start of lint it was inconsistent with 42 pages, but once DLM appeared on the Decorators page and the pages were regenerated it became 43, so it is now consistent (extract_people/link_people already ran).
+- Internal links, person abbreviations (43), and meeting-to-proposal links were all resolved. Temporal's Stage 4 (2026-03) matches the source.
 
-## [2026-06-26] query | Unicode のなかでの Intl.MessageFormat の立ち位置
+-## [2026-06-26] query | Where Intl.MessageFormat sits within Unicode
 
-- 「MF2 本体(構文 DSL・データモデル)は Unicode、参照実装は ICU(ICU4C/4J, 2024-04 時点 tech preview)、JS API のみ TC39」という 3 層の垂直スタックと、TG2 が MF2 の評価を Unicode/業界に外注した位置づけ、を回答(出典: [2024-04 april-10](../raw/notes/meetings/2024-04/april-10.md))。先行質問「Intl.MessageFormat は Template Instantiation と被るか」には、Template Instantiation は W3C/WHATWG の HTML 提案で TC39 スコープ外・目的も別、と前提を訂正して回答。
-- file back: [intl-messageformat.md](proposals/intl-messageformat.md) の `## 主な論点` に `### Unicode との分業構造 — 構文は Unicode、API は TC39` を追加。続けて `## 関連提案` に `### 混同しやすい別物 — Template Instantiation / DOM Parts(参考・TC39 スコープ外)` を追加(W3C/WHATWG WICG の DOM 側提案。DOM Parts=低レイヤのマーク/更新機構、Template Instantiation=その上の宣言的テンプレート API、という階層関係。外部資料に基づく参考注記で、出典は wiki 素材外として明示)。
+- Answered that MF2 has a three-layer vertical stack: the core (syntax DSL and data model) belongs to Unicode, the reference implementation is ICU (ICU4C/4J, tech preview as of 2024-04), and only the JS API belongs to TC39. Also explained that TG2 effectively outsourced MF2 evaluation to Unicode / the broader industry (source: [2024-04 april-10](../raw/notes/meetings/2024-04/april-10.md)). For the earlier question about whether Intl.MessageFormat overlaps with Template Instantiation, clarified that Template Instantiation is a W3C/WHATWG HTML proposal outside TC39's scope and serves a different purpose.
+- file back: added `### Division of labor with Unicode — syntax at Unicode, API at TC39` under `## Main issues` in [intl-messageformat.md](proposals/intl-messageformat.md). Also added `### A different thing that is easy to confuse — Template Instantiation / DOM Parts (reference, outside TC39 scope)` under `## Related proposals` (a DOM-side WICG proposal from W3C/WHATWG; DOM Parts is the lower-level marking/update mechanism, and Template Instantiation is the declarative template API layered on top. This was added as a reference note based on external material, not on wiki source material).
 
-## [2026-06-25] query | Decorator は結局誰が欲しいのか
+## [2026-06-25] query | Who actually wants Decorators?
 
-- 「使う側(フレームワーク作者・TypeScript/Babel エコシステム・アプリ開発者)は強く欲しがるが、作る側(V8/SpiderMonkey/JSC のエンジン実装者)が誰も出荷したがらない」という需要/実装のミスマッチが停滞と 2026-05 降格の核心、と回答(出典: [2019-03](../raw/notes/meetings/2019-03/mar-27.md)・[2021-07](../raw/notes/meetings/2021-07/july-14.md)・[2023-01](../raw/notes/meetings/2023-01/feb-01.md)・[2026-05 may-19](../raw/notes/meetings/2026-05/may-19.md))。
-- file back: [decorators.md](proposals/decorators.md) の `## 主な論点` に `### 需要と実装のミスマッチ(誰が欲しいのか)` を追加。
-- 副次: 本文に [OFR](people/OFR.md) が新規登場し人物ページ生成(44 名)。"TS"(TypeScript の略)が delegate 略号 TS と誤一致してリンク化されたため、`extract_people.py` の `NON_PERSON` に `TS` を追記し、誤生成ページを除去・本文を `TypeScript` 表記へ修正。
+- Answered that the demand/implementation mismatch is the core reason for the stagnation and the 2026-05 downgrade: users (framework authors, the TypeScript/Babel ecosystem, and app developers) strongly want the feature, while implementers (engine teams in V8/SpiderMonkey/JSC) do not want to ship it. Sources: [2019-03](../raw/notes/meetings/2019-03/mar-27.md), [2021-07](../raw/notes/meetings/2021-07/july-14.md), [2023-01](../raw/notes/meetings/2023-01/feb-01.md), and [2026-05 may-19](../raw/notes/meetings/2026-05/may-19.md).
+- file back: added `### Demand vs. implementation mismatch (who wants it?)` under `## Main issues` in [decorators.md](proposals/decorators.md).
+- Side effect: [OFR](people/OFR.md) appeared for the first time in the body text, generating a person page (44 people). The abbreviation "TS" (meaning TypeScript) collided with the delegate abbreviation TS, so `extract_people.py`'s `NON_PERSON` list was updated with `TS`, the bad page was removed, and the body text was changed to `TypeScript`.
 
-## [2026-06-25] ingest | 2026 年に Stage 4 到達した提案を ingest
+## [2026-06-25] ingest | Proposals that reached Stage 4 in 2026
 
-- 対象を「2026 年(113th 2026-03 / 114th 2026-05、および 111th 2026-01)に Stage 4 へ到達した提案」に確定。該当は 6 件(Temporal は既存ページで最新のため除外し、新規 5 件を ingest)。各提案は複数年の履歴を持つため、subagent で agenda-index + raw 横断の履歴調査を 5 件並列実行し、本体で検証・ページ化。
-  - [Upsert](proposals/upsert.md)(`Map.prototype.getOrInsert`、ECMA-262、Stage 4 2026-01)
-  - [Intl Era/Month Code](proposals/intl-era-month-code.md)(ECMA-402、Stage 4 2026-03、Temporal と同時)
-  - [Joint Iteration](proposals/joint-iteration.md)(`Iterator.zip`、ECMA-262、Stage 4 2026-05)
-  - [Atomics.pause](proposals/atomics-pause.md)(ECMA-262、Stage 4 2026-05、引数削除の normative change 込み)
-  - [Explicit Resource Management](proposals/explicit-resource-management.md)(`using`、ECMA-262、Stage 4 2026-05。2025-05 conditional Stage 4)
-- 各ページに frontmatter・ステージ遷移テーブル・mermaid グラフ・主な論点・出典を整備。発言引用は日本語訳。
-- `extract_people.py` / `link_people.py` を実行し人物ページを 44 → 52 名に拡充(新規: BAN/BFS/EAO/EPR/FYT/KM/LCA/RPR)。誤検出なし。
-- [README.md](README.md) のカタログに 5 行追加、`intl-era-month-code` を未作成リストから除去、人物数を 52 に更新。[Temporal](proposals/temporal.md) の関連提案を Intl Era/Month Code ページへリンク化。
+- Narrowed the target to "proposals that reached Stage 4 in 2026 (113th 2026-03 / 114th 2026-05, and 111th 2026-01)." There were six such proposals (Temporal was omitted because it already had an existing page, so five new pages were ingested). Since each proposal has a multi-year history, five parallel subagent runs investigated the history across agenda-index and raw, and the main agent verified and wrote the pages.
+  - [Upsert](proposals/upsert.md) (`Map.prototype.getOrInsert`, ECMA-262, Stage 4 in 2026-01)
+  - [Intl Era/Month Code](proposals/intl-era-month-code.md) (ECMA-402, Stage 4 in 2026-03, alongside Temporal)
+  - [Joint Iteration](proposals/joint-iteration.md) (`Iterator.zip`, ECMA-262, Stage 4 in 2026-05)
+  - [Atomics.pause](proposals/atomics-pause.md) (ECMA-262, Stage 4 in 2026-05, including a normative change that removed the argument)
+  - [Explicit Resource Management](proposals/explicit-resource-management.md) (`using`, ECMA-262, Stage 4 in 2026-05; conditional Stage 4 in 2025-05)
+- Prepared frontmatter, stage-transition tables, mermaid graphs, main issues, and sources for each page. Quoted speech was translated into English.
+- Ran `extract_people.py` / `link_people.py` and expanded the people pages from 44 to 52 (new: BAN/BFS/EAO/EPR/FYT/KM/LCA/RPR). No false positives.
+- Added five rows to the catalog in [README.md](README.md), removed `intl-era-month-code` from the uncreated list, and updated the person count to 52. Linked Temporal's related proposal to the Intl Era/Month Code page.
 
-## [2026-06-25] update | families レイヤを新設(カテゴリ横断のまとめ)
+## [2026-06-25] update | Added the family layer for cross-cutting summaries
 
-- 同じカテゴリにくくれる提案群を束ねる **family ページ**(`wiki/families/<family>.md`)を導入。個別の経緯は `proposals/` に置き、family は横断的なまとめ(メンバー一覧 + 横断テーマ)に徹する(二重メンテ回避)。AGENTS.md にディレクトリ構成・family ページ形式・lint 観点(family の双方向整合)を追記。
-- **メンバーシップは双方向**: 提案 frontmatter に `families: [...]`、family ページに `members: [...]` を持ち、lint で不一致を検出する。未作成提案は family の `members` 側にだけ slug で載る。
-- `extract_people.py` / `link_people.py` を `wiki/families/` も走査するよう拡張(family ページの人物リンクが解決・生成されるように)。人物ページに「言及される family」行を追加。これにより [GCL](people/GCL.md) が新規生成され 53 名に。
-- 最初の family として [Iterator helpers and friends](families/iterator.md) を作成([MF](people/MF.md) の 2026-05 ロードマップを骨子に、helpers/concat/zip/chunking/includes/async 系など 11 提案を stage 付きで一覧化)。[joint-iteration](proposals/joint-iteration.md) に `families: [iterator]` を付与。index.md に families セクションを追加。
+- Introduced **family pages** (`wiki/families/<family>.md`) to group proposals that belong to the same category. Individual histories stay in `proposals/`, while families focus on cross-cutting summaries (member list + shared themes) to avoid duplicate maintenance. AGENTS.md was updated with the directory structure, family page format, and lint checks for bidirectional family consistency.
+- **Membership is bidirectional**: proposal frontmatter carries `families: [...]`, and the family page carries `members: [...]`; lint detects mismatches. Uncreated proposals are listed only on the family's `members` side as slugs.
+- Extended `extract_people.py` / `link_people.py` to scan `wiki/families/` as well, so person links in family pages resolve and generate correctly. Added a "mentioned on family pages" line to person pages. This generated [GCL](people/GCL.md), bringing the total to 53 people.
+- Created the first family, [Iterator helpers and friends](families/iterator.md), using [MF](people/MF.md)'s 2026-05 roadmap as the outline, and listing 11 proposals with their stages (helpers/concat/zip/chunking/includes/async, etc.). Added `families: [iterator]` to [joint-iteration](proposals/joint-iteration.md). Added a families section to index.md.
 
-## [2026-06-25] ingest | modules (module harmony) family を作成
+## [2026-06-25] ingest | Created the modules (module harmony) family
 
-- 「module harmony」系(ES Modules と派生提案群)を [Modules](families/modules.md) family にまとめた。subagent で agenda-index + raw を横断調査し、ES Modules / dynamic import / import.meta / top-level await / import attributes / JSON modules / export-from(Stage 4)、source phase imports / import defer / import text(Stage 3)、ESM phase imports(2.7)、export defer(2、2.7 提案中)、export all from / module scope ceiling / module declarations / compartments(Stage 1〜停滞)の計 16 提案を現ステージ付きで一覧化。横断テーマ(import の phase、評価遅延、ホスト統合、`assert`→`with` 改名)を整理。
-- 各提案ページは未作成のため members はコード表記。新規人物 [GB](people/GB.md)(Guy Bedford)を生成(54 名)。`vm`(Node module)を delegate 略号 `VM` と誤検出してリンク化したため `extract_people.py` の `NON_PERSON` に `VM` を追記し、誤生成ページを除去・本文をコード表記へ修正(`TS` と同種の対処)。
-- index.md の families セクションに modules を追加。
+- Grouped the "module harmony" proposals (ES Modules and related proposals) into the [Modules](families/modules.md) family. After a cross-cutting subagent review of agenda-index and raw, listed 16 proposals with current stages: ES Modules / dynamic import / import.meta / top-level await / import attributes / JSON modules / export-from (Stage 4), source phase imports / import defer / import text (Stage 3), ESM phase imports (2.7), export defer (2, with a 2.7 proposal in progress), and export all from / module scope ceiling / module declarations / compartments (Stage 1 to stalled). Organized the shared themes: import phase, evaluation delay, host integration, and the `assert` → `with` rename.
+- The individual proposal pages do not yet exist, so the members are written as code-formatted slugs. Generated the new person [GB](people/GB.md) (Guy Bedford), bringing the total to 54. Because `vm` (the Node module) was misdetected as the delegate abbreviation `VM`, `extract_people.py`'s `NON_PERSON` list was updated with `VM`, the bad page was removed, and the body text was corrected to code formatting (the same fix as for TS).
+- Added modules to the families section of index.md.
 
-## [2026-06-25] update | raw に tc39/proposals を追加し precedence を定義
+## [2026-06-25] update | Added raw/proposals and defined precedence
 
-- `raw/proposals`(tc39/proposals)を submodule 追加。現ステージ別テーブル + champions の正典リストを raw に取り込んだ。
-- AGENTS.md のレイヤ節を 2 ソース構成に改訂し、precedence を明文化: 経緯・論点・発言は `raw/notes` が一次、現ステージ(`current_stage`/`status`)と champion の確定値は `raw/proposals` が一次。proposals はスナップショットで経緯を持たない点も注記。
-- ディレクトリ構成に `raw/proposals/` の主要ファイルを追記。
-- Lint(b) に proposals 突き合わせ手順を追加: frontmatter の `current_stage`/`status`/`champions` を README/finished/stage-1/inactive と grep 照合し、食い違いは precedence に従って解決(現ステージは proposals 一次、経緯は notes で裏取り)。
+- Added `raw/proposals` (tc39/proposals) as a submodule. Imported the canonical current-stage tables and champions lists into raw.
+- Revised the layers section of AGENTS.md to a two-source model and made the precedence explicit: history, issues, and speaker attribution come primarily from `raw/notes`, while current `current_stage` / `status` and champion values come primarily from `raw/proposals`. Also noted that proposals are snapshots and do not carry history.
+- Updated the directory-structure listing with the key files in `raw/proposals/`.
+- Added proposal cross-checking steps to Lint(b): grep-compare frontmatter `current_stage` / `status` / `champions` against README / finished / stage-1 / inactive, and resolve disagreements according to precedence (current stage comes from proposals; history is verified in notes).
 
 ## [2026-06-25] ingest | Intl.MessageFormat (Stage 1, stuck)
 
-- 新規提案ページ `wiki/proposals/intl-messageformat.md` を作成。MessageFormat 2.0 (MF2) を JS に公開する ECMA-402 提案。
-- ステージ: 2022-03 に Stage 1 到達後、2026 まで Stage 1 で停滞。2024-02 に「parser を外しデータモデルのみで Stage 2」案、2024-04 に TG2(Google i18n)反対で頓挫し stuck に。論点は「実績の乏しい DSL/parser を言語に入れる是非」「error handling(throw しないモデル / option 1〜6)」「`message` 語の混乱」「`Intl.MessageResource` への分離(2022-11)」。
-- champion は canonical の `raw/proposals/ecma402/README.md`(Stage 1 節)に従い EAO のみとした(DLM の co-champion 関与は経緯として本文に保持)。
-- `extract_people.py` / `link_people.py` 実行、`index.md` に行追加。
+- Created the new proposal page `wiki/proposals/intl-messageformat.md`. This is the ECMA-402 proposal to expose MessageFormat 2.0 (MF2) in JS.
+- Stage history: reached Stage 1 in 2022-03 and then remained stuck at Stage 1 through 2026. In 2024-02 there was a proposal to remove the parser and move to Stage 2 with only the data model; in 2024-04 the proposal stalled because TG2 (Google i18n) opposed it. Main issues include whether to standardize a DSL/parser with little prior art, error handling (non-throwing model / options 1-6), confusion around the word `message`, and splitting into `Intl.MessageResource` (2022-11).
+- Following the canonical `raw/proposals/ecma402/README.md` Stage 1 section, the champion list was set to EAO only (DLM's co-champion involvement is retained in the body as history).
+- Ran `extract_people.py` / `link_people.py` and added the page to index.md.
 
-## [2026-06-26] wiki | /update を「raw ソースの同期」コマンドへ再定義
+## [2026-06-26] wiki | Redefined /update as the raw-source sync command
 
-- `/update` の役割を変更: 旧「会話で決まった運用合意を AGENTS.md に反映」を廃止し、**`raw/` 配下の submodule(notes / proposals)を最新に pull し、前回同期(コミット済みポインタ)からの差分を表示する**同期コマンドに置き換えた。
-- AGENTS.md「### Update」を全面書き換え(手順: OLD ポインタ控え → pull → `OLD..HEAD` 差分提示 → `[update]` でポインタ commit + 生成物再生成 → log 記録)。Summarise 節の「以後の運用」を /update へ委譲し、ルーチン同期のポインタ commit を `[update]`(臨時 checkout は従来どおり `[wiki]`)と整理。
-- `.claude/commands/update.md` と workflow 一覧の引数ヒントを更新。
+- Changed the role of `/update`: the old meaning of "reflect agreed wiki operations into AGENTS.md" was removed, and it was replaced with a sync command that **pulls the submodules under `raw/` (notes / proposals) to the latest state and shows the diff since the previous sync (the committed pointer)**.
+- Rewrote AGENTS.md's `### Update` section completely (steps: record old pointers → pull → show `OLD..HEAD` diff → commit pointers with `[update]` + regenerate outputs → record in the log). Delegated the future handling of Summarise to /update and clarified that routine sync pointer commits are `[update]` (temporary checkouts remain `[wiki]`).
+- Updated `.claude/commands/update.md` and the workflow argument hints.
 
-## [2026-06-26] lint | raw/proposals 突き合わせ(stage/champion)と相互リンク補完
+## [2026-06-26] lint | Cross-checking stage/champion against raw/proposals and filling in missing links
 
-新 precedence(`raw/proposals` が現ステージ/champion の一次)に従い wiki 全体を点検。
+Checked the entire wiki according to the new precedence (`raw/proposals` is the primary source for current stage / champion).
 
-- **提案 9 ページの現ステージ/status は全て canonical 一致**(Decorators=Stage 2.7 も canonical の 2.7 節で確認、Records & Tuples=inactive、Stage 4 群=finished、Intl.MessageFormat=Stage 1)。別セッション ingest の [intl-messageformat](proposals/intl-messageformat.md) も champion `EAO`・Stage 1 ともに canonical 一致で健全。
-- **family の stage 誤りを修正**(canonical 照合): iterator の `iterator-join` を `1〜2`→**3**、modules の `module-declarations` を `1(停滞)`→**2** に訂正し、別 Stage 2 提案 `module-expressions` を分離・members 追加。
-- **相互リンク漏れを補完**(前回 lint からの持ち越し): 2026-03/2026-05 要約の該当トピックに `- 提案ページ:` を 5 件追加(ERM×2・Intl Era/Month・Joint Iteration・Atomics.pause)。
-- **champion 整合**(方針: 歴史的 champion 込みを維持し canonical の不足のみ補う): [Temporal](proposals/temporal.md) に canonical の champion 4 名 [PDL](people/PDL.md)(Philipp Dunkel)・[MAJ](people/MAJ.md)(Matt Johnson-Pint)・[BT](people/BT.md)(Brian Terlson)・[JWS](people/JWS.md)(Jason Williams)を追加(計 9 名)。Decorators/Upsert/Intl Era・Month は canonical champion が既に揃っており追加なし(YK/EPR 等の歴史的 champion は据え置き)。
-- 副次: 人物ページ再生成で PDL/MAJ を新規生成(57→59 名)。index.md の人物数は 54 と stale だった(intl-messageformat ingest 時の更新漏れ、実際は 57)→ 59 に是正。
-- fmt・デッドリンク・family 双方向整合は全てクリーン。
+- **All 9 proposal pages matched the canonical current stage/status** (Decorators = Stage 2.7 confirmed in the canonical 2.7 section, Records & Tuples = inactive, Stage 4 proposals = finished, Intl.MessageFormat = Stage 1). The separate-session ingest of [intl-messageformat](proposals/intl-messageformat.md) was also healthy, matching the canonical champion `EAO` and Stage 1.
+- **Fixed family stage errors** (canonical cross-check): corrected iterator's `iterator-join` from `1~2` to **3**, and modules' `module-declarations` from `1 (stalled)` to **2**; also separated the Stage 2 proposal `module-expressions` and added it to the members list.
+- **Filled in missing cross-links** (carried over from the previous lint): added `- proposal page:` to five summary topics from 2026-03 / 2026-05 (ERM x2, Intl Era/Month, Joint Iteration, Atomics.pause).
+- **Champion consistency** (policy: keep historical champions and only add missing canonical ones): added the canonical four champions to [Temporal](proposals/temporal.md) — [PDL](people/PDL.md) (Philipp Dunkel), [MAJ](people/MAJ.md) (Matt Johnson-Pint), [BT](people/BT.md) (Brian Terlson), and [JWS](people/JWS.md) (Jason Williams) — for a total of 9 champions. No additions were needed for Decorators / Upsert / Intl Era- Month because their canonical champions were already present (historical champions like YK/EPR remain).
+- Side effect: person-page regeneration created PDL and MAJ (57→59 people). index.md's person count had been stale at 54 (a missed update during the intl-messageformat ingest) and was corrected to 59.
+- Formatting, dead links, and family bidirectional consistency were all clean.
 
-## [2026-06-26] wiki | 全提案ステージ一覧 proposals/index.md を生成化
+## [2026-06-26] wiki | Generated the all-proposals stage list in proposals/index.md
 
-- `tools/extract_proposals.py` を新設。`raw/proposals/`(canonical: README=Stage 3/2.7/2、finished=4、stage-1、stage-0、inactive と ecma402/ 同構成)から全提案を抽出し、ECMA-262 / ECMA-402 ごとに stage 別の完全一覧 [proposals/index.md](proposals/index.md) を生成(ECMA-262 286 件 / ECMA-402 34 件)。精読済み 9 ページはタイトル一致で各ページへリンク(別名は generator の ALIASES で吸収)。
-- **生成物として常時最新化**: Update(`raw/proposals` pull)の step 4 再生成チェーンに `extract_proposals.py` を追加し、`raw/proposals` が動いたら必ず再生成する旨を AGENTS.md に明記。Generated レイヤ定義・ディレクトリ構成・Lint の再生成手順・wiki/index.md の導線も更新。
-- churn 回避のため `wiki/proposals/index.md` を `.oxfmtrc.json` の ignore に追加(出力は generator が authoritative)。
+- Added `tools/extract_proposals.py`. It extracts all proposals from `raw/proposals/` (canonical structure: README = Stage 3/2.7/2, finished = 4, stage-1, stage-0, inactive, plus the same structure under ecma402/) and generates a complete stage-by-stage list in [proposals/index.md](proposals/index.md) (ECMA-262: 286 items / ECMA-402: 34 items). The 9 deep-read pages are linked by title match (aliases are handled by the generator's ALIASES map).
+- **Always keep generated output current**: added `extract_proposals.py` to the update regeneration chain in step 4 when pulling `raw/proposals`, and documented in AGENTS.md that if `raw/proposals` moves, regeneration is mandatory. Updated the generated-layer definition, directory structure, lint regeneration steps, and the wiki/index.md navigation path as well.
+- Added `wiki/proposals/index.md` to `.oxfmtrc.json`'s ignore list to avoid churn (the generator is the authoritative output).
 
-## [2026-06-26] wiki | Update 再定義の整合(規約反映は [wiki] に集約)
+## [2026-06-26] wiki | Aligned the Update redefinition (rule reflections are centralized under [wiki])
 
-- 別プロセスが `### Update` を「運用方針の反映」→「raw ソースの同期」に再定義済み(コミット ba4c278 に巻き込まれて記録)。新定義は AGENTS.md・`/update` コマンド・ワークフロー一覧で整合済みと確認。
-- 抜けていた「規約合意の AGENTS.md 反映」の住所を明文化: コミット規約の `[wiki]` 行に「AGENTS.md への規約反映も `[wiki]`、専用操作・コマンドは設けず明示依頼時に行う、`/update` は raw 同期専用」を追記。
+- Another process had already redefined `### Update` from "reflect operating policy" to "sync raw sources" (recorded while landing commit ba4c278). Confirmed the new definition was already aligned across AGENTS.md, the `/update` command, and the workflow list.
+- Clarified the previously missing destination for "reflect rule agreements into AGENTS.md": in the commit convention's `[wiki]` line, added that reflections of AGENTS.md rules also use `[wiki]`, that there is no dedicated operation or command for them, and that `/update` is reserved for raw sync only.
 
-## [2026-06-26] wiki | proposals/index.md の Stage 4 を未収載分のみに絞り込み
+## [2026-06-26] wiki | Restricted proposals/index.md Stage 4 to not-yet-shipped items
 
-- Stage 4 セクションを「まだ ECMAScript に入っていない=Expected Publication Year が当年以降」のものだけに限定(出荷済みの finished は省略)。`extract_proposals.py` が finished テーブルの出版予定年を読み、`>= 今年` で filter。Stage 3 以下は従来どおり全件。
-- 結果: Stage 4 は ECMA-262 11 件 / ECMA-402 2 件(全 finished 77 / 18 件中)。当年判定は datetime ベースで自動繰り上がり。
-- 注: 「今年 Stage 4 到達」の厳密判定は canonical に stage-4 日付列が無いため、出版予定年(ES エディション)を proxy にしている。pub 2026 には 2025 末に finished し ES2026 に入る分も含まれる。
+- Limited the Stage 4 section to items that are "not yet in ECMAScript = Expected Publication Year is this year or later" (omitting finished items that already shipped). `extract_proposals.py` reads the publication year from the finished table and filters with `>= this year`. Stage 3 and below remain complete.
+- Result: Stage 4 now contains 11 ECMA-262 items and 2 ECMA-402 items (out of 77 / 18 finished items total). The current-year check advances automatically via datetime.
+- Note: the exact "reached Stage 4 this year" determination uses publication year (ES edition) as a proxy because canonical has no stage-4 date column. For pub year 2026, this includes items that finished at the end of 2025 and entered ES2026.
 
-## [2026-06-26] wiki | AGENTS.md にセッションの取り決めを反映
+## [2026-06-26] wiki | Reflected the session agreements into AGENTS.md
 
-- `proposals/index.md` の記述を実態に整合: 「完全ステージ一覧」→「Stage 4 は未収載分のみ」。新セクション「全提案ステージ一覧(proposals/index.md)」を追加し、Stage 4 フィルタ(Expected Publication Year ≥ 当年)と ES エディション規則(3 月末 freeze + 6 月 GA、pub year=どの ES 版か=収載判定の確定信号)を明文化。
-- Lint の champion 整合方針を追記: canonical の現 champion は満たす(不足は補う)が、canonical に無い歴史的 champion は削除せず残す(canonical に無い=誤りとしない)。
+- Aligned the description of `proposals/index.md` with reality: "complete stage list" became "Stage 4 only includes not-yet-shipped items." Added a new section, "All proposal stages (proposals/index.md)", and documented the Stage 4 filter (Expected Publication Year ≥ current year) and the ES edition rule (end-of-March freeze + June GA; publication year is the decisive signal for which ES edition it belongs to).
+- Added the champion-consistency policy to Lint: canonical current champions must be covered (add missing ones), but historical champions not present in canonical should not be deleted (not being in canonical does not imply error).
 
-## [2026-06-26] ingest | Amount(旧 Measure)を精読
+## [2026-06-26] ingest | Deep-read Amount (formerly Measure)
 
-- `Amount`(`proposal-amount`、旧 `proposal-measure`)の提案ページ [amount.md](proposals/amount.md) を作成。数値+単位の immutable value type(`value`/`unit`/`convertTo()`/`toLocaleString()`)。ECMA-262、champion [BAN](people/BAN.md)、現 Stage 2(canonical で確認、reviewer WH/JHD)。
-- ステージ遷移を notes で裏取り: 2024-10 に "Measure" として **Stage 1**(agenda-index は "stage 0" 表記だが Conclusion は Stage 1 承認 → notes を正とした)、2025-07 に Amount へ改名、Stage 2 は 2025-07/09 に未達で 2026-05 に到達。論点: Decimal との unified vision(merge せず)、i18n 用途 vs 汎用、conversion math の精度(WH 指摘)、no-unit/serialization。
-- index.md の精読済みカタログに Amount を追加。extract_people/link_people/extract_proposals 再生成(人物 60 名、generated index が amount.md をリンク)。
+- Created the proposal page [amount.md](proposals/amount.md) for `Amount` (formerly `proposal-measure`). It is an immutable value type for number + unit (`value` / `unit` / `convertTo()` / `toLocaleString()`). ECMA-262, champion [BAN](people/BAN.md), current Stage 2 (verified in canonical, reviewers WH/JHD).
+- Verified the stage transitions in notes: in 2024-10 it was introduced as "Measure" and approved for **Stage 1** (agenda-index says "stage 0", but the conclusion was Stage 1 approval, so notes were taken as authoritative), renamed to Amount in 2025-07, and did not reach Stage 2 until 2026-05 (not in 2025-07/09). Main issues: whether to merge with Decimal, i18n use cases vs general-purpose use, conversion math precision (WH's concern), and no-unit / serialization behavior.
+- Added Amount to the deep-read catalog in index.md. Regenerated extract_people / link_people / extract_proposals (people count 60, and the generated index now links to amount.md).
 
-## [2026-06-26] wiki | ステージグラフを折れ線(xychart-beta)へ戻す
+## [2026-06-26] wiki | Restored the stage graphs to line charts (xychart-beta)
 
-- gantt 移行(1ff1489)を revert し、全 10 提案ページのステージ推移グラフを `xychart-beta` 折れ線へ復帰。AGENTS.md のグラフ規約も折れ線に戻した。
-- 補足: 「目盛りを 1 刻みにしたい」は **xychart-beta では不可**(mermaid 公式ドキュメントで確認。y 軸は数値専用で tick interval/count/custom 値の指定オプションが無く、0–4 範囲では自動で 0.5 刻み。設定可能なのは show/hide のみ)。半端値は 2.7 のみで、2 と 3 の間に正しくプロットされる。0.5 グリッドが気になる場合の選択肢は「y 軸ラベル非表示」のみ。
+- Reverted the gantt migration (1ff1489) and restored all 10 proposal pages' stage-history graphs to `xychart-beta` line charts. Also reverted the AGENTS.md graph rule back to line charts.
+- Note: asking for tick marks at every 1 is **not possible in xychart-beta** (confirmed in the mermaid docs. The y-axis is numeric-only, with no tick interval/count/custom-value option; in the 0-4 range it auto-renders at 0.5 increments. The only configurable option is show/hide). The only non-integer is 2.7, and it plots correctly between 2 and 3. If the 0.5 grid is distracting, the only option is to hide the y-axis labels.
 
-## [2026-06-26] lint | wiki 全体(Amount 追加・gantt 往復後の点検)
+## [2026-06-26] lint | Whole-wiki check after adding Amount and round-tripping gantt
 
-- **内部健全性**: fmt クリーン、全 10 提案ページが xychart-beta 折れ線(gantt 残存なし)、人物数 60 が index 記載と一致、proposals/index.md は再生成で差分なし(最新)、デッドリンクなし、family 双方向メンバーシップ整合。
-- **出典整合**: 全 11 提案ページの `current_stage`/`status` を raw/proposals(canonical)と照合し全て一致(Amount=Stage 2、Decorators=Stage 2.7、R&T=withdrawn ほか)。
-- **修正(相互リンク漏れ)**: amount.md 作成後にできた会合トピックへのリンク漏れを補完。2026-03-10・2026-05-20 の「Amount for Stage 2」に `- 提案ページ: [Amount](../../proposals/amount.md)` を追加。
+- **Internal health**: formatting was clean, all 10 proposal pages used `xychart-beta` line charts (no gantt remnants), the person count 60 matched the index, proposals/index.md had no diff after regeneration (up to date), there were no dead links, and family membership was bidirectionally consistent.
+- **Source consistency**: all 11 proposal pages' `current_stage` / `status` matched raw/proposals (canonical) exactly (Amount = Stage 2, Decorators = Stage 2.7, R&T = withdrawn, etc.).
+- **Fix (missing cross-link)**: filled in the link missing from the meeting topics created after amount.md. Added `- proposal page: [Amount](../../proposals/amount.md)` to the 2026-03-10 and 2026-05-20 "Amount for Stage 2" topics.
 
-## [2026-06-27] ingest | 2026-05 会合のステージ変更討議トピックを提案ごとに取り込み
+## [2026-06-27] ingest | Pulled in the 2026-05 meeting topics where stage changes were discussed
 
-- 対象: 114th meeting (2026-05) で「ステージ変更を議論した」トピック(移動の有無不問)。status update のみ・normative PR・needs-consensus PR は除外。
-- 新規提案ページ 13 件: iterator-chunking(S3)・iterator-includes(S3)・iterator-join(S3)・regexp-buffer-boundaries(S3)・dynamic-code-brand-checks(S3 据置/normative)・error-stack-accessor(S3)・intl-keep-trailing-zeros(S3)・stable-formatting(S2)・intl-sequence-units(S2)・intl-default-behaviours(S1)・export-all-from(S1)・comparisons(S1)・is-template-object(inactive 化)。
-- 既存ページは 2026-05 行が反映済みのため更新不要を確認: joint-iteration(S4)・atomics-pause(S4)・decorators(+ metadata, 3→2.7)・amount(S2)・explicit-resource-management(S4 finished)。
-- frontmatter は raw/proposals(canonical)で現ステージ・champion を裏取り。過去経緯は agenda-index と各 notes で確認(ユーザ指定によりスコープは 2026-05 中心、深掘りは後続)。
-- family 整合: iterator.md の chunking/includes/join 行をページへリンク、modules.md の export-all-from 行をリンク(members は既存で一致)。
-- tools 再生成: extract_people.py(64 人)・link_people.py 実行。index.md カタログに 13 行追加。
+- Target: topics in the 114th meeting (2026-05) that discussed stage changes (regardless of whether the stage moved). Status-update-only items, normative PRs, and needs-consensus PRs were excluded.
+- 13 new proposal pages: iterator-chunking (S3), iterator-includes (S3), iterator-join (S3), regexp-buffer-boundaries (S3), dynamic-code-brand-checks (S3 hold / normative), error-stack-accessor (S3), intl-keep-trailing-zeros (S3), stable-formatting (S2), intl-sequence-units (S2), intl-default-behaviours (S1), export-all-from (S1), comparisons (S1), and is-template-object (made inactive).
+- Existing pages were unchanged because their 2026-05 rows had already been reflected: joint-iteration (S4), atomics-pause (S4), decorators (+ metadata, 3→2.7), amount (S2), and explicit-resource-management (S4 finished).
+- Frontmatter stage/champion values were verified against canonical raw/proposals. Earlier history was verified in agenda-index and the individual notes (the user asked to focus on 2026-05, with deeper follow-up later).
+- Family consistency: linked the chunking/includes/join rows in iterator.md and the export-all-from row in modules.md (members already matched).
+- Regenerated tools: extract_people.py (64 people) and link_people.py. Added 13 rows to the index.md catalog.
 
-## [2026-06-27] ingest | 深堀り修正: 3 提案の Stage 遷移を notes で裏取りし訂正
+## [2026-06-27] ingest | Deep-follow-up: verified and corrected the stage transitions for three proposals
 
-- 前回 ingest で「裏取りが浅い」と明示した 2 留意点を raw/notes の `### Conclusion` で確定。
-- **dynamic-code-brand-checks**: Stage 2 には未到達(2019-07「no for stage 2」/ 2019-12「NOT approved」/ 2021-01「Not advancing」)。2024-04 に NRO が「Stage 1 版を Stage 3 へ」と要求し **1 → 3 へ直接前進**。誤りだった「2021-01 Stage 2 到達」を訂正、mermaid を 2019-2023 を 1 に修正、論点・出典を追補。
-- **is-template-object (Array.isTemplateObject)**: 2019-06 june-5 の結論が "Stage 2 acceptance" で **Stage 1 を経ず直接 Stage 2**。誤りだった「Stage 1 → 2020 年前後に Stage 2(推定)」を訂正、mermaid を 2019 から 2 に修正、出典を追補。
-- **intl-keep-trailing-zeros**: 2025-07 で同会期中に **Stage 2(day 1 july-29)→ Stage 2.7(day 3 july-30)** を連続通過(WH の ToIntlMathematicalValue 懸念はスコープ外として分離)。誤りだった「2 → 3 直接」を訂正、Stage 2.7 行を追加、mermaid 2025 年末値を 2.7 に修正、論点追補。
-- tools 再生成(extract_people / link_people)。mermaid は全 3 ページ 15 点を維持。index カタログのステージ値は不変(訂正は中間遷移のため)。
+- Confirmed the two items explicitly marked as "not yet sufficiently verified" in the previous ingest by checking the raw/notes `### Conclusion` sections.
+- **dynamic-code-brand-checks**: It never reached Stage 2 (2019-07 "no for stage 2" / 2019-12 "NOT approved" / 2021-01 "Not advancing"). In 2024-04, NRO requested "the Stage 1 version to Stage 3," so it advanced directly from **1 → 3**. Corrected the mistaken "reached Stage 2 in 2021-01", fixed the mermaid graph so 2019-2023 stays at 1, and added supporting issues/sources.
+- **is-template-object (Array.isTemplateObject)**: The conclusion in 2019-06 june-5 was "Stage 2 acceptance", so it went **directly to Stage 2 without passing through Stage 1**. Corrected the mistaken assumption of "Stage 1 → Stage 2 around 2020", fixed the mermaid graph to start at 2 in 2019, and added sources.
+- **intl-keep-trailing-zeros**: In 2025-07 it moved **Stage 2 (day 1, july-29) → Stage 2.7 (day 3, july-30)** within the same meeting (WH's ToIntlMathematicalValue concern was split off as out of scope). Corrected the mistaken "directly 2 → 3", added the Stage 2.7 row, fixed the 2025 year-end mermaid value to 2.7, and added the issues.
+- Regenerated extract_people / link_people. The mermaid graphs retained 15 points across the 3 pages. The index catalog stage values did not change (these were intermediate transitions only).
 
-## [2026-06-28] lint | wiki 全体
+## [2026-06-28] lint | Whole wiki
 
-- **内部健全性**: oxfmt クリーン、mermaid 全提案 15 点(records-and-tuples の 14 は撤回年止めで正常)、proposals/index.md 再生成で差分なし、デッドリンク無し(検出は説明用プレースホルダのみ)、family 双方向整合 OK。
-- **出典整合**: ECMA-262 新規(iterator-chunking/includes/join・regexp-buffer-boundaries・dynamic-code-brand-checks・error-stack-accessor)は canonical の Stage 3 と一致。champions も canonical 一致(EAO/SFC ほか)。
-- **修正(1) バグ**: regexp-buffer-boundaries.md の `\Z` 正規表現に実 U+2028/U+2029(行区切り)が混入しテーブルを破壊していた → ASCII テキスト `\u2028` / `\u2029` に置換。
-- **修正(2) family 整合**: regexp-buffer-boundaries の `families: [regexp]` は families/regexp.md 不在のため frontmatter から除去。
-- **修正(3) 人物数**: index.md「60 名」→「65 名」(JRL/JSH/KOT/MSL/ZTZ 追加分の反映漏れ)。
-- **未解決(保留)**: Stable Formatting / Intl Sequence Units の現ステージで notes と canonical が食い違い。2026-05 notes は両者を「Stage 2 で consensus」と明記するが、canonical ecma402/README は両者を `### Stage 1` セクションに据え置き(2026-05 note 付き、`### Stage 2` は空)。section 移動の lag と推定。wiki は Stage 2 を維持し、次回 /update で raw/proposals を pull して section が Stage 2 へ移動したか確認のうえ確定する。
+- **Internal health**: formatting was clean; all proposal pages used xychart-beta line charts (15 points total, with records-and-tuples' 14 ending at the withdrawal year as expected); proposals/index.md had no diff after regeneration; there were no real dead links (only explanatory placeholders); and family bidirectional consistency was OK.
+- **Source consistency**: the ECMA-262 new items (iterator-chunking/includes/join, regexp-buffer-boundaries, dynamic-code-brand-checks, error-stack-accessor) all matched canonical Stage 3. The champions also matched canonical (EAO/SFC, etc.).
+- **Fix (bug)**: the `\Z` regexp in regexp-buffer-boundaries.md had accidentally included actual U+2028/U+2029 line-separator characters and broke the table; replaced them with ASCII text `\u2028` / `\u2029`.
+- **Fix (family consistency)**: removed `families: [regexp]` from regexp-buffer-boundaries because `families/regexp.md` does not exist.
+- **Fix (person count)**: updated index.md from "60 people" to "65 people" (a missed reflection of the JRL/JSH/KOT/MSL/ZTZ additions).
+- **Unresolved**: Stable Formatting and Intl Sequence Units disagree between notes and canonical. The 2026-05 notes explicitly say both reached Stage 2 consensus, but canonical ecma402/README still leaves both under `### Stage 1` (with a 2026-05 note), and `### Stage 2` is empty. This is probably a lag in moving the section. The wiki keeps Stage 2 for now; after the next /update, pull raw/proposals and confirm whether the section moved to Stage 2.
 
-## [2026-06-29] lint | wiki 全体 + raw/proposals 突き合わせ
+## [2026-06-29] lint | Whole wiki + raw/proposals cross-check
 
-- **内部健全性**: リンク切れの実体破損なし(検出7件は `ABBR`/`slug`/`<slug>` プレースホルダか agenda-index 生成物・log 履歴記述)。直近の index.md→README.md リネームは健全。family の双方向整合(members ↔ 提案 frontmatter families)も問題なし。
-- **出典整合(raw/proposals)**: 全23提案の stage/champion を canonical と照合。
-  - **修正1件**: `is-template-object` の status を `inactive` → `withdrawn`。may-19 で champion JHD・CDA が "withdrawn" と明示、canonical inactive-proposals も "Withdrawn" 区分、同種の `records-and-tuples` も withdrawn。frontmatter / ステージ遷移セル(2 → withdrawn)/ 概要 / 論点見出し / README カタログ行を統一。
-  - **canonical 追従遅れ(wiki が正・修正なし)**: `intl-sequence-units`・`stable-formatting` は wiki=stage2。`ecma402/README` は Stage 1 のままだが、2026-05 議事録(may-20 line 290 / 475-476)で Stage 2 consensus を確認。canonical README が 2026-05 の ECMA-402 結果を未反映なだけ。次回 lint で誤って降格しないこと。
-  - champion 確認: `comparisons` の `JSH`=Jacob Smith(canonical 一致)、`temporal`/`decorators`/`intl-era-month-code` の歴史的 champion は方針どおり保持。
+- **Internal health**: no real broken links (the seven detected ones were placeholders such as `ABBR`, `slug`, `<slug>`, or generated agenda-index / log-history text). The recent index.md→README.md rename was healthy. Family bidirectional consistency (members ↔ proposal frontmatter families) was also fine.
+- **Source consistency (raw/proposals)**: checked stage/champion for all 23 proposals against the canonical source.
+  - **One fix**: changed `is-template-object` status from `inactive` to `withdrawn`. In may-19, champion JHD/CDA explicitly said "withdrawn," the canonical inactive-proposals also uses a "Withdrawn" section, and records-and-tuples is likewise withdrawn. Aligned frontmatter, stage-transition cell (2 → withdrawn), overview, issue headings, and the README catalog row.
+  - **Canonical lag (wiki is correct; no fix needed)**: `intl-sequence-units` and `stable-formatting` are wiki=stage2. `ecma402/README` still says Stage 1, but the 2026-05 notes (may-20 line 290 / 475-476) confirm Stage 2 consensus. The canonical README just has not caught up to the 2026-05 ECMA-402 result yet. Do not accidentally downgrade them in the next lint.
+  - Champion check: `comparisons`' `JSH` is Jacob Smith (matches canonical), and the historical champions for `temporal` / `decorators` / `intl-era-month-code` were kept as intended.
 
 ## [2026-06-30] summarise | 109th TC39 Meeting (2025-07)
 
-- 2025-07(109th, リモート)を日次要約。`wiki/meetings/2025-07/` に Day 1-4(2025-07-28〜31)+ index.md を生成。Stage advancement: `Math.sumPrecise`・Uint8Array base64+hex が Stage 4、Iterator Sequencing・Upsert が Stage 3、Intl Era and Month Code・Intl Keep Trailing Zeros が Stage 2.7、Import Buffer が Stage 1→2、Module Import Hook/new Global・`Array.getNonIndexStringProperties`・`Object.getOwnPropertySymbols` options が Stage 1。Amount(旧 Measure)・`Object.propertyCount`・`Array.isSparse` は objection により不成立。既存提案ページ(temporal, upsert, iterator-chunking, intl-keep-trailing-zeros, amount, intl-era-month-code)へリンク。
+- Summarized the 2025-07 meeting (109th, remote) into daily files. Generated Day 1-4 (2025-07-28 to 2025-07-31) plus index.md under `wiki/meetings/2025-07/`. Stage advancements: `Math.sumPrecise` and Uint8Array base64+hex reached Stage 4, Iterator Sequencing and Upsert reached Stage 3, Intl Era and Month Code and Intl Keep Trailing Zeros reached Stage 2.7, Import Buffer moved from Stage 1 to 2, and Module Import Hook / new Global / `Array.getNonIndexStringProperties` / `Object.getOwnPropertySymbols` options reached Stage 1. Amount (formerly Measure), `Object.propertyCount`, and `Array.isSparse` did not advance because of objections. Linked to existing proposal pages (temporal, upsert, iterator-chunking, intl-keep-trailing-zeros, amount, intl-era-month-code).
 
 ## [2026-06-30] summarise | 110th TC39 Meeting (2025-09)
 
-- 2025-09(110th, リモート)を日次要約。`wiki/meetings/2025-09/` に Day 1-3(2025-09-22〜24)+ index.md を生成。Stage advancement: Iterator Chunking・Import Bytes が Stage 2.7、Non-extensible Applies to Private が Stage 3、`Array.prototype.pushAll`・Native Promise Adoption・Native Promise Predicate(直後に Stage 2 へも)が新規 Stage 1。Amount は Stage 2 を目指したが significant digits・命名・数値変換メソッド等の懸念が late-breaking で噴出し3日間継続審議の末 Stage 2 未達(次回 Tokyo plenary へ持ち越し)。既存提案ページ(amount, iterator-chunking, intl-era-month-code, temporal)へリンク。
-- **要注意**: `wiki/proposals/amount.md` の frontmatter は `status: stage2` / `current_stage: 2` だが、本会合の議事録では Amount は Stage 2 に到達していない(continuation のまま)。次回 lint で raw/proposals と突き合わせて要確認。
+- Summarized the 2025-09 meeting (110th, remote) into daily files. Generated Day 1-3 (2025-09-22 to 2025-09-24) plus index.md under `wiki/meetings/2025-09/`. Stage advancements: Iterator Chunking and Import Bytes reached Stage 2.7, Non-extensible Applies to Private reached Stage 3, and `Array.prototype.pushAll` / Native Promise Adoption / Native Promise Predicate (and immediately after, Stage 2 as well) became new Stage 1 items. Amount aimed for Stage 2, but late-breaking concerns about significant digits, naming, numeric conversion methods, etc. surfaced and after three days of continued discussion it still did not reach Stage 2 (carried forward to the next Tokyo plenary). Linked to existing proposal pages (amount, iterator-chunking, intl-era-month-code, temporal).
+- **Note**: the frontmatter in `wiki/proposals/amount.md` is `status: stage2` / `current_stage: 2`, but this meeting's notes show that Amount had not yet reached Stage 2 (it was still in continuation). Next lint should cross-check against raw/proposals.
 
 ## [2026-06-30] summarise | 111th TC39 Meeting (2025-11)
 
-- 2025-11(111th, Tokyo・Bloomberg ホスト)を日次要約。`wiki/meetings/2025-11/` に Day 1-3(2025-11-18〜20)+ index.md を生成。Stage advancement: Intl Locale Info API・Iterator Sequencing が Stage 4、Joint Iteration が Stage 3、await dictionary が Stage 2 を経ず直接 Stage 2.7、Import Text が Stage 1/2(条件付き2.7)、Intl Unit Protocol・Intl Energy Units・`Object.getNonIndexStringProperties` が新規 Stage 1、TypedArray Concatenation/Find Within が条件付き Stage 1(専用リポジトリ作成待ち)、`Object.keysLength` が Stage 2(`Object.propertyCount` は分離して Stage 1 のまま)。export defer は Stage 2.7 不成立、Declarations in Conditionals は Day Three まで継続も未決着、Class spread syntax・Class field introspection は Stage 0 のまま。Decorators は Test262 不足と実装間不一致で Stage 2.7 維持、Intl Era Monthcode は Stage 3 判断を2026年1月へ持ち越し。既存提案ページ(temporal, intl-keep-trailing-zeros, joint-iteration, error-stack-accessor, comparisons, intl-era-month-code, amount, decorators, iterator-join)へリンク。
+- Summarized the 2025-11 meeting (111th, Tokyo, hosted by Bloomberg) into daily files. Generated Day 1-3 (2025-11-18 to 2025-11-20) plus index.md under `wiki/meetings/2025-11/`. Stage advancements: Intl Locale Info API and Iterator Sequencing reached Stage 4, Joint Iteration reached Stage 3, await dictionary jumped directly to Stage 2.7 without passing through Stage 2, Import Text is Stage 1/2 (conditionally 2.7), Intl Unit Protocol / Intl Energy Units / `Object.getNonIndexStringProperties` are new Stage 1 items, TypedArray Concatenation / Find Within are conditional Stage 1 items (waiting for a dedicated repo), and `Object.keysLength` reached Stage 2 (`Object.propertyCount` remains a separate Stage 1 item). export defer did not make Stage 2.7; Declarations in Conditionals continued through Day Three but was unresolved; Class spread syntax and Class field introspection stayed at Stage 0. Decorators stayed at Stage 2.7 due to insufficient Test262 coverage and implementation disagreement, and Intl Era Monthcode postponed the Stage 3 decision to January 2026. Linked to existing proposal pages (temporal, intl-keep-trailing-zeros, joint-iteration, error-stack-accessor, comparisons, intl-era-month-code, amount, decorators, iterator-join).
+- Family consistency: linked the chunking/includes/join rows in iterator.md and the export-all-from row in modules.md (members already matched).
+- Regenerated tools: ran extract_people.py (64 people) and link_people.py. Added 13 rows to the index.md catalog.
 
-## [2026-07-02] lint | wiki 全体(2025 年 3 会合の要約取り込み後)
+## [2026-06-27] ingest | Deep-follow-up: verified and corrected the stage transitions for three proposals
 
-- **修正(1) 規約違反**: 別セッション由来の summarise 3 会合(2025-07/09/11)が旧規約の `index.md` で生成されていた → `README.md` へ `git mv`(現行規約 + `extract_people.py` のリンク化判定が README.md 前提)。被リンクは自ファイル内出典行のみでリンク切れなし。
-- **修正(2) 再実行漏れ**: 同 summarise 後の `extract_people.py` 未実行(Summarise 手順 4 違反)→ 再実行。人物ページ約 40 件の「参加したミーティング」で 2025-07/09/11 がリンク化。`link_people.py` で is-template-object.md の前回 lint 編集分(JHD/CDA)の略号リンク漏れも補完。
-- **修正(3) 生成物の鮮度**: `agenda-index.md` / `.jsonl` に 2026-05 会合の議題が未反映(80+43 行)→ `extract_agenda.py` で再生成。`extract_proposals.py` は差分なし。
-- **修正(4) fmt**: `wiki/meetings/2025-07/` の 2 ファイルが oxfmt 未整形 → 整形。全 123 ファイル clean。
-- **解消**: 2025-09 summarise の「要注意」(amount frontmatter stage2 との食い違い懸念)は時系列上矛盾なし。遷移テーブルは 2025-09 不成立(1 のまま)を含み、`stage2` は 2026-05 到達の現在値で canonical(Stage 2 テーブル、champion Ben Allen)と一致。
-- **据置**: stable-formatting / intl-sequence-units は `raw/proposals` が前回 lint から未更新(同一 SHA)のため「canonical 追従遅れ・wiki が正(Stage 2)」を維持。次回 /update 後に再確認。
-- **内部健全性**: リンク切れ実体なし(検出はプレースホルダとインラインコード引用のみ)、family 双方向整合 OK、mermaid 全 15 点(records-and-tuples の 14 は撤回年止めで正常)、README カタログ 23 件と proposals/ 実体一致。
+- The two items explicitly marked as "not yet sufficiently verified" in the previous ingest were confirmed by checking the raw/notes `### Conclusion` sections.
+- **dynamic-code-brand-checks**: It never reached Stage 2 (2019-07 "no for stage 2" / 2019-12 "NOT approved" / 2021-01 "Not advancing"). In 2024-04, NRO requested "the Stage 1 version to Stage 3," so it advanced directly from **1 → 3**. Corrected the mistaken "2021-01 Stage 2 reached," fixed the mermaid graph so 2019-2023 stays at 1, and added supporting issues/sources.
+- **is-template-object (Array.isTemplateObject)**: The conclusion in 2019-06 june-5 was "Stage 2 acceptance", so it went **directly to Stage 2 without passing through Stage 1**. Corrected the mistaken assumption of "Stage 1 → around 2020 Stage 2 (estimated)", fixed the mermaid graph to start at 2 in 2019, and added sources.
+- **intl-keep-trailing-zeros**: In 2025-07 it moved **Stage 2 (day 1 july-29) → Stage 2.7 (day 3 july-30)** within the same meeting (WH's ToIntlMathematicalValue concern was split off as out of scope). Corrected the mistaken "directly 2 → 3", added the Stage 2.7 row, fixed the 2025 year-end mermaid value to 2.7, and added the issues.
+- Regenerated extract_people / link_people. The mermaid graphs retained 15 points across the 3 pages. The index catalog stage values did not change (these were intermediate transitions only).
 
-## [2026-07-03] query | Comparisons(file back で提案ページを拡充)
+## [2026-06-28] lint | Whole wiki
 
-- 質問「Comparisons」に既存ページ + 会合要約 + agenda-index で回答。ユーザ指示により file back。
-- `proposals/comparisons.md` を 2026-05 may-21 の raw で裏取りして拡充: 概要に production use-case(HTTP patch delta / React state / logging)と API 2 モード案(`compare` fast/full、`deepEqual`/`compare` 分割代替)を追記。論点に「equality の定義そのもの(OFR)」「性能上の優位性への懐疑(KM・OFR)」「walk と filter の分離は複雑さを減らすか(MM・KM・MAH)」「encapsulation の漏洩(OFR)」を新設、「動機の受容と AI 文脈」に EAO の motivation statement 経緯と SFC の正しさ論を統合、「Stage 2 へ向けた懸念」に MF/MAH の forewarning と SFC の Collator モデル示唆を帰属付きで追記。
-- extract_people / link_people 再実行(新規略号なし、EAO/KM/MAH/MF/MM/OFR/SFC の言及提案に comparisons が追加)。
+- **Internal health**: formatting was clean, all proposal pages had 15 mermaid points (with records-and-tuples' 14 ending at the withdrawal year as expected), proposals/index.md had no diff after regeneration, there were no dead links (only explanatory placeholders), and family bidirectional consistency was OK.
+- **Source consistency**: the new ECMA-262 items (iterator-chunking/includes/join, regexp-buffer-boundaries, dynamic-code-brand-checks, error-stack-accessor) all matched canonical Stage 3. The champions also matched canonical (EAO/SFC, etc.).
+- **Fix (bug)**: the `\Z` regexp in regexp-buffer-boundaries.md had accidentally included actual U+2028/U+2029 line-separator characters and broke the table; replaced them with ASCII text `\u2028` / `\u2029`.
+- **Fix (family consistency)**: removed `families: [regexp]` from regexp-buffer-boundaries because `families/regexp.md` does not exist.
+- **Fix (person count)**: updated index.md from "60 people" to "65 people" (a missed reflection of the JRL/JSH/KOT/MSL/ZTZ additions).
+- **Unresolved**: Stable Formatting and Intl Sequence Units disagree between notes and canonical. The 2026-05 notes explicitly say both reached Stage 2 consensus, but canonical ecma402/README still leaves both under `### Stage 1` (with a 2026-05 note), and `### Stage 2` is empty. This is probably a lag in moving the section. The wiki keeps Stage 2 for now; after the next /update, pull raw/proposals and confirm whether the section moved to Stage 2.
 
-## [2026-08-13] update | raw/notes・raw/proposals を同期
+## [2026-06-29] lint | Whole wiki + raw/proposals cross-check
 
-- 同期前ポインタ: `raw/notes` ced9ef3(pr-411)→ **8b76916**(origin/main、7 commits)。`raw/proposals` 1eb7ced → **600a427**(13 commits)。
-- **raw/notes**: 新規会合ファイルなし。`delegates.txt` に delegate 3 名追加(roster 597→600)。`meetings/2026-05/may-21.md` の closing remarks 話者名を軽微訂正(要約対象外、影響なし)。旧 pr-411(2026-05 議事録の未マージ PR)は ff できず(`merge-base --is-ancestor` NO)だが、内容は PR #415 等で実質同一(diff は上記 may-21 の 3 行のみ)として main へ反映済みと確認。detached HEAD は `git submodule update --remote` の仕様どおり(AGENTS.md 記載の許容形態)。
-- **raw/proposals**: 差分は主に過去会合への notes リンクの遡及的な埋め戻し(stage 変更ではない)。`extract_proposals.py` 再生成で ECMA-262 220→225 件・ECMA-402 18→20 件(未追跡の新規/新 Stage: Await Dictionary が Stage 3、Fused Multiply-Add が Stage 2、Error code property・Map get and delete・Bigint from exponential・Linear Matching・Intl.DateTimeFormat Alignment・Intl Energy Units が新規、いずれも wiki 未精読の catalog-only 提案)。
-- **precedence 注記**: 上記 proposals の stage 変更コミットは `per 2026.07.2{0,1,2} TC39` 会合由来だが、raw/notes には該当会合(2026-07)がまだ存在しない(notes 未公開/未 pull)。次回 `/summarise` や `/ingest` で 2026-07 を扱う際は raw/notes 側の到着を待つ。
-- **精読済み 23 提案への影響なし**: grep 突き合わせで全件 stage/section 不変を確認。特に保留中の `stable-formatting`・`intl-sequence-units` は今回も `ecma402/README.md` の `### Stage 1` に留まったままで **未解消**(wiki は Stage 2 を維持、次々回に再確認)。
-- 生成物再生成: `extract_agenda.py`(87 会合・2780 議題、既に鮮度は前回 lint で最新化済みのため差分なし)、`extract_proposals.py`(上記)、`extract_people.py` / `link_people.py`(delegate 表記修正 1 件: `wiki/people/SGN.md` の Sathya Gunasekaran のスペル訂正)。
-- oxfmt clean(全 123 ファイル)。submodule ポインタと生成物をまとめて `[update]` でコミット。
+- **Internal health**: no real broken links (the seven detections were placeholders such as `ABBR`, `slug`, `<slug>`, or generated agenda-index / log-history text). The recent index.md→README.md rename was healthy. Family bidirectional consistency (members ↔ proposal frontmatter families) was also fine.
+- **Source consistency (raw/proposals)**: checked stage/champion for all 23 proposals against the canonical source.
+  - **One fix**: changed `is-template-object` status from `inactive` to `withdrawn`. In may-19, champion JHD/CDA explicitly said "withdrawn," the canonical inactive-proposals also uses a "Withdrawn" section, and records-and-tuples is likewise withdrawn. Aligned frontmatter, stage-transition cell (2 → withdrawn), overview, issue headings, and the README catalog row.
+  - **Canonical lag (wiki is correct; no fix needed)**: `intl-sequence-units` and `stable-formatting` are wiki=stage2. `ecma402/README` still says Stage 1, but the 2026-05 notes (may-20 line 290 / 475-476) confirm Stage 2 consensus. The canonical README just has not caught up to the 2026-05 ECMA-402 result yet. Do not accidentally downgrade them in the next lint.
+  - Champion check: `comparisons`' `JSH` is Jacob Smith (matches canonical), and the historical champions for `temporal` / `decorators` / `intl-era-month-code` were kept as intended.
+
+## [2026-06-30] summarise | 109th TC39 Meeting (2025-07)
+
+- 2025-07 (109th, remote) was summarized into daily files. `wiki/meetings/2025-07/` now contains Day 1-4 (2025-07-28 to 2025-07-31) plus index.md. Stage advancement: `Math.sumPrecise` and Uint8Array base64+hex reached Stage 4; Iterator Sequencing and Upsert reached Stage 3; Intl Era and Month Code and Intl Keep Trailing Zeros reached Stage 2.7; Import Buffer moved from Stage 1 to 2; and Module Import Hook / new Global / `Array.getNonIndexStringProperties` / `Object.getOwnPropertySymbols` options reached Stage 1. Amount (formerly Measure), `Object.propertyCount`, and `Array.isSparse` did not advance because of objections. Linked to the existing proposal pages for temporal, upsert, iterator-chunking, intl-keep-trailing-zeros, amount, and intl-era-month-code.
+
+## [2026-06-30] summarise | 110th TC39 Meeting (2025-09)
+
+- 2025-09 (110th, remote) was summarized into daily files. `wiki/meetings/2025-09/` now contains Day 1-3 (2025-09-22 to 2025-09-24) plus index.md. Stage advancement: Iterator Chunking and Import Bytes reached Stage 2.7; Non-extensible Applies to Private reached Stage 3; `Array.prototype.pushAll`, Native Promise Adoption, and Native Promise Predicate became new Stage 1 items; and Amount aimed for Stage 2 but did not get there after late-breaking concerns about significant digits, naming, and numeric-conversion methods surfaced over three days of continued discussion. Linked to the existing proposal pages for amount, iterator-chunking, intl-era-month-code, and temporal.
+- **Note**: `wiki/proposals/amount.md` frontmatter is `status: stage2` / `current_stage: 2`, but this meeting's notes show that Amount had not reached Stage 2 yet and was still in continuation. The next lint should cross-check raw/proposals.
+
+## [2026-06-30] summarise | 111th TC39 Meeting (2025-11)
+
+- 2025-11 (111th, Tokyo, hosted by Bloomberg) was summarized into daily files. `wiki/meetings/2025-11/` now contains Day 1-3 (2025-11-18 to 2025-11-20) plus index.md. Stage advancement: Intl Locale Info API and Iterator Sequencing reached Stage 4; Joint Iteration reached Stage 3; await dictionary moved directly to Stage 2.7 without passing through Stage 2; Import Text is Stage 1/2 (conditionally 2.7); Intl Unit Protocol, Intl Energy Units, and `Object.getNonIndexStringProperties` are new Stage 1 items; TypedArray Concatenation and Find Within are conditional Stage 1 items pending a dedicated repository; and `Object.keysLength` reached Stage 2 while `Object.propertyCount` remains a separate Stage 1 item. export defer did not reach Stage 2.7, Declarations in Conditionals remained unresolved through Day Three, Class spread syntax and Class field introspection stayed at Stage 0, Decorators stayed at Stage 2.7 because of insufficient Test262 coverage and implementation mismatch, and Intl Era Monthcode's Stage 3 decision was pushed to January 2026. Linked to the existing proposal pages for temporal, intl-keep-trailing-zeros, joint-iteration, error-stack-accessor, comparisons, intl-era-month-code, amount, decorators, and iterator-join.
+
+## [2026-07-02] lint | Whole wiki after importing the 2025 three-meeting summaries
+
+- **Fix (1) policy violation**: the three summarize runs from another session (2025-07/09/11) had been generated under the old `index.md` convention → moved them to `README.md` with `git mv` (the current convention and `extract_people.py`'s link-detection logic both assume README.md). The backlinks were all self-contained source lines, so there were no broken links.
+- **Fix (2) missed rerun**: `extract_people.py` had not been run after those summarizes (a violation of Summarise step 4) → reran it. Around 40 person pages now link 2025-07/09/11 in their "Meetings attended" section. Also used `link_people.py` to fill in the missing abbreviation links from the previous lint edit on is-template-object.md (JHD/CDA).
+- **Fix (3) freshness of generated output**: `agenda-index.md` / `.jsonl` had not reflected the 2026-05 meeting agenda items (80+43 lines) → regenerated with `extract_agenda.py`. `extract_proposals.py` had no diff.
+- **Fix (4) formatting**: two files under `wiki/meetings/2025-07/` were not formatted by oxfmt → formatted. All 123 files are clean.
+- **Resolved**: the 2025-09 Summarise "note of caution" (concern about a mismatch with the amount frontmatter stage2) was not actually a contradiction in time order. The transition table includes the 2025-09 non-advancement (still 1), and `stage2` is the current value after the 2026-05 advancement, which matches canonical (Stage 2 table, champion Ben Allen).
+- **Deferred**: `stable-formatting` / `intl-sequence-units` had not changed in raw/proposals since the last lint (same SHA), so they remain "canonical lag, wiki is correct (Stage 2)". Recheck after the next /update.
+- **Internal health**: no real broken links (the only detections were placeholders and inline-code quotes), family bidirectional consistency is OK, all 15 mermaid points are correct (records-and-tuples' 14 ends at the withdrawal year), and the README catalog matches the 23 proposals in proposals/.
+
+## [2026-07-03] query | Expanded the Comparisons proposal page via file-back
+
+- Answered the question "Comparisons" using the existing page + meeting summaries + agenda-index. Per user request, filed it back.
+- Expanded `proposals/comparisons.md` with the 2026-05 may-21 raw transcript: added production use cases (HTTP patch delta / React state / logging) and a two-mode API idea (`compare` fast/full, or split into `deepEqual` / `compare`) to the overview. Added new issues for "what equality means itself" (OFR), skepticism about performance benefits (KM/OFR), whether separating walk and filter reduces complexity (MM / KM / MAH), and encapsulation leakage (OFR). Merged the motivation/AI-context notes with EAO's motivation statement history and SFC's correctness argument, and added a Stage 2 concern section with MF/MAH's forewarning and SFC's Collator-model hint.
+- Reran extract_people / link_people (no new abbreviations; Comparisons now appears on the pages for EAO/KM/MAH/MF/MM/OFR/SFC).
+
+## [2026-08-13] update | Synced raw/notes and raw/proposals
+
+- Pointers before sync: `raw/notes` ced9ef3 (pr-411) → **8b76916** (origin/main, 7 commits). `raw/proposals` 1eb7ced → **600a427** (13 commits).
+- **raw/notes**: no new meeting files. Added three delegates to `delegates.txt` (roster 597→600). Made a minor speaker-name correction in the closing remarks of `meetings/2026-05/may-21.md` (outside summarization scope, no impact). The old pr-411 (the unmerged PR for the 2026-05 notes) could not be fast-forwarded (`merge-base --is-ancestor` NO), but the content had already been merged into main through PR #415 and related work (the diff is only the three may-21 lines above). The detached HEAD is expected behavior for `git submodule update --remote` (an accepted form documented in AGENTS.md).
+- **raw/proposals**: the diff mainly consisted of backfilled notes links to older meetings (not stage changes). Regenerating `extract_proposals.py` changed ECMA-262 from 220→225 items and ECMA-402 from 18→20 items (new / new-stage catalog-only proposals not yet deep-read in the wiki: Await Dictionary became Stage 3, Fused Multiply-Add became Stage 2, Error code property / Map get and delete / Bigint from exponential / Linear Matching / Intl.DateTimeFormat Alignment / Intl Energy Units were newly added).
+- **precedence note**: the stage-change commits above came from meetings `per 2026.07.20-22 TC39`, but raw/notes still did not contain the corresponding 2026-07 meeting yet (notes were not yet published / pulled). When handling 2026-07 in a future `/summarise` or `/ingest`, wait for raw/notes to arrive.
+- **No impact on the 23 deep-read proposals**: grep cross-checks confirmed all stage/section positions were unchanged. In particular, the pending `stable-formatting` and `intl-sequence-units` were still under `### Stage 1` in `ecma402/README.md`, which remains **unresolved** (wiki keeps Stage 2 and will re-check next time).
+- Regenerated outputs: `extract_agenda.py` (87 meetings / 2780 agenda items; no diff because it had already been refreshed in the previous lint), `extract_proposals.py` (as above), `extract_people.py` / `link_people.py` (one delegate spelling correction: Sathya Gunasekaran in `wiki/people/SGN.md`).
+- oxfmt clean (all 123 files). Committed the submodule pointers and generated outputs together as `[update]`.
 
 ## [2026-08-13] summarise | 115th TC39 Meeting (2026-07)
 
-- 未マージ PR tc39/notes#420(2026 July transcript)を `pr-420` として checkout し、ポインタを `[wiki]` でコミット(base は main の 8b76916 なので ff 相当)。
-- 2026-07(115th、リモート、3 日間)を日次要約。`wiki/meetings/2026-07/` に Day 1-3(2026-07-20〜22)+ README.md を生成。
-- Stage advancement: **Await Dictionary が Stage 3**、**Thenable Curtailment が Stage 2.7**(Day 1 で host hook 化を宿題に持ち越し → Day 3 continuation で consensus)、**Error code property・Fused Multiply-Add(`Math.fma`)が Stage 2**、**bigint-from-exponential(needs-consensus PR #3857 から転換)・Map take(`getAndDelete` へ rename)・Linear Matching・`Intl.DateTimeFormat` Alignment With Other Standards が Stage 1**。Declarations in Conditionals は pattern matching との調整未了で advancement 見送り。前回 /update で確認した raw/proposals 側の stage 変更(2026.07 会合由来)と全件整合。
-- normative: `Promise.try` の PromiseResolve 化、custom global への built-ins 定義強制(#3728)、Import Defer の `[[CycleRoot]]` バグ修正、ECMA-402 の 4 PR(1086/1074/1072/1051)。GA で ES2026(262 17th / 402 13th)承認、KG が Ecma Recognition Award。
-- 該当する既存提案ページへのリンク: joint-iteration / atomics-pause / explicit-resource-management(Editors Report)、amount(BigInt 指数表記・FMA・Duration units)、intl-sequence-units・temporal・intl-keep-trailing-zeros(Day 3)、records-and-tuples(JSON.parseImmutable・Composites)。
-- Day 2/3 のドラフトはサブエージェントで並列作成し、全議題の `### Conclusion` を raw と突き合わせて検証のうえ採用。
-- 生成物再生成: `extract_agenda.py`(88 会合・2814 議題、2026-07 の 34 議題を追加)、`extract_people.py` / `link_people.py`(人物ページの参加会合に 2026-07 がリンク付きで追加)。wiki/README.md の会合数記述を 88 会合 / 340 ファイル / 2814 議題に更新。
+- Checked out unmerged PR tc39/notes#420 (the 2026 July transcript) as `pr-420` and committed the pointer as `[wiki]` (base is main's 8b76916, so this is effectively fast-forward-equivalent).
+- Summarized the 2026-07 meeting (115th, remote, 3 days) into daily files. Generated Day 1-3 (2026-07-20 to 2026-07-22) plus README.md under `wiki/meetings/2026-07/`.
+- Stage advancements: **Await Dictionary reached Stage 3**, **Thenable Curtailment reached Stage 2.7** (on Day 1, host-hook work was deferred as homework, then Day 3 continuation reached consensus), **Error code property and Fused Multiply-Add (`Math.fma`) reached Stage 2**, and **bigint-from-exponential (transitioning from needs-consensus PR #3857), Map take (renamed to `getAndDelete`), Linear Matching, and `Intl.DateTimeFormat` Alignment With Other Standards reached Stage 1**. Declarations in Conditionals did not advance because pattern matching was still unresolved. All of this matched the stage changes already confirmed in raw/proposals during the previous update.
+- Normative items: `Promise.try` was changed to use PromiseResolve, built-ins were forced on custom globals (#3728), the `[[CycleRoot]]` bug in Import Defer was fixed, and four ECMA-402 PRs (1086/1074/1072/1051) landed. GA approved ES2026 (ECMA-262 17th / ECMA-402 13th), and KG received the Ecma Recognition Award.
+- Linked to the relevant proposal pages: joint-iteration / atomics-pause / explicit-resource-management (Editors Report), amount (BigInt exponential notation, FMA, duration units), intl-sequence-units / temporal / intl-keep-trailing-zeros (Day 3), and records-and-tuples (JSON.parseImmutable / Composites).
+- Drafts for Day 2/3 were produced in parallel by subagents, and all agenda items' `### Conclusion` sections were verified against raw before being accepted.
+- Regenerated outputs: `extract_agenda.py` (88 meetings / 2814 agenda items, with 34 July 2026 items added), `extract_people.py` / `link_people.py` (2026-07 links were added to the person pages' meeting lists). Updated the meeting count in wiki/README.md to 88 meetings / 340 files / 2814 agenda items.
 
-## [2026-08-13] ingest | 2026-07 会合(115th)で stage が動いた 8 提案 + 既存 2 ページ更新
+## [2026-08-13] ingest | 8 proposals whose stage changed in the 2026-07 meeting, plus 2 existing page updates
 
-- 新規提案ページ 8 件: await-dictionary(S3。2023-03 S1 → 2025-11 に 2 を跳ばし 2.7 → 2026-07 S3)・thenable-curtailment(S2.7。2025-02 S1 → 2026-03 S2 → 2026-07 2.7)・error-code-property(S2。DOMException 整合が advancement 条件)・fused-multiply-add(S2。初提示で 0 → 2 直行)・bigint-from-exponential(S1。needs-consensus PR #3857 から転換)・map-get-and-delete(S1。旧 Map take、`getAndDelete` へ rename)・linear-matching(S1。ReDoS 対策、champion group MF+AUR+CPC)・intl-datetimeformat-alignment(S1、ECMA-402)。
-- 経緯は各会合 notes の `### Conclusion` で裏取り(2023-03 mar-22 / 2025-02 feb-18 / 2025-09 sep-23 / 2025-11 nov-18 / 2026-03 mar-11・mar-12 / 2026-05 may-19〜21 / 2026-07 全 3 日)。frontmatter は canonical(raw/proposals)と照合。
-- **canonical 追従遅れ(wiki が正)**: thenable-curtailment は canonical README が Stage 2 セクションのまま(2026-07 の 2.7 consensus 未反映)。wiki は notes を根拠に stage2.7。次回 /update 後の lint で降格しないこと(stable-formatting / intl-sequence-units と同型)。
-- **champion 注記**: linear-matching の frontmatter champions は canonical の MF に加え、2026-07 notes で MF が champion group と明言した AUR(Aurèle Barrière)・CPC(Clément Pit-Claudel)を含む。
-- 既存ページ更新: amount.md(2026-07 行 + 論点「波及した周辺提案」+ 関連提案に bigint-from-exponential / fused-multiply-add)・intl-sequence-units.md(2026-07 行 + 論点「time/duration units を含めるか(未決)」)。
-- tools: `extract_proposals.py` の ALIASES に "Curtailing the power of Thenables" → thenable-curtailment.md を追加(canonical 名と wiki title の乖離対応)。index.md 再生成で 8 ページ全てリンク化。`extract_people.py`(65 → 75 名。AUR/AVK/CPC/DJM/DRO/JFI/JSL/LVU/MAG/SHS 追加)/ `link_people.py`(8 ページの略号リンク化)。
-- README カタログに 8 行追加(精読済み 23 → 31 提案)。oxfmt clean(全 145 ファイル)。
-- 運用メモ: ページ下書きの並列サブエージェント 8 本が全て API 529(Overloaded)で失敗したため、raw のセクションを直接精読してインラインで執筆した。
+- New proposal pages: await-dictionary (S3; 2023-03 S1 → skipped Stage 2, then 2.7 in 2025-11 → S3 in 2026-07), thenable-curtailment (S2.7; 2025-02 S1 → 2026-03 S2 → 2026-07 2.7), error-code-property (S2; advancement depends on DOMException alignment), fused-multiply-add (S2; went directly from 0 to 2 on first presentation), bigint-from-exponential (S1; transitioned from needs-consensus PR #3857), map-get-and-delete (S1; old Map take, renamed to `getAndDelete`), linear-matching (S1; ReDoS mitigation, champion group MF+AUR+CPC), and intl-datetimeformat-alignment (S1, ECMA-402).
+- The stage histories were verified from each meeting's `### Conclusion` section (2023-03 mar-22 / 2025-02 feb-18 / 2025-09 sep-23 / 2025-11 nov-18 / 2026-03 mar-11 and mar-12 / 2026-05 may-19 through may-21 / 2026-07 all 3 days). Frontmatter was cross-checked against canonical raw/proposals.
+- **Canonical lag (wiki is correct)**: thenable-curtailment remained in the Stage 2 section of canonical README (the 2026-07 2.7 consensus had not yet been reflected). The wiki uses Stage 2.7 based on the notes. Do not downgrade it in the next /update lint pass (same pattern as stable-formatting / intl-sequence-units).
+- **Champion note**: linear-matching's frontmatter champions include canonical MF plus AUR (Aurèle Barrière) and CPC (Clément Pit-Claudel), which the 2026-07 notes explicitly named as the champion group.
+- Existing page updates: amount.md (added the 2026-07 row, an issue about downstream proposals, and related proposals bigint-from-exponential / fused-multiply-add) and intl-sequence-units.md (added the 2026-07 row and an issue about whether time/duration units should be included).
+- Tools: added "Curtailing the power of Thenables" → thenable-curtailment.md to the ALIASES map in `extract_proposals.py` (to handle the mismatch between the canonical name and the wiki title). Regenerating index.md linked all 8 pages. `extract_people.py` increased the people count from 65 to 75 (added AUR/AVK/CPC/DJM/DRO/JFI/JSL/LVU/MAG/SHS), and `link_people.py` linked the abbreviations on the 8 pages.
+- Added 8 lines to the README catalog (deep-read proposals 23 → 31). oxfmt clean (all 145 files).
+- Operational note: eight parallel subagents for page drafting all failed with API 529 (Overloaded), so I wrote the pages inline by reading the raw sections directly.
 
-## [2026-08-14] wiki | 会合要約のリンク規約(人物/提案)と Summarise の PR 対応
+## [2026-08-14] wiki | Link conventions for meeting summaries (people/proposals) and Summarise PR support
 
-- **link_people.py 拡張**: リンク対象に `wiki/meetings/<YYYY-MM>/` を追加(相対パスはファイル位置から自動算出)。ページのある略号のみリンクするため、会合にしか登場しない人物は素テキストのまま(デッドリンクなし)。多義の略号を除外する `AMBIGUOUS` を新設し `JSC`(大半が JavaScriptCore engine)を登録。
-- **link_proposals.py 新設**: 会合要約中の提案名(frontmatter title + `ALIASES` の表記揺れ)を提案ページへリンク。加えて日次ファイルでは、`##` 見出しが提案名を含むトピックの**最初の箇条書き**に `- 提案ページ:` 行を保証(Slides より前。既存 bullet は先頭へ移動)。冪等。
-- **既存の全会合要約(2025-07〜2026-07 の 6 会合・25 ファイル)に適用**: 人物略号・提案名をリンク化し、`- 提案ページ:` 行を先頭に統一。見出しに提案名を含まない 2 議題(2026-07 の BigInt needs-consensus PR / temperature checks)は手動で追加。
-- **誤リンク修正**: engine の JavaScriptCore を指す `JSC` の人物リンク 17 箇所を素テキストへ戻した(meetings 14 + decorators.md 3。人物 J. S. Choi を指す 4 箇所は維持)。decorators.md の 3 箇所は今回以前からの誤リンク。
-- **AGENTS.md**: Summarise の対象指定に tc39/notes の PR 番号/URL を明記(checkout 手順へ接続)。手順 2 を「提案ページ bullet を最初(Slides より前)」に改訂、手順 4 を「リンクの生成」として extract_people / link_people / link_proposals の 3 点セットに拡張。Ingest 手順 4・Lint/Update の再生成手順にも link_proposals.py を追加。人物ページ節に meetings 対応と AMBIGUOUS 方針を追記。
-- **コマンド**: `.claude/commands/summarise.md` の argument-hint を「会合 (YYYY-MM) | PR 番号/URL」に更新。
-- wiki/README.md の人物ページ節を現状(75 名・meetings 対応・link_proposals)に同期。
+- **Extended link_people.py**: added `wiki/meetings/<YYYY-MM>/` to the link target set (relative paths are computed automatically from file location). It only links abbreviations that have pages, so people who only appear in meetings stay as plain text (no dead links). Added an `AMBIGUOUS` exclusion list and registered `JSC` (mostly JavaScriptCore engine).
+- **New link_proposals.py**: links proposal names in meeting summaries (frontmatter title plus alias spellings) to proposal pages. Also guarantees that for daily files, the **first bullet** of a topic whose `##` heading names a proposal is `- wiki:` (before Slides; existing bullets are moved to the front). Idempotent.
+- **Applied to all existing meeting summaries (the 6 meetings / 25 files from 2025-07 through 2026-07)**: linked person abbreviations and proposal names, and normalized the first bullet line to `- wiki:`. Two topics whose headings do not mention a proposal (the 2026-07 BigInt needs-consensus PR / temperature checks) were added manually.
+- **Corrected false links**: converted 17 person links for `JSC` that actually referred to JavaScriptCore back to plain text (14 in meetings + 3 in decorators.md; 4 links referring to person J. S. Choi were kept). The 3 decorators.md occurrences had been wrong even before this change.
+- **AGENTS.md**: clarified that Summarise can target a tc39/notes PR number/URL (connected to the checkout step). Step 2 now requires the proposal-page bullet first (before Slides), and step 4 now says link generation consists of extract_people / link_people / link_proposals. Also added link_proposals.py to the regeneration steps for Ingest and Lint/Update, and documented the meetings/AMBIGUOUS policy in the person-pages section.
+- **Command**: updated the argument hint in `.claude/commands/summarise.md` to "meeting (YYYY-MM) | PR number/URL".
+- Synchronized wiki/README.md's person-pages section with the current state (75 people, meetings support, link_proposals).
 
-## [2026-08-15] wiki | 会合要約の meta 行を「wiki → proposal → Slides」に統一
+## [2026-08-15] wiki | Normalized meeting-summary meta lines to "wiki → proposal → Slides"
 
-- ラベルを `- 提案ページ:` から `- wiki:` へ変更し、トピック冒頭の meta 箇条書きの順序を **wiki → proposal → Slides** に統一(ユーザ指定)。
-- `link_proposals.py` を改訂: 旧ラベルの自動移行と meta 3 種の抽出・並べ替えを実装(oxfmt との固定点を維持、冪等)。全 6 会合 18 ファイルに適用し、`提案ページ:` の残存 0 件を確認。
-- AGENTS.md の Summarise 手順 2(meta 行の定義と順序)・手順 4・tools 一覧を新規約に同期。
-- 追記: スライドのラベルは小文字・単数の `- slide:` を規約とする(AGENTS.md と link_proposals.py の認識を更新。既存ファイルの一括変換はユーザが実施)。
+- Renamed the label from `- proposal page:` to `- wiki:` and standardized the order of the meta bullet list at the start of topics to **wiki → proposal → Slides** (per user request).
+- Revised `link_proposals.py`: implemented automatic migration of the old label and extraction/reordering of the three meta bullets (keeps the fixed point with oxfmt, idempotent). Applied it to all 6 meetings / 18 files and confirmed that no `proposal page:` labels remain.
+- Synchronized AGENTS.md's Summarise step 2 (meta-line definition and order), step 4, and the tools list with the new convention.
+- Added: the slide label should be lowercase singular `- slide:` (updated AGENTS.md and link_proposals.py accordingly; the user will do any bulk conversion of existing files).
 
-## [2026-09-27] wiki | 英語訳を wiki/en に分離
+## [2026-09-27] wiki | Split the English translation into wiki/en
 
-- 英語訳は `wiki/` を置き換えず `wiki/en/` に同じ相対パスで置く規約を AGENTS.md の言語規約へ追加。
-- 訳済みは会合 2026-07 / 2026-05 / 2026-03、そこからリンクした提案・family、人物ページ、提案 index、英語の README。未訳ページへのリンクは日本語版を指す。
-- 2025-11 / 2025-09 / 2025-07 と、未到達の提案(`decorators` ほか)は未訳。
+- Added a rule to AGENTS.md's language policy: English translations live in `wiki/en/` at the same relative paths, rather than replacing `wiki/`.
+- The translated content includes meetings 2026-07 / 2026-05 / 2026-03, the linked proposals / families, people pages, proposal index, and the English README. Links to untranslated pages still point to the Japanese version.
+- 2025-11 / 2025-09 / 2025-07 and unreached proposals (`decorators` and others) are still untranslated.
 
-## [2026-09-27] wiki | 英語訳 wiki/en に 2025-11
+## [2026-09-27] wiki | Translated 2025-11 into wiki/en
 
-- `wiki/en/meetings/2025-11/` を追加。リンク先のうち未訳だった [Decorators](en/proposals/decorators.md)、[Comparisons](en/proposals/comparisons.md)、[Intl Era/Month Code](en/proposals/intl-era-month-code.md) も訳し、既存英語ページからのリンクを `wiki/en` 側へ付け替えた。
+- Added `wiki/en/meetings/2025-11/`. Also translated the previously untranslated linked proposals [Decorators](en/proposals/decorators.md), [Comparisons](en/proposals/comparisons.md), and [Intl Era/Month Code](en/proposals/intl-era-month-code.md), and switched existing English-page links over to `wiki/en`.
 
-## [2026-09-27] wiki | 英語訳 wiki/en に 2025-09
+## [2026-09-27] wiki | Translated 2025-09 into wiki/en
 
-- `wiki/en/meetings/2025-09/` を追加。リンク先の提案は既に `wiki/en/proposals/` にあった。
+- Added `wiki/en/meetings/2025-09/`. The linked proposals were already present under `wiki/en/proposals/`.
 
-## [2026-09-27] wiki | 英語訳 wiki/en に 2025-07
+## [2026-09-27] wiki | Translated 2025-07 into wiki/en
 
-- `wiki/en/meetings/2025-07/` を追加。未訳だった [Upsert](en/proposals/upsert.md) も訳し、既存英語ページからのリンクを付け替えた。これで要約済み会合はすべて `wiki/en/meetings/` にある。
+- Added `wiki/en/meetings/2025-07/`. Also translated the previously untranslated [Upsert](en/proposals/upsert.md) and switched existing English-page links over. All summarized meetings are now under `wiki/en/meetings/`.
 
-## [2026-09-27] wiki | 英語訳 wiki/en に残りの提案
+## [2026-09-27] wiki | Translated the remaining proposals into wiki/en
 
-- 未訳だった [Intl.MessageFormat](en/proposals/intl-messageformat.md) と [Array.isTemplateObject](en/proposals/is-template-object.md) を `wiki/en/proposals/` に追加し、既存英語ページからのリンクを付け替えた。提案ページはこれで日英が揃う。
+- Added the previously untranslated [Intl.MessageFormat](en/proposals/intl-messageformat.md) and [Array.isTemplateObject](en/proposals/is-template-object.md) to `wiki/en/proposals/`, and switched the links from the existing English pages. All proposal pages are now covered in both languages.
 
-## [2026-09-27] wiki | Made the English translation canonical, retired wiki/en
+## [2026-09-27] wiki | Made the English translation canonical and retired wiki/en
 
-- `wiki/en/` reached full 1:1 coverage of the wiki (proposals, families, meetings, people, README), so at the user's request it replaced the Japanese body text everywhere and `wiki/en/` was removed (the old Japanese pages remain only in git history).
-- Curated pages (`proposals/*.md` except `index.md`, `families/*.md`, `meetings/**`, `README.md`) were copied from their `wiki/en/` counterpart. Generated pages (`people/*.md`, `proposals/index.md`) were _not_ copied — `tools/extract_people.py` and `tools/extract_proposals.py` were rewritten to emit English and then re-run, since a manually-copied `wiki/en/people/PFC.md` was found to have an inconsistent relative-link depth for two of its meeting links; regenerating from the (now-English) proposal/family pages avoided reproducing that bug.
-- The `wiki/en/` tree carried one extra directory of nesting relative to `wiki/`, so every link that reached outside the mirrored subtree (to `raw/notes`, `AGENTS.md`, `llm-wiki.md`, `wiki/_generated/`) had one extra `../` baked in. A link-resolution sweep across all curated pages found 366 such broken links after the copy; all were corrected by stripping the extra level, and a second sweep confirmed zero broken links remain.
-- `AGENTS.md`'s language policy (`## 言語規約`), fixed section headings for proposal/family pages, and the Ingest/Summarise wording were updated to say body text is English (quotes are kept in the original English rather than translated). The directory-structure listing's `en/` line was removed.
-- Historical `wiki/log.md` entries were left as-is (an append-only record); only new entries follow the English convention going forward.
+- `wiki/en/` reached full 1:1 coverage of the wiki (proposals, families, meetings, people, README), so per the user's request it became the canonical body text everywhere in English and `wiki/en/` was removed (the old Japanese pages remain only in git history).
+- Curated pages (`proposals/*.md` except `index.md`, `families/*.md`, `meetings/**`, `README.md`) were copied from their `wiki/en/` counterparts. Generated pages (`people/*.md`, `proposals/index.md`) were not copied: `tools/extract_people.py` and `tools/extract_proposals.py` were rewritten to emit English and then rerun, because a manually copied `wiki/en/people/PFC.md` had an inconsistent relative-link depth for two meeting links; regenerating from the now-English proposal/family pages avoided reproducing that bug.
+- The `wiki/en/` tree had one extra directory level relative to `wiki/`, so every link that escaped the mirrored subtree (to `raw/notes`, `AGENTS.md`, `llm-wiki.md`, `wiki/_generated/`) had one extra `../`. A link-resolution sweep across all curated pages found 366 broken links after the copy; all were corrected by stripping the extra level, and a second sweep confirmed zero broken links remain.
+- AGENTS.md's language policy (`## language policy`), the fixed section headings for proposal/family pages, and the Ingest/Summarise wording were updated to say body text is English (quotes are kept in the original English rather than translated). The `en/` line was removed from the directory-structure listing.
+- Historical `wiki/log.md` entries were left as an append-only record; only new entries follow the English convention going forward.

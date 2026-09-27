@@ -1,10 +1,10 @@
 ---
-description: 会合を話題単位で日次要約し wiki/meetings/ にまとめる
-argument-hint: "[会合 (YYYY-MM) | tc39/notes の PR 番号/URL (省略時は raw/notes の最新会合)]"
+description: Summarize a meeting by topic into daily files under wiki/meetings/
+argument-hint: "[meeting (YYYY-MM) | tc39/notes PR number/URL (defaults to the latest meeting in raw/notes)]"
 ---
 
-`AGENTS.md` の「## ワークフロー > ### Summarise」を読み、その手順とフォーマットに従って会合を要約してください。対象: **$ARGUMENTS**(未指定なら `raw/notes/meetings/` の最新会合)。
+Read `AGENTS.md`'s "## Workflow > ### Summarise" and follow the procedure and format to summarize the meeting. Target: **$ARGUMENTS** (if omitted, the latest meeting under `raw/notes/meetings/`).
 
-- 対象が tc39/notes の PR 番号または URL の場合は、AGENTS.md の「未マージ PR にしかない会合を要約する場合」の手順で `pr-<PR>` を checkout してから、その PR が追加する会合を要約する。
-- フォーマット・出力先・index の作り方・リンク生成(人物/提案)の定義は `AGENTS.md` が正本。ここには再掲しない。
-- 各日ファイルは独立して読めるので、日ごとに並列で処理してよい。
+- If the target is a tc39/notes PR number or URL, check out `pr-<PR>` using the steps in `AGENTS.md` for summarizing a meeting that exists only in an unmerged PR, then summarize the meetings added by that PR.
+- `AGENTS.md` is the source of truth for the format, output location, index generation, and link generation (people/proposals). Do not repeat them here.
+- Each daily file can be read independently, so it is fine to process them in parallel by day.

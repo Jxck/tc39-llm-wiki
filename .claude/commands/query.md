@@ -1,8 +1,8 @@
 ---
-description: wiki に問いを投げて出典付きで答える
-argument-hint: <質問>
+description: Ask the wiki a question and answer with sources
+argument-hint: <question>
 ---
 
-`AGENTS.md` の「## ワークフロー > ### Query」を読み、その手順に従って次の質問に答えてください: **$ARGUMENTS**
+Read `AGENTS.md`'s "## Workflow > ### Query" and follow those steps to answer the following question: **$ARGUMENTS**
 
-- 探索順・出典付与・回答後の file back 確認(価値ある分析を wiki に残すかをユーザへ確認する)の定義は `AGENTS.md` が正本。ここには再掲しない。
+- `AGENTS.md` is the source of truth for search order, source attribution, and the post-answer file-back confirmation (asking the user whether to keep valuable analysis in the wiki). Do not repeat them here.

@@ -5,9 +5,9 @@ Two idempotent passes over wiki/meetings/<YYYY-MM>/*.md:
 
 1. Daily files only: for each `## <topic>` whose heading names a deep-read
    proposal (title or alias, backticks ignored), ensure the section's FIRST
-   bullet is `- 提案ページ: [Title](../../proposals/<slug>.md)` — before
-   Slides. An existing 提案ページ bullet is moved to the front (its content is
-   kept); topics without a matching page get no bullet.
+    bullet is `- wiki: [Title](../../proposals/<slug>.md)` — before Slides. An
+    existing wiki bullet is moved to the front (its content is kept); topics
+    without a matching page get no bullet.
 2. All files: turn inline occurrences of a deep-read proposal's title (e.g.
    "Await Dictionary") into a markdown link. Only proposals that already have
    a page in wiki/proposals/ are linked, so unread proposals stay plain text
@@ -97,8 +97,8 @@ def page_title_of(fname):
 
 
 DAILY = re.compile(r"^\d{4}-\d{2}-\d{2}")
-# "提案ページ" is the legacy label; existing bullets are migrated to "wiki".
-WIKI_BULLET = re.compile(r"^- (?:wiki|提案ページ):")
+# The legacy label is still accepted so older files can be migrated to "wiki".
+WIKI_BULLET = re.compile(r"^- (?:wiki|\u63d0\u6848\u30da\u30fc\u30b8):")
 PROPOSAL_BULLET = re.compile(r"^- proposal:")
 # Lowercase singular "slide:" is the convention; match the legacy forms
 # (Slides/slides) too so reordering still works until files are converted.
