@@ -1,61 +1,61 @@
 # TC39 Wiki — Agent Schema
 
-このリポジトリは TC39 plenary の議事録(`raw/notes`)を素材に、**「各提案がどういう経緯でステージを変えてきたか」「策定途中で何が論点になったか」を後から辿れる wiki** を LLM が構築・維持するためのものです。設計思想は [llm-wiki.md](llm-wiki.md) を参照。
+This repository uses the TC39 plenary notes (`raw/notes`) as raw material for a wiki that an LLM builds and maintains, one that lets you trace **how each proposal changed stage over time and what issues came up along the way**. See [llm-wiki.md](llm-wiki.md) for the design rationale.
 
-このファイルは wiki の運用規約(schema)です。新しいセッションはまずこれを読み、規約に従って ingest / query / lint を行ってください。
+This file is the wiki's operating schema. A new session should read this first and follow it when doing ingest / query / lint.
 
-## レイヤ
+## Layers
 
-- **Raw sources** — `raw/`(submodule 群)。**読み取り専用・不変**。絶対に編集しない。これが真実の素材。
-  - `raw/notes/`(tc39/notes) — plenary の逐語録。**経緯・論点・発言の一次ソース**。
-  - `raw/proposals/`(tc39/proposals) — 提案の正典リスト(現ステージ別テーブル + champions)。**現ステージ・status・champion の確定値の一次ソース**。
-- **The wiki** — `wiki/`。LLM が全面的に所有。提案ページ・index・log を生成/更新する。
-- **Generated** — `wiki/_generated/`、`wiki/people/`、`wiki/proposals/index.md`。`tools/` のスクリプトによる機械抽出物。**手で編集しない**(再生成で上書きされる)。
+- **Raw sources** — `raw/` (a set of submodules). **Read-only, immutable**. Never edit. This is the ground-truth material.
+  - `raw/notes/` (tc39/notes) — verbatim plenary transcripts. **The primary source for history, issues, and speaker attribution**.
+  - `raw/proposals/` (tc39/proposals) — the canonical proposal list (tables by current stage + champions). **The primary source for a proposal's confirmed current stage / status / champion**.
+- **The wiki** — `wiki/`. Fully owned by the LLM. It generates/updates proposal pages, indexes, and the log.
+- **Generated** — `wiki/_generated/`, `wiki/people/`, `wiki/proposals/index.md`. Machine-extracted output from `tools/` scripts. **Do not hand-edit** (regeneration overwrites it).
 
-**ソース間の優先順位(precedence)**: 食い違ったときにどれを信じるか。
+**Precedence between sources**: which one to trust when they disagree.
 
-- 経緯(ステージ遷移の年月・方向)・論点・発言の帰属 → **`raw/notes`** が一次。
-- 提案の**現ステージ(`current_stage` / `status`)と champion** の確定値 → **`raw/proposals`** が一次。notes から推論した現ステージが proposals と食い違ったら、まず notes 側の読み取りを疑い、両者を辿り直して解決する。
-- `raw/proposals` は**現在のスナップショット**であり経緯は持たない。逆に notes は経緯を語るが現ステージの確定には弱い。役割が異なるので、片方だけで埋めず両者を突き合わせる。
+- History (the year/month and direction of stage transitions), issues, and speaker attribution → **`raw/notes`** is primary.
+- A proposal's confirmed **current stage (`current_stage` / `status`) and champion** → **`raw/proposals`** is primary. If a current stage inferred from notes disagrees with proposals, first suspect the notes-side reading and re-trace both to resolve it.
+- `raw/proposals` is a **current snapshot** and carries no history. Conversely, notes tell the history but are weak for confirming the current stage. The two play different roles, so cross-check both rather than filling in from just one.
 
-## ディレクトリ構成
+## Directory layout
 
 ```
-raw/notes/meetings/<YYYY-MM>/<month-DD>.md   素材(逐語録)
-raw/proposals/README.md                      Active 提案テーブル(Stage 3 / 2.7 / 2)
-raw/proposals/finished-proposals.md          Stage 4(出荷済み)
+raw/notes/meetings/<YYYY-MM>/<month-DD>.md   material (verbatim transcripts)
+raw/proposals/README.md                      Active proposal tables (Stage 3 / 2.7 / 2)
+raw/proposals/finished-proposals.md          Stage 4 (shipped)
 raw/proposals/stage-1-proposals.md           Stage 1
 raw/proposals/inactive-proposals.md          withdrawn / inactive
 wiki/
-  README.md                 提案カタログ(現ステージ付き、カテゴリ別)
-  log.md                    時系列の ingest/query/lint ログ(append-only)
-  proposals/<slug>.md       提案ごとの精読ページ(経緯+論点)
-  proposals/index.md        全提案のステージ一覧(生成物。Stage 4 は未収載分のみ。raw/proposals から生成。手で編集しない)
-  families/<family>.md      カテゴリ横断のまとめ(複数提案を束ねる synthesis。個別の経緯は proposals を参照)
-  meetings/<YYYY-MM>/        会合の日次要約(summarise の出力。日ごと 1 ファイル + README.md)
-  people/<ABBR>.md          人物リファレンス(生成物。filename = 略号)
+  README.md                 proposal catalog (with current stage, by category)
+  log.md                    chronological ingest/query/lint log (append-only)
+  proposals/<slug>.md       a deep-read page per proposal (history + issues)
+  proposals/index.md        stage list of all proposals (generated. Stage 4 lists only what's unshipped. Built from raw/proposals. Do not hand-edit)
+  families/<family>.md      cross-cutting synthesis (bundles multiple proposals; per-proposal history/issues stay in proposals)
+  meetings/<YYYY-MM>/        per-meeting daily summaries (output of summarise. One file per day + README.md)
+  people/<ABBR>.md          person reference (generated. filename = abbreviation)
   _generated/
-    agenda-index.md         全86会合の議題インデックス(grep 用バックボーン)
-    agenda-index.jsonl      同上の機械可読版
+    agenda-index.md         agenda index for all 86 meetings (a grep-able backbone)
+    agenda-index.jsonl       the same, machine-readable
 tools/
-  extract_agenda.py         agenda-index の生成スクリプト
-  extract_proposals.py      raw/proposals から全提案ステージ一覧 wiki/proposals/index.md を生成(Stage 4 は未収載分のみに filter)
-  extract_people.py         提案ページに登場する人物の people/ ページ生成
-  link_people.py            提案・family・会合要約ページ中の略号を [ABBR](<rel>/people/ABBR.md) にリンク
-  link_proposals.py         会合要約中の提案名を提案ページにリンクし、トピック冒頭の meta 行(wiki → proposal → slide)を保証
+  extract_agenda.py         generates agenda-index
+  extract_proposals.py      generates the all-proposals stage list wiki/proposals/index.md from raw/proposals (filters Stage 4 to unshipped only)
+  extract_people.py         generates people/ pages for people appearing in proposal pages
+  link_people.py            links abbreviations in proposal/family/meeting-summary pages to [ABBR](<rel>/people/ABBR.md)
+  link_proposals.py         links proposal names in meeting summaries to proposal pages, and ensures the topic-opening meta line (wiki → proposal → slide)
 ```
 
-## 言語規約
+## Language convention
 
-- 地の文(概要・経緯・論点の説明)は **English**。2026-09 に日本語版から全面移行した(旧日本語版は git 履歴にのみ残る)。
-- **提案名・Stage 表記・API 名・spec 用語・人物の略号(略号は原文のまま)は英語**。例: `Temporal`, `Stage 2.7`, `Array.fromAsync`, `[[Get]]`, `PFC`。
-- **議事録から発言(セリフ)を引用するときは原文(英語)のまま載せる**(翻訳しない)。地の文の要約・パラフレーズも英語。
+- Body text (overview, history, discussion of issues) is **English**. Fully migrated from the Japanese version in 2026-09 (the old Japanese version survives only in git history).
+- **Proposal names, stage notation, API names, spec terminology, and person abbreviations (abbreviations stay as-is) are English**. e.g. `Temporal`, `Stage 2.7`, `Array.fromAsync`, `[[Get]]`, `PFC`.
+- **When quoting a speaker from the notes, keep the original English as-is** (do not translate). Summaries and paraphrases in body text are also in English.
 
-## 提案ページの形式
+## Proposal page format
 
-`wiki/proposals/<slug>.md`。`<slug>` は kebab-case の英語(例: `temporal`, `decorators`, `records-and-tuples`)。
+`wiki/proposals/<slug>.md`. `<slug>` is kebab-case English (e.g. `temporal`, `decorators`, `records-and-tuples`).
 
-先頭に YAML frontmatter(Obsidian Dataview 用):
+YAML frontmatter at the top (for Obsidian Dataview):
 
 ```yaml
 ---
@@ -63,27 +63,27 @@ title: Temporal
 slug: temporal
 status: shipped        # stage0 | stage1 | stage2 | stage2.7 | stage3 | shipped | withdrawn | inactive
 current_stage: 4       # 0 / 1 / 2 / 2.7 / 3 / 4
-ecma: [262, 402]       # 影響する仕様
-champions: [PFC, ...]  # 略号
-first_seen: "2017-09"  # 初出会合(YYYY-MM)
+ecma: [262, 402]       # affected specs
+champions: [PFC, ...]  # abbreviations
+first_seen: "2017-09"  # meeting first proposed (YYYY-MM)
 reached_stage4: "2026-03"
-families: [date-time]  # 所属する family(任意・複数可。`wiki/families/<family>.md` と双方向に対応)
+families: [date-time]  # families it belongs to (optional, can be multiple. Corresponds both ways with `wiki/families/<family>.md`)
 tags: [proposal, date-time]
 ---
 ```
 
-本文セクション(見出しは固定・英語):
+Body sections (headings are fixed, in English):
 
-1. `## Overview` — 1〜3 段落。何を解決する提案か。
-2. `## Stage history` — 時系列テーブル。1 行 = 1 イベント:
+1. `## Overview` — 1-3 paragraphs. What problem the proposal solves.
+2. `## Stage history` — a chronological table, one row per event:
 
-   | 会合                                     | できごと                             | Stage |
-   | ---------------------------------------- | ------------------------------------ | ----- |
-   | [2018-09](../_generated/agenda-index.md) | Stage 2 到達。`Temporal for Stage 2` | 1 → 2 |
+   | Meeting                                  | Event                                   | Stage |
+   | ---------------------------------------- | --------------------------------------- | ----- |
+   | [2018-09](../_generated/agenda-index.md) | Reached Stage 2. `Temporal for Stage 2` | 1 → 2 |
 
-   会合セルは `raw/notes` の該当ファイルへ相対リンク(例: `[2018-09](../../raw/notes/meetings/2018-09/sept-27.md)`)。Stage 列は遷移を `旧 → 新`、更新のみなら現ステージを記す。テーブルの直後に、下記のステージ推移グラフを置く。
+   The meeting cell is a relative link to the corresponding `raw/notes` file (e.g. `[2018-09](../../raw/notes/meetings/2018-09/sept-27.md)`). The Stage column records a transition as `old → new`, or just the current stage for an update-only row. Place the stage-history chart (below) right after the table.
 
-3. ステージ推移グラフ — テーブルの下に mermaid `xychart-beta` の折れ線を埋め込む。**横軸は議事録のある全区間(2012〜2026 の年)固定**、縦軸は Stage (0〜4)。各年末時点の stage を下から積み上げる形で並べる。提案が存在しない年は 0。Stage 2.7 を経た提案は `2.7` を小数点で打つ。**撤回された提案は撤回年で線を止める**(line 配列をそこで終え、以降の点を描かない)。長期停滞は同じ値の横ばいで自然に表現される(特別な印は不要)。グラフ直後に読み方の注記(各遷移の年月)を `>` で添える。例:
+3. Stage-history chart — embed a mermaid `xychart-beta` line chart right below the table. **The x-axis is fixed to the full span with any notes (years 2012-2026)**, and the y-axis is Stage (0-4). Plot the stage as of the end of each year, stacked from the bottom. A year in which the proposal didn't exist yet is 0. For a proposal that passed through Stage 2.7, plot `2.7` as a decimal point. **For a withdrawn proposal, stop the line at the withdrawal year** (end the `line` array there; do not plot further points). Long stalls are naturally expressed as a flat run at the same value (no special marker needed). Right after the chart, add a `>` note on how to read it (the year/month of each transition). Example:
 
    ````
    ```mermaid
@@ -95,175 +95,175 @@ tags: [proposal, date-time]
    ```
    ````
 
-   注: `xychart-beta` は mermaid 10.3+ が必要。VSCode の `bierner.markdown-mermaid` の webview プレビューでは空描画になる(別の mermaid 拡張なら描画可)ため、レンダラ依存に注意。title は ASCII 推奨(全角・em ダッシュ・括弧で parse が崩れる環境がある)。
+   Note: `xychart-beta` requires mermaid 10.3+. VSCode's `bierner.markdown-mermaid` webview preview renders it blank (another mermaid extension can render it), so be aware this is renderer-dependent. ASCII is recommended for the title (full-width characters, em dashes, and parentheses can break parsing in some environments).
 
-4. `## Main issues` — 策定途中で問題になった点。論点ごとに小見出し `### <論点名(英語)>`。各論点に: 何が争点か / 誰が懸念したか(略号) / どの会合で / どう決着したか(または未決)。発言引用は `>` で(原文の英語のまま)。
-5. `## Related proposals` — `[Title](../proposals/other-slug.md)` 形式で相互リンク(未作成提案はコード表記の素テキスト)。
-6. `## Sources` — 参照した会合ファイルの一覧(箇条書きリンク)。
+4. `## Main issues` — points that became contentious during development. One subheading `### <issue name (English)>` per issue. For each: what was at stake / who raised concerns (abbreviation) / at which meeting / how it was resolved (or that it's unresolved). Quote with `>` (kept in the original English).
+5. `## Related proposals` — cross-links in the form `[Title](../proposals/other-slug.md)` (a proposal not yet created is written as plain code-formatted text).
+6. `## Sources` — a bulleted list of the meeting files referenced.
 
-リンク規約: **すべて標準の markdown 相対リンク**を使う(Obsidian の `[[wikilink]]` は VSCode の markdown プレビューで遷移できないため使わない。標準リンクは VSCode でも Obsidian でも動く)。
+Link convention: **always use standard markdown relative links** (do not use Obsidian's `[[wikilink]]` syntax, since it doesn't navigate in VSCode's markdown preview; standard links work in both VSCode and Obsidian).
 
-- 素材へ: `[2018-09](../../raw/notes/meetings/2018-09/sept-27.md)`
-- 提案間: `[Temporal](../proposals/temporal.md)`。まだ作成していない提案はデッドリンクを避け、コード表記の素テキスト(例: `` `pattern-matching` ``)で書き、作成時にリンク化する。
-- 人物の略号: `[PFC](../people/PFC.md)`。リンク付けは手作業ではなく `tools/link_people.py` が行う(下記。既存の `[[ABBR]]` も自動で markdown リンクへ移行する)。frontmatter の `champions` は YAML なのでリンクにしない(略号のまま)。
+- To source material: `[2018-09](../../raw/notes/meetings/2018-09/sept-27.md)`
+- Between proposals: `[Temporal](../proposals/temporal.md)`. To avoid a dead link to a proposal that doesn't have a page yet, write it as plain code-formatted text (e.g. `` `pattern-matching` ``) and turn it into a link once the page is created.
+- Person abbreviations: `[PFC](../people/PFC.md)`. Linking is done by `tools/link_people.py`, not by hand (below; it also migrates any existing `[[ABBR]]` to a markdown link automatically). Frontmatter's `champions` is YAML, so don't linkify it (keep it as abbreviations).
 
-## family ページの形式
+## Family page format
 
-`wiki/families/<family>.md`。同じカテゴリにくくれる提案群(例: `iterator`, `modules`, `intl`, `date-time`, `class-features`, `concurrency`)を**横断的にまとめる synthesis ページ**。個別提案の経緯・論点は `proposals/` に置き、family からはリンクするだけ(ステージ遷移テーブルや mermaid を family に複製しない。二重メンテを避ける)。`<family>` は kebab-case。
+`wiki/families/<family>.md`. A **cross-cutting synthesis page** that bundles a group of proposals in the same category (e.g. `iterator`, `modules`, `intl`, `date-time`, `class-features`, `concurrency`). Each proposal's own history/issues stay in `proposals/`; a family page only links to them (don't duplicate the stage-history table or mermaid chart in the family page — avoid maintaining it twice). `<family>` is kebab-case.
 
-先頭に YAML frontmatter:
+YAML frontmatter at the top:
 
 ```yaml
 ---
 title: Iterator helpers and friends
 slug: iterator
 kind: family
-members: [iterator-helpers, joint-iteration, iterator-chunking, ...]  # 提案 slug。未作成提案も slug で列挙してよい
+members: [iterator-helpers, joint-iteration, iterator-chunking, ...]  # proposal slugs. A proposal without a page yet may still be listed by slug
 tags: [family, iterator]
 ---
 ```
 
-本文セクション(見出しは固定・英語):
+Body sections (headings are fixed, in English):
 
-1. `## Overview` — 何が共通項か(この family がまとめる軸)。
-2. `## Members` — テーブル `提案 | 現ステージ | 一言`。提案ページがあれば `[Title](../proposals/<slug>.md)`、無ければコード表記の素テキスト。
-3. `## Cross-cutting themes` — family を貫く設計方針・論点(例: iterator の「文字列を暗黙 iterate しない」一貫方針、laziness、async 対応)。
-4. `## Related families` — 隣接 family へのリンク(`[Title](../families/<slug>.md)`)。
-5. `## Sources`(任意)。
+1. `## Overview` — what the members have in common (the axis this family groups around).
+2. `## Members` — a table `Proposal | Current stage | One-liner`. `[Title](../proposals/<slug>.md)` if the proposal has a page, otherwise plain code-formatted text.
+3. `## Cross-cutting themes` — the design principles/issues that run through the family (e.g. iterator's consistent policy of "don't implicitly iterate strings," laziness, async support).
+4. `## Related families` — links to neighboring families (`[Title](../families/<slug>.md)`).
+5. `## Sources` (optional).
 
-**メンバーシップは双方向**で持つ: family ページの `members` と、各提案 frontmatter の `families`(上記)を一致させる。提案ページがあるメンバーは必ずその `families` に当該 family を含め、family の `members` にも slug を載せる。未作成提案は family の `members` 側だけに slug で載る(`proposals/` に実体が無いのは未精読を意味し、誤りではない)。`README.md`(wiki トップ)には families セクションを設けて各 family へリンクする。
+**Membership is bidirectional**: keep the family page's `members` in sync with each proposal's frontmatter `families` (above). Any member that has a proposal page must include this family in its `families`, and the family's `members` must include that slug too. A proposal without a page yet is listed only on the family's `members` side (its absence from `proposals/` means it hasn't been deep-read, not that something's wrong). `README.md` (the wiki's top page) has a families section linking to each family.
 
-## フォーマット
+## Formatting
 
-markdown / json は **oxfmt** で整形する(設定 `.oxfmtrc.json`、`proseWrap: preserve` で日本語の行は折り返さない、`embeddedLanguageFormatting: off`)。除外は `raw/**`(submodule・不変)と `wiki/_generated/**`(生成物・JSONL を含む)。
+Markdown / JSON is formatted with **oxfmt** (config `.oxfmtrc.json`, `proseWrap: preserve` so lines aren't rewrapped, `embeddedLanguageFormatting: off`). Excluded: `raw/**` (submodules, immutable) and `wiki/_generated/**` (generated output, including JSONL).
 
-- 手動: `npm run fmt`(= `oxfmt`)、検査は `npm run fmt:check`。
-- **自動強制**: Claude Code の PostToolUse hook(`.claude/settings.json`)が編集した .md/.json を即整形し、git の pre-commit hook(`.githooks/pre-commit`、`core.hooksPath` 要設定)が staged ファイルを整形して再 stage する。
-- clone 直後は `git config core.hooksPath .githooks` を一度実行する。
+- Manual: `npm run fmt` (= `oxfmt`), check with `npm run fmt:check`.
+- **Enforced automatically**: Claude Code's PostToolUse hook (`.claude/settings.json`) formats any edited .md/.json file immediately, and git's pre-commit hook (`.githooks/pre-commit`, requires `core.hooksPath`) formats staged files and re-stages them.
+- Right after cloning, run `git config core.hooksPath .githooks` once.
 
-## ワークフロー
+## Workflow
 
-各操作は Claude Code のスラッシュコマンドとしても用意してある(`.claude/commands/`): **`/ingest <提案>`**、**`/query <質問>`**、**`/lint [対象]`**、**`/update [対象 submodule]`**、**`/summarise [会合]`**。コマンドは手順を持たず、本ファイルの該当ワークフローを読んで実行するだけのポインタ(定義は AGENTS.md が唯一の正本。コマンド側に再掲しない)。
+Each operation also has a Claude Code slash command (`.claude/commands/`): **`/ingest <proposal>`**, **`/query <question>`**, **`/lint [target]`**, **`/update [target submodule]`**, **`/summarise [meeting]`**. The commands hold no procedure of their own — they're just pointers that read the matching workflow in this file and execute it (AGENTS.md is the single source of truth; commands don't restate it).
 
-**コミット規約**: 変更はプレフィックス付きの英語メッセージでコミットする。プレフィックスは変更の起因で決める:
+**Commit convention**: commit changes with an English message carrying a prefix. The prefix is chosen by what caused the change:
 
-- 操作(コマンド)に起因する変更 → その**操作名**: `[ingest]` / `[query]` / `[lint]` / `[update]` / `[summarise]`(例: `[lint] fix champion attribution in records-and-tuples`)。
-- いずれの操作にも起因しない **wiki 全体に関わる変更** → `[wiki]`: コマンド自体の追加・変更、`tools/` などツールの変更、リポジトリ構成や本ファイルの構造的変更など。**この AGENTS.md への規約反映(ページ形式・ワークフロー・運用方針の追加/変更)も `[wiki]`** とする。規約反映のための独立した操作・コマンドは設けない(ユーザが個別に明示依頼したときに行う)。`/update` は raw ソースの同期専用。
+- A change caused by an operation (command) → that **operation's name**: `[ingest]` / `[query]` / `[lint]` / `[update]` / `[summarise]` (e.g. `[lint] fix champion attribution in records-and-tuples`).
+- A **wiki-wide change not caused by any operation** → `[wiki]`: adding/changing the commands themselves, changes to tools such as `tools/`, structural changes to the repo layout or this file, etc. **Reflecting a convention change into this AGENTS.md (page format, workflow, operating policy additions/changes) is also `[wiki]`**. There's no separate operation/command for reflecting conventions (it's done only when the user explicitly asks for it). `/update` is dedicated to syncing raw sources.
 
-コミットはリポジトリ/環境の git 規約(署名・rebase・必要な trailer 等)に従う。コミットすべき変更が無いとき(Query で file back しなかった等)はスキップしてよい。
+Commits follow the repo/environment's git conventions (signing, rebase, required trailers, etc). Skip committing when there's nothing to commit (e.g. a Query that didn't file anything back).
 
-### Ingest(素材の取り込み)
+### Ingest (bringing in material)
 
-1. 対象会合 or 提案を決める。`wiki/_generated/agenda-index.md` を grep して関連議題と会合を特定する(例: `grep -i -A4 decorators wiki/_generated/agenda-index.md`)。
-2. 該当する `raw/notes` のセクションを読む(`### Conclusion` と `### Speaker's Summary of Key Points` がステージ判定の要)。
-3. 提案ページを新規作成 or 更新: ステージ遷移テーブルに行を追加、ステージ推移グラフ(mermaid)を更新、論点を追記/更新、frontmatter の `current_stage`/`status` を最新化。発言引用は原文の英語のまま。
-   - **champion の確定は delegates.txt だけで決めない**。当該会合の Presenter 行・本文で裏取りする。略号は会合ごとに振り直されることがある(例: 2019-10 は Robin Ricard を RRI と表記するが、delegates.txt の RRI=Reefath Rajali は別人)。発言の帰属・年月も原文で確認する(誤帰属が起きやすい箇所)。
-4. **人物の生成とリンク**(提案ページを書き終えたら必ず実行):
-   - `python3 tools/extract_people.py` — 提案ページに登場する略号を検出し、`wiki/people/<ABBR>.md` を生成/再生成(フルネーム=delegates.txt、所属・参加会合=出席者テーブル、担当ドラフト=各提案 frontmatter の `champions` を相互参照)。
-   - `python3 tools/link_people.py` — 提案・family・会合要約の本文中の略号を `[ABBR](<rel>/people/ABBR.md)` にリンク(冪等)。frontmatter・コードブロック・mermaid・既存リンクは保護。
-   - `python3 tools/link_proposals.py` — 会合要約中の提案名を新規ページへリンク(冪等)。**新しい提案ページを作ったら必ず実行**する(過去の要約に散らばる素テキストの提案名がリンクに変わる)。
-   - 語と衝突する略号(`API`, `JS` 等)は `extract_people.py` の `NON_PERSON` で除外している。新たな誤検出が出たら追記する。
-5. `wiki/README.md` のカタログ行を更新。
-6. `wiki/log.md` に 1 行追記。
+1. Decide the target meeting or proposal. Grep `wiki/_generated/agenda-index.md` to identify the relevant agenda items and meetings (e.g. `grep -i -A4 decorators wiki/_generated/agenda-index.md`).
+2. Read the matching section in `raw/notes` (`### Conclusion` and `### Speaker's Summary of Key Points` are key for judging the stage).
+3. Create or update the proposal page: add a row to the stage-history table, update the stage-history chart (mermaid), add/update issues, refresh frontmatter's `current_stage`/`status`. Keep quotes in the original English.
+   - **Don't settle a champion from delegates.txt alone**. Corroborate with that meeting's Presenter line and body text. Abbreviations can be reassigned meeting to meeting (e.g. 2019-10 labels Robin Ricard as RRI, but delegates.txt's RRI=Reefath Rajali is a different person). Also verify speaker attribution and dates against the original text (a spot where misattribution is common).
+4. **Generate and link people** (always run this once the proposal page is written):
+   - `python3 tools/extract_people.py` — detects abbreviations appearing in proposal pages and generates/regenerates `wiki/people/<ABBR>.md` (full name = delegates.txt, affiliation/meetings attended = attendee tables, champion drafts = cross-referenced from each proposal's frontmatter `champions`).
+   - `python3 tools/link_people.py` — links abbreviations in the body of proposal/family/meeting-summary pages to `[ABBR](<rel>/people/ABBR.md)` (idempotent). Frontmatter, code blocks, mermaid, and existing links are protected.
+   - `python3 tools/link_proposals.py` — links proposal names in meeting summaries to newly created pages (idempotent). **Always run this after creating a new proposal page** (turns plain-text proposal names scattered across past summaries into links).
+   - Abbreviations that collide with ordinary words (`API`, `JS`, etc.) are excluded via `extract_people.py`'s `NON_PERSON`. Add to it when a new false positive shows up.
+5. Update the catalog row in `wiki/README.md`.
+6. Append one line to `wiki/log.md`.
 
-### Query(質問への回答)
+### Query (answering a question)
 
-1. `wiki/README.md` → 関連提案ページ → 必要なら `agenda-index.md` → `raw/notes` の順で掘る。
-2. 回答は出典(会合リンク)付き。
-3. 回答が価値ある分析(横断比較・新しい発見・再利用したい整理など)を含む場合は、**最後にユーザへ「これを wiki ページとして残すか」を確認する**(勝手に追加しない)。残すなら synthesis ページとして file back し、`wiki/README.md`・`wiki/log.md` を更新する。
+1. Dig in this order: `wiki/README.md` → the relevant proposal page → `agenda-index.md` if needed → `raw/notes`.
+2. Answer with sources (meeting links) attached.
+3. If the answer contains valuable analysis (a cross-cutting comparison, a new finding, an organization worth reusing, etc.), **ask the user at the end whether to keep it as a wiki page** (never add it unprompted). If they want to keep it, file it back as a synthesis page and update `wiki/README.md` / `wiki/log.md`.
 
-### Lint(健全性チェック)
+### Lint (health check)
 
-wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」と区別していた出典突き合わせも Lint に統合する)。
+A quality check of the wiki. It covers **both of the following two aspects** (source cross-checking, previously kept separate as "Verify," is now folded into Lint).
 
-**(a) 内部健全性**(wiki 内部を見る)
+**(a) Internal health** (looking within the wiki)
 
-- ページ間の矛盾、古くなった記述(新しい会合で覆された主張)、孤立ページ、相互リンク漏れ、論点の決着漏れを点検。
-- `agenda-index.md` に出てくるが提案ページが無い重要提案を洗い出す。
-- **family の双方向整合**: 各 `families/<family>.md` の `members` と、提案 frontmatter の `families` が一致しているか(提案ページを持つメンバーに当該 family の記載漏れが無いか、逆に提案の `families` が family の `members` に載っているか)を点検。
+- Check for contradictions between pages, stale statements (claims overturned by a newer meeting), orphan pages, missing cross-links, and unresolved issues left dangling.
+- Flag important proposals that appear in `agenda-index.md` but have no proposal page yet.
+- **Bidirectional family consistency**: check that each `families/<family>.md`'s `members` matches proposals' frontmatter `families` (no member with a proposal page missing that family, and conversely that a proposal's `families` is listed in that family's `members`).
 
-**(b) 出典との整合性**(wiki ↔ raw を突き合わせる)
+**(b) Consistency with sources** (cross-checking wiki against raw)
 
-- 各提案ページの主張を引用元の逐語録に照らして検証する。**誤りを探す姿勢**で点検し、見つけたら raw を真として修正する。
-- 特に誤りが出やすい箇所: ステージ遷移の年月・方向、champion の人物特定、発言の帰属、引用の正確性。
-- **`raw/proposals` との突き合わせ(現ステージ・champion の確定)**: 各提案ページの frontmatter `current_stage` / `status` / `champions` を正典リストと照合する。
-  - 探し方: Stage 3/2.7/2 は `raw/proposals/README.md`、Stage 4 は `finished-proposals.md`、Stage 1 は `stage-1-proposals.md`、withdrawn/inactive は `inactive-proposals.md` を grep(`grep -i '<提案名>' raw/proposals/*.md`)。どのテーブルに載っているかが現ステージを示す。
-  - 食い違ったら precedence(上記レイヤ節)に従う: 現ステージ/champion は proposals を一次として wiki を直し、**遷移の経緯は notes で裏取り**する。proposals に未掲載の提案(古い withdrawn 等)は notes のみで判断してよい。
-  - **champion の整合方針**: frontmatter `champions` は canonical の現 champion を**満たす**こと(不足は補う)。ただし **canonical に無い歴史的 champion(離脱した初代など)は削除せず残す**(canonical は現スナップショットで過去の champion を持たないため)。「canonical に無い名前=誤り」とはしない。
-  - 注意: proposals リストは現在のスナップショットなので**過去の遷移そのものは検証できない**。経緯テーブルの中間ステージは引き続き notes で確認する。
+- Verify each proposal page's claims against the source transcripts. Check **looking to find errors**, and when found, fix the wiki treating raw as ground truth.
+- Spots especially prone to error: the year/month and direction of stage transitions, champion identification, speaker attribution, quote accuracy.
+- **Cross-check against `raw/proposals` (confirming current stage / champion)**: check each proposal page's frontmatter `current_stage` / `status` / `champions` against the canonical list.
+  - How to find it: grep Stage 3/2.7/2 in `raw/proposals/README.md`, Stage 4 in `finished-proposals.md`, Stage 1 in `stage-1-proposals.md`, withdrawn/inactive in `inactive-proposals.md` (`grep -i '<proposal name>' raw/proposals/*.md`). Which table it appears in indicates the current stage.
+  - On a disagreement, follow precedence (the Layers section above): treat proposals as primary for current stage/champion and fix the wiki, then **corroborate the history of the transition against notes**. A proposal not listed in proposals (e.g. an old withdrawn one) may be judged from notes alone.
+  - **Champion consistency policy**: frontmatter `champions` must **cover** the canonical current champions (add any missing). However, **keep a historical champion not in canonical (e.g. an original champion who has since left) rather than deleting them** (canonical is a current snapshot and doesn't carry past champions). Don't treat "not in canonical" as "wrong."
+  - Note: since the proposals list is a current snapshot, **it cannot verify past transitions themselves**. Continue to confirm intermediate stages in the history table against notes.
 
-素材更新時(submodule pull 後)は `python3 tools/extract_agenda.py`、`python3 tools/extract_proposals.py`、続けて `python3 tools/extract_people.py && python3 tools/link_people.py && python3 tools/link_proposals.py` で再生成。
+After material updates (post submodule-pull), regenerate with `python3 tools/extract_agenda.py`, `python3 tools/extract_proposals.py`, then `python3 tools/extract_people.py && python3 tools/link_people.py && python3 tools/link_proposals.py`.
 
-### Update(raw ソースの同期)
+### Update (syncing raw sources)
 
-`raw/` 配下の submodule(`raw/notes` = tc39/notes、`raw/proposals` = tc39/proposals)を最新に pull し、**前回同期からの差分**を表示する操作。前回同期の状態は、超プロジェクトにコミット済みの submodule ポインタが記録している。新しい会合・提案が来ているかを把握し、ingest / summarise の起点にするために使う。
+The operation of pulling the submodules under `raw/` (`raw/notes` = tc39/notes, `raw/proposals` = tc39/proposals) to latest and showing **the diff since the last sync**. The state of the last sync is recorded by the submodule pointers already committed in the superproject. Used to see whether new meetings/proposals have come in, and as the starting point for ingest / summarise.
 
-1. 同期前のポインタ(= 前回 pull した状態)を控える: `git submodule status`(各 submodule の現 SHA を OLD とする)。
-2. 各 submodule を最新へ pull する:
-   - 通常(main 追跡): `git -C raw/<sub> checkout main && git -C raw/<sub> pull --ff-only`(まとめてなら `git submodule update --remote`)。
-   - `raw/notes` が未マージ PR ブランチ(例 `pr-411`)に居る場合: その PR が main にマージ済みなら main 追跡へ戻してから pull、未マージなら PR を fetch して更新する(PR 運用の詳細は Summarise 節を参照)。
-3. **差分を表示**する: 各 submodule で `git -C raw/<sub> log --oneline OLD..HEAD` と `git -C raw/<sub> diff --stat OLD..HEAD`。特に**追加された会合ファイル(`meetings/<YYYY-MM>/`)と提案ステータスの変化**を抜き出して要約提示する。差分が無ければ「最新(変更なし)」と表示し、以降の commit はスキップする。
-4. ポインタが動いたら超プロジェクトでコミット(`[update]`)。続けて生成物を再生成する: `python3 tools/extract_agenda.py`(notes 由来)、**`python3 tools/extract_proposals.py`(proposals 由来。全提案ステージ一覧 `wiki/proposals/index.md` を常に最新化)**、`python3 tools/extract_people.py && python3 tools/link_people.py && python3 tools/link_proposals.py`。`raw/proposals` が動いたら `extract_proposals.py` は必ず再実行する。
-5. `wiki/log.md` に 1 行記録(同期した範囲・新規会合や提案ステータス変化の有無)。
+1. Note the pointers before syncing (= the state as of the last pull): `git submodule status` (call each submodule's current SHA OLD).
+2. Pull each submodule to latest:
+   - Normally (tracking main): `git -C raw/<sub> checkout main && git -C raw/<sub> pull --ff-only` (or `git submodule update --remote` for all at once).
+   - If `raw/notes` is sitting on an unmerged PR branch (e.g. `pr-411`): if that PR has been merged to main, switch back to tracking main then pull; if not yet merged, fetch and update the PR (see the Summarise section for PR handling details).
+3. **Show the diff**: for each submodule, `git -C raw/<sub> log --oneline OLD..HEAD` and `git -C raw/<sub> diff --stat OLD..HEAD`. Pull out and summarize especially **added meeting files (`meetings/<YYYY-MM>/`) and proposal status changes**. If there's no diff, say "up to date (no changes)" and skip the commit that follows.
+4. If a pointer moved, commit in the superproject (`[update]`). Then regenerate the generated files: `python3 tools/extract_agenda.py` (from notes), **`python3 tools/extract_proposals.py` (from proposals — always refreshes the all-proposals stage list `wiki/proposals/index.md`)**, `python3 tools/extract_people.py && python3 tools/link_people.py && python3 tools/link_proposals.py`. Always re-run `extract_proposals.py` if `raw/proposals` moved.
+5. Record one line in `wiki/log.md` (what range was synced, whether there were new meetings or proposal status changes).
 
-### Summarise(会合の日次要約)
+### Summarise (daily meeting summaries)
 
-会合まるごとを話題単位で英語要約する(提案中心の Ingest とは別物)。出力は `wiki/meetings/<YYYY-MM>/`。対象の指定は **会合(YYYY-MM)** か **tc39/notes の未マージ PR(番号または URL)**。PR が指定されたら下記「未マージ PR にしかない会合を要約する場合」の手順で `pr-<PR>` を checkout してから、その PR が追加する会合を対象にする。未指定なら `raw/notes/meetings/` の**最新会合**。
+Summarize an entire meeting topic-by-topic in English (distinct from proposal-centric Ingest). Output goes to `wiki/meetings/<YYYY-MM>/`. The target is specified as either **a meeting (YYYY-MM)** or **an unmerged tc39/notes PR (number or URL)**. If a PR is given, check out `pr-<PR>` first following "Summarising a meeting that exists only on an unmerged PR" below, then target the meeting(s) that PR adds. If unspecified, use the **latest meeting** under `raw/notes/meetings/`.
 
-1. 対象会合の各日ファイル `raw/notes/meetings/<YYYY-MM>/<month-DD>.md` を読む。
-2. **日ごとに 1 ファイル** `wiki/meetings/<YYYY-MM>/<YYYY-MM-DD>.md` を生成。各日の議題(`## <topic>`)ごとに:
-   - 見出しは原文のトピック名(英語のまま、`##`)。
-   - 冒頭の meta 箇条書きは **wiki → proposal → slide の順**で置く(いずれも該当が無ければ付けない。ラベルは全て小文字):
-     - `- wiki: [Title](../../proposals/<slug>.md)` — そのトピックが議論している**既存の提案ページ**。**必ず最初**。見出しが提案名を含む分は `tools/link_proposals.py` が自動で補完・先頭へ移動するが、見出しに提案名が無いトピック(needs-consensus PR 等)は手で付ける。
-     - `- proposal: [name](URL)` — 原文の提案リポジトリへのリンク(`* [proposal](URL)`)。
-     - `- slide: [link](URL)` — 発表者のスライドリンク(`* [slides](URL)`)。
-   - 続けて **3〜5 行**で英語要約(wiki 共通の言語規約に従う)。本文中の人物略号と既存提案ページの提案名は**素テキストで書いてよい**(手順 4 のスクリプトがリンク化する)。
-   - `### Conclusion` / `### Speaker's Summary of Key Points` があれば、**その結論を必ず要約に含める**(stage 遷移・consensus の有無など)。
-   - 委員会の定型(Opening & Welcome / Secretary's Report / 各種 Status Update など議論性の薄いもの)は省いてよい。
-3. `wiki/meetings/<YYYY-MM>/README.md` を生成:
-   - **必ず tc39/agenda リポジトリの該当ページへのリンク**を貼る(`https://github.com/tc39/agendas/blob/main/<YYYY>/<MM>.md`)。
-   - そこから引いた**概要**、会合名(例: 113th TC39 Meeting)、開催地、ホスト、参加者などをまとめる(会合名・参加者は raw の各日先頭 attendees テーブル、開催地は Opening の記述からも補える)。
-   - 各日ファイルへのリンク一覧を置く。
-4. **リンクの生成**(要約を書き終えたら必ず実行):
-   - `python3 tools/extract_people.py` — people ページの「参加したミーティング」は要約(`wiki/meetings/<YYYY-MM>/README.md`)の有無でリンク化を切り替えるため、新しい会合を要約したら再生成しないと既存の人物ページが素テキストのまま取り残される。
-   - `python3 tools/link_people.py` — 要約本文中の人物略号を `[ABBR](../../people/ABBR.md)` にリンク(冪等。ページのある略号のみ。JSC など多義の略号は自動リンクせず、人物の場合だけ手でリンクする)。
-   - `python3 tools/link_proposals.py` — 要約本文中の提案名を `[Title](../../proposals/<slug>.md)` にリンクし、トピック冒頭の meta 箇条書き(`- wiki:` を先頭に wiki → proposal → slide の順)を保証(冪等。ページのある提案のみ。表記揺れは script の `ALIASES` に追記)。
-5. 完了後 `[summarise]` でコミットし、`wiki/log.md` に記録。
+1. Read each day's file for the target meeting, `raw/notes/meetings/<YYYY-MM>/<month-DD>.md`.
+2. Generate **one file per day**, `wiki/meetings/<YYYY-MM>/<YYYY-MM-DD>.md`. For each day's agenda item (`## <topic>`):
+   - The heading is the topic's original name (kept in English, as `##`).
+   - Place the opening meta bullet list in **wiki → proposal → slide order** (omit any that don't apply; labels are all lowercase):
+     - `- wiki: [Title](../../proposals/<slug>.md)` — the **existing proposal page** this topic is discussing. **Always first**. `tools/link_proposals.py` auto-fills and moves this to the front when the heading contains a proposal name, but add it by hand for a topic whose heading doesn't name a proposal (e.g. a needs-consensus PR).
+     - `- proposal: [name](URL)` — a link to the original proposal repo (`* [proposal](URL)`).
+     - `- slide: [link](URL)` — the presenter's slide link (`* [slides](URL)`).
+   - Follow with a **3-5 line** summary in English (follows the wiki's shared language convention). Person abbreviations and existing proposal names in the body **may be written as plain text** (the scripts in step 4 turn them into links).
+   - If there's a `### Conclusion` / `### Speaker's Summary of Key Points`, **always include that conclusion in the summary** (stage transition, whether consensus was reached, etc).
+   - Committee boilerplate with little actual discussion (Opening & Welcome, Secretary's Report, various status updates, etc) may be omitted.
+3. Generate `wiki/meetings/<YYYY-MM>/README.md`:
+   - **Always link to the matching page in the tc39/agendas repo** (`https://github.com/tc39/agendas/blob/main/<YYYY>/<MM>.md`).
+   - Summarize the **overview** drawn from it, the meeting name (e.g. 113th TC39 Meeting), location, host, attendees, etc (the meeting name/attendees can also be filled in from each day's leading attendees table in raw, and the location from the Opening description).
+   - Include a list of links to each day's file.
+4. **Generate links** (always run this once the summary is written):
+   - `python3 tools/extract_people.py` — a person page's "Meetings attended" toggles whether a meeting is linked based on whether a summary exists (`wiki/meetings/<YYYY-MM>/README.md`), so if you summarize a new meeting and don't regenerate this, existing person pages are left with that meeting as plain text.
+   - `python3 tools/link_people.py` — links person abbreviations in the summary body to `[ABBR](../../people/ABBR.md)` (idempotent. Only abbreviations that have a page. An ambiguous abbreviation like JSC is not auto-linked — link it by hand only where it refers to the person).
+   - `python3 tools/link_proposals.py` — links proposal names in the summary body to `[Title](../../proposals/<slug>.md)`, and ensures the topic-opening meta bullet list (`- wiki:` first, in wiki → proposal → slide order) (idempotent. Only proposals that have a page. Add wording variants to the script's `ALIASES`).
+5. Once done, commit with `[summarise]` and record it in `wiki/log.md`.
 
-**note(submodule)と wiki の同期**: `raw/notes` を pull したり PR を checkout したら、**必ずその submodule ポインタの変更をコミットする**(`[wiki]`)。wiki が要約・参照した note の状態を常に記録し、両者を同期させるため(ポインタを未コミットのまま放置しない)。
+**Syncing notes (the submodule) with the wiki**: whenever you pull `raw/notes` or check out a PR, **always commit the submodule pointer change** (`[wiki]`). This keeps a permanent record of which state of notes the wiki summarized/referenced, and keeps the two in sync (don't leave the pointer uncommitted).
 
-- 未マージ PR にしかない会合を要約する場合:
-- `cd raw/notes && git fetch origin pull/<PR>/head:pr-<PR> && git checkout pr-<PR>` で checkout → **ポインタをコミット**(`[wiki]`)→ 要約を生成し `[summarise]` でコミット。
-- 以後のルーチン同期(更新確認・差分表示・PR マージ後の main 追跡への復帰)は **/update**(「Update(raw ソースの同期)」)で行う。その同期操作で動いたポインタのコミットは `[update]`(Summarise 中の臨時 checkout で動いたポインタは上記のとおり `[wiki]`)。
-- 注意: PR head のコミットは fork 由来だと plain な `git submodule update` で取得できないことがある(別クローンでの完全な再現性はマージ後に確保される)。
+- When summarising a meeting that exists only on an unmerged PR:
+- `cd raw/notes && git fetch origin pull/<PR>/head:pr-<PR> && git checkout pr-<PR>` to check it out → **commit the pointer** (`[wiki]`) → generate the summary and commit with `[summarise]`.
+- Routine sync afterward (checking for updates, showing the diff, returning to tracking main once the PR is merged) is done via **/update** ("Update (syncing raw sources)"). A pointer commit that moves during that sync operation is `[update]` (a pointer that moves from a temporary checkout during Summarise is `[wiki]`, as above).
+- Note: a PR head commit can be unreachable via a plain `git submodule update` if it comes from a fork (full reproducibility from a separate clone is only guaranteed once merged).
 
-## 人物ページ(people/)
+## Person pages (people/)
 
-`wiki/people/<ABBR>.md` は**生成物**。提案ページと family ページに登場する略号について作られ、「Full name / Affiliation / Champion drafts / Mentioned on proposal pages / Mentioned on family pages / Meetings attended」を集約する。filename を略号にしてあるので `[ABBR](../people/ABBR.md)` がそのまま解決する(提案・family は `../people/`、会合要約は `../../people/`。`link_people.py` がファイル位置から自動で算出する)。提案・family ページが増えるたび `extract_people.py` を再実行すれば対象人物も自動で増える。
+`wiki/people/<ABBR>.md` is **generated**. Built for abbreviations appearing on proposal and family pages, gathering "Full name / Affiliation / Champion drafts / Mentioned on proposal pages / Mentioned on family pages / Meetings attended". The filename is the abbreviation, so `[ABBR](../people/ABBR.md)` resolves directly (`../people/` from proposals/family, `../../people/` from a meeting summary; `link_people.py` computes this automatically from the file's location). Re-running `extract_people.py` picks up new people automatically as more proposal/family pages are added.
 
-- `link_people.py` のリンク対象は提案・family・**会合要約**(`wiki/meetings/<YYYY-MM>/`)。ページのある略号のみリンクするので、会合にしか登場しない人物は素テキストのまま残る(デッドリンクを作らない)。
-- **多義の略号は自動リンクしない**: `JSC` は大半が engine(JavaScriptCore)を指すため `link_people.py` の `AMBIGUOUS` で除外している。人物(J. S. Choi)を指す箇所だけ手でリンクする。同種の衝突が出たら `AMBIGUOUS` に追記する。
+- `link_people.py` links within proposal, family, and **meeting-summary** pages (`wiki/meetings/<YYYY-MM>/`). It only links abbreviations that have a page, so a person who appears only in meetings stays as plain text (no dead links).
+- **Ambiguous abbreviations are not auto-linked**: `JSC` mostly refers to the engine (JavaScriptCore), so it's excluded via `link_people.py`'s `AMBIGUOUS`. Link only the occurrences that refer to the person (J. S. Choi) by hand. Add any similar collision to `AMBIGUOUS`.
 
-- 全 578+ の delegate を作るのではなく、**登場した人物だけ**を扱う方針。
-- フルネーム/所属/参加会合は `raw/notes`(delegates.txt と各会合の出席者テーブル)由来。早期の会合は出席者テーブルが略号列を持たないため `参加したミーティング: 0` になる人物がいる(フルネームは delegates.txt から補完)。これは抽出の限界であり誤りではない。
-- 手で編集しない(再生成で上書き)。記述を足したいときはスクリプト側を直す。
+- The policy is to cover only **people who actually appear**, not all 578+ delegates.
+- Full name/affiliation/meetings attended come from `raw/notes` (delegates.txt and each meeting's attendee table). Early meetings' attendee tables have no abbreviation column, so some people end up with `Meetings attended: 0` (full name is still filled in from delegates.txt). This is a limitation of the extraction, not an error.
+- Don't hand-edit (regeneration overwrites it). To add something, change the script instead.
 
-## 全提案ステージ一覧(proposals/index.md)
+## Stage list of all proposals (proposals/index.md)
 
-`wiki/proposals/index.md` は **raw/proposals(canonical)から `extract_proposals.py` が生成**する全提案のステージ別カタログ(ECMA-262 / ECMA-402)。手で編集しない。精読済みは各ページへリンク。Update で `raw/proposals` を pull するたび再生成する。
+`wiki/proposals/index.md` is **generated by `extract_proposals.py` from raw/proposals (canonical)**, a stage-by-stage catalog of all proposals (ECMA-262 / ECMA-402). Don't hand-edit. Deep-read proposals link to their page. Regenerated every time Update pulls `raw/proposals`.
 
-- **Stage 4 はまだ ECMAScript に入っていないものだけを掲載**する(出荷済みの finished は省略)。判定は finished テーブルの **Expected Publication Year が当年(`datetime` ベース)以降**(= 最新 ratified エディションに未収載)。Stage 3 以下は全件。
-- 背景(ES エディションの規則): 提案は **Stage 4 かつ 3 月末の freeze までに spec へマージ済み**でその年の ES エディションに入り、**6 月末の Ecma GA で発表**される(例: ES2026 = ECMA-262 17th / ECMA-402 13th、GA 2026-06-30)。よって proposals の **Expected Publication Year が「どの ES 版か=収載済みか」の確定信号**であり、Stage 4 到達日より正確(大型提案はマージが freeze に間に合わず翌年版に回ることがある。例: Temporal は 2026-03 に Stage 4 到達もマージ未了で ES2027 行き)。
+- **Stage 4 lists only proposals not yet in ECMAScript** (shipped finished proposals are omitted). Judged by whether the finished table's **Expected Publication Year is the current year (by `datetime`) or later** (i.e. not in the latest ratified edition). Stage 3 and below are listed in full.
+- Background (the ES-edition rule): a proposal that is **at Stage 4 and merged into the spec by the end-of-March freeze** goes into that year's ES edition, **announced at the end-of-June Ecma GA** (e.g. ES2026 = ECMA-262 17th / ECMA-402 13th, GA 2026-06-30). So a proposal's **Expected Publication Year is the definitive signal of which ES edition it's in / whether it has shipped**, and is more accurate than the Stage 4 date (a large proposal can reach Stage 4 but miss the freeze on merging, pushing it to the following year's edition — e.g. Temporal reached Stage 4 in 2026-03 but wasn't fully merged, so it goes into ES2027).
 
-## バックボーンの使い方(重要)
+## Using the backbone (important)
 
-全 86 会合・2737 議題は `wiki/_generated/agenda-index.md` に機械抽出済み。これは精読の代替ではなく**索引**。提案ページを書く/辿るときは、まずここを grep して「どの会合で議論されたか」を掴み、その会合の原文を読んで論点を埋める。提案名は年で揺れる(改名・別名)ので、grep は別名でも試す。
+All 86 meetings and 2737 agenda items are machine-extracted into `wiki/_generated/agenda-index.md`. This is not a substitute for deep reading — it's an **index**. When writing/tracing a proposal page, grep this first to grasp which meetings discussed it, then read that meeting's original text to fill in the issues. Proposal names shift by year (renames, aliases), so also try alternate names when grepping.
 
-## TC39 のステージ(参考)
+## TC39 stages (reference)
 
-- **Stage 0** Strawperson / **Stage 1** Proposal(検討開始) / **Stage 2** Draft(API 概形合意) / **Stage 2.7** (2023 新設) テスト・spec レビュー完了待ち / **Stage 3** Candidate(実装待ち) / **Stage 4** Finished(本体へマージ、出荷)。
-- Stage 2.7 は 2023-11 前後に導入。それ以前の提案は 2 → 3 を直接遷移している。
+- **Stage 0** Strawperson / **Stage 1** Proposal (discussion begins) / **Stage 2** Draft (API shape agreed) / **Stage 2.7** (introduced 2023) waiting on tests and spec review completion / **Stage 3** Candidate (awaiting implementation) / **Stage 4** Finished (merged into the spec body, shipped).
+- Stage 2.7 was introduced around 2023-11. Proposals before that transition directly from 2 to 3.
 
-## スコープの注記
+## Scope note
 
-素材は 334 ファイル・2012〜2026。全件の精読は段階的に行う。現時点で精読済みの提案は `wiki/README.md` の「精読済み」セクションに、未精読(バックボーンのみ)は agenda-index 参照とする。
+The material spans 334 files, 2012-2026. Full deep-reading happens incrementally. Proposals deep-read so far are listed in `wiki/README.md`'s "Ingested proposals" section; those not yet deep-read (backbone only) are referenced via agenda-index.
