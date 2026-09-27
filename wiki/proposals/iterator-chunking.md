@@ -10,20 +10,20 @@ families: [iterator]
 tags: [proposal, iterator]
 ---
 
-## 概要
+## Overview
 
-Iterator Chunking は、iterator から**複数の値をまとめて消費する** helper を追加する提案です。`Iterator.prototype.chunks(n)` は重なりのない固定長チャンクを、`windows(n)` は 1 要素ずつずれる重なりありのスライディングウィンドウを yield します。手書きでは状態管理が面倒なパターンを遅延 iterator として標準化します。
+Iterator Chunking adds helpers that **consume several values from an iterator at once**. `Iterator.prototype.chunks(n)` yields non-overlapping fixed-length chunks, and `windows(n)` yields an overlapping sliding window that advances one element at a time. It standardizes a pattern whose state is tedious to manage by hand, as a lazy iterator.
 
-champion は [MF](../people/MF.md)(Michael Ficarra)。iterator helpers 系の後続群の一つで、`iterator` family に属します。
+The champion is [MF](../people/MF.md) (Michael Ficarra). It is one of the follow-ons to iterator helpers and belongs to the `iterator` family.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                      | できごと                                                               | Stage   |
-| --------------------------------------------------------- | ---------------------------------------------------------------------- | ------- |
-| [2024-02](../../raw/notes/meetings/2024-02/feb-7.md)      | Stage 1 到達                                                           | → 1     |
-| [2024-10](../../raw/notes/meetings/2024-10/october-09.md) | Stage 2 到達                                                           | 1 → 2   |
-| [2025-05](../../raw/notes/meetings/2025-05/may-29.md)     | Stage 2.7 到達                                                         | 2 → 2.7 |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)     | **Stage 3 到達**。test262 テスト完備・delegate review 済みで十分と判断 | 2.7 → 3 |
+| Meeting                                                   | What happened                                                                                    | Stage   |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------- |
+| [2024-02](../../raw/notes/meetings/2024-02/feb-7.md)      | Reached Stage 1                                                                                  | → 1     |
+| [2024-10](../../raw/notes/meetings/2024-10/october-09.md) | Reached Stage 2                                                                                  | 1 → 2   |
+| [2025-05](../../raw/notes/meetings/2025-05/may-29.md)     | Reached Stage 2.7                                                                                | 2 → 2.7 |
+| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)     | **Reached Stage 3**. Judged sufficient: test262 coverage is complete and delegate review is done | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -33,20 +33,20 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2.7, 3]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。Stage 1 が 2024-02、Stage 2 が 2024-10、Stage 2.7 が 2025-05、Stage 3 が 2026-05。
+> Horizontal axis = 2012-2026, vertical axis = Stage. Stage 1 in 2024-02, Stage 2 in 2024-10, Stage 2.7 in 2025-05, Stage 3 in 2026-05.
 
-## 主な論点
+## Main issues
 
-### Stage 3 到達(2026-05)
+### Reaching Stage 3 (2026-05)
 
-2026-05 では「テストが揃い、delegate のレビューも済んでおり Stage 3 に十分」との報告で consensus に達しました。設計上の新規論点ではなく、テスト/レビューの完了が前進の条件でした。
+In 2026-05 the committee reached consensus on a report that "the tests are in place, delegate review is done, and that is enough for Stage 3." This was not a new design issue. Completing tests and review was the condition for advancing.
 
-## 関連提案
+## Related proposals
 
-- [Joint Iteration](../proposals/joint-iteration.md) / `iterator-includes` / `iterator-join` — 同じ iterator helpers 後続群。
+- [Joint Iteration](../proposals/joint-iteration.md) / `iterator-includes` / `iterator-join` — the same follow-on group of iterator helpers.
 - family: [Iterator helpers and friends](../families/iterator.md)
 
-## 出典
+## Sources
 
 - [2024-02 feb-7](../../raw/notes/meetings/2024-02/feb-7.md) — Stage 1
 - [2024-10 october-09](../../raw/notes/meetings/2024-10/october-09.md) — Stage 2

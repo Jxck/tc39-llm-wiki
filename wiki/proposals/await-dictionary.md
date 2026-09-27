@@ -9,20 +9,20 @@ first_seen: "2023-03"
 tags: [proposal, promise]
 ---
 
-## 概要
+## Overview
 
-Await Dictionary は、`Promise.all` の「名前付き版」である **`Promise.allKeyed` / `Promise.allSettledKeyed`** を追加する提案です。Promise の dictionary(名前付きの bag)を渡すと、同じ名前を持つ object に resolve する Promise が返り、名前で destructure できます。`Promise.all` の位置ベース API では「何番目の Promise が何番目の変数に対応するか」を数えて突き合わせる必要があり、項目が増えたり条件分岐が混ざるほど読みにくく誤りやすい、という人間側の問題を解決します。また、個別に順次 `await` する書き方と違い、全 Promise に一括で handler が付くため、複数 reject 時の unhandled promise rejection も避けられます。
+Await Dictionary adds **`Promise.allKeyed` / `Promise.allSettledKeyed`**, a "named version" of `Promise.all`. Pass a dictionary of Promises (a named bag) and you get back a Promise that resolves to an object with the same names, which you can destructure by name. It solves a human-side problem with `Promise.all`'s positional API: you have to count and match "which Promise corresponds to which variable," and the more items there are, or the more conditionals get mixed in, the harder it is to read and the easier it is to get wrong. Unlike awaiting each one in sequence, a handler is attached to every Promise at once, so unhandled promise rejections when several reject are also avoided.
 
-命名は先行して advance した `Iterator.zip` / `Iterator.zipKeyed` のパターン(ordered 版 + Keyed 版)を鏡映したものです。元の作者は Alexander J. Vincent で、[ACE](../people/ACE.md) が引き継いで champion group([ACE](../people/ACE.md) / [JHD](../people/JHD.md) / [CDA](../people/CDA.md))が推進しています。
+The naming mirrors the pattern of `Iterator.zip` / `Iterator.zipKeyed` (an ordered variant plus a Keyed variant), which had already advanced. The original author is Alexander J. Vincent; [ACE](../people/ACE.md) took it over, and the champion group ([ACE](../people/ACE.md) / [JHD](../people/JHD.md) / [CDA](../people/CDA.md)) is driving it.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                        | できごと                                                                                                                                                                                                                                         | Stage   |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| [2023-03](../../raw/notes/meetings/2023-03/mar-22.md)       | [ACE](../people/ACE.md) が問題提起(ordinal API の可読性)。[KG](../people/KG.md) / [RBN](../people/RBN.md) が明示支持、[MM](../people/MM.md) は「機能が元を取らない」と消極姿勢を登録しつつ不反対で **Stage 1**                                   | 0 → 1   |
-| [2025-09](../../raw/notes/meetings/2025-09/september-23.md) | update。`allSettledKeyed` を含めるか委員会の温度感を確認([KG](../people/KG.md) が「全く同じ動機が当てはまる」と包含を支持)。[JSL](../people/JSL.md) は「2.7 は時期尚早」                                                                         | 1       |
-| [2025-11](../../raw/notes/meetings/2025-11/november-18.md)  | `allSettledKeyed` を追加した spec 完成版で、**Stage 2 を経ず直接 Stage 2.7**([MF](../people/MF.md)/[DLM](../people/DLM.md)/[DJM](../people/DJM.md)/[WH](../people/WH.md)/[CDA](../people/CDA.md)/[JSL](../people/JSL.md) ほか多数支持・反対なし) | 1 → 2.7 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-20.md)      | test262 に 89 テスト merge、Boa / SpiderMonkey が 100% pass、[JHD](../people/JHD.md) の polyfill も全 pass。**Stage 3 到達**                                                                                                                     | 2.7 → 3 |
+| Meeting                                                     | What happened                                                                                                                                                                                                                                                                                         | Stage   |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2023-03](../../raw/notes/meetings/2023-03/mar-22.md)       | [ACE](../people/ACE.md) raised the problem (readability of the ordinal API). [KG](../people/KG.md) / [RBN](../people/RBN.md) supported it explicitly; [MM](../people/MM.md) registered a lukewarm view that "the feature does not pay for itself" but did not oppose, so **Stage 1**                  | 0 → 1   |
+| [2025-09](../../raw/notes/meetings/2025-09/september-23.md) | Update. Checked the committee's temperature on including `allSettledKeyed` ([KG](../people/KG.md) supported inclusion: "exactly the same motivation applies"). [JSL](../people/JSL.md) said "2.7 is premature"                                                                                        | 1       |
+| [2025-11](../../raw/notes/meetings/2025-11/november-18.md)  | With the finished spec that adds `allSettledKeyed`, **straight to Stage 2.7 without passing through Stage 2** ([MF](../people/MF.md)/[DLM](../people/DLM.md)/[DJM](../people/DJM.md)/[WH](../people/WH.md)/[CDA](../people/CDA.md)/[JSL](../people/JSL.md) and many others in support, no opposition) | 1 → 2.7 |
+| [2026-07](../../raw/notes/meetings/2026-07/july-20.md)      | 89 tests merged into test262; Boa / SpiderMonkey pass 100%; [JHD](../people/JHD.md)'s polyfill also passes everything. **Reached Stage 3**                                                                                                                                                            | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -32,38 +32,38 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2.7, 3]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2023-03 に Stage 1、2 年の休眠を挟んで 2025-11 に Stage 2 を経ず直接 Stage 2.7、2026-07 に Stage 3。
+> Horizontal axis = 2012-2026, vertical axis = Stage. Stage 1 in 2023-03, then a two-year dormancy, straight to Stage 2.7 in 2025-11 without passing through Stage 2, and Stage 3 in 2026-07.
 
-## 主な論点
+## Main issues
 
-### API か syntax か
+### API or syntax
 
-Stage 1 当時、[SFC](../people/SFC.md) は「API に限定せず構文的な解決も探るべき」と主張し、HAX は Swift の `async let` を例に別解の探索を求めました。[KG](../people/KG.md) は「`Promise.all` が既にある以上、構文をやるとしても library 形式は先に必要で、構文はより cross-cutting な別提案で扱うべき」と整理し、この方針が維持されました。2025-09 にも champion 側から「構文は別提案でやる方がよい(動的な object のユースケースは構文で覆えない)」と再確認されています。
+At Stage 1, [SFC](../people/SFC.md) argued that the search should not be limited to an API and should also look at a syntactic solution, and HAX asked to explore alternatives, citing Swift's `async let` as an example. [KG](../people/KG.md) framed it as: since `Promise.all` already exists, even if syntax is done, the library form is needed first, and syntax should be handled in a more cross-cutting separate proposal. That direction was kept. In 2025-09 the champions reconfirmed that syntax is better done as a separate proposal (the dynamic-object use case cannot be covered by syntax).
 
-### 汎用の dataflow への拡張可能性
+### Extending it to general dataflow
 
-[WH](../people/WH.md) は Stage 1 時に「これは問題の部分集合への解にすぎない。動的な dataflow graph の問題を解いた後にまた別 library を足す羽目になるのは避けたい」と、より汎用的な解の探索を求めました。[JFI](../people/JFI.md) は signals との関係にも言及。最終的な API はシンプルな `allKeyed` / `allSettledKeyed` に絞られています。
+At Stage 1, [WH](../people/WH.md) asked for a more general solution: this is only a solution to a subset of the problem, and he did not want the committee to end up adding yet another library after solving the dynamic dataflow-graph problem. [JFI](../people/JFI.md) also mentioned the relationship to signals. The final API is narrowed to the simple `allKeyed` / `allSettledKeyed`.
 
-### `allSettledKeyed` を含めるか
+### Whether to include `allSettledKeyed`
 
-champion の [ACE](../people/ACE.md) 自身はユースケースの少なさから消極的でしたが、2025-09 に [KG](../people/KG.md) が
+Champion [ACE](../people/ACE.md) was himself lukewarm, because there are few use cases, but in 2025-09 [KG](../people/KG.md) argued for inclusion:
 
-> `Promise.all` の動機がそのまま `allSettled` にも当てはまる。実装の追加負担もほぼ無く、外すほうが奇妙だ
+> The motivation for `Promise.all` applies as-is to `allSettled`. The extra implementation cost is almost none, and leaving it out would be the stranger choice.
 
-と包含を主張し、2025-11 の spec には `allSettledKeyed` が追加されました。`race` / `any` は「list を返さないので keyed 版が意味を持たない」として対象外です([MM](../people/MM.md) の「4 倍に増殖する」懸念への回答)。
+`allSettledKeyed` was added to the 2025-11 spec. `race` / `any` are out of scope because they do not return a list, so a keyed variant would not be meaningful (the answer to [MM](../people/MM.md)'s concern that it would proliferate fourfold).
 
-### Stage 2 を経ない 2.7 直行
+### Straight to 2.7, skipping Stage 2
 
-2025-11 時点で spec text が完成していたため、[ACE](../people/ACE.md) は Stage 2 を跳ばして 2.7 を要求し、異論なく通過しました。[JHD](../people/JHD.md) は waterfall の性能問題(直列化の回避)を動機として補強しています。
+Because the spec text was already complete as of 2025-11, [ACE](../people/ACE.md) asked to skip Stage 2 and go to 2.7, and it passed without objection. [JHD](../people/JHD.md) reinforced the motivation with the waterfall performance problem (avoiding serialization).
 
-## 関連提案
+## Related proposals
 
-- [Joint Iteration](../proposals/joint-iteration.md) — `Iterator.zip` / `Iterator.zipKeyed`。`allKeyed` の命名はこの提案の zip/zipKeyed パターンの鏡映。
-- `map-get-and-delete` ほか collection 系とは独立。
+- [Joint Iteration](../proposals/joint-iteration.md) — `Iterator.zip` / `Iterator.zipKeyed`. The naming of `allKeyed` mirrors this proposal's zip/zipKeyed pattern.
+- Independent of `map-get-and-delete` and the other collection proposals.
 
-## 出典
+## Sources
 
-- [2023-03 mar-22](../../raw/notes/meetings/2023-03/mar-22.md) — Stage 1 到達
-- [2025-09 september-23](../../raw/notes/meetings/2025-09/september-23.md) — update(allSettledKeyed の温度感確認)
-- [2025-11 november-18](../../raw/notes/meetings/2025-11/november-18.md) — Stage 2.7 到達(2 を経ず直行)
-- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — Stage 3 到達
+- [2023-03 mar-22](../../raw/notes/meetings/2023-03/mar-22.md) — Reached Stage 1
+- [2025-09 september-23](../../raw/notes/meetings/2025-09/september-23.md) — update (temperature check on allSettledKeyed)
+- [2025-11 november-18](../../raw/notes/meetings/2025-11/november-18.md) — Reached Stage 2.7 (straight through, without Stage 2)
+- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — Reached Stage 3

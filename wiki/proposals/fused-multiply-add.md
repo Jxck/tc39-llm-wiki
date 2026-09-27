@@ -9,17 +9,17 @@ first_seen: "2026-07"
 tags: [proposal, math]
 ---
 
-## 概要
+## Overview
 
-Fused Multiply-Add は、IEEE 754-2008 で必須の arithmetic operation となった **FMA(x × y + z を数学的値として計算し、最後に 1 回だけ丸める)** を `Math.fma` として ECMAScript に追加する提案です。中間積の丸め・overflow が発生しないため、`high = a * b` と `low = Math.fma(a, b, -high)` で **exact product** が得られ、`Math.sumPrecise` と組み合わせれば正確な dot product も計算できます。用途は dot product、多項式評価、ニューラルネットワーク、そして任意精度を要する spec algorithm の記述です。
+Fused Multiply-Add adds to ECMAScript, as `Math.fma`, **FMA (compute x × y + z as a mathematical value, then round only once at the end)**, which became a required arithmetic operation in IEEE 754-2008. Because the intermediate product is neither rounded nor overflowed, `high = a * b` and `low = Math.fma(a, b, -high)` yield an **exact product**, and combined with `Math.sumPrecise` an exact dot product can also be computed. Uses include dot products, polynomial evaluation, neural networks, and writing spec algorithms that need arbitrary precision.
 
-userland 実装は数百行の低速で壊れやすいコードになる一方、ARMv8 / x86-64(SSE)/ RISC-V では単一命令に lower され、C/C++/C#/Python/Rust/Swift/Java など主要言語は全て提供済みです。直接の契機は [Amount](../proposals/amount.md) の unit conversion の spec 記述で、[WH](../people/WH.md) が rounding 誤差の修正に FMA を必要としたことでした(x × p / q を 1 回の丸めで計算する。Amount issue #115)。champion は [WH](../people/WH.md)。
+A userland implementation is hundreds of lines of slow, fragile code, whereas on ARMv8 / x86-64 (SSE) / RISC-V it lowers to a single instruction, and major languages — C, C++, C#, Python, Rust, Swift, Java, and others — all already provide it. The immediate trigger was the spec text for unit conversion in [Amount](../proposals/amount.md): [WH](../people/WH.md) needed FMA to fix a rounding error (compute x × p / q with a single rounding; Amount issue #115). The champion is [WH](../people/WH.md).
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                   | できごと                                                                                                                               | Stage |
-| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | 「for Stage 1 or 2」として初提示し、そのまま **Stage 2 到達**(0 → 2 直行)。reviewer は [JHD](../people/JHD.md) / [MF](../people/MF.md) | 0 → 2 |
+| Meeting                                                | What happened                                                                                                                                                  | Stage |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | First presented as "for Stage 1 or 2" and **reached Stage 2** on the spot (straight from 0 → 2). Reviewers are [JHD](../people/JHD.md) / [MF](../people/MF.md) | 0 → 2 |
 
 ```mermaid
 xychart-beta
@@ -29,36 +29,36 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2026-07 の初提示で Stage 2 まで直行(動機自体は 2026-05 の Amount の conversion 精度議論で浮上)。
+> Horizontal axis = 2012-2026, vertical axis = Stage. Went straight to Stage 2 on first presentation in 2026-07 (the motivation itself surfaced in the 2026-05 discussion of Amount conversion precision).
 
-## 主な論点
+## Main issues
 
-### 数学的 invariant の確認
+### Confirming the mathematical invariant
 
-[MM](../people/MM.md) は「正確な数学的結果が表現可能ならその表現を返し、そうでなければ隣接する 2 値の間になる」という +−×÷ と同じ invariant を満たすかを確認しました。[WH](../people/WH.md) は
+[MM](../people/MM.md) checked whether it satisfies the same invariant as +−×÷: "if the exact mathematical result is representable, return that representation; otherwise it lies between the two adjacent values." [WH](../people/WH.md) replied
 
-> FMA(a, b, c) は a × b + c の正確な数学的値を計算し、最も近い double を返す(ties は偶数丸め)。IEEE 754 が bit 単位で完全に規定しており、近似の余地はない
+> FMA(a, b, c) computes the exact mathematical value of a × b + c and returns the nearest double (ties round to even). IEEE 754 specifies it completely, bit for bit, and there is no room for approximation
 
-と応答し、[MM](../people/MM.md) は賛成に回りました(rounding mode も ECMAScript は round-to-even 固定)。
+and [MM](../people/MM.md) came around to supporting it (the rounding mode is also fixed to round-to-even in ECMAScript).
 
-### hardware 支援の不均一(WASM の前例)
+### Uneven hardware support (the WASM precedent)
 
-[DLM](../people/DLM.md) は WASM で FMA が議論された際「hardware 支援が不均一で、IEEE 準拠の software fallback は遅い」ことが論点になった経緯を紹介。[PFC](../people/PFC.md) は JavaScriptCore へのパッチ経験から ARMv8 / x86-64(SSE)での単一命令 lowering を確認し、[KM](../people/KM.md) も RISC-V を含め単一命令であることを Godbolt で確認しました。[WH](../people/WH.md) は「x87 コプロセッサ向けにコンパイルしているなら、これ以前に算術がもっと壊れている」と実害を否定しています。
+[DLM](../people/DLM.md) recounted that when FMA was discussed for WASM, "hardware support is uneven, and an IEEE-compliant software fallback is slow" became an issue. [PFC](../people/PFC.md), from experience patching JavaScriptCore, confirmed single-instruction lowering on ARMv8 / x86-64 (SSE), and [KM](../people/KM.md) also confirmed on Godbolt that it is a single instruction, including on RISC-V. [WH](../people/WH.md) dismissed the practical harm: "if you are compiling for the x87 coprocessor, your arithmetic is already much more broken than this."
 
-### 引数の coercion
+### Argument coercion
 
-現行 draft は他の `Math` 関数と同様に引数を Number へ coerce しますが、[JHD](../people/JHD.md) は「新 API は coerce せず throw する」という committee の先行合意(`Math.sumPrecise` も throw)との衝突を指摘。[WH](../people/WH.md) は当初「`Math.sin` 等との一貫性を壊したくない」と反対しましたが、Stage 2 中の議論事項として引き取られました。命名(`fma` か、[SFC](../people/SFC.md) が discoverability から推す `multiplyAdd`/`mulAdd` か)も同様に未決です。
+The current draft coerces arguments to Number, like the other `Math` functions, but [JHD](../people/JHD.md) pointed out a clash with a prior committee agreement that "new APIs do not coerce; they throw" (`Math.sumPrecise` also throws). [WH](../people/WH.md) initially opposed this — "I don't want to break consistency with `Math.sin` and the like" — but it was taken up as a topic for discussion during Stage 2. Naming (`fma`, or `multiplyAdd`/`mulAdd`, which [SFC](../people/SFC.md) favors for discoverability) is likewise unsettled.
 
-### スコープ
+### Scope
 
-Stage 1 の問題領域は「IEEE 754-2008 の必須 arithmetic operation への準拠」に限定され、`nextUp` / `nextDown` / `scaleB` などの bit 操作系はスコープ外と明言されています。[SFC](../people/SFC.md) は「IEEE にあるからではなく、二重丸めなしの multiply-add という能力そのものに動機がある」と補強しました。
+The Stage 1 problem space is limited to "conformance with the required arithmetic operations of IEEE 754-2008", and bit-manipulation operations such as `nextUp` / `nextDown` / `scaleB` are explicitly out of scope. [SFC](../people/SFC.md) reinforced this: "the motivation is not that it is in IEEE, but the capability of multiply-add without double rounding itself."
 
-## 関連提案
+## Related proposals
 
-- [Amount](../proposals/amount.md) — unit conversion の spec 記述が本提案の直接の契機。
-- `decimal` — 精度問題への別アプローチ(十進演算)。2026-07 の update では `Math.fma` / `Math.sumPrecise` が「丸め誤差低減のユースケースを引き受けた」と整理された。
-- `Math.sumPrecise` — 正確な総和。FMA と組み合わせて正確な dot product が可能。
+- [Amount](../proposals/amount.md) — the spec text for unit conversion is the direct trigger for this proposal.
+- `decimal` — a different approach to the precision problem (decimal arithmetic). In the 2026-07 update, `Math.fma` / `Math.sumPrecise` were described as having "taken on the use cases for reducing rounding error".
+- `Math.sumPrecise` — exact summation. Combined with FMA, an exact dot product is possible.
 
-## 出典
+## Sources
 
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — 初提示、Stage 2 到達
+- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — first presentation, reached Stage 2

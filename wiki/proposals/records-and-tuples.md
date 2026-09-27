@@ -10,34 +10,34 @@ withdrawn: "2025-04"
 tags: [proposal, immutable, value-types]
 ---
 
-## 概要
+## Overview
 
-Records & Tuples は、deeply immutable な複合 value type を JavaScript に追加する提案でした。`#{ x: 1, y: 2 }`(Record)と `#[1, 2, 3]`(Tuple)という構文で、object/array に対応する不変版を生成します。
+Records & Tuples was a proposal to add deeply immutable compound value types to JavaScript. The syntax `#{ x: 1, y: 2 }` (Record) and `#[1, 2, 3]` (Tuple) produces immutable counterparts of objects and arrays.
 
-魅力は「value としての等価性」にありました。これらは primitive として設計され、独自の `typeof`(`"record"` / `"tuple"`)を持ち、`===` が pointer 比較ではなく構造的(再帰的)な value 比較になります。つまり `#{ a: 1 } === #{ a: 1 }` が `true` になり、Map/Set のキーや React の差分検出など「内容が同じなら同じものとして扱いたい」場面を、ライブラリの deep-equal や `JSON.stringify` キーといった回避策なしに解決できる、というものでした。
+The appeal was equality as a value. They were designed as primitives, had their own `typeof` (`"record"` / `"tuple"`), and `===` was structural (recursive) value comparison rather than pointer comparison. That is, `#{ a: 1 } === #{ a: 1 }` would be `true`, solving the cases where the same contents should be treated as the same thing — Map/Set keys, React change detection, and so on — without workarounds such as a library deep-equal or using `JSON.stringify` as a key.
 
-難しさの根は「primitive かつ value 等価」という選択そのものにありました。
+The root of the difficulty was the choice itself: primitive, and equal by value.
 
-- **deeply immutable** を保証するため、中に入れられるのは他の Record/Tuple と primitive のみ。object・function・Symbol を一切格納できない。これが「言語の大部分を切り落とす」制約となった。
-- `===` を構造比較にすると、エンジンは「pointer 比較で済む」という前提を失う。interning(同一値を 1 つに正規化)も in-place の deep 比較も、実装者から「遅すぎる/コストが高すぎる」と明確に否定された。
-- `+0`/`-0`、`NaN`、`Object.is` と `===` の整合性、membrane(realm 越しの隔離)など、既存の等価セマンティクスと衝突する論点が次々と現れた。
+- To guarantee **deeply immutable**, the only things that can go inside are other Records/Tuples and primitives. Objects, functions, and Symbols cannot be stored at all. This became a constraint that cuts off most of the language.
+- If `===` is structural comparison, engines lose the premise that pointer comparison is enough. Both interning (canonicalizing identical values to a single one) and in-place deep comparison were explicitly rejected by implementers as too slow or too costly.
+- Issues that collide with existing equality semantics kept appearing: `+0` / `-0`, `NaN`, the consistency of `Object.is` and `===`, and membranes (isolation across realms).
 
-Stage 2 到達後、これらの根本制約が長期間動かせず、最終的に primitive を諦めた再設計(後述の Composites)へ道を譲って撤回されました。
+After it reached Stage 2, these fundamental constraints could not be moved for a long time. It was eventually withdrawn, giving way to a redesign that gave up on primitives (Composites, below).
 
-## ステージ遷移
+## Stage history
 
-| 会合                        | できごと                                                                                                                                                                                                                                                                                                                                         | Stage     |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
-| 2019-10                     | Records & Tuples for Stage 1。[RRD](../people/RRD.md)(Robin Ricard)/[RBU](../people/RBU.md)(Rick Button)が初登壇。`===` の構造比較、`#{}`/`#[]` 構文、JSON 連携の可能性が議論され Stage 1 合意(※この回の出席者表は Robin Ricard に別 delegate と同じ略号を割り当てているが、本 wiki では Robin Ricard を一貫して [RRD](../people/RRD.md) とする) | 1         |
-| 2020-03                     | Record and Tuple Update(中間報告)                                                                                                                                                                                                                                                                                                                | 1         |
-| 2020-07                     | Record and Tuple for Stage 2。`Object.is`/`===` のセマンティクス、Symbol をキーにできない件を整理し Stage 2 合意。ただし [KG](../people/KG.md)/[SYG](../people/SYG.md)/[YSV](../people/YSV.md)/Moddable が「Stage 3 前に実装可能性の実証が必須」と条件付け                                                                                       | 2         |
-| 2020-09 / 2021-03 / 2021-10 | updates。設計の細部調整が続くが基本設計は不変                                                                                                                                                                                                                                                                                                    | 2         |
-| 2021-12                     | 「object をどう参照するか」の決定木を提示(Symbols-as-WeakMap-keys / ObjectPlaceholder / object 直接格納)。membrane の security invariant を巡り紛糾、結論出ず                                                                                                                                                                                    | 2         |
-| 2022-07 / 2022-09           | updates。2022-09 時点で「次回 Stage 3 を目指す」と表明                                                                                                                                                                                                                                                                                           | 2         |
-| 2022-11                     | updates。[YSV](../people/YSV.md) が「そもそも解こうとしている根本問題は何か」を問い、動機の不明確さが露呈。Stage 3 には進めず                                                                                                                                                                                                                    | 2         |
-| (2023-2024)                 | 長期停滞。plenary での進展なし                                                                                                                                                                                                                                                                                                                   | 2         |
-| 2025-02                     | Records and Tuples future directions。[ACE](../people/ACE.md) が「new primitive・`===` 過負荷には appetite がない」と総括し、primitive を諦めた再設計(object 化・shallow 化・Map/Set 専用の合成キー等価)を提示                                                                                                                                   | 2         |
-| 2025-04                     | Withdrawing Records & Tuples。再設計は Composites として別途 Stage 1 へ。本提案は撤回で consensus                                                                                                                                                                                                                                                | withdrawn |
+| Meeting                     | What happened                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Stage     |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| 2019-10                     | Records & Tuples for Stage 1. [RRD](../people/RRD.md) (Robin Ricard) / [RBU](../people/RBU.md) (Rick Button) presented for the first time. Structural comparison for `===`, the `#{}` / `#[]` syntax, and the possibility of JSON integration were discussed, and Stage 1 was agreed (the attendee table for this meeting assigns Robin Ricard the same abbreviation as a different delegate, but this wiki consistently treats Robin Ricard as [RRD](../people/RRD.md)) | 1         |
+| 2020-03                     | Record and Tuple Update (interim report)                                                                                                                                                                                                                                                                                                                                                                                                                                 | 1         |
+| 2020-07                     | Record and Tuple for Stage 2. Sorted out the semantics of `Object.is` / `===` and the fact that Symbols cannot be keys, and agreed Stage 2. However [KG](../people/KG.md) / [SYG](../people/SYG.md) / [YSV](../people/YSV.md) / Moddable conditioned it on a demonstration of implementability being required before Stage 3                                                                                                                                             | 2         |
+| 2020-09 / 2021-03 / 2021-10 | Updates. Adjustments to the details of the design continued, but the basic design was unchanged                                                                                                                                                                                                                                                                                                                                                                          | 2         |
+| 2021-12                     | Presented a decision tree for how to refer to an object (Symbols-as-WeakMap-keys / ObjectPlaceholder / storing the object directly). Became contentious over the membrane security invariant; no conclusion                                                                                                                                                                                                                                                              | 2         |
+| 2022-07 / 2022-09           | Updates. As of 2022-09, stated an intention to aim for Stage 3 next time                                                                                                                                                                                                                                                                                                                                                                                                 | 2         |
+| 2022-11                     | Updates. [YSV](../people/YSV.md) asked what fundamental problem was actually being solved, and the unclear motivation was exposed. Did not advance to Stage 3                                                                                                                                                                                                                                                                                                            | 2         |
+| (2023-2024)                 | A long stall. No progress at plenary                                                                                                                                                                                                                                                                                                                                                                                                                                     | 2         |
+| 2025-02                     | Records and Tuples future directions. [ACE](../people/ACE.md) summarized that there is no appetite for a new primitive or for overloading `===`, and presented a redesign that gave up on primitives (making them objects, making them shallow, and composite-key equality dedicated to Map/Set)                                                                                                                                                                         | 2         |
+| 2025-04                     | Withdrawing Records & Tuples. The redesign goes separately to Stage 1 as Composites. Consensus to withdraw this proposal                                                                                                                                                                                                                                                                                                                                                 | withdrawn |
 
 ```mermaid
 xychart-beta
@@ -47,63 +47,63 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2019-10 に Stage 1、2020-07 に Stage 2 到達後、**Stage 2 のまま横ばい**(実装可能性・等値セマンティクスの壁で Stage 3 に進めず)。2025-04 に**撤回**したため線はそこで終わる(以降は描かない)。
+> X-axis = 2012-2026, y-axis = Stage. Stage 1 in 2019-10 and Stage 2 in 2020-07, then **flat at Stage 2** (it could not advance to Stage 3 because of the walls of implementability and equality semantics). **Withdrawn** in 2025-04, so the line ends there (nothing is drawn after that).
 
-## 主な論点
+## Main issues
 
-### 等値セマンティクス(`===` で構造的等価)
+### Equality semantics (structural equality with `===`)
 
-中核にして最大の争点。`===` を「内容が同じなら true」にする設計は [MM](../people/MM.md)・[BE](../people/BE.md)・[WH](../people/WH.md) らが支持し、Stage 1/2 を通じて「触るとパンドラの箱が開く」として固められました(2020-07, [WH](../people/WH.md)「変えないでほしい」)。
+The core issue, and the biggest dispute. The design that makes `===` true when the contents are the same was supported by [MM](../people/MM.md), [BE](../people/BE.md), [WH](../people/WH.md), and others, and through Stage 1 and Stage 2 it was locked in on the grounds that touching it would open Pandora's box (2020-07, [WH](../people/WH.md): "Please don't change it").
 
-一方でこれは既存の等価規則と緊張関係にありました。
+On the other hand, this was in tension with the existing equality rules.
 
-- **`+0`/`-0` と `NaN`**([WH](../people/WH.md), [YK](../people/YK.md), 2019-10): 要素ごとの `===` だと reflexivity/transitivity と `±0`・`NaN` の扱いが衝突する。提案は「`NaN` を含む Record は自分自身と等しい」「`±0` は値としては保持するが等価判定でのみ区別」という妥協を採用。
-- **`===` と `Object.is` の不一致**([NRO](../people/NRO.md), 2021-12): primitive なら `===` に SameValueZero、`Object.is` に SameValue を使い分けられるが、もし object 化すると「`===` と `Object.is` は object に対して同じ結果でなければならない」という invariant に抵触する。
+- **`+0` / `-0` and `NaN`** ([WH](../people/WH.md), [YK](../people/YK.md), 2019-10): per-element `===` collides with reflexivity and transitivity and with the treatment of `±0` and `NaN`. The proposal adopted a compromise: a Record that contains `NaN` is equal to itself, and `±0` is preserved as a value but distinguished only in the equality check.
+- **`===` and `Object.is` disagree** ([NRO](../people/NRO.md), 2021-12): for a primitive one can use SameValueZero for `===` and SameValue for `Object.is`, but if they became objects this would violate the invariant that `===` and `Object.is` must give the same result for objects.
 
-最終的な 2025-02 の総括では、[ACE](../people/ACE.md)/[DE](../people/DE.md) が「`===` を overload することへの appetite はない」「実装者から interning も in-place deep 比較も不可と明言された」と述べ、`===` 構造等価そのものを諦める方向に転じました。これが事実上の決定打の一つです。
+In the 2025-02 summary, [ACE](../people/ACE.md) / [DE](../people/DE.md) said there is no appetite for overloading `===`, and that implementers had stated clearly that neither interning nor in-place deep comparison is acceptable. The direction turned toward giving up structural equality via `===` itself. This was one of the blows that decided it.
 
-### エンジン実装の負担
+### The burden on engine implementers
 
-Stage 2 の段階から [KG](../people/KG.md)「performant に実装するのは全く自明でない。Stage 3 前に実装者の声を聞きたい」、[SYG](../people/SYG.md)「V8 は実装可能性について中立。Stage 3 前に調査・サインオフが要る」、[YSV](../people/YSV.md)/Moddable「実装負担が高く、それに見合う有用性の実証が要る」と、繰り返し条件が付けられました(2020-07)。
+From the Stage 2 point onward, conditions were attached repeatedly (2020-07). [KG](../people/KG.md): "It is not at all obvious how to implement this performantly. I want to hear from implementers before Stage 3." [SYG](../people/SYG.md): "V8 is neutral on implementability. Investigation and sign-off are required before Stage 3." [YSV](../people/YSV.md) / Moddable: "The implementation burden is high, and we need a demonstration that the usefulness is worth it."
 
-2025-02 で [DE](../people/DE.md) が明言したとおり、過去に Stage 3 を目指した際、実装者から「interning はコストが高すぎ、in-place の deep 比較は『object の `===` は単なる pointer 比較』という重要性を壊すので不可」という極めて明確な否定を受けていました。この実装上の壁が、設計を動かせなかった主因です。
+As [DE](../people/DE.md) stated plainly in 2025-02, when they had previously aimed at Stage 3 they received a very clear rejection from implementers: interning is too costly, and in-place deep comparison is unacceptable because it destroys the importance of object `===` being mere pointer comparison. This implementation wall was the main reason the design could not be moved.
 
-### object / function / Symbol を含められない
+### Objects, functions, and Symbols cannot be included
 
-deeply immutable を保証するため、中身は Record/Tuple と primitive に限定されました。
+To guarantee deeply immutable, the contents were limited to Records/Tuples and primitives.
 
-- **Symbol をキーにできない**([WH](../people/WH.md), [RRD](../people/RRD.md), [JHD](../people/JHD.md), 2020-07): Record はキーをソートして格納するが、Symbol には全順序がなくソートできない。[JHD](../people/JHD.md)「これを解こうとしない限り、Symbol を Record キーにする道は閉ざされる」。[MM](../people/MM.md) はソート順自体が side channel になりうると指摘。
-- **object を参照できない**(2021-12 の決定木): everything is an object な言語で object/function を一切入れられないのは致命的に窮屈。解決案として (a) Symbols-as-WeakMap-keys、(b) ObjectPlaceholder primitive、(c) object の直接格納(shallow 化)が比較されたが、いずれも membrane の security invariant や realm 越しの扱いで難航し、結論が出なかった。
-- 2025-02 で [ACE](../people/ACE.md) は「2019 年の deeply-immutable 設計は言語の大部分を切り落とす。Temporal のような新しい不変データすら入れられないのは申し訳ない」と述べ、shallow immutability への緩和を提案。
+- **Symbols cannot be keys** ([WH](../people/WH.md), [RRD](../people/RRD.md), [JHD](../people/JHD.md), 2020-07): a Record stores its keys sorted, but Symbols have no total order and cannot be sorted. [JHD](../people/JHD.md): "Unless we try to solve this, the path to using Symbols as Record keys stays closed." [MM](../people/MM.md) pointed out that the sort order itself could become a side channel.
+- **Objects cannot be referred to** (the 2021-12 decision tree): in a language where everything is an object, being unable to put an object or a function in at all is fatally cramped. The options compared were (a) Symbols-as-WeakMap-keys, (b) an ObjectPlaceholder primitive, and (c) storing the object directly (making immutability shallow). All of them struggled with the membrane security invariant and with cross-realm handling, and no conclusion was reached.
+- In 2025-02 [ACE](../people/ACE.md) said the 2019 deeply-immutable design cuts off most of the language, and that it is regrettable that even new immutable data such as Temporal cannot be put in, and proposed relaxing to shallow immutability.
 
-### typeof / primitive か object か
+### typeof: primitive or object
 
-提案は Record/Tuple を独自 `typeof` を持つ primitive としてモデル化していました。これは [MM](../people/MM.md) らの「stable/fixed な value」というモデルには整合する一方、[PHE](../people/PHE.md) が指摘したとおり「object や array に見えるのに `Array.isArray` を通らない値」はエコシステムの既存コード(型 sniffing)を壊します。
+The proposal modeled Records and Tuples as primitives with their own `typeof`. That fits the model of a stable, fixed value held by [MM](../people/MM.md) and others, but as [PHE](../people/PHE.md) pointed out, a value that looks like an object or an array but does not pass `Array.isArray` breaks existing ecosystem code (type sniffing).
 
-2025-02 で [ACE](../people/ACE.md) は「これらは object であるべきだと考えを改めた」と転向。primitive をやめることで、既存の prototype・reflection・型判定との互換性を取りに行く方針へ変えました。
+In 2025-02 [ACE](../people/ACE.md) changed course, saying he had come to think these ought to be objects. Giving up on primitives shifted the plan toward compatibility with existing prototypes, reflection, and type tests.
 
-### boxing / unboxing
+### Boxing and unboxing
 
-object を Record/Tuple に持ち込む手段として議論された ObjectPlaceholder(2021-12)は、object を直接持たずに「箱」越しに参照する案でしたが、realm を跨いだ dereference の制約(factory と getObject のペアでしか開けない)や membrane との相互作用が複雑で、[WH](../people/WH.md) から「Realms から切り離して再設計してほしい」と要請されたまま収束しませんでした。
+ObjectPlaceholder, discussed in 2021-12 as a way to bring an object into a Record or Tuple, was a plan to refer to the object through a box rather than holding it directly. Constraints on cross-realm dereference (it can be opened only as a factory and getObject pair) and the interaction with membranes were complicated, and it never converged after [WH](../people/WH.md) asked for it to be redesigned detached from Realms.
 
-### Map/Set キーと WeakMap
+### Map/Set keys and WeakMap
 
-「合成キーが欲しい」が一貫した動機でした(`Map.groupBy` で複数値をキーにしたい等)。primitive 設計なら WeakMap キーにできない・GC されない問題があり、object 化すると「object は WeakMap キーになれ、GC されうる」という期待との整合が問われました([MAH](../people/MAH.md), 2025-02)。2025-02 の再設計は「Record/Tuple を `===` には載せないが、Map/Set など特定 API でだけ合成キー等価として扱う」案で、ここを突破口にしようとしました。
+Wanting composite keys was a consistent motivation (for example, wanting several values as a key in `Map.groupBy`). Under the primitive design they cannot be WeakMap keys and are not garbage-collected; if they became objects, consistency with the expectation that an object can be a WeakMap key and can be garbage-collected was in question ([MAH](../people/MAH.md), 2025-02). The 2025-02 redesign tried to break through here by not putting Records and Tuples on `===`, but treating them as composite-key equality only in specific APIs such as Map and Set.
 
-### 撤回に至った決定打
+### What decided the withdrawal
 
-固まった核(new primitive + `typeof` + `===` 構造等価 + deep immutability)が、(1)実装者の明確な不可表明、(2)object/Symbol を入れられない窮屈さ、(3)等価セマンティクスの increase(JS は既に 4 種の等価を持つ)への committee の忌避、という三点で動かせなくなりました。2025-02 で [ACE](../people/ACE.md) が「これらの fundamentals に appetite がないと分かった」と総括し、primitive を捨てた再設計(object 化・shallow・合成キー等価)へ舵を切りました。
+The hardened core — a new primitive, plus `typeof`, plus structural equality via `===`, plus deep immutability — could no longer be moved, for three reasons: (1) implementers' clear statement that it was not acceptable, (2) the cramped inability to put objects and Symbols inside, and (3) the committee's aversion to an increase in equality semantics (JS already has four kinds of equality). In 2025-02 [ACE](../people/ACE.md) summarized that there is no appetite for these fundamentals, and steered toward a redesign that dropped primitives (objects, shallow immutability, and composite-key equality).
 
-その再設計は Composites として別提案で Stage 1 を取得。2025-04、[ACE](../people/ACE.md) は「new primitive を足す本来の核は前進の道が見つからなかった。Composites という新しい見方がある」として撤回を提案し、consensus を得ました([NRO](../people/NRO.md)「RIP R&T」)。なお「Record」という名前は TypeScript での既存用法が強すぎるため再設計では使わない、とされています。
+That redesign obtained Stage 1 as a separate proposal, Composites. In 2025-04 [ACE](../people/ACE.md) proposed withdrawal, saying no path forward had been found for the original core of adding a new primitive, and that there is a new way of looking at it called Composites, and got consensus ([NRO](../people/NRO.md): "RIP R&T"). The name "Record" will not be used in the redesign, because its existing use in TypeScript is too strong.
 
-## 関連提案
+## Related proposals
 
-- Composites(本提案の後継。primitive をやめ object として再設計。2025-04 時点で Stage 1)
-- Symbols as WeakMap keys(object 参照手段の候補として 2021-12 に検討)
-- shared structs(2025-02 で immutable struct/born-immutable の文脈で比較)
-- Temporal(immutable データモデルだが Record/Tuple とは意図的に結合しないと判断)
+- Composites (the successor to this proposal. Gives up on primitives and is redesigned as objects. Stage 1 as of 2025-04)
+- Symbols as WeakMap keys (considered in 2021-12 as a candidate way to refer to objects)
+- shared structs (compared in 2025-02 in the context of immutable structs and born-immutable)
+- Temporal (an immutable data model, but it was decided not to couple it intentionally with Records and Tuples)
 
-## 出典
+## Sources
 
 - [2019-10 october-1.md — Records & Tuples for Stage 1](../../raw/notes/meetings/2019-10/october-1.md)
 - [2020-03 april-1.md — Record and Tuple Update](../../raw/notes/meetings/2020-03/april-1.md)
@@ -111,7 +111,7 @@ object を Record/Tuple に持ち込む手段として議論された ObjectPlac
 - [2020-09 sept-22.md — Records & Tuples](../../raw/notes/meetings/2020-09/sept-22.md)
 - [2021-03 mar-9.md — Records and Tuples update](../../raw/notes/meetings/2021-03/mar-9.md)
 - [2021-10 oct-28.md — Records & Tuples update](../../raw/notes/meetings/2021-10/oct-28.md)
-- [2021-12 dec-15.md — Records and Tuples(object 参照の決定木)](../../raw/notes/meetings/2021-12/dec-15.md)
+- [2021-12 dec-15.md — Records and Tuples (decision tree for object references)](../../raw/notes/meetings/2021-12/dec-15.md)
 - [2022-07 jul-19.md — Record & Tuple Update](../../raw/notes/meetings/2022-07/jul-19.md)
 - [2022-09 sep-13.md — Record and Tuple update](../../raw/notes/meetings/2022-09/sep-13.md)
 - [2022-11 nov-30.md — Records and Tuples](../../raw/notes/meetings/2022-11/nov-30.md)

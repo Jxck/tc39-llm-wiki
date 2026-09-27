@@ -27,7 +27,6 @@ raw/proposals/finished-proposals.md          Stage 4(出荷済み)
 raw/proposals/stage-1-proposals.md           Stage 1
 raw/proposals/inactive-proposals.md          withdrawn / inactive
 wiki/
-  en/                       英語訳。日本語ページは残し、同じ相対パスで置く
   README.md                 提案カタログ(現ステージ付き、カテゴリ別)
   log.md                    時系列の ingest/query/lint ログ(append-only)
   proposals/<slug>.md       提案ごとの精読ページ(経緯+論点)
@@ -48,9 +47,9 @@ tools/
 
 ## 言語規約
 
-- 地の文(概要・経緯・論点の説明)は **日本語**。英語訳は `wiki/` を置き換えず、同じ相対パスで `wiki/en/` に置く(例: `wiki/meetings/2026-07/README.md` の訳は `wiki/en/meetings/2026-07/README.md`)。`wiki/en` からは `raw/`・`AGENTS.md`・`wiki/_generated/` への相対リンクを 1 段深くする。未訳の提案・人物ページへのリンクは日本語版(`wiki/`)を指す。
+- 地の文(概要・経緯・論点の説明)は **English**。2026-09 に日本語版から全面移行した(旧日本語版は git 履歴にのみ残る)。
 - **提案名・Stage 表記・API 名・spec 用語・人物の略号(略号は原文のまま)は英語**。例: `Temporal`, `Stage 2.7`, `Array.fromAsync`, `[[Get]]`, `PFC`。
-- **議事録から発言(セリフ)を引用するときは日本語に翻訳する**。原文が英文一文以上のときは訳文を載せる(例: WH「変えないでほしい」)。単語・短い専門句(`muddled`, `uninitialized function` 等)は英語のままでよい。提案名やアジェンダ項目名のような固有のタイトルは原文のまま。
+- **議事録から発言(セリフ)を引用するときは原文(英語)のまま載せる**(翻訳しない)。地の文の要約・パラフレーズも英語。
 
 ## 提案ページの形式
 
@@ -73,10 +72,10 @@ tags: [proposal, date-time]
 ---
 ```
 
-本文セクション(見出しは固定):
+本文セクション(見出しは固定・英語):
 
-1. `## 概要` — 1〜3 段落。何を解決する提案か。
-2. `## ステージ遷移` — 時系列テーブル。1 行 = 1 イベント:
+1. `## Overview` — 1〜3 段落。何を解決する提案か。
+2. `## Stage history` — 時系列テーブル。1 行 = 1 イベント:
 
    | 会合                                     | できごと                             | Stage |
    | ---------------------------------------- | ------------------------------------ | ----- |
@@ -98,9 +97,9 @@ tags: [proposal, date-time]
 
    注: `xychart-beta` は mermaid 10.3+ が必要。VSCode の `bierner.markdown-mermaid` の webview プレビューでは空描画になる(別の mermaid 拡張なら描画可)ため、レンダラ依存に注意。title は ASCII 推奨(全角・em ダッシュ・括弧で parse が崩れる環境がある)。
 
-4. `## 主な論点` — 策定途中で問題になった点。論点ごとに小見出し `### <論点名>`。各論点に: 何が争点か / 誰が懸念したか(略号) / どの会合で / どう決着したか(または未決)。発言引用は `>` で(日本語訳)。
-5. `## 関連提案` — `[Title](../proposals/other-slug.md)` 形式で相互リンク(未作成提案はコード表記の素テキスト)。
-6. `## 出典` — 参照した会合ファイルの一覧(箇条書きリンク)。
+4. `## Main issues` — 策定途中で問題になった点。論点ごとに小見出し `### <論点名(英語)>`。各論点に: 何が争点か / 誰が懸念したか(略号) / どの会合で / どう決着したか(または未決)。発言引用は `>` で(原文の英語のまま)。
+5. `## Related proposals` — `[Title](../proposals/other-slug.md)` 形式で相互リンク(未作成提案はコード表記の素テキスト)。
+6. `## Sources` — 参照した会合ファイルの一覧(箇条書きリンク)。
 
 リンク規約: **すべて標準の markdown 相対リンク**を使う(Obsidian の `[[wikilink]]` は VSCode の markdown プレビューで遷移できないため使わない。標準リンクは VSCode でも Obsidian でも動く)。
 
@@ -124,13 +123,13 @@ tags: [family, iterator]
 ---
 ```
 
-本文セクション(見出しは固定):
+本文セクション(見出しは固定・英語):
 
-1. `## 概要` — 何が共通項か(この family がまとめる軸)。
-2. `## メンバー` — テーブル `提案 | 現ステージ | 一言`。提案ページがあれば `[Title](../proposals/<slug>.md)`、無ければコード表記の素テキスト。
-3. `## 横断テーマ` — family を貫く設計方針・論点(例: iterator の「文字列を暗黙 iterate しない」一貫方針、laziness、async 対応)。
-4. `## 関連 family` — 隣接 family へのリンク(`[Title](../families/<slug>.md)`)。
-5. `## 出典`(任意)。
+1. `## Overview` — 何が共通項か(この family がまとめる軸)。
+2. `## Members` — テーブル `提案 | 現ステージ | 一言`。提案ページがあれば `[Title](../proposals/<slug>.md)`、無ければコード表記の素テキスト。
+3. `## Cross-cutting themes` — family を貫く設計方針・論点(例: iterator の「文字列を暗黙 iterate しない」一貫方針、laziness、async 対応)。
+4. `## Related families` — 隣接 family へのリンク(`[Title](../families/<slug>.md)`)。
+5. `## Sources`(任意)。
 
 **メンバーシップは双方向**で持つ: family ページの `members` と、各提案 frontmatter の `families`(上記)を一致させる。提案ページがあるメンバーは必ずその `families` に当該 family を含め、family の `members` にも slug を載せる。未作成提案は family の `members` 側だけに slug で載る(`proposals/` に実体が無いのは未精読を意味し、誤りではない)。`README.md`(wiki トップ)には families セクションを設けて各 family へリンクする。
 
@@ -157,7 +156,7 @@ markdown / json は **oxfmt** で整形する(設定 `.oxfmtrc.json`、`proseWra
 
 1. 対象会合 or 提案を決める。`wiki/_generated/agenda-index.md` を grep して関連議題と会合を特定する(例: `grep -i -A4 decorators wiki/_generated/agenda-index.md`)。
 2. 該当する `raw/notes` のセクションを読む(`### Conclusion` と `### Speaker's Summary of Key Points` がステージ判定の要)。
-3. 提案ページを新規作成 or 更新: ステージ遷移テーブルに行を追加、ステージ推移グラフ(mermaid)を更新、論点を追記/更新、frontmatter の `current_stage`/`status` を最新化。発言引用は日本語訳で。
+3. 提案ページを新規作成 or 更新: ステージ遷移テーブルに行を追加、ステージ推移グラフ(mermaid)を更新、論点を追記/更新、frontmatter の `current_stage`/`status` を最新化。発言引用は原文の英語のまま。
    - **champion の確定は delegates.txt だけで決めない**。当該会合の Presenter 行・本文で裏取りする。略号は会合ごとに振り直されることがある(例: 2019-10 は Robin Ricard を RRI と表記するが、delegates.txt の RRI=Reefath Rajali は別人)。発言の帰属・年月も原文で確認する(誤帰属が起きやすい箇所)。
 4. **人物の生成とリンク**(提案ページを書き終えたら必ず実行):
    - `python3 tools/extract_people.py` — 提案ページに登場する略号を検出し、`wiki/people/<ABBR>.md` を生成/再生成(フルネーム=delegates.txt、所属・参加会合=出席者テーブル、担当ドラフト=各提案 frontmatter の `champions` を相互参照)。
@@ -209,7 +208,7 @@ wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」�
 
 ### Summarise(会合の日次要約)
 
-会合まるごとを話題単位で日本語要約する(提案中心の Ingest とは別物)。出力は `wiki/meetings/<YYYY-MM>/`。対象の指定は **会合(YYYY-MM)** か **tc39/notes の未マージ PR(番号または URL)**。PR が指定されたら下記「未マージ PR にしかない会合を要約する場合」の手順で `pr-<PR>` を checkout してから、その PR が追加する会合を対象にする。未指定なら `raw/notes/meetings/` の**最新会合**。
+会合まるごとを話題単位で英語要約する(提案中心の Ingest とは別物)。出力は `wiki/meetings/<YYYY-MM>/`。対象の指定は **会合(YYYY-MM)** か **tc39/notes の未マージ PR(番号または URL)**。PR が指定されたら下記「未マージ PR にしかない会合を要約する場合」の手順で `pr-<PR>` を checkout してから、その PR が追加する会合を対象にする。未指定なら `raw/notes/meetings/` の**最新会合**。
 
 1. 対象会合の各日ファイル `raw/notes/meetings/<YYYY-MM>/<month-DD>.md` を読む。
 2. **日ごとに 1 ファイル** `wiki/meetings/<YYYY-MM>/<YYYY-MM-DD>.md` を生成。各日の議題(`## <topic>`)ごとに:
@@ -218,7 +217,7 @@ wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」�
      - `- wiki: [Title](../../proposals/<slug>.md)` — そのトピックが議論している**既存の提案ページ**。**必ず最初**。見出しが提案名を含む分は `tools/link_proposals.py` が自動で補完・先頭へ移動するが、見出しに提案名が無いトピック(needs-consensus PR 等)は手で付ける。
      - `- proposal: [name](URL)` — 原文の提案リポジトリへのリンク(`* [proposal](URL)`)。
      - `- slide: [link](URL)` — 発表者のスライドリンク(`* [slides](URL)`)。
-   - 続けて **3〜5 行**で日本語要約(地の文は日本語・用語/API/略号は英語、wiki 共通の言語規約に従う)。本文中の人物略号と既存提案ページの提案名は**素テキストで書いてよい**(手順 4 のスクリプトがリンク化する)。
+   - 続けて **3〜5 行**で英語要約(wiki 共通の言語規約に従う)。本文中の人物略号と既存提案ページの提案名は**素テキストで書いてよい**(手順 4 のスクリプトがリンク化する)。
    - `### Conclusion` / `### Speaker's Summary of Key Points` があれば、**その結論を必ず要約に含める**(stage 遷移・consensus の有無など)。
    - 委員会の定型(Opening & Welcome / Secretary's Report / 各種 Status Update など議論性の薄いもの)は省いてよい。
 3. `wiki/meetings/<YYYY-MM>/README.md` を生成:
@@ -240,7 +239,7 @@ wiki の品質点検。次の **2 側面の両方**を含む(以前「Verify」�
 
 ## 人物ページ(people/)
 
-`wiki/people/<ABBR>.md` は**生成物**。提案ページと family ページに登場する略号について作られ、「フルネーム / 所属 / 担当ドラフト(champion)/ 言及される提案 / 言及される family / 参加したミーティング」を集約する。filename を略号にしてあるので `[ABBR](../people/ABBR.md)` がそのまま解決する(提案・family は `../people/`、会合要約は `../../people/`。`link_people.py` がファイル位置から自動で算出する)。提案・family ページが増えるたび `extract_people.py` を再実行すれば対象人物も自動で増える。
+`wiki/people/<ABBR>.md` は**生成物**。提案ページと family ページに登場する略号について作られ、「Full name / Affiliation / Champion drafts / Mentioned on proposal pages / Mentioned on family pages / Meetings attended」を集約する。filename を略号にしてあるので `[ABBR](../people/ABBR.md)` がそのまま解決する(提案・family は `../people/`、会合要約は `../../people/`。`link_people.py` がファイル位置から自動で算出する)。提案・family ページが増えるたび `extract_people.py` を再実行すれば対象人物も自動で増える。
 
 - `link_people.py` のリンク対象は提案・family・**会合要約**(`wiki/meetings/<YYYY-MM>/`)。ページのある略号のみリンクするので、会合にしか登場しない人物は素テキストのまま残る(デッドリンクを作らない)。
 - **多義の略号は自動リンクしない**: `JSC` は大半が engine(JavaScriptCore)を指すため `link_people.py` の `AMBIGUOUS` で除外している。人物(J. S. Choi)を指す箇所だけ手でリンクする。同種の衝突が出たら `AMBIGUOUS` に追記する。

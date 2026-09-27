@@ -1,26 +1,26 @@
 # 113th TC39 Meeting (2026-03)
 
-- **会合**: 113th meeting of Ecma TC39
-- **会期**: 2026-03-10 〜 2026-03-12(10・11 日は 10:00-17:00、12 日は 10:00-16:00 EDT)
-- **開催地**: New York, NY(米国)
-- **ホスト**: Google(室内ロジは Justin Ridgewell が担当)
+- **Meeting**: 113th meeting of Ecma TC39
+- **Dates**: 2026-03-10 to 2026-03-12 (the 10th and 11th are 10:00-17:00, the 12th is 10:00-16:00 EDT)
+- **Location**: New York, NY (United States)
+- **Host**: Google (in-room logistics by Justin Ridgewell)
 - **Agenda**: [tc39/agendas 2026/03](https://github.com/tc39/agendas/blob/main/2026/03.md)
 
-## 概要
+## Overview
 
-ECMA-262 / ECMA-402 の提案審議が中心の3日間。**[Temporal](../../proposals/temporal.md) が Stage 4 到達**(約5年の Stage 3 を経て出荷済み)、**[Intl Era/Month Code](../../proposals/intl-era-month-code.md) も Stage 4**。Stage 2.7 へ [Error Stack Accessor](../../proposals/error-stack-accessor.md)・[RegExp Buffer Boundaries](../../proposals/regexp-buffer-boundaries.md)・[Iterator Includes](../../proposals/iterator-includes.md)、Stage 3 へ Import Text・[Intl Keep Trailing Zeros](../../proposals/intl-keep-trailing-zeros.md) が進むなど多数の advancement があった。ほかに Abort Protocol / Structured Concurrency / [Explicit Resource Management](../../proposals/explicit-resource-management.md) の Stage 4 条件付き状況、test262 のカバレッジ戦略、tree-shakeable methods などを議論。年次の chair/editor/convener 選挙も実施(冒頭で新たに 262 editor が増員)。
+Three days centered on ECMA-262 / ECMA-402 proposals. **[Temporal](../../proposals/temporal.md) reached Stage 4** (shipped after about five years at Stage 3), and **[Intl Era/Month Code](../../proposals/intl-era-month-code.md) also reached Stage 4**. [Error Stack Accessor](../../proposals/error-stack-accessor.md), [RegExp Buffer Boundaries](../../proposals/regexp-buffer-boundaries.md), and [Iterator Includes](../../proposals/iterator-includes.md) advanced to Stage 2.7, and Import Text and [Intl Keep Trailing Zeros](../../proposals/intl-keep-trailing-zeros.md) advanced to Stage 3, among many other advancements. The committee also discussed the conditional Stage 4 status of Abort Protocol / Structured Concurrency / [Explicit Resource Management](../../proposals/explicit-resource-management.md), a test262 coverage strategy, and tree-shakeable methods. The annual chair / editor / convener elections were held (a new 262 editor was added at the opening).
 
-## 日次サマリー
+## Daily summaries
 
 - [Day 1 — 2026-03-10](2026-03-10.md)
 - [Day 2 — 2026-03-11](2026-03-11.md)
 - [Day 3 — 2026-03-12](2026-03-12.md)
 
-## 参加者
+## Attendees
 
-`raw/notes/meetings/2026-03/march-10.md` の attendees より(略号 — 氏名 — 所属):
+From the attendees in `raw/notes/meetings/2026-03/march-10.md` (abbreviation — name — affiliation):
 
-| 略号                       | 氏名               | 所属               |
+| Abbreviation               | Name               | Affiliation        |
 | -------------------------- | ------------------ | ------------------ |
 | AKI                        | Aki Rose Braun     | Ecma International |
 | [ACE](../../people/ACE.md) | Ashley Claymore    | Bloomberg          |
@@ -66,4 +66,4 @@ ECMA-262 / ECMA-402 の提案審議が中心の3日間。**[Temporal](../../prop
 | [SFC](../../people/SFC.md) | Shane Carr         | Google             |
 | [ZB](../../people/ZB.md)   | Zibi Braniecki     | —                  |
 
-> 出典: [raw/notes/meetings/2026-03](../../../raw/notes/meetings/2026-03/)。会期・開催地・概要は [tc39/agendas 2026/03](https://github.com/tc39/agendas/blob/main/2026/03.md) と各日逐語録より。
+> Source: [raw/notes/meetings/2026-03](../../../raw/notes/meetings/2026-03/). Dates, location, and the overview come from [tc39/agendas 2026/03](https://github.com/tc39/agendas/blob/main/2026/03.md) and each day's transcript.

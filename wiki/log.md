@@ -344,3 +344,11 @@ wiki の ingest / query / lint の時系列記録(append-only)。各行は `## [
 ## [2026-09-27] wiki | 英語訳 wiki/en に残りの提案
 
 - 未訳だった [Intl.MessageFormat](en/proposals/intl-messageformat.md) と [Array.isTemplateObject](en/proposals/is-template-object.md) を `wiki/en/proposals/` に追加し、既存英語ページからのリンクを付け替えた。提案ページはこれで日英が揃う。
+
+## [2026-09-27] wiki | Made the English translation canonical, retired wiki/en
+
+- `wiki/en/` reached full 1:1 coverage of the wiki (proposals, families, meetings, people, README), so at the user's request it replaced the Japanese body text everywhere and `wiki/en/` was removed (the old Japanese pages remain only in git history).
+- Curated pages (`proposals/*.md` except `index.md`, `families/*.md`, `meetings/**`, `README.md`) were copied from their `wiki/en/` counterpart. Generated pages (`people/*.md`, `proposals/index.md`) were _not_ copied — `tools/extract_people.py` and `tools/extract_proposals.py` were rewritten to emit English and then re-run, since a manually-copied `wiki/en/people/PFC.md` was found to have an inconsistent relative-link depth for two of its meeting links; regenerating from the (now-English) proposal/family pages avoided reproducing that bug.
+- The `wiki/en/` tree carried one extra directory of nesting relative to `wiki/`, so every link that reached outside the mirrored subtree (to `raw/notes`, `AGENTS.md`, `llm-wiki.md`, `wiki/_generated/`) had one extra `../` baked in. A link-resolution sweep across all curated pages found 366 such broken links after the copy; all were corrected by stripping the extra level, and a second sweep confirmed zero broken links remain.
+- `AGENTS.md`'s language policy (`## 言語規約`), fixed section headings for proposal/family pages, and the Ingest/Summarise wording were updated to say body text is English (quotes are kept in the original English rather than translated). The directory-structure listing's `en/` line was removed.
+- Historical `wiki/log.md` entries were left as-is (an append-only record); only new entries follow the English convention going forward.

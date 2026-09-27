@@ -9,18 +9,18 @@ first_seen: "2026-07"
 tags: [proposal, collection]
 ---
 
-## 概要
+## Overview
 
-Map get and delete(旧称 **Map take**)は、`Map` / `WeakMap` から**値の取得と entry の削除を単一操作で行う method** を追加する提案です。pending な callback や in-flight request の一時保管として Map を使い、値を取り出したら即座に削除するパターンは頻出で、現状は `get` + `delete` の 2 回の hash lookup が必要です。これを 1 回にまとめ、可読性と効率を改善します。polyfill は自明(get して delete して返すだけ)で、本質は頻出操作の最適化です。
+Map get and delete (formerly **Map take**) adds a **method that gets a value and deletes the entry in a single operation** on `Map` / `WeakMap`. Using a Map as temporary storage for pending callbacks or in-flight requests, and deleting the value as soon as it is taken out, is a common pattern, and today it needs two hash lookups, `get` + `delete`. Combining them into one improves readability and efficiency. The polyfill is trivial (get, delete, and return), and the essence is optimizing a frequent operation.
 
-[DRO](../people/DRO.md)(Devin Rousso、Invited Expert)が提案。当初の method 名 `take` は `Iterator.prototype.take` と意味が衝突するため、**`getAndDelete` へ rename** する方向で Stage 1 に到達しました。canonical(tc39/proposals)上の提案名も "Map get and delete" です。
+Proposed by [DRO](../people/DRO.md) (Devin Rousso, Invited Expert). The original method name `take` collides in meaning with `Iterator.prototype.take`, so it reached Stage 1 on a path of **renaming it to `getAndDelete`**. The proposal name on the canonical list (tc39/proposals) is also "Map get and delete".
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                   | できごと                                                                                                                 | Stage |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ----- |
-| [2026-07](../../raw/notes/meetings/2026-07/july-20.md) | 「Map take for stage 1, 2, or 2.7」として初提示。名前(take)と Set 対応が争点になり時間切れで翌日へ                       | -     |
-| [2026-07](../../raw/notes/meetings/2026-07/july-21.md) | continuation で **Stage 1 到達**。`getAndDelete` へ rename、Set/WeakSet には追加しない、undefined と不在の区別は継続検討 | 0 → 1 |
+| Meeting                                                | What happened                                                                                                                                                        | Stage |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2026-07](../../raw/notes/meetings/2026-07/july-20.md) | First presented as "Map take for stage 1, 2, or 2.7". The name (`take`) and Set support were in dispute, and time ran out, so it continued the next day              | -     |
+| [2026-07](../../raw/notes/meetings/2026-07/july-21.md) | In the continuation, **reached Stage 1**. Rename to `getAndDelete`, do not add it to Set/WeakSet, and keep investigating how to distinguish `undefined` from absence | 0 → 1 |
 
 ```mermaid
 xychart-beta
@@ -30,31 +30,31 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2026-07 初出、同会合(Day 2 continuation)で Stage 1。
+> Horizontal axis = 2012-2026, vertical axis = Stage. First presented in 2026-07, and Stage 1 at the same meeting (Day 2 continuation).
 
-## 主な論点
+## Main issues
 
-### 名前: `take` は使えない
+### The name: `take` will not work
 
-[KG](../people/KG.md) は
+[KG](../people/KG.md) argued
 
-> `Iterator.prototype.take` が既に存在し意味が大きく異なる以上、take という名前は成立しない。`getOrDelete` や extract なら advancement を支持する
+> Since `Iterator.prototype.take` already exists and means something quite different, the name take cannot stand. I would support advancement with `getOrDelete` or extract
 
-と主張し([MF](../people/MF.md) / [CM](../people/CM.md) も同調)、continuation で `getAndDelete` への rename が決まりました。Rust / Python 等の先行例では take / remove / pop など命名は割れており、JavaScript 固有の衝突(iterator helpers)が決め手です。
+and [MF](../people/MF.md) / [CM](../people/CM.md) agreed. The continuation settled on renaming it to `getAndDelete`. Prior art in Rust, Python, and others splits across names such as take, remove, and pop; the deciding factor is a JavaScript-specific collision (iterator helpers).
 
-### Set / WeakSet にも置くか
+### Whether to put it on Set / WeakSet as well
 
-Day 1 で [MM](../people/MM.md) は「Map にあって Set に無いのは驚きだ。両方か、どちらも無しか」と対称性を主張し、[DRO](../people/DRO.md) も一旦同意しました。しかし continuation で「Set には `get` が無く、`delete` が在否の boolean を返すので、取得と削除を束ねる意味がない」([MF](../people/MF.md) / [NRO](../people/NRO.md))と整理され、[WH](../people/WH.md) も含めて **Set/WeakSet には追加しない**ことで決着しました。
+On day 1, [MM](../people/MM.md) argued for symmetry: "It is surprising for Map to have it and Set not to. Both, or neither." [DRO](../people/DRO.md) initially agreed. In the continuation, though, it was sorted out that "Set has no `get`, and `delete` returns a boolean for presence or absence, so there is no point in bundling get and delete" ([MF](../people/MF.md) / [NRO](../people/NRO.md)), and with [WH](../people/WH.md) included the committee settled on **not adding it to Set/WeakSet**.
 
-### `undefined` 値と key 不在の区別
+### Distinguishing an `undefined` value from a missing key
 
-`take` の返り値だけでは「key が無かった」のか「値が `undefined` だった」のか区別できません。[DRO](../people/DRO.md) は `has` の併用や `{present, value}` object を返す代案を示しつつ、実用上の必要を感じていないとしました。[KG](../people/KG.md) は「同じ曖昧さは既存の `Map.prototype.get` にもある」と指摘。[MF](../people/MF.md) は「この method 単体でなく、設計空間(取得+削除系の operation 群)の探索を Stage 2 の前提にすべき」と要求し、[CDA](../people/CDA.md) と共に即時の Stage 2 に反対しました。[ACE](../people/ACE.md) は設計確定後に次回 Stage 1 → 2.7 直行の可能性を見立て、spec reviewer に事前 volunteer しています。
+The return value of `take` alone cannot tell "the key was absent" from "the value was `undefined`". [DRO](../people/DRO.md) offered alternatives — also using `has`, or returning a `{present, value}` object — while saying he did not feel a practical need. [KG](../people/KG.md) pointed out that "the same ambiguity already exists on `Map.prototype.get`". [MF](../people/MF.md) asked that "exploring the design space (the family of get-and-delete operations), not this method alone, should be a prerequisite for Stage 2", and together with [CDA](../people/CDA.md) opposed an immediate Stage 2. [ACE](../people/ACE.md) saw a possible jump straight from Stage 1 to 2.7 at the next meeting once the design is settled, and has volunteered in advance as a spec reviewer.
 
-## 関連提案
+## Related proposals
 
-- [Upsert](../proposals/upsert.md) — `Map.prototype.getOrInsert` / `getOrInsertComputed`。「lookup + 変更」を 1 操作に束ねる同系統の提案(こちらは挿入側)。
+- [Upsert](upsert.md) — `Map.prototype.getOrInsert` / `getOrInsertComputed`. A proposal in the same family that bundles "lookup + mutation" into one operation (this one on the insert side).
 
-## 出典
+## Sources
 
-- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — 初提示(時間切れ)
-- [2026-07 july-21](../../raw/notes/meetings/2026-07/july-21.md) — continuation、Stage 1 到達
+- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — first presentation (ran out of time)
+- [2026-07 july-21](../../raw/notes/meetings/2026-07/july-21.md) — continuation, reached Stage 1

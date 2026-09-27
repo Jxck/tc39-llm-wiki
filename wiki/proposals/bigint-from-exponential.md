@@ -9,19 +9,19 @@ first_seen: "2026-05"
 tags: [proposal, bigint]
 ---
 
-## 概要
+## Overview
 
-BigInt from exponential は、**整数を表す指数表記文字列(例 `1.5e2`、`4.2000e+4`)を `BigInt` で受理できるようにする**提案です。現状 `Number("1e6")` は動くのに `BigInt("1e6")` は SyntaxError になる非対称があり、大きな整数を扱う際にゼロを全部書き下すか、文字列を自力で分解する必要があります。発端は [Amount](../proposals/amount.md) の canonical form(有効数字を保持する指数表記文字列。`1.000e3` と `1e3` を区別する)が `BigInt` に変換できないという発見で、JSON の source text access(JSON では指数表記が合法)でも同じ問題が起きます。
+BigInt from exponential is a proposal to **let `BigInt` accept exponential-notation strings that represent integers (for example `1.5e2` and `4.2000e+4`)**. Today `Number("1e6")` works but `BigInt("1e6")` throws a SyntaxError, an asymmetry that, when dealing with large integers, forces you either to write out every zero or to split the string yourself. The starting point was the discovery that [Amount](../proposals/amount.md)'s canonical form (an exponential string that preserves significant digits, distinguishing `1.000e3` from `1e3`) cannot be converted to `BigInt`. The same problem arises with JSON source text access (exponential notation is legal in JSON).
 
-もともと ECMA-262 への needs-consensus PR(#3857、`StringToBigInt` が `StringNumericLiteral` 文法を再利用して整数 MV に制約する変更)でしたが、2 会合の議論を経て staged proposal に転換されました。string parsing の変更と bigint literal 構文の拡張(`1e6n`)の両方がスコープです。champion は [RGN](../people/RGN.md)。
+It began as a needs-consensus PR against ECMA-262 (#3857, a change in which `StringToBigInt` reuses the `StringNumericLiteral` grammar and constrains it to an integer MV), but after discussion across two meetings it was converted into a staged proposal. Both the string-parsing change and an extension of bigint literal syntax (`1e6n`) are in scope. The champion is [RGN](../people/RGN.md).
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                   | できごと                                                                                                                                                      | Stage |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)  | needs-consensus PR #3857 として初議論。PR か staged proposal かで意見が割れ、結論持ち越し                                                                     | -     |
-| [2026-07](../../raw/notes/meetings/2026-07/july-20.md) | 再議の結果、PR を **proposal-bigint-from-exponential に転換して Stage 1**([WH](../people/WH.md) / [MF](../people/MF.md) / [JSL](../people/JSL.md) が明示支持) | 0 → 1 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | temperature check 2 件(literal 構文拡張の是非 / 既存の暗黙変換への波及)。いずれも意見が割れ、今後の設計で考慮                                                 | 1     |
+| Meeting                                                | What happened                                                                                                                                                                                          | Stage |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)  | First discussed as needs-consensus PR #3857. Opinion split on whether it should be a PR or a staged proposal, and the conclusion was deferred                                                          | -     |
+| [2026-07](../../raw/notes/meetings/2026-07/july-20.md) | On reconsideration, the PR was **converted into proposal-bigint-from-exponential and taken to Stage 1** ([WH](../people/WH.md) / [MF](../people/MF.md) / [JSL](../people/JSL.md) explicitly supported) | 0 → 1 |
+| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | Two temperature checks (whether to extend literal syntax / spillover into existing implicit conversions). Opinion split on both, to be considered in future design                                     | 1     |
 
 ```mermaid
 xychart-beta
@@ -31,33 +31,33 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2026-05 に needs-consensus PR として初出、2026-07 に proposal 化して Stage 1。
+> Horizontal axis = 2012-2026, vertical axis = Stage. First appeared in 2026-05 as a needs-consensus PR, and became a proposal at Stage 1 in 2026-07.
 
-## 主な論点
+## Main issues
 
-### constructor 拡張か、別 method(`BigInt.parse`)か
+### Extend the constructor, or a separate method (`BigInt.parse`)?
 
-[MF](../people/MF.md) は「なぜ bigint を指数表記で書きたいのか分からない。decimal point を許す形は特に受け入れ難い」と `BigInt(string)` の拡張に反対し、`BigInt.parse` のような別 method で separator 込みの寛容な文法を受ける方向を選好しました。一方 [EAO](../people/EAO.md) は
+[MF](../people/MF.md) opposed extending `BigInt(string)`, saying "I don't see why one would want to write a bigint in exponential notation. A form that allows a decimal point is especially hard to accept", and preferred a separate method such as `BigInt.parse` that accepts a more permissive grammar, including separators. [EAO](../people/EAO.md), on the other hand, opposed the separate-method idea:
 
-> `BigInt(string)` と `BigInt.parse(string)` が同じ文字列に異なる parse をするのは非常に驚きだ
+> It would be very surprising for `BigInt(string)` and `BigInt.parse(string)` to parse the same string differently
 
-と別 method 案に反対し([WH](../people/WH.md) も +1)、設計は割れたままです。[KM](../people/KM.md) は「結果が常に整数なら decimal point を許す意味がなく混乱の元」と指摘しましたが、[RGN](../people/RGN.md) は「有効数字を示す canonical form(`1.000e3` ≠ `1e3`)を受けられなければ Amount の問題が解決しない」と応答しました。
+([WH](../people/WH.md) also +1), and the design remains split. [KM](../people/KM.md) noted that "if the result is always an integer, allowing a decimal point is meaningless and a source of confusion", but [RGN](../people/RGN.md) replied that "unless it can accept the canonical form that indicates significant digits (`1.000e3` ≠ `1e3`), Amount's problem is not solved".
 
-### literal 用途と動的 parse 用途の区別
+### Distinguishing literal use from dynamic parse use
 
-[OFR](../people/OFR.md) は「literal の代わりに文字列を parse させるのは antipattern であり、literal 用途なら literal 構文(`1e6n`)を拡張すべき。Amount 用途なら提案が最終形に達するまで待つべき」と用途の切り分けを主張。[RGN](../people/RGN.md) は「literal 用途を関数で満たさないなら残る選択肢は構文変更しかない」と可能性空間を整理しました。[PFC](../people/PFC.md) は日時処理での実需(`1e9` 相当のゼロの書き下しが苦痛)を挙げて支持しています。
+[OFR](../people/OFR.md) argued for separating the use cases: "Having a string parsed in place of a literal is an antipattern, and for literal use the literal syntax (`1e6n`) should be extended. For the Amount use, we should wait until the proposal reaches its final form." [RGN](../people/RGN.md) sorted the space of possibilities: "If we do not satisfy the literal use with a function, the only remaining option is a syntax change." [PFC](../people/PFC.md) supported it, citing a real need in date-time processing (writing out the zeros equivalent to `1e9` is painful).
 
-### temperature check(2026-07 day 3)
+### Temperature checks (2026-07 day 3)
 
-設計 iteration を 1 回省くために [RGN](../people/RGN.md) が 2 件の温度感を確認しました。(1) `1e6n` のような **literal 構文拡張**: Strong Positive 5 / Positive 4 / Following 3 / Confused 2 / Indifferent 2 / Unconvinced 0。(2) `==` 比較・TypedArray・`BigInt.asIntN` など**既存の暗黙変換へ新構文を波及させるか**(vs opt-in の static method に留めるか): Strong Positive 4 / Positive 3 / Following 2 / Confused 2 / Indifferent 1 / Unconvinced 0。いずれも mixed で、結果は今後の開発で考慮されます。
+To save one design iteration, [RGN](../people/RGN.md) checked the temperature on two questions. (1) **Extending literal syntax** such as `1e6n`: Strong Positive 5 / Positive 4 / Following 3 / Confused 2 / Indifferent 2 / Unconvinced 0. (2) **Whether to propagate the new syntax into existing implicit conversions** such as `==` comparison, TypedArray, and `BigInt.asIntN` (versus keeping it to an opt-in static method): Strong Positive 4 / Positive 3 / Following 2 / Confused 2 / Indifferent 1 / Unconvinced 0. Both were mixed, and the results will be considered in future development.
 
-## 関連提案
+## Related proposals
 
-- [Amount](../proposals/amount.md) — canonical form が `BigInt` に変換できない問題が本提案の発端。
-- [Fused Multiply-Add](../proposals/fused-multiply-add.md) — 同じく Amount の設計課題(conversion 精度)から派生した提案。
+- [Amount](../proposals/amount.md) — the problem that the canonical form cannot be converted to `BigInt` is the origin of this proposal.
+- [Fused Multiply-Add](../proposals/fused-multiply-add.md) — another proposal that grew out of an Amount design problem (conversion precision).
 
-## 出典
+## Sources
 
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — needs-consensus PR #3857 の初議論(持ち越し)
-- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — proposal 化、Stage 1 到達
+- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — first discussion of needs-consensus PR #3857 (deferred)
+- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — converted into a proposal, reached Stage 1
 - [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — temperature checks

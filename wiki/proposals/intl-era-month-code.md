@@ -10,26 +10,26 @@ reached_stage4: "2026-03"
 tags: [proposal, date-time, i18n]
 ---
 
-## 概要
+## Overview
 
-Intl Era/Month Code は、[Temporal](../proposals/temporal.md) が意図的にスコープ外とした **非 ISO 8601 カレンダーの era / eraYear / monthCode の挙動**を ECMA-402 に規定する提案です。Temporal は ISO 8601 カレンダーと UTC のみを完全に規定し、Hebrew・各種 Islamic・Buddhist・Chinese・Ethiopian・Coptic・Japanese・Dangi など CLDR が定義する約 20 のカレンダーについては era code・month code のセマンティクスを空白のまま残していました。本提案はその空白を最小限のセマンティクスで埋めます。
+Intl Era/Month Code specifies, in ECMA-402, the **behavior of era / eraYear / monthCode for non-ISO 8601 calendars**, which [Temporal](temporal.md) deliberately left out of scope. Temporal fully specifies only the ISO 8601 calendar and UTC. For the roughly 20 calendars CLDR defines — Hebrew, the various Islamic calendars, Buddhist, Chinese, Ethiopian, Coptic, Japanese, Dangi, and others — it left the semantics of era code and month code blank. This proposal fills that blank with a minimum of semantics.
 
-設計の眼目は「過剰規定の回避」と「実装間の差異 (divergence) の最小化」の両立です。各カレンダーの暦算そのもの(ECMAScript が権威を持つべきでない事柄)は規定せず、しかし識別子文字列(era code, monthCode)を揃えないと同じ JS コードがエンジン間で別解釈されうるため、そこにガードレールを設けます。識別子の権威は TC39 が独自に発明するのではなく **CLDR (Unicode) を権威とし、ECMA-402 はそれを参照する**方針に落ち着きました。元作者の [FYT](../people/FYT.md) が CLDR TC と調整して era code を upstream しています。
+The design aim is to avoid over-specification and to minimize divergence between implementations at the same time. It does not specify the calendar arithmetic itself (something ECMAScript should not be the authority for). But if the identifier strings (era code, monthCode) are not aligned, the same JS code can be interpreted differently across engines, so it puts a guardrail there. The authority for the identifiers is not something TC39 invents. The settled policy is that **CLDR (Unicode) is the authority, and ECMA-402 refers to it**. The original author, [FYT](../people/FYT.md), coordinated with the CLDR TC and upstreamed the era codes.
 
-規定する主な内容は、サポートするカレンダーの記述(最終的に **closed list**)、有効な era code とエイリアス、各カレンダーの era year の有効範囲、PlainDate の epoch year、lunisolar カレンダーでの「年の加算」時の制約挙動、PlainMonthDay の reference year 選定範囲などです。Temporal の Stage 4 と歩調を合わせ、2026-03 に両者そろって Stage 4 へ到達しました。
+What it specifies is mainly a description of the supported calendars (in the end a **closed list**), the valid era codes and aliases, the valid range of era year for each calendar, the epoch year of PlainDate, the constrained behavior of "adding a year" on a lunisolar calendar, and the range from which PlainMonthDay picks a reference year. It kept pace with Temporal's Stage 4, and both reached Stage 4 together in 2026-03.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                        | できごと                                                                                                              | Stage   |
-| ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2022-11](../../raw/notes/meetings/2022-11/dec-01.md)       | Stage 1 到達。[SFC](../people/SFC.md) が [FYT](../people/FYT.md) 代理で発表。識別子の権威の所在が論点に               | 0 → 1   |
-| [2023-01](../../raw/notes/meetings/2023-01/feb-01.md)       | Stage 2 到達。[FYT](../people/FYT.md) 発表。[EAO](../people/EAO.md) と [SFC](../people/SFC.md) が Stage 3 reviewer に | 1 → 2   |
-| [2025-04](../../raw/notes/meetings/2025-04/april-16.md)     | Stage 2 update。[SFC](../people/SFC.md) が引き継ぎ、era code を era 名ベースへ変更、Hijri/範囲外方針を提示。遷移なし  | 2       |
-| [2025-07](../../raw/notes/meetings/2025-07/july-30.md)      | **Stage 2.7 到達**(conditional)。[USA](../people/USA.md) が [PFC](../people/PFC.md) と共同で発表                      | 2 → 2.7 |
-| [2025-09](../../raw/notes/meetings/2025-09/september-23.md) | 2.7 update + normative 2 件に consensus(leap month の `overflow:reject` へ revert、reference year を 2035 まで許容)   | 2.7     |
-| [2025-11](../../raw/notes/meetings/2025-11/november-20.md)  | late-breaking な normative 変更のため Stage 3 を**見送り**。CLDR の era alias 削除等に consensus                      | 2.7     |
-| [2026-01](../../raw/notes/meetings/2026-01/january-20.md)   | **Stage 3 到達**。[BAN](../people/BAN.md) 発表。closed calendar list 化、稀な leap month の reference year テーブル等 | 2.7 → 3 |
-| [2026-03](../../raw/notes/meetings/2026-03/march-10.md)     | **Stage 4 到達**。[BAN](../people/BAN.md) 発表。SpiderMonkey 99.9% / V8 99.7% 適合、editor sign-off 済み              | 3 → 4   |
+| Meeting                                                     | What happened                                                                                                                                                  | Stage   |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2022-11](../../raw/notes/meetings/2022-11/dec-01.md)       | Reached Stage 1. [SFC](../people/SFC.md) presented for [FYT](../people/FYT.md). Where the authority for identifiers sits was the issue                         | 0 → 1   |
+| [2023-01](../../raw/notes/meetings/2023-01/feb-01.md)       | Reached Stage 2. Presented by [FYT](../people/FYT.md). [EAO](../people/EAO.md) and [SFC](../people/SFC.md) became Stage 3 reviewers                            | 1 → 2   |
+| [2025-04](../../raw/notes/meetings/2025-04/april-16.md)     | Stage 2 update. [SFC](../people/SFC.md) took it over, changed era codes to be based on era names, and presented the Hijri / out-of-range policy. No transition | 2       |
+| [2025-07](../../raw/notes/meetings/2025-07/july-30.md)      | **Reached Stage 2.7** (conditional). [USA](../people/USA.md) presented jointly with [PFC](../people/PFC.md)                                                    | 2 → 2.7 |
+| [2025-09](../../raw/notes/meetings/2025-09/september-23.md) | 2.7 update plus consensus on two normative changes (revert leap month to `overflow: reject`, allow reference years through 2035)                               | 2.7     |
+| [2025-11](../../raw/notes/meetings/2025-11/november-20.md)  | **Deferred** Stage 3 because of late-breaking normative changes. Consensus on removing CLDR era aliases and similar                                            | 2.7     |
+| [2026-01](../../raw/notes/meetings/2026-01/january-20.md)   | **Reached Stage 3**. Presented by [BAN](../people/BAN.md). A closed calendar list, a reference-year table for rare leap months, and others                     | 2.7 → 3 |
+| [2026-03](../../raw/notes/meetings/2026-03/march-10.md)     | **Reached Stage 4**. Presented by [BAN](../people/BAN.md). SpiderMonkey 99.9% / V8 99.7% conformant, editor sign-off in                                        | 3 → 4   |
 
 ```mermaid
 xychart-beta
@@ -39,45 +39,45 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2.7, 4]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。提案 repo は 2022-06 開設で、コーパスの大半の年は存在しない (0)。2022-11 に Stage 1、2023-01 に Stage 2。2023-2024 は約 2 年停滞 (2 横ばい)。2025-07 に Stage 2.7、2026-01 に Stage 3、2026-03 に Stage 4。2026 年内に 3 と 4 を経たため年末値は 4。
+> Horizontal axis = 2012-2026, vertical axis = Stage. The proposal repo opened in 2022-06, so most years of the corpus do not exist (0). Stage 1 in 2022-11, Stage 2 in 2023-01. 2023-2024 is about two years of stall (flat at 2). Stage 2.7 in 2025-07, Stage 3 in 2026-01, Stage 4 in 2026-03. It passed through 3 and 4 within 2026, so the year-end value is 4.
 
-## 主な論点
+## Main issues
 
-### 識別子の権威は TC39 か CLDR か
+### Is the authority for identifiers TC39 or CLDR?
 
-era code / monthCode の識別子を ECMA-402 が独自に発明するのか、外部の権威に委ねるのかが Stage 1 (2022-11) の中心論点でした。[MF](../people/MF.md) が懸念を表明しています。
+Whether ECMA-402 invents the era code / monthCode identifiers itself, or defers to an external authority, was the central issue at Stage 1 (2022-11). [MF](../people/MF.md) raised the concern.
 
-> ([MF](../people/MF.md), 2022-11) このデータを我々が定義することには不安がある。もっと多くの専門家を擁する別の団体が定義し、我々はそれを規範的に参照する方が望ましい。
+> ([MF](../people/MF.md), 2022-11) I am uneasy about us defining this data. I would rather another body, which has many more experts, define it, and we normatively refer to that.
 
-[USA](../people/USA.md) も「当初の提案は標準化を完全に TC39 に依存しているように見えた」と懸念し、[FYT](../people/FYT.md) が CLDR を権威とする方向へ舵を切り、CLDR TC と working group を組成して era code を upstream することで決着しました。
+[USA](../people/USA.md) was also concerned that "the original proposal looked as if standardization depended entirely on TC39." [FYT](../people/FYT.md) turned toward making CLDR the authority, formed a working group with the CLDR TC, and upstreamed the era codes, which settled it.
 
-### lunisolar カレンダーでの「年の加算」と leap month
+### "Adding a year" on a lunisolar calendar, and leap months
 
-Hebrew 5784 の Adar I のような leap month を持つ年から翌年へ `+1 year` したとき、その月が翌年に存在しない場合の扱いが論点でした。2025-07 では次の非 leap month へ進める挙動でしたが、2025-09 で `overflow: "reject"` 時に RangeError を投げる以前の挙動に **revert** しました(ISO 8601 の 2/29 の扱いと整合)。
+The issue was what to do when a year that has a leap month, such as Adar I of Hebrew 5784, is advanced `+1 year` and that month does not exist in the next year. In 2025-07 the behavior was to move on to the next non-leap month. In 2025-09 that was **reverted** to the earlier behavior of throwing a RangeError when `overflow` is `"reject"` (lining up with how ISO 8601 treats February 29).
 
-> ([BAN](../people/BAN.md), 2025-09) leap month から前進する際にどの月へ行くべきかの基準はカレンダーごとに異なり、多くの点で我々の管轄外だ。厳格さの方向に倒す。失えば後でいつでも緩める方向に行けるからだ。
+> ([BAN](../people/BAN.md), 2025-09) The rule for which month to land on when advancing from a leap month differs by calendar, and in many respects it is outside our jurisdiction. Fall toward strictness. If we lose that, we can always loosen it later.
 
-### 稀な leap month/day のための reference year
+### A reference year for rare leap months and leap days
 
-PlainMonthDay は内部的に ISO 8601 の実在日付を参照しますが、Chinese 暦の冬の leap month のように数百年に一度しか起きない月日には 1972 を基準年にできません。2025-09 で基準年範囲を 1972 → 最大 2035 へ拡張(2033/2034 の Chinese leap month を拾うため)し、2026-01 でごく稀な組合せはハードコードのテーブルで扱い、未収載は `overflow: reject` で RangeError、constrain では非 leap 版へ clamp する方針になりました。
+PlainMonthDay internally refers to a real ISO 8601 date, but a month-day that happens only once in several centuries, such as a winter leap month in the Chinese calendar, cannot use 1972 as the reference year. In 2025-09 the reference-year range was extended from 1972 to a maximum of 2035 (to catch the Chinese leap months of 2033 / 2034). In 2026-01, very rare combinations are handled by a hardcoded table: an unlisted one throws a RangeError under `overflow: reject`, and under constrain it clamps to the non-leap version.
 
-### footgun カレンダー(islamic / islamic-rgsa)の扱い
+### Footgun calendars (islamic / islamic-rgsa)
 
-実体のない / 誤用を招くカレンダー識別子を残すかが 2026-01 の論点でした。`islamic-rgsa`(Oracle が要望したが未実装・未使用)を format の `ca` オプションから無視し、simulation ベースの "islamic" も fallback 化。あわせて利用可能カレンダーを **closed list** 化して interoperability 問題を避けました。
+Whether to keep calendar identifiers that have no substance, or that invite misuse, was an issue in 2026-01. `islamic-rgsa` (requested by Oracle, unimplemented and unused) is ignored in the format `ca` option, and the simulation-based "islamic" was also made a fallback. Together with that, the available calendars became a **closed list**, avoiding an interoperability problem.
 
-> ([SFC](../people/SFC.md), 2026-01) 2010 年代初頭に要望されたこのカレンダーの仕様は一度も実装されず、実装されなかったがゆえにエンジンが出荷しても footgun にしかならない。
+> ([SFC](../people/SFC.md), 2026-01) The specification for this calendar, requested in the early 2010s, was never implemented, and because it was never implemented, shipping it in an engine would only be a footgun.
 
-## 関連提案
+## Related proposals
 
-- [Temporal](../proposals/temporal.md) — 親提案。本提案は Temporal が意図的にスコープ外とした非 ISO 8601 カレンダーの era/monthCode 挙動を ECMA-402 側で埋める。Temporal が "forcing function" となり、Stage 4 PR も Temporal と一緒にマージされる予定。
+- [Temporal](temporal.md) — the parent proposal. This proposal fills in, on the ECMA-402 side, the era / monthCode behavior of non-ISO 8601 calendars that Temporal deliberately left out of scope. Temporal was the forcing function, and the Stage 4 PR is also planned to merge together with Temporal.
 
-## 出典
+## Sources
 
-- [2022-11 dec-01](../../raw/notes/meetings/2022-11/dec-01.md) — Stage 1(識別子の権威の論点)
+- [2022-11 dec-01](../../raw/notes/meetings/2022-11/dec-01.md) — Stage 1 (the authority-of-identifiers issue)
 - [2023-01 feb-01](../../raw/notes/meetings/2023-01/feb-01.md) — Stage 2
-- [2025-04 april-16](../../raw/notes/meetings/2025-04/april-16.md) — Stage 2 update([SFC](../people/SFC.md) 引き継ぎ)
-- [2025-07 july-30](../../raw/notes/meetings/2025-07/july-30.md) — Stage 2.7 到達
-- [2025-09 september-23](../../raw/notes/meetings/2025-09/september-23.md) — 2.7 update + normative changes
-- [2025-11 november-20](../../raw/notes/meetings/2025-11/november-20.md) — Stage 3 見送り + normative
-- [2026-01 january-20](../../raw/notes/meetings/2026-01/january-20.md) — Stage 3 到達
-- [2026-03 march-10](../../raw/notes/meetings/2026-03/march-10.md) — Stage 4 到達
+- [2025-04 april-16](../../raw/notes/meetings/2025-04/april-16.md) — Stage 2 update ([SFC](../people/SFC.md) took it over)
+- [2025-07 july-30](../../raw/notes/meetings/2025-07/july-30.md) — reached Stage 2.7
+- [2025-09 september-23](../../raw/notes/meetings/2025-09/september-23.md) — 2.7 update plus normative changes
+- [2025-11 november-20](../../raw/notes/meetings/2025-11/november-20.md) — Stage 3 deferred, plus normative
+- [2026-01 january-20](../../raw/notes/meetings/2026-01/january-20.md) — reached Stage 3
+- [2026-03 march-10](../../raw/notes/meetings/2026-03/march-10.md) — reached Stage 4

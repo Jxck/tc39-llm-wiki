@@ -10,27 +10,27 @@ reached_stage4: "2026-05"
 tags: [proposal, syntax, resource-management, disposal]
 ---
 
-## 概要
+## Overview
 
-Explicit Resource Management は、ブロックスコープに束ねた**決定的なリソース解放**を JavaScript に与える提案です。`using x = ...` / `await using x = ...` 宣言は RAII(resource acquisition is initialization)スタイルで、宣言した場所でリソースを確保し、宣言がスコープを抜けるときに解放します。解放は `Symbol.dispose`(同期)/ `Symbol.asyncDispose`(非同期)メソッドの呼び出しで行われ、これらをオブジェクトに定義するための protocol も提供します。
+Explicit Resource Management gives JavaScript **deterministic resource disposal** tied to block scope. A `using x = ...` / `await using x = ...` declaration is RAII (resource acquisition is initialization) style: it acquires the resource where it is declared and disposes it when the declaration leaves scope. Disposal calls a `Symbol.dispose` (sync) / `Symbol.asyncDispose` (async) method, and the proposal also provides a protocol for defining these on an object.
 
-あわせて `DisposableStack` / `AsyncDisposableStack` のコンテナクラス(リソースの集約と、dispose 構文に未対応な既存 API との相互運用)と、ブロック本体と解放処理の双方が例外を投げたときに両者を包む `SuppressedError` を導入します。動機は、ファイル IO・ネットワーク・メモリといったリソースを、GC 任せや package ごとに異なる `close`/`dispose` 規約に頼らず、効率的かつ決定的に解放することです。
+Along with that it introduces the container classes `DisposableStack` / `AsyncDisposableStack` (for aggregating resources, and for interoperating with existing APIs that do not yet support dispose syntax) and `SuppressedError`, which wraps both when the block body and the disposal each throw. The motivation is to dispose resources such as file IO, the network, and memory efficiently and deterministically, rather than leaving it to the GC or to `close` / `dispose` conventions that differ per package.
 
-champion は長年 [RBN](../people/RBN.md)(Ron Buckton)が一貫して務めました。Stage 3 到達は 2022-12 で、Stage 2.7 制度の導入前だったため **2 → 3 を直接遷移**しています。最後の関門は設計ではなく Test262 のレビュー滞留で、2025-05 に **conditional Stage 4** を得た後、全テストがマージされた 2026-05 に正式 Stage 4(finished)となりました。
+The champion was [RBN](../people/RBN.md) (Ron Buckton), consistently, for many years. It reached Stage 3 in 2022-12, and because that was before the Stage 2.7 process existed it **went directly from 2 to 3**. The last gate was not design but a backlog of Test262 review. After **conditional Stage 4** in 2025-05, it became formally Stage 4 (finished) in 2026-05, once every test had been merged.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                    | できごと                                                                                               | Stage         |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------- |
-| [2018-07](../../raw/notes/meetings/2018-07/july-24.md)  | Stage 1 到達(当時 `proposal-using-statement`)。[WH](../people/WH.md) が `using` 構文に懸念             | 0 → 1         |
-| [2019-07](../../raw/notes/meetings/2019-07/july-25.md)  | Stage 2 到達(23 日に tabled、25 日に承認)。[YK](../people/YK.md)/[WH](../people/WH.md) が reviewer     | 1 → 2         |
-| [2021-10](../../raw/notes/meetings/2021-10/oct-27.md)   | `try using` ブロックを廃し `using const` の RAII 宣言へ。[SYG](../people/SYG.md) が reviewer 追加      | 2             |
-| [2022-11](../../raw/notes/meetings/2022-11/dec-01.md)   | **Stage 3 到達**(直接 2 → 3)。`AsyncDisposableStack` と `async using` は Stage 2 据え置き              | 2 → 3         |
-| [2023-03](../../raw/notes/meetings/2023-03/mar-23.md)   | Async ERM が Stage 3。`await using` のキーワード順で決着([WH](../people/WH.md) の文法レビュー条件付き) | (async) 2 → 3 |
-| [2023-07](../../raw/notes/meetings/2023-07/july-11.md)  | sync/async を 1 リポジトリへ統合完了。normative PR 群に consensus                                      | 3             |
-| [2025-04](../../raw/notes/meetings/2025-04/april-15.md) | `switch` の bare `case` での `using` 禁止 PR に consensus(V8/SpiderMonkey の try/finally 化要望)       | 3             |
-| [2025-05](../../raw/notes/meetings/2025-05/may-28.md)   | **conditional Stage 4**(残り Test262 と ECMA-262 PR の最終承認待ち)                                    | 3 → (cond.) 4 |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)   | **Stage 4(finished)**。全条件達成、全エディタ承認・Test262 マージ済み                                  | (cond.) 4 → 4 |
+| Meeting                                                 | What happened                                                                                                                 | Stage         |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| [2018-07](../../raw/notes/meetings/2018-07/july-24.md)  | Reached Stage 1 (then `proposal-using-statement`). [WH](../people/WH.md) had concerns about the `using` syntax                | 0 → 1         |
+| [2019-07](../../raw/notes/meetings/2019-07/july-25.md)  | Reached Stage 2 (tabled on the 23rd, approved on the 25th). [YK](../people/YK.md)/[WH](../people/WH.md) as reviewers          | 1 → 2         |
+| [2021-10](../../raw/notes/meetings/2021-10/oct-27.md)   | Dropped the `try using` block in favor of an RAII declaration, `using const`. [SYG](../people/SYG.md) added as a reviewer     | 2             |
+| [2022-11](../../raw/notes/meetings/2022-11/dec-01.md)   | **Reached Stage 3** (directly 2 → 3). `AsyncDisposableStack` and `async using` stayed at Stage 2                              | 2 → 3         |
+| [2023-03](../../raw/notes/meetings/2023-03/mar-23.md)   | Async ERM reached Stage 3. Settled the keyword order of `await using` (conditional on [WH](../people/WH.md)'s grammar review) | (async) 2 → 3 |
+| [2023-07](../../raw/notes/meetings/2023-07/july-11.md)  | Finished merging sync and async into one repository. Consensus on a set of normative PRs                                      | 3             |
+| [2025-04](../../raw/notes/meetings/2025-04/april-15.md) | Consensus on a PR forbidding `using` in a bare `case` of `switch` (V8/SpiderMonkey asked to lower it to try/finally)          | 3             |
+| [2025-05](../../raw/notes/meetings/2025-05/may-28.md)   | **conditional Stage 4** (waiting on the remaining Test262 and final approval of the ECMA-262 PR)                              | 3 → (cond.) 4 |
+| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)   | **Stage 4 (finished)**. Every condition met; all editors approved and Test262 merged                                          | (cond.) 4 → 4 |
 
 ```mermaid
 xychart-beta
@@ -40,56 +40,56 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 3, 3, 3, 3, 4]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。Stage 1 が 2018-07、Stage 2 が 2019-07、Stage 3 が 2022-12(Stage 2.7 制度の前なので 2 → 3 直接)。2023-2024 は normative change の時期で Stage 3 横ばい。2025-05 に conditional Stage 4 を得たが「finished」は 2026-05 のため 2025 年末値は 3 とする。2026-05 に正式 Stage 4。
+> Horizontal axis = 2012-2026, vertical axis = Stage. Stage 1 in 2018-07, Stage 2 in 2019-07, Stage 3 in 2022-12 (before the Stage 2.7 process, so directly 2 → 3). 2023-2024 was a period of normative changes, flat at Stage 3. Conditional Stage 4 was obtained in 2025-05, but "finished" is 2026-05, so the end-of-2025 value is 3. Formally Stage 4 in 2026-05.
 
-## 主な論点
+## Main issues
 
-### 構文の bikeshed(`using` か `try (...)` か独自キーワードか)
+### Syntax bikeshed (`using`, `try (...)`, or a dedicated keyword)
 
-2018-2021 にわたる最長の論点です。当初は cover grammar を要する `using` キーワードと `try (...)` 風ブロックの両案がありました。
+The longest issue, running from 2018 through 2021. At first there were two shapes: a `using` keyword that needs a cover grammar, and a `try (...)`-style block.
 
-> ([WH](../people/WH.md), 2018-07) `using` 構文には反対だ。cover grammar の上に cover grammar を重ねることになる。`try` 構文なら問題ない。
+> ([WH](../people/WH.md), 2018-07) I am against the `using` syntax. It stacks a cover grammar on top of a cover grammar. The `try` syntax would be fine.
 
-非公式なユーザー調査で「新構文は混乱を招き、独自キーワードの方が分かりやすい」との声も出ましたが、最終的に 2021-10 で [RBN](../people/RBN.md) が `try using` ブロックを廃し、`using` / `await using` 宣言の形に収束しました。
+An informal user survey also heard that the new syntax causes confusion and that a dedicated keyword is easier to understand, but in 2021-10 [RBN](../people/RBN.md) dropped the `try using` block and it converged on `using` / `await using` declarations.
 
-### 非同期 dispose と `await using` のキーワード順
+### Async dispose and the keyword order of `await using`
 
-[MM](../people/MM.md) は「interleaving 点に明確な構文マーカーが無ければ」非同期 dispose を block しました。答えは `await` キーワードでしたが、順序が `using await` か `await using` か `async using` かで割れました。2023-03 の投票を経て [RBN](../people/RBN.md) は `await using` に傾きます。
+[MM](../people/MM.md) blocked async dispose unless there is a clear syntactic marker at the interleaving point. The answer was the `await` keyword, but opinion split on the order: `using await`, `await using`, or `async using`. After a vote in 2023-03, [RBN](../people/RBN.md) leaned toward `await using`.
 
-> ([RBN](../people/RBN.md), 2023-03) champion の好みとしては `await using` に傾いてきている。キーワードの順序が先行例(C#)とも一致する。
+> ([RBN](../people/RBN.md), 2023-03) As champion, my preference is leaning toward `await using`. The keyword order also matches the precedent (C#).
 
-[MM](../people/MM.md) も「`using await` を支持していた懸念は `await using` で完全に解消された」とし、文法は 2 トークン先読みで済むことが確認されて Stage 3 に至りました。
+[MM](../people/MM.md) also said the concerns that had him supporting `using await` are completely resolved by `await using`. It was confirmed that the grammar needs only a two-token lookahead, and it reached Stage 3.
 
-### sync と async の提案統合
+### Merging the sync and async proposals
 
-非同期版(`AsyncDisposableStack` / `async using`)は一度 Stage 2 で分離されましたが、後に本体へ統合されました。
+The async variant (`AsyncDisposableStack` / `async using`) was once split off at Stage 2, then later merged back into the main proposal.
 
-> ([RBN](../people/RBN.md), 2023-07) async と sync の提案を統合することに合意していた。さらに両提案を 1 つのリポジトリに統合した。
+> ([RBN](../people/RBN.md), 2023-07) We had agreed to merge the async and sync proposals. On top of that, we merged both proposals into a single repository.
 
-### conditional Stage 4 の長い待機(Test262 レビュー滞留)
+### The long wait for conditional Stage 4 (Test262 review backlog)
 
-正式 Stage 4 への関門は新規設計ではなく Test262 のレビュー/マージの滞留でした。
+The gate to formal Stage 4 was not new design but a backlog of Test262 review and merge.
 
-> ([RBN](../people/RBN.md), 2025-05) テスト自体は数年前に完成している。ただ規模が大きいためレビューとマージが終わっていない。テスト数の多さによる滞留があっただけだ。
+> ([RBN](../people/RBN.md), 2025-05) The tests themselves were finished several years ago. Review and merge just are not done, because of the size. It was only a backlog from the number of tests.
 
-2026-05 に「全 Test262 が承認・マージされ、全エディタの承認も得た」と報告され、conditional advancement の前例(条件達成時点で advance)に従って再投票なしで finished・Stage 4 となりました。
+In 2026-05 it was reported that every Test262 test had been approved and merged, and that every editor had approved it. Following the precedent for conditional advancement (advance at the moment the conditions are met), it became finished and Stage 4 with no further vote.
 
-## 関連提案
+## Related proposals
 
-- `async-explicit-resource-management` — 当初は分離された後継提案(`AsyncDisposableStack`・`await using`)。2023 に本体へ統合(別ページは設けない)。
-- `error-cause` — `SuppressedError` はリソース解放時の例外抑制を表す類似物(error cause の系譜)。提案ページ未作成。
-- `iterator-helpers` / Python 風 context manager / `Symbol.enter` — 2023-07 で follow-up 候補として議論(確定なし)。
+- `async-explicit-resource-management` — originally a split-off follow-on (`AsyncDisposableStack` and `await using`). Merged into the main proposal in 2023 (no separate page).
+- `error-cause` — `SuppressedError` is a similar thing, representing an exception suppressed during resource disposal (in the error-cause lineage). Proposal page not yet written.
+- `iterator-helpers` / Python-style context manager / `Symbol.enter` — discussed in 2023-07 as follow-up candidates (nothing settled).
 
-## 出典
+## Sources
 
 - [2018-07 july-24](../../raw/notes/meetings/2018-07/july-24.md) — Stage 1
-- [2019-07 july-23](../../raw/notes/meetings/2019-07/july-23.md), [july-25](../../raw/notes/meetings/2019-07/july-25.md) — Stage 2(tabled → 承認)
-- [2021-10 oct-27](../../raw/notes/meetings/2021-10/oct-27.md) — `using const` RAII へ
-- [2022-11 dec-01](../../raw/notes/meetings/2022-11/dec-01.md) — Stage 3 到達
-- [2023-03 mar-21](../../raw/notes/meetings/2023-03/mar-21.md), [mar-23](../../raw/notes/meetings/2023-03/mar-23.md) — `await using` 決着 / Async ERM Stage 3
-- [2023-07 july-11](../../raw/notes/meetings/2023-07/july-11.md), [july-12](../../raw/notes/meetings/2023-07/july-12.md) — sync/async 統合 / follow-up 議論
-- [2024-04 april-09](../../raw/notes/meetings/2024-04/april-09.md), [2024-06 june-13](../../raw/notes/meetings/2024-06/june-13.md) — normative PR 群
-- [2025-02 february-18](../../raw/notes/meetings/2025-02/february-18.md) — spec バグ修正
-- [2025-04 april-15](../../raw/notes/meetings/2025-04/april-15.md) — `switch`/`case` の `using` 禁止
+- [2019-07 july-23](../../raw/notes/meetings/2019-07/july-23.md), [july-25](../../raw/notes/meetings/2019-07/july-25.md) — Stage 2 (tabled, then approved)
+- [2021-10 oct-27](../../raw/notes/meetings/2021-10/oct-27.md) — to `using const` RAII
+- [2022-11 dec-01](../../raw/notes/meetings/2022-11/dec-01.md) — Reached Stage 3
+- [2023-03 mar-21](../../raw/notes/meetings/2023-03/mar-21.md), [mar-23](../../raw/notes/meetings/2023-03/mar-23.md) — `await using` settled / Async ERM Stage 3
+- [2023-07 july-11](../../raw/notes/meetings/2023-07/july-11.md), [july-12](../../raw/notes/meetings/2023-07/july-12.md) — sync/async merge / follow-up discussion
+- [2024-04 april-09](../../raw/notes/meetings/2024-04/april-09.md), [2024-06 june-13](../../raw/notes/meetings/2024-06/june-13.md) — a set of normative PRs
+- [2025-02 february-18](../../raw/notes/meetings/2025-02/february-18.md) — spec bugfix
+- [2025-04 april-15](../../raw/notes/meetings/2025-04/april-15.md) — forbid `using` in `switch` / `case`
 - [2025-05 may-28](../../raw/notes/meetings/2025-05/may-28.md) — conditional Stage 4
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — Stage 4(finished)
+- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — Stage 4 (finished)

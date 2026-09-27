@@ -10,18 +10,18 @@ families: [iterator]
 tags: [proposal, iterator]
 ---
 
-## 概要
+## Overview
 
-Iterator Join は `Iterator.prototype.join(separator)` を追加する提案で、`Array.prototype.join` の iterator 版です。iterator が yield する値を区切り文字で連結して 1 つの文字列を返します。
+Iterator Join adds `Iterator.prototype.join(separator)`, the iterator version of `Array.prototype.join`. It concatenates the values an iterator yields, separated by a delimiter, and returns one string.
 
-champion は [KG](../people/KG.md)(Kevin Gibbons)。`iterator` family のメンバー。
+The champion is [KG](../people/KG.md) (Kevin Gibbons). A member of the `iterator` family.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                       | できごと                                                          | Stage   |
-| ---------------------------------------------------------- | ----------------------------------------------------------------- | ------- |
-| [2025-11](../../raw/notes/meetings/2025-11/november-19.md) | 初出。`Iterator Join for stage 1, 2, or 2.7` として一括要求し前進 | → 2.7   |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)      | **Stage 3 到達**。test262 テスト完備・delegate review 済み        | 2.7 → 3 |
+| Meeting                                                    | What happened                                                                 | Stage   |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------------- | ------- |
+| [2025-11](../../raw/notes/meetings/2025-11/november-19.md) | First presented. Asked for Stage 1, 2, or 2.7 together, and advanced          | → 2.7   |
+| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)      | **Reached Stage 3**. test262 coverage is complete and delegate review is done | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -31,20 +31,20 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.7, 3]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2025-11 に初出かつ Stage 2.7 まで一括前進、2026-05 に Stage 3。
+> Horizontal axis = 2012-2026, vertical axis = Stage. First presented in 2025-11 and advanced straight to Stage 2.7; Stage 3 in 2026-05.
 
-## 主な論点
+## Main issues
 
-### Stage 3 到達(2026-05)
+### Reaching Stage 3 (2026-05)
 
-テスト完備・レビュー済みで Stage 3 に consensus。`Array.prototype.join` の素直な移植で、設計上の新規論点はありません。
+Consensus for Stage 3 with tests complete and review done. It is a straightforward port of `Array.prototype.join`, with no new design issue.
 
-## 関連提案
+## Related proposals
 
-- [Iterator Chunking](../proposals/iterator-chunking.md) / [Iterator Includes](../proposals/iterator-includes.md) / [Joint Iteration](../proposals/joint-iteration.md) — 同じ iterator helpers 後続群。
+- [Iterator Chunking](../proposals/iterator-chunking.md) / [Iterator Includes](../proposals/iterator-includes.md) / [Joint Iteration](../proposals/joint-iteration.md) — the same follow-on group of iterator helpers.
 - family: [Iterator helpers and friends](../families/iterator.md)
 
-## 出典
+## Sources
 
-- [2025-11 november-19](../../raw/notes/meetings/2025-11/november-19.md) — 初出・Stage 2.7
+- [2025-11 november-19](../../raw/notes/meetings/2025-11/november-19.md) — first presented, Stage 2.7
 - [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 3

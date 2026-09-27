@@ -9,22 +9,22 @@ first_seen: "2025-02"
 tags: [proposal, promise, security]
 ---
 
-## 概要
+## Overview
 
-Thenable Curtailment(旧称 Curtailing the power of "Thenables")は、**user code を走らせずに Promise を resolve できる仕組み**を導入する提案です。`then` property を持つ object(thenable)は Promise resolution で特別扱いされ、lookup は prototype chain を `Object.prototype` まで遡ります。このため `Object.prototype.then` に getter を仕込むなどの手口で、ブラウザ実装(WebIDL の dictionary → JS object 変換など)が「script を実行するはずのない場所」で user code を実行してしまう脆弱性が繰り返し発生してきました(spec 自体の CVE も 2024 年に発生)。
+Thenable Curtailment (formerly Curtailing the power of "Thenables") introduces **a way to resolve a Promise without running user code**. An object with a `then` property (a thenable) is special-cased during Promise resolution, and the lookup walks the prototype chain up to `Object.prototype`. Because of that, attacks such as installing a getter on `Object.prototype.then` have repeatedly caused browser implementations (WebIDL dictionary-to-JS-object conversion, and the like) to run user code in places that are not supposed to execute script (a CVE in the spec itself also occurred in 2024).
 
-解は新しい抽象操作 **`SafePromiseResolve`**: resolve しようとする値が「user code を走らせうる」場合(Proxy が絡む、`then` が getter、ordinary object と異なる internal method を持つ等)に限り 1 tick 遅延させ、それ以外は通常どおり resolve します。最終的な狙いは WebIDL の Promise resolve steps にこれを採用させ、web platform 全体で thenable 経由の攻撃面を塞ぐことです。champion は [MAG](../people/MAG.md)(Mozilla)。Firefox には about:config フラグ付きのプロトタイプが存在します。
+The solution is a new abstract operation, **`SafePromiseResolve`**: only when the value about to be resolved "might run user code" (a Proxy is involved, `then` is a getter, it has internal methods that differ from an ordinary object, and so on) does it delay by one tick; otherwise it resolves as usual. The ultimate aim is to have WebIDL's Promise resolve steps adopt this, closing the thenable attack surface across the web platform. The champion is [MAG](../people/MAG.md) (Mozilla). Firefox has a prototype behind an about:config flag.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                       | できごと                                                                                                                                                      | Stage   |
-| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2025-02](../../raw/notes/meetings/2025-02/february-18.md) | 問題提起(`[[InternalProto]]` slot 案 + Firefox telemetry)。**Stage 1**。[MAH](../people/MAH.md) が「同期 reentrancy 全般」への一般化を要望                    | 0 → 1   |
-| [2025-07](../../raw/notes/meetings/2025-07/july-29.md)     | 「How to make thenables safer?」として設計議論([続き](../../raw/notes/meetings/2025-07/july-30.md) は day 3)                                                  | 1       |
-| [2026-03](../../raw/notes/meetings/2026-03/march-12.md)    | SafeResolve 方式へ転換。全 WPT がほぼ pass する実験結果を提示し **Stage 2**。userland への公開は resolve 関数の第 2 引数案([KG](../people/KG.md))を調査       | 1 → 2   |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)      | status update(2.7 を狙ったが準備未了)。security bug は「前回話した後にも増えた」                                                                              | 2       |
-| [2026-07](../../raw/notes/meetings/2026-07/july-20.md)     | 2.7 要求。TypedArray まで penalize する過剰さが争点になり、[KG](../people/KG.md) の host hook 案を宿題に continuation へ                                      | 2       |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md)     | host hook(既定 false、hook 自体は user code 実行禁止)の spec text を提示し **Stage 2.7 に consensus**([MM](../people/MM.md)/[JHD](../people/JHD.md) 明示支持) | 2 → 2.7 |
+| Meeting                                                    | What happened                                                                                                                                                                                                                            | Stage   |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2025-02](../../raw/notes/meetings/2025-02/february-18.md) | Raised the problem (an `[[InternalProto]]` slot proposal, plus Firefox telemetry). **Stage 1**. [MAH](../people/MAH.md) asked to generalize it to "synchronous reentrancy in general"                                                    | 0 → 1   |
+| [2025-07](../../raw/notes/meetings/2025-07/july-29.md)     | Design discussion as "How to make thenables safer?" ([continued](../../raw/notes/meetings/2025-07/july-30.md) on day 3)                                                                                                                  | 1       |
+| [2026-03](../../raw/notes/meetings/2026-03/march-12.md)    | Switched to the SafeResolve approach. Presented experiment results in which nearly all WPT pass, and reached **Stage 2**. Exposing it to userland: investigate [KG](../people/KG.md)'s idea of a second argument on the resolve function | 1 → 2   |
+| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)      | Status update (aimed for 2.7, but not ready). Security bugs "have increased even since we last talked"                                                                                                                                   | 2       |
+| [2026-07](../../raw/notes/meetings/2026-07/july-20.md)     | Requested 2.7. The excess of penalizing even TypedArrays became the issue, and [KG](../people/KG.md)'s host-hook idea was carried to continuation as homework                                                                            | 2       |
+| [2026-07](../../raw/notes/meetings/2026-07/july-22.md)     | Presented spec text for the host hook (default false; the hook itself is forbidden from running user code) and **consensus for Stage 2.7** ([MM](../people/MM.md)/[JHD](../people/JHD.md) in explicit support)                           | 2 → 2.7 |
 
 ```mermaid
 xychart-beta
@@ -34,44 +34,44 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2.7]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2025-02 に Stage 1、2026-03 に Stage 2、2026-07 に Stage 2.7。前史として `Symbol.thenable`(2018-05 Stage 1 → 2023-09 withdrawn)という別提案が同じ問題圏を扱っていた。
+> Horizontal axis = 2012-2026, vertical axis = Stage. Stage 1 in 2025-02, Stage 2 in 2026-03, Stage 2.7 in 2026-07. As prehistory, a separate proposal, `Symbol.thenable` (Stage 1 in 2018-05, withdrawn in 2023-09), covered the same problem area.
 
-## 主な論点
+## Main issues
 
-### `Object.prototype` を exotic にするか、resolution 側を変えるか
+### Make `Object.prototype` exotic, or change resolution
 
-Stage 1 時点の候補は (a) `Object.prototype` を exotic 化して `then` の定義を拒否する、(b) 一部の resolution で thenable を無視する、(c) spec 定義の prototype に `[[InternalProto]]` slot を与えて lookup を止める、の 3 案でした。[MAG](../people/MAG.md) は engine 実装者として
+At Stage 1 there were three candidates: (a) make `Object.prototype` exotic and reject defining `then`; (b) ignore thenables in some resolutions; (c) give spec-defined prototypes an `[[InternalProto]]` slot and stop the lookup there. As an engine implementer, [MAG](../people/MAG.md) was against (a):
 
-> `Object.prototype` は極めて重要な object で、exotic にするのは間違ったアプローチに感じる
+> `Object.prototype` is an extremely important object, and making it exotic feels like the wrong approach.
 
-と (a) に否定的で、最終的には「resolve する値が危険かを判定して遅延する」SafeResolve 方式(2026-03)に収斂しました。Firefox telemetry では標準 prototype から `then` を拾うページが 0.13% 存在し、[MAG](../people/MAG.md) 自身「期待より 1 桁多い」と述べています。
+It ultimately converged on the SafeResolve approach (2026-03): judge whether the value being resolved is dangerous, and delay if so. Firefox telemetry showed that 0.13% of pages pick up `then` from a standard prototype, which [MAG](../people/MAG.md) himself called "an order of magnitude more than expected."
 
-### 互換性と tick 数の変化
+### Compatibility and changes in tick count
 
-SafeResolve は危険な値に対してのみ microtask tick を追加するため、resolution 順序への依存があると壊れます。2026-03 に [MAG](../people/MAG.md) は全 C++ resolution 経路に適用して WPT を走らせ「fail したのは resolution timing を観測する 8-9 件のみ」と報告。[SHS](../people/SHS.md) は tick 数に依存するテストの移行の脆さを指摘しましたが blocker とはしませんでした。[MM](../people/MM.md) は re-resolve 競合を防ぐ「新 state を足すのではなく spec 内部 Promise へ forward する」定式化を提案しています。
+SafeResolve adds a microtask tick only for dangerous values, so anything that depends on resolution order can break. In 2026-03 [MAG](../people/MAG.md) applied it to every C++ resolution path, ran WPT, and reported that "the only failures were the 8 or 9 tests that observe resolution timing." [SHS](../people/SHS.md) pointed out how fragile it is to migrate tests that depend on tick count, but did not make it a blocker. [MM](../people/MM.md) proposed a formulation that prevents re-resolve races by forwarding to an internal spec Promise rather than adding a new state.
 
-### TypedArray を巻き込む過剰判定と host hook(2026-07)
+### Over-penalizing TypedArray, and the host hook (2026-07)
 
-「ordinary object と異なる `[[GetPrototypeOf]]` / `[[GetOwnProperty]]` を持つ object は危険側に倒す」という [NRO](../people/NRO.md) レビュー対応の書き方だと、TypedArray(fetch の `.bytes()` など Promise で頻繁に返る)まで遅延対象になる過剰さがありました。[KG](../people/KG.md) は
+Written to address [NRO](../people/NRO.md)'s review — an object whose `[[GetPrototypeOf]]` / `[[GetOwnProperty]]` differ from an ordinary object falls on the dangerous side — the check was overly broad, so even TypedArrays (which Promises often return, such as fetch's `.bytes()`) became subject to the delay. [KG](../people/KG.md) proposed:
 
-> host に「これは user code を走らせるか」を尋ねる host hook にすればよい。既定実装は false を返し、実際にそんな object を持つ host はまず無い
+> Make it a host hook that asks the host "does this run user code?" The default implementation returns false, and almost no host actually has such an object.
 
-と提案し、[JRL](../people/JRL.md) は「これは既知の security 脆弱性で、TypedArray の差は実質 observable でない。2 ヶ月遅らせるべきでない」と即時 advancement を主張。折衷として Day 3 の continuation で host hook 入りの spec text(editors / reviewers の sign-off 済み)を確認して 2.7 に至りました。[MM](../people/MM.md) の「hook を誤実装した host は spec 非準拠か」という確認には、normative であり非準拠になると整理されています。
+[JRL](../people/JRL.md) argued for immediate advancement: this is a known security vulnerability, the TypedArray difference is not practically observable, and it should not be delayed by two months. As a compromise, the Day 3 continuation confirmed spec text that includes the host hook (already signed off by the editors and reviewers) and reached 2.7. To [MM](../people/MM.md)'s check — is a host that mis-implements the hook non-conformant? — it was settled that the hook is normative, so such a host would be non-conformant.
 
-### userland への公開
+### Exposing it to userland
 
-user code からも安全な resolve を使いたいという要望([MF](../people/MF.md) / [KG](../people/KG.md))に対し、命名の難しさ(「safe from what?」)から、Stage 2 時点では [KG](../people/KG.md) の「resolver 関数の第 2 引数を使う(新しい名前が不要)」案が有力とされ、[MAG](../people/MAG.md) が調査を引き取りました。2026-07 時点では user 向け opt-in は分離され、まず platform 側の修正に集中しています。
+Against the request to let user code use a safe resolve as well ([MF](../people/MF.md) / [KG](../people/KG.md)), the difficulty of naming ("safe from what?") made [KG](../people/KG.md)'s idea — use a second argument on the resolver function, so no new name is needed — the leading option at Stage 2, and [MAG](../people/MAG.md) took on investigating it. As of 2026-07 the user-facing opt-in has been split off, and the focus is first on the platform-side fix.
 
-## 関連提案
+## Related proposals
 
-- [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md) — 同じく web platform の security 問題(Trusted Types)を 262 側の hook で支える隣接提案。
-- `symbol-thenable` — 2018 年の別アプローチ(`Symbol.thenable` で opt-out)。2023-09 に withdrawn。
+- [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md) — an adjacent proposal that likewise supports a web-platform security problem (Trusted Types) with a hook on the 262 side.
+- `symbol-thenable` — a separate 2018 approach (opt out via `Symbol.thenable`). Withdrawn in 2023-09.
 
-## 出典
+## Sources
 
-- [2025-02 february-18](../../raw/notes/meetings/2025-02/february-18.md) — Stage 1 到達
+- [2025-02 february-18](../../raw/notes/meetings/2025-02/february-18.md) — Reached Stage 1
 - [2025-07 july-29](../../raw/notes/meetings/2025-07/july-29.md) / [july-30](../../raw/notes/meetings/2025-07/july-30.md) — How to make thenables safer?
-- [2026-03 march-12](../../raw/notes/meetings/2026-03/march-12.md) — Stage 2 到達(SafeResolve 方式)
+- [2026-03 march-12](../../raw/notes/meetings/2026-03/march-12.md) — Reached Stage 2 (the SafeResolve approach)
 - [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — status update
-- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — 2.7 要求(host hook 化を宿題に持ち越し)
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — Stage 2.7 到達
+- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — requested 2.7 (the host-hook change carried over as homework)
+- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — Reached Stage 2.7

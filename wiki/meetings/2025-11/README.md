@@ -1,26 +1,26 @@
 # 111th TC39 Meeting (2025-11)
 
-- **会合**: 111th meeting of Ecma TC39
-- **会期**: 2025-11-18 〜 2025-11-20
-- **開催地**: Tokyo, Japan
-- **ホスト**: Bloomberg
+- **Meeting**: 111th meeting of Ecma TC39
+- **Dates**: 2025-11-18 to 2025-11-20
+- **Location**: Tokyo, Japan
+- **Host**: Bloomberg
 - **Agenda**: [tc39/agendas 2025/11](https://github.com/tc39/agendas/blob/main/2025/11.md)
 
-## 概要
+## Overview
 
-東京・Bloomberg オフィスでの3日間の対面開催(43名がサインアップ)。**Intl Locale Info API**・**Iterator Sequencing** が Stage 4 に到達し、**[Joint Iteration](../../proposals/joint-iteration.md) が Stage 3** へ前進。**[await dictionary](../../proposals/await-dictionary.md)** は Stage 2 を経ず直接 **Stage 2.7** に到達し、**Import Text** が Stage 1・Stage 2、条件付きで Stage 2.7 まで進んだ。**Intl Unit Protocol**・**Intl Energy Units**・**`Object.getNonIndexStringProperties`** が新規に Stage 1、**TypedArray Concatenation**・**TypedArray Find Within** は専用リポジトリ作成を条件に条件付き Stage 1 となった。**`Object.propertyCount`** は `Object.keysLength` と分離され、後者のみ Stage 2 へ前進。一方 **export defer**(Stage 2.7 不成立)、**Declarations in Conditionals**(Day Three まで継続するも未決着)、**Class spread syntax**・**Class field introspection**(いずれも Stage 0 のまま、[CM](../../people/CM.md)/[WH](../../people/WH.md) や [MM](../../people/MM.md)/[GCL](../../people/GCL.md)/[JSL](../../people/JSL.md) から懸念表明)は前進せず。**[Decorators](../../proposals/decorators.md)** は Test262 カバレッジ不足と V8/JSC/SpiderMonkey 間の実装方針の不一致が報告され Stage 2.7 のまま。**[Intl Era Monthcode](../../proposals/intl-era-month-code.md)** は Normative 変更2件を承認しつつ Stage 3 判断を2026年1月へ持ち越し。**[Amount](../../proposals/amount.md)** はスコープを単位変換中心へ戻す方針で Stage 1 のまま継続。**Composites** の比較子選択は2回の TCQ 温度感確認で内部化方式・WeakMap 漏えい時の例外方針が支持されたが正式な Stage 提起は無し。
+Three in-person days at Bloomberg's Tokyo office (43 people signed up). **Intl Locale Info API** and **Iterator Sequencing** reached Stage 4, and **[Joint Iteration](../../proposals/joint-iteration.md) advanced to Stage 3**. **[await dictionary](../../proposals/await-dictionary.md)** reached **Stage 2.7** without passing through Stage 2, and **Import Text** advanced through Stage 1 and Stage 2, and conditionally to Stage 2.7. **Intl Unit Protocol**, **Intl Energy Units**, and **`Object.getNonIndexStringProperties`** were new at Stage 1. **TypedArray Concatenation** and **TypedArray Find Within** were conditional Stage 1, conditional on creating a dedicated repository. **`Object.propertyCount`** was split from `Object.keysLength`, and only the latter advanced to Stage 2. **export defer** (Stage 2.7 did not pass), **Declarations in Conditionals** (continued through Day Three and still unsettled), **Class spread syntax**, and **Class field introspection** (both still Stage 0, with concerns from [CM](../../people/CM.md) / [WH](../../people/WH.md) and from [MM](../../people/MM.md) / [GCL](../../people/GCL.md) / [JSL](../../people/JSL.md)) did not advance. **[Decorators](../../proposals/decorators.md)** had insufficient test262 coverage and disagreed implementation plans across V8, JSC, and SpiderMonkey reported, and stayed at Stage 2.7. **[Intl Era Monthcode](../../proposals/intl-era-month-code.md)** approved two normative changes and deferred the Stage 3 decision to January 2026. **[Amount](../../proposals/amount.md)** stayed at Stage 1, with the scope pulled back toward unit conversion. The choice of comparator for **Composites** got support, across two TCQ temperature checks, for interning and for throwing when inserting into a leaked WeakMap, but there was no formal stage request.
 
-## 日次サマリー
+## Daily summaries
 
 - [Day 1 — 2025-11-18](2025-11-18.md)
 - [Day 2 — 2025-11-19](2025-11-19.md)
 - [Day 3 — 2025-11-20](2025-11-20.md)
 
-## 参加者
+## Attendees
 
-`raw/notes/meetings/2025-11/november-18.md` の attendees より(略号 — 氏名 — 所属):
+From the attendees in `raw/notes/meetings/2025-11/november-18.md` (abbreviation — name — affiliation):
 
-| 略号                       | 氏名                 | 所属               |
+| Abbreviation               | Name                 | Affiliation        |
 | -------------------------- | -------------------- | ------------------ |
 | [WH](../../people/WH.md)   | Waldemar Horwat      | Invited Expert     |
 | [RGN](../../people/RGN.md) | Richard Gibson       | Agoric             |
@@ -69,4 +69,4 @@
 | [OFR](../../people/OFR.md) | Olivier Flückiger    | Google             |
 | [RPR](../../people/RPR.md) | Rob Palmer           | Bloomberg          |
 
-> 出典: [raw/notes/meetings/2025-11](../../../raw/notes/meetings/2025-11/)。会期・概要は [tc39/agendas 2025/11](https://github.com/tc39/agendas/blob/main/2025/11.md) と各日逐語録より。
+> Source: [raw/notes/meetings/2025-11](../../../raw/notes/meetings/2025-11/). Dates and the overview come from [tc39/agendas 2025/11](https://github.com/tc39/agendas/blob/main/2025/11.md) and each day's transcript.

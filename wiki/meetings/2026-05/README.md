@@ -1,26 +1,26 @@
 # 114th TC39 Meeting (2026-05)
 
-- **会合**: 114th meeting of Ecma TC39
-- **会期**: 2026-05-19 〜 2026-05-21(19・20 日は 10:00-17:00、21 日は 10:00-16:00 CEST)
-- **開催地**: Amsterdam, the Netherlands
-- **ホスト**: JetBrains(現地ロジは Dmitry Makhnev ほか)
+- **Meeting**: 114th meeting of Ecma TC39
+- **Dates**: 2026-05-19 to 2026-05-21 (the 19th and 20th are 10:00-17:00, the 21st is 10:00-16:00 CEST)
+- **Location**: Amsterdam, the Netherlands
+- **Host**: JetBrains (on-site logistics by Dmitry Makhnev and others)
 - **Agenda**: [tc39/agendas 2026/05](https://github.com/tc39/agendas/blob/main/2026/05.md)
 
-## 概要
+## Overview
 
-Amsterdam での3日間。**Stage 4 到達**は [Joint Iteration](../../proposals/joint-iteration.md) / `Atomics.pause`([Dynamic Code Brand Checks](../../proposals/dynamic-code-brand-checks.md) は normative change の consensus のみで Stage 4 は次回再要求、[Explicit Resource Management](../../proposals/explicit-resource-management.md) は条件達成で finished)。Stage 3 へ [Iterator Chunking](../../proposals/iterator-chunking.md)・[Iterator Includes](../../proposals/iterator-includes.md)・[Error stack accessor](../../proposals/error-stack-accessor.md) が進む一方、**[Decorators](../../proposals/decorators.md)(本体)と Decorator Metadata は Stage 3 → Stage 2.7 へ降格(regress)**するなど iterator 系・[decorators](../../proposals/decorators.md) 周りの動きが目立った。ほかに Intl([Stable Formatting](../../proposals/stable-formatting.md) / Sequence Units / Default Behaviours)、ESM/Source Phase Imports の normative PR、AsyncContext の web 統合、`export defer` / `export all from` / Module Scope Ceiling など module 系を議論。Stage 1 の "[Comparisons](../../proposals/comparisons.md)"(deep comparison/deviation reporting)や、規制動向として **EU CRA(Cyber Resilience Act)** の解説セッションもあった。
+Three days in Amsterdam. **Reached Stage 4**: [Joint Iteration](../../proposals/joint-iteration.md) / `Atomics.pause` ([Dynamic Code Brand Checks](../../proposals/dynamic-code-brand-checks.md) got consensus only on a normative change, and Stage 4 will be asked again next time; [Explicit Resource Management](../../proposals/explicit-resource-management.md) is finished, its conditions having been met). [Iterator Chunking](../../proposals/iterator-chunking.md), [Iterator Includes](../../proposals/iterator-includes.md), and [Error stack accessor](../../proposals/error-stack-accessor.md) advanced to Stage 3, while **[Decorators](../../proposals/decorators.md) (the main proposal) and Decorator Metadata regressed from Stage 3 to Stage 2.7**. The iterator line and the area around [decorators](../../proposals/decorators.md) were the conspicuous movement. The committee also discussed Intl ([Stable Formatting](../../proposals/stable-formatting.md) / Sequence Units / Default Behaviours), a normative PR for ESM / Source Phase Imports, web integration of AsyncContext, and module topics including `export defer` / `export all from` / Module Scope Ceiling. Stage 1 for "[Comparisons](../../proposals/comparisons.md)" (deep comparison / deviation reporting), and a briefing on the regulatory side: the **EU CRA (Cyber Resilience Act)**.
 
-## 日次サマリー
+## Daily summaries
 
 - [Day 1 — 2026-05-19](2026-05-19.md)
 - [Day 2 — 2026-05-20](2026-05-20.md)
 - [Day 3 — 2026-05-21](2026-05-21.md)
 
-## 参加者
+## Attendees
 
-`raw/notes/meetings/2026-05/may-19.md` の attendees より(略号 — 氏名 — 所属):
+From the attendees in `raw/notes/meetings/2026-05/may-19.md` (abbreviation — name — affiliation):
 
-| 略号                       | 氏名                   | 所属               |
+| Abbreviation               | Name                   | Affiliation        |
 | -------------------------- | ---------------------- | ------------------ |
 | [DLM](../../people/DLM.md) | Daniel Minor           | Mozilla            |
 | [USA](../../people/USA.md) | Ujjwal Sharma          | Igalia             |
@@ -66,4 +66,4 @@ Amsterdam での3日間。**Stage 4 到達**は [Joint Iteration](../../proposal
 | PST                        | Patrick Soquet         | Moddable           |
 | [SFC](../../people/SFC.md) | Shane Carr             | Google             |
 
-> 出典: tc39/notes PR #411(2026 May transcript、未マージ)を checkout して要約。会期・開催地・概要は [tc39/agendas 2026/05](https://github.com/tc39/agendas/blob/main/2026/05.md) と各日逐語録より。
+> Source: summarized after checking out tc39/notes PR #411 (2026 May transcript, unmerged at the time). Dates, location, and the overview come from [tc39/agendas 2026/05](https://github.com/tc39/agendas/blob/main/2026/05.md) and each day's transcript.

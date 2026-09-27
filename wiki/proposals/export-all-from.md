@@ -10,16 +10,16 @@ tags: [proposal, modules]
 families: [modules]
 ---
 
-## 概要
+## Overview
 
-export all from は、モジュールの再エクスポート構文を拡張する提案です(`export * from` 系の人間工学改善)。author は Guy Bedford、champion は [NRO](../people/NRO.md)(Nicolò Ribaudo)。`export * as ns from`・`export default from` といった既存の再エクスポート系譜の延長にあります。
+export all from extends module re-export syntax (an ergonomics improvement on the `export * from` family). The author is Guy Bedford. The champion is [NRO](../people/NRO.md) (Nicolò Ribaudo). It continues the existing re-export line of `export * as ns from` and `export default from`.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                  | できごと                | Stage |
-| ----------------------------------------------------- | ----------------------- | ----- |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md) | **Stage 1 到達**        | → 1   |
-| [2026-05](../../raw/notes/meetings/2026-05/may-21.md) | Stage 2 reviewer の募集 | 1     |
+| Meeting                                               | What happened              | Stage |
+| ----------------------------------------------------- | -------------------------- | ----- |
+| [2026-05](../../raw/notes/meetings/2026-05/may-20.md) | **Reached Stage 1**        | → 1   |
+| [2026-05](../../raw/notes/meetings/2026-05/may-21.md) | Call for Stage 2 reviewers | 1     |
 
 ```mermaid
 xychart-beta
@@ -29,18 +29,18 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2026-05 に Stage 1 到達(初出)。同会期 day 3 で Stage 2 reviewer の募集も行われた。
+> Horizontal axis = 2012-2026, vertical axis = Stage. Reached Stage 1 in 2026-05 (first presented). The same meeting's day 3 also called for Stage 2 reviewers.
 
-## 主な論点
+## Main issues
 
-このトピックでは speaker による summary / conclusion が提供されていません(notes 上は記載なし)。Stage 1 到達と Stage 2 reviewer 募集の事実が記録されています。
+The speaker did not provide a summary or conclusion for this topic (the notes do not record one). What is recorded is that it reached Stage 1 and that Stage 2 reviewers were called for.
 
-## 関連提案
+## Related proposals
 
-- `export-default-from` / `export-ns-from`(`export * as ns from`)— 再エクスポート構文の既存系譜。提案ページ未作成。
+- `export-default-from` / `export-ns-from` (`export * as ns from`) — the existing re-export-syntax line. No proposal pages yet.
 - family: [Modules](../families/modules.md)
 
-## 出典
+## Sources
 
 - [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 1
-- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — Stage 2 reviewer 募集
+- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — call for Stage 2 reviewers

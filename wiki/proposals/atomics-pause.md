@@ -10,23 +10,23 @@ reached_stage4: "2026-05"
 tags: [proposal, concurrency, atomics, shared-memory]
 ---
 
-## 概要
+## Overview
 
-`Atomics.pause` は、`Atomics` オブジェクトに単一のメソッド `Atomics.pause` を追加する提案です。これは CPU への spin-loop ヒントで、観測可能な挙動を持たず常に `undefined` を返します。spin lock(SharedArrayBuffer 上の mutex の fast path など)で OS レベルの sleep(`Atomics.wait`)へ落ちる前に短時間だけ spin する際、CPU に「いま busy loop 中だ」と知らせるためのものです。
+`Atomics.pause` adds a single method, `Atomics.pause`, to the `Atomics` object. It is a spin-loop hint to the CPU: it has no observable behavior and always returns `undefined`. When a spin lock (the fast path of a mutex on a SharedArrayBuffer, and the like) spins briefly before falling into an OS-level sleep (`Atomics.wait`), this tells the CPU "I am in a busy loop right now."
 
-ハードウェアには x86 の `PAUSE`、ARM の ISB(instruction synchronization barrier)/`YIELD` のように同目的の命令があり、C/C++ では `_mm_pause()` 等の intrinsic で使えますが、JS にはこれを表現する手段がありませんでした。本提案はそれを engine hook として提供します。当初のスコープは「micro wait(CPU ヒント)」と「mini wait(ブロックできない環境向けの、`Atomics.wait` のタイムアウト clamp 版)」の両方を含む広いものでしたが、後者は落とされ、CPU ヒントのメソッドのみに絞った上で `Atomics.pause` に改名されました。champion は [SYG](../people/SYG.md) で、Stage 4 は [SYG](../people/SYG.md) が他業務へ移ったため [KM](../people/KM.md) が代理で発表しました。
+Hardware already has instructions for the same purpose, such as x86 `PAUSE` and ARM's ISB (instruction synchronization barrier) / `YIELD`, and C/C++ can use them through intrinsics such as `_mm_pause()`, but JS had no way to express this. This proposal provides it as an engine hook. The original scope was broad and covered both "micro wait (a CPU hint)" and "mini wait (a timeout-clamped `Atomics.wait`, for environments that cannot block)," but the latter was dropped. It was narrowed to the CPU-hint method only, and renamed `Atomics.pause`. The champion is [SYG](../people/SYG.md). At Stage 4, [SYG](../people/SYG.md) had moved on to other work, so [KM](../people/KM.md) presented on his behalf.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                      | できごと                                                                                             | Stage   |
-| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------- |
-| [2024-02](../../raw/notes/meetings/2024-02/feb-6.md)      | Stage 1 到達。`Micro and mini waits in JS for stage 1`(当時は microwait + clamp 付き `Atomics.wait`) | → 1     |
-| [2024-04](../../raw/notes/meetings/2024-04/april-08.md)   | スコープを CPU ヒントのみに縮小。spec text 未準備のため Stage 2 consensus を **withdraw**            | 1       |
-| [2024-06](../../raw/notes/meetings/2024-06/june-13.md)    | `Atomics.pause` に改名。**Stage 2.7 到達**(記録上の Stage 2 を経ず 1 → 2.7)                          | 1 → 2.7 |
-| [2024-07](../../raw/notes/meetings/2024-07/july-29.md)    | Stage 3 を狙うも、iteration 引数の意味で [WH](../people/WH.md) と認識齟齬が判明し進めず              | 2.7     |
-| [2024-07](../../raw/notes/meetings/2024-07/july-31.md)    | 継続討議。引数の意味を「大きい N = 長い pause」へ反転。Stage 3 も Stage 2 も consensus なし          | 2.7     |
-| [2024-10](../../raw/notes/meetings/2024-10/october-09.md) | **Stage 3 到達**。optional iteration 引数付き、Test262 landed                                        | 2.7 → 3 |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)     | **Stage 4 到達**。未使用の optional 引数を削除する normative change を承認した上で advance           | 3 → 4   |
+| Meeting                                                   | What happened                                                                                                                           | Stage   |
+| --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2024-02](../../raw/notes/meetings/2024-02/feb-6.md)      | Reached Stage 1. `Micro and mini waits in JS for stage 1` (at the time, microwait plus a clamped `Atomics.wait`)                        | → 1     |
+| [2024-04](../../raw/notes/meetings/2024-04/april-08.md)   | Narrowed the scope to the CPU hint only. **Withdrew** the Stage 2 consensus because the spec text was not ready                         | 1       |
+| [2024-06](../../raw/notes/meetings/2024-06/june-13.md)    | Renamed to `Atomics.pause`. **Reached Stage 2.7** (1 → 2.7, without a recorded Stage 2)                                                 | 1 → 2.7 |
+| [2024-07](../../raw/notes/meetings/2024-07/july-29.md)    | Aimed at Stage 3, but a mismatch with [WH](../people/WH.md) over the meaning of the iteration argument came out, and it did not advance | 2.7     |
+| [2024-07](../../raw/notes/meetings/2024-07/july-31.md)    | Continued discussion. Flipped the argument's meaning to "a larger N means a longer pause." No consensus for Stage 3 or for Stage 2      | 2.7     |
+| [2024-10](../../raw/notes/meetings/2024-10/october-09.md) | **Reached Stage 3**. Optional iteration argument; Test262 landed                                                                        | 2.7 → 3 |
+| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)     | **Reached Stage 4**. Advanced after approving a normative change that removes the unused optional argument                              | 3 → 4   |
 
 ```mermaid
 xychart-beta
@@ -36,48 +36,48 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 4]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。初出は 2024-02。2024 年内に Stage 1 →(Stage 2 申請は withdraw)→ Stage 2.7(2024-06)→ Stage 3(2024-10)と進んだため年末値は 3。記録上の Stage 2 は経ていない(唯一の Stage 2 申請 2024-04 は withdraw、6 月に 1 → 2.7)。2025 はコーパス上の議題なしで横ばい、2026-05 に Stage 4。
+> Horizontal axis = 2012-2026, vertical axis = Stage. First seen in 2024-02. Within 2024 it went Stage 1, then the Stage 2 request was withdrawn, then Stage 2.7 (2024-06), then Stage 3 (2024-10), so the year-end value is 3. It never passed through a recorded Stage 2 (the only Stage 2 request, in 2024-04, was withdrawn, and June went 1 → 2.7). 2025 is flat, with no agenda item in the corpus, and Stage 4 came in 2026-05.
 
-## 主な論点
+## Main issues
 
-### optional な iteration 引数 — 意味の反転と最終的な削除
+### The optional iteration argument — meaning flipped, then removed
 
-spin-loop の iteration 数(backoff ヒント)を表す整数引数が、3 会合にわたる最大の争点でした。2024-07 で [WH](../people/WH.md) が「提示された spec text は前回合意した意味の逆だ」と指摘します。
+An integer argument for the spin-loop iteration count (a backoff hint) was the biggest dispute, across three meetings. In 2024-07 [WH](../people/WH.md) pointed out that the spec text on offer was the reverse of the meaning agreed last time.
 
-> ([WH](../people/WH.md), 2024-07) 前回達成したと思っていた合意は幻だった。
+> ([WH](../people/WH.md), 2024-07) The agreement I thought we had reached last time turned out to be an illusion.
 
-[SYG](../people/SYG.md) は [WH](../people/WH.md) の読みに合わせ「大きい数ほど長く pause する」へ意味を反転(負値で count-down も許可)。2024-10 の Stage 3 では optional 引数(0 起点、正で長く・負で短く)で決着しました。
+[SYG](../people/SYG.md) flipped the meaning to match [WH](../people/WH.md)'s reading: a larger number pauses longer (negative values also allowed, as a count-down). At Stage 3 in 2024-10 it was settled as an optional argument (0-based; positive means longer, negative means shorter).
 
-### Stage 4 での引数削除(normative change)
+### Removing the argument at Stage 4 (normative change)
 
-2026-05 で [KM](../people/KM.md) が「どのエンジンもこの引数を実装していない」として引数の全削除を提案しました。[RBN](../people/RBN.md) は「引数が無いと開発者を手書きの busy loop へ導き、長期的に取り返しがつかない」と懸念しましたが、blocking はしませんでした。
+In 2026-05 [KM](../people/KM.md) proposed deleting the argument entirely, because no engine implements it. [RBN](../people/RBN.md) was concerned that without the argument developers are led into hand-written busy loops, which cannot be undone in the long run, but he did not block.
 
-> ([NRO](../people/NRO.md), 2026-05) どのエンジンもこの引数を尊重しないなら、引数があっても人々は質の悪いコードを書く必要を感じ続ける。spec に入れることに効果があるとは思えない。
+> ([NRO](../people/NRO.md), 2026-05) If no engine honors this argument, people will keep feeling they have to write bad code even if the argument is there. I do not think putting it in the spec does any good.
 
-> ([WH](../people/WH.md), 2026-05) この引数を将来意味のあるものにする余地を残すため、今は含めるべきでない。
+> ([WH](../people/WH.md), 2026-05) So that we leave room to make this argument meaningful later, we should not include it now.
 
-決着は引数削除の normative change に consensus し、その上で Stage 4 到達。
+The outcome was consensus on the normative change that removes the argument, and then Stage 4.
 
-### なぜ引数を設けたか(no-arg ではなく)
+### Why there was an argument at all (not no-arg)
 
-[SYG](../people/SYG.md) は「JS は性能のばらつきが大きく、interpreter と JIT で pause の量を揃えたい。引数で spin-loop の iteration を伝えればエンジンが実行階層ごとに pause を調整できる」と説明しました。引数削除はこの調整余地を一旦手放すことを意味します。
+[SYG](../people/SYG.md) explained that JS performance varies a lot, and he wanted the amount of pause to line up between the interpreter and the JIT. If the argument tells the engine how many spin-loop iterations there are, the engine can adjust the pause per execution tier. Removing the argument means giving up that room to adjust, for now.
 
-### テスト不能性 / Stage 3 入りの基準
+### Untestability, and the bar for Stage 3
 
-[MF](../people/MF.md) は「presence と callability 以外ほとんどテストできない」と指摘し、[DE](../people/DE.md) も SharedArrayBuffer メモリモデルのテスト困難性に言及しました。これが Stage 2 ではなく 2.7(editorial 裁量)を選んだ理由でもあります。
+[MF](../people/MF.md) pointed out that beyond presence and callability there is almost nothing you can test, and [DE](../people/DE.md) also mentioned how hard the SharedArrayBuffer memory model is to test. That is also why 2.7 (editorial discretion) was chosen rather than Stage 2.
 
-## 関連提案
+## Related proposals
 
-- `shared-array-buffer`(SharedArrayBuffer)— `Atomics.pause` が対象とする spin lock の基盤。
-- `Atomics.waitAsync` / `Atomics.wait` — `Atomics.pause` は CPU レベルの fast-path ヒントで、OS レベルでブロックする `Atomics.wait` を補完する(落とされた "mini wait" は `Atomics.wait` の clamp 版だった)。
-- `structs`(shared structs)— [RBN](../people/RBN.md) が「`Atomics.pause` は structs 提案と強く関連する」と言及(lock-free アルゴリズム実装に有用)。
+- `shared-array-buffer` (SharedArrayBuffer) — the foundation of the spin locks that `Atomics.pause` targets.
+- `Atomics.waitAsync` / `Atomics.wait` — `Atomics.pause` is a CPU-level fast-path hint that complements `Atomics.wait`, which blocks at the OS level (the dropped "mini wait" was a clamped `Atomics.wait`).
+- `structs` (shared structs) — [RBN](../people/RBN.md) said "`Atomics.pause` is strongly related to the structs proposal" (useful for implementing lock-free algorithms).
 
-## 出典
+## Sources
 
-- [2024-02 feb-6](../../raw/notes/meetings/2024-02/feb-6.md) — Stage 1(micro and mini waits)
-- [2024-04 april-08](../../raw/notes/meetings/2024-04/april-08.md) — Stage 2 申請 withdraw
-- [2024-06 june-13](../../raw/notes/meetings/2024-06/june-13.md) — `Atomics.pause` 改名・Stage 2.7
-- [2024-07 july-29](../../raw/notes/meetings/2024-07/july-29.md) — Stage 3 狙うも認識齟齬で進まず
-- [2024-07 july-31](../../raw/notes/meetings/2024-07/july-31.md) — 継続討議、consensus なし
-- [2024-10 october-09](../../raw/notes/meetings/2024-10/october-09.md) — Stage 3 到達
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — Stage 4 到達(引数削除の normative change 込み)
+- [2024-02 feb-6](../../raw/notes/meetings/2024-02/feb-6.md) — Stage 1 (micro and mini waits)
+- [2024-04 april-08](../../raw/notes/meetings/2024-04/april-08.md) — Stage 2 request withdrawn
+- [2024-06 june-13](../../raw/notes/meetings/2024-06/june-13.md) — renamed `Atomics.pause`, Stage 2.7
+- [2024-07 july-29](../../raw/notes/meetings/2024-07/july-29.md) — aimed at Stage 3, but did not advance because of a mismatch
+- [2024-07 july-31](../../raw/notes/meetings/2024-07/july-31.md) — continued discussion, no consensus
+- [2024-10 october-09](../../raw/notes/meetings/2024-10/october-09.md) — Reached Stage 3
+- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — Reached Stage 4 (including the normative change that removes the argument)

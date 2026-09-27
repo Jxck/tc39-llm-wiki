@@ -9,20 +9,20 @@ first_seen: "2025-02"
 tags: [proposal, error, stack]
 ---
 
-## 概要
+## Overview
 
-Error Stack Accessor は、事実上すべての engine が実装している `Error.prototype.stack` を、`Error.prototype` 上の accessor(getter/setter)として標準化する提案です。長く続いた「Error Stacks」系の大きな議論から、まず既存の de-facto 挙動を最小限に仕様化する部分を切り出したものです。スタックトレースの構造化(Error Stacks Structure)とは別に、`.stack` のアクセス経路だけを先行して固める狙いです。
+Error Stack Accessor standardizes `Error.prototype.stack`, which essentially every engine implements, as an accessor (getter / setter) on `Error.prototype`. It is the piece carved out of the long, large "Error Stacks" discussion so that the existing de facto behavior can be specified first, at minimum scope. Separate from structuring stack traces (Error Stacks Structure), the aim is to pin down only the access path of `.stack` ahead of the rest.
 
-champion は [JHD](../people/JHD.md)(Jordan Harband)・[MM](../people/MM.md)(Mark Miller)。
+The champions are [JHD](../people/JHD.md) (Jordan Harband) and [MM](../people/MM.md) (Mark Miller).
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                       | できごと                                                                      | Stage   |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------- | ------- |
-| [2025-02](../../raw/notes/meetings/2025-02/february-19.md) | `Error Stack Accessor` を提示(旧 Error Stacks 系からの carve-out)             | 2       |
-| [2026-03](../../raw/notes/meetings/2026-03/march-10.md)    | **Stage 2.7 到達**。HTML 統合 PR 提出                                         | 2 → 2.7 |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)      | Stage 3 を要求(tests レビュー中)。週内 day 3 へ継続                           | 2.7     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-21.md)      | **Stage 3 到達**。tests が次回までに未マージなら 2.7 への降格を求める条件付き | 2.7 → 3 |
+| Meeting                                                    | What happened                                                                                            | Stage   |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------- |
+| [2025-02](../../raw/notes/meetings/2025-02/february-19.md) | Presented `Error Stack Accessor` (a carve-out from the older Error Stacks line)                          | 2       |
+| [2026-03](../../raw/notes/meetings/2026-03/march-10.md)    | **Reached Stage 2.7**. HTML integration PR filed                                                         | 2 → 2.7 |
+| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)      | Asked for Stage 3 (tests under review). Continued to day 3 the same week                                 | 2.7     |
+| [2026-05](../../raw/notes/meetings/2026-05/may-21.md)      | **Reached Stage 3**. Conditional: if the tests are not merged by the next meeting, ask to regress to 2.7 | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -32,26 +32,26 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。本提案は 2025-02 に Error Stacks 系から切り出された比較的新しい proposal。Stage 2.7 が 2026-03、Stage 3 が 2026-05。Error stacks 自体の議論は 2017 年まで遡るが、それは別系譜のため本グラフには含めない。
+> Horizontal axis = 2012-2026, vertical axis = Stage. This proposal is relatively new: carved out of the Error Stacks line in 2025-02. Stage 2.7 in 2026-03, Stage 3 in 2026-05. The Error stacks discussion itself goes back to 2017, but that is a separate line and is not on this chart.
 
-## 主な論点
+## Main issues
 
-### tests マージを条件にした Stage 3(2026-05)
+### Stage 3 conditional on merging the tests (2026-05)
 
-day 1 では tests がレビュー中・HTML PR 承認済みとして Stage 3 を要求しましたが結論は day 3 へ持ち越し。day 3 で tests 承認を確認し Stage 3 に到達しました。ただし「次回会合までに tests がマージされなければ Stage 2.7 への降格を求める」という条件が付きました。
+On day 1, Stage 3 was requested with the tests under review and the HTML PR approved, but the conclusion carried to day 3. On day 3 the test approval was confirmed and it reached Stage 3, with the condition that "if the tests are not merged by the next meeting, ask to regress to Stage 2.7."
 
-### Error Stacks 系からの carve-out
+### Carve-out from the Error Stacks line
 
-スタックトレースの完全な構造化(Error Stacks Structure)は重く、合意が難しいため、まず `Error.prototype.stack` の accessor 化という最小スコープを先行させる戦略です。
+Fully structuring stack traces (Error Stacks Structure) is heavy and hard to agree on, so the strategy is to go first with the minimum scope of making `Error.prototype.stack` an accessor.
 
-## 関連提案
+## Related proposals
 
-- `error-stacks-structure` — スタックの構造化(より大きな未決の系譜)。提案ページ未作成。
-- `error-capture-stack-trace`(`Error.captureStackTrace`)— V8 互換 API の標準化。提案ページ未作成。
+- `error-stacks-structure` — structuring the stack (the larger, still-open line). No proposal page yet.
+- `error-capture-stack-trace` (`Error.captureStackTrace`) — standardizing the V8-compatible API. No proposal page yet.
 
-## 出典
+## Sources
 
-- [2025-02 february-19](../../raw/notes/meetings/2025-02/february-19.md) — carve-out 提示
+- [2025-02 february-19](../../raw/notes/meetings/2025-02/february-19.md) — carve-out presented
 - [2026-03 march-10](../../raw/notes/meetings/2026-03/march-10.md) — Stage 2.7
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — Stage 3 要求(継続)
-- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — Stage 3(条件付き)
+- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — Stage 3 request (continued)
+- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — Stage 3 (conditional)

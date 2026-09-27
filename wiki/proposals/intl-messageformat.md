@@ -9,24 +9,24 @@ first_seen: "2022-03"
 tags: [proposal, i18n]
 ---
 
-## 概要
+## Overview
 
-`Intl.MessageFormat` は、Unicode Consortium で策定が進む **MessageFormat 2.0 (MF2)** を JavaScript に公開する ECMA-402 提案です。MF2 は、複数形 (plural)・性 (gender)・選択 (select) などを含む翻訳メッセージを、開発者と翻訳者の双方が扱える形で表現する DSL(専用構文)とデータモデルからなります。従来 ICU MessageFormat (v1) や ICU4J の polyfill が担ってきた領域を、CLDR を権威とする新しい標準構文として整理し直すものです。
+`Intl.MessageFormat` is an ECMA-402 proposal that exposes **MessageFormat 2.0 (MF2)**, which the Unicode Consortium is developing, to JavaScript. MF2 is a DSL (a dedicated syntax) and a data model that express a translated message, including plural, gender, and select, in a form both developers and translators can work with. It reorganizes the territory that the older ICU MessageFormat (v1) and the ICU4J polyfill covered, as a new standard syntax whose authority is CLDR.
 
-提案は当初、単一メッセージの整形 (`Intl.MessageFormat`) と、複数の関連メッセージをまとめた「リソース」の整形を 1 本に含んでいましたが、2022-11 に後者が `Intl.MessageResource` として別の Stage 1 提案へ分離されました(本ページは前者を扱う)。整形 API は他の `Intl.*` フォーマッタと異なり、入力が翻訳者の手を経た**ユーザデータ**であるため失敗しやすく、エラーを throw せず非致命的に扱う(`onError` コールバック等)モデルを志向する点が大きな特徴です。
+The proposal originally included both formatting a single message (`Intl.MessageFormat`) and formatting a "resource" that bundles several related messages. In 2022-11 the latter was split into a separate Stage 1 proposal, `Intl.MessageResource` (this page covers the former). A large feature of the formatting API, unlike the other `Intl.*` formatters, is that the input is **user data** that has passed through a translator's hands, so it fails easily. The design aims at a model that does not throw on an error and treats it as non-fatal (an `onError` callback, and similar).
 
-2026-06 時点で本提案は **Stage 1 に留まり「stuck(行き詰まり)」**の状態にあります。Stage 2 への前進をめぐっては「実績の乏しい新規 DSL/parser を言語に入れてよいか」という根本的な懸念が繰り返し争点となり、解決していません。
+As of 2026-06 this proposal **remains at Stage 1 and is "stuck."** Around advancing to Stage 2, a fundamental concern keeps coming back and is not resolved: whether a new DSL and parser with little track record may be put into the language.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                        | できごと                                                                                                                                         | Stage |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
-| [2022-03](../../raw/notes/meetings/2022-03/mar-30.md)       | **Stage 1 到達**。[EAO](../people/EAO.md) 発表(co-champion: [DLM](../people/DLM.md))。`message` という語の曖昧さ、library か language かが論点に | 0 → 1 |
-| [2022-11](../../raw/notes/meetings/2022-11/nov-29.md)       | リソース整形部分を `Intl.MessageResource` として分離、そちらが Stage 1 到達。本体は単一メッセージに集中(Stage 据え置き)                          | 1     |
-| [2023-09](../../raw/notes/meetings/2023-09/september-26.md) | Stage 1 update。進捗におおむね賛同。error handling と custom formatter API の複雑さが論点。遷移なし                                              | 1     |
-| [2024-02](../../raw/notes/meetings/2024-02/feb-7.md)        | Stage 2 を議論するも見送り。**syntax parser を外しデータモデルのみで Stage 2 を狙う**方針で再来予定に。遷移なし                                  | 1     |
-| [2024-04](../../raw/notes/meetings/2024-04/april-10.md)     | status update。TG2(特に Google i18n)が parser 除去に反対し **proposal は stuck**。判断は業界の MF2 採用待ちへ                                    | 1     |
-| [2024-06](../../raw/notes/meetings/2024-06/june-11.md)      | Stage 1 open question。error handling の設計パターン(option 1〜6)を議論。新 option を champion group へ。遷移なし                                | 1     |
+| Meeting                                                     | What happened                                                                                                                                                                                       | Stage |
+| ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2022-03](../../raw/notes/meetings/2022-03/mar-30.md)       | **Reached Stage 1**. Presented by [EAO](../people/EAO.md) (co-champion: [DLM](../people/DLM.md)). The ambiguity of the word `message`, and whether this is a library or a language, were the issues | 0 → 1 |
+| [2022-11](../../raw/notes/meetings/2022-11/nov-29.md)       | The resource-formatting part was split off as `Intl.MessageResource`, and that reached Stage 1. The main proposal concentrates on a single message (stage unchanged)                                | 1     |
+| [2023-09](../../raw/notes/meetings/2023-09/september-26.md) | Stage 1 update. Broad agreement with the progress. Error handling and the complexity of the custom-formatter API were the issues. No transition                                                     | 1     |
+| [2024-02](../../raw/notes/meetings/2024-02/feb-7.md)        | Stage 2 was discussed and deferred. Planned to come back with a direction that **drops the syntax parser and aims at Stage 2 on the data model alone**. No transition                               | 1     |
+| [2024-04](../../raw/notes/meetings/2024-04/april-10.md)     | Status update. TG2 (especially Google i18n) opposed removing the parser, and **the proposal is stuck**. The decision waits on industry adoption of MF2                                              | 1     |
+| [2024-06](../../raw/notes/meetings/2024-06/june-11.md)      | Stage 1 open question. Discussed error-handling design patterns (options 1 through 6). New options went to the champion group. No transition                                                        | 1     |
 
 ```mermaid
 xychart-beta
@@ -36,82 +36,82 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
 ```
 
-> 2022-03 に Stage 1 到達。以降 2026 まで Stage 1 のまま停滞。2024-02 に「parser を外してデータモデルのみで Stage 2」案が出たが、2024-04 に TG2 の反対で頓挫し、現在まで前進していない(横ばい)。
+> Reached Stage 1 in 2022-03. Stalled at Stage 1 through 2026. In 2024-02 a plan appeared to "drop the parser and take Stage 2 on the data model alone," but in 2024-04 it collapsed under TG2's opposition, and it has not advanced since (flat).
 
-## 主な論点
+## Main issues
 
-### 言語に入れるべきか — 実績のない DSL/parser への懸念
+### Should it enter the language — concern about a DSL and parser with no track record
 
-最大の争点。新しい DSL とその parser を JavaScript 本体に「永続的に」入れることへの強い慎重論が繰り返し示された。Stage 1 の時点で [KG](../people/KG.md) は「標準ツールがあるのは良いが、これが本質的に『language 的』であって『library 的』でない、とは思えない」と述べ、テンプレートエンジンは既に多数あると指摘した。
+The largest dispute. Strong caution was shown repeatedly about putting a new DSL and its parser into JavaScript "permanently." Already at Stage 1, [KG](../people/KG.md) said "it is good that there is a standard tool, but I do not think this is essentially 'language-like' rather than 'library-like'," and pointed out that there are already many template engines.
 
-2024-02 では [MF](../people/MF.md) が、JSON のように「時の試練を経た (time-tested)」ものだけを言語に入れるべきだとし、「JavaScript に刻み込む (enshrine) には、何年かの使用経験を経て『恒久的な妥当性』への確信を持てるまで難しい」と主張。[KG](../people/KG.md) も「使用経験なしに DSL を正しく設計するのは、非人間的に困難か不可能かの間だ」「3 社より多くが数年使い、満足しているのを見たい」と述べた。[SYG](../people/SYG.md) は 2023 年に CLDR 変更が原因でブラウザの date/time 整形障害が起きた例を挙げ、Unicode の安定性保証に疑問を呈した。
+In 2024-02, [MF](../people/MF.md) said only things that, like JSON, are "time-tested" should enter the language, and argued "it is hard to enshrine it in JavaScript until, after some years of use, we can be confident of 'permanent soundness.'" [KG](../people/KG.md) also said "designing a DSL correctly with no experience of use is somewhere between inhumanly difficult and impossible" and "I want to see more than three companies use it for several years and be satisfied." [SYG](../people/SYG.md) cited a 2023 case in which a CLDR change caused a date/time formatting failure in browsers, and questioned Unicode's stability guarantee.
 
-反対に [ZB](../people/ZB.md) は「ローカライゼーション形式の進化を、MF2 を設計している人々ほど理解し気にかけている者は世界に他にいない」「DSL を JavaScript に入れないことで、web ローカライゼーションの発展を悲劇的に 10 年遅らせている」と前進を訴えた。
+Against that, [ZB](../people/ZB.md) appealed to advance: "there is nobody else in the world who understands and cares about the evolution of localization formats as much as the people designing MF2" and "by not putting the DSL into JavaScript, we are tragically delaying the development of web localization by ten years."
 
-### syntax parser を外す案と、その頓挫
+### The plan to drop the syntax parser, and how it collapsed
 
-2024-02 (feb-7) の結論は、構文 parser を含めると標準化に数年かかりうるため、**当面はメッセージのデータモデル表現のみをサポートし parser を外せば前進を解除できる**、というものだった。Speaker's Summary は「構文 (DSL) を標準化するには、MF2 開発に関与していなかった組織を含むさまざまな規模の十数組織が、本番でスタック全体にわたり MF2 構文を有意に使っているのを見ることが説得力を持つ。これは恐らく Stage 2.7 で要求される」と記す。[KG](../people/KG.md) は「API 部分だけで Stage 2 に進むのは懸念が少ない。私の懸念は DSL に固有のものだ」と述べ、[MF](../people/MF.md) も「surface syntax 抜きでデータモデルだけ進めるのは助けになる」と最終的に同意した。
+The conclusion of 2024-02 (feb-7) was that including a syntax parser could take years to standardize, so **for now, supporting only the data-model representation of a message and dropping the parser would unblock advancement**. The Speaker's Summary says "for standardizing the syntax (the DSL) to be persuasive, we would need to see a dozen organizations of various sizes, including organizations that were not involved in developing MF2, using the MF2 syntax meaningfully across the whole stack in production. This is probably required at Stage 2.7." [KG](../people/KG.md) said "advancing to Stage 2 on the API part alone is less concerning. My concern is specific to the DSL," and [MF](../people/MF.md) in the end also agreed that "advancing the data model alone, without the surface syntax, helps."
 
-ただし [SFC](../people/SFC.md) が「TG2 のデリゲート全員がこの案を review したか分からない。数か月待っても害はない」と促し、[EAO](../people/EAO.md) は「TG2 で議論する前に Stage 2 を求めない」とこの会合での要求を見送った。
+[SFC](../people/SFC.md) urged that "I do not know whether every TG2 delegate has reviewed this plan. Waiting a few months does no harm," and [EAO](../people/EAO.md) deferred the request at this meeting: "I will not ask for Stage 2 before discussing it in TG2."
 
-2024-04 (april-10) の status update で、この案は頓挫したことが報告される。[EAO](../people/EAO.md) によれば、TG2 のフィードバックは parser 除去への懸念(特に Google の i18n グループ)を示した。[EAO](../people/EAO.md)「全体として今これは行き詰まっており (stuck)、いつか進むかもしれない」。さらに「TC39 / TG2 は、ある意味で開発を Unicode CLDR に外注した。我々は MF2.0 が良いかどうかを論評せず、業界に採用されるのを待つ。採用されれば良いものということで、さらなる前進を検討するかもしれない」と、次の一手が標準化団体の外(業界の採用)に委ねられたことを述べた。
+The status update of 2024-04 (april-10) reported that this plan had collapsed. According to [EAO](../people/EAO.md), TG2's feedback showed concern about removing the parser (especially Google's i18n group). [EAO](../people/EAO.md): "on the whole this is stuck now, and it might move someday." Further: "TC39 / TG2 have, in a sense, outsourced the development to Unicode CLDR. We do not comment on whether MF2.0 is good; we wait for the industry to adopt it. If it is adopted, that means it is good, and we might consider further advancement." The next move was left outside the standards body (industry adoption).
 
-### Unicode との分業構造 — 構文は Unicode、API は TC39
+### The division of labor with Unicode — syntax is Unicode, the API is TC39
 
-MF2 の本体(構文 DSL とデータモデル)は **Unicode 側で策定**され、TC39 はその上に JS API を被せるだけ、という垂直スタックの分業になっている。[EAO](../people/EAO.md) はこの構造を「stacking」と表現した(2024-04 april-10):
+The body of MF2 (the syntax DSL and the data model) is **developed on the Unicode side**, and TC39 only puts a JS API on top of it. The division of labor is a vertical stack. [EAO](../people/EAO.md) called this structure "stacking" (2024-04 april-10):
 
-> MessageFormat 2 の message syntax は **Unicode で定義**されている。そして JavaScript API は **TC39 でのみ**定義している。
+> The MessageFormat 2 message syntax is **defined at Unicode**. And the JavaScript API is defined **only at TC39**.
 
-層は 3 つに整理できる:
+The layers sort into three:
 
-1. **Unicode** — MF2 の構文とデータモデルそのもの(規範)。
-2. **ICU**(ICU4C / ICU4J)— その参照実装。2024-04 時点で **tech preview** に入った段階。[DE](../people/DE.md) は「ICU の tech preview で 6〜12〜18 か月かけて安定化すれば、構文が安定だという強いシグナルを TC39 に与える」と述べた。
-3. **TC39 / TG2** — 上記を前提に `Intl.MessageFormat` の JS API を定義するだけ。[EAO](../people/EAO.md) によればこの JS API は 2013 年以来ほぼ同形で、web ローカライゼーションの約 1/3 が既に旧版(ICU MessageFormat 1)相当の polyfill `intl-messageformat` に依存している。
+1. **Unicode** — the MF2 syntax and data model themselves (normative).
+2. **ICU** (ICU4C / ICU4J) — the reference implementation. As of 2024-04 it had entered **tech preview**. [DE](../people/DE.md) said "if the ICU tech preview stabilizes over 6, 12, or 18 months, that gives TC39 a strong signal that the syntax is stable."
+3. **TC39 / TG2** — only define the JS API of `Intl.MessageFormat` on that premise. According to [EAO](../people/EAO.md), this JS API has been almost the same shape since 2013, and about one third of web localization already depends on `intl-messageformat`, a polyfill equivalent to the old version (ICU MessageFormat 1).
 
-この分業ゆえ、TG2 は MF2 の中身の評価そのものを Unicode 側に委ねた(上記「syntax parser を外す案」で引用した [EAO](../people/EAO.md) の「Unicode CLDR に外注した」発言)。[SFC](../people/SFC.md) も「今は **Unicode 側の開発**に注力しており、それが片付いたら JavaScript / web platform 側にエネルギーを注ぐ」と、Unicode 先行・TC39 後追いの順序を明言している。結果として TC39 の前進条件は「Unicode 発の構文が業界に採用され安定したか」に従属し、[SYG](../people/SYG.md) が挙げた CLDR 由来の date/time 整形障害(2023)のような **Unicode/CLDR の安定性への疑念**が、そのまま TC39 での前進をためらわせる要因になっている。
+Because of this division, TG2 left the evaluation of MF2's contents itself to the Unicode side (the remark by [EAO](../people/EAO.md), quoted above under "dropping the syntax parser," that they "outsourced it to Unicode CLDR"). [SFC](../people/SFC.md) also stated the order, Unicode first and TC39 following: "right now we are concentrating on **development on the Unicode side**, and once that is done we will put energy into the JavaScript / web platform side." As a result, TC39's condition for advancing is subordinate to "has the syntax that came from Unicode been adopted by the industry and stabilized," and **doubt about the stability of Unicode / CLDR**, such as the CLDR-caused date/time formatting failure (2023) that [SYG](../people/SYG.md) cited, is itself a reason to hesitate to advance at TC39.
 
-> 補足: Unicode 内部では MF2 は CLDR Technical Committee 配下の Message Format Working Group が策定する技術標準で、ICU がその参照実装にあたる(議事録では [EAO](../people/EAO.md) がこれらをまとめて「Unicode CLDR」と呼ぶ)。
+> Note: inside Unicode, MF2 is a technical standard developed by the Message Format Working Group under the CLDR Technical Committee, and ICU is its reference implementation (in the notes, [EAO](../people/EAO.md) calls these together "Unicode CLDR").
 
-### error handling — throw しないモデルと API 形
+### Error handling — a model that does not throw, and the shape of the API
 
-`Intl.MessageFormat` は入力がユーザ/翻訳者起源で失敗しやすいため、エラーで throw しない設計を志向する。[EAO](../people/EAO.md) は 2023-09 に「他の Intl フォーマッタと違いユーザデータに依存し、翻訳者など複数のワークフローを経てくるため、最終的に(部分的に)失敗する可能性が他より高い」と非致命エラーの理由を説明した。これに対し [DE](../people/DE.md) は「エラーがあれば throw するのを期待していた」と述べ、また custom formatter API の規模・複雑さへの懸念を示した。[JHD](../people/JHD.md) は `onError` が void を返す設計に疑問を呈した。
+`Intl.MessageFormat` aims at a design that does not throw on an error, because the input originates with a user or a translator and fails easily. In 2023-09, [EAO](../people/EAO.md) explained the reason for a non-fatal error: "unlike the other Intl formatters it depends on user data, and it comes through several workflows such as a translator, so the chance that it eventually fails (in part) is higher than for the others." Against that, [DE](../people/DE.md) said "I had expected it to throw if there is an error," and also raised concern about the size and complexity of the custom-formatter API. [JHD](../people/JHD.md) questioned a design in which `onError` returns void.
 
-2024-06 (june-11) は [SFC](../people/SFC.md) が error handling の設計パターンを 3 案提示して議論した。メッセージ生成時に検出される **message error** と、整形時(プレースホルダ供給時)に出る **resolution error** の 2 種を区別したうえで:
+In 2024-06 (june-11), [SFC](../people/SFC.md) presented three design patterns for error handling and the committee discussed them. After distinguishing a **message error**, detected when the message is built, from a **resolution error**, which appears at format time (when placeholders are supplied):
 
-- **Option 1**(`onError` コールバック。現行案)— [DLM](../people/DLM.md)「最も強い選好は throw しないこと。throw は書き忘れやすく、ローカライズ済み文字列の欠落はよくある」。[JWS](../people/JWS.md) も「ユーザ空間で最も一般的なのは Option 1」。
-- **Option 2**(例外を throw)— ほとんどのデリゲートが望ましくないと合意。
-- **Option 3**(メタデータ付きの戻り値オブジェクト)— [USA](../people/USA.md) は「1 か 3、2 よりはるかに良い」とし、Option 1 を「より JavaScript 的」、Option 3 を「より Rust 的」と評した。
+- **Option 1** (an `onError` callback; the current plan) — [DLM](../people/DLM.md): "my strongest preference is not to throw. A throw is easy to forget to write, and a missing localized string is common." [JWS](../people/JWS.md) also: "what is most common in user space is Option 1."
+- **Option 2** (throw an exception) — most delegates agreed this is undesirable.
+- **Option 3** (a return-value object with metadata) — [USA](../people/USA.md) said "1 or 3, far better than 2," and described Option 1 as "more JavaScript-like" and Option 3 as "more Rust-like."
 
-[RGN](../people/RGN.md) は `onError` コールバックが制御フロー上 reentrancy で紛らわしいと反対。結論は「Option 1 の reentrancy 懸念」「Option 2 は不採用で概ね合意」「Option 3 に強い反対はないが多数は別案を選好」「新たに option 4・5・6 を追加し champion group で検討」となり、決着には至っていない。
+[RGN](../people/RGN.md) opposed the `onError` callback because reentrancy is confusing for control flow. The conclusion was "concern about reentrancy in Option 1," "broad agreement that Option 2 is out," "no strong opposition to Option 3, but the majority prefer another plan," and "add new options 4, 5, and 6 and consider them in the champion group." It was not settled.
 
-### `message` という語の混乱
+### Confusion over the word `message`
 
-Stage 1 の場で [CM](../people/CM.md) が「『message』という語の使い方にとても混乱している。私の世界ではこれは message ではなく、ひとかたまりのテキストだ」と述べた。[EAO](../people/EAO.md) は後の会合(2022-11)で「ここでの message は人間が読むことを意図したメッセージで、コンピュータ間でやり取りされるものではない」と用語を明示し直している。一方で [USA](../people/USA.md) は「これは国際化というパズルの最も重要なピースの 1 つ。Stage 1 に来たのを本当に嬉しく思う」と支持した。
+At the Stage 1 session, [CM](../people/CM.md) said "I am very confused by the way the word 'message' is used. In my world this is not a message; it is a chunk of text." At a later meeting (2022-11), [EAO](../people/EAO.md) restated the term explicitly: "a message here is a message intended for a human to read, not something exchanged between computers." [USA](../people/USA.md), for their part, supported it: "this is one of the most important pieces of the internationalization puzzle. I am really glad it came to Stage 1."
 
-## 関連提案
+## Related proposals
 
-- `Intl.MessageResource` — 2022-11 に本提案から分離して Stage 1 到達した姉妹提案(関連メッセージの「リソース」整形)。未精読。
-- [Intl Era/Month Code](../proposals/intl-era-month-code.md) — 同じ ECMA-402 の国際化提案。
-- [Temporal](../proposals/temporal.md) — `Intl.MessageFormat` から日時値を扱う際に参照されうる(2026-03 に MF2 が Temporal の `PlainTime` parse 挙動の問題を発見、という言及あり)。
-- `Measure` / `Amount` — 数値+単位/通貨を MessageFormat へ渡し、翻訳者が値をローカライズしてしまうのを防ぐ用途として MF2 が動機に挙げられている(2024-10 / 2024-12 / 2025-09 ほか)。未精読。
+- `Intl.MessageResource` — the sibling proposal that was split from this one in 2022-11 and reached Stage 1 (formatting a "resource" of related messages). Not close-read yet.
+- [Intl Era/Month Code](intl-era-month-code.md) — another internationalization proposal in ECMA-402.
+- [Temporal](temporal.md) — can be referred to when `Intl.MessageFormat` handles a date-time value (there is a mention that in 2026-03 MF2 found a problem in Temporal's `PlainTime` parse behavior).
+- [Amount](amount.md) (formerly `Measure`) — MF2 is cited as a motivation for passing a number plus a unit or currency into MessageFormat, so that a translator does not localize the value (2024-10 / 2024-12 / 2025-09, and others).
 
-### 混同しやすい別物 — Template Instantiation / DOM Parts(参考・TC39 スコープ外)
+### An easy thing to confuse it with — Template Instantiation / DOM Parts (reference; outside TC39's scope)
 
-`Intl.MessageFormat` は「HTML の Template Instantiation と被るのでは」と混同されることがあるが、両者は別物。Template Instantiation / DOM Parts は **W3C/WHATWG(WICG webcomponents)の DOM 側提案**であり、TC39 の管轄外(本 wiki の素材 `raw/notes` には登場しない)。以下は外部資料に基づく参考整理:
+`Intl.MessageFormat` is sometimes confused with "doesn't this overlap HTML Template Instantiation," but the two are different things. Template Instantiation / DOM Parts is a **DOM-side proposal of W3C/WHATWG (WICG webcomponents)** and is outside TC39's jurisdiction (it does not appear in this wiki's source material, `raw/notes`). The following is a reference arrangement based on external material:
 
-- **Template Instantiation** — 2017-11 に Apple が提案。`<template>` を mustache 構文 `{{ }}` で値置換・条件分岐・ループしながら clone する**宣言的テンプレート API**(`HTMLTemplateElement.createInstance()` → `TemplateInstance`、`update()`、template parts、拡張可能な template processors)。当初スコープが広すぎる(構文 + parts + processor 一式)とされ、2017/2019 の議論を経て、低レイヤの **DOM Parts を先に固める**方針へ分割された。
-- **DOM Parts** — Apple/Google 合同提案。DOM ツリー中の可変箇所(child nodes / content attribute / JS property 等)を id 並みに高速に**マークし更新する低レイヤ機構**(`ChildNodePart` / `NodePart` / `AttributePart`、imperative API と `<template>` 内の declarative API)。式評価・if/else・loop・テンプレート処理モデルは**含まない**(将来検討に先送り)。
-- **棲み分け** — DOM Parts =「DOM のどこを更新するか」を示す低レイヤ、Template Instantiation =その上で「構文とデータバインディング」を与える高レイヤ。競合ではなく階層関係で、2025-03 時点では DOM Parts を先行させる方針で議論が継続。
-- **`Intl.MessageFormat` との違い** — MessageFormat は i18n の**文字列**整形(plural / gender / select の言語依存分岐)であり、出力は DOM ではなく文字列。「テンプレートに値を差し込む」表層だけ似るが、解く問題(言語別整形 vs DOM 構築)も標準化団体(Unicode+TC39 vs W3C/WHATWG)も別。
+- **Template Instantiation** — proposed by Apple in 2017-11. A **declarative template API** that clones a `<template>` while substituting values, branching, and looping with mustache syntax `{{ }}` (`HTMLTemplateElement.createInstance()` → `TemplateInstance`, `update()`, template parts, and extensible template processors). The original scope was judged too wide (syntax, plus parts, plus a processor, as one set). After discussion in 2017 and 2019, it was split toward a plan to **firm up the lower-layer DOM Parts first**.
+- **DOM Parts** — a joint Apple/Google proposal. A **low-level mechanism that marks and updates**, about as fast as an id, the variable places in a DOM tree (child nodes, a content attribute, a JS property, and so on) (`ChildNodePart` / `NodePart` / `AttributePart`, an imperative API and a declarative API inside `<template>`). It does **not** include expression evaluation, if/else, loop, or a template-processing model (deferred to later consideration).
+- **How they sit** — DOM Parts is the low layer that says "where in the DOM to update," and Template Instantiation is the high layer that, on top of that, gives "syntax and data binding." They are a hierarchy, not competitors. As of 2025-03, discussion continues on a plan to take DOM Parts first.
+- **How this differs from `Intl.MessageFormat`** — MessageFormat is i18n **string** formatting (language-dependent branching of plural / gender / select), and the output is a string, not the DOM. Only the surface of "inserting a value into a template" is similar. The problem solved (per-language formatting versus building a DOM) and the standards body (Unicode plus TC39 versus W3C/WHATWG) are both different.
 
-> 出典(外部、wiki 素材外): [WICG/webcomponents DOM-Parts.md](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/DOM-Parts.md) / [Template-Instantiation.md](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md) / [Template Instantiation 2025-03-26 minutes](https://www.w3.org/2025/03/26-webcomponents-minutes.html)。
+> Sources (external, outside this wiki's material): [WICG/webcomponents DOM-Parts.md](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/DOM-Parts.md) / [Template-Instantiation.md](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md) / [Template Instantiation 2025-03-26 minutes](https://www.w3.org/2025/03/26-webcomponents-minutes.html).
 
-## 出典
+## Sources
 
 - [2022-03/mar-30](../../raw/notes/meetings/2022-03/mar-30.md) — Intl.MessageFormat for Stage 1
-- [2022-11/nov-29](../../raw/notes/meetings/2022-11/nov-29.md) — Intl MessageResource for Stage 1(本提案からの分離)
+- [2022-11/nov-29](../../raw/notes/meetings/2022-11/nov-29.md) — Intl MessageResource for Stage 1 (split from this proposal)
 - [2023-09/september-26](../../raw/notes/meetings/2023-09/september-26.md) — Stage 1 update and discussion
-- [2024-02/feb-6](../../raw/notes/meetings/2024-02/feb-6.md) — I have some questions(いつ DSL を標準化するか)
-- [2024-02/feb-7](../../raw/notes/meetings/2024-02/feb-7.md) — Continuation: parser を外す案、Stage 2 見送り
-- [2024-04/april-10](../../raw/notes/meetings/2024-04/april-10.md) — status update(stuck)
+- [2024-02/feb-6](../../raw/notes/meetings/2024-02/feb-6.md) — I have some questions (when to standardize a DSL)
+- [2024-02/feb-7](../../raw/notes/meetings/2024-02/feb-7.md) — Continuation: the plan to drop the parser; Stage 2 deferred
+- [2024-04/april-10](../../raw/notes/meetings/2024-04/april-10.md) — status update (stuck)
 - [2024-06/june-11](../../raw/notes/meetings/2024-06/june-11.md) — error handling design patterns

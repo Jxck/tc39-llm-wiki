@@ -9,18 +9,18 @@ first_seen: "2026-05"
 tags: [proposal, intl, units]
 ---
 
-## 概要
+## Overview
 
-Intl Sequence Units は、複合的な単位の並び(例: `6 ft 0 in` のようなフィート+インチ)を `Intl` で整形する提案です。複数単位を 1 つの量として組み合わせて表示するための API を提供します。
+Intl Sequence Units is a proposal for formatting compound sequences of units with `Intl` (for example feet plus inches, as in `6 ft 0 in`). It provides an API for combining multiple units and displaying them as one quantity.
 
-champion は [SFC](../people/SFC.md)(Shane Carr)。
+The champion is [SFC](../people/SFC.md) (Shane Carr).
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                   | できごと                                                                                                                | Stage   |
-| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)  | **Stage 1 と Stage 2 に到達**(object ベースの入力設計で)。reviewer は [EAO](../people/EAO.md) / [DLM](../people/DLM.md) | → 1 → 2 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | Duration units の扱いを plenary で両論提示(TG2 で二分)。iteration 継続                                                  | 2       |
+| Meeting                                                | What happened                                                                                                                        | Stage   |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)  | **Reached Stage 1 and Stage 2** (with an object-based input design). Reviewers are [EAO](../people/EAO.md) / [DLM](../people/DLM.md) | → 1 → 2 |
+| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | Presented both sides on how to treat duration units at plenary (views were split in TG2). Iteration continues                        | 2       |
 
 ```mermaid
 xychart-beta
@@ -30,27 +30,27 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2026-05 に初出かつ Stage 1・Stage 2 へ連続到達。
+> X-axis = 2012-2026, y-axis = Stage. First appearance in 2026-05, when it reached Stage 1 and Stage 2 in succession.
 
-## 主な論点
+## Main issues
 
-### scalar 入力か object 入力か
+### Scalar input or object input
 
-入力の形をめぐって大きく議論になりました。[JHD](../people/JHD.md) は scalar 入力(例: `6.5` が 6.5 feet か 6.5 inches か)の直観性に疑問を呈し、[EAO](../people/EAO.md) は `fractionDigits` 等のオプション適用時に scalar が曖昧さを生むとして object 入力を支持。[WH](../people/WH.md) は「もし scalar を使うなら浮動小数点誤差を避けるため最小単位でなければならない」と指摘しました。最終的に **object ベース設計で Stage 2** に合意し、[JHD](../people/JHD.md) も「scalar は必要なら後から追加・再検討できる」と支持しました。
+The shape of the input was debated at length. [JHD](../people/JHD.md) questioned how intuitive scalar input is (for example, whether `6.5` is 6.5 feet or 6.5 inches), and [EAO](../people/EAO.md) supported object input because a scalar becomes ambiguous when options such as `fractionDigits` are applied. [WH](../people/WH.md) pointed out that if a scalar is used, it must be in the smallest unit, in order to avoid floating-point error. In the end there was agreement on **Stage 2 with an object-based design**, and [JHD](../people/JHD.md) also supported it, saying a scalar can be added or reconsidered later if it is needed.
 
-### ゼロ値の扱いと対応単位の範囲
+### Zero values, and which units are in scope
 
-[WH](../people/WH.md) はゼロ値(例: `6 ft 0 in`)を表示するか隠すか、開発者が選べるかを質問(follow-up issue 化)。arc 分・秒は現状 `Intl` 非対応でスコープ外と整理されました。
+[WH](../people/WH.md) asked whether zero values (for example `6 ft 0 in`) are shown or hidden, and whether the developer can choose (this became a follow-up issue). Arcminutes and arcseconds are not currently supported by `Intl` and were treated as out of scope.
 
-### time/duration units を含めるか(未決)
+### Whether to include time/duration units (undecided)
 
-2026-07 に [SFC](../people/SFC.md) が「hours-and-minutes のような時間系 sequence units を扱うか」を提起。TG2 で見解が二分したため推奨なしで plenary に両論を提示しました。除外派([PFC](../people/PFC.md) ら)は duration の footgun(DST・暦月長)と、[Temporal](../proposals/temporal.md) + `Intl.DurationFormat` という正道が既にあることを重視し、Temporal と異なる第 2 の duration 変換規則を作らないことを求めました。包含派([WH](../people/WH.md)、[RGN](../people/RGN.md))は CLDR units.xml との整合と、[Amount](../proposals/amount.md) が任意の well-formed unit を許す以上 time units だけ拒否するのは一貫しないことを挙げました。hybrid 案(format 時に NumberFormat/DurationFormat を自動選択)も含め iteration 継続で未決です。
+In 2026-07 [SFC](../people/SFC.md) raised whether to handle time-based sequence units such as hours-and-minutes. Views split in TG2, so both sides were presented to plenary with no recommendation. The exclusion side ([PFC](../people/PFC.md) and others) emphasized duration footguns (DST and the length of calendar months) and that the proper path, [Temporal](../proposals/temporal.md) plus `Intl.DurationFormat`, already exists, and asked that the committee not create a second set of duration-conversion rules different from Temporal. The inclusion side ([WH](../people/WH.md), [RGN](../people/RGN.md)) cited consistency with CLDR units.xml, and that since [Amount](../proposals/amount.md) allows any well-formed unit, rejecting only time units is inconsistent. Including a hybrid proposal (automatically choosing NumberFormat or DurationFormat at format time), iteration continues and the question is undecided.
 
-## 関連提案
+## Related proposals
 
-- [Amount](../proposals/amount.md) — 数値+単位を束ねる container 提案。単位整形という点で隣接。
+- [Amount](../proposals/amount.md) — a container proposal that bundles a number and a unit. Adjacent in that both are about formatting units.
 
-## 出典
+## Sources
 
 - [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 1 / Stage 2
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — Duration units の両論提示(iteration 継続)
+- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — both sides on duration units presented (iteration continues)

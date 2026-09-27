@@ -10,19 +10,19 @@ families: [iterator]
 tags: [proposal, iterator]
 ---
 
-## 概要
+## Overview
 
-Iterator Includes は `Iterator.prototype.includes(value)` を追加する提案で、`Array.prototype.includes` の iterator 版です。名前・`SameValueZero` 比較・skipped elements パラメータなど、可能な限り `Array` 側に揃える方針です。iterator を一度作ってしまうと `includes` 相当を自前で書くのは手間なため、helper として標準化します。
+Iterator Includes adds `Iterator.prototype.includes(value)`, the iterator version of `Array.prototype.includes`. The plan is to line up with `Array` as far as possible: the name, `SameValueZero` comparison, and the skipped-elements parameter. Once you already have an iterator, writing the equivalent of `includes` by hand is tedious, so it is standardized as a helper.
 
-champion は [MF](../people/MF.md)(Michael Ficarra)。`iterator` family のメンバー。
+The champion is [MF](../people/MF.md) (Michael Ficarra). A member of the `iterator` family.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                    | できごと                                                               | Stage   |
-| ------------------------------------------------------- | ---------------------------------------------------------------------- | ------- |
-| [2026-03](../../raw/notes/meetings/2026-03/march-10.md) | **Stage 2.7 到達**(Stage 1/2/2.7 を一括要求)。`Array` 互換の設計で合意 | → 2.7   |
-| [2026-03](../../raw/notes/meetings/2026-03/march-12.md) | 引数不正時に receiver を close しない spec バグの修正 PR を承認        | 2.7     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)   | **Stage 3 到達**。test262 テスト完備・delegate review 済み             | 2.7 → 3 |
+| Meeting                                                 | What happened                                                                                          | Stage   |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------- |
+| [2026-03](../../raw/notes/meetings/2026-03/march-10.md) | **Reached Stage 2.7** (Stage 1, 2, and 2.7 asked for together). Agreed on an `Array`-compatible design | → 2.7   |
+| [2026-03](../../raw/notes/meetings/2026-03/march-12.md) | Approved a PR fixing a spec bug that did not close the receiver on invalid arguments                   | 2.7     |
+| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)   | **Reached Stage 3**. test262 coverage is complete and delegate review is done                          | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -32,25 +32,25 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2026-03 に初出かつ一括で Stage 2.7、2026-05 に Stage 3。短期間での前進のため 2026 年のみ値を持つ。
+> Horizontal axis = 2012-2026, vertical axis = Stage. First presented in 2026-03 and taken straight to Stage 2.7; Stage 3 in 2026-05. Only 2026 has a non-zero value, because the advance was short.
 
-## 主な論点
+## Main issues
 
-### Array との整合(2026-03)
+### Alignment with Array (2026-03)
 
-名前・比較関数(`SameValueZero`)・skipped elements パラメータを `Array.prototype.includes` に合わせる方針で合意。新しい normative conventions(引数の変換規約)にも追従します。
+Agreed to match `Array.prototype.includes` on the name, the comparison (`SameValueZero`), and the skipped-elements parameter. It also follows the newer normative conventions (the argument-conversion rules).
 
-### Stage 3 到達(2026-05)
+### Reaching Stage 3 (2026-05)
 
-テスト完備・レビュー済みで Stage 3 に consensus。設計上の未決論点はありません。
+Consensus for Stage 3 with tests complete and review done. No design question is left open.
 
-## 関連提案
+## Related proposals
 
-- [Iterator Chunking](../proposals/iterator-chunking.md) / `iterator-join` / [Joint Iteration](../proposals/joint-iteration.md) — 同じ iterator helpers 後続群。
+- [Iterator Chunking](../proposals/iterator-chunking.md) / `iterator-join` / [Joint Iteration](../proposals/joint-iteration.md) — the same follow-on group of iterator helpers.
 - family: [Iterator helpers and friends](../families/iterator.md)
 
-## 出典
+## Sources
 
 - [2026-03 march-10](../../raw/notes/meetings/2026-03/march-10.md) — Stage 2.7
-- [2026-03 march-12](../../raw/notes/meetings/2026-03/march-12.md) — spec バグ修正 PR
+- [2026-03 march-12](../../raw/notes/meetings/2026-03/march-12.md) — spec-bug fix PR
 - [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 3

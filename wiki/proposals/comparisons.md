@@ -9,21 +9,21 @@ first_seen: "2025-05"
 tags: [proposal, equality, comparison]
 ---
 
-## 概要
+## Overview
 
-Comparisons は、値の**深い比較(deep comparison)と差分報告(deviation reporting)**を言語に組み込む提案です。テスト用途はもちろん、HTTP patch の delta 生成・React の state 比較・logging といった production 用途も動機に挙げ、「user land 実装は性能上の理由で意図的に『正しくない』」ことを native 化の根拠とします。かつての "Assertions" から改名された経緯を持ちます。
+Comparisons builds **deep comparison and deviation reporting** into the language. Testing is one motivation, and so are production uses: generating an HTTP-patch delta, comparing React state, and logging. The case for a native version is that "userland implementations are deliberately 'incorrect' for performance reasons." It was renamed from the earlier "Assertions."
 
-API は `compare(a, b)` を基本に、fast モードで真偽値、full モードで `expected`/`actual`/reason を持つ deviation の iterator を返す 2 モード案。関心の分離のため `deepEqual` と `compare` の 2 関数に分割する代替案も提示されています(2026-05)。
+The API is based on `compare(a, b)`, with two modes: a fast mode that returns a boolean, and a full mode that returns an iterator of deviations carrying `expected` / `actual` / reason. An alternative that splits this into two functions, `deepEqual` and `compare`, for separation of concerns, was also presented (2026-05).
 
-champion は [JSH](../people/JSH.md)(Jacob Smith)。2020 年の "Generic Comparison" 探索とは別系譜の、より新しい提案です。
+The champion is [JSH](../people/JSH.md) (Jacob Smith). It is a newer proposal, a separate line from the 2020 "Generic Comparison" exploration.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                       | できごと                                               | Stage |
-| ---------------------------------------------------------- | ------------------------------------------------------ | ----- |
-| [2025-05](../../raw/notes/meetings/2025-05/may-30.md)      | `Comparisons (né Assertions) for Stage 1` を提示(未達) | 0     |
-| [2025-11](../../raw/notes/meetings/2025-11/november-19.md) | 継続。Stage 0 据え置き                                 | 0     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-21.md)      | **Stage 1 到達**(同日の continuation で consensus)     | 0 → 1 |
+| Meeting                                                    | What happened                                                         | Stage |
+| ---------------------------------------------------------- | --------------------------------------------------------------------- | ----- |
+| [2025-05](../../raw/notes/meetings/2025-05/may-30.md)      | Presented `Comparisons (né Assertions) for Stage 1` (did not advance) | 0     |
+| [2025-11](../../raw/notes/meetings/2025-11/november-19.md) | Continued. Stayed at Stage 0                                          | 0     |
+| [2026-05](../../raw/notes/meetings/2026-05/may-21.md)      | **Reached Stage 1** (consensus on the same day's continuation)        | 0 → 1 |
 
 ```mermaid
 xychart-beta
@@ -33,42 +33,42 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2025-05・2025-11 は Stage 0 のまま、2026-05 に Stage 1 到達。
+> Horizontal axis = 2012-2026, vertical axis = Stage. 2025-05 and 2025-11 stayed at Stage 0. Reached Stage 1 in 2026-05.
 
-## 主な論点
+## Main issues
 
-### 動機の受容と AI 文脈(2026-05)
+### Accepting the motivation, and the AI context (2026-05)
 
-deep comparison を native に解くべき動機が広く受け入れられました。特に「ほとんど誰も正しく理解していない問題を AI 生成のコードに委ねるのではなく、native に解くべき」という point が多くの delegate を動かしました。[SFC](../people/SFC.md) も「正しい comparison を考えられる最良の立場に居るのは言語を書く人々ではなくこの部屋の人々」と正しさの観点から支持しています。
+The motivation for solving deep comparison natively was widely accepted. In particular, the point that "a problem almost nobody understands correctly should be solved natively, rather than left to AI-generated code" moved many delegates. [SFC](../people/SFC.md) also supported it from the angle of correctness: "the people in the best position to think about a correct comparison are the people in this room, not the people who write the language."
 
-一方 [EAO](../people/EAO.md) は「この提案が究極的に何の問題を解こうとしているのか、簡潔で明確な説明が見えない」と motivation の文章化を要求。[JSH](../people/JSH.md) が written motivation statement(deep equality の判断を支援し、object の walk や equality 判定に要する専門知識の障壁を下げる旨)を用意し、同日の continuation で [EAO](../people/EAO.md)(起草にも関与)が「妥当」と評価して consensus に至りました。statement は explainer の README に載せることも求められています。
+[EAO](../people/EAO.md), on the other hand, asked for the motivation to be written down: "I do not see a short, clear explanation of what problem this proposal is ultimately trying to solve." [JSH](../people/JSH.md) prepared a written motivation statement (help the judgment of deep equality, and lower the barrier of expertise required to walk an object and decide equality). On the same day's continuation, [EAO](../people/EAO.md) (who also helped draft it) judged it sound, and the committee reached consensus. The statement was also asked to be put in the explainer README.
 
-### equality の定義そのもの([OFR](../people/OFR.md))
+### The definition of equality itself ([OFR](../people/OFR.md))
 
-[OFR](../people/OFR.md) は「最大の疑問符は equality の定義。合意できる equality に到達できるのか、それとも大量の設定オプションを要して提案を複雑化させるだけなのか」と指摘(proxy・`NaN`・floating point・holey array を列挙)。[JSH](../people/JSH.md) の baseline は SameValueZero 寄りで、`NaN` 同士は等しい、signed zero は不等、同位置の hole は等しい、niche な差異(prototype の同一性、TypedArray の型差)は customization option として必要に応じ追加する方針です。[OFR](../people/OFR.md) はさらに「1 つの equality で全 use case を賄えるのか、機能追加が果てしなく続かないか」と重ねています。
+[OFR](../people/OFR.md) said "the biggest question mark is the definition of equality. Can we arrive at an equality we can agree on, or will it just take a pile of configuration options and complicate the proposal?" (listing proxies, `NaN`, floating point, and holey arrays). [JSH](../people/JSH.md)'s baseline is near SameValueZero: `NaN` equals `NaN`, signed zero is not equal, holes in the same position are equal, and niche differences (prototype identity, TypedArray type differences) are added as customization options when needed. [OFR](../people/OFR.md) pressed further: "can one equality cover every use case, or will features keep being added without end?"
 
-### 性能上の優位性への懐疑([KM](../people/KM.md)・[OFR](../people/OFR.md))
+### Skepticism about a performance advantage ([KM](../people/KM.md) and [OFR](../people/OFR.md))
 
-[KM](../people/KM.md) は「設定の組み合わせが指数的に増える以上、欲しい構成を user land で書いた方が速い実装になる」「iterator protocol 自体が際立って速くないので、速さが欲しいならそもそも iterator を使わない別 API になる」と performance 動機に懐疑を表明。[OFR](../people/OFR.md) も「真偽値を返す `compare` 部分は効率的に実装しうるが、deviation を surface する側は user space の最も複雑な object walk と同じ状態追跡をエンジンが強いられ、user land より遅くなりうる」とし、fast/full を 1 API の configuration で分ける現形では効率的な線引きが困難と述べました。`Iterator.filter` で後段フィルタする形は filter の情報を探索へ逆伝播させる非自明な最適化を要する、との指摘も [KM](../people/KM.md) から出ています。
+[KM](../people/KM.md) was skeptical of the performance motivation: "once the combinations of settings grow exponentially, writing the configuration you want in userland will be the faster implementation," and "the iterator protocol itself is not outstandingly fast, so if you want speed the API would not use an iterator at all." [OFR](../people/OFR.md) also said the boolean-returning `compare` part can be implemented efficiently, but the side that surfaces deviations forces the engine into the same state-tracking as the most complicated object walk in user space, and can be slower than userland. Splitting fast and full as configuration of one API makes an efficient line hard to draw. [KM](../people/KM.md) also pointed out that filtering afterward with `Iterator.filter` needs a non-obvious optimization that propagates the filter's information back into the search.
 
-### walk と filter の分離は複雑さを減らすか([MM](../people/MM.md)・[KM](../people/KM.md)・[MAH](../people/MAH.md))
+### Does separating walk and filter reduce complexity? ([MM](../people/MM.md), [KM](../people/KM.md), [MAH](../people/MAH.md))
 
-[MM](../people/MM.md) は「再利用可能な抽象とパターンのトレードオフ」を引き、自身が用途ごとに異なる deep equality の変種を何度も書いてきた経験から「同じ走査パターンの変種をそれぞれ書く方が読み書きともに素直」と、パラメタ化された単一抽象に不快感を表明。[KM](../people/KM.md) も「差異の全種類を深く理解しないと filter は書けず、その理解があれば walk の実装も大差なく難しい。walk を提供しても全体の複雑さは減らない」と同調しました。[MAH](../people/MAH.md) は getter と data property の差異に algorithm が recurse できるかを追及し、「recurse 先の『どこ』に影響する事項はすべて configuration option になり、default では扱えない」ことを確認しています。
+[MM](../people/MM.md) invoked "the tradeoff of reusable abstractions and patterns" and, from having written different variants of deep equality for different uses many times, said "writing each variant of the same traversal pattern is more straightforward to read and to write," and was uncomfortable with one parameterized abstraction. [KM](../people/KM.md) agreed: "you cannot write the filter without deeply understanding every kind of difference, and with that understanding implementing the walk is not much harder. Providing the walk does not reduce the overall complexity." [MAH](../people/MAH.md) pressed on whether the algorithm can recurse into the difference between a getter and a data property, and confirmed that "everything that affects 'where' the recursion goes becomes a configuration option, and the default cannot handle it."
 
-### encapsulation の漏洩([OFR](../people/OFR.md))
+### Leaking encapsulation ([OFR](../people/OFR.md))
 
-[OFR](../people/OFR.md) は private state の扱いを未解決点として提起: private symbol をどう比較しどう surface するのか、class 外から本来アクセスできない private symbol が漏れないか。「カプセル化された状態を露出させる可能性が一般にありそうだ」と述べ、持ち帰りとなりました。
+[OFR](../people/OFR.md) raised the treatment of private state as unresolved: how to compare a private symbol and how to surface it, and whether a private symbol that cannot normally be accessed from outside the class leaks. "It seems generally possible to expose encapsulated state," and that was taken home.
 
-### Stage 2 へ向けた懸念
+### Concerns toward Stage 2
 
-Stage 1 consensus 時の forewarning として: [MF](../people/MF.md) は「Stage 1 の技術要件は満たすが Stage 2 への道は非常に困難。workable design が未知のまま進めることの community への messaging も心配」、[MAH](../people/MAH.md) は「deep equal の semantics で consensus が取れるとは思えない。最終形は deep equal にはならず、その building block になりうる別物だろう」と予告。surface area の広さ、cycle や `Set` を含む等価性定義の合意困難が挙げられ、`Deviation` のフィルタリングは `Iterator.filter` の外ではなく「内側」で行うべき(deviation 構築コストを丸ごと避けられる)との設計示唆も出ています。[SFC](../people/SFC.md) は「問題が明確化されたので、これまで提示されてきたよりずっと広い解空間の探索に進める」と評価し、Intl Collator(primary/secondary/tertiary の差異レベルを flag で畳み込む)をモデルに「strings・numbers・objects それぞれに特化した比較関数を小さく作る」方向も示唆しました。
+As a forewarning at the Stage 1 consensus: [MF](../people/MF.md) said "it meets the technical requirements of Stage 1, but the road to Stage 2 is very hard. I also worry about the message to the community of proceeding while a workable design is still unknown." [MAH](../people/MAH.md) predicted "I do not think we can get consensus on deep-equal semantics. The final shape will not be deep equal; it will be something else that can be a building block of it." The breadth of the surface area, and the difficulty of agreeing on an equality definition that includes cycles and `Set`, were named. There was also a design suggestion that filtering a `Deviation` should happen "inside," not outside `Iterator.filter` (so the cost of building the deviation can be avoided entirely). [SFC](../people/SFC.md) judged that "the problem has been clarified, so we can move on to exploring a solution space much wider than what has been presented so far," and, taking Intl Collator (folding primary / secondary / tertiary difference levels into flags) as a model, suggested "making small comparison functions specialized for strings, numbers, and objects."
 
-## 関連提案
+## Related proposals
 
-- かつての "Generic Comparison"(2020-06、[SYG](../people/SYG.md) ら)— 深い比較を言語に入れる先行検討。別系譜の prior art。
+- The earlier "Generic Comparison" (2020-06, [SYG](../people/SYG.md) and others) — a prior look at putting deep comparison in the language. Prior art on a separate line.
 
-## 出典
+## Sources
 
-- [2025-05 may-30](../../raw/notes/meetings/2025-05/may-30.md) — Stage 1 提示(né Assertions)
-- [2025-11 november-19](../../raw/notes/meetings/2025-11/november-19.md) — Stage 0 据え置き
-- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — Stage 1(本セッション + Continuation。equality 定義・性能・encapsulation の各論点もここ)
+- [2025-05 may-30](../../raw/notes/meetings/2025-05/may-30.md) — Stage 1 presented (né Assertions)
+- [2025-11 november-19](../../raw/notes/meetings/2025-11/november-19.md) — stayed at Stage 0
+- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — Stage 1 (this session plus the continuation; the equality, performance, and encapsulation issues are here too)

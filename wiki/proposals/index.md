@@ -1,25 +1,25 @@
-# 全提案ステージ一覧
+# Proposal stage index
 
-> **生成物**。`tools/extract_proposals.py` が `raw/proposals/`(canonical)から生成。手で編集しない(Update で `raw/proposals` を pull するたび再生成)。
-> 現ステージの一次ソースは raw/proposals。精読済みの提案は `[Title](<slug>.md)` でページへリンク、未リンクは本 wiki で未精読(カタログのみ)。
-> **Stage 4 はまだ ECMAScript に入っていないもの(2026 年以降に出版予定)だけを掲載**(出荷済みの finished は省略)。Stage 3 以下は全件。
-> 掲載件数: ECMA-262 225 件 / ECMA-402 20 件。
+> **Generated.** `tools/extract_proposals.py` builds this from `raw/proposals/` (canonical). Do not edit by hand (regenerated whenever Update pulls `raw/proposals`).
+> Current stage comes from raw/proposals. Ingested proposals link as `[Title](<slug>.md)`; unlinked titles are catalog-only in this wiki.
+> **Stage 4 lists only proposals not yet in ECMAScript (publication year 2026 or later)** (shipped finished proposals are omitted). Stage 3 and below are listed in full.
+> Counts: ECMA-262 225 / ECMA-402 20.
 
 ## ECMA-262
 
-### Stage 4 — まだ ECMAScript 未収載(2026 年以降に出版予定)(11 / 出荷済み含む全 77 件)
+### Stage 4 — not yet in ECMAScript (publication year 2026 or later) (11 / 77 including already shipped)
 
-- Array.fromAsync — 出版予定 2026
-- [Atomics.pause](atomics-pause.md) — 出版予定 2027
-- Error.isError — 出版予定 2026
-- [Explicit Resource Management](explicit-resource-management.md) — 出版予定 2027
-- Iterator Sequencing — 出版予定 2026
-- [Joint Iteration](joint-iteration.md) — 出版予定 2027
-- JSON.parse source text access — 出版予定 2026
-- Math.sumPrecise — 出版予定 2026
-- [Temporal](temporal.md) — 出版予定 2027
-- Uint8Array to/from Base64 — 出版予定 2026
-- [Upsert](upsert.md) — 出版予定 2026
+- Array.fromAsync — expected publication 2026
+- [Atomics.pause](atomics-pause.md) — expected publication 2027
+- Error.isError — expected publication 2026
+- [Explicit Resource Management](explicit-resource-management.md) — expected publication 2027
+- Iterator Sequencing — expected publication 2026
+- [Joint Iteration](joint-iteration.md) — expected publication 2027
+- JSON.parse source text access — expected publication 2026
+- Math.sumPrecise — expected publication 2026
+- [Temporal](temporal.md) — expected publication 2027
+- Uint8Array to/from Base64 — expected publication 2026
+- [Upsert](upsert.md) — expected publication 2026
 
 ### Stage 3 (12)
 
@@ -255,10 +255,10 @@
 
 ## ECMA-402
 
-### Stage 4 — まだ ECMAScript 未収載(2026 年以降に出版予定)(2 / 出荷済み含む全 18 件)
+### Stage 4 — not yet in ECMAScript (publication year 2026 or later) (2 / 18 including already shipped)
 
-- [Intl Era and MonthCode Proposal](intl-era-month-code.md) — 出版予定 2026
-- Intl Locale Info — 出版予定 2026
+- [Intl Era and MonthCode Proposal](intl-era-month-code.md) — expected publication 2026
+- Intl Locale Info — expected publication 2026
 
 ### Stage 3 (1)
 

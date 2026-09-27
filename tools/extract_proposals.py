@@ -151,12 +151,12 @@ def render_section(rows, pages):
             continue
         items.sort(key=lambda x: x[0].lower())
         if stage == "4":
-            # Only Stage 4 not yet in a ratified edition (pub year >= 当年).
+            # Only Stage 4 not yet in a ratified edition (pub year >= CURRENT_YEAR).
             total = len(items)
             items = [it for it in items if it[2] and it[2] >= CURRENT_YEAR]
             heading = (
-                f"### Stage 4 — まだ ECMAScript 未収載({CURRENT_YEAR} 年以降に出版予定)"
-                f"({len(items)} / 出荷済み含む全 {total} 件)"
+                f"### Stage 4 — not yet in ECMAScript (publication year {CURRENT_YEAR} or later) "
+                f"({len(items)} / {total} including already shipped)"
             )
         else:
             heading = f"### {LABEL[stage]} ({len(items)})"
@@ -168,7 +168,7 @@ def render_section(rows, pages):
         for title, note, year in items:
             page = pages.get(norm(title))
             label = f"[{title}]({page})" if page else title
-            bits = [b for b in (note, f"出版予定 {year}" if year else "") if b]
+            bits = [b for b in (note, f"expected publication {year}" if year else "") if b]
             suffix = f" — {' / '.join(bits)}" if bits else ""
             lines.append(f"- {label}{suffix}")
         lines.append("")
@@ -184,21 +184,21 @@ def main():
     sec402, n402 = render_section(rows402, pages)
 
     out = []
-    out.append("# 全提案ステージ一覧")
+    out.append("# Proposal stage index")
     out.append("")
     out.append(
-        "> **生成物**。`tools/extract_proposals.py` が `raw/proposals/`(canonical)から生成。"
-        "手で編集しない(Update で `raw/proposals` を pull するたび再生成)。"
+        "> **Generated.** `tools/extract_proposals.py` builds this from `raw/proposals/` (canonical). "
+        "Do not edit by hand (regenerated whenever Update pulls `raw/proposals`)."
     )
     out.append(
-        "> 現ステージの一次ソースは raw/proposals。精読済みの提案は "
-        "`[Title](<slug>.md)` でページへリンク、未リンクは本 wiki で未精読(カタログのみ)。"
+        "> Current stage comes from raw/proposals. Ingested proposals link as "
+        "`[Title](<slug>.md)`; unlinked titles are catalog-only in this wiki."
     )
     out.append(
-        f"> **Stage 4 はまだ ECMAScript に入っていないもの({CURRENT_YEAR} 年以降に出版予定)だけを掲載**"
-        "(出荷済みの finished は省略)。Stage 3 以下は全件。"
+        f"> **Stage 4 lists only proposals not yet in ECMAScript (publication year {CURRENT_YEAR} or later)** "
+        "(shipped finished proposals are omitted). Stage 3 and below are listed in full."
     )
-    out.append(f"> 掲載件数: ECMA-262 {n262} 件 / ECMA-402 {n402} 件。")
+    out.append(f"> Counts: ECMA-262 {n262} / ECMA-402 {n402}.")
     out.append("")
     out.append("## ECMA-262")
     out.append("")

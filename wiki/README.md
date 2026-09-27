@@ -1,74 +1,74 @@
 # TC39 Wiki — Index
 
-TC39 plenary 議事録(`raw/notes`、2012-05〜2026-07 / 88 会合 / 340 ファイル)から、**各提案のステージ遷移の経緯と策定中の論点**を辿るための wiki です。運用規約は [AGENTS.md](../AGENTS.md)、設計思想は [llm-wiki.md](../llm-wiki.md) を参照。
+A wiki for tracing **how each proposal changed stage, and which issues came up along the way**, drawn from the TC39 plenary notes (`raw/notes`, 2012-05 through 2026-07 / 88 meetings / 340 files). The operating rules are [AGENTS.md](../AGENTS.md); the design notes are [llm-wiki.md](../llm-wiki.md).
 
-## 使い方
+## How to use
 
-- **全提案の現ステージを一覧する** → [proposals/index.md](proposals/index.md)(`raw/proposals` から生成した全提案の完全ステージ一覧。精読済みはページへリンク)。
-- **特定の提案を辿る** → 下の「精読済みの提案」から該当ページへ。各ページに `## ステージ遷移`(時系列テーブル + mermaid グラフ)と `## 主な論点` がある。
-- **人物を辿る** → 提案ページ中の人物リンク(例: `[PFC](people/PFC.md)`)をたどると [people/](people/) の人物ページ(フルネーム・所属・担当ドラフト・参加会合)へ。
-- **未精読の提案/会合を探す** → [\_generated/agenda-index.md](_generated/agenda-index.md) を grep。全 88 会合・2814 議題を機械抽出したバックボーン。例: `grep -i -A4 'pattern matching' wiki/_generated/agenda-index.md`。
-- **新しい提案を ingest** → AGENTS.md の「ワークフロー > Ingest」に従う。
+- **List every proposal's current stage** → [proposals/index.md](proposals/index.md) (full stage catalog generated from `raw/proposals`. Ingested proposals link to their pages).
+- **Follow one proposal** → the "Ingested proposals" table below. Each page has `## Stage history` (a timeline table plus a mermaid chart) and `## Main issues`.
+- **Follow a person** → a person link on a proposal page (for example `[PFC](people/PFC.md)`) opens a [people/](people/) page (full name, affiliation, champion drafts, meetings attended).
+- **Find a proposal or meeting that is not ingested yet** → grep [\_generated/agenda-index.md](_generated/agenda-index.md). Machine-extracted backbone of all 88 meetings and 2814 agenda items. Example: `grep -i -A4 'pattern matching' wiki/_generated/agenda-index.md`.
+- **Ingest a new proposal** → follow "Workflow > Ingest" in AGENTS.md.
 
-## 精読済みの提案
+## Ingested proposals
 
-| 提案                                                                        | 現ステージ          | 状態      | 概要                                                                                             |
-| --------------------------------------------------------------------------- | ------------------- | --------- | ------------------------------------------------------------------------------------------------ |
-| [Temporal](proposals/temporal.md)                                           | Stage 4 (2026-03)   | shipped   | `Date` を置き換える immutable な日付時刻 API。約 9 年がかりで Stage 4 到達。                     |
-| [Decorators](proposals/decorators.md)                                       | Stage 2.7 (2026-05) | stage2.7  | class への `@expr` 注釈。3 度の再設計を経て 2022 Stage 3 も、出荷ゼロで 2026-05 に 2.7 へ降格。  |
-| [Records & Tuples](proposals/records-and-tuples.md)                         | Stage 2(撤回)       | withdrawn | deeply immutable な value type `#{}` / `#[]`。2025-04 に撤回。                                   |
-| [Upsert](proposals/upsert.md)                                               | Stage 4 (2026-01)   | shipped   | `Map.prototype.getOrInsert` / `getOrInsertComputed`。命名と責務分割で約 6 年難航。               |
-| [Intl Era/Month Code](proposals/intl-era-month-code.md)                     | Stage 4 (2026-03)   | shipped   | 非 ISO 8601 カレンダーの era/monthCode を ECMA-402 に規定。Temporal と同時に Stage 4。           |
-| [Joint Iteration](proposals/joint-iteration.md)                             | Stage 4 (2026-05)   | shipped   | `Iterator.zip` / `Iterator.zipKeyed`。複数 iterator を位置対応でまとめる。                       |
-| [Atomics.pause](proposals/atomics-pause.md)                                 | Stage 4 (2026-05)   | shipped   | spin loop 向けの CPU pause ヒント(x86 PAUSE / ARM ISB)。                                         |
-| [Explicit Resource Management](proposals/explicit-resource-management.md)   | Stage 4 (2026-05)   | shipped   | `using` / `await using` による決定的リソース解放。約 8 年がかり。                                |
-| [Intl.MessageFormat](proposals/intl-messageformat.md)                       | Stage 1 (2022-03)   | stage1    | MessageFormat 2.0 (MF2) を JS に公開。DSL/parser を言語に入れる是非で stuck。                    |
-| [Amount](proposals/amount.md)                                               | Stage 2 (2026-05)   | stage2    | 数値+単位の immutable value type(旧 Measure)。`convertTo()` と i18n 連携。                       |
-| [Iterator Chunking](proposals/iterator-chunking.md)                         | Stage 3 (2026-05)   | stage3    | `Iterator.prototype.chunks` / `windows`。固定長/スライディングで複数値消費。                     |
-| [Iterator Includes](proposals/iterator-includes.md)                         | Stage 3 (2026-05)   | stage3    | `Array.prototype.includes` の iterator 版。                                                      |
-| [Iterator Join](proposals/iterator-join.md)                                 | Stage 3 (2026-05)   | stage3    | `Array.prototype.join` の iterator 版。                                                          |
-| [RegExp Buffer Boundaries](proposals/regexp-buffer-boundaries.md)           | Stage 3 (2026-05)   | stage3    | `\A` / `\z` / `\Z` の buffer 境界アンカー(`m` flag 非依存)。2026-05 に一気に Stage 3。           |
-| [Dynamic Code Brand Checks](proposals/dynamic-code-brand-checks.md)         | Stage 3 (2024-04)   | stage3    | `eval` / `new Function` の Trusted Types 連携。2026-05 は normative change で Stage 4 持ち越し。 |
-| [Error Stack Accessor](proposals/error-stack-accessor.md)                   | Stage 3 (2026-05)   | stage3    | `Error.prototype.stack` を accessor として標準化(Error Stacks からの carve-out)。                |
-| [Intl Keep Trailing Zeros](proposals/intl-keep-trailing-zeros.md)           | Stage 3 (2026-05)   | stage3    | `Intl.NumberFormat` / `PluralRules` で末尾の小数ゼロを保持。                                     |
-| [Stable Formatting](proposals/stable-formatting.md)                         | Stage 2 (2026-05)   | stage2    | `zxx` ロケールで locale 非依存の安定整形。`Intl` の誤用/テスト用途の代替。                       |
-| [Intl Sequence Units](proposals/intl-sequence-units.md)                     | Stage 2 (2026-05)   | stage2    | 複合単位の並び(例 `6 ft 0 in`)整形。object ベース入力で Stage 2。                                |
-| [Intl Default Behaviours](proposals/intl-default-behaviours.md)             | Stage 1 (2026-05)   | stage1    | `Collator` / `Segmenter` の locale 非依存デフォルト(`und` root)。Stable Formatting の補完。      |
-| [export all from](proposals/export-all-from.md)                             | Stage 1 (2026-05)   | stage1    | `export * from` 系の re-export 構文拡張。                                                        |
-| [Comparisons](proposals/comparisons.md)                                     | Stage 1 (2026-05)   | stage1    | 深い比較と差分報告(deviation)を native 化。旧 "Assertions"。                                     |
-| [Array.isTemplateObject](proposals/is-template-object.md)                   | Stage 2(withdrawn)  | withdrawn | template call-site object の判定。2026-05 に withdrawn(需要不足 + realm 懸念)。                  |
-| [Await Dictionary](proposals/await-dictionary.md)                           | Stage 3 (2026-07)   | stage3    | `Promise.allKeyed` / `allSettledKeyed`。名前付き `Promise.all`。2025-11 に 2 を跳ばし 2.7。      |
-| [Thenable Curtailment](proposals/thenable-curtailment.md)                   | Stage 2.7 (2026-07) | stage2.7  | user code を走らせない `SafePromiseResolve`。thenable 経由の CVE 対策。WebIDL 採用が狙い。       |
-| [Error code property](proposals/error-code-property.md)                     | Stage 2 (2026-07)   | stage2    | `Error` に `code` を options bag で。DOMException との整合が advancement 条件。                  |
-| [Fused Multiply-Add](proposals/fused-multiply-add.md)                       | Stage 2 (2026-07)   | stage2    | `Math.fma`(IEEE 754-2008 必須演算)。初提示で 0 → 2 直行。Amount の conversion 精度が契機。       |
-| [BigInt from exponential](proposals/bigint-from-exponential.md)             | Stage 1 (2026-07)   | stage1    | 指数表記文字列の `BigInt` 受理。needs-consensus PR #3857 から転換。                              |
-| [Map get and delete](proposals/map-get-and-delete.md)                       | Stage 1 (2026-07)   | stage1    | `Map.prototype.getAndDelete`(旧 take)。取得と削除を 1 hash lookup で。                           |
-| [Linear Matching](proposals/linear-matching.md)                             | Stage 1 (2026-07)   | stage1    | ReDoS への組み込み対策。linear 保証の regexp 実行を探る。                                        |
-| [Intl.DateTimeFormat Alignment](proposals/intl-datetimeformat-alignment.md) | Stage 1 (2026-07)   | stage1    | HTML `<time format>` / MessageFormat と datetime formatting options を整合。                     |
+| Proposal                                                                    | Current stage       | Status    | Summary                                                                                                                                  |
+| --------------------------------------------------------------------------- | ------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [Temporal](proposals/temporal.md)                                           | Stage 4 (2026-03)   | shipped   | Immutable date-time API that replaces `Date`. Reached Stage 4 after about nine years.                                                    |
+| [Decorators](proposals/decorators.md)                                       | Stage 2.7 (2026-05) | stage2.7  | `@expr` annotations on classes. Redesigned three times, Stage 3 in 2022, regressed to 2.7 in 2026-05 with zero shipping implementations. |
+| [Records & Tuples](proposals/records-and-tuples.md)                         | Stage 2 (withdrawn) | withdrawn | Deeply immutable value types `#{}` / `#[]`. Withdrawn in 2025-04.                                                                        |
+| [Upsert](proposals/upsert.md)                                               | Stage 4 (2026-01)   | shipped   | `Map.prototype.getOrInsert` / `getOrInsertComputed`. About six years, mostly on naming and splitting responsibilities.                   |
+| [Intl Era/Month Code](proposals/intl-era-month-code.md)                     | Stage 4 (2026-03)   | shipped   | era / monthCode for non-ISO 8601 calendars in ECMA-402. Stage 4 alongside Temporal.                                                      |
+| [Joint Iteration](proposals/joint-iteration.md)                             | Stage 4 (2026-05)   | shipped   | `Iterator.zip` / `Iterator.zipKeyed`. Zips several iterators by position.                                                                |
+| [Atomics.pause](proposals/atomics-pause.md)                                 | Stage 4 (2026-05)   | shipped   | CPU pause hint for spin loops (x86 PAUSE / ARM ISB).                                                                                     |
+| [Explicit Resource Management](proposals/explicit-resource-management.md)   | Stage 4 (2026-05)   | shipped   | Deterministic resource disposal with `using` / `await using`. About eight years.                                                         |
+| [Intl.MessageFormat](proposals/intl-messageformat.md)                       | Stage 1 (2022-03)   | stage1    | Expose MessageFormat 2.0 (MF2) to JS. Stuck on whether a DSL/parser belongs in the language.                                             |
+| [Amount](proposals/amount.md)                                               | Stage 2 (2026-05)   | stage2    | Immutable value type for a number plus a unit (formerly Measure). `convertTo()` and i18n.                                                |
+| [Iterator Chunking](proposals/iterator-chunking.md)                         | Stage 3 (2026-05)   | stage3    | `Iterator.prototype.chunks` / `windows`. Consumes several values in fixed or sliding windows.                                            |
+| [Iterator Includes](proposals/iterator-includes.md)                         | Stage 3 (2026-05)   | stage3    | Iterator version of `Array.prototype.includes`.                                                                                          |
+| [Iterator Join](proposals/iterator-join.md)                                 | Stage 3 (2026-05)   | stage3    | Iterator version of `Array.prototype.join`.                                                                                              |
+| [RegExp Buffer Boundaries](proposals/regexp-buffer-boundaries.md)           | Stage 3 (2026-05)   | stage3    | Buffer-boundary anchors `\A` / `\z` / `\Z` (independent of the `m` flag). Straight to Stage 3 in 2026-05.                                |
+| [Dynamic Code Brand Checks](proposals/dynamic-code-brand-checks.md)         | Stage 3 (2024-04)   | stage3    | Trusted Types integration for `eval` / `new Function`. 2026-05 was a normative change; Stage 4 deferred.                                 |
+| [Error Stack Accessor](proposals/error-stack-accessor.md)                   | Stage 3 (2026-05)   | stage3    | Standardize `Error.prototype.stack` as an accessor (carve-out from Error Stacks).                                                        |
+| [Intl Keep Trailing Zeros](proposals/intl-keep-trailing-zeros.md)           | Stage 3 (2026-05)   | stage3    | Keep trailing fractional zeros in `Intl.NumberFormat` / `PluralRules`.                                                                   |
+| [Stable Formatting](proposals/stable-formatting.md)                         | Stage 2 (2026-05)   | stage2    | Locale-independent stable formatting via the `zxx` locale. A substitute for misusing `Intl` in tests.                                    |
+| [Intl Sequence Units](proposals/intl-sequence-units.md)                     | Stage 2 (2026-05)   | stage2    | Format a sequence of compound units (for example `6 ft 0 in`). Stage 2 with object input.                                                |
+| [Intl Default Behaviours](proposals/intl-default-behaviours.md)             | Stage 1 (2026-05)   | stage1    | Locale-independent defaults for `Collator` / `Segmenter` (`und` root). Complements Stable Formatting.                                    |
+| [export all from](proposals/export-all-from.md)                             | Stage 1 (2026-05)   | stage1    | Syntax extensions for `export * from` style re-exports.                                                                                  |
+| [Comparisons](proposals/comparisons.md)                                     | Stage 1 (2026-05)   | stage1    | Native deep comparison and deviation reporting. Formerly "Assertions".                                                                   |
+| [Array.isTemplateObject](proposals/is-template-object.md)                   | Stage 2 (withdrawn) | withdrawn | Detect a template call-site object. Withdrawn in 2026-05 (weak demand plus realm concerns).                                              |
+| [Await Dictionary](proposals/await-dictionary.md)                           | Stage 3 (2026-07)   | stage3    | `Promise.allKeyed` / `allSettledKeyed`. Named `Promise.all`. Skipped Stage 2 for 2.7 in 2025-11.                                         |
+| [Thenable Curtailment](proposals/thenable-curtailment.md)                   | Stage 2.7 (2026-07) | stage2.7  | `SafePromiseResolve`, which resolves a Promise without running user code. Aimed at WebIDL and thenable CVEs.                             |
+| [Error code property](proposals/error-code-property.md)                     | Stage 2 (2026-07)   | stage2    | `code` on `Error` via an options bag. Alignment with DOMException is a condition for advancement.                                        |
+| [Fused Multiply-Add](proposals/fused-multiply-add.md)                       | Stage 2 (2026-07)   | stage2    | `Math.fma` (required by IEEE 754-2008). Straight from 0 to 2 on first presentation. Motivated by Amount conversion precision.            |
+| [BigInt from exponential](proposals/bigint-from-exponential.md)             | Stage 1 (2026-07)   | stage1    | Accept exponential-notation strings in `BigInt`. Converted from needs-consensus PR #3857.                                                |
+| [Map get and delete](proposals/map-get-and-delete.md)                       | Stage 1 (2026-07)   | stage1    | `Map.prototype.getAndDelete` (formerly take). Get and delete in one hash lookup.                                                         |
+| [Linear Matching](proposals/linear-matching.md)                             | Stage 1 (2026-07)   | stage1    | Built-in mitigation for ReDoS. Exploring regexp execution with a linear-time guarantee.                                                  |
+| [Intl.DateTimeFormat Alignment](proposals/intl-datetimeformat-alignment.md) | Stage 1 (2026-07)   | stage1    | Align datetime formatting options with HTML `<time format>` and MessageFormat.                                                           |
 
-## family(カテゴリ横断のまとめ)
+## Families (cross-cutting summaries)
 
-同じカテゴリにくくれる提案群を横断的にまとめた synthesis ページ。個別の経緯は各提案ページ、全体像と stage 一覧は family ページで辿れる。
+Synthesis pages that group proposals in the same category. Per-proposal history stays on the proposal page; the family page holds the shared picture and the stage list.
 
-- [Iterator helpers and friends](families/iterator.md) — `Iterator.prototype` まわりの lazy 反復ライブラリ群(helpers / zip / concat / chunking / includes / async 系ほか)。
-- [Modules (module harmony)](families/modules.md) — ES Modules と派生提案群(dynamic import / import.meta / TLA / import attributes / phase imports / import-export defer ほか)。
+- [Iterator helpers and friends](families/iterator.md) — the lazy iteration library around `Iterator.prototype` (helpers, zip, concat, chunking, includes, async variants, and others).
+- [Modules (module harmony)](families/modules.md) — ES modules and the proposals that grew out of them (dynamic import, import.meta, TLA, import attributes, phase imports, import-export defer, and others).
 
-## 未作成(リンク先候補)
+## Not yet written (link targets)
 
-精読済みページから参照されているが、まだ作成されていない提案ページ:
+Proposal pages referenced from ingested pages but not created yet:
 
-- `class-fields` — Decorators と sigil(`@` / `#`)を巡って密接に関係。
-- `private-methods` — class fields 関連。
-- `pipeline-operator` — Decorators の議論で言及。
+- `class-fields` — tightly tied to Decorators through the sigils (`@` / `#`).
+- `private-methods` — related to class fields.
+- `pipeline-operator` — mentioned in the Decorators discussion.
 
-## 人物ページ(people/)
+## Person pages (people/)
 
-提案ページ・family ページに登場する人物を [people/](people/) に集約(現在 75 名)。各ページは略号をファイル名とし、フルネーム・所属・担当ドラフト(champion)・言及される提案/family・参加したミーティングを持つ。`tools/extract_people.py` が提案・family ページから登場略号を検出して生成し、`tools/link_people.py` が提案・family・会合要約の本文中の略号を `[ABBR](<rel>/people/ABBR.md)` にリンクする(VSCode プレビューで遷移できる標準 markdown リンク)。会合要約中の提案名は `tools/link_proposals.py` が提案ページへリンクする。登場人物のみを対象とし、ページの追加に追従して自動で増える。
+People who appear on proposal or family pages are collected under [people/](people/) (75 at the moment). Each file is named by abbreviation and lists full name, affiliation, champion drafts, proposals and families that mention them, and meetings attended. `tools/extract_people.py` detects abbreviations on proposal and family pages and generates the pages. `tools/link_people.py` turns abbreviations in proposal, family, and meeting-summary prose into `[ABBR](<rel>/people/ABBR.md)` (standard markdown links that work in the VS Code preview). `tools/link_proposals.py` links proposal names in meeting summaries to proposal pages. Only people who actually appear are included, and the set grows as pages are added.
 
-## バックボーン(機械抽出)
+## Backbone (machine-extracted)
 
-[\_generated/agenda-index.md](_generated/agenda-index.md) — 全会合の議題見出し・Stage シグナル・Conclusion を `tools/extract_agenda.py` で抽出したもの。手で編集しない(再生成で上書き)。素材(submodule)更新後は `python3 tools/extract_agenda.py && python3 tools/extract_proposals.py && python3 tools/extract_people.py && python3 tools/link_people.py` で更新。
+[\_generated/agenda-index.md](_generated/agenda-index.md) — agenda headings, stage signals, and conclusions for every meeting, extracted by `tools/extract_agenda.py`. Do not edit by hand (regeneration overwrites it). After a submodule update, refresh with `python3 tools/extract_agenda.py && python3 tools/extract_proposals.py && python3 tools/extract_people.py && python3 tools/link_people.py`.
 
-## 状態の凡例
+## Status legend
 
-`stage0`〜`stage3`(`stage2.7` を含む) / `shipped`(Stage 4 到達) / `withdrawn`(撤回) / `inactive`(長期停滞)。各ページ frontmatter の `status` と対応。
+`stage0` through `stage3` (including `stage2.7`) / `shipped` (reached Stage 4) / `withdrawn` / `inactive` (long stall). These match the `status` field in each page's frontmatter.

@@ -1,37 +1,37 @@
 # 115th TC39 Meeting (2026-07)
 
-- **会合**: 115th meeting of Ecma TC39
-- **会期**: 2026-07-20 〜 2026-07-22(3 日間)
-- **開催地**: リモート(次回は東京・Sony Interactive Entertainment(品川)でのオンサイト/ハイブリッド開催をアナウンス)
-- **ホスト**: -(リモート会合のためホスト企業なし)
+- **Meeting**: 115th meeting of Ecma TC39
+- **Dates**: 2026-07-20 to 2026-07-22 (3 days)
+- **Location**: remote (the next meeting was announced as onsite/hybrid in Tokyo, at Sony Interactive Entertainment in Shinagawa)
+- **Host**: — (no host company; this was a remote meeting)
 - **Agenda**: [tc39/agendas 2026/07](https://github.com/tc39/agendas/blob/main/2026/07.md)
 
-## 概要
+## Overview
 
-ECMA-262 / ECMA-402 の提案審議が中心の 3 日間リモート会合。**[Await Dictionary](../../proposals/await-dictionary.md)(`Promise.allKeyed` / `allSettledKeyed`)が Stage 3**、**[Thenable Curtailment](../../proposals/thenable-curtailment.md) が host hook の整備を経て Stage 2.7**、**[Error code property](../../proposals/error-code-property.md) と [Fused Multiply-Add](../../proposals/fused-multiply-add.md)(`Math.fma`)が Stage 2**、**bigint-from-exponential(needs-consensus PR から転換)・[Map take](../../proposals/map-get-and-delete.md)(`getAndDelete` へ rename)・[Linear Matching](../../proposals/linear-matching.md)(ReDoS 対策)・`Intl.DateTimeFormat` Alignment With Other Standards が Stage 1** に到達した。Declarations in Conditionals は pattern matching との調整未了で advancement を見送り。
+A three-day remote meeting centered on ECMA-262 / ECMA-402 proposals. **[Await Dictionary](../../proposals/await-dictionary.md) (`Promise.allKeyed` / `allSettledKeyed`) reached Stage 3**, **[Thenable Curtailment](../../proposals/thenable-curtailment.md) reached Stage 2.7** once the host hook was in place, **[Error code property](../../proposals/error-code-property.md) and [Fused Multiply-Add](../../proposals/fused-multiply-add.md) (`Math.fma`) reached Stage 2**, and **bigint-from-exponential (converted from a needs-consensus PR), [Map take](../../proposals/map-get-and-delete.md) (to be renamed `getAndDelete`), [Linear Matching](../../proposals/linear-matching.md) (ReDoS mitigation), and `Intl.DateTimeFormat` Alignment With Other Standards reached Stage 1**. Declarations in Conditionals did not advance; alignment with pattern matching is still open.
 
-normative では `Promise.try` の非エラー時 PromiseResolve 化、custom global object への built-ins 定義強制(PR #3728)、Import Defer の cycle root バグ修正、ECMA-402 の Intl Locale Info 系 4 PR に consensus。6 月 30 日の Ecma General Assembly では **ECMA-262 17th / ECMA-402 13th(= ES2026)が全会一致で承認**され、[KG](../../people/KG.md) が Ecma Recognition Award を受賞した。[MF](../../people/MF.md) による提案・delegate 情報の構造化データ(`@tc39/data`)構想、Composites の interning 方式への pivot、Decimal の object API vs primitive の膠着も注目点。
+On the normative side, the committee reached consensus on making `Promise.try` use PromiseResolve in the non-error case, requiring hosts that provide a custom global object to allow initializing built-ins on it (PR #3728), an Import Defer cycle-root bugfix, and four ECMA-402 Intl Locale Info PRs. At the Ecma General Assembly on 30 June, **ECMA-262 17th / ECMA-402 13th (= ES2026) were approved unanimously**, and [KG](../../people/KG.md) received the Ecma Recognition Award. Other notable threads were [MF](../../people/MF.md)'s plan for structured proposal and delegate data (`@tc39/data`), Composites pivoting to interning, and Decimal stuck between an object API and a primitive.
 
-## 日次サマリー
+## Daily summaries
 
 - [Day 1 — 2026-07-20](2026-07-20.md)
 - [Day 2 — 2026-07-21](2026-07-21.md)
 - [Day 3 — 2026-07-22](2026-07-22.md)
 
-## Stage 遷移まとめ
+## Stage transitions
 
-| 提案                                                                             | 遷移                                        | 日    |
-| -------------------------------------------------------------------------------- | ------------------------------------------- | ----- |
-| [Await Dictionary](../../proposals/await-dictionary.md)                          | 2.7 → 3                                     | Day 1 |
-| [Thenable Curtailment](../../proposals/thenable-curtailment.md)                  | 2 → 2.7                                     | Day 3 |
-| [Error code property](../../proposals/error-code-property.md)                    | 1 → 2(DOMException 整合が advancement 条件) | Day 2 |
-| [Fused Multiply-Add](../../proposals/fused-multiply-add.md) (`Math.fma`)         | 1 → 2                                       | Day 3 |
-| bigint-from-exponential                                                          | 新規 → 1(needs-consensus PR #3857 から転換) | Day 1 |
-| [Map take](../../proposals/map-get-and-delete.md)(`getAndDelete` へ rename 予定) | 新規 → 1                                    | Day 2 |
-| [Linear Matching](../../proposals/linear-matching.md)                            | 新規 → 1                                    | Day 3 |
-| `Intl.DateTimeFormat` Alignment With Other Standards                             | 新規 → 1                                    | Day 3 |
-| Declarations in Conditionals                                                     | 見送り(pattern matching と要調整)           | Day 2 |
+| Proposal                                                                     | Transition                                                                 | Day   |
+| ---------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----- |
+| [Await Dictionary](../../proposals/await-dictionary.md)                      | 2.7 → 3                                                                    | Day 1 |
+| [Thenable Curtailment](../../proposals/thenable-curtailment.md)              | 2 → 2.7                                                                    | Day 3 |
+| [Error code property](../../proposals/error-code-property.md)                | 1 → 2 (alignment with DOMException is a condition for further advancement) | Day 2 |
+| [Fused Multiply-Add](../../proposals/fused-multiply-add.md) (`Math.fma`)     | 1 → 2                                                                      | Day 3 |
+| bigint-from-exponential                                                      | new → 1 (converted from needs-consensus PR #3857)                          | Day 1 |
+| [Map take](../../proposals/map-get-and-delete.md) (rename to `getAndDelete`) | new → 1                                                                    | Day 2 |
+| [Linear Matching](../../proposals/linear-matching.md)                        | new → 1                                                                    | Day 3 |
+| `Intl.DateTimeFormat` Alignment With Other Standards                         | new → 1                                                                    | Day 3 |
+| Declarations in Conditionals                                                 | no advancement (needs alignment with pattern matching)                     | Day 2 |
 
-## 参加者
+## Attendees
 
-各日冒頭の出席者テーブルより(3 日間の合算、順不同): [CDA](../../people/CDA.md), [USA](../../people/USA.md), [JRL](../../people/JRL.md), [DLM](../../people/DLM.md)(chairs/facilitators)、[WH](../../people/WH.md), BSH, [LVU](../../people/LVU.md), [KM](../../people/KM.md), [ACE](../../people/ACE.md), AKI, LGH, IS, [NRO](../../people/NRO.md), [PFC](../../people/PFC.md), [CM](../../people/CM.md), [EAO](../../people/EAO.md), CLA, [OFR](../../people/OFR.md), NPU, [RGN](../../people/RGN.md), [JSL](../../people/JSL.md), [GB](../../people/GB.md), [DRO](../../people/DRO.md), SHN, LPR, [KG](../../people/KG.md), [MF](../../people/MF.md), [MM](../../people/MM.md), PKA, [SHS](../../people/SHS.md), [DJM](../../people/DJM.md), [JHD](../../people/JHD.md), [MAG](../../people/MAG.md), [SFC](../../people/SFC.md), [AUR](../../people/AUR.md), [CPC](../../people/CPC.md) ほか。
+From the attendee table at the start of each day (union of the three days, unordered): [CDA](../../people/CDA.md), [USA](../../people/USA.md), [JRL](../../people/JRL.md), [DLM](../../people/DLM.md) (chairs/facilitators), [WH](../../people/WH.md), BSH, [LVU](../../people/LVU.md), [KM](../../people/KM.md), [ACE](../../people/ACE.md), AKI, LGH, IS, [NRO](../../people/NRO.md), [PFC](../../people/PFC.md), [CM](../../people/CM.md), [EAO](../../people/EAO.md), CLA, [OFR](../../people/OFR.md), NPU, [RGN](../../people/RGN.md), [JSL](../../people/JSL.md), [GB](../../people/GB.md), [DRO](../../people/DRO.md), SHN, LPR, [KG](../../people/KG.md), [MF](../../people/MF.md), [MM](../../people/MM.md), PKA, [SHS](../../people/SHS.md), [DJM](../../people/DJM.md), [JHD](../../people/JHD.md), [MAG](../../people/MAG.md), [SFC](../../people/SFC.md), [AUR](../../people/AUR.md), [CPC](../../people/CPC.md), and others.

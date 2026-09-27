@@ -9,28 +9,28 @@ first_seen: "2024-10"
 tags: [proposal, numeric, units, i18n]
 ---
 
-## 概要
+## Overview
 
-Amount(旧称 **Measure**、`proposal-measure` → `proposal-amount`)は、**数値と単位を 1 つにまとめた immutable な value type** を JavaScript に追加する提案です。数値(number / BigInt / 数値文字列)と unit 識別子(例 `kilogram`)を組み合わせて 1 つの `Amount` を作り、`value` / `unit` アクセサ、別単位への変換 `convertTo()`(例 kg → lb)、ローカライズ出力 `toLocaleString()`、シリアライズ用 `toString()` を備えます。
+Amount (formerly **Measure**, `proposal-measure` → `proposal-amount`) is a proposal to add to JavaScript an immutable value type that bundles a number and a unit into one. It combines a numeric value (number / BigInt / numeric string) with a unit identifier (for example `kilogram`) to make a single `Amount`, and provides `value` / `unit` accessors, conversion to another unit via `convertTo()` (for example kg → lb), localized output via `toLocaleString()`, and `toString()` for serialization.
 
-動機は二つの面を持ちます。一つは **i18n の単位フォーマットの「誤用回避」**: `Intl.NumberFormat` の unit 機能を非ローカライズ目的に流用されるのを避け、純粋な数値+単位の運搬・変換を ECMA-262 側の値型として提供する(元は smart units の文脈から派生)。もう一つは **i18n の外でも使える汎用の measurement 値**としての需要です。Stage 2 案では unit conversion を 262 側(`Amount`)に持たせ、フォーマット(402)側の負担を減らす方向を採っています。
+The motivation has two sides. One is **avoiding misuse of i18n unit formatting**: keep `Intl.NumberFormat`'s unit feature from being co-opted for non-localized purposes, and provide pure number-plus-unit transport and conversion as a value type on the ECMA-262 side (it originally grew out of the smart units context). The other is demand for a **general-purpose measurement value that is also usable outside i18n**. The Stage 2 design puts unit conversion on the 262 side (`Amount`) and reduces the burden on the formatting (402) side.
 
-champion は [BAN](../people/BAN.md)(Ben Allen)。numeric value を厳密に扱う `decimal` 提案と近く、両者を束ねる "unified vision" も検討されましたが、別提案として進める整理になりました。
+The champion is [BAN](../people/BAN.md) (Ben Allen). It sits close to the `decimal` proposal, which handles numeric values strictly. A "unified vision" that would bundle the two was considered, but the outcome was to proceed with them as separate proposals.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                        | できごと                                                                                                           | Stage |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----- |
-| [2024-10](../../raw/notes/meetings/2024-10/october-10.md)   | [BAN](../people/BAN.md) が "Measure object" を発表し、同会合で **Stage 1 到達**(numeric representation WG 結成)    | 0 → 1 |
-| [2024-12](../../raw/notes/meetings/2024-12/december-05.md)  | Measure の Stage 1 update                                                                                          | 1     |
-| [2025-02](../../raw/notes/meetings/2025-02/february-19.md)  | decimal と measure の "unified vision"。merge への committee 支持は乏しく Measure の use case にも不確実性         | 1     |
-| [2025-04](../../raw/notes/meetings/2025-04/april-16.md)     | Stage 1 update。decimal & measure を "Amounts" として整理する方向                                                  | 1     |
-| [2025-07](../../raw/notes/meetings/2025-07/july-29.md)      | **Measure → Amount に改名**。Stage 2 を狙うも未達(open topic 継続)                                                 | 1     |
-| [2025-09](../../raw/notes/meetings/2025-09/september-22.md) | Amount for Stage 2(複数 continuation)も Stage 2 に至らず                                                           | 1     |
-| [2025-11](../../raw/notes/meetings/2025-11/november-20.md)  | Amount の Stage 1 update                                                                                           | 1     |
-| [2026-03](../../raw/notes/meetings/2026-03/march-10.md)     | Stage 2 を要求するも見送り(「5 月に再挑戦」)                                                                       | 1     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)       | **Stage 2 到達**。reviewer は [WH](../people/WH.md) / [JHD](../people/JHD.md)。conversion 精度は Stage 2 中の課題  | 1 → 2 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md)      | Duration units の扱いを両論提示(未決)。canonical form 由来の `BigInt` 変換問題と conversion 精度がそれぞれ別提案へ | 2     |
+| Meeting                                                     | What happened                                                                                                                                                                               | Stage |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2024-10](../../raw/notes/meetings/2024-10/october-10.md)   | [BAN](../people/BAN.md) presented a "Measure object," and at the same meeting it **reached Stage 1** (a numeric representation WG was formed)                                               | 0 → 1 |
+| [2024-12](../../raw/notes/meetings/2024-12/december-05.md)  | Measure Stage 1 update                                                                                                                                                                      | 1     |
+| [2025-02](../../raw/notes/meetings/2025-02/february-19.md)  | A "unified vision" for decimal and measure. Little committee support for a merge, and uncertainty about Measure's use cases                                                                 | 1     |
+| [2025-04](../../raw/notes/meetings/2025-04/april-16.md)     | Stage 1 update. A direction of organizing decimal and measure as "Amounts"                                                                                                                  | 1     |
+| [2025-07](../../raw/notes/meetings/2025-07/july-29.md)      | **Renamed from Measure to Amount**. Aimed at Stage 2 but did not reach it (open topics continue)                                                                                            | 1     |
+| [2025-09](../../raw/notes/meetings/2025-09/september-22.md) | Amount for Stage 2 (several continuations), but it did not reach Stage 2                                                                                                                    | 1     |
+| [2025-11](../../raw/notes/meetings/2025-11/november-20.md)  | Amount Stage 1 update                                                                                                                                                                       | 1     |
+| [2026-03](../../raw/notes/meetings/2026-03/march-10.md)     | Requested Stage 2 but it was deferred ("try again in May")                                                                                                                                  | 1     |
+| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)       | **Reached Stage 2**. Reviewers are [WH](../people/WH.md) / [JHD](../people/JHD.md). Conversion precision is an issue during Stage 2                                                         | 1 → 2 |
+| [2026-07](../../raw/notes/meetings/2026-07/july-22.md)      | Presented both sides on how to treat duration units (undecided). The `BigInt` conversion problem that comes from canonical form, and conversion precision, each went to a separate proposal | 2     |
 
 ```mermaid
 xychart-beta
@@ -40,56 +40,56 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。初出は 2024-10(同会合で Stage 1)。2025 年は改名(Measure→Amount)と Stage 2 への複数回の挑戦があったが届かず **Stage 1 のまま横ばい**。2026-05 に Stage 2 到達。agenda-index は 2024-10 を "stage 0" と表記するがアジェンダ項目名であり、Conclusion では Stage 1 が承認されている(notes を正とした)。
+> X-axis = 2012-2026, y-axis = Stage. First appearance is 2024-10 (Stage 1 at the same meeting). In 2025 there was a rename (Measure to Amount) and several attempts at Stage 2, but it did not get there and **stayed flat at Stage 1**. Reached Stage 2 in 2026-05. The agenda-index labels 2024-10 as "stage 0," but that is the agenda item name; the Conclusion approved Stage 1 (the notes are taken as authoritative).
 
-## 主な論点
+## Main issues
 
-### Measure と Decimal の関係(unified vision)
+### How Measure relates to Decimal (unified vision)
 
-数値を厳密に扱う `decimal` と、数値+単位を運ぶ `measure`/`amount` は隣接領域で、2025-02 に両者を統合する "unified vision" が提示されました。しかし champion グループ外からの統合支持はほとんど無く、Measure のユースケースにも不確実性が示されました([JMN](../people/JMN.md) が [BAN](../people/BAN.md) の医療休暇中に代理発表)。結果として **merge せず別提案として**進め、Decimal は numeric value、Amount は value+unit のコンテナ、という役割分担に落ち着きました。
+`decimal`, which handles numbers strictly, and `measure` / `amount`, which carries a number plus a unit, are adjacent. In 2025-02 a "unified vision" that would merge the two was presented. There was almost no support for a merge from outside the champion group, and uncertainty about Measure's use cases was also shown ([JMN](../people/JMN.md) presented on behalf of [BAN](../people/BAN.md) while [BAN](../people/BAN.md) was on medical leave). The result was to **proceed as separate proposals without merging**, settling into a division of roles: Decimal is the numeric value, and Amount is the container for value plus unit.
 
-### i18n 用途と汎用用途の緊張
+### Tension between i18n use and general-purpose use
 
-Amount はもともと「Intl の unit フォーマットの誤用を避ける」目的(smart units 文脈)から生まれましたが、i18n の外でも使える汎用の measurement 値にすべきかで設計が揺れました。
+Amount originally grew out of the goal of avoiding misuse of Intl's unit formatting (the smart units context), but the design wavered over whether it should also be a general-purpose measurement value usable outside i18n.
 
-> ([BAN](../people/BAN.md), 2024-10) これを「内部化のツールの誤用を避けるために渋々足すもの」と捉えるなら変換は i18n に必要な範囲だけでよい。だが CLDR で可能な変換をすべて支持する道もある。内も外も含め、これが何であるべき/何でありうるかの意見が欲しい。
+> ([BAN](../people/BAN.md), 2024-10) If we treat this as something we are reluctantly adding in order to avoid misuse of the internationalization tool, then conversion only needs to cover what i18n requires. But there is also a path of supporting every conversion that CLDR makes possible. I want opinions, from both inside and outside, on what this should be and what it could be.
 
-Stage 2 案では unit conversion を `Amount`(262)に持たせ、402(フォーマット)側の守備範囲を狭める方向を採っています。
+The Stage 2 design puts unit conversion on `Amount` (262) and narrows the scope of the 402 (formatting) side.
 
-### Stage 2 への複数回の失敗
+### Several failures to reach Stage 2
 
-改名(Measure→Amount)は済んだものの、2025-07・2025-09 と Stage 2 に届きませんでした。unit 識別子の許容範囲、単位なし(no-unit)の表現、シリアライズ形式、変換数学の精度といった open topic が残ったためです。2026-03 でも見送られ(「5 月に再挑戦」)、最終的に 2026-05 で Stage 2 に到達しました。
+The rename (Measure to Amount) was done, but it did not reach Stage 2 in 2025-07 or 2025-09. Open topics remained: the allowed range of unit identifiers, how to represent no unit, the serialization format, and the precision of the conversion math. It was deferred again in 2026-03 ("try again in May"), and finally reached Stage 2 in 2026-05.
 
-### conversion math の精度
+### Precision of the conversion math
 
-[WH](../people/WH.md) は変換時の rounding 誤差を複数指摘しました(例: 5 グラム → トンが厳密な `0.000005` でなく `0.0000049999999999999996` になる)。spec は CLDR の係数を number 空間で乗除するのではなく、`sourceFactor / targetFactor` を mathematical value として扱う方向へ改めましたが、素朴な実装では約 2,100 個の数値定数を保持する負担も生じます。Stage 2 到達時も「**精度の改善は Stage 2 の中で**行う」ことが許容される前提でした([EAO](../people/EAO.md) が 2026-05 に発表)。
+[WH](../people/WH.md) pointed out several rounding errors on conversion (for example, 5 grams to tonnes becomes `0.0000049999999999999996` rather than the exact `0.000005`). The spec was revised away from multiplying and dividing CLDR factors in number space, toward treating `sourceFactor / targetFactor` as a mathematical value, but a naive implementation also bears the cost of holding about 2,100 numeric constants. Even when it reached Stage 2, the premise was that **improving precision would be done during Stage 2** ([EAO](../people/EAO.md) presented in 2026-05).
 
-### 波及した周辺提案(2026-07)
+### Proposals that spun out of it (2026-07)
 
-Amount の設計課題が 2 つの独立提案を生みました。canonical form(指数表記文字列)が `BigInt(string)` で受理されない問題は [BigInt from exponential](../proposals/bigint-from-exponential.md)(2026-07 Stage 1)として、conversion math の精度を支える FMA 演算は [Fused Multiply-Add](../proposals/fused-multiply-add.md)(`Math.fma`、2026-07 Stage 2)として切り出されています。また time/duration units を Amount と [Intl Sequence Units](../proposals/intl-sequence-units.md) で扱うかは 2026-07 に両論提示のまま未決です([RGN](../people/RGN.md) は「任意の well-formed unit を許す Amount で time units だけ拒否するのは一貫しない」と包含を支持、[PFC](../people/PFC.md) は [Temporal](../proposals/temporal.md) と異なる第 2 の duration 変換規則を作らないことを重視)。
+Amount's design problems produced two independent proposals. The problem that a canonical form (an exponential-notation string) is not accepted by `BigInt(string)` was split out as [BigInt from exponential](../proposals/bigint-from-exponential.md) (Stage 1 in 2026-07), and the FMA operation that supports the precision of the conversion math was split out as [Fused Multiply-Add](../proposals/fused-multiply-add.md) (`Math.fma`, Stage 2 in 2026-07). Whether time/duration units should be handled by Amount and by [Intl Sequence Units](../proposals/intl-sequence-units.md) was left undecided in 2026-07, with both sides presented ([RGN](../people/RGN.md) supported inclusion, saying it is inconsistent for an Amount that allows any well-formed unit to reject only time units, while [PFC](../people/PFC.md) prioritized not creating a second set of duration-conversion rules different from [Temporal](../proposals/temporal.md)).
 
-### 単位なしの表現とシリアライズ
+### Representing the absence of a unit, and serialization
 
-unit 不在をどう表すかが論点で、`Intl.NumberFormat`(Intl Unit Protocol)へ渡す際の整合から **null**(`undefined` ではなく)を採る方向。`toString()` は `[value unit]` 形式とし、単位なしには暫定で `~` を用いる案です。`foot-and-inch` のような sequence unit への対応も Stage 2 で詰めるとされています。
+How to represent the absence of a unit was an issue. For consistency when passing a value to `Intl.NumberFormat` (the Intl Unit Protocol), the direction is to use **null** (not `undefined`). `toString()` uses a `[value unit]` form, with a provisional `~` when there is no unit. Support for sequence units such as `foot-and-inch` is also to be worked out at Stage 2.
 
-## 関連提案
+## Related proposals
 
-- `decimal` — 厳密な十進数値。Amount の value 部分の候補で、2025-02 に "unified vision" として一緒に議論された(統合はせず)。提案ページ未作成。
-- [BigInt from exponential](../proposals/bigint-from-exponential.md) — Amount の canonical form(指数表記文字列)が `BigInt` に変換できない問題から派生(2026-07 Stage 1)。
-- [Fused Multiply-Add](../proposals/fused-multiply-add.md) — Amount の unit conversion の spec 記述に必要な FMA 演算(2026-07 Stage 2)。
-- Intl Unit Protocol(`Intl.NumberFormat` の options bag)— Amount を formatter に渡す受け口。no-unit を null にする整合はこれと関係。
-- Stable Formatting / Sequence Units — ECMA-402 のフォーマット側。Amount に sequence unit 対応を入れる動機。
-- `smart-unit-preferences`(Younies Mahmoud, ECMA-402)— Amount の前史的動機(unit フォーマット誤用回避)。
+- `decimal` — exact decimal numbers. A candidate for the value part of Amount; discussed together in 2025-02 as a "unified vision" (not merged). No proposal page yet.
+- [BigInt from exponential](../proposals/bigint-from-exponential.md) — spun out of the problem that Amount's canonical form (an exponential-notation string) cannot be converted to `BigInt` (Stage 1 in 2026-07).
+- [Fused Multiply-Add](../proposals/fused-multiply-add.md) — the FMA operation needed to specify Amount's unit conversion (Stage 2 in 2026-07).
+- Intl Unit Protocol (`Intl.NumberFormat`'s options bag) — the intake for passing an Amount to a formatter. Making no-unit null, for consistency, is related to this.
+- Stable Formatting / Sequence Units — the formatting side of ECMA-402. The motivation for adding sequence-unit support to Amount.
+- `smart-unit-preferences` (Younies Mahmoud, ECMA-402) — a prior motivation for Amount (avoiding misuse of unit formatting).
 
-## 出典
+## Sources
 
-- [2024-10 october-10](../../raw/notes/meetings/2024-10/october-10.md) — "Measure object" 発表、Stage 1 到達
+- [2024-10 october-10](../../raw/notes/meetings/2024-10/october-10.md) — presented "Measure object"; reached Stage 1
 - [2024-12 december-05](../../raw/notes/meetings/2024-12/december-05.md) — Measure Stage 1 update
-- [2025-02 february-19](../../raw/notes/meetings/2025-02/february-19.md) — decimal & measure の unified vision(merge 支持は乏しい)
-- [2025-04 april-16](../../raw/notes/meetings/2025-04/april-16.md) — Stage 1 update("Amounts" への整理)
-- [2025-07 july-29](../../raw/notes/meetings/2025-07/july-29.md) — Measure → Amount 改名、Stage 2 未達
-- [2025-09 september-22](../../raw/notes/meetings/2025-09/september-22.md) — Amount for Stage 2(継続、未達)
+- [2025-02 february-19](../../raw/notes/meetings/2025-02/february-19.md) — unified vision for decimal and measure (little support for a merge)
+- [2025-04 april-16](../../raw/notes/meetings/2025-04/april-16.md) — Stage 1 update (organizing them as "Amounts")
+- [2025-07 july-29](../../raw/notes/meetings/2025-07/july-29.md) — renamed Measure to Amount; did not reach Stage 2
+- [2025-09 september-22](../../raw/notes/meetings/2025-09/september-22.md) — Amount for Stage 2 (continued; not reached)
 - [2025-11 november-20](../../raw/notes/meetings/2025-11/november-20.md) — Amount Stage 1 update
-- [2026-03 march-10](../../raw/notes/meetings/2026-03/march-10.md) — Stage 2 要求も見送り
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 2 到達(reviewer [WH](../people/WH.md) / [JHD](../people/JHD.md))
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — Duration units 両論提示、`Math.fma` Stage 2(conversion 精度)
+- [2026-03 march-10](../../raw/notes/meetings/2026-03/march-10.md) — requested Stage 2 but it was deferred
+- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — reached Stage 2 (reviewers [WH](../people/WH.md) / [JHD](../people/JHD.md))
+- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — both sides on duration units; `Math.fma` at Stage 2 (conversion precision)

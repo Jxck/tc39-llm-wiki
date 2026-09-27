@@ -9,18 +9,18 @@ first_seen: "2026-05"
 tags: [proposal, regexp, security]
 ---
 
-## 概要
+## Overview
 
-Linear Matching は、**ReDoS(Regular expression Denial of Service)への組み込み対策**を探る提案です。現在の JavaScript には、regexp が超線形時間で評価されて unrecoverable に hang することを防ぐ手段がありません。ReDoS は CVE が常時発行される脆弱性クラスで、特定の入力(ユーザ入力に由来しうる)で初めて発火するため事前検出が難しく、linter は spec に性能保証が無い以上信頼できず、userland の linear エンジンは巨大かつ低速です。
+Linear Matching explores **a built-in defense against ReDoS (Regular expression Denial of Service)**. JavaScript today has no way to stop a regexp from being evaluated in super-linear time and hanging unrecoverably. ReDoS is a vulnerability class for which CVEs are constantly issued. It is hard to detect ahead of time because it fires only on particular inputs (which may come from user input); a linter cannot be trusted, because the spec gives no performance guarantee; and userland linear engines are huge and slow.
 
-Stage 1 の問題文は「**catastrophic で unrecoverable な失敗のリスクなしに正規表現をマッチさせる組み込みの方法が現在存在しない**」。解の候補としては、engine への linear 実行可否の問い合わせ、linear 保証付きの exec 変種、regex flag、timeout/resource limit 後の linear 実装への fallback、linear 保証 subset の仕様化が挙げられていますが、solution は未確定です。champion group は [MF](../people/MF.md)(canonical 上の champion)+ [AUR](../people/AUR.md)(Aurèle Barrière)+ [CPC](../people/CPC.md)(Clément Pit-Claudel、EPFL)。
+The Stage 1 problem statement is: "**there is currently no built-in way to match a regular expression without the risk of a catastrophic, unrecoverable failure**." Candidate solutions include asking the engine whether it can run linearly, an exec variant with a linear guarantee, a regex flag, falling back to a linear implementation after a timeout or resource limit, and specifying a subset that is guaranteed linear, but the solution is not settled. The champion group is [MF](../people/MF.md) (the champion on the canonical list) + [AUR](../people/AUR.md) (Aurèle Barrière) + [CPC](../people/CPC.md) (Clément Pit-Claudel, EPFL).
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                   | できごと                                                                                                                                                                                                                                                   | Stage |
-| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2026-05](../../raw/notes/meetings/2026-05/may-21.md)  | 前段議論「agreeing to consider impact of RegExp proposals to linear implementations」。linearity への影響考慮に広い支持                                                                                                                                    | -     |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | **Stage 1 到達**([JHD](../people/JHD.md)/[DJM](../people/DJM.md)/[CPC](../people/CPC.md)/[PFC](../people/PFC.md)/[SFC](../people/SFC.md)/[LVU](../people/LVU.md)/[CDA](../people/CDA.md)/[MM](../people/MM.md)/[WH](../people/WH.md) ら多数支持、反対なし) | 0 → 1 |
+| Meeting                                                | What happened                                                                                                                                                                                                                                                                          | Stage |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2026-05](../../raw/notes/meetings/2026-05/may-21.md)  | Preliminary discussion, "agreeing to consider impact of RegExp proposals to linear implementations." Broad support for considering the impact on linearity                                                                                                                             | -     |
+| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | **Reached Stage 1** (broad support from [JHD](../people/JHD.md)/[DJM](../people/DJM.md)/[CPC](../people/CPC.md)/[PFC](../people/PFC.md)/[SFC](../people/SFC.md)/[LVU](../people/LVU.md)/[CDA](../people/CDA.md)/[MM](../people/MM.md)/[WH](../people/WH.md) and others, no opposition) | 0 → 1 |
 
 ```mermaid
 xychart-beta
@@ -30,39 +30,39 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2026-05 に前段の合意形成、2026-07 に Stage 1。
+> Horizontal axis = 2012-2026, vertical axis = Stage. Preliminary consensus-building in 2026-05, Stage 1 in 2026-07.
 
-## 主な論点
+## Main issues
 
-### engine 差・version 差を露出する API への懸念
+### An API that exposes engine and version differences
 
-[KG](../people/KG.md) は「engine に linear 実行可否を尋ねる」type の解に不快感を示しました。
+[KG](../people/KG.md) was uncomfortable with the kind of solution that "asks the engine whether it can run linearly."
 
-> assert として使う人が必ず出る。engine の更新で non-linear になればページが壊れ、engine はその変更を ship できなくなる
+> Someone will inevitably use it as an assert. If an engine update makes it non-linear, pages break, and the engine can no longer ship that change.
 
-[KM](../people/KM.md) も「一度 linear になったものは二度と non-linear にできない(または linear と偽るしかない)」と同調し、[OFR](../people/OFR.md) は「version 間でも答えが変わりうるのは相当悪い状況」と指摘。[CPC](../people/CPC.md) は「後の stage で **linear 必須の subset を仕様で定義**すれば、engine の現状を当てるのではなく標準への準拠で uniform になる」と応答し、[OFR](../people/OFR.md) も問題文の範囲では納得しました。
+[KM](../people/KM.md) agreed that once something has become linear it can never become non-linear again (or you can only pretend it is still linear), and [OFR](../people/OFR.md) pointed out that it is a pretty bad situation if the answer can also change between versions. [CPC](../people/CPC.md) responded that if a later stage **defines in the spec a subset that must be linear**, it becomes uniform by conformance to the standard rather than by guessing what the engine currently does, and [OFR](../people/OFR.md) was satisfied within the scope of the problem statement.
 
-### backtracking との共存と実装負担
+### Coexistence with backtracking, and the implementation cost
 
-[OFR](../people/OFR.md) は V8 の実験的 linear エンジン(`l` flag)に出荷予定が無いことを明かし、「重要なのは平均時間で、それは backtracking が常に速い。linear は opt-in にせざるを得ず、実装は事実上 2 つの regex エンジンを ship することになる。負担が大きすぎるとして断る可能性もある」と述べました。[MF](../people/MF.md) も backtracking が通常速いことに同意し、個人的には「resource 枯渇まで backtracking で走らせ、linear 実装へ fallback する」系の解を選好。[KM](../people/KM.md) は tier-up counter の前例から「fallback 判定のカウント自体が平均性能を 5-10% 落としうる」と補足しました。[AUR](../people/AUR.md) は「backtracking エンジンへの小さな変更で linear 時間(メモリは犠牲)を得るアルゴリズムもある」と実装コスト緩和の可能性を示しました。
+[OFR](../people/OFR.md) disclosed that V8's experimental linear engine (the `l` flag) has no plans to ship, and said that what matters is average time, where backtracking is always faster. Linear would have to be opt-in, an implementation would in effect ship two regex engines, and the burden might be large enough that they decline. [MF](../people/MF.md) also agreed that backtracking is usually faster, and personally prefers the kind of solution that runs with backtracking until resources are exhausted, then falls back to a linear implementation. [KM](../people/KM.md) added, from the precedent of the tier-up counter, that the counting used to decide the fallback can itself drop average performance by 5–10%. [AUR](../people/AUR.md) pointed to a way to ease the implementation cost: there are algorithms that get linear time (at the expense of memory) with a small change to a backtracking engine.
 
-### 「linear」の定義
+### What "linear" means
 
-[WH](../people/WH.md) は「入力文字列長に線形でも、regex 長には指数的でありうる。何について量化しているかに注意せよ」と警告し、[AUR](../people/AUR.md) も「linear を名乗るエンジンの多くは matchAll 相当で quadratic になる」と補足。[SFC](../people/SFC.md) は Rust regex crate が「linear」を引用符付きで定義(展開後 regex 長 × 入力長の積に線形、fast とは限らない)している先例を挙げ、[MF](../people/MF.md) は「subquadratic 保証でも問題文は満たせる」と柔軟性を確認しました。[RGN](../people/RGN.md) はこの整理を経て問題文を「very well crafted」と評価しています。
+[WH](../people/WH.md) warned that something can be linear in the input-string length and still exponential in the regex length, so be careful what you are quantifying over, and [AUR](../people/AUR.md) added that many engines that call themselves linear become quadratic on the equivalent of matchAll. [SFC](../people/SFC.md) cited the Rust regex crate, which defines "linear" in quotes (linear in the product of the expanded regex length and the input length, and not necessarily fast), and [MF](../people/MF.md) confirmed the flexibility that even a subquadratic guarantee can satisfy the problem statement. After that framing, [RGN](../people/RGN.md) called the problem statement "very well crafted."
 
-### 安全な既定値という視点
+### A safe default
 
-[KM](../people/KM.md) が「regex の機微を理解しないまま使う開発者に、いつどちらを推奨するのか」と adoption story を問うたのに対し、[CPC](../people/CPC.md) は
+When [KM](../people/KM.md) asked for the adoption story — for developers who use regexes without understanding the subtleties, when do we recommend which? — [CPC](../people/CPC.md) answered:
 
-> ユーザの大半が機微を理解していないのに、既定が unsafe なものである方がむしろ怖い。まず safe な選択肢を用意し、そちらへ誘導する議論はその後だ
+> It is scarier that the default is the unsafe one when most users do not understand the subtleties. First provide a safe choice; the argument for steering people toward it comes after.
 
-と応じ、Rust ecosystem では平均でより速い backtracking 実装があっても linear な Rust Regex が事実上の標準である事例を挙げました。[MM](../people/MM.md) は timeout のような dynamic non-determinism を導入する解には反対(deterministic な fallback は容認)しつつ Stage 1 を支持しています。
+He cited the Rust ecosystem, where linear Rust Regex is the de facto standard even though a backtracking implementation is faster on average. [MM](../people/MM.md) opposed solutions that introduce dynamic non-determinism such as a timeout (a deterministic fallback is acceptable) while supporting Stage 1.
 
-## 関連提案
+## Related proposals
 
-- [RegExp Buffer Boundaries](../proposals/regexp-buffer-boundaries.md) — RegExp 系の隣接提案。2026-05 の前段議論は「新しい RegExp 提案が linearity に与える影響を考慮する」という形でこれらと接続する。
+- [RegExp Buffer Boundaries](../proposals/regexp-buffer-boundaries.md) — an adjacent RegExp proposal. The 2026-05 preliminary discussion connects to these in the form of "consider the impact that new RegExp proposals have on linearity."
 
-## 出典
+## Sources
 
-- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — 前段の合意形成
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — Stage 1 到達
+- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — preliminary consensus-building
+- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — Reached Stage 1

@@ -9,22 +9,22 @@ first_seen: "2021-10"
 tags: [proposal, regexp]
 ---
 
-## 概要
+## Overview
 
-RegExp Buffer Boundaries は、入力文字列全体(buffer)の境界に対するアンカー `\A`(buffer 先頭)・`\z`(buffer 末尾)・`\Z`(末尾の line terminator を許す buffer 末尾)を JavaScript の正規表現に追加する提案です。`^`/`$` が `m`(multiline)flag の影響を受けるのに対し、これらは flag に依存せず常に buffer 境界に一致します。他言語(Perl/Ruby など)で一般的な機能の移植です。
+RegExp Buffer Boundaries adds anchors `\A` (start of the buffer), `\z` (end of the buffer), and `\Z` (end of the buffer, allowing a trailing line terminator) to JavaScript regular expressions, matching against the boundaries of the whole input string (the buffer). Unlike `^`/`$`, which are affected by the `m` (multiline) flag, these always match buffer boundaries regardless of flags. It ports a feature common in other languages (Perl, Ruby, and others).
 
-champion は [RBN](../people/RBN.md)(Ron Buckton)。
+The champion is [RBN](../people/RBN.md) (Ron Buckton).
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                    | できごと                                                                           | Stage   |
-| ------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------- |
-| [2021-10](../../raw/notes/meetings/2021-10/oct-28.md)   | Stage 1 到達(`\A`, `\z`, `\Z`)                                                     | → 1     |
-| [2021-12](../../raw/notes/meetings/2021-12/dec-15.md)   | Stage 2 到達                                                                       | 1 → 2   |
-| [2026-03](../../raw/notes/meetings/2026-03/march-10.md) | Stage 2.7 を要求(継続へ)                                                           | 2       |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)   | `\A`/`\z` を 2.7 へ、`\Z` 再導入を提案。**conditional Stage 2.7**(`\Z` 込みが条件) | 2       |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)   | `\Z` の意味を `(?=(?:\r\n\|\n\|\r\|\u2028\|\u2029)?(?-m:$))` で確定                | 2.7     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-21.md)   | **Stage 3 到達**(`\Z` 込みで spec・test262 承認)                                   | 2.7 → 3 |
+| Meeting                                                 | What happened                                                                                                | Stage   |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------- |
+| [2021-10](../../raw/notes/meetings/2021-10/oct-28.md)   | Reached Stage 1 (`\A`, `\z`, `\Z`)                                                                           | → 1     |
+| [2021-12](../../raw/notes/meetings/2021-12/dec-15.md)   | Reached Stage 2                                                                                              | 1 → 2   |
+| [2026-03](../../raw/notes/meetings/2026-03/march-10.md) | Asked for Stage 2.7 (continued)                                                                              | 2       |
+| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)   | Proposed `\A`/`\z` for 2.7 and reintroducing `\Z`. **Conditional Stage 2.7** (conditional on including `\Z`) | 2       |
+| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)   | Settled the meaning of `\Z` as `(?=(?:\r\n\|\n\|\r\|\u2028\|\u2029)?(?-m:$))`                                | 2.7     |
+| [2026-05](../../raw/notes/meetings/2026-05/may-21.md)   | **Reached Stage 3** (spec and test262 approved, including `\Z`)                                              | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -34,26 +34,26 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 3]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。Stage 1 が 2021-10、Stage 2 が 2021-12。以後 4 年ほど停滞し、2026-05 の 3 日間で conditional 2.7 → 2.7 → Stage 3 へ一気に前進。
+> Horizontal axis = 2012-2026, vertical axis = Stage. Stage 1 in 2021-10, Stage 2 in 2021-12. It then stalled for about four years, and over three days in 2026-05 advanced in one burst: conditional 2.7 → 2.7 → Stage 3.
 
-## 主な論点
+## Main issues
 
-### `\Z` の再導入と意味論(2026-05)
+### Reintroduction and semantics of `\Z` (2026-05)
 
-当初 `\A`/`\z` のみで 2.7 を目指しましたが、会期中に `\Z`(末尾の改行を 1 つ許す buffer 末尾)の再導入に consensus。意味は「末尾の `LineTerminatorSequence` を任意に挟んだ上での buffer 末尾」、すなわち `(?=(?:\r\n|\n|\r|\u2028|\u2029)?(?-m:$))` と確定しました。`\Z` 込みで spec とテストが承認され、同会期の day 3 で Stage 3 に到達しています。
+It initially aimed for 2.7 with only `\A`/`\z`, but during the meeting there was consensus to reintroduce `\Z` (end of the buffer, allowing one trailing newline). The meaning was settled as the end of the buffer with an optional trailing `LineTerminatorSequence`, that is `(?=(?:\r\n|\n|\r|\u2028|\u2029)?(?-m:$))`. The spec and tests including `\Z` were approved, and it reached Stage 3 on day 3 of the same meeting.
 
-### multiline flag からの独立性
+### Independence from the multiline flag
 
-`^`/`$` は `m` flag で行単位に変わりますが、`\A`/`\z`/`\Z` は flag に依存せず buffer 境界に固定で一致する点が動機です。
+`^`/`$` become per-line under the `m` flag, whereas the motivation is that `\A`/`\z`/`\Z` match buffer boundaries regardless of flags.
 
-## 関連提案
+## Related proposals
 
-- `regexp-legacy-features` ほか RegExp 系提案 — 2026-05 では「RegExp 提案の linear 実装への影響を評価する」合意もなされた([2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md))。
+- `regexp-legacy-features` and other RegExp proposals — in 2026-05 there was also agreement to "evaluate the impact of RegExp proposals on linear implementations" ([2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md)).
 
-## 出典
+## Sources
 
 - [2021-10 oct-28](../../raw/notes/meetings/2021-10/oct-28.md) — Stage 1
 - [2021-12 dec-15](../../raw/notes/meetings/2021-12/dec-15.md) — Stage 2
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — conditional Stage 2.7 / `\Z` 再導入
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — `\Z` の意味確定
+- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — conditional Stage 2.7 / reintroduction of `\Z`
+- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — meaning of `\Z` settled
 - [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — Stage 3

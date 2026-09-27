@@ -9,19 +9,19 @@ first_seen: "2026-03"
 tags: [proposal, error]
 ---
 
-## 概要
+## Overview
 
-Error code property は、`Error` に **`code` property を標準の仕組みとして追加する**提案です。`cause` と同様に constructor の options bag で渡し、non-enumerable な own property として instance に設置します。値は任意の型を許容します(典型は string)。Node.js の `err.code`(`ENOENT` 等)をはじめ、ecosystem では error の機械判別に `code` を使う慣行が広く定着しており、これを言語側で規格化します。`SuppressedError` / `AggregateError` にも options bag 経由で `code` を渡せるようにします。
+Error code property adds a **`code` property to `Error` as a standard mechanism**. As with `cause`, it is passed through the constructor's options bag and installed on the instance as a non-enumerable own property. The value may be of any type (typically a string). The ecosystem already widely uses `code` to discriminate errors mechanically, starting with Node.js `err.code` (`ENOENT` and others), and this standardizes that practice on the language side. `SuppressedError` and `AggregateError` can also receive `code` through an options bag.
 
-champion は [JSL](../people/JSL.md)(James Snell、Cloudflare)。spec text・test262 の draft・V8 の draft 実装が揃った状態で Stage 2 に到達しました。
+The champion is [JSL](../people/JSL.md) (James Snell, Cloudflare). It reached Stage 2 with spec text, a test262 draft, and a V8 draft implementation in place.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                    | できごと                                                                                           | Stage |
-| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----- |
-| [2026-03](../../raw/notes/meetings/2026-03/march-11.md) | 「Error code property for Stage 1, 2, or 2.7」として初提示、**Stage 1 到達**                       | 0 → 1 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-21.md)  | **Stage 2 到達**。以降の advancement は DOMException との整合が条件                                | 1 → 2 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md)  | Stage 2 reviewer に [JHD](../people/JHD.md) / [RGN](../people/RGN.md) が就任(前日の指名漏れの補完) | 2     |
+| Meeting                                                 | What happened                                                                                                                  | Stage |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| [2026-03](../../raw/notes/meetings/2026-03/march-11.md) | First presented as "Error code property for Stage 1, 2, or 2.7". **Reached Stage 1**                                           | 0 → 1 |
+| [2026-07](../../raw/notes/meetings/2026-07/july-21.md)  | **Reached Stage 2**. Further advancement is conditional on alignment with DOMException                                         | 1 → 2 |
+| [2026-07](../../raw/notes/meetings/2026-07/july-22.md)  | [JHD](../people/JHD.md) / [RGN](../people/RGN.md) became the Stage 2 reviewers (filling in a nomination missed the day before) | 2     |
 
 ```mermaid
 xychart-beta
@@ -31,27 +31,27 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2026-03 に Stage 1、2026-07 に Stage 2。
+> Horizontal axis = 2012-2026, vertical axis = Stage. Stage 1 in 2026-03, Stage 2 in 2026-07.
 
-## 主な論点
+## Main issues
 
-### DOMException の `code` との衝突
+### Clash with DOMException's `code`
 
-唯一の実質的争点。DOMException は歴史的に numeric な `code` を **prototype getter** として持ちます。[AVK](../people/AVK.md)(WHATWG 側)が「`.code` に 2 つの意味が生まれ混乱する」と懸念を提起しました。[JSL](../people/JSL.md) / [JHD](../people/JHD.md) は「設置方法(own property vs prototype getter)も値空間も異なり実質の conflict は無い」との立場で、[KG](../people/KG.md) は WHATWG が DOMException の `code` を legacy 扱いし `.name` を推奨している経緯を説明。[JSL](../people/JSL.md) はむしろ「ecosystem の `code` 慣行を `.name` に付け替える方が breaking」と主張しました。
+The only substantive dispute. DOMException historically has a numeric `code` as a **prototype getter**. [AVK](../people/AVK.md) (on the WHATWG side) raised the concern that "`.code` would grow two meanings and cause confusion." [JSL](../people/JSL.md) / [JHD](../people/JHD.md) took the position that there is no real conflict, because both the installation (own property versus prototype getter) and the value space differ. [KG](../people/KG.md) explained that WHATWG treats DOMException's `code` as legacy and recommends `.name`. [JSL](../people/JSL.md) argued the opposite direction would be the breaking one: retargeting the ecosystem's `code` convention onto `.name`.
 
-[KM](../people/KM.md) は [AVK](../people/AVK.md) の休暇中の advancement に慎重で、[KG](../people/KG.md) も「DOMException との一貫した story なしに Stage 2 を超えるべきでない」として、**Stage 2 まで**(2.7 は見送り)+「DOMException との整合が以降の advancement の条件」という決着になりました([LVU](../people/LVU.md) のみ 2.7 も支持)。整合の道筋は issue として提案を募っています。
+[KM](../people/KM.md) was cautious about advancing while [AVK](../people/AVK.md) was on leave, and [KG](../people/KG.md) held that the proposal should not go past Stage 2 without a coherent story for DOMException. The outcome was **Stage 2 only** (2.7 deferred), with "alignment with DOMException is a condition for further advancement" ([LVU](../people/LVU.md) alone also supported 2.7). The committee asked for that alignment path to be filed as an issue.
 
-### `SuppressedError` への options bag 追加
+### Adding an options bag to `SuppressedError`
 
-[MM](../people/MM.md) が「`SuppressedError` constructor には options bag が無いが?」と確認し、本提案が options bag を追加して `cause` / `code` の両方を渡せるようにすることを確かめたうえで支持しました。
+[MM](../people/MM.md) asked "the `SuppressedError` constructor has no options bag, does it?" and supported the proposal after confirming that it adds an options bag so both `cause` and `code` can be passed.
 
-## 関連提案
+## Related proposals
 
-- [Error Stack Accessor](../proposals/error-stack-accessor.md) — 同じく Error まわりの de facto 挙動を標準化する隣接提案。
-- `error-cause` — `cause` property(ES2022)。本提案は設置方式(non-enumerable own property + options bag)をこれに揃える。
+- [Error Stack Accessor](../proposals/error-stack-accessor.md) — a neighboring proposal that also standardizes de facto behavior around Error.
+- `error-cause` — the `cause` property (ES2022). This proposal matches that installation style (non-enumerable own property plus an options bag).
 
-## 出典
+## Sources
 
-- [2026-03 march-11](../../raw/notes/meetings/2026-03/march-11.md) — Stage 1 到達
-- [2026-07 july-21](../../raw/notes/meetings/2026-07/july-21.md) — Stage 2 到達
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — reviewer 指名([JHD](../people/JHD.md) / [RGN](../people/RGN.md))
+- [2026-03 march-11](../../raw/notes/meetings/2026-03/march-11.md) — reached Stage 1
+- [2026-07 july-21](../../raw/notes/meetings/2026-07/july-21.md) — reached Stage 2
+- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — reviewer nomination ([JHD](../people/JHD.md) / [RGN](../people/RGN.md))

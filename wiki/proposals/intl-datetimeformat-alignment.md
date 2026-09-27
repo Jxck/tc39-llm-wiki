@@ -9,17 +9,17 @@ first_seen: "2026-07"
 tags: [proposal, intl]
 ---
 
-## 概要
+## Overview
 
-Intl.DateTimeFormat Alignment With Other Standards は、**HTML / JavaScript / Unicode MessageFormat で同じ datetime formatting options を使えるようにする**ための ECMA-402 提案です。WHATWG では [LCA](../people/LCA.md) が `<time>` 要素に `format` 属性を追加して JavaScript なしの localized time formatting を可能にする提案を進めており、Unicode MessageFormat でも datetime formatting の API 設計が進行中です。これらが `Intl.DateTimeFormat` に無い option(`dateFields` / `timePrecision`)や異なる綴り(`dateLength` 等)を導入しつつあるため、web stack 全体で formatting options を揃えることが動機です。
+Intl.DateTimeFormat Alignment With Other Standards is an ECMA-402 proposal **so that HTML, JavaScript, and Unicode MessageFormat can use the same datetime formatting options**. In WHATWG, [LCA](../people/LCA.md) is advancing a proposal to add a `format` attribute to the `<time>` element so that localized time formatting is possible without JavaScript, and Unicode MessageFormat is also in the middle of designing a datetime formatting API. These are introducing options that `Intl.DateTimeFormat` does not have (`dateFields` / `timePrecision`) and different spellings (such as `dateLength`), so the motivation is to align formatting options across the whole web stack.
 
-具体案は `Intl.DateTimeFormat` に `dateFields`(日付のどの部分を含めるか)と `timePrecision`(時刻をどの精度まで含めるか)を追加し、`dateLength`(`dateStyle` の alias)や `timeZoneStyle`(`timeZoneName` のより良い名前)といった命名整合も検討するというものです。**新しいデータや能力は追加せず**、既存の datetime component options への mapping で表現できる範囲に留めます。ICU4X の semantic skeleton に基づく設計により、現行 API が許してしまう「July at 36」(month + minute だけ)のような nonsensical な組合せも防ぐ方向です。champion は [EAO](../people/EAO.md)。
+The concrete proposal adds `dateFields` (which parts of the date to include) and `timePrecision` (to what precision to include the time) to `Intl.DateTimeFormat`, and also considers naming alignment such as `dateLength` (an alias of `dateStyle`) and `timeZoneStyle` (a better name for `timeZoneName`). **It adds no new data or capabilities** and stays within what can be expressed by mapping onto the existing datetime component options. A design based on ICU4X's semantic skeleton also moves toward preventing nonsensical combinations that the current API allows, such as "July at 36" (month plus minute only). The champion is [EAO](../people/EAO.md).
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                   | できごと                                                                                                                                    | Stage |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | 初提示(TG2 支持済み)。[JSL](../people/JSL.md) / [SFC](../people/SFC.md) / [LVU](../people/LVU.md) が支持し、実質議論なしで **Stage 1 到達** | 0 → 1 |
+| Meeting                                                | What happened                                                                                                                                                                                      | Stage |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | First presentation (already supported by TG2). [JSL](../people/JSL.md) / [SFC](../people/SFC.md) / [LVU](../people/LVU.md) supported it, and it **reached Stage 1** with essentially no discussion | 0 → 1 |
 
 ```mermaid
 xychart-beta
@@ -29,24 +29,24 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2026-07 初出で Stage 1。
+> X-axis = 2012-2026, y-axis = Stage. First appearance in 2026-07, at Stage 1.
 
-## 主な論点
+## Main issues
 
-### 綴りの調整はどちら向きにも可能
+### Spelling can be adjusted in either direction
 
-HTML 側の PR は WHATWG プロセスの stage 1 段階、Unicode MessageFormat も semantic skeleton の最終化待ちであるため、option 名の綴り(`dateLength` vs `dateStyle` 等)は **ECMA-402 側が合わせる/相手側に変更を求める、の双方向で交渉可能**な状態です。[EAO](../people/EAO.md) は MessageFormat WG・WHATWG との協調を前提に「どこでも使える 1 つの options セット」を目指すとしています。
+The HTML-side PR is at stage 1 of the WHATWG process, and Unicode MessageFormat is also waiting for the semantic skeleton to be finalized, so the spelling of option names (`dateLength` vs `dateStyle`, and so on) can **be negotiated in either direction: ECMA-402 matches the other side, or it asks the other side to change**. [EAO](../people/EAO.md), on the premise of coordinating with the MessageFormat WG and WHATWG, aims at one set of options that can be used anywhere.
 
-### 解の形は未確定
+### The shape of the solution is not fixed yet
 
-[SFC](../people/SFC.md) は「問題文(モチベーションのスライド)は良いが、solution は要検討」と付言して Stage 1 を支持しました。`style shortcuts` と `datetime component options` が互いに排他という現行 `Intl.DateTimeFormat` の構造に、新 option 群をどう整合させるかが今後の設計課題です。
+[SFC](../people/SFC.md) supported Stage 1 with the caveat that the problem statement (the motivation slides) is good, but the solution still needs work. How to reconcile the new options with the current `Intl.DateTimeFormat` structure, in which `style shortcuts` and `datetime component options` are mutually exclusive, is a design problem from here on.
 
-## 関連提案
+## Related proposals
 
-- [Stable Formatting](../proposals/stable-formatting.md) — 同じく [EAO](../people/EAO.md) による、Intl の出力を web stack の他レイヤから使いやすくする系統の提案。
-- [Intl.MessageFormat](../proposals/intl-messageformat.md) — Unicode MessageFormat を JS へ公開する提案。本提案の datetime options は MessageFormat の formatting functions と揃えることを狙う。
-- [Intl Sequence Units](../proposals/intl-sequence-units.md) — 同時期の ECMA-402 提案。
+- [Stable Formatting](../proposals/stable-formatting.md) — likewise a proposal by [EAO](../people/EAO.md), in the line of making Intl output easier to use from other layers of the web stack.
+- [Intl.MessageFormat](intl-messageformat.md) — a proposal to expose Unicode MessageFormat to JS. This proposal's datetime options aim to line up with MessageFormat's formatting functions.
+- [Intl Sequence Units](../proposals/intl-sequence-units.md) — an ECMA-402 proposal from the same period.
 
-## 出典
+## Sources
 
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — 初提示、Stage 1 到達
+- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — first presentation; reached Stage 1

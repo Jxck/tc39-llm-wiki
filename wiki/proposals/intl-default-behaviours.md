@@ -9,17 +9,17 @@ first_seen: "2026-05"
 tags: [proposal, intl]
 ---
 
-## 概要
+## Overview
 
-Default Behaviours for some Intl APIs は、安定した(`zxx`)挙動を定義できなかった `Intl.Collator` と `Intl.Segmenter` について、**well-defined で locale 非依存なデフォルト挙動**をユーザーに提供する提案です。初期案では、これらの API に `und`(root)ロケールのサポートを追加する方向です。[Stable Formatting](../proposals/stable-formatting.md) が扱えなかった穴を埋める姉妹提案です。
+Default Behaviours for some Intl APIs gives users a **well-defined, locale-independent default behavior** for `Intl.Collator` and `Intl.Segmenter`, which could not be given a stable (`zxx`) behavior. The early plan adds support for the `und` (root) locale to these APIs. It is the sibling proposal that fills the hole [Stable Formatting](../proposals/stable-formatting.md) could not cover.
 
-champion は [EAO](../people/EAO.md)(Eemeli Aro)。
+The champion is [EAO](../people/EAO.md) (Eemeli Aro).
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                  | できごと         | Stage |
-| ----------------------------------------------------- | ---------------- | ----- |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md) | **Stage 1 到達** | → 1   |
+| Meeting                                               | What happened       | Stage |
+| ----------------------------------------------------- | ------------------- | ----- |
+| [2026-05](../../raw/notes/meetings/2026-05/may-20.md) | **Reached Stage 1** | → 1   |
 
 ```mermaid
 xychart-beta
@@ -29,18 +29,18 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2026-05 に Stage 1 到達(初出)。
+> Horizontal axis = 2012-2026, vertical axis = Stage. Reached Stage 1 in 2026-05 (first presented).
 
-## 主な論点
+## Main issues
 
-### `und`(root)ロケールのサポート
+### Support for the `und` (root) locale
 
-`Collator`/`Segmenter` に対し、locale 非依存の well-defined な挙動を `und` root ロケールとして公開する初期案。[Stable Formatting](../proposals/stable-formatting.md) では安定挙動を定義できなかった 2 API を補完します。
+The early plan exposes a locale-independent, well-defined behavior for `Collator` / `Segmenter` as the `und` root locale. It complements the two APIs for which [Stable Formatting](../proposals/stable-formatting.md) could not define a stable behavior.
 
-## 関連提案
+## Related proposals
 
-- [Stable Formatting](../proposals/stable-formatting.md) — 本提案が補完する姉妹提案(同 champion)。
+- [Stable Formatting](../proposals/stable-formatting.md) — the sibling proposal this one complements (same champion).
 
-## 出典
+## Sources
 
 - [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 1

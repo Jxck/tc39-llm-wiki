@@ -10,27 +10,27 @@ reached_stage4: "2026-01"
 tags: [proposal, map, collections]
 ---
 
-## 概要
+## Overview
 
-Upsert は `Map`(および `WeakMap`)に対する「キーがあれば取得、なければ挿入」を 1 メソッドで行うための提案です。最終的に `Map.prototype.getOrInsert(key, value)` と `Map.prototype.getOrInsertComputed(key, callbackFn)` の 2 メソッド(いずれも `WeakMap.prototype` にも追加)として Stage 4 に到達しました。前者はキーがあれば対応値を返し、なければ `value` を挿入して返す。後者は不在時に `callbackFn` を呼んでその戻り値を挿入するため、デフォルト値の計算が高価な場合に遅延評価できます。
+Upsert does "get if the key is present, otherwise insert" on a `Map` (and a `WeakMap`) in one method. It reached Stage 4 as two methods, `Map.prototype.getOrInsert(key, value)` and `Map.prototype.getOrInsertComputed(key, callbackFn)` (both also added to `WeakMap.prototype`). The first returns the corresponding value if the key is present, and otherwise inserts `value` and returns it. The second, when the key is absent, calls `callbackFn` and inserts its return value, so the default can be computed lazily when that computation is expensive.
 
-動機は性能ではなく **ergonomics**(可読性)です。従来は `has` → `get`/`set` の二度引きの定型コードが必要で冗長でした。設計上の先例として Java の `computeIfAbsent`、Python の `setdefault` / `defaultdict` が参照されています。`Map.insertOrUpdate`(2019)→ `Map.upsert` → `Map.emplace`(2020)→ 再び `upsert`(2024)と名前が二転三転し、メソッド名は最終的に「解決策ではなく問題で命名すべき」という方針のもと `getOrInsert` 系に確定しました。
+The motivation is not performance but **ergonomics** (readability). Previously the idiom was a double lookup, `has` then `get` / `set`, which is verbose. The design precedents cited are Java's `computeIfAbsent` and Python's `setdefault` / `defaultdict`. The name turned over twice: `Map.insertOrUpdate` (2019) → `Map.upsert` → `Map.emplace` (2020) → `upsert` again (2024). The method names finally settled on the `getOrInsert` family, under the policy that "it should be named for the problem, not the solution."
 
-元の champion は Erica Pramer ([EPR](../people/EPR.md))で、2020 年の Stage 3 申請は Bradley Farias ([BFS](../people/BFS.md))が発表しました。その後長く active champion 不在で停滞しましたが、2024 年に Mozilla の [DLM](../people/DLM.md)(SpiderMonkey 実装のメンターを兼ねる)が引き継ぎ、Stage 2.7 → 4 へ導きました。
+The original champion was Erica Pramer ([EPR](../people/EPR.md)). The 2020 Stage 3 request was presented by Bradley Farias ([BFS](../people/BFS.md)). After that it stalled for a long time with no active champion. In 2024, Mozilla's [DLM](../people/DLM.md) (who also mentored the SpiderMonkey implementation) took it over and led it from Stage 2.7 to 4.
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                       | できごと                                                                                                                                | Stage   |
-| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2019-10](../../raw/notes/meetings/2019-10/october-2.md)   | `Map.upsert`(旧 `Map.insertOrUpdate`)を [EPR](../people/EPR.md) が発表。subclassing hazard・性能・二重コールバックを議論し異議なく前進  | 1 → 2   |
-| [2020-07](../../raw/notes/meetings/2020-07/july-22.md)     | `emplace` に改名し options bag 化した版を [BFS](../people/BFS.md) が Stage 3 として発表。命名・単一責務で blocking 懸念多数、**進めず** | 2       |
-| [2023-07](../../raw/notes/meetings/2023-07/july-13.md)     | Stage 2 メタレビューで「active champion 不在の提案」として挙げられ、新 champion を募集                                                  | 2       |
-| [2024-07](../../raw/notes/meetings/2024-07/july-30.md)     | proposal scrub。[EPR](../people/EPR.md) 離脱を確認。[DLM](../people/DLM.md) が champion 候補として名乗り                                | 2       |
-| [2024-10](../../raw/notes/meetings/2024-10/october-09.md)  | Stage 2 update。デフォルト値挿入に絞り、値直渡し版+コールバック版の 2 メソッド構成へ。[DLM](../people/DLM.md) が正式に引き継ぎ          | 2       |
-| [2024-12](../../raw/notes/meetings/2024-12/december-02.md) | 提案名を "upsert" に確定。コールバックが map を変更した場合は non-throwing で扱う方針に決定                                             | 2       |
-| [2025-04](../../raw/notes/meetings/2025-04/april-14.md)    | **Stage 2.7 到達**。メソッド名を `getOrInsert` / `getOrInsertComputed` に確定                                                           | 2 → 2.7 |
-| [2025-07](../../raw/notes/meetings/2025-07/july-28.md)     | **Stage 3 到達**。Test262 を整理・拡充                                                                                                  | 2.7 → 3 |
-| [2026-01](../../raw/notes/meetings/2026-01/january-20.md)  | **Stage 4 到達**。Safari/Firefox 出荷・Test262 通過、エディタ承認済み PR。異議なく承認                                                  | 3 → 4   |
+| Meeting                                                    | What happened                                                                                                                                                                               | Stage   |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2019-10](../../raw/notes/meetings/2019-10/october-2.md)   | [EPR](../people/EPR.md) presented `Map.upsert` (formerly `Map.insertOrUpdate`). Subclassing hazard, performance, and a double callback were discussed, and it advanced with no objection    | 1 → 2   |
+| [2020-07](../../raw/notes/meetings/2020-07/july-22.md)     | [BFS](../people/BFS.md) presented a version renamed `emplace` and turned into an options bag, as Stage 3. Many blocking concerns on the name and single responsibility. **Did not advance** | 2       |
+| [2023-07](../../raw/notes/meetings/2023-07/july-13.md)     | Named in a Stage 2 meta-review as "a proposal with no active champion," and a new champion was called for                                                                                   | 2       |
+| [2024-07](../../raw/notes/meetings/2024-07/july-30.md)     | Proposal scrub. Confirmed [EPR](../people/EPR.md) had left. [DLM](../people/DLM.md) volunteered as a champion candidate                                                                     | 2       |
+| [2024-10](../../raw/notes/meetings/2024-10/october-09.md)  | Stage 2 update. Narrowed to inserting a default value, and moved to a two-method shape: a value passed directly, plus a callback version. [DLM](../people/DLM.md) formally took it over     | 2       |
+| [2024-12](../../raw/notes/meetings/2024-12/december-02.md) | The proposal name was settled as "upsert." If the callback mutates the map, it is handled as non-throwing                                                                                   | 2       |
+| [2025-04](../../raw/notes/meetings/2025-04/april-14.md)    | **Reached Stage 2.7**. Method names settled as `getOrInsert` / `getOrInsertComputed`                                                                                                        | 2 → 2.7 |
+| [2025-07](../../raw/notes/meetings/2025-07/july-28.md)     | **Reached Stage 3**. test262 was cleaned up and expanded                                                                                                                                    | 2.7 → 3 |
+| [2026-01](../../raw/notes/meetings/2026-01/january-20.md)  | **Reached Stage 4**. Shipped in Safari / Firefox, test262 passing, an editor-approved PR. Approved with no objection                                                                        | 3 → 4   |
 
 ```mermaid
 xychart-beta
@@ -40,55 +40,55 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 3, 4]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。初出は 2019-10 で、その回に Stage 1 → 2(Stage 1 単独の記録は議事録コーパスに無く 2019-10 が初出)。2020-07 の Stage 3 申請は不合意で **2 のまま約 5 年横ばい**(active champion 不在)。2024 に [DLM](../people/DLM.md) が引き継ぎ、2025-04 で Stage 2.7、2025-07 で Stage 3、2026-01 で Stage 4。2025 年内に 2.7 と 3 の両方を経たため年末値は 3。
+> Horizontal axis = 2012-2026, vertical axis = Stage. First appearance is 2019-10, and that meeting went Stage 1 → 2 (there is no record of Stage 1 alone in the notes corpus; 2019-10 is the first appearance). The 2020-07 Stage 3 request did not get agreement, so it stayed **flat at 2 for about five years** (no active champion). [DLM](../people/DLM.md) took it over in 2024. Stage 2.7 in 2025-04, Stage 3 in 2025-07, Stage 4 in 2026-01. It passed through both 2.7 and 3 within 2025, so the year-end value is 3.
 
-## 主な論点
+## Main issues
 
-### 単一メソッド(二コールバック)か責務分割か
+### One method (two callbacks) or a split of responsibilities
 
-提案を 4 年間停滞させた中心論点です。元の設計は insert と update の二コールバック(または options bag)を 1 メソッドに束ねるものでしたが、委員会は「単一責務」での分割を繰り返し要求しました。2020-07 で [YSV](../people/YSV.md) が分割を主張し、[BFS](../people/BFS.md) は単一メソッドを固持しました。
+This is the central issue that stalled the proposal for four years. The original design bundled two callbacks, insert and update (or an options bag), into one method, and the committee repeatedly asked for a split into "single responsibilities." In 2020-07, [YSV](../people/YSV.md) argued for the split, and [BFS](../people/BFS.md) held to a single method.
 
-> ([YSV](../people/YSV.md), 2020-07) `.emplace()` に `.getDefault()` まで担わせるのは極めてユーザー敵対的だと思う。
+> ([YSV](../people/YSV.md), 2020-07) I think making `.emplace()` also carry `.getDefault()` is extremely user-hostile.
 
-この回では blocking 懸念が解けず Stage 3 に進めませんでした。決着したのは [DLM](../people/DLM.md) が引き継いだ後で、2024-10 に「デフォルト値挿入」というユースケースに焦点を絞り、値直渡し版とコールバック版の 2 メソッドに分割する形になりました。
+That meeting did not resolve the blocking concerns, and it did not advance to Stage 3. It was settled after [DLM](../people/DLM.md) took over. In 2024-10 the focus was narrowed to the use case of "insert a default value," and it was split into two methods, a value passed directly and a callback version.
 
-### 命名(`emplace` 問題)
+### The name (the `emplace` problem)
 
-`emplace` は C++ では insert より低水準の概念を指し、この高水準機能と衝突して混乱を招くと指摘されました。
+In C++, `emplace` means a concept lower-level than insert, and it was pointed out that colliding with this higher-level feature causes confusion.
 
-> ([WH](../people/WH.md), 2020-07) `emplace` という名前は非常に紛らわしい。C++ の世界から来ると別の概念を指す言葉なので。
+> ([WH](../people/WH.md), 2020-07) The name `emplace` is very confusing. Coming from the C++ world, it is a word that means a different concept.
 
-2024-10 で [SYG](../people/SYG.md) も「`emplace` は特に悪い、意味が分かる人が少ない」と述べ、[KG](../people/KG.md) が `getOrInsert` を提案。提案名は問題ベースの "upsert" に、メソッド名は `getOrInsert` / `getOrInsertComputed` に確定しました。
+In 2024-10, [SYG](../people/SYG.md) also said "`emplace` is particularly bad; few people know what it means," and [KG](../people/KG.md) proposed `getOrInsert`. The proposal name settled on the problem-based "upsert," and the method names on `getOrInsert` / `getOrInsertComputed`.
 
-### `getOrInsertComputed` のコールバックが map を変更したとき
+### When the `getOrInsertComputed` callback mutates the map
 
-コールバック内でユーザーが同一キーを挿入するなど map を変更した場合に throw するか non-throwing で扱うかが 2024-12 で議論されました。[DLM](../people/DLM.md) は当初 throw に傾きましたが、[KG](../people/KG.md)・[SYG](../people/SYG.md)・[KM](../people/KM.md)・[RBN](../people/RBN.md) らが pay-as-you-go の観点で non-throwing を支持。
+Whether to throw, or to handle it as non-throwing, when the user inserts the same key or otherwise mutates the map inside the callback, was discussed in 2024-12. [DLM](../people/DLM.md) initially leaned toward throwing, but [KG](../people/KG.md), [SYG](../people/SYG.md), [KM](../people/KM.md), [RBN](../people/RBN.md), and others supported non-throwing from a pay-as-you-go point of view.
 
-> ([SYG](../people/SYG.md), 2024-12) ほとんどの機能は pay-as-you-go であってほしい。non-throwing 案はこのメソッドを使うときだけコストを払うので明快だ。
+> ([SYG](../people/SYG.md), 2024-12) I want most features to be pay-as-you-go. The non-throwing plan is clear, because you pay the cost only when you use this method.
 
-決着は non-throwing。throw 方式は全 map 操作にチェックコストを課すため不採用とし、コールバック完了後にキー存在を再チェックして戻り値でセットする(コールバック中の変更は上書きされる)形になりました。
+The settlement was non-throwing. The throwing approach was rejected because it imposes a check cost on every map operation. After the callback finishes, the key's presence is checked again and the return value sets it (a mutation during the callback is overwritten).
 
-### 性能ではなくエルゴノミクスが主動機
+### Ergonomics, not performance, is the main motivation
 
-二重ルックアップ回避という性能上の動機は、実装者から重視されませんでした。
+Implementers did not treat avoiding a double lookup, the performance motivation, as important.
 
-> ([SYG](../people/SYG.md), 2019-10) V8 の見地では、ここでの性能上の動機は重要ではないと強調したい。この機能は気に入っているし、エルゴノミクスとして単体で成立する。
+> ([SYG](../people/SYG.md), 2019-10) From V8's point of view, I want to emphasize that the performance motivation here is not important. I like this feature, and it stands on its own as ergonomics.
 
-以後この提案は性能ではなく可読性・ergonomics を主たる正当化として進みました。
+After that, this proposal proceeded with readability and ergonomics, not performance, as its main justification.
 
-## 関連提案
+## Related proposals
 
-- [Records & Tuples](../proposals/records-and-tuples.md) — 合成キーで `getOrInsertComputed` を使う議論の文脈(2019-10)で言及。
-- `composites` — Records & Tuples の後継。collection キー周辺で 2025-04 に言及(提案ページ未作成)。
+- [Records & Tuples](records-and-tuples.md) — mentioned in the context of using `getOrInsertComputed` with a composite key (2019-10).
+- `composites` — the successor to Records & Tuples. Mentioned around collection keys in 2025-04 (no proposal page yet).
 
-## 出典
+## Sources
 
-- [2019-10 october-2](../../raw/notes/meetings/2019-10/october-2.md) — Stage 1 → 2([EPR](../people/EPR.md) 発表)
-- [2020-07 july-22](../../raw/notes/meetings/2020-07/july-22.md) — Stage 3 申請失敗(`emplace` 改名、命名・単一責務の論争)
-- [2023-07 july-13](../../raw/notes/meetings/2023-07/july-13.md) — Stage 2 メタレビュー(champion 不在として言及)
-- [2024-07 july-30](../../raw/notes/meetings/2024-07/july-30.md) — proposal scrub、[DLM](../people/DLM.md) が champion 候補に
-- [2024-10 october-09](../../raw/notes/meetings/2024-10/october-09.md) — Stage 2 update、2 メソッド化、champion 引き継ぎ
-- [2024-12 december-02](../../raw/notes/meetings/2024-12/december-02.md) — "upsert" 改名、non-throwing 決定
-- [2025-04 april-14](../../raw/notes/meetings/2025-04/april-14.md) — Stage 2.7 到達、メソッド名確定
-- [2025-07 july-28](../../raw/notes/meetings/2025-07/july-28.md) — Stage 3 到達
-- [2026-01 january-20](../../raw/notes/meetings/2026-01/january-20.md) — Stage 4 到達
+- [2019-10 october-2](../../raw/notes/meetings/2019-10/october-2.md) — Stage 1 → 2 (presented by [EPR](../people/EPR.md))
+- [2020-07 july-22](../../raw/notes/meetings/2020-07/july-22.md) — Stage 3 request failed (renamed `emplace`; the name and single-responsibility dispute)
+- [2023-07 july-13](../../raw/notes/meetings/2023-07/july-13.md) — Stage 2 meta-review (mentioned as having no champion)
+- [2024-07 july-30](../../raw/notes/meetings/2024-07/july-30.md) — proposal scrub; [DLM](../people/DLM.md) became a champion candidate
+- [2024-10 october-09](../../raw/notes/meetings/2024-10/october-09.md) — Stage 2 update, two methods, champion handover
+- [2024-12 december-02](../../raw/notes/meetings/2024-12/december-02.md) — renamed "upsert"; non-throwing decided
+- [2025-04 april-14](../../raw/notes/meetings/2025-04/april-14.md) — reached Stage 2.7; method names settled
+- [2025-07 july-28](../../raw/notes/meetings/2025-07/july-28.md) — reached Stage 3
+- [2026-01 january-20](../../raw/notes/meetings/2026-01/january-20.md) — reached Stage 4

@@ -9,22 +9,22 @@ first_seen: "2019-06"
 tags: [proposal, security, template-literal]
 ---
 
-## 概要
+## Overview
 
-`Array.isTemplateObject` は、あるオブジェクトが本物の template literal の call-site object(タグ付きテンプレートの第 1 引数として渡される配列)かどうかを判定する API の提案でした。tagged template を使った安全な DSL(SQL/HTML など)で、入力が確かにソース由来の固定テンプレートであることを保証する用途を想定していました。Trusted Types 系の安全性ユースケースと近い動機を持ちます。
+`Array.isTemplateObject` was a proposal for an API that tells whether an object is a real template-literal call-site object (the array passed as the first argument of a tagged template). The intended use was a safe DSL built on tagged templates (SQL, HTML, and others), guaranteeing that the input is a fixed template that really came from source. The motivation is close to the safety use cases of the Trusted Types line.
 
-champion は [MSL](../people/MSL.md)(Mike Samuel)・[KOT](../people/KOT.md)(Krzysztof Kotowicz)・[JHD](../people/JHD.md)(Jordan Harband)・[ZTZ](../people/ZTZ.md)(Zbigniew Tenerowicz)。2026-05 に withdrawn(canonical の inactive proposals のうち "Withdrawn" 区分)となりました。
+The champions are [MSL](../people/MSL.md) (Mike Samuel), [KOT](../people/KOT.md) (Krzysztof Kotowicz), [JHD](../people/JHD.md) (Jordan Harband), and [ZTZ](../people/ZTZ.md) (Zbigniew Tenerowicz). It was withdrawn in 2026-05 (the "Withdrawn" section of the canonical inactive proposals).
 
-## ステージ遷移
+## Stage history
 
-| 会合                                                      | できごと                                                                                                                                      | Stage         |
-| --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| [2019-06](../../raw/notes/meetings/2019-06/june-5.md)     | **Stage 2 到達**(`for Stage 1 or 2` を要求し直接 Stage 2)。Stage 3 reviewer に [MM](../people/MM.md) / [JRL](../people/JRL.md)                | → 2           |
-| [2019-12](../../raw/notes/meetings/2019-12/december-4.md) | update。Stage 2 据え置き                                                                                                                      | 2             |
-| [2021-01](../../raw/notes/meetings/2021-01/jan-25.md)     | 継続討議。same/cross-realm の扱いが論点。Stage 2 据え置き                                                                                     | 2             |
-| [2024-04](../../raw/notes/meetings/2024-04/april-10.md)   | next steps。Stage 2 据え置き                                                                                                                  | 2             |
-| [2024-07](../../raw/notes/meetings/2024-07/july-31.md)    | Stage 2.7 を要求(未達)                                                                                                                        | 2             |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)     | **withdrawn に consensus**([JHD](../people/JHD.md)・[CDA](../people/CDA.md) が "withdrawn" と明示。実装側の需要・関心不足 + realm 関連の懸念) | 2 → withdrawn |
+| Meeting                                                   | What happened                                                                                                                                                          | Stage         |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| [2019-06](../../raw/notes/meetings/2019-06/june-5.md)     | **Reached Stage 2** (asked `for Stage 1 or 2` and went straight to Stage 2). Stage 3 reviewers: [MM](../people/MM.md) / [JRL](../people/JRL.md)                        | → 2           |
+| [2019-12](../../raw/notes/meetings/2019-12/december-4.md) | Update. Stayed at Stage 2                                                                                                                                              | 2             |
+| [2021-01](../../raw/notes/meetings/2021-01/jan-25.md)     | Continued discussion. Same-realm versus cross-realm treatment was the issue. Stayed at Stage 2                                                                         | 2             |
+| [2024-04](../../raw/notes/meetings/2024-04/april-10.md)   | Next steps. Stayed at Stage 2                                                                                                                                          | 2             |
+| [2024-07](../../raw/notes/meetings/2024-07/july-31.md)    | Asked for Stage 2.7 (did not advance)                                                                                                                                  | 2             |
+| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)     | **Consensus to withdraw** ([JHD](../people/JHD.md) and [CDA](../people/CDA.md) said "withdrawn" explicitly. Weak implementer demand and interest, plus realm concerns) | 2 → withdrawn |
 
 ```mermaid
 xychart-beta
@@ -34,27 +34,27 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2]
 ```
 
-> 横軸=2012-2026、縦軸=Stage。2019-06 に Stage 1 を経ず **直接 Stage 2** へ(議題は `for Stage 1 or 2`、結論は "Stage 2 acceptance")。以後 Stage 2 で長く停滞し、2024-07 に 2.7 を狙うも未達、2026-05 に withdrawn(線は 2026 で終端)。
+> Horizontal axis = 2012-2026, vertical axis = Stage. In 2019-06 it went **straight to Stage 2** without Stage 1 (the agenda was `for Stage 1 or 2`; the conclusion was "Stage 2 acceptance"). It then stalled at Stage 2 for a long time. In 2024-07 it aimed at 2.7 and did not advance. Withdrawn in 2026-05 (the line ends in 2026).
 
-## 主な論点
+## Main issues
 
-### same / cross realm 問題
+### The same-realm / cross-realm problem
 
-template object の同一性を realm をまたいで判定する設計が、好ましくない制約(realm 初期化制御への依存)を生むことが繰り返し論点になりました。Web 標準側の realm 初期化制御に依存しうる点が懸念でした。
+A design that judges template-object identity across realms kept producing an undesirable constraint (dependence on controlling realm initialization). The concern was that it could depend on realm-initialization control on the web-standards side.
 
-### withdrawn(2026-05)
+### Withdrawn (2026-05)
 
-実装側の必要性・関心が乏しく、加えて realm 関連の懸念が残ったため、proposal を取り下げることに consensus。議事録の Conclusion 文面は umbrella 用語の "inactive" だが、[JHD](../people/JHD.md) は「This one I'm going to mark as withdrawn」、[CDA](../people/CDA.md) も「this one is withdrawn」と明示しており、canonical の inactive proposals でも "Withdrawn" 区分。したがって status は `withdrawn`。
+Consensus to withdraw the proposal, because implementers had little need or interest, and the realm-related concerns remained. The Conclusion text in the notes uses the umbrella word "inactive," but [JHD](../people/JHD.md) said "This one I'm going to mark as withdrawn," and [CDA](../people/CDA.md) also said "this one is withdrawn." The canonical inactive proposals also put it in the "Withdrawn" section. The status is therefore `withdrawn`.
 
-## 関連提案
+## Related proposals
 
-- [Dynamic Code Brand Checks](../proposals/dynamic-code-brand-checks.md) — 同じ Mike Samuel / Krzysztof Kotowicz が関与する Trusted Types / 安全性文脈の brand check 系。
+- [Dynamic Code Brand Checks](dynamic-code-brand-checks.md) — a brand-check line in the Trusted Types / safety context, which the same Mike Samuel and Krzysztof Kotowicz were involved in.
 
-## 出典
+## Sources
 
-- [2019-06 june-5](../../raw/notes/meetings/2019-06/june-5.md) — Stage 2 到達("Stage 2 acceptance")
-- [2019-12 december-4](../../raw/notes/meetings/2019-12/december-4.md) — update(Stage 2 据え置き)
-- [2021-01 jan-25](../../raw/notes/meetings/2021-01/jan-25.md) — 継続討議(Stage 2 据え置き)
-- [2024-04 april-10](../../raw/notes/meetings/2024-04/april-10.md) — Stage 2 据え置き
-- [2024-07 july-31](../../raw/notes/meetings/2024-07/july-31.md) — Stage 2.7 要求(未達)
+- [2019-06 june-5](../../raw/notes/meetings/2019-06/june-5.md) — reached Stage 2 ("Stage 2 acceptance")
+- [2019-12 december-4](../../raw/notes/meetings/2019-12/december-4.md) — update (stayed at Stage 2)
+- [2021-01 jan-25](../../raw/notes/meetings/2021-01/jan-25.md) — continued discussion (stayed at Stage 2)
+- [2024-04 april-10](../../raw/notes/meetings/2024-04/april-10.md) — stayed at Stage 2
+- [2024-07 july-31](../../raw/notes/meetings/2024-07/july-31.md) — Stage 2.7 requested (did not advance)
 - [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — withdrawn
