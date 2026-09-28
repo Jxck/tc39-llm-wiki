@@ -151,7 +151,7 @@ def ensure_topic_bullets(lines, token_re, titles_ci, rel):
         if wiki:
             wiki = WIKI_BULLET.sub("- wiki:", wiki)  # migrate legacy label
         elif fnames:
-            wiki = "- wiki: " + "、".join(
+            wiki = "- wiki: " + ", ".join(
                 f"[{page_title_of(f)}]({rel}/{f})" for f in fnames
             )
         proposal = take_first(core, PROPOSAL_BULLET)
