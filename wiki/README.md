@@ -45,6 +45,7 @@ A wiki for tracing **how each proposal changed stage, and which issues came up a
 | [Map get and delete](proposals/map-get-and-delete.md)                       | Stage 1 (2026-07)   | stage1    | `Map.prototype.getAndDelete` (formerly take). Get and delete in one hash lookup.                                                         |
 | [Linear Matching](proposals/linear-matching.md)                             | Stage 1 (2026-07)   | stage1    | Built-in mitigation for ReDoS. Exploring regexp execution with a linear-time guarantee.                                                  |
 | [Intl.DateTimeFormat Alignment](proposals/intl-datetimeformat-alignment.md) | Stage 1 (2026-07)   | stage1    | Align datetime formatting options with HTML `<time format>` and MessageFormat.                                                           |
+| [Decimal](proposals/decimal.md)                                             | Stage 1 (2020-02)   | stage1    | Exact base-10 arithmetic via IEEE 754 Decimal128. Stalled since 2020 on a primitive-vs-object-API disagreement with V8/SpiderMonkey.     |
 
 ## Families (cross-cutting summaries)
 
@@ -63,7 +64,7 @@ Proposal pages referenced from ingested pages but not created yet:
 
 ## Person pages (people/)
 
-People who appear on proposal or family pages are collected under [people/](people/) (75 at the moment). Each file is named by abbreviation and lists full name, affiliation, champion drafts, proposals and families that mention them, and meetings attended. `tools/extract_people.py` detects abbreviations on proposal and family pages and generates the pages. `tools/link_people.py` turns abbreviations in proposal, family, and meeting-summary prose into `[ABBR](<rel>/people/ABBR.md)` (standard markdown links that work in the VS Code preview). `tools/link_proposals.py` links proposal names in meeting summaries to proposal pages. Only people who actually appear are included, and the set grows as pages are added.
+People who appear on proposal or family pages are collected under [people/](people/) (78 at the moment). Each file is named by abbreviation and lists full name, affiliation, champion drafts, proposals and families that mention them, and meetings attended. `tools/extract_people.py` detects abbreviations on proposal and family pages and generates the pages. `tools/link_people.py` turns abbreviations in proposal, family, and meeting-summary prose into `[ABBR](<rel>/people/ABBR.md)` (standard markdown links that work in the VS Code preview). `tools/link_proposals.py` links proposal names in meeting summaries to proposal pages. Only people who actually appear are included, and the set grows as pages are added.
 
 ## Backbone (machine-extracted)
 

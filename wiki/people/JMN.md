@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Jesse Alama
 - **Affiliation**: Igalia / Igalia, S.L
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Amount](../proposals/amount.md)
+- **Champion drafts**: [Decimal](../proposals/decimal.md)
+- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [Decimal](../proposals/decimal.md)
 - **Meetings attended**: 18
 
 ## Meetings attended

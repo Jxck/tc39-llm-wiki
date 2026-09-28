@@ -74,7 +74,7 @@ How to represent the absence of a unit was an issue. For consistency when passin
 
 ## Related proposals
 
-- `decimal` — exact decimal numbers. A candidate for the value part of Amount; discussed together in 2025-02 as a "unified vision" (not merged). No proposal page yet.
+- [Decimal](../proposals/decimal.md) — exact decimal numbers. A candidate for the value part of Amount; discussed together in 2025-02 as a "unified vision" (not merged).
 - [BigInt from exponential](../proposals/bigint-from-exponential.md) — spun out of the problem that Amount's canonical form (an exponential-notation string) cannot be converted to `BigInt` (Stage 1 in 2026-07).
 - [Fused Multiply-Add](../proposals/fused-multiply-add.md) — the FMA operation needed to specify Amount's unit conversion (Stage 2 in 2026-07).
 - Intl Unit Protocol (`Intl.NumberFormat`'s options bag) — the intake for passing an Amount to a formatter. Making no-unit null, for consistency, is related to this.

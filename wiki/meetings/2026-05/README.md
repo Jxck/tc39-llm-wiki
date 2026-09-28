@@ -12,21 +12,21 @@ Three days in Amsterdam. **Reached Stage 4**: [Joint Iteration](../../proposals/
 
 ## Stage transitions
 
-| Proposal                                                                | Transition | Day   |
-| ----------------------------------------------------------------------- | ---------- | ----- |
-| [Joint Iteration](../../proposals/joint-iteration.md)                   | 3 → 4      | Day 1 |
-| `Atomics.pause`                                                         | 3 → 4      | Day 1 |
-| [Decorators](../../proposals/decorators.md)                             | 3 → 2.7    | Day 1 |
-| Decorator Metadata                                                      | 3 → 2.7    | Day 1 |
-| [Iterator Chunking](../../proposals/iterator-chunking.md)               | 2.7 → 3    | Day 2 |
-| [Iterator Includes](../../proposals/iterator-includes.md)               | 2.7 → 3    | Day 2 |
-| [Stable Formatting](../../proposals/stable-formatting.md)               | 1 → 2      | Day 2 |
-| Default Behaviours for some Intl APIs                                   | new → 1    | Day 2 |
-| [Intl Sequence Units](../../proposals/intl-sequence-units.md)           | 1 → 2      | Day 2 |
-| [export all from](../../proposals/export-all-from.md)                   | new → 1    | Day 2 |
-| [RegExp Buffer Boundaries](../../proposals/regexp-buffer-boundaries.md) | 2.7 → 3    | Day 3 |
-| [Error stack accessor](../../proposals/error-stack-accessor.md)         | 2.7 → 3    | Day 3 |
-| [Comparisons](../../proposals/comparisons.md)                           | new → 1    | Day 3 |
+| Proposal                                                                            | Transition | Day   |
+| ----------------------------------------------------------------------------------- | ---------- | ----- |
+| [Joint Iteration](../../proposals/joint-iteration.md)                               | 3 → 4      | Day 1 |
+| `Atomics.pause`                                                                     | 3 → 4      | Day 1 |
+| [Decorators](../../proposals/decorators.md)                                         | 3 → 2.7    | Day 1 |
+| Decorator Metadata                                                                  | 3 → 2.7    | Day 1 |
+| [Iterator Chunking](../../proposals/iterator-chunking.md)                           | 2.7 → 3    | Day 2 |
+| [Iterator Includes](../../proposals/iterator-includes.md)                           | 2.7 → 3    | Day 2 |
+| [Stable Formatting](../../proposals/stable-formatting.md)                           | 1 → 2      | Day 2 |
+| [Default Behaviours for some Intl APIs](../../proposals/intl-default-behaviours.md) | new → 1    | Day 2 |
+| [Intl Sequence Units](../../proposals/intl-sequence-units.md)                       | 1 → 2      | Day 2 |
+| [export all from](../../proposals/export-all-from.md)                               | new → 1    | Day 2 |
+| [RegExp Buffer Boundaries](../../proposals/regexp-buffer-boundaries.md)             | 2.7 → 3    | Day 3 |
+| [Error stack accessor](../../proposals/error-stack-accessor.md)                     | 2.7 → 3    | Day 3 |
+| [Comparisons](../../proposals/comparisons.md)                                       | new → 1    | Day 3 |
 
 ## Daily summaries
 
@@ -54,7 +54,7 @@ From the attendees in `raw/notes/meetings/2026-05/may-19.md` (abbreviation — n
 | [OFR](../../people/OFR.md) | Olivier Flückiger      | Google             |
 | [AUR](../../people/AUR.md) | Aurèle Barrière        | CNRS               |
 | LPR                        | Luna Pfeiffer          | Yavashark          |
-| CLA                        | Caio Lima              | Igalia             |
+| [CLA](../../people/CLA.md) | Caio Lima              | Igalia             |
 | [RGN](../../people/RGN.md) | Richard Gibson         | Agoric             |
 | [JHD](../../people/JHD.md) | Jordan Harband         | Socket             |
 | [KM](../../people/KM.md)   | Keith Miller           | Apple              |

@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Philip Chimento
 - **Affiliation**: Igalia / Igalia S.L. / Igalia, S.L
-- **Champion drafts**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Temporal](../proposals/temporal.md)
-- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Linear Matching](../proposals/linear-matching.md), [Temporal](../proposals/temporal.md)
+- **Champion drafts**: [Decimal](../proposals/decimal.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Temporal](../proposals/temporal.md)
+- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Decimal](../proposals/decimal.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Linear Matching](../proposals/linear-matching.md), [Temporal](../proposals/temporal.md)
 - **Meetings attended**: 37
 
 ## Meetings attended

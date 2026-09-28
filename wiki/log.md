@@ -392,3 +392,12 @@ Checked the entire wiki according to the new precedence (`raw/proposals` is the 
 - The `wiki/en/` tree had one extra directory level relative to `wiki/`, so every link that escaped the mirrored subtree (to `raw/notes`, `AGENTS.md`, `llm-wiki.md`, `wiki/_generated/`) had one extra `../`. A link-resolution sweep across all curated pages found 366 broken links after the copy; all were corrected by stripping the extra level, and a second sweep confirmed zero broken links remain.
 - AGENTS.md's language policy (`## language policy`), the fixed section headings for proposal/family pages, and the Ingest/Summarise wording were updated to say body text is English (quotes are kept in the original English rather than translated). The `en/` line was removed from the directory-structure listing.
 - Historical `wiki/log.md` entries were left as an append-only record; only new entries follow the English convention going forward.
+
+## [2026-09-28] ingest | Decimal
+
+- New proposal page `decimal.md` (Stage 1, unchanged since reaching it in 2020-02). Read 9 meetings spanning 2017-11 through 2026-07 (nov-29 / february-4 / dec-15 / july-12 / september-27 / april-11 / october-09 / february-19 / july-22).
+- Main issues: primitive-vs-object-based API (unresolved, restated as a Stage 2 blocker by JHD in 2026-07), IEEE 754 Decimal128 conformance vs. ergonomics (WH's long-running critique, mostly resolved in his direction), trailing-zero/precision tracking (resolved by scope-splitting the use case into what became Amount), and whether Decimal should exist in the language at all (folded into the primitive debate).
+- Champions per canonical `raw/proposals/stage-1-proposals.md`: PFC, API, JMN. Note: API (Andrew Paprocki)'s abbreviation collides with the common term "API" and is excluded from person-page generation by `extract_people.py`'s `NON_PERSON`, so no `people/API.md` is generated; this is expected, not an error.
+- Linked `amount.md`'s existing plain-text `decimal` reference to the new page.
+- Ran `extract_people.py` (75 → 78 people; added CLA, LIU, SHO) then `link_people.py` / `link_proposals.py`, which also retroactively linked "Decimal" mentions in 7 meeting-summary files that referenced it before the page existed.
+- Added the catalog row to `wiki/README.md` (Ingested proposals 38 → 39) and updated the people count note.

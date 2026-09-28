@@ -59,7 +59,7 @@ From the attendees in `raw/notes/meetings/2025-11/november-18.md` (abbreviation 
 | JAD                        | Jake Archibald       | Mozilla            |
 | [LVU](../../people/LVU.md) | Lea Verou            | OpenJS             |
 | [MAH](../../people/MAH.md) | Mathieu Hofman       | Agoric             |
-| CLA                        | Caio Lima            | Igalia             |
+| [CLA](../../people/CLA.md) | Caio Lima            | Igalia             |
 | YSZ                        | Yusuke Suzuki        | Apple              |
 | [CM](../../people/CM.md)   | Chip Morningstar     | Consensys          |
 | AKI                        | Aki Rose Braun       | Ecma International |

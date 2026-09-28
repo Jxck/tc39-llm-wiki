@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Keith Miller
 - **Affiliation**: Apple / Apple Inc / Apple Inc.
 - **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Atomics.pause](../proposals/atomics-pause.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Comparisons](../proposals/comparisons.md), [Error code property](../proposals/error-code-property.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Linear Matching](../proposals/linear-matching.md), [Upsert](../proposals/upsert.md)
+- **Mentioned on proposal pages**: [Atomics.pause](../proposals/atomics-pause.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Comparisons](../proposals/comparisons.md), [Decimal](../proposals/decimal.md), [Error code property](../proposals/error-code-property.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Linear Matching](../proposals/linear-matching.md), [Upsert](../proposals/upsert.md)
 - **Meetings attended**: 17
 
 ## Meetings attended
