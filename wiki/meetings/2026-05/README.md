@@ -10,6 +10,24 @@
 
 Three days in Amsterdam. **Reached Stage 4**: [Joint Iteration](../../proposals/joint-iteration.md) / `Atomics.pause` ([Dynamic Code Brand Checks](../../proposals/dynamic-code-brand-checks.md) got consensus only on a normative change, and Stage 4 will be asked again next time; [Explicit Resource Management](../../proposals/explicit-resource-management.md) is finished, its conditions having been met). [Iterator Chunking](../../proposals/iterator-chunking.md), [Iterator Includes](../../proposals/iterator-includes.md), and [Error stack accessor](../../proposals/error-stack-accessor.md) advanced to Stage 3, while **[Decorators](../../proposals/decorators.md) (the main proposal) and Decorator Metadata regressed from Stage 3 to Stage 2.7**. The iterator line and the area around [decorators](../../proposals/decorators.md) were the conspicuous movement. The committee also discussed Intl ([Stable Formatting](../../proposals/stable-formatting.md) / Sequence Units / Default Behaviours), a normative PR for ESM / Source Phase Imports, web integration of AsyncContext, and module topics including `export defer` / `export all from` / Module Scope Ceiling. Stage 1 for "[Comparisons](../../proposals/comparisons.md)" (deep comparison / deviation reporting), and a briefing on the regulatory side: the **EU CRA (Cyber Resilience Act)**.
 
+## Stage transitions
+
+| Proposal                                                                | Transition | Day   |
+| ----------------------------------------------------------------------- | ---------- | ----- |
+| [Joint Iteration](../../proposals/joint-iteration.md)                   | 3 → 4      | Day 1 |
+| `Atomics.pause`                                                         | 3 → 4      | Day 1 |
+| [Decorators](../../proposals/decorators.md)                             | 3 → 2.7    | Day 1 |
+| Decorator Metadata                                                      | 3 → 2.7    | Day 1 |
+| [Iterator Chunking](../../proposals/iterator-chunking.md)               | 2.7 → 3    | Day 2 |
+| [Iterator Includes](../../proposals/iterator-includes.md)               | 2.7 → 3    | Day 2 |
+| [Stable Formatting](../../proposals/stable-formatting.md)               | 1 → 2      | Day 2 |
+| Default Behaviours for some Intl APIs                                   | new → 1    | Day 2 |
+| [Intl Sequence Units](../../proposals/intl-sequence-units.md)           | 1 → 2      | Day 2 |
+| [export all from](../../proposals/export-all-from.md)                   | new → 1    | Day 2 |
+| [RegExp Buffer Boundaries](../../proposals/regexp-buffer-boundaries.md) | 2.7 → 3    | Day 3 |
+| [Error stack accessor](../../proposals/error-stack-accessor.md)         | 2.7 → 3    | Day 3 |
+| [Comparisons](../../proposals/comparisons.md)                           | new → 1    | Day 3 |
+
 ## Daily summaries
 
 - [Day 1 — 2026-05-19](2026-05-19.md)

@@ -10,6 +10,24 @@
 
 A four-day remote meeting centered on ECMA-262 / ECMA-402 proposals. **`Math.sumPrecise` and Uint8Array base64+hex reached Stage 4**, and **Iterator Sequencing and [Upsert](../../proposals/upsert.md) reached Stage 3**. On Intl, **[Intl Era and Month Code](../../proposals/intl-era-month-code.md) and [Intl Keep Trailing Zeros](../../proposals/intl-keep-trailing-zeros.md) reached Stage 2.7**, and **[Amount](../../proposals/amount.md) (formerly Measure) did not reach Stage 2** because of [WH](../../people/WH.md)'s concern about non-finite values. Import Buffer went from Stage 1 straight through to Stage 2 (changed to `Uint8Array` + `type: "bytes"`). Module Import Hook and new Global obtained Stage 1 after the problem statement was revised. Advancement of `Object.propertyCount` and `Array.isSparse` did not pass, because of objections (`Array.getNonIndexStringProperties` and `Object.getOwnPropertySymbols` options reached Stage 1). Consensus was also reached on normative PRs including a TypedArray copyWithin fix, unifying the order of module-evaluation promises, and changing the order of [Temporal](../../proposals/temporal.md) option processing. It was also agreed to write a "write your own comments" rule against LLM-generated comments into `AI_policy.md`.
 
+## Stage transitions
+
+| Proposal                                                                | Transition                             | Day      |
+| ----------------------------------------------------------------------- | -------------------------------------- | -------- |
+| `Math.sumPrecise`                                                       | 3 → 4                                  | Day 1    |
+| Uint8Array base64+hex                                                   | 3 → 4                                  | Day 1    |
+| Iterator Sequencing                                                     | 2.7 → 3                                | Day 1    |
+| [Upsert](../../proposals/upsert.md)                                     | 2.7 → 3                                | Day 1    |
+| [Intl Era and Month Code](../../proposals/intl-era-month-code.md)       | 2 → 2.7 (conditional on editor review) | Day 2    |
+| [Intl Keep Trailing Zeros](../../proposals/intl-keep-trailing-zeros.md) | 2 → 2.7                                | Day 2    |
+| [Amount](../../proposals/amount.md)                                     | no advancement (did not reach Stage 2) | Days 2-3 |
+| Import Buffer                                                           | 1 → 2                                  | Day 2    |
+| Module Import Hook and new Global                                       | new → 1                                | Day 2    |
+| `Array.getNonIndexStringProperties`                                     | new → 1                                | Day 3    |
+| `Object.getOwnPropertySymbols` options                                  | new → 1                                | Day 3    |
+| `Object.propertyCount`                                                  | 1 → 2 (did not pass)                   | Day 3    |
+| `Array.isSparse`                                                        | new → 1 (did not pass)                 | Day 3    |
+
 ## Daily summaries
 
 - [Day 1 — 2025-07-28](2025-07-28.md)
