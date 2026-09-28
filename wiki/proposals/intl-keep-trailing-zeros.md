@@ -17,13 +17,13 @@ The champion is [EAO](../people/EAO.md) (Eemeli Aro). It is an ECMA-402 proposal
 
 ## Stage history
 
-| Meeting                                                    | What happened                                                                                                                                 | Stage   |
-| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2025-05](../../raw/notes/meetings/2025-05/may-28.md)      | Reached Stage 1                                                                                                                               | → 1     |
-| [2025-07](../../raw/notes/meetings/2025-07/july-29.md)     | **Reached Stage 2**. [RGN](../people/RGN.md) / [SFC](../people/SFC.md) became reviewers and finished the review during the meeting            | 1 → 2   |
-| [2025-07](../../raw/notes/meetings/2025-07/july-30.md)     | **Reached Stage 2.7** (continued on day 3 of the same meeting. [WH](../people/WH.md)'s blocking concern was split into a separate discussion) | 2 → 2.7 |
-| [2025-11](../../raw/notes/meetings/2025-11/november-18.md) | Update (merge plan for PR #10 / #12; confirmed that the current behavior in issue #11 is acceptable)                                          | 2.7     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)      | **Reached Stage 3**. Merged PR #19 / #20 with reviewer approval                                                                               | 2.7 → 3 |
+| Meeting                                                                            | What happened                                                                                                                                 | Stage   |
+| ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2025-05](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-28.md)      | Reached Stage 1                                                                                                                               | → 1     |
+| [2025-07](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-29.md)     | **Reached Stage 2**. [RGN](../people/RGN.md) / [SFC](../people/SFC.md) became reviewers and finished the review during the meeting            | 1 → 2   |
+| [2025-07](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-30.md)     | **Reached Stage 2.7** (continued on day 3 of the same meeting. [WH](../people/WH.md)'s blocking concern was split into a separate discussion) | 2 → 2.7 |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) | Update (merge plan for PR #10 / #12; confirmed that the current behavior in issue #11 is acceptable)                                          | 2.7     |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)      | **Reached Stage 3**. Merged PR #19 / #20 with reviewer approval                                                                               | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -56,7 +56,7 @@ Open PRs #19 and #20 were presented already approved by reviewers, and support f
 
 ## Sources
 
-- [2025-05 may-28](../../raw/notes/meetings/2025-05/may-28.md) — Stage 1
-- [2025-07 july-29](../../raw/notes/meetings/2025-07/july-29.md) — Stage 2
-- [2025-11 november-18](../../raw/notes/meetings/2025-11/november-18.md) — update
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — Stage 3
+- [2025-05 may-28](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-28.md) — Stage 1
+- [2025-07 july-29](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-29.md) — Stage 2
+- [2025-11 november-18](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) — update
+- [2026-05 may-19](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md) — Stage 3

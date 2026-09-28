@@ -17,12 +17,12 @@ The champions are [JHD](../people/JHD.md) (Jordan Harband) and [MM](../people/MM
 
 ## Stage history
 
-| Meeting                                                    | What happened                                                                                            | Stage   |
-| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------- |
-| [2025-02](../../raw/notes/meetings/2025-02/february-19.md) | Presented `Error Stack Accessor` (a carve-out from the older Error Stacks line)                          | 2       |
-| [2026-03](../../raw/notes/meetings/2026-03/march-10.md)    | **Reached Stage 2.7**. HTML integration PR filed                                                         | 2 → 2.7 |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)      | Asked for Stage 3 (tests under review). Continued to day 3 the same week                                 | 2.7     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-21.md)      | **Reached Stage 3**. Conditional: if the tests are not merged by the next meeting, ask to regress to 2.7 | 2.7 → 3 |
+| Meeting                                                                            | What happened                                                                                            | Stage   |
+| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------- |
+| [2025-02](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-19.md) | Presented `Error Stack Accessor` (a carve-out from the older Error Stacks line)                          | 2       |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md)    | **Reached Stage 2.7**. HTML integration PR filed                                                         | 2 → 2.7 |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)      | Asked for Stage 3 (tests under review). Continued to day 3 the same week                                 | 2.7     |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md)      | **Reached Stage 3**. Conditional: if the tests are not merged by the next meeting, ask to regress to 2.7 | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -51,7 +51,7 @@ Fully structuring stack traces (Error Stacks Structure) is heavy and hard to agr
 
 ## Sources
 
-- [2025-02 february-19](../../raw/notes/meetings/2025-02/february-19.md) — carve-out presented
-- [2026-03 march-10](../../raw/notes/meetings/2026-03/march-10.md) — Stage 2.7
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — Stage 3 request (continued)
-- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — Stage 3 (conditional)
+- [2025-02 february-19](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-19.md) — carve-out presented
+- [2026-03 march-10](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md) — Stage 2.7
+- [2026-05 may-19](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md) — Stage 3 request (continued)
+- [2026-05 may-21](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md) — Stage 3 (conditional)

@@ -63,15 +63,15 @@ The attribute syntax for import flipped more than once: `with` → `if` → `ass
 
 ## Sources
 
-- [2019-06 june-4](../../raw/notes/meetings/2019-06/june-4.md) — dynamic `import()` Stage 4
-- [2020-03 april-1](../../raw/notes/meetings/2020-03/april-1.md) — `import.meta` Stage 4 / Compartments Stage 1
-- [2021-05 may-25](../../raw/notes/meetings/2021-05/may-25.md) — top-level await Stage 4
-- [2023-01 jan-31](../../raw/notes/meetings/2023-01/jan-31.md) — import assertions downgraded from Stage 3 to 2
-- [2023-07 july-12](../../raw/notes/meetings/2023-07/july-12.md) — Source Phase Imports Stage 3
-- [2024-07 july-29](../../raw/notes/meetings/2024-07/july-29.md) — drop `assert` and unify on `with`
-- [2024-10 october-08](../../raw/notes/meetings/2024-10/october-08.md) — Import Attributes + JSON Modules Stage 4
-- [2025-02 february-18](../../raw/notes/meetings/2025-02/february-18.md) — `import defer` Stage 3
-- [2025-11 november-18](../../raw/notes/meetings/2025-11/november-18.md) — `export defer` Stage 2.7 proposed (with a reservation)
-- [2026-03 march-11](../../raw/notes/meetings/2026-03/march-11.md) — Import Text Stage 3 / ESM Phase Imports update
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — export all from Stage 1 / Module Scope Ceiling / normative PRs for phase imports
+- [2019-06 june-4](https://github.com/tc39/notes/blob/main/meetings/2019-06/june-4.md) — dynamic `import()` Stage 4
+- [2020-03 april-1](https://github.com/tc39/notes/blob/main/meetings/2020-03/april-1.md) — `import.meta` Stage 4 / Compartments Stage 1
+- [2021-05 may-25](https://github.com/tc39/notes/blob/main/meetings/2021-05/may-25.md) — top-level await Stage 4
+- [2023-01 jan-31](https://github.com/tc39/notes/blob/main/meetings/2023-01/jan-31.md) — import assertions downgraded from Stage 3 to 2
+- [2023-07 july-12](https://github.com/tc39/notes/blob/main/meetings/2023-07/july-12.md) — Source Phase Imports Stage 3
+- [2024-07 july-29](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-29.md) — drop `assert` and unify on `with`
+- [2024-10 october-08](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-08.md) — Import Attributes + JSON Modules Stage 4
+- [2025-02 february-18](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-18.md) — `import defer` Stage 3
+- [2025-11 november-18](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) — `export defer` Stage 2.7 proposed (with a reservation)
+- [2026-03 march-11](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-11.md) — Import Text Stage 3 / ESM Phase Imports update
+- [2026-05 may-20](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) — export all from Stage 1 / Module Scope Ceiling / normative PRs for phase imports
 - [agenda-index](../_generated/agenda-index.md) — agenda items and stage signals for each proposal (an index)

@@ -17,10 +17,10 @@ Proposed by [DRO](../people/DRO.md) (Devin Rousso, Invited Expert). The original
 
 ## Stage history
 
-| Meeting                                                | What happened                                                                                                                                                        | Stage |
-| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2026-07](../../raw/notes/meetings/2026-07/july-20.md) | First presented as "Map take for stage 1, 2, or 2.7". The name (`take`) and Set support were in dispute, and time ran out, so it continued the next day              | -     |
-| [2026-07](../../raw/notes/meetings/2026-07/july-21.md) | In the continuation, **reached Stage 1**. Rename to `getAndDelete`, do not add it to Set/WeakSet, and keep investigating how to distinguish `undefined` from absence | 0 → 1 |
+| Meeting                                                                        | What happened                                                                                                                                                        | Stage |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-20.md) | First presented as "Map take for stage 1, 2, or 2.7". The name (`take`) and Set support were in dispute, and time ran out, so it continued the next day              | -     |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-21.md) | In the continuation, **reached Stage 1**. Rename to `getAndDelete`, do not add it to Set/WeakSet, and keep investigating how to distinguish `undefined` from absence | 0 → 1 |
 
 ```mermaid
 xychart-beta
@@ -56,5 +56,5 @@ The return value of `take` alone cannot tell "the key was absent" from "the valu
 
 ## Sources
 
-- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — first presentation (ran out of time)
-- [2026-07 july-21](../../raw/notes/meetings/2026-07/july-21.md) — continuation, reached Stage 1
+- [2026-07 july-20](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-20.md) — first presentation (ran out of time)
+- [2026-07 july-21](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-21.md) — continuation, reached Stage 1

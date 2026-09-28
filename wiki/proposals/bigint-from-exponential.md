@@ -17,11 +17,11 @@ It began as a needs-consensus PR against ECMA-262 (#3857, a change in which `Str
 
 ## Stage history
 
-| Meeting                                                | What happened                                                                                                                                                                                          | Stage |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)  | First discussed as needs-consensus PR #3857. Opinion split on whether it should be a PR or a staged proposal, and the conclusion was deferred                                                          | -     |
-| [2026-07](../../raw/notes/meetings/2026-07/july-20.md) | On reconsideration, the PR was **converted into proposal-bigint-from-exponential and taken to Stage 1** ([WH](../people/WH.md) / [MF](../people/MF.md) / [JSL](../people/JSL.md) explicitly supported) | 0 → 1 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | Two temperature checks (whether to extend literal syntax / spillover into existing implicit conversions). Opinion split on both, to be considered in future design                                     | 1     |
+| Meeting                                                                        | What happened                                                                                                                                                                                          | Stage |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)  | First discussed as needs-consensus PR #3857. Opinion split on whether it should be a PR or a staged proposal, and the conclusion was deferred                                                          | -     |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-20.md) | On reconsideration, the PR was **converted into proposal-bigint-from-exponential and taken to Stage 1** ([WH](../people/WH.md) / [MF](../people/MF.md) / [JSL](../people/JSL.md) explicitly supported) | 0 → 1 |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) | Two temperature checks (whether to extend literal syntax / spillover into existing implicit conversions). Opinion split on both, to be considered in future design                                     | 1     |
 
 ```mermaid
 xychart-beta
@@ -58,6 +58,6 @@ To save one design iteration, [RGN](../people/RGN.md) checked the temperature on
 
 ## Sources
 
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — first discussion of needs-consensus PR #3857 (deferred)
-- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — converted into a proposal, reached Stage 1
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — temperature checks
+- [2026-05 may-19](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md) — first discussion of needs-consensus PR #3857 (deferred)
+- [2026-07 july-20](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-20.md) — converted into a proposal, reached Stage 1
+- [2026-07 july-22](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) — temperature checks

@@ -20,16 +20,16 @@ What it specifies is mainly a description of the supported calendars (in the end
 
 ## Stage history
 
-| Meeting                                                     | What happened                                                                                                                                                  | Stage   |
-| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2022-11](../../raw/notes/meetings/2022-11/dec-01.md)       | Reached Stage 1. [SFC](../people/SFC.md) presented for [FYT](../people/FYT.md). Where the authority for identifiers sits was the issue                         | 0 → 1   |
-| [2023-01](../../raw/notes/meetings/2023-01/feb-01.md)       | Reached Stage 2. Presented by [FYT](../people/FYT.md). [EAO](../people/EAO.md) and [SFC](../people/SFC.md) became Stage 3 reviewers                            | 1 → 2   |
-| [2025-04](../../raw/notes/meetings/2025-04/april-16.md)     | Stage 2 update. [SFC](../people/SFC.md) took it over, changed era codes to be based on era names, and presented the Hijri / out-of-range policy. No transition | 2       |
-| [2025-07](../../raw/notes/meetings/2025-07/july-30.md)      | **Reached Stage 2.7** (conditional). [USA](../people/USA.md) presented jointly with [PFC](../people/PFC.md)                                                    | 2 → 2.7 |
-| [2025-09](../../raw/notes/meetings/2025-09/september-23.md) | 2.7 update plus consensus on two normative changes (revert leap month to `overflow: reject`, allow reference years through 2035)                               | 2.7     |
-| [2025-11](../../raw/notes/meetings/2025-11/november-20.md)  | **Deferred** Stage 3 because of late-breaking normative changes. Consensus on removing CLDR era aliases and similar                                            | 2.7     |
-| [2026-01](../../raw/notes/meetings/2026-01/january-20.md)   | **Reached Stage 3**. Presented by [BAN](../people/BAN.md). A closed calendar list, a reference-year table for rare leap months, and others                     | 2.7 → 3 |
-| [2026-03](../../raw/notes/meetings/2026-03/march-10.md)     | **Reached Stage 4**. Presented by [BAN](../people/BAN.md). SpiderMonkey 99.9% / V8 99.7% conformant, editor sign-off in                                        | 3 → 4   |
+| Meeting                                                                             | What happened                                                                                                                                                  | Stage   |
+| ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2022-11](https://github.com/tc39/notes/blob/main/meetings/2022-11/dec-01.md)       | Reached Stage 1. [SFC](../people/SFC.md) presented for [FYT](../people/FYT.md). Where the authority for identifiers sits was the issue                         | 0 → 1   |
+| [2023-01](https://github.com/tc39/notes/blob/main/meetings/2023-01/feb-01.md)       | Reached Stage 2. Presented by [FYT](../people/FYT.md). [EAO](../people/EAO.md) and [SFC](../people/SFC.md) became Stage 3 reviewers                            | 1 → 2   |
+| [2025-04](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-16.md)     | Stage 2 update. [SFC](../people/SFC.md) took it over, changed era codes to be based on era names, and presented the Hijri / out-of-range policy. No transition | 2       |
+| [2025-07](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-30.md)      | **Reached Stage 2.7** (conditional). [USA](../people/USA.md) presented jointly with [PFC](../people/PFC.md)                                                    | 2 → 2.7 |
+| [2025-09](https://github.com/tc39/notes/blob/main/meetings/2025-09/september-23.md) | 2.7 update plus consensus on two normative changes (revert leap month to `overflow: reject`, allow reference years through 2035)                               | 2.7     |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-20.md)  | **Deferred** Stage 3 because of late-breaking normative changes. Consensus on removing CLDR era aliases and similar                                            | 2.7     |
+| [2026-01](https://github.com/tc39/notes/blob/main/meetings/2026-01/january-20.md)   | **Reached Stage 3**. Presented by [BAN](../people/BAN.md). A closed calendar list, a reference-year table for rare leap months, and others                     | 2.7 → 3 |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md)     | **Reached Stage 4**. Presented by [BAN](../people/BAN.md). SpiderMonkey 99.9% / V8 99.7% conformant, editor sign-off in                                        | 3 → 4   |
 
 ```mermaid
 xychart-beta
@@ -73,11 +73,11 @@ Whether to keep calendar identifiers that have no substance, or that invite misu
 
 ## Sources
 
-- [2022-11 dec-01](../../raw/notes/meetings/2022-11/dec-01.md) — Stage 1 (the authority-of-identifiers issue)
-- [2023-01 feb-01](../../raw/notes/meetings/2023-01/feb-01.md) — Stage 2
-- [2025-04 april-16](../../raw/notes/meetings/2025-04/april-16.md) — Stage 2 update ([SFC](../people/SFC.md) took it over)
-- [2025-07 july-30](../../raw/notes/meetings/2025-07/july-30.md) — reached Stage 2.7
-- [2025-09 september-23](../../raw/notes/meetings/2025-09/september-23.md) — 2.7 update plus normative changes
-- [2025-11 november-20](../../raw/notes/meetings/2025-11/november-20.md) — Stage 3 deferred, plus normative
-- [2026-01 january-20](../../raw/notes/meetings/2026-01/january-20.md) — reached Stage 3
-- [2026-03 march-10](../../raw/notes/meetings/2026-03/march-10.md) — reached Stage 4
+- [2022-11 dec-01](https://github.com/tc39/notes/blob/main/meetings/2022-11/dec-01.md) — Stage 1 (the authority-of-identifiers issue)
+- [2023-01 feb-01](https://github.com/tc39/notes/blob/main/meetings/2023-01/feb-01.md) — Stage 2
+- [2025-04 april-16](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-16.md) — Stage 2 update ([SFC](../people/SFC.md) took it over)
+- [2025-07 july-30](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-30.md) — reached Stage 2.7
+- [2025-09 september-23](https://github.com/tc39/notes/blob/main/meetings/2025-09/september-23.md) — 2.7 update plus normative changes
+- [2025-11 november-20](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-20.md) — Stage 3 deferred, plus normative
+- [2026-01 january-20](https://github.com/tc39/notes/blob/main/meetings/2026-01/january-20.md) — reached Stage 3
+- [2026-03 march-10](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md) — reached Stage 4

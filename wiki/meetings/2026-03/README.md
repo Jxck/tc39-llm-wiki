@@ -80,4 +80,4 @@ From the attendees in `raw/notes/meetings/2026-03/march-10.md` (abbreviation —
 | [SFC](../../people/SFC.md) | Shane Carr         | Google             |
 | [ZB](../../people/ZB.md)   | Zibi Braniecki     | —                  |
 
-> Source: [raw/notes/meetings/2026-03](../../../raw/notes/meetings/2026-03/). Dates, location, and the overview come from [tc39/agendas 2026/03](https://github.com/tc39/agendas/blob/main/2026/03.md) and each day's transcript.
+> Source: [tc39/notes/meetings/2026-03](https://github.com/tc39/notes/tree/main/meetings/2026-03). Dates, location, and the overview come from [tc39/agendas 2026/03](https://github.com/tc39/agendas/blob/main/2026/03.md) and each day's transcript.

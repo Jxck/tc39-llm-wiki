@@ -18,10 +18,10 @@ The champion is [KG](../people/KG.md) (Kevin Gibbons). A member of the `iterator
 
 ## Stage history
 
-| Meeting                                                    | What happened                                                                 | Stage   |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------- | ------- |
-| [2025-11](../../raw/notes/meetings/2025-11/november-19.md) | First presented. Asked for Stage 1, 2, or 2.7 together, and advanced          | → 2.7   |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)      | **Reached Stage 3**. test262 coverage is complete and delegate review is done | 2.7 → 3 |
+| Meeting                                                                            | What happened                                                                 | Stage   |
+| ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ------- |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-19.md) | First presented. Asked for Stage 1, 2, or 2.7 together, and advanced          | → 2.7   |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md)      | **Reached Stage 3**. test262 coverage is complete and delegate review is done | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -46,5 +46,5 @@ Consensus for Stage 3 with tests complete and review done. It is a straightforwa
 
 ## Sources
 
-- [2025-11 november-19](../../raw/notes/meetings/2025-11/november-19.md) — first presented, Stage 2.7
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 3
+- [2025-11 november-19](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-19.md) — first presented, Stage 2.7
+- [2026-05 may-20](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) — Stage 3

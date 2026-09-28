@@ -19,11 +19,11 @@ The champion is [JSH](../people/JSH.md) (Jacob Smith). It is a newer proposal, a
 
 ## Stage history
 
-| Meeting                                                    | What happened                                                         | Stage |
-| ---------------------------------------------------------- | --------------------------------------------------------------------- | ----- |
-| [2025-05](../../raw/notes/meetings/2025-05/may-30.md)      | Presented `Comparisons (né Assertions) for Stage 1` (did not advance) | 0     |
-| [2025-11](../../raw/notes/meetings/2025-11/november-19.md) | Continued. Stayed at Stage 0                                          | 0     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-21.md)      | **Reached Stage 1** (consensus on the same day's continuation)        | 0 → 1 |
+| Meeting                                                                            | What happened                                                         | Stage |
+| ---------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ----- |
+| [2025-05](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-30.md)      | Presented `Comparisons (né Assertions) for Stage 1` (did not advance) | 0     |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-19.md) | Continued. Stayed at Stage 0                                          | 0     |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md)      | **Reached Stage 1** (consensus on the same day's continuation)        | 0 → 1 |
 
 ```mermaid
 xychart-beta
@@ -69,6 +69,6 @@ As a forewarning at the Stage 1 consensus: [MF](../people/MF.md) said "it meets 
 
 ## Sources
 
-- [2025-05 may-30](../../raw/notes/meetings/2025-05/may-30.md) — Stage 1 presented (né Assertions)
-- [2025-11 november-19](../../raw/notes/meetings/2025-11/november-19.md) — stayed at Stage 0
-- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — Stage 1 (this session plus the continuation; the equality, performance, and encapsulation issues are here too)
+- [2025-05 may-30](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-30.md) — Stage 1 presented (né Assertions)
+- [2025-11 november-19](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-19.md) — stayed at Stage 0
+- [2026-05 may-21](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md) — Stage 1 (this session plus the continuation; the equality, performance, and encapsulation issues are here too)

@@ -17,12 +17,12 @@ The naming mirrors the pattern of `Iterator.zip` / `Iterator.zipKeyed` (an order
 
 ## Stage history
 
-| Meeting                                                     | What happened                                                                                                                                                                                                                                                                                         | Stage   |
-| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2023-03](../../raw/notes/meetings/2023-03/mar-22.md)       | [ACE](../people/ACE.md) raised the problem (readability of the ordinal API). [KG](../people/KG.md) / [RBN](../people/RBN.md) supported it explicitly; [MM](../people/MM.md) registered a lukewarm view that "the feature does not pay for itself" but did not oppose, so **Stage 1**                  | 0 → 1   |
-| [2025-09](../../raw/notes/meetings/2025-09/september-23.md) | Update. Checked the committee's temperature on including `allSettledKeyed` ([KG](../people/KG.md) supported inclusion: "exactly the same motivation applies"). [JSL](../people/JSL.md) said "2.7 is premature"                                                                                        | 1       |
-| [2025-11](../../raw/notes/meetings/2025-11/november-18.md)  | With the finished spec that adds `allSettledKeyed`, **straight to Stage 2.7 without passing through Stage 2** ([MF](../people/MF.md)/[DLM](../people/DLM.md)/[DJM](../people/DJM.md)/[WH](../people/WH.md)/[CDA](../people/CDA.md)/[JSL](../people/JSL.md) and many others in support, no opposition) | 1 → 2.7 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-20.md)      | 89 tests merged into test262; Boa / SpiderMonkey pass 100%; [JHD](../people/JHD.md)'s polyfill also passes everything. **Reached Stage 3**                                                                                                                                                            | 2.7 → 3 |
+| Meeting                                                                             | What happened                                                                                                                                                                                                                                                                                         | Stage   |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2023-03](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-22.md)       | [ACE](../people/ACE.md) raised the problem (readability of the ordinal API). [KG](../people/KG.md) / [RBN](../people/RBN.md) supported it explicitly; [MM](../people/MM.md) registered a lukewarm view that "the feature does not pay for itself" but did not oppose, so **Stage 1**                  | 0 → 1   |
+| [2025-09](https://github.com/tc39/notes/blob/main/meetings/2025-09/september-23.md) | Update. Checked the committee's temperature on including `allSettledKeyed` ([KG](../people/KG.md) supported inclusion: "exactly the same motivation applies"). [JSL](../people/JSL.md) said "2.7 is premature"                                                                                        | 1       |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md)  | With the finished spec that adds `allSettledKeyed`, **straight to Stage 2.7 without passing through Stage 2** ([MF](../people/MF.md)/[DLM](../people/DLM.md)/[DJM](../people/DJM.md)/[WH](../people/WH.md)/[CDA](../people/CDA.md)/[JSL](../people/JSL.md) and many others in support, no opposition) | 1 → 2.7 |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-20.md)      | 89 tests merged into test262; Boa / SpiderMonkey pass 100%; [JHD](../people/JHD.md)'s polyfill also passes everything. **Reached Stage 3**                                                                                                                                                            | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -63,7 +63,7 @@ Because the spec text was already complete as of 2025-11, [ACE](../people/ACE.md
 
 ## Sources
 
-- [2023-03 mar-22](../../raw/notes/meetings/2023-03/mar-22.md) — Reached Stage 1
-- [2025-09 september-23](../../raw/notes/meetings/2025-09/september-23.md) — update (temperature check on allSettledKeyed)
-- [2025-11 november-18](../../raw/notes/meetings/2025-11/november-18.md) — Reached Stage 2.7 (straight through, without Stage 2)
-- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — Reached Stage 3
+- [2023-03 mar-22](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-22.md) — Reached Stage 1
+- [2025-09 september-23](https://github.com/tc39/notes/blob/main/meetings/2025-09/september-23.md) — update (temperature check on allSettledKeyed)
+- [2025-11 november-18](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) — Reached Stage 2.7 (straight through, without Stage 2)
+- [2026-07 july-20](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-20.md) — Reached Stage 3

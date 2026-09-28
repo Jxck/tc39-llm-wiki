@@ -20,17 +20,17 @@ The original champion was Erica Pramer ([EPR](../people/EPR.md)). The 2020 Stage
 
 ## Stage history
 
-| Meeting                                                    | What happened                                                                                                                                                                               | Stage   |
-| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2019-10](../../raw/notes/meetings/2019-10/october-2.md)   | [EPR](../people/EPR.md) presented `Map.upsert` (formerly `Map.insertOrUpdate`). Subclassing hazard, performance, and a double callback were discussed, and it advanced with no objection    | 1 → 2   |
-| [2020-07](../../raw/notes/meetings/2020-07/july-22.md)     | [BFS](../people/BFS.md) presented a version renamed `emplace` and turned into an options bag, as Stage 3. Many blocking concerns on the name and single responsibility. **Did not advance** | 2       |
-| [2023-07](../../raw/notes/meetings/2023-07/july-13.md)     | Named in a Stage 2 meta-review as "a proposal with no active champion," and a new champion was called for                                                                                   | 2       |
-| [2024-07](../../raw/notes/meetings/2024-07/july-30.md)     | Proposal scrub. Confirmed [EPR](../people/EPR.md) had left. [DLM](../people/DLM.md) volunteered as a champion candidate                                                                     | 2       |
-| [2024-10](../../raw/notes/meetings/2024-10/october-09.md)  | Stage 2 update. Narrowed to inserting a default value, and moved to a two-method shape: a value passed directly, plus a callback version. [DLM](../people/DLM.md) formally took it over     | 2       |
-| [2024-12](../../raw/notes/meetings/2024-12/december-02.md) | The proposal name was settled as "upsert." If the callback mutates the map, it is handled as non-throwing                                                                                   | 2       |
-| [2025-04](../../raw/notes/meetings/2025-04/april-14.md)    | **Reached Stage 2.7**. Method names settled as `getOrInsert` / `getOrInsertComputed`                                                                                                        | 2 → 2.7 |
-| [2025-07](../../raw/notes/meetings/2025-07/july-28.md)     | **Reached Stage 3**. test262 was cleaned up and expanded                                                                                                                                    | 2.7 → 3 |
-| [2026-01](../../raw/notes/meetings/2026-01/january-20.md)  | **Reached Stage 4**. Shipped in Safari / Firefox, test262 passing, an editor-approved PR. Approved with no objection                                                                        | 3 → 4   |
+| Meeting                                                                            | What happened                                                                                                                                                                               | Stage   |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2019-10](https://github.com/tc39/notes/blob/main/meetings/2019-10/october-2.md)   | [EPR](../people/EPR.md) presented `Map.upsert` (formerly `Map.insertOrUpdate`). Subclassing hazard, performance, and a double callback were discussed, and it advanced with no objection    | 1 → 2   |
+| [2020-07](https://github.com/tc39/notes/blob/main/meetings/2020-07/july-22.md)     | [BFS](../people/BFS.md) presented a version renamed `emplace` and turned into an options bag, as Stage 3. Many blocking concerns on the name and single responsibility. **Did not advance** | 2       |
+| [2023-07](https://github.com/tc39/notes/blob/main/meetings/2023-07/july-13.md)     | Named in a Stage 2 meta-review as "a proposal with no active champion," and a new champion was called for                                                                                   | 2       |
+| [2024-07](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-30.md)     | Proposal scrub. Confirmed [EPR](../people/EPR.md) had left. [DLM](../people/DLM.md) volunteered as a champion candidate                                                                     | 2       |
+| [2024-10](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-09.md)  | Stage 2 update. Narrowed to inserting a default value, and moved to a two-method shape: a value passed directly, plus a callback version. [DLM](../people/DLM.md) formally took it over     | 2       |
+| [2024-12](https://github.com/tc39/notes/blob/main/meetings/2024-12/december-02.md) | The proposal name was settled as "upsert." If the callback mutates the map, it is handled as non-throwing                                                                                   | 2       |
+| [2025-04](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-14.md)    | **Reached Stage 2.7**. Method names settled as `getOrInsert` / `getOrInsertComputed`                                                                                                        | 2 → 2.7 |
+| [2025-07](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-28.md)     | **Reached Stage 3**. test262 was cleaned up and expanded                                                                                                                                    | 2.7 → 3 |
+| [2026-01](https://github.com/tc39/notes/blob/main/meetings/2026-01/january-20.md)  | **Reached Stage 4**. Shipped in Safari / Firefox, test262 passing, an editor-approved PR. Approved with no objection                                                                        | 3 → 4   |
 
 ```mermaid
 xychart-beta
@@ -83,12 +83,12 @@ After that, this proposal proceeded with readability and ergonomics, not perform
 
 ## Sources
 
-- [2019-10 october-2](../../raw/notes/meetings/2019-10/october-2.md) — Stage 1 → 2 (presented by [EPR](../people/EPR.md))
-- [2020-07 july-22](../../raw/notes/meetings/2020-07/july-22.md) — Stage 3 request failed (renamed `emplace`; the name and single-responsibility dispute)
-- [2023-07 july-13](../../raw/notes/meetings/2023-07/july-13.md) — Stage 2 meta-review (mentioned as having no champion)
-- [2024-07 july-30](../../raw/notes/meetings/2024-07/july-30.md) — proposal scrub; [DLM](../people/DLM.md) became a champion candidate
-- [2024-10 october-09](../../raw/notes/meetings/2024-10/october-09.md) — Stage 2 update, two methods, champion handover
-- [2024-12 december-02](../../raw/notes/meetings/2024-12/december-02.md) — renamed "upsert"; non-throwing decided
-- [2025-04 april-14](../../raw/notes/meetings/2025-04/april-14.md) — reached Stage 2.7; method names settled
-- [2025-07 july-28](../../raw/notes/meetings/2025-07/july-28.md) — reached Stage 3
-- [2026-01 january-20](../../raw/notes/meetings/2026-01/january-20.md) — reached Stage 4
+- [2019-10 october-2](https://github.com/tc39/notes/blob/main/meetings/2019-10/october-2.md) — Stage 1 → 2 (presented by [EPR](../people/EPR.md))
+- [2020-07 july-22](https://github.com/tc39/notes/blob/main/meetings/2020-07/july-22.md) — Stage 3 request failed (renamed `emplace`; the name and single-responsibility dispute)
+- [2023-07 july-13](https://github.com/tc39/notes/blob/main/meetings/2023-07/july-13.md) — Stage 2 meta-review (mentioned as having no champion)
+- [2024-07 july-30](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-30.md) — proposal scrub; [DLM](../people/DLM.md) became a champion candidate
+- [2024-10 october-09](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-09.md) — Stage 2 update, two methods, champion handover
+- [2024-12 december-02](https://github.com/tc39/notes/blob/main/meetings/2024-12/december-02.md) — renamed "upsert"; non-throwing decided
+- [2025-04 april-14](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-14.md) — reached Stage 2.7; method names settled
+- [2025-07 july-28](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-28.md) — reached Stage 3
+- [2026-01 january-20](https://github.com/tc39/notes/blob/main/meetings/2026-01/january-20.md) — reached Stage 4

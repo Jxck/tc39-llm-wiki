@@ -17,11 +17,11 @@ The champion is [EAO](../people/EAO.md) (Eemeli Aro). A reasonable stable behavi
 
 ## Stage history
 
-| Meeting                                                     | What happened                                                                                                                        | Stage |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----- |
-| [2023-09](../../raw/notes/meetings/2023-09/september-27.md) | Reached Stage 1                                                                                                                      | → 1   |
-| [2025-02](../../raw/notes/meetings/2025-02/february-19.md)  | Update                                                                                                                               | 1     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)       | **Reached Stage 2**. `Collator` / `Segmenter` are out of scope. Short unit identifiers and similar issues are handled during Stage 2 | 1 → 2 |
+| Meeting                                                                             | What happened                                                                                                                        | Stage |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| [2023-09](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-27.md) | Reached Stage 1                                                                                                                      | → 1   |
+| [2025-02](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-19.md)  | Update                                                                                                                               | 1     |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md)       | **Reached Stage 2**. `Collator` / `Segmenter` are out of scope. Short unit identifiers and similar issues are handled during Stage 2 | 1 → 2 |
 
 ```mermaid
 xychart-beta
@@ -50,6 +50,6 @@ These two could not be given a reasonable "stable behavior," so they were taken 
 
 ## Sources
 
-- [2023-09 september-27](../../raw/notes/meetings/2023-09/september-27.md) — Stage 1
-- [2025-02 february-19](../../raw/notes/meetings/2025-02/february-19.md) — update
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 2
+- [2023-09 september-27](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-27.md) — Stage 1
+- [2025-02 february-19](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-19.md) — update
+- [2026-05 may-20](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) — Stage 2

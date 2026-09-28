@@ -17,10 +17,10 @@ The Stage 1 problem statement is: "**there is currently no built-in way to match
 
 ## Stage history
 
-| Meeting                                                | What happened                                                                                                                                                                                                                                                                          | Stage |
-| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2026-05](../../raw/notes/meetings/2026-05/may-21.md)  | Preliminary discussion, "agreeing to consider impact of RegExp proposals to linear implementations." Broad support for considering the impact on linearity                                                                                                                             | -     |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | **Reached Stage 1** (broad support from [JHD](../people/JHD.md)/[DJM](../people/DJM.md)/[CPC](../people/CPC.md)/[PFC](../people/PFC.md)/[SFC](../people/SFC.md)/[LVU](../people/LVU.md)/[CDA](../people/CDA.md)/[MM](../people/MM.md)/[WH](../people/WH.md) and others, no opposition) | 0 → 1 |
+| Meeting                                                                        | What happened                                                                                                                                                                                                                                                                          | Stage |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md)  | Preliminary discussion, "agreeing to consider impact of RegExp proposals to linear implementations." Broad support for considering the impact on linearity                                                                                                                             | -     |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) | **Reached Stage 1** (broad support from [JHD](../people/JHD.md)/[DJM](../people/DJM.md)/[CPC](../people/CPC.md)/[PFC](../people/PFC.md)/[SFC](../people/SFC.md)/[LVU](../people/LVU.md)/[CDA](../people/CDA.md)/[MM](../people/MM.md)/[WH](../people/WH.md) and others, no opposition) | 0 → 1 |
 
 ```mermaid
 xychart-beta
@@ -64,5 +64,5 @@ He cited the Rust ecosystem, where linear Rust Regex is the de facto standard ev
 
 ## Sources
 
-- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — preliminary consensus-building
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — Reached Stage 1
+- [2026-05 may-21](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md) — preliminary consensus-building
+- [2026-07 july-22](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) — Reached Stage 1

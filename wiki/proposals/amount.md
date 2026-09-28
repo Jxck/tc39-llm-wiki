@@ -19,18 +19,18 @@ The champion is [BAN](../people/BAN.md) (Ben Allen). It sits close to the `decim
 
 ## Stage history
 
-| Meeting                                                     | What happened                                                                                                                                                                               | Stage |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2024-10](../../raw/notes/meetings/2024-10/october-10.md)   | [BAN](../people/BAN.md) presented a "Measure object," and at the same meeting it **reached Stage 1** (a numeric representation WG was formed)                                               | 0 → 1 |
-| [2024-12](../../raw/notes/meetings/2024-12/december-05.md)  | Measure Stage 1 update                                                                                                                                                                      | 1     |
-| [2025-02](../../raw/notes/meetings/2025-02/february-19.md)  | A "unified vision" for decimal and measure. Little committee support for a merge, and uncertainty about Measure's use cases                                                                 | 1     |
-| [2025-04](../../raw/notes/meetings/2025-04/april-16.md)     | Stage 1 update. A direction of organizing decimal and measure as "Amounts"                                                                                                                  | 1     |
-| [2025-07](../../raw/notes/meetings/2025-07/july-29.md)      | **Renamed from Measure to Amount**. Aimed at Stage 2 but did not reach it (open topics continue)                                                                                            | 1     |
-| [2025-09](../../raw/notes/meetings/2025-09/september-22.md) | Amount for Stage 2 (several continuations), but it did not reach Stage 2                                                                                                                    | 1     |
-| [2025-11](../../raw/notes/meetings/2025-11/november-20.md)  | Amount Stage 1 update                                                                                                                                                                       | 1     |
-| [2026-03](../../raw/notes/meetings/2026-03/march-10.md)     | Requested Stage 2 but it was deferred ("try again in May")                                                                                                                                  | 1     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)       | **Reached Stage 2**. Reviewers are [WH](../people/WH.md) / [JHD](../people/JHD.md). Conversion precision is an issue during Stage 2                                                         | 1 → 2 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md)      | Presented both sides on how to treat duration units (undecided). The `BigInt` conversion problem that comes from canonical form, and conversion precision, each went to a separate proposal | 2     |
+| Meeting                                                                             | What happened                                                                                                                                                                               | Stage |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2024-10](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-10.md)   | [BAN](../people/BAN.md) presented a "Measure object," and at the same meeting it **reached Stage 1** (a numeric representation WG was formed)                                               | 0 → 1 |
+| [2024-12](https://github.com/tc39/notes/blob/main/meetings/2024-12/december-05.md)  | Measure Stage 1 update                                                                                                                                                                      | 1     |
+| [2025-02](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-19.md)  | A "unified vision" for decimal and measure. Little committee support for a merge, and uncertainty about Measure's use cases                                                                 | 1     |
+| [2025-04](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-16.md)     | Stage 1 update. A direction of organizing decimal and measure as "Amounts"                                                                                                                  | 1     |
+| [2025-07](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-29.md)      | **Renamed from Measure to Amount**. Aimed at Stage 2 but did not reach it (open topics continue)                                                                                            | 1     |
+| [2025-09](https://github.com/tc39/notes/blob/main/meetings/2025-09/september-22.md) | Amount for Stage 2 (several continuations), but it did not reach Stage 2                                                                                                                    | 1     |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-20.md)  | Amount Stage 1 update                                                                                                                                                                       | 1     |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md)     | Requested Stage 2 but it was deferred ("try again in May")                                                                                                                                  | 1     |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md)       | **Reached Stage 2**. Reviewers are [WH](../people/WH.md) / [JHD](../people/JHD.md). Conversion precision is an issue during Stage 2                                                         | 1 → 2 |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md)      | Presented both sides on how to treat duration units (undecided). The `BigInt` conversion problem that comes from canonical form, and conversion precision, each went to a separate proposal | 2     |
 
 ```mermaid
 xychart-beta
@@ -83,13 +83,13 @@ How to represent the absence of a unit was an issue. For consistency when passin
 
 ## Sources
 
-- [2024-10 october-10](../../raw/notes/meetings/2024-10/october-10.md) — presented "Measure object"; reached Stage 1
-- [2024-12 december-05](../../raw/notes/meetings/2024-12/december-05.md) — Measure Stage 1 update
-- [2025-02 february-19](../../raw/notes/meetings/2025-02/february-19.md) — unified vision for decimal and measure (little support for a merge)
-- [2025-04 april-16](../../raw/notes/meetings/2025-04/april-16.md) — Stage 1 update (organizing them as "Amounts")
-- [2025-07 july-29](../../raw/notes/meetings/2025-07/july-29.md) — renamed Measure to Amount; did not reach Stage 2
-- [2025-09 september-22](../../raw/notes/meetings/2025-09/september-22.md) — Amount for Stage 2 (continued; not reached)
-- [2025-11 november-20](../../raw/notes/meetings/2025-11/november-20.md) — Amount Stage 1 update
-- [2026-03 march-10](../../raw/notes/meetings/2026-03/march-10.md) — requested Stage 2 but it was deferred
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — reached Stage 2 (reviewers [WH](../people/WH.md) / [JHD](../people/JHD.md))
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — both sides on duration units; `Math.fma` at Stage 2 (conversion precision)
+- [2024-10 october-10](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-10.md) — presented "Measure object"; reached Stage 1
+- [2024-12 december-05](https://github.com/tc39/notes/blob/main/meetings/2024-12/december-05.md) — Measure Stage 1 update
+- [2025-02 february-19](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-19.md) — unified vision for decimal and measure (little support for a merge)
+- [2025-04 april-16](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-16.md) — Stage 1 update (organizing them as "Amounts")
+- [2025-07 july-29](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-29.md) — renamed Measure to Amount; did not reach Stage 2
+- [2025-09 september-22](https://github.com/tc39/notes/blob/main/meetings/2025-09/september-22.md) — Amount for Stage 2 (continued; not reached)
+- [2025-11 november-20](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-20.md) — Amount Stage 1 update
+- [2026-03 march-10](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md) — requested Stage 2 but it was deferred
+- [2026-05 may-20](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) — reached Stage 2 (reviewers [WH](../people/WH.md) / [JHD](../people/JHD.md))
+- [2026-07 july-22](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) — both sides on duration units; `Math.fma` at Stage 2 (conversion precision)

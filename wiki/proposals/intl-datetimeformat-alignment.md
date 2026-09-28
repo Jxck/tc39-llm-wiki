@@ -17,9 +17,9 @@ The concrete proposal adds `dateFields` (which parts of the date to include) and
 
 ## Stage history
 
-| Meeting                                                | What happened                                                                                                                                                                                      | Stage |
-| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | First presentation (already supported by TG2). [JSL](../people/JSL.md) / [SFC](../people/SFC.md) / [LVU](../people/LVU.md) supported it, and it **reached Stage 1** with essentially no discussion | 0 → 1 |
+| Meeting                                                                        | What happened                                                                                                                                                                                      | Stage |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) | First presentation (already supported by TG2). [JSL](../people/JSL.md) / [SFC](../people/SFC.md) / [LVU](../people/LVU.md) supported it, and it **reached Stage 1** with essentially no discussion | 0 → 1 |
 
 ```mermaid
 xychart-beta
@@ -49,4 +49,4 @@ The HTML-side PR is at stage 1 of the WHATWG process, and Unicode MessageFormat 
 
 ## Sources
 
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — first presentation; reached Stage 1
+- [2026-07 july-22](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) — first presentation; reached Stage 1

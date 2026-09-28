@@ -17,11 +17,11 @@ The champion is [JSL](../people/JSL.md) (James Snell, Cloudflare). It reached St
 
 ## Stage history
 
-| Meeting                                                 | What happened                                                                                                                  | Stage |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----- |
-| [2026-03](../../raw/notes/meetings/2026-03/march-11.md) | First presented as "Error code property for Stage 1, 2, or 2.7". **Reached Stage 1**                                           | 0 → 1 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-21.md)  | **Reached Stage 2**. Further advancement is conditional on alignment with DOMException                                         | 1 → 2 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md)  | [JHD](../people/JHD.md) / [RGN](../people/RGN.md) became the Stage 2 reviewers (filling in a nomination missed the day before) | 2     |
+| Meeting                                                                         | What happened                                                                                                                  | Stage |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-11.md) | First presented as "Error code property for Stage 1, 2, or 2.7". **Reached Stage 1**                                           | 0 → 1 |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-21.md)  | **Reached Stage 2**. Further advancement is conditional on alignment with DOMException                                         | 1 → 2 |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md)  | [JHD](../people/JHD.md) / [RGN](../people/RGN.md) became the Stage 2 reviewers (filling in a nomination missed the day before) | 2     |
 
 ```mermaid
 xychart-beta
@@ -52,6 +52,6 @@ The only substantive dispute. DOMException historically has a numeric `code` as 
 
 ## Sources
 
-- [2026-03 march-11](../../raw/notes/meetings/2026-03/march-11.md) — reached Stage 1
-- [2026-07 july-21](../../raw/notes/meetings/2026-07/july-21.md) — reached Stage 2
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — reviewer nomination ([JHD](../people/JHD.md) / [RGN](../people/RGN.md))
+- [2026-03 march-11](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-11.md) — reached Stage 1
+- [2026-07 july-21](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-21.md) — reached Stage 2
+- [2026-07 july-22](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) — reviewer nomination ([JHD](../people/JHD.md) / [RGN](../people/RGN.md))

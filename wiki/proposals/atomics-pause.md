@@ -18,15 +18,15 @@ Hardware already has instructions for the same purpose, such as x86 `PAUSE` and 
 
 ## Stage history
 
-| Meeting                                                   | What happened                                                                                                                           | Stage   |
-| --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2024-02](../../raw/notes/meetings/2024-02/feb-6.md)      | Reached Stage 1. `Micro and mini waits in JS for stage 1` (at the time, microwait plus a clamped `Atomics.wait`)                        | → 1     |
-| [2024-04](../../raw/notes/meetings/2024-04/april-08.md)   | Narrowed the scope to the CPU hint only. **Withdrew** the Stage 2 consensus because the spec text was not ready                         | 1       |
-| [2024-06](../../raw/notes/meetings/2024-06/june-13.md)    | Renamed to `Atomics.pause`. **Reached Stage 2.7** (1 → 2.7, without a recorded Stage 2)                                                 | 1 → 2.7 |
-| [2024-07](../../raw/notes/meetings/2024-07/july-29.md)    | Aimed at Stage 3, but a mismatch with [WH](../people/WH.md) over the meaning of the iteration argument came out, and it did not advance | 2.7     |
-| [2024-07](../../raw/notes/meetings/2024-07/july-31.md)    | Continued discussion. Flipped the argument's meaning to "a larger N means a longer pause." No consensus for Stage 3 or for Stage 2      | 2.7     |
-| [2024-10](../../raw/notes/meetings/2024-10/october-09.md) | **Reached Stage 3**. Optional iteration argument; Test262 landed                                                                        | 2.7 → 3 |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)     | **Reached Stage 4**. Advanced after approving a normative change that removes the unused optional argument                              | 3 → 4   |
+| Meeting                                                                           | What happened                                                                                                                           | Stage   |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2024-02](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-6.md)      | Reached Stage 1. `Micro and mini waits in JS for stage 1` (at the time, microwait plus a clamped `Atomics.wait`)                        | → 1     |
+| [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-08.md)   | Narrowed the scope to the CPU hint only. **Withdrew** the Stage 2 consensus because the spec text was not ready                         | 1       |
+| [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-13.md)    | Renamed to `Atomics.pause`. **Reached Stage 2.7** (1 → 2.7, without a recorded Stage 2)                                                 | 1 → 2.7 |
+| [2024-07](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-29.md)    | Aimed at Stage 3, but a mismatch with [WH](../people/WH.md) over the meaning of the iteration argument came out, and it did not advance | 2.7     |
+| [2024-07](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-31.md)    | Continued discussion. Flipped the argument's meaning to "a larger N means a longer pause." No consensus for Stage 3 or for Stage 2      | 2.7     |
+| [2024-10](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-09.md) | **Reached Stage 3**. Optional iteration argument; Test262 landed                                                                        | 2.7 → 3 |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)     | **Reached Stage 4**. Advanced after approving a normative change that removes the unused optional argument                              | 3 → 4   |
 
 ```mermaid
 xychart-beta
@@ -74,10 +74,10 @@ The outcome was consensus on the normative change that removes the argument, and
 
 ## Sources
 
-- [2024-02 feb-6](../../raw/notes/meetings/2024-02/feb-6.md) — Stage 1 (micro and mini waits)
-- [2024-04 april-08](../../raw/notes/meetings/2024-04/april-08.md) — Stage 2 request withdrawn
-- [2024-06 june-13](../../raw/notes/meetings/2024-06/june-13.md) — renamed `Atomics.pause`, Stage 2.7
-- [2024-07 july-29](../../raw/notes/meetings/2024-07/july-29.md) — aimed at Stage 3, but did not advance because of a mismatch
-- [2024-07 july-31](../../raw/notes/meetings/2024-07/july-31.md) — continued discussion, no consensus
-- [2024-10 october-09](../../raw/notes/meetings/2024-10/october-09.md) — Reached Stage 3
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — Reached Stage 4 (including the normative change that removes the argument)
+- [2024-02 feb-6](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-6.md) — Stage 1 (micro and mini waits)
+- [2024-04 april-08](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-08.md) — Stage 2 request withdrawn
+- [2024-06 june-13](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-13.md) — renamed `Atomics.pause`, Stage 2.7
+- [2024-07 july-29](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-29.md) — aimed at Stage 3, but did not advance because of a mismatch
+- [2024-07 july-31](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-31.md) — continued discussion, no consensus
+- [2024-10 october-09](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-09.md) — Reached Stage 3
+- [2026-05 may-19](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md) — Reached Stage 4 (including the normative change that removes the argument)

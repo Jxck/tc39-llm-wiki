@@ -22,16 +22,16 @@ The second argument is an options bag. The mode is one of `"shortest"` (the defa
 
 ## Stage history
 
-| Meeting                                                     | What happened                                                                                                                               | Stage   |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2023-09](../../raw/notes/meetings/2023-09/september-27.md) | Reached Stage 1. `Joint iteration for Stage 1` ([MF](../people/MF.md))                                                                      | 0 → 1   |
-| [2023-11](../../raw/notes/meetings/2023-11/november-28.md)  | Stage 1 update. Preview of the `Iterator.zip` API. No transition                                                                            | 1       |
-| [2024-02](../../raw/notes/meetings/2024-02/feb-6.md)        | Reached Stage 2                                                                                                                             | 1 → 2   |
-| [2024-04](../../raw/notes/meetings/2024-04/april-11.md)     | Continued discussion of whether to include an array zip. Not a blocker; continued on GitHub. No transition                                  | 2       |
-| [2024-06](../../raw/notes/meetings/2024-06/june-12.md)      | **Reached Stage 2.7**. Three open questions settled on the spot (`zipToArrays`→`zip`, do not iterate strings, two Booleans→one mode string) | 2 → 2.7 |
-| [2024-07](../../raw/notes/meetings/2024-07/july-30.md)      | Naming discussion. Renamed `zipToObject`→`zipKeyed`. No transition                                                                          | 2.7     |
-| [2025-11](../../raw/notes/meetings/2025-11/november-18.md)  | **Reached Stage 3**. test262 tests and a spec-compliant polyfill pass                                                                       | 2.7 → 3 |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)       | **Reached Stage 4**. Shipped in SpiderMonkey; V8 implementation complete                                                                    | 3 → 4   |
+| Meeting                                                                             | What happened                                                                                                                               | Stage   |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2023-09](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-27.md) | Reached Stage 1. `Joint iteration for Stage 1` ([MF](../people/MF.md))                                                                      | 0 → 1   |
+| [2023-11](https://github.com/tc39/notes/blob/main/meetings/2023-11/november-28.md)  | Stage 1 update. Preview of the `Iterator.zip` API. No transition                                                                            | 1       |
+| [2024-02](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-6.md)        | Reached Stage 2                                                                                                                             | 1 → 2   |
+| [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-11.md)     | Continued discussion of whether to include an array zip. Not a blocker; continued on GitHub. No transition                                  | 2       |
+| [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-12.md)      | **Reached Stage 2.7**. Three open questions settled on the spot (`zipToArrays`→`zip`, do not iterate strings, two Booleans→one mode string) | 2 → 2.7 |
+| [2024-07](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-30.md)      | Naming discussion. Renamed `zipToObject`→`zipKeyed`. No transition                                                                          | 2.7     |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md)  | **Reached Stage 3**. test262 tests and a spec-compliant polyfill pass                                                                       | 2.7 → 3 |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)       | **Reached Stage 4**. Shipped in SpiderMonkey; V8 implementation complete                                                                    | 3 → 4   |
 
 ```mermaid
 xychart-beta
@@ -76,11 +76,11 @@ The array variant was split out as a separate proposal, `array-zip` (Stage 1 in 
 
 ## Sources
 
-- [2023-09 september-27](../../raw/notes/meetings/2023-09/september-27.md) — Stage 1
-- [2023-11 november-28](../../raw/notes/meetings/2023-11/november-28.md) — Stage 1 update (`Iterator.zip` preview)
-- [2024-02 feb-6](../../raw/notes/meetings/2024-02/feb-6.md) — Stage 2
-- [2024-04 april-11](../../raw/notes/meetings/2024-04/april-11.md) — continued discussion of array zip
-- [2024-06 june-12](../../raw/notes/meetings/2024-06/june-12.md) — Stage 2.7, plus the naming / mode / string decisions
-- [2024-07 july-30](../../raw/notes/meetings/2024-07/july-30.md) — rename to `zipKeyed`
-- [2025-11 november-18](../../raw/notes/meetings/2025-11/november-18.md) — Stage 3
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — Stage 4
+- [2023-09 september-27](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-27.md) — Stage 1
+- [2023-11 november-28](https://github.com/tc39/notes/blob/main/meetings/2023-11/november-28.md) — Stage 1 update (`Iterator.zip` preview)
+- [2024-02 feb-6](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-6.md) — Stage 2
+- [2024-04 april-11](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-11.md) — continued discussion of array zip
+- [2024-06 june-12](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-12.md) — Stage 2.7, plus the naming / mode / string decisions
+- [2024-07 july-30](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-30.md) — rename to `zipKeyed`
+- [2025-11 november-18](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) — Stage 3
+- [2026-05 may-19](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md) — Stage 4

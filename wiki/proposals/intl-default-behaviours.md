@@ -17,9 +17,9 @@ The champion is [EAO](../people/EAO.md) (Eemeli Aro).
 
 ## Stage history
 
-| Meeting                                               | What happened       | Stage |
-| ----------------------------------------------------- | ------------------- | ----- |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md) | **Reached Stage 1** | → 1   |
+| Meeting                                                                       | What happened       | Stage |
+| ----------------------------------------------------------------------------- | ------------------- | ----- |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) | **Reached Stage 1** | → 1   |
 
 ```mermaid
 xychart-beta
@@ -43,4 +43,4 @@ The early plan exposes a locale-independent, well-defined behavior for `Collator
 
 ## Sources
 
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 1
+- [2026-05 may-20](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) — Stage 1

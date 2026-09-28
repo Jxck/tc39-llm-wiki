@@ -17,14 +17,14 @@ The solution is a new abstract operation, **`SafePromiseResolve`**: only when th
 
 ## Stage history
 
-| Meeting                                                    | What happened                                                                                                                                                                                                                            | Stage   |
-| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2025-02](../../raw/notes/meetings/2025-02/february-18.md) | Raised the problem (an `[[InternalProto]]` slot proposal, plus Firefox telemetry). **Stage 1**. [MAH](../people/MAH.md) asked to generalize it to "synchronous reentrancy in general"                                                    | 0 → 1   |
-| [2025-07](../../raw/notes/meetings/2025-07/july-29.md)     | Design discussion as "How to make thenables safer?" ([continued](../../raw/notes/meetings/2025-07/july-30.md) on day 3)                                                                                                                  | 1       |
-| [2026-03](../../raw/notes/meetings/2026-03/march-12.md)    | Switched to the SafeResolve approach. Presented experiment results in which nearly all WPT pass, and reached **Stage 2**. Exposing it to userland: investigate [KG](../people/KG.md)'s idea of a second argument on the resolve function | 1 → 2   |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)      | Status update (aimed for 2.7, but not ready). Security bugs "have increased even since we last talked"                                                                                                                                   | 2       |
-| [2026-07](../../raw/notes/meetings/2026-07/july-20.md)     | Requested 2.7. The excess of penalizing even TypedArrays became the issue, and [KG](../people/KG.md)'s host-hook idea was carried to continuation as homework                                                                            | 2       |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md)     | Presented spec text for the host hook (default false; the hook itself is forbidden from running user code) and **consensus for Stage 2.7** ([MM](../people/MM.md)/[JHD](../people/JHD.md) in explicit support)                           | 2 → 2.7 |
+| Meeting                                                                            | What happened                                                                                                                                                                                                                            | Stage   |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2025-02](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-18.md) | Raised the problem (an `[[InternalProto]]` slot proposal, plus Firefox telemetry). **Stage 1**. [MAH](../people/MAH.md) asked to generalize it to "synchronous reentrancy in general"                                                    | 0 → 1   |
+| [2025-07](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-29.md)     | Design discussion as "How to make thenables safer?" ([continued](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-30.md) on day 3)                                                                                          | 1       |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-12.md)    | Switched to the SafeResolve approach. Presented experiment results in which nearly all WPT pass, and reached **Stage 2**. Exposing it to userland: investigate [KG](../people/KG.md)'s idea of a second argument on the resolve function | 1 → 2   |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md)      | Status update (aimed for 2.7, but not ready). Security bugs "have increased even since we last talked"                                                                                                                                   | 2       |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-20.md)     | Requested 2.7. The excess of penalizing even TypedArrays became the issue, and [KG](../people/KG.md)'s host-hook idea was carried to continuation as homework                                                                            | 2       |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md)     | Presented spec text for the host hook (default false; the hook itself is forbidden from running user code) and **consensus for Stage 2.7** ([MM](../people/MM.md)/[JHD](../people/JHD.md) in explicit support)                           | 2 → 2.7 |
 
 ```mermaid
 xychart-beta
@@ -69,9 +69,9 @@ Against the request to let user code use a safe resolve as well ([MF](../people/
 
 ## Sources
 
-- [2025-02 february-18](../../raw/notes/meetings/2025-02/february-18.md) — Reached Stage 1
-- [2025-07 july-29](../../raw/notes/meetings/2025-07/july-29.md) / [july-30](../../raw/notes/meetings/2025-07/july-30.md) — How to make thenables safer?
-- [2026-03 march-12](../../raw/notes/meetings/2026-03/march-12.md) — Reached Stage 2 (the SafeResolve approach)
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — status update
-- [2026-07 july-20](../../raw/notes/meetings/2026-07/july-20.md) — requested 2.7 (the host-hook change carried over as homework)
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — Reached Stage 2.7
+- [2025-02 february-18](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-18.md) — Reached Stage 1
+- [2025-07 july-29](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-29.md) / [july-30](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-30.md) — How to make thenables safer?
+- [2026-03 march-12](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-12.md) — Reached Stage 2 (the SafeResolve approach)
+- [2026-05 may-20](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) — status update
+- [2026-07 july-20](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-20.md) — requested 2.7 (the host-hook change carried over as homework)
+- [2026-07 july-22](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) — Reached Stage 2.7

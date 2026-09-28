@@ -87,4 +87,4 @@ From the attendees in `raw/notes/meetings/2025-11/november-18.md` (abbreviation 
 | [OFR](../../people/OFR.md) | Olivier Flückiger    | Google             |
 | [RPR](../../people/RPR.md) | Rob Palmer           | Bloomberg          |
 
-> Source: [raw/notes/meetings/2025-11](../../../raw/notes/meetings/2025-11/). Dates and the overview come from [tc39/agendas 2025/11](https://github.com/tc39/agendas/blob/main/2025/11.md) and each day's transcript.
+> Source: [tc39/notes/meetings/2025-11](https://github.com/tc39/notes/tree/main/meetings/2025-11). Dates and the overview come from [tc39/agendas 2025/11](https://github.com/tc39/agendas/blob/main/2025/11.md) and each day's transcript.

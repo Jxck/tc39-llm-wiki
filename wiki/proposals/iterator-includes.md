@@ -18,11 +18,11 @@ The champion is [MF](../people/MF.md) (Michael Ficarra). A member of the `iterat
 
 ## Stage history
 
-| Meeting                                                 | What happened                                                                                          | Stage   |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------- |
-| [2026-03](../../raw/notes/meetings/2026-03/march-10.md) | **Reached Stage 2.7** (Stage 1, 2, and 2.7 asked for together). Agreed on an `Array`-compatible design | → 2.7   |
-| [2026-03](../../raw/notes/meetings/2026-03/march-12.md) | Approved a PR fixing a spec bug that did not close the receiver on invalid arguments                   | 2.7     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)   | **Reached Stage 3**. test262 coverage is complete and delegate review is done                          | 2.7 → 3 |
+| Meeting                                                                         | What happened                                                                                          | Stage   |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------- |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md) | **Reached Stage 2.7** (Stage 1, 2, and 2.7 asked for together). Agreed on an `Array`-compatible design | → 2.7   |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-12.md) | Approved a PR fixing a spec bug that did not close the receiver on invalid arguments                   | 2.7     |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md)   | **Reached Stage 3**. test262 coverage is complete and delegate review is done                          | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -51,6 +51,6 @@ Consensus for Stage 3 with tests complete and review done. No design question is
 
 ## Sources
 
-- [2026-03 march-10](../../raw/notes/meetings/2026-03/march-10.md) — Stage 2.7
-- [2026-03 march-12](../../raw/notes/meetings/2026-03/march-12.md) — spec-bug fix PR
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 3
+- [2026-03 march-10](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md) — Stage 2.7
+- [2026-03 march-12](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-12.md) — spec-bug fix PR
+- [2026-05 may-20](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) — Stage 3

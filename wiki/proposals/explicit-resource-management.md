@@ -20,17 +20,17 @@ The champion was [RBN](../people/RBN.md) (Ron Buckton), consistently, for many y
 
 ## Stage history
 
-| Meeting                                                 | What happened                                                                                                                 | Stage         |
-| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| [2018-07](../../raw/notes/meetings/2018-07/july-24.md)  | Reached Stage 1 (then `proposal-using-statement`). [WH](../people/WH.md) had concerns about the `using` syntax                | 0 → 1         |
-| [2019-07](../../raw/notes/meetings/2019-07/july-25.md)  | Reached Stage 2 (tabled on the 23rd, approved on the 25th). [YK](../people/YK.md)/[WH](../people/WH.md) as reviewers          | 1 → 2         |
-| [2021-10](../../raw/notes/meetings/2021-10/oct-27.md)   | Dropped the `try using` block in favor of an RAII declaration, `using const`. [SYG](../people/SYG.md) added as a reviewer     | 2             |
-| [2022-11](../../raw/notes/meetings/2022-11/dec-01.md)   | **Reached Stage 3** (directly 2 → 3). `AsyncDisposableStack` and `async using` stayed at Stage 2                              | 2 → 3         |
-| [2023-03](../../raw/notes/meetings/2023-03/mar-23.md)   | Async ERM reached Stage 3. Settled the keyword order of `await using` (conditional on [WH](../people/WH.md)'s grammar review) | (async) 2 → 3 |
-| [2023-07](../../raw/notes/meetings/2023-07/july-11.md)  | Finished merging sync and async into one repository. Consensus on a set of normative PRs                                      | 3             |
-| [2025-04](../../raw/notes/meetings/2025-04/april-15.md) | Consensus on a PR forbidding `using` in a bare `case` of `switch` (V8/SpiderMonkey asked to lower it to try/finally)          | 3             |
-| [2025-05](../../raw/notes/meetings/2025-05/may-28.md)   | **conditional Stage 4** (waiting on the remaining Test262 and final approval of the ECMA-262 PR)                              | 3 → (cond.) 4 |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)   | **Stage 4 (finished)**. Every condition met; all editors approved and Test262 merged                                          | (cond.) 4 → 4 |
+| Meeting                                                                         | What happened                                                                                                                 | Stage         |
+| ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| [2018-07](https://github.com/tc39/notes/blob/main/meetings/2018-07/july-24.md)  | Reached Stage 1 (then `proposal-using-statement`). [WH](../people/WH.md) had concerns about the `using` syntax                | 0 → 1         |
+| [2019-07](https://github.com/tc39/notes/blob/main/meetings/2019-07/july-25.md)  | Reached Stage 2 (tabled on the 23rd, approved on the 25th). [YK](../people/YK.md)/[WH](../people/WH.md) as reviewers          | 1 → 2         |
+| [2021-10](https://github.com/tc39/notes/blob/main/meetings/2021-10/oct-27.md)   | Dropped the `try using` block in favor of an RAII declaration, `using const`. [SYG](../people/SYG.md) added as a reviewer     | 2             |
+| [2022-11](https://github.com/tc39/notes/blob/main/meetings/2022-11/dec-01.md)   | **Reached Stage 3** (directly 2 → 3). `AsyncDisposableStack` and `async using` stayed at Stage 2                              | 2 → 3         |
+| [2023-03](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-23.md)   | Async ERM reached Stage 3. Settled the keyword order of `await using` (conditional on [WH](../people/WH.md)'s grammar review) | (async) 2 → 3 |
+| [2023-07](https://github.com/tc39/notes/blob/main/meetings/2023-07/july-11.md)  | Finished merging sync and async into one repository. Consensus on a set of normative PRs                                      | 3             |
+| [2025-04](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-15.md) | Consensus on a PR forbidding `using` in a bare `case` of `switch` (V8/SpiderMonkey asked to lower it to try/finally)          | 3             |
+| [2025-05](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-28.md)   | **conditional Stage 4** (waiting on the remaining Test262 and final approval of the ECMA-262 PR)                              | 3 → (cond.) 4 |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)   | **Stage 4 (finished)**. Every condition met; all editors approved and Test262 merged                                          | (cond.) 4 → 4 |
 
 ```mermaid
 xychart-beta
@@ -82,14 +82,14 @@ In 2026-05 it was reported that every Test262 test had been approved and merged,
 
 ## Sources
 
-- [2018-07 july-24](../../raw/notes/meetings/2018-07/july-24.md) — Stage 1
-- [2019-07 july-23](../../raw/notes/meetings/2019-07/july-23.md), [july-25](../../raw/notes/meetings/2019-07/july-25.md) — Stage 2 (tabled, then approved)
-- [2021-10 oct-27](../../raw/notes/meetings/2021-10/oct-27.md) — to `using const` RAII
-- [2022-11 dec-01](../../raw/notes/meetings/2022-11/dec-01.md) — Reached Stage 3
-- [2023-03 mar-21](../../raw/notes/meetings/2023-03/mar-21.md), [mar-23](../../raw/notes/meetings/2023-03/mar-23.md) — `await using` settled / Async ERM Stage 3
-- [2023-07 july-11](../../raw/notes/meetings/2023-07/july-11.md), [july-12](../../raw/notes/meetings/2023-07/july-12.md) — sync/async merge / follow-up discussion
-- [2024-04 april-09](../../raw/notes/meetings/2024-04/april-09.md), [2024-06 june-13](../../raw/notes/meetings/2024-06/june-13.md) — a set of normative PRs
-- [2025-02 february-18](../../raw/notes/meetings/2025-02/february-18.md) — spec bugfix
-- [2025-04 april-15](../../raw/notes/meetings/2025-04/april-15.md) — forbid `using` in `switch` / `case`
-- [2025-05 may-28](../../raw/notes/meetings/2025-05/may-28.md) — conditional Stage 4
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — Stage 4 (finished)
+- [2018-07 july-24](https://github.com/tc39/notes/blob/main/meetings/2018-07/july-24.md) — Stage 1
+- [2019-07 july-23](https://github.com/tc39/notes/blob/main/meetings/2019-07/july-23.md), [july-25](https://github.com/tc39/notes/blob/main/meetings/2019-07/july-25.md) — Stage 2 (tabled, then approved)
+- [2021-10 oct-27](https://github.com/tc39/notes/blob/main/meetings/2021-10/oct-27.md) — to `using const` RAII
+- [2022-11 dec-01](https://github.com/tc39/notes/blob/main/meetings/2022-11/dec-01.md) — Reached Stage 3
+- [2023-03 mar-21](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-21.md), [mar-23](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-23.md) — `await using` settled / Async ERM Stage 3
+- [2023-07 july-11](https://github.com/tc39/notes/blob/main/meetings/2023-07/july-11.md), [july-12](https://github.com/tc39/notes/blob/main/meetings/2023-07/july-12.md) — sync/async merge / follow-up discussion
+- [2024-04 april-09](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-09.md), [2024-06 june-13](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-13.md) — a set of normative PRs
+- [2025-02 february-18](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-18.md) — spec bugfix
+- [2025-04 april-15](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-15.md) — forbid `using` in `switch` / `case`
+- [2025-05 may-28](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-28.md) — conditional Stage 4
+- [2026-05 may-19](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md) — Stage 4 (finished)

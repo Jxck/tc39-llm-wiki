@@ -18,12 +18,12 @@ The champion is [MF](../people/MF.md) (Michael Ficarra). It is one of the follow
 
 ## Stage history
 
-| Meeting                                                   | What happened                                                                                    | Stage   |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------- |
-| [2024-02](../../raw/notes/meetings/2024-02/feb-7.md)      | Reached Stage 1                                                                                  | → 1     |
-| [2024-10](../../raw/notes/meetings/2024-10/october-09.md) | Reached Stage 2                                                                                  | 1 → 2   |
-| [2025-05](../../raw/notes/meetings/2025-05/may-29.md)     | Reached Stage 2.7                                                                                | 2 → 2.7 |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)     | **Reached Stage 3**. Judged sufficient: test262 coverage is complete and delegate review is done | 2.7 → 3 |
+| Meeting                                                                           | What happened                                                                                    | Stage   |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------- |
+| [2024-02](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-7.md)      | Reached Stage 1                                                                                  | → 1     |
+| [2024-10](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-09.md) | Reached Stage 2                                                                                  | 1 → 2   |
+| [2025-05](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-29.md)     | Reached Stage 2.7                                                                                | 2 → 2.7 |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md)     | **Reached Stage 3**. Judged sufficient: test262 coverage is complete and delegate review is done | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -48,7 +48,7 @@ In 2026-05 the committee reached consensus on a report that "the tests are in pl
 
 ## Sources
 
-- [2024-02 feb-7](../../raw/notes/meetings/2024-02/feb-7.md) — Stage 1
-- [2024-10 october-09](../../raw/notes/meetings/2024-10/october-09.md) — Stage 2
-- [2025-05 may-29](../../raw/notes/meetings/2025-05/may-29.md) — Stage 2.7
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 3
+- [2024-02 feb-7](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-7.md) — Stage 1
+- [2024-10 october-09](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-09.md) — Stage 2
+- [2025-05 may-29](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-29.md) — Stage 2.7
+- [2026-05 may-20](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) — Stage 3

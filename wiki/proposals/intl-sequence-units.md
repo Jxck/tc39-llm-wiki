@@ -17,10 +17,10 @@ The champion is [SFC](../people/SFC.md) (Shane Carr).
 
 ## Stage history
 
-| Meeting                                                | What happened                                                                                                                        | Stage   |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md)  | **Reached Stage 1 and Stage 2** (with an object-based input design). Reviewers are [EAO](../people/EAO.md) / [DLM](../people/DLM.md) | → 1 → 2 |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | Presented both sides on how to treat duration units at plenary (views were split in TG2). Iteration continues                        | 2       |
+| Meeting                                                                        | What happened                                                                                                                        | Stage   |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md)  | **Reached Stage 1 and Stage 2** (with an object-based input design). Reviewers are [EAO](../people/EAO.md) / [DLM](../people/DLM.md) | → 1 → 2 |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) | Presented both sides on how to treat duration units at plenary (views were split in TG2). Iteration continues                        | 2       |
 
 ```mermaid
 xychart-beta
@@ -52,5 +52,5 @@ In 2026-07 [SFC](../people/SFC.md) raised whether to handle time-based sequence 
 
 ## Sources
 
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 1 / Stage 2
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — both sides on duration units presented (iteration continues)
+- [2026-05 may-20](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) — Stage 1 / Stage 2
+- [2026-07 july-22](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) — both sides on duration units presented (iteration continues)

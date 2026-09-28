@@ -17,9 +17,9 @@ A userland implementation is hundreds of lines of slow, fragile code, whereas on
 
 ## Stage history
 
-| Meeting                                                | What happened                                                                                                                                                  | Stage |
-| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md) | First presented as "for Stage 1 or 2" and **reached Stage 2** on the spot (straight from 0 → 2). Reviewers are [JHD](../people/JHD.md) / [MF](../people/MF.md) | 0 → 2 |
+| Meeting                                                                        | What happened                                                                                                                                                  | Stage |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2026-07](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) | First presented as "for Stage 1 or 2" and **reached Stage 2** on the spot (straight from 0 → 2). Reviewers are [JHD](../people/JHD.md) / [MF](../people/MF.md) | 0 → 2 |
 
 ```mermaid
 xychart-beta
@@ -61,4 +61,4 @@ The Stage 1 problem space is limited to "conformance with the required arithmeti
 
 ## Sources
 
-- [2026-07 july-22](../../raw/notes/meetings/2026-07/july-22.md) — first presentation, reached Stage 2
+- [2026-07 july-22](https://github.com/tc39/notes/blob/main/meetings/2026-07/july-22.md) — first presentation, reached Stage 2

@@ -19,14 +19,14 @@ As of 2026-06 this proposal **remains at Stage 1 and is "stuck."** Around advanc
 
 ## Stage history
 
-| Meeting                                                     | What happened                                                                                                                                                                                       | Stage |
-| ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2022-03](../../raw/notes/meetings/2022-03/mar-30.md)       | **Reached Stage 1**. Presented by [EAO](../people/EAO.md) (co-champion: [DLM](../people/DLM.md)). The ambiguity of the word `message`, and whether this is a library or a language, were the issues | 0 → 1 |
-| [2022-11](../../raw/notes/meetings/2022-11/nov-29.md)       | The resource-formatting part was split off as `Intl.MessageResource`, and that reached Stage 1. The main proposal concentrates on a single message (stage unchanged)                                | 1     |
-| [2023-09](../../raw/notes/meetings/2023-09/september-26.md) | Stage 1 update. Broad agreement with the progress. Error handling and the complexity of the custom-formatter API were the issues. No transition                                                     | 1     |
-| [2024-02](../../raw/notes/meetings/2024-02/feb-7.md)        | Stage 2 was discussed and deferred. Planned to come back with a direction that **drops the syntax parser and aims at Stage 2 on the data model alone**. No transition                               | 1     |
-| [2024-04](../../raw/notes/meetings/2024-04/april-10.md)     | Status update. TG2 (especially Google i18n) opposed removing the parser, and **the proposal is stuck**. The decision waits on industry adoption of MF2                                              | 1     |
-| [2024-06](../../raw/notes/meetings/2024-06/june-11.md)      | Stage 1 open question. Discussed error-handling design patterns (options 1 through 6). New options went to the champion group. No transition                                                        | 1     |
+| Meeting                                                                             | What happened                                                                                                                                                                                       | Stage |
+| ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2022-03](https://github.com/tc39/notes/blob/main/meetings/2022-03/mar-30.md)       | **Reached Stage 1**. Presented by [EAO](../people/EAO.md) (co-champion: [DLM](../people/DLM.md)). The ambiguity of the word `message`, and whether this is a library or a language, were the issues | 0 → 1 |
+| [2022-11](https://github.com/tc39/notes/blob/main/meetings/2022-11/nov-29.md)       | The resource-formatting part was split off as `Intl.MessageResource`, and that reached Stage 1. The main proposal concentrates on a single message (stage unchanged)                                | 1     |
+| [2023-09](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-26.md) | Stage 1 update. Broad agreement with the progress. Error handling and the complexity of the custom-formatter API were the issues. No transition                                                     | 1     |
+| [2024-02](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-7.md)        | Stage 2 was discussed and deferred. Planned to come back with a direction that **drops the syntax parser and aims at Stage 2 on the data model alone**. No transition                               | 1     |
+| [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-10.md)     | Status update. TG2 (especially Google i18n) opposed removing the parser, and **the proposal is stuck**. The decision waits on industry adoption of MF2                                              | 1     |
+| [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-11.md)      | Stage 1 open question. Discussed error-handling design patterns (options 1 through 6). New options went to the champion group. No transition                                                        | 1     |
 
 ```mermaid
 xychart-beta
@@ -108,10 +108,10 @@ At the Stage 1 session, [CM](../people/CM.md) said "I am very confused by the wa
 
 ## Sources
 
-- [2022-03/mar-30](../../raw/notes/meetings/2022-03/mar-30.md) — Intl.MessageFormat for Stage 1
-- [2022-11/nov-29](../../raw/notes/meetings/2022-11/nov-29.md) — Intl MessageResource for Stage 1 (split from this proposal)
-- [2023-09/september-26](../../raw/notes/meetings/2023-09/september-26.md) — Stage 1 update and discussion
-- [2024-02/feb-6](../../raw/notes/meetings/2024-02/feb-6.md) — I have some questions (when to standardize a DSL)
-- [2024-02/feb-7](../../raw/notes/meetings/2024-02/feb-7.md) — Continuation: the plan to drop the parser; Stage 2 deferred
-- [2024-04/april-10](../../raw/notes/meetings/2024-04/april-10.md) — status update (stuck)
-- [2024-06/june-11](../../raw/notes/meetings/2024-06/june-11.md) — error handling design patterns
+- [2022-03/mar-30](https://github.com/tc39/notes/blob/main/meetings/2022-03/mar-30.md) — Intl.MessageFormat for Stage 1
+- [2022-11/nov-29](https://github.com/tc39/notes/blob/main/meetings/2022-11/nov-29.md) — Intl MessageResource for Stage 1 (split from this proposal)
+- [2023-09/september-26](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-26.md) — Stage 1 update and discussion
+- [2024-02/feb-6](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-6.md) — I have some questions (when to standardize a DSL)
+- [2024-02/feb-7](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-7.md) — Continuation: the plan to drop the parser; Stage 2 deferred
+- [2024-04/april-10](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-10.md) — status update (stuck)
+- [2024-06/june-11](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-11.md) — error handling design patterns

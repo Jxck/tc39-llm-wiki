@@ -17,14 +17,14 @@ The champions are [MSL](../people/MSL.md) (Mike Samuel), [KOT](../people/KOT.md)
 
 ## Stage history
 
-| Meeting                                                   | What happened                                                                                                                                                          | Stage         |
-| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| [2019-06](../../raw/notes/meetings/2019-06/june-5.md)     | **Reached Stage 2** (asked `for Stage 1 or 2` and went straight to Stage 2). Stage 3 reviewers: [MM](../people/MM.md) / [JRL](../people/JRL.md)                        | → 2           |
-| [2019-12](../../raw/notes/meetings/2019-12/december-4.md) | Update. Stayed at Stage 2                                                                                                                                              | 2             |
-| [2021-01](../../raw/notes/meetings/2021-01/jan-25.md)     | Continued discussion. Same-realm versus cross-realm treatment was the issue. Stayed at Stage 2                                                                         | 2             |
-| [2024-04](../../raw/notes/meetings/2024-04/april-10.md)   | Next steps. Stayed at Stage 2                                                                                                                                          | 2             |
-| [2024-07](../../raw/notes/meetings/2024-07/july-31.md)    | Asked for Stage 2.7 (did not advance)                                                                                                                                  | 2             |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)     | **Consensus to withdraw** ([JHD](../people/JHD.md) and [CDA](../people/CDA.md) said "withdrawn" explicitly. Weak implementer demand and interest, plus realm concerns) | 2 → withdrawn |
+| Meeting                                                                           | What happened                                                                                                                                                          | Stage         |
+| --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| [2019-06](https://github.com/tc39/notes/blob/main/meetings/2019-06/june-5.md)     | **Reached Stage 2** (asked `for Stage 1 or 2` and went straight to Stage 2). Stage 3 reviewers: [MM](../people/MM.md) / [JRL](../people/JRL.md)                        | → 2           |
+| [2019-12](https://github.com/tc39/notes/blob/main/meetings/2019-12/december-4.md) | Update. Stayed at Stage 2                                                                                                                                              | 2             |
+| [2021-01](https://github.com/tc39/notes/blob/main/meetings/2021-01/jan-25.md)     | Continued discussion. Same-realm versus cross-realm treatment was the issue. Stayed at Stage 2                                                                         | 2             |
+| [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-10.md)   | Next steps. Stayed at Stage 2                                                                                                                                          | 2             |
+| [2024-07](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-31.md)    | Asked for Stage 2.7 (did not advance)                                                                                                                                  | 2             |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)     | **Consensus to withdraw** ([JHD](../people/JHD.md) and [CDA](../people/CDA.md) said "withdrawn" explicitly. Weak implementer demand and interest, plus realm concerns) | 2 → withdrawn |
 
 ```mermaid
 xychart-beta
@@ -52,9 +52,9 @@ Consensus to withdraw the proposal, because implementers had little need or inte
 
 ## Sources
 
-- [2019-06 june-5](../../raw/notes/meetings/2019-06/june-5.md) — reached Stage 2 ("Stage 2 acceptance")
-- [2019-12 december-4](../../raw/notes/meetings/2019-12/december-4.md) — update (stayed at Stage 2)
-- [2021-01 jan-25](../../raw/notes/meetings/2021-01/jan-25.md) — continued discussion (stayed at Stage 2)
-- [2024-04 april-10](../../raw/notes/meetings/2024-04/april-10.md) — stayed at Stage 2
-- [2024-07 july-31](../../raw/notes/meetings/2024-07/july-31.md) — Stage 2.7 requested (did not advance)
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — withdrawn
+- [2019-06 june-5](https://github.com/tc39/notes/blob/main/meetings/2019-06/june-5.md) — reached Stage 2 ("Stage 2 acceptance")
+- [2019-12 december-4](https://github.com/tc39/notes/blob/main/meetings/2019-12/december-4.md) — update (stayed at Stage 2)
+- [2021-01 jan-25](https://github.com/tc39/notes/blob/main/meetings/2021-01/jan-25.md) — continued discussion (stayed at Stage 2)
+- [2024-04 april-10](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-10.md) — stayed at Stage 2
+- [2024-07 july-31](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-31.md) — Stage 2.7 requested (did not advance)
+- [2026-05 may-19](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md) — withdrawn

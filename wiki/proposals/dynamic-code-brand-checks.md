@@ -17,14 +17,14 @@ The champions are [KOT](../people/KOT.md) (Krzysztof Kotowicz), [MSL](../people/
 
 ## Stage history
 
-| Meeting                                                   | What happened                                                                                                                                                                                                                            | Stage |
-| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2019-07](../../raw/notes/meetings/2019-07/july-25.md)    | Asked for Stage 2 and was deferred. [WH](../people/WH.md) was concerned about the attack surface of `_IsCodeLike_`. [MM](../people/MM.md) / [WH](../people/WH.md) were named as possible future reviewers                                | 1     |
-| [2019-12](../../raw/notes/meetings/2019-12/december-5.md) | **Stage 2 not approved**. [MSL](../people/MSL.md) continues toward the next meeting with [MM](../people/MM.md) and others                                                                                                                | 1     |
-| [2021-01](../../raw/notes/meetings/2021-01/jan-26.md)     | Asked for Stage 2 again and did not advance (`Dynamic host brand checks`)                                                                                                                                                                | 1     |
-| [2024-04](../../raw/notes/meetings/2024-04/april-10.md)   | As Trusted Types integration for `eval` / `new Function`, **straight from Stage 1 to Stage 3** (exposing every string from `new Function` was excluded). [NRO](../people/NRO.md) asked to "put the Stage 1 version at Stage 3"           | 1 → 3 |
-| [2024-06](../../raw/notes/meetings/2024-06/june-11.md)    | Update on eval / Trusted Types                                                                                                                                                                                                           | 3     |
-| [2026-05](../../raw/notes/meetings/2026-05/may-19.md)     | Implemented in every browser. But `toString` behavior was found to have drifted from an earlier committee consensus. **Consensus on a normative change**. Stage 4 will be asked again after the proposal and implementations are updated | 3     |
+| Meeting                                                                           | What happened                                                                                                                                                                                                                            | Stage |
+| --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2019-07](https://github.com/tc39/notes/blob/main/meetings/2019-07/july-25.md)    | Asked for Stage 2 and was deferred. [WH](../people/WH.md) was concerned about the attack surface of `_IsCodeLike_`. [MM](../people/MM.md) / [WH](../people/WH.md) were named as possible future reviewers                                | 1     |
+| [2019-12](https://github.com/tc39/notes/blob/main/meetings/2019-12/december-5.md) | **Stage 2 not approved**. [MSL](../people/MSL.md) continues toward the next meeting with [MM](../people/MM.md) and others                                                                                                                | 1     |
+| [2021-01](https://github.com/tc39/notes/blob/main/meetings/2021-01/jan-26.md)     | Asked for Stage 2 again and did not advance (`Dynamic host brand checks`)                                                                                                                                                                | 1     |
+| [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-10.md)   | As Trusted Types integration for `eval` / `new Function`, **straight from Stage 1 to Stage 3** (exposing every string from `new Function` was excluded). [NRO](../people/NRO.md) asked to "put the Stage 1 version at Stage 3"           | 1 → 3 |
+| [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-11.md)    | Update on eval / Trusted Types                                                                                                                                                                                                           | 3     |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)     | Implemented in every browser. But `toString` behavior was found to have drifted from an earlier committee consensus. **Consensus on a normative change**. Stage 4 will be asked again after the proposal and implementations are updated | 3     |
 
 ```mermaid
 xychart-beta
@@ -56,8 +56,8 @@ From 2019 to 2021, Stage 2 was requested three times and deferred every time. Th
 
 ## Sources
 
-- [2019-07 july-25](../../raw/notes/meetings/2019-07/july-25.md) — Stage 2 requested (deferred)
-- [2019-12 december-5](../../raw/notes/meetings/2019-12/december-5.md) — Stage 2 not approved
-- [2021-01 jan-26](../../raw/notes/meetings/2021-01/jan-26.md) — Stage 2 requested again (not advancing)
-- [2024-04 april-10](../../raw/notes/meetings/2024-04/april-10.md) — Stage 1 → 3
-- [2026-05 may-19](../../raw/notes/meetings/2026-05/may-19.md) — normative change / Stage 4 deferred
+- [2019-07 july-25](https://github.com/tc39/notes/blob/main/meetings/2019-07/july-25.md) — Stage 2 requested (deferred)
+- [2019-12 december-5](https://github.com/tc39/notes/blob/main/meetings/2019-12/december-5.md) — Stage 2 not approved
+- [2021-01 jan-26](https://github.com/tc39/notes/blob/main/meetings/2021-01/jan-26.md) — Stage 2 requested again (not advancing)
+- [2024-04 april-10](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-10.md) — Stage 1 → 3
+- [2026-05 may-19](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md) — normative change / Stage 4 deferred

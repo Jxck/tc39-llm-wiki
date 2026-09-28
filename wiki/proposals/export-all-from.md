@@ -16,10 +16,10 @@ export all from extends module re-export syntax (an ergonomics improvement on th
 
 ## Stage history
 
-| Meeting                                               | What happened              | Stage |
-| ----------------------------------------------------- | -------------------------- | ----- |
-| [2026-05](../../raw/notes/meetings/2026-05/may-20.md) | **Reached Stage 1**        | → 1   |
-| [2026-05](../../raw/notes/meetings/2026-05/may-21.md) | Call for Stage 2 reviewers | 1     |
+| Meeting                                                                       | What happened              | Stage |
+| ----------------------------------------------------------------------------- | -------------------------- | ----- |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) | **Reached Stage 1**        | → 1   |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md) | Call for Stage 2 reviewers | 1     |
 
 ```mermaid
 xychart-beta
@@ -42,5 +42,5 @@ The speaker did not provide a summary or conclusion for this topic (the notes do
 
 ## Sources
 
-- [2026-05 may-20](../../raw/notes/meetings/2026-05/may-20.md) — Stage 1
-- [2026-05 may-21](../../raw/notes/meetings/2026-05/may-21.md) — call for Stage 2 reviewers
+- [2026-05 may-20](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) — Stage 1
+- [2026-05 may-21](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md) — call for Stage 2 reviewers

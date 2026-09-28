@@ -20,15 +20,15 @@ Temporal is one of the largest proposals in TC39 history, and its champion group
 
 ## Stage history
 
-| Meeting                                                 | What happened                                                                                                 | Stage             |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------- |
-| [2017-03](../../raw/notes/meetings/2017-03/mar-23.md)   | [MPT](../people/MPT.md) proposed it as "Date Proposal - NodaTime as a built-in Module" and it reached Stage 1 | → 1               |
-| [2018-09](../../raw/notes/meetings/2018-09/sept-27.md)  | Reached Stage 2. Approved after cutting back `valueOf` and `Now`                                              | 1 → 2             |
-| [2021-03](../../raw/notes/meetings/2021-03/mar-9.md)    | [PFC](../people/PFC.md) requested Stage 3. Withdrew making `Calendar.from()`/`TimeZone.from()` observable     | 2 → 3 (continued) |
-| [2021-03](../../raw/notes/meetings/2021-03/mar-10.md)   | Discussion continued and it reached Stage 3. Conditional on not shipping unflagged until the IETF finalizes   | 2 → 3             |
-| [2024-06](../../raw/notes/meetings/2024-06/june-12.md)  | Scope reduction. Removed about 96 functions (about 1/3 of the whole), including custom calendars/time zones   | 3 (kept)          |
-| [2025-04](../../raw/notes/meetings/2025-04/april-14.md) | Reported as scheduled to ship in Firefox 139. "Shippable while still at Stage 3"                              | 3 (kept)          |
-| [2026-03](../../raw/notes/meetings/2026-03/march-11.md) | Reached Stage 4. Splitting the spec document and a dedicated TG deferred for now                              | 3 → 4             |
+| Meeting                                                                         | What happened                                                                                                 | Stage             |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------- |
+| [2017-03](https://github.com/tc39/notes/blob/main/meetings/2017-03/mar-23.md)   | [MPT](../people/MPT.md) proposed it as "Date Proposal - NodaTime as a built-in Module" and it reached Stage 1 | → 1               |
+| [2018-09](https://github.com/tc39/notes/blob/main/meetings/2018-09/sept-27.md)  | Reached Stage 2. Approved after cutting back `valueOf` and `Now`                                              | 1 → 2             |
+| [2021-03](https://github.com/tc39/notes/blob/main/meetings/2021-03/mar-9.md)    | [PFC](../people/PFC.md) requested Stage 3. Withdrew making `Calendar.from()`/`TimeZone.from()` observable     | 2 → 3 (continued) |
+| [2021-03](https://github.com/tc39/notes/blob/main/meetings/2021-03/mar-10.md)   | Discussion continued and it reached Stage 3. Conditional on not shipping unflagged until the IETF finalizes   | 2 → 3             |
+| [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-12.md)  | Scope reduction. Removed about 96 functions (about 1/3 of the whole), including custom calendars/time zones   | 3 (kept)          |
+| [2025-04](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-14.md) | Reported as scheduled to ship in Firefox 139. "Shippable while still at Stage 3"                              | 3 (kept)          |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-11.md) | Reached Stage 4. Splitting the spec document and a dedicated TG deferred for now                              | 3 → 4             |
 
 ```mermaid
 xychart-beta
@@ -92,10 +92,10 @@ At Stage 4 (2026-03) there was no objection to the proposal itself (nobody defen
 
 ## Sources
 
-- [2017-03 mar-23](../../raw/notes/meetings/2017-03/mar-23.md) — [MPT](../people/MPT.md) presented it as "Date Proposal - NodaTime as a built-in Module" and it reached Stage 1
-- [2018-09 sept-27](../../raw/notes/meetings/2018-09/sept-27.md) — Reached Stage 2. Discussion of Now / nondeterminism (the System object) and of IDL
-- [2021-03 mar-9](../../raw/notes/meetings/2021-03/mar-9.md) — Request for Stage 3. Withdrew the monkeypatch; subclassing/species; ISO 8601 extensions and the IETF; compare()
-- [2021-03 mar-10](../../raw/notes/meetings/2021-03/mar-10.md) — Discussion continued and it reached Stage 3 (conditional on unflagged shipping)
-- [2024-06 june-12](../../raw/notes/meetings/2024-06/june-12.md) — Scope reduction. Removed custom calendars/time zones; cut about 96 functions
-- [2025-04 april-14](../../raw/notes/meetings/2025-04/april-14.md) — Scheduled to ship in Firefox 139; reported as "shippable while still at Stage 3"
-- [2026-03 march-11](../../raw/notes/meetings/2026-03/march-11.md) — Reached Stage 4. Splitting the spec and a dedicated TG deferred for now
+- [2017-03 mar-23](https://github.com/tc39/notes/blob/main/meetings/2017-03/mar-23.md) — [MPT](../people/MPT.md) presented it as "Date Proposal - NodaTime as a built-in Module" and it reached Stage 1
+- [2018-09 sept-27](https://github.com/tc39/notes/blob/main/meetings/2018-09/sept-27.md) — Reached Stage 2. Discussion of Now / nondeterminism (the System object) and of IDL
+- [2021-03 mar-9](https://github.com/tc39/notes/blob/main/meetings/2021-03/mar-9.md) — Request for Stage 3. Withdrew the monkeypatch; subclassing/species; ISO 8601 extensions and the IETF; compare()
+- [2021-03 mar-10](https://github.com/tc39/notes/blob/main/meetings/2021-03/mar-10.md) — Discussion continued and it reached Stage 3 (conditional on unflagged shipping)
+- [2024-06 june-12](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-12.md) — Scope reduction. Removed custom calendars/time zones; cut about 96 functions
+- [2025-04 april-14](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-14.md) — Scheduled to ship in Firefox 139; reported as "shippable while still at Stage 3"
+- [2026-03 march-11](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-11.md) — Reached Stage 4. Splitting the spec and a dedicated TG deferred for now

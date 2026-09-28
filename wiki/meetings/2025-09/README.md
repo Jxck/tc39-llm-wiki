@@ -74,4 +74,4 @@ From the attendees in `raw/notes/meetings/2025-09/september-22.md` (abbreviation
 | [SHS](../../people/SHS.md) | Stephen Hicks      | Google             |
 | [USA](../../people/USA.md) | Ujjwal Sharma      | Igalia             |
 
-> Source: [raw/notes/meetings/2025-09](../../../raw/notes/meetings/2025-09/). Dates and the overview come from [tc39/agendas 2025/09](https://github.com/tc39/agendas/blob/main/2025/09.md) and each day's transcript.
+> Source: [tc39/notes/meetings/2025-09](https://github.com/tc39/notes/tree/main/meetings/2025-09). Dates and the overview come from [tc39/agendas 2025/09](https://github.com/tc39/agendas/blob/main/2025/09.md) and each day's transcript.
