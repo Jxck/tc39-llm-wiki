@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Daniel Ehrenberg
 - **Affiliation**: Bloomberg / Igalia
-- **Champion drafts**: [Decorators](../proposals/decorators.md)
-- **Mentioned on proposal pages**: [AsyncContext](../proposals/async-context.md), [Atomics.pause](../proposals/atomics-pause.md), [Decimal](../proposals/decimal.md), [Decorators](../proposals/decorators.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Don't Remember Panicking](../proposals/dont-remember-panicking.md), [ESM Phase Imports](../proposals/esm-phase-imports.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [Object.propertyCount](../proposals/object-propertycount.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
+- **Champion drafts**: [Decorators](../proposals/decorators.md), [Import Attributes](../proposals/import-attributes.md), [JSON Modules](../proposals/json-modules.md)
+- **Mentioned on proposal pages**: [AsyncContext](../proposals/async-context.md), [Atomics.pause](../proposals/atomics-pause.md), [Decimal](../proposals/decimal.md), [Decorators](../proposals/decorators.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Don't Remember Panicking](../proposals/dont-remember-panicking.md), [ESM Phase Imports](../proposals/esm-phase-imports.md), [Extractors](../proposals/extractors.md), [Import Attributes](../proposals/import-attributes.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Sync Iterator helpers](../proposals/iterator-helpers.md), [JSON Modules](../proposals/json-modules.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [Object.propertyCount](../proposals/object-propertycount.md), [Records & Tuples](../proposals/records-and-tuples.md), [Temporal](../proposals/temporal.md)
 - **Meetings attended**: 22
 
 ## Meetings attended

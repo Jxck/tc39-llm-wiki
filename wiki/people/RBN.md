@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Ron Buckton
 - **Affiliation**: F5 / IE / Microsoft
-- **Champion drafts**: [Decorators](../proposals/decorators.md), [Enums](../proposals/enums.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [RegExp Buffer Boundaries](../proposals/regexp-buffer-boundaries.md)
-- **Mentioned on proposal pages**: [Atomics.pause](../proposals/atomics-pause.md), [Await Dictionary](../proposals/await-dictionary.md), [Decorators](../proposals/decorators.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Enums](../proposals/enums.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [RegExp Buffer Boundaries](../proposals/regexp-buffer-boundaries.md), [RegExp.escape](../proposals/regexp-escaping.md), [Upsert](../proposals/upsert.md)
+- **Champion drafts**: [Decorators](../proposals/decorators.md), [Enums](../proposals/enums.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Extractors](../proposals/extractors.md), [RegExp Buffer Boundaries](../proposals/regexp-buffer-boundaries.md), [RegExp Modifiers](../proposals/regexp-modifiers.md), [Structs: Fixed Layout Objects and Some Synchronization Primitives](../proposals/shared-structs.md)
+- **Mentioned on proposal pages**: [Atomics.pause](../proposals/atomics-pause.md), [Await Dictionary](../proposals/await-dictionary.md), [Decorators](../proposals/decorators.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Enums](../proposals/enums.md), [Explicit Resource Management](../proposals/explicit-resource-management.md), [Extractors](../proposals/extractors.md), [Sync Iterator helpers](../proposals/iterator-helpers.md), [RegExp Buffer Boundaries](../proposals/regexp-buffer-boundaries.md), [RegExp.escape](../proposals/regexp-escaping.md), [RegExp Modifiers](../proposals/regexp-modifiers.md), [Structs: Fixed Layout Objects and Some Synchronization Primitives](../proposals/shared-structs.md), [Upsert](../proposals/upsert.md)
 - **Meetings attended**: 24
 
 ## Meetings attended

@@ -67,7 +67,7 @@ From the attendees in `raw/notes/meetings/2025-11/november-18.md` (abbreviation 
 | [EAO](../../people/EAO.md) | Eemeli Aro           | Mozilla            |
 | MBH                        | Mikhail Barash       | Univ. of Bergen    |
 | [KM](../../people/KM.md)   | Keith Miller         | Apple              |
-| RKG                        | Ross Kirsling        | Sony               |
+| [RKG](../../people/RKG.md) | Ross Kirsling        | Sony               |
 | [CDA](../../people/CDA.md) | Chris de Almeida     | IBM                |
 | [NRO](../../people/NRO.md) | Nicolò Ribaudo       | Igalia             |
 | [RBN](../../people/RBN.md) | Ron Buckton          | F5                 |

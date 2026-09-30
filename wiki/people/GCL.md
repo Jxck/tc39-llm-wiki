@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Gus Caplan
 - **Affiliation**: Cloudflare / Deno / Deno Land / Deno Land Inc / Invited Expert / OpenJS / OpenJS Foundation
-- **Champion drafts**: [Disposable AsyncContext](../proposals/disposable-asynccontext.md)
-- **Mentioned on proposal pages**: [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Import Bytes](../proposals/import-bytes.md), [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md)
+- **Champion drafts**: [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Sync Iterator helpers](../proposals/iterator-helpers.md)
+- **Mentioned on proposal pages**: [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Import Bytes](../proposals/import-bytes.md), [Sync Iterator helpers](../proposals/iterator-helpers.md), [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md)
 - **Mentioned on family pages**: [Iterator helpers and friends](../families/iterator.md)
 - **Meetings attended**: 10
 

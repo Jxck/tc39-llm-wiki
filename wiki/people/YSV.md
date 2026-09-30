@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Yulia Startsev
 - **Affiliation**: Mozilla
 - **Champion drafts**: [import defer](../proposals/import-defer.md)
-- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md), [import defer](../proposals/import-defer.md), [Records & Tuples](../proposals/records-and-tuples.md), [Upsert](../proposals/upsert.md)
+- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md), [Extractors](../proposals/extractors.md), [import defer](../proposals/import-defer.md), [JSON Modules](../proposals/json-modules.md), [Records & Tuples](../proposals/records-and-tuples.md), [Structs: Fixed Layout Objects and Some Synchronization Primitives](../proposals/shared-structs.md), [Upsert](../proposals/upsert.md)
 - **Meetings attended**: 16
 
 ## Meetings attended

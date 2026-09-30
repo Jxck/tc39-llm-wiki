@@ -58,7 +58,7 @@ From the attendees in `raw/notes/meetings/2026-03/march-10.md` (abbreviation —
 | [JSC](../../people/JSC.md) | J. S. Choi         | Invited Expert     |
 | [KM](../../people/KM.md)   | Keith Miller       | Apple              |
 | [LVU](../../people/LVU.md) | Lea Verou          | OpenJS             |
-| LGH                        | Linus Groh         | Bloomberg          |
+| [LGH](../../people/LGH.md) | Linus Groh         | Bloomberg          |
 | MBH                        | Mikhail Barash     | Univ. of Bergen    |
 | [NRO](../../people/NRO.md) | Nicolò Ribaudo     | Igalia             |
 | [OFR](../../people/OFR.md) | Olivier Flückiger  | Google             |

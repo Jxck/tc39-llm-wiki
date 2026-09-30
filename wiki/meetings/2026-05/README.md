@@ -49,7 +49,7 @@ From the attendees in `raw/notes/meetings/2026-05/may-19.md` (abbreviation — n
 | [ZTZ](../../people/ZTZ.md) | Zbyszek Tenerowicz     | Consensys          |
 | [YSZ](../../people/YSZ.md) | Yusuke Suzuki          | Apple              |
 | [DJM](../../people/DJM.md) | Dmitry Makhnev         | JetBrains          |
-| LGH                        | Linus Groh             | Bloomberg          |
+| [LGH](../../people/LGH.md) | Linus Groh             | Bloomberg          |
 | [JRL](../../people/JRL.md) | Justin Ridgewell       | Google             |
 | [OFR](../../people/OFR.md) | Olivier Flückiger      | Google             |
 | [AUR](../../people/AUR.md) | Aurèle Barrière        | CNRS               |
