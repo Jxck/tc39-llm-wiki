@@ -47,7 +47,7 @@ From the attendees in `raw/notes/meetings/2026-05/may-19.md` (abbreviation — n
 | [WH](../../people/WH.md)   | Waldemar Horwat        | Invited Expert     |
 | GTO                        | Gustavo Tonietto       | Mozilla            |
 | [ZTZ](../../people/ZTZ.md) | Zbyszek Tenerowicz     | Consensys          |
-| YSZ                        | Yusuke Suzuki          | Apple              |
+| [YSZ](../../people/YSZ.md) | Yusuke Suzuki          | Apple              |
 | [DJM](../../people/DJM.md) | Dmitry Makhnev         | JetBrains          |
 | LGH                        | Linus Groh             | Bloomberg          |
 | [JRL](../../people/JRL.md) | Justin Ridgewell       | Google             |
@@ -63,10 +63,10 @@ From the attendees in `raw/notes/meetings/2026-05/may-19.md` (abbreviation — n
 | [CM](../../people/CM.md)   | Chip Morningstar       | Consensys          |
 | MBH                        | Mikhail Barash         | Univ. of Bergen    |
 | [RBN](../../people/RBN.md) | Ron Buckton            | F5                 |
-| RBR                        | Ruben Bridgewater      | Datadog            |
+| [RBR](../../people/RBR.md) | Ruben Bridgewater      | Datadog            |
 | [GCL](../../people/GCL.md) | Gus Caplan             | Deno               |
 | OMT                        | Oliver Medhurst        | IE (Porffor)       |
-| ABO                        | Andreu Botella         | Igalia             |
+| [ABO](../../people/ABO.md) | Andreu Botella         | Igalia             |
 | CHU                        | Christian Ulbrich      | Zalari             |
 | TKP                        | Tom Kopp               | Zalari             |
 | SRV                        | Sergey Rubanov         | Invited Expert     |

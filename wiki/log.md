@@ -418,3 +418,11 @@ Checked the entire wiki according to the new precedence (`raw/proposals` is the 
 - Added the `iterator-sequencing` member row to `wiki/families/iterator.md`.
 - Added the 10 catalog rows to `wiki/README.md`.
 - Ran `extract_people.py` (78 → 86 people; added among others DRR, STY, MAH, LVU, JAD, PHE) then `link_people.py` / `link_proposals.py`, which also retroactively linked proposal names and person abbreviations in the 2025-07/09/11 and 2026-03/05/07 meeting summaries.
+
+## [2026-09-30] ingest | 2025-09 meeting
+
+- Deep-read the 2025-09 plenary (september-22/23/24; Day 1 verified against the raw notes) and created 5 proposal pages: `bulk-add-array-elements` (Stage 1, DRR), `native-promise-adoption` (Stage 1, MAH), `native-promise-predicate` (Stage 2, MAH), `import-bytes` (Stage 2.7; history traced back to 2025-07 where "Import Buffer" reached Stage 1 and 2 in one session), `nonextensible-applies-to-private` (Stage 3; 2025-04 cleared Stage 1/2/2.7 in one session, 2025-07 update, 2025-09 Stage 3).
+- Canonical notes: Native Promise Adoption is not listed anywhere in `raw/proposals` (wiki follows the notes); Native Promise Predicate matches canonical (Stage 2, MAH, reviewers JHD/JSL/JRL).
+- Updated `temporal.md` (2025-09 normative fix: DST sign-flip bug in `ZonedDateTime` difference / `Duration` round/total) and added `import-bytes` to the modules family (members + table row).
+- Existing pages already carried their 2025-09 rows (iterator-chunking's 2.7 was 2025-05, not 09; await-dictionary's temperature check, amount's failed Stage 2 attempt, intl-era-month-code's normative changes were all in place).
+- Added the 5 catalog rows to `wiki/README.md`; person-page generation was rerun in the 2025-11 commit (shared regeneration).

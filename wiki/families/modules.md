@@ -2,7 +2,7 @@
 title: Modules (module harmony)
 slug: modules
 kind: family
-members: [es-modules, dynamic-import, import-meta, top-level-await, import-attributes, json-modules, export-from, source-phase-imports, import-defer, import-text, esm-phase-imports, export-defer, export-all-from, module-scope-ceiling, module-expressions, module-declarations, compartments]
+members: [es-modules, dynamic-import, import-meta, top-level-await, import-attributes, json-modules, import-bytes, export-from, source-phase-imports, import-defer, import-text, esm-phase-imports, export-defer, export-all-from, module-scope-ceiling, module-expressions, module-declarations, compartments]
 tags: [family, modules]
 ---
 
@@ -14,25 +14,26 @@ Recently (2024–2026) the active threads are **deferred evaluation** for startu
 
 ## Members
 
-| Proposal                                           | Current stage    | In short                                                                                                                       |
-| -------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `es-modules`                                       | 4 (ES2015)       | The static module system of `import` / `export`. The base of every module proposal                                             |
-| `dynamic-import` (`import()`)                      | 4 (2019-06)      | A function form that passes a specifier at runtime and imports a module asynchronously                                         |
-| `import-meta` (`import.meta`)                      | 4 (2020-03)      | Access to host-specific meta information of the running module (`import.meta.url` and others)                                  |
-| `top-level-await`                                  | 4 (2021-05)      | Allows `await` at module top level, so a module can be awaited as an async dependency                                          |
-| `import-attributes` (formerly import assertions)   | 4 (2024-10)      | Passes attributes to the host at import time, as `with { type: "json" }`. Renamed `assert` → `with`                            |
-| `json-modules`                                     | 4 (2024-10)      | Import JSON as a module with `import data from "./x.json" with { type: "json" }`                                               |
-| `export-from` (`export * as ns from`)              | 4 (ES2020)       | Re-export syntax such as `export * as ns from "mod"`                                                                           |
-| `source-phase-imports`                             | 3 (2023-07)      | `import source x from` obtains a compiled source phase rather than an instance (Wasm and others)                               |
-| `import-defer`                                     | 3 (2025-02)      | `import defer * as ns from` defers evaluation and evaluates synchronously on first access. For startup                         |
-| `import-text` (`type: "text"`)                     | 3 (2026-03)      | Import a file as a string with `with { type: "text" }`. Most of the spec is on the HTML / Fetch / CSP side                     |
-| `esm-phase-imports`                                | 2.7 (2024-12)    | Extends the source phase to ESM / Wasm. Obtain a compiled module and instantiate it with a custom import                       |
-| `export-defer`                                     | 2 (2.7 proposed) | Split from `import defer`. Propagates deferred evaluation / loading along a re-export path. For barrel files                   |
-| [export all from](../proposals/export-all-from.md) | 1 (2026-05)      | Solves `export * from` not re-exporting `default` (proxy / CDN module use)                                                     |
-| `module-scope-ceiling`                             | 1                | Replaces a module's scope so lexical lookup does not reach the global. Supply-chain security                                   |
-| `module-expressions`                               | 2                | Define a module inline as an expression outside a file (`module { ... }`). Motivated by handing one to a worker                |
-| `module-declarations`                              | 2                | Define a module declaratively inside a file (the sibling of module expressions)                                                |
-| `compartments`                                     | 1 (stalled)      | A module loader / isolated execution environment from SES. The loading layer of module harmony. Now split into other proposals |
+| Proposal                                                       | Current stage    | In short                                                                                                                       |
+| -------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `es-modules`                                                   | 4 (ES2015)       | The static module system of `import` / `export`. The base of every module proposal                                             |
+| `dynamic-import` (`import()`)                                  | 4 (2019-06)      | A function form that passes a specifier at runtime and imports a module asynchronously                                         |
+| `import-meta` (`import.meta`)                                  | 4 (2020-03)      | Access to host-specific meta information of the running module (`import.meta.url` and others)                                  |
+| `top-level-await`                                              | 4 (2021-05)      | Allows `await` at module top level, so a module can be awaited as an async dependency                                          |
+| `import-attributes` (formerly import assertions)               | 4 (2024-10)      | Passes attributes to the host at import time, as `with { type: "json" }`. Renamed `assert` → `with`                            |
+| `json-modules`                                                 | 4 (2024-10)      | Import JSON as a module with `import data from "./x.json" with { type: "json" }`                                               |
+| [Import Bytes](../proposals/import-bytes.md) (`type: "bytes"`) | 2.7 (2025-09)    | Import a file's bytes as an immutable `Uint8Array` with `with { type: "bytes" }`. Isomorphic asset reads                       |
+| `export-from` (`export * as ns from`)                          | 4 (ES2020)       | Re-export syntax such as `export * as ns from "mod"`                                                                           |
+| `source-phase-imports`                                         | 3 (2023-07)      | `import source x from` obtains a compiled source phase rather than an instance (Wasm and others)                               |
+| `import-defer`                                                 | 3 (2025-02)      | `import defer * as ns from` defers evaluation and evaluates synchronously on first access. For startup                         |
+| `import-text` (`type: "text"`)                                 | 3 (2026-03)      | Import a file as a string with `with { type: "text" }`. Most of the spec is on the HTML / Fetch / CSP side                     |
+| `esm-phase-imports`                                            | 2.7 (2024-12)    | Extends the source phase to ESM / Wasm. Obtain a compiled module and instantiate it with a custom import                       |
+| `export-defer`                                                 | 2 (2.7 proposed) | Split from `import defer`. Propagates deferred evaluation / loading along a re-export path. For barrel files                   |
+| [export all from](../proposals/export-all-from.md)             | 1 (2026-05)      | Solves `export * from` not re-exporting `default` (proxy / CDN module use)                                                     |
+| `module-scope-ceiling`                                         | 1                | Replaces a module's scope so lexical lookup does not reach the global. Supply-chain security                                   |
+| `module-expressions`                                           | 2                | Define a module inline as an expression outside a file (`module { ... }`). Motivated by handing one to a worker                |
+| `module-declarations`                                          | 2                | Define a module declaratively inside a file (the sibling of module expressions)                                                |
+| `compartments`                                                 | 1 (stalled)      | A module loader / isolated execution environment from SES. The loading layer of module harmony. Now split into other proposals |
 
 > Stages follow the conclusion of the meeting that last discussed each proposal (a `stage:` value in `agenda-index.md` is the stage requested at that meeting, which is not necessarily the current stage). `export-defer` proposed Stage 2.7 in 2025-11, but [GB](../people/GB.md) reserved judgment toward Stage 3, and as of 2026-05 it is still treated as a Stage 2 status update. `source-phase-imports` remains at Stage 3 (the latest meeting discussed a normative change, not an advancement). Proposals without a link are not ingested in this wiki yet.
 >

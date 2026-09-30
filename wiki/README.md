@@ -56,6 +56,11 @@ A wiki for tracing **how each proposal changed stage, and which issues came up a
 | [TypedArray Find Within](proposals/typedarray-find-within.md)                             | Stage 1 (2025-11)   | stage1    | Subsequence search for `TypedArray`. Naming consistency with `indexOf` / `includes` to be settled.                                       |
 | [Intl Energy Units](proposals/intl-energy-units.md)                                       | Stage 1 (2025-11)   | stage1    | W / kW / kWh in `Intl.NumberFormat`. Narrow use-case-driven batches over a holistic units proposal.                                      |
 | [Object.getNonIndexStringProperties](proposals/object-get-non-index-string-properties.md) | Stage 1 (2025-11)   | stage1    | Non-index string keys of array-likes. Stage 1 without asking; KG requires a motivation case before Stage 2.                              |
+| [Bulk-add array elements](proposals/bulk-add-array-elements.md)                           | Stage 1 (2025-09)   | stage1    | `Array.prototype.pushAll` without the stack overflow. Stage 1 on a broad problem statement (splice/unshift included).                    |
+| [Native Promise Adoption](proposals/native-promise-adoption.md)                           | Stage 1 (2025-09)   | stage1    | Adopt native promises internally in the resolve functions, so `.then` pollution cannot interfere. Not yet in the canonical list.         |
+| [Native Promise Predicate](proposals/native-promise-predicate.md)                         | Stage 2 (2025-09)   | stage2    | Side-effect-free brand check for native promises. Stage 1 and 2 in one session; the name is still open.                                  |
+| [Import Bytes](proposals/import-bytes.md)                                                 | Stage 2.7 (2025-09) | stage2.7  | `import ... with { type: "bytes" }` as an immutable `Uint8Array`. Stage 1 and 2 in one session (2025-07).                                |
+| [Non-extensible Applies to Private](proposals/nonextensible-applies-to-private.md)        | Stage 3 (2025-09)   | stage3    | Adding a private field to a non-extensible object throws. Stage 1/2/2.7 in one session (2025-04); extracted from Stabilize.              |
 
 ## Families (cross-cutting summaries)
 

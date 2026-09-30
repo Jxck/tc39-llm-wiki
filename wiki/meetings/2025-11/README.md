@@ -8,25 +8,25 @@
 
 ## Overview
 
-Three in-person days at Bloomberg's Tokyo office (43 people signed up). **Intl Locale Info API** and **Iterator Sequencing** reached Stage 4, and **[Joint Iteration](../../proposals/joint-iteration.md) advanced to Stage 3**. **[await dictionary](../../proposals/await-dictionary.md)** reached **Stage 2.7** without passing through Stage 2, and **Import Text** advanced through Stage 1 and Stage 2, and conditionally to Stage 2.7. **Intl Unit Protocol**, **Intl Energy Units**, and **`Object.getNonIndexStringProperties`** were new at Stage 1. **TypedArray Concatenation** and **TypedArray Find Within** were conditional Stage 1, conditional on creating a dedicated repository. **`Object.propertyCount`** was split from `Object.keysLength`, and only the latter advanced to Stage 2. **export defer** (Stage 2.7 did not pass), **Declarations in Conditionals** (continued through Day Three and still unsettled), **Class spread syntax**, and **Class field introspection** (both still Stage 0, with concerns from [CM](../../people/CM.md) / [WH](../../people/WH.md) and from [MM](../../people/MM.md) / [GCL](../../people/GCL.md) / [JSL](../../people/JSL.md)) did not advance. **[Decorators](../../proposals/decorators.md)** had insufficient test262 coverage and disagreed implementation plans across V8, JSC, and SpiderMonkey reported, and stayed at Stage 2.7. **[Intl Era Monthcode](../../proposals/intl-era-month-code.md)** approved two normative changes and deferred the Stage 3 decision to January 2026. **[Amount](../../proposals/amount.md)** stayed at Stage 1, with the scope pulled back toward unit conversion. The choice of comparator for **Composites** got support, across two TCQ temperature checks, for interning and for throwing when inserting into a leaked WeakMap, but there was no formal stage request.
+Three in-person days at Bloomberg's Tokyo office (43 people signed up). **[Intl Locale Info](../../proposals/intl-locale-info.md) API** and **[Iterator Sequencing](../../proposals/iterator-sequencing.md)** reached Stage 4, and **[Joint Iteration](../../proposals/joint-iteration.md) advanced to Stage 3**. **[await dictionary](../../proposals/await-dictionary.md)** reached **Stage 2.7** without passing through Stage 2, and **[Import Text](../../proposals/import-text.md)** advanced through Stage 1 and Stage 2, and conditionally to Stage 2.7. **[Intl Unit Protocol](../../proposals/intl-unit-protocol.md)**, **[Intl Energy Units](../../proposals/intl-energy-units.md)**, and **`Object.getNonIndexStringProperties`** were new at Stage 1. **[TypedArray Concatenation](../../proposals/typedarray-concat.md)** and **[TypedArray Find Within](../../proposals/typedarray-find-within.md)** were conditional Stage 1, conditional on creating a dedicated repository. **`Object.propertyCount`** was split from `Object.keysLength`, and only the latter advanced to Stage 2. **export defer** (Stage 2.7 did not pass), **Declarations in Conditionals** (continued through Day Three and still unsettled), **Class spread syntax**, and **Class field introspection** (both still Stage 0, with concerns from [CM](../../people/CM.md) / [WH](../../people/WH.md) and from [MM](../../people/MM.md) / [GCL](../../people/GCL.md) / [JSL](../../people/JSL.md)) did not advance. **[Decorators](../../proposals/decorators.md)** had insufficient test262 coverage and disagreed implementation plans across V8, JSC, and SpiderMonkey reported, and stayed at Stage 2.7. **[Intl Era Monthcode](../../proposals/intl-era-month-code.md)** approved two normative changes and deferred the Stage 3 decision to January 2026. **[Amount](../../proposals/amount.md)** stayed at Stage 1, with the scope pulled back toward unit conversion. The choice of comparator for **Composites** got support, across two TCQ temperature checks, for interning and for throwing when inserting into a leaked WeakMap, but there was no formal stage request.
 
 ## Stage transitions
 
-| Proposal                                                | Transition                                      | Day   |
-| ------------------------------------------------------- | ----------------------------------------------- | ----- |
-| Intl Locale Info API                                    | 3 → 4                                           | Day 1 |
-| Iterator Sequencing                                     | 3 → 4                                           | Day 1 |
-| [Joint Iteration](../../proposals/joint-iteration.md)   | 2 → 3                                           | Day 1 |
-| [await dictionary](../../proposals/await-dictionary.md) | 2 → 2.7                                         | Day 1 |
-| Import Text                                             | 1 → 2                                           | Day 1 |
-| Import Text                                             | 2 → 2.7 (conditional on test262 and review)     | Day 1 |
-| Intl Unit Protocol                                      | new → 1                                         | Day 1 |
-| TypedArray Concatenation                                | new → 1 (conditional on a dedicated repository) | Day 1 |
-| TypedArray Find Within                                  | new → 1 (conditional on a dedicated repository) | Day 1 |
-| [Iterator Join](../../proposals/iterator-join.md)       | 2.7 → 3                                         | Day 2 |
-| `Object.keysLength`                                     | 1 → 2                                           | Day 2 |
-| Intl Energy Units                                       | new → 1                                         | Day 3 |
-| `Object.getNonIndexStringProperties`                    | new → 1                                         | Day 3 |
+| Proposal                                                            | Transition                                      | Day   |
+| ------------------------------------------------------------------- | ----------------------------------------------- | ----- |
+| [Intl Locale Info](../../proposals/intl-locale-info.md) API         | 3 → 4                                           | Day 1 |
+| [Iterator Sequencing](../../proposals/iterator-sequencing.md)       | 3 → 4                                           | Day 1 |
+| [Joint Iteration](../../proposals/joint-iteration.md)               | 2 → 3                                           | Day 1 |
+| [await dictionary](../../proposals/await-dictionary.md)             | 2 → 2.7                                         | Day 1 |
+| [Import Text](../../proposals/import-text.md)                       | 1 → 2                                           | Day 1 |
+| [Import Text](../../proposals/import-text.md)                       | 2 → 2.7 (conditional on test262 and review)     | Day 1 |
+| [Intl Unit Protocol](../../proposals/intl-unit-protocol.md)         | new → 1                                         | Day 1 |
+| [TypedArray Concatenation](../../proposals/typedarray-concat.md)    | new → 1 (conditional on a dedicated repository) | Day 1 |
+| [TypedArray Find Within](../../proposals/typedarray-find-within.md) | new → 1 (conditional on a dedicated repository) | Day 1 |
+| [Iterator Join](../../proposals/iterator-join.md)                   | 2.7 → 3                                         | Day 2 |
+| `Object.keysLength`                                                 | 1 → 2                                           | Day 2 |
+| [Intl Energy Units](../../proposals/intl-energy-units.md)           | new → 1                                         | Day 3 |
+| `Object.getNonIndexStringProperties`                                | new → 1                                         | Day 3 |
 
 ## Daily summaries
 
@@ -43,7 +43,7 @@ From the attendees in `raw/notes/meetings/2025-11/november-18.md` (abbreviation 
 | [WH](../../people/WH.md)   | Waldemar Horwat      | Invited Expert     |
 | [RGN](../../people/RGN.md) | Richard Gibson       | Agoric             |
 | JKG                        | Josh Goldberg        | Invited Expert     |
-| RBR                        | Ruben Bridgewater    | Invited Expert     |
+| [RBR](../../people/RBR.md) | Ruben Bridgewater    | Invited Expert     |
 | [DJM](../../people/DJM.md) | Dmitry Makhnev       | JetBrains          |
 | [FYT](../../people/FYT.md) | Frank Yung-Fong Tang | Google             |
 | AFU                        | Anthony Fu           | Vercel             |
@@ -54,13 +54,13 @@ From the attendees in `raw/notes/meetings/2025-11/november-18.md` (abbreviation 
 | AIS                        | Marina Aisa          | Apple              |
 | MAE                        | Martin Alvarez       | Huawei             |
 | [ACE](../../people/ACE.md) | Ashley Claymore      | Bloomberg          |
-| ABO                        | Andreu Botella       | Igalia             |
+| [ABO](../../people/ABO.md) | Andreu Botella       | Igalia             |
 | [DRO](../../people/DRO.md) | Devin Rousso         | Invited Expert     |
-| JAD                        | Jake Archibald       | Mozilla            |
+| [JAD](../../people/JAD.md) | Jake Archibald       | Mozilla            |
 | [LVU](../../people/LVU.md) | Lea Verou            | OpenJS             |
 | [MAH](../../people/MAH.md) | Mathieu Hofman       | Agoric             |
 | [CLA](../../people/CLA.md) | Caio Lima            | Igalia             |
-| YSZ                        | Yusuke Suzuki        | Apple              |
+| [YSZ](../../people/YSZ.md) | Yusuke Suzuki        | Apple              |
 | [CM](../../people/CM.md)   | Chip Morningstar     | Consensys          |
 | AKI                        | Aki Rose Braun       | Ecma International |
 | [PFC](../../people/PFC.md) | Philip Chimento      | Igalia             |
@@ -77,7 +77,7 @@ From the attendees in `raw/notes/meetings/2025-11/november-18.md` (abbreviation 
 | [SHS](../../people/SHS.md) | Stephen Hicks        | Google             |
 | [USA](../../people/USA.md) | Ujjwal Sharma        | Igalia             |
 | [GB](../../people/GB.md)   | Guy Bedford          | Cloudflare         |
-| CZW                        | Chengzhong Wu        | Bloomberg          |
+| [CZW](../../people/CZW.md) | Chengzhong Wu        | Bloomberg          |
 | [GCL](../../people/GCL.md) | Gus Caplan           | Deno               |
 | [JHD](../../people/JHD.md) | Jordan Harband       | Socket             |
 | [JRL](../../people/JRL.md) | Justin Ridgewell     | Google             |

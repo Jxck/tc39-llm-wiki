@@ -8,21 +8,21 @@
 
 ## Overview
 
-Three remote days. **[Iterator Chunking](../../proposals/iterator-chunking.md) reached Stage 2.7**, **Import Bytes reached Stage 2.7**, and **Non-extensible Applies to Private reached Stage 3**. `Array.prototype.pushAll` (a defense against stack overflow), Native Promise Adoption, and Native Promise Predicate (which then also reached Stage 2) newly advanced to Stage 1. **[Amount](../../proposals/amount.md) aimed at Stage 2, but late-breaking concerns erupted — significant digits, the name, numeric conversion methods (`toNumber` / `toBigInt`), a brand check by internal slot, and others — and although the discussion continued across all three days it did not reach Stage 2, and carried over to the next Tokyo plenary.** Intl Era Month Code got consensus on normative changes (reverting leap-month overflow behavior, extending the reference-year search range) and has Stage 3 in view. [Temporal](../../proposals/temporal.md) got consensus on a normative change that fixes a sign-flip bug at a DST transition, and laid out a path to Stage 4. The committee also discussed a normative PR that adds a `[[CompactDisplay]]` slot to `Intl.PluralRules` and switches it to Intl mathematical values, raising the exponent and significant-digit limits of IntlMV (looking ahead to Decimal128), consensus on an enum kebab-case convention for `how-we-work`, and a Stage 1 update of the module-global (Compartment) proposal (the relationship to ShadowRealm was an issue).
+Three remote days. **[Iterator Chunking](../../proposals/iterator-chunking.md) reached Stage 2.7**, **[Import Bytes](../../proposals/import-bytes.md) reached Stage 2.7**, and **[Non-extensible Applies to Private](../../proposals/nonextensible-applies-to-private.md) reached Stage 3**. `Array.prototype.pushAll` (a defense against stack overflow), [Native Promise Adoption](../../proposals/native-promise-adoption.md), and [Native Promise Predicate](../../proposals/native-promise-predicate.md) (which then also reached Stage 2) newly advanced to Stage 1. **[Amount](../../proposals/amount.md) aimed at Stage 2, but late-breaking concerns erupted — significant digits, the name, numeric conversion methods (`toNumber` / `toBigInt`), a brand check by internal slot, and others — and although the discussion continued across all three days it did not reach Stage 2, and carried over to the next Tokyo plenary.** Intl Era Month Code got consensus on normative changes (reverting leap-month overflow behavior, extending the reference-year search range) and has Stage 3 in view. [Temporal](../../proposals/temporal.md) got consensus on a normative change that fixes a sign-flip bug at a DST transition, and laid out a path to Stage 4. The committee also discussed a normative PR that adds a `[[CompactDisplay]]` slot to `Intl.PluralRules` and switches it to Intl mathematical values, raising the exponent and significant-digit limits of IntlMV (looking ahead to Decimal128), consensus on an enum kebab-case convention for `how-we-work`, and a Stage 1 update of the module-global (Compartment) proposal (the relationship to ShadowRealm was an issue).
 
 ## Stage transitions
 
-| Proposal                                                  | Transition                                   | Day      |
-| --------------------------------------------------------- | -------------------------------------------- | -------- |
-| [Iterator Chunking](../../proposals/iterator-chunking.md) | 2 → 2.7                                      | Day 1    |
-| Non-extensible Applies to Private                         | 2.7 → 3                                      | Day 1    |
-| `Array.prototype.pushAll`                                 | new → 1                                      | Day 1    |
-| Native Promise Adoption                                   | new → 1                                      | Day 1    |
-| Native Promise Predicate                                  | new → 1                                      | Day 1    |
-| Native Promise Predicate                                  | 1 → 2                                        | Day 1    |
-| Import Bytes                                              | 1 → 2.7                                      | Day 2    |
-| Module Import Hook and new Global                         | new → 1                                      | Day 2    |
-| [Amount](../../proposals/amount.md)                       | no advancement (carried to the next plenary) | Days 1-3 |
+| Proposal                                                                                 | Transition                                   | Day      |
+| ---------------------------------------------------------------------------------------- | -------------------------------------------- | -------- |
+| [Iterator Chunking](../../proposals/iterator-chunking.md)                                | 2 → 2.7                                      | Day 1    |
+| [Non-extensible Applies to Private](../../proposals/nonextensible-applies-to-private.md) | 2.7 → 3                                      | Day 1    |
+| `Array.prototype.pushAll`                                                                | new → 1                                      | Day 1    |
+| [Native Promise Adoption](../../proposals/native-promise-adoption.md)                    | new → 1                                      | Day 1    |
+| [Native Promise Predicate](../../proposals/native-promise-predicate.md)                  | new → 1                                      | Day 1    |
+| [Native Promise Predicate](../../proposals/native-promise-predicate.md)                  | 1 → 2                                        | Day 1    |
+| [Import Bytes](../../proposals/import-bytes.md)                                          | 1 → 2.7                                      | Day 2    |
+| Module Import Hook and new Global                                                        | new → 1                                      | Day 2    |
+| [Amount](../../proposals/amount.md)                                                      | no advancement (carried to the next plenary) | Days 1-3 |
 
 ## Daily summaries
 
@@ -46,7 +46,7 @@ From the attendees in `raw/notes/meetings/2025-09/september-22.md` (abbreviation
 | [EAO](../../people/EAO.md) | Eemeli Aro         | Mozilla            |
 | [RBN](../../people/RBN.md) | Ron Buckton        | F5                 |
 | [JMN](../../people/JMN.md) | Jesse Alama        | Igalia             |
-| ABO                        | Andreu Botella     | Igalia             |
+| [ABO](../../people/ABO.md) | Andreu Botella     | Igalia             |
 | [WH](../../people/WH.md)   | Waldemar Horwat    | Invited Expert     |
 | [ZTZ](../../people/ZTZ.md) | Zbyszek Tenerowicz | Consensys          |
 | [MLS](../../people/MLS.md) | Michael Saboff     | Invited Expert     |
@@ -59,7 +59,7 @@ From the attendees in `raw/notes/meetings/2025-09/september-22.md` (abbreviation
 | [MAH](../../people/MAH.md) | Mathieu Hofman     | Agoric             |
 | [JSL](../../people/JSL.md) | James Snell        | Cloudflare         |
 | IS                         | Istvan Sebestyen   | Ecma               |
-| REK                        | Erik Marks         | Consensys          |
+| [REK](../../people/REK.md) | Erik Marks         | Consensys          |
 | AKI                        | Aki Braun          | Ecma International |
 | [DRR](../../people/DRR.md) | Daniel Rosenwasser | Microsoft          |
 | [JHD](../../people/JHD.md) | Jordan Harband     | HeroDevs           |

@@ -8,19 +8,19 @@
 
 ## Overview
 
-Three days centered on ECMA-262 / ECMA-402 proposals. **[Temporal](../../proposals/temporal.md) reached Stage 4** (shipped after about five years at Stage 3), and **[Intl Era/Month Code](../../proposals/intl-era-month-code.md) also reached Stage 4**. [Error Stack Accessor](../../proposals/error-stack-accessor.md), [RegExp Buffer Boundaries](../../proposals/regexp-buffer-boundaries.md), and [Iterator Includes](../../proposals/iterator-includes.md) advanced to Stage 2.7, and Import Text and [Intl Keep Trailing Zeros](../../proposals/intl-keep-trailing-zeros.md) advanced to Stage 3, among many other advancements. The committee also discussed the conditional Stage 4 status of Abort Protocol / Structured Concurrency / [Explicit Resource Management](../../proposals/explicit-resource-management.md), a test262 coverage strategy, and tree-shakeable methods. The annual chair / editor / convener elections were held (a new 262 editor was added at the opening).
+Three days centered on ECMA-262 / ECMA-402 proposals. **[Temporal](../../proposals/temporal.md) reached Stage 4** (shipped after about five years at Stage 3), and **[Intl Era/Month Code](../../proposals/intl-era-month-code.md) also reached Stage 4**. [Error Stack Accessor](../../proposals/error-stack-accessor.md), [RegExp Buffer Boundaries](../../proposals/regexp-buffer-boundaries.md), and [Iterator Includes](../../proposals/iterator-includes.md) advanced to Stage 2.7, and [Import Text](../../proposals/import-text.md) and [Intl Keep Trailing Zeros](../../proposals/intl-keep-trailing-zeros.md) advanced to Stage 3, among many other advancements. The committee also discussed the conditional Stage 4 status of Abort Protocol / Structured Concurrency / [Explicit Resource Management](../../proposals/explicit-resource-management.md), a test262 coverage strategy, and tree-shakeable methods. The annual chair / editor / convener elections were held (a new 262 editor was added at the opening).
 
 ## Stage transitions
 
 | Proposal                                                                | Transition | Day   |
 | ----------------------------------------------------------------------- | ---------- | ----- |
 | [Intl Era/Month Code](../../proposals/intl-era-month-code.md)           | 3 → 4      | Day 1 |
-| Error.captureStackTrace                                                 | 1 → 2      | Day 1 |
+| [Error.captureStackTrace](../../proposals/error-capture-stack-trace.md) | 1 → 2      | Day 1 |
 | [Error Stack Accessor](../../proposals/error-stack-accessor.md)         | 2 → 2.7    | Day 1 |
 | [RegExp Buffer Boundaries](../../proposals/regexp-buffer-boundaries.md) | 2 → 2.7    | Day 1 |
 | [Temporal](../../proposals/temporal.md)                                 | 3 → 4      | Day 2 |
-| Import Text                                                             | 2.7 → 3    | Day 2 |
-| Intl Unit Protocol                                                      | 1 → 2      | Day 2 |
+| [Import Text](../../proposals/import-text.md)                           | 2.7 → 3    | Day 2 |
+| [Intl Unit Protocol](../../proposals/intl-unit-protocol.md)             | 1 → 2      | Day 2 |
 | [Intl Keep Trailing Zeros](../../proposals/intl-keep-trailing-zeros.md) | 2 → 3      | Day 2 |
 | [Iterator Includes](../../proposals/iterator-includes.md)               | 2.7 → 3    | Day 3 |
 
@@ -39,7 +39,7 @@ From the attendees in `raw/notes/meetings/2026-03/march-10.md` (abbreviation —
 | AKI                        | Aki Rose Braun     | Ecma International |
 | [ACE](../../people/ACE.md) | Ashley Claymore    | Bloomberg          |
 | [BAN](../../people/BAN.md) | Ben Allen          | Igalia             |
-| CZW                        | Chengzhong Wu      | Bloomberg          |
+| [CZW](../../people/CZW.md) | Chengzhong Wu      | Bloomberg          |
 | [CM](../../people/CM.md)   | Chip Morningstar   | Consensys          |
 | [CDA](../../people/CDA.md) | Chris de Almeida   | IBM                |
 | DLP                        | Dan Lapid          | Cloudflare         |
@@ -66,7 +66,7 @@ From the attendees in `raw/notes/meetings/2026-03/march-10.md` (abbreviation —
 | [PFC](../../people/PFC.md) | Philip Chimento    | Igalia             |
 | [RGN](../../people/RGN.md) | Richard Gibson     | Agoric             |
 | [RBN](../../people/RBN.md) | Ron Buckton        | F5                 |
-| RBR                        | Ruben Bridgewater  | Invited Expert     |
+| [RBR](../../people/RBR.md) | Ruben Bridgewater  | Invited Expert     |
 | SHN                        | Samina Husain      | Ecma International |
 | [SHS](../../people/SHS.md) | Stephen Hicks      | Google             |
 | [WH](../../people/WH.md)   | Waldemar Horwat    | Invited Expert     |
