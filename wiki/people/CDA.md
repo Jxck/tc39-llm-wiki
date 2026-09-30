@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Chris de Almeida
 - **Affiliation**: IBM / International Business Machines Corporation
 - **Champion drafts**: [Await Dictionary](../proposals/await-dictionary.md)
-- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Decorators](../proposals/decorators.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Linear Matching](../proposals/linear-matching.md), [Map get and delete](../proposals/map-get-and-delete.md), [Temporal](../proposals/temporal.md)
+- **Mentioned on proposal pages**: [AsyncContext](../proposals/async-context.md), [Await Dictionary](../proposals/await-dictionary.md), [Composite Keys](../proposals/composite-keys.md), [Decorators](../proposals/decorators.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Enums](../proposals/enums.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Linear Matching](../proposals/linear-matching.md), [Map get and delete](../proposals/map-get-and-delete.md), [Object.propertyCount](../proposals/object-propertycount.md), [Temporal](../proposals/temporal.md)
 - **Meetings attended**: 26
 
 ## Meetings attended

@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Ben Allen
 - **Affiliation**: Igalia
 - **Champion drafts**: [Amount](../proposals/amount.md), [Intl Energy Units](../proposals/intl-energy-units.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md)
-- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [Intl Energy Units](../proposals/intl-energy-units.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md)
+- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [Decimal](../proposals/decimal.md), [Intl Energy Units](../proposals/intl-energy-units.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md)
 - **Meetings attended**: 14
 
 ## Meetings attended

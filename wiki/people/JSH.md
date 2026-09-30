@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Jacob Smith
 - **Affiliation**: Open JS / OpenJS
 - **Champion drafts**: [Comparisons](../proposals/comparisons.md)
-- **Mentioned on proposal pages**: [Comparisons](../proposals/comparisons.md)
+- **Mentioned on proposal pages**: [Comparisons](../proposals/comparisons.md), [Object.propertyCount](../proposals/object-propertycount.md)
 - **Meetings attended**: 4
 
 ## Meetings attended

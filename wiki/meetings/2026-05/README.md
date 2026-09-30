@@ -8,7 +8,7 @@
 
 ## Overview
 
-Three days in Amsterdam. **Reached Stage 4**: [Joint Iteration](../../proposals/joint-iteration.md) / `Atomics.pause` ([Dynamic Code Brand Checks](../../proposals/dynamic-code-brand-checks.md) got consensus only on a normative change, and Stage 4 will be asked again next time; [Explicit Resource Management](../../proposals/explicit-resource-management.md) is finished, its conditions having been met). [Iterator Chunking](../../proposals/iterator-chunking.md), [Iterator Includes](../../proposals/iterator-includes.md), and [Error stack accessor](../../proposals/error-stack-accessor.md) advanced to Stage 3, while **[Decorators](../../proposals/decorators.md) (the main proposal) and Decorator Metadata regressed from Stage 3 to Stage 2.7**. The iterator line and the area around [decorators](../../proposals/decorators.md) were the conspicuous movement. The committee also discussed Intl ([Stable Formatting](../../proposals/stable-formatting.md) / Sequence Units / Default Behaviours), a normative PR for ESM / Source Phase Imports, web integration of AsyncContext, and module topics including `export defer` / `export all from` / Module Scope Ceiling. Stage 1 for "[Comparisons](../../proposals/comparisons.md)" (deep comparison / deviation reporting), and a briefing on the regulatory side: the **EU CRA (Cyber Resilience Act)**.
+Three days in Amsterdam. **Reached Stage 4**: [Joint Iteration](../../proposals/joint-iteration.md) / `Atomics.pause` ([Dynamic Code Brand Checks](../../proposals/dynamic-code-brand-checks.md) got consensus only on a normative change, and Stage 4 will be asked again next time; [Explicit Resource Management](../../proposals/explicit-resource-management.md) is finished, its conditions having been met). [Iterator Chunking](../../proposals/iterator-chunking.md), [Iterator Includes](../../proposals/iterator-includes.md), and [Error stack accessor](../../proposals/error-stack-accessor.md) advanced to Stage 3, while **[Decorators](../../proposals/decorators.md) (the main proposal) and Decorator Metadata regressed from Stage 3 to Stage 2.7**. The iterator line and the area around [decorators](../../proposals/decorators.md) were the conspicuous movement. The committee also discussed Intl ([Stable Formatting](../../proposals/stable-formatting.md) / Sequence Units / Default Behaviours), a normative PR for ESM / Source Phase Imports, web integration of [AsyncContext](../../proposals/async-context.md), and module topics including `export defer` / `export all from` / Module Scope Ceiling. Stage 1 for "[Comparisons](../../proposals/comparisons.md)" (deep comparison / deviation reporting), and a briefing on the regulatory side: the **EU CRA (Cyber Resilience Act)**.
 
 ## Stage transitions
 
@@ -69,7 +69,7 @@ From the attendees in `raw/notes/meetings/2026-05/may-19.md` (abbreviation — n
 | [ABO](../../people/ABO.md) | Andreu Botella         | Igalia             |
 | CHU                        | Christian Ulbrich      | Zalari             |
 | TKP                        | Tom Kopp               | Zalari             |
-| SRV                        | Sergey Rubanov         | Invited Expert     |
+| [SRV](../../people/SRV.md) | Sergey Rubanov         | Invited Expert     |
 | [EAO](../../people/EAO.md) | Eemeli Aro             | Mozilla            |
 | [LVU](../../people/LVU.md) | Lea Verou              | OpenJS             |
 | [JGT](../../people/JGT.md) | Justin Grant           | Invited Expert     |

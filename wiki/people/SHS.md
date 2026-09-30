@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Stephen Hicks
 - **Affiliation**: Google
 - **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Decimal](../proposals/decimal.md), [Native Promise Adoption](../proposals/native-promise-adoption.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
+- **Mentioned on proposal pages**: [AsyncContext](../proposals/async-context.md), [Decimal](../proposals/decimal.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Native Promise Adoption](../proposals/native-promise-adoption.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
 - **Meetings attended**: 7
 
 ## Meetings attended

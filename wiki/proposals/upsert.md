@@ -79,7 +79,7 @@ After that, this proposal proceeded with readability and ergonomics, not perform
 ## Related proposals
 
 - [Records & Tuples](records-and-tuples.md) — mentioned in the context of using `getOrInsertComputed` with a composite key (2019-10).
-- `composites` — the successor to Records & Tuples. Mentioned around collection keys in 2025-04 (no proposal page yet).
+- [Composite Keys](composite-keys.md) — the successor to Records & Tuples. Mentioned around collection keys in 2025-04.
 
 ## Sources
 

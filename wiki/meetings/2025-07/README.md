@@ -48,7 +48,7 @@ From the attendees in `raw/notes/meetings/2025-07/july-28.md` (abbreviation — 
 | [DLM](../../people/DLM.md) | Daniel Minor           | Mozilla            |
 | [ZTZ](../../people/ZTZ.md) | Zbyszek Tenerowicz     | Consensys          |
 | [JHD](../../people/JHD.md) | Jordan Harband         | HeroDevs           |
-| SRV                        | Sergey Rubanov         | Invited Expert     |
+| [SRV](../../people/SRV.md) | Sergey Rubanov         | Invited Expert     |
 | [CM](../../people/CM.md)   | Chip Morningstar       | Consensys          |
 | [NRO](../../people/NRO.md) | Nicolò Ribaudo         | Igalia             |
 | MBH                        | Mikhail Barash         | Univ. of Bergen    |

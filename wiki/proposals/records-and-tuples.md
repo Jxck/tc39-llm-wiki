@@ -98,7 +98,7 @@ That redesign obtained Stage 1 as a separate proposal, Composites. In 2025-04 [A
 
 ## Related proposals
 
-- Composites (the successor to this proposal. Gives up on primitives and is redesigned as objects. Stage 1 as of 2025-04)
+- [Composite Keys](composite-keys.md) (the successor to this proposal. Gives up on primitives and is redesigned as objects. Stage 1 as of 2025-04)
 - Symbols as WeakMap keys (considered in 2021-12 as a candidate way to refer to objects)
 - shared structs (compared in 2025-02 in the context of immutable structs and born-immutable)
 - Temporal (an immutable data model, but it was decided not to couple it intentionally with Records and Tuples)

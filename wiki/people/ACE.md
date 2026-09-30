@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Ashley Claymore
 - **Affiliation**: Bloomberg
-- **Champion drafts**: [Await Dictionary](../proposals/await-dictionary.md), [Records & Tuples](../proposals/records-and-tuples.md)
-- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Decimal](../proposals/decimal.md), [Map get and delete](../proposals/map-get-and-delete.md), [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md), [Records & Tuples](../proposals/records-and-tuples.md)
+- **Champion drafts**: [Await Dictionary](../proposals/await-dictionary.md), [Composite Keys](../proposals/composite-keys.md), [Records & Tuples](../proposals/records-and-tuples.md)
+- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Composite Keys](../proposals/composite-keys.md), [Decimal](../proposals/decimal.md), [import defer](../proposals/import-defer.md), [Map get and delete](../proposals/map-get-and-delete.md), [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md), [Records & Tuples](../proposals/records-and-tuples.md)
 - **Meetings attended**: 22
 
 ## Meetings attended

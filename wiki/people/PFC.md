@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Philip Chimento
 - **Affiliation**: Igalia / Igalia S.L. / Igalia, S.L
 - **Champion drafts**: [Decimal](../proposals/decimal.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Temporal](../proposals/temporal.md)
-- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Decimal](../proposals/decimal.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Linear Matching](../proposals/linear-matching.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [Temporal](../proposals/temporal.md)
+- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Composite Keys](../proposals/composite-keys.md), [Decimal](../proposals/decimal.md), [Don't Remember Panicking](../proposals/dont-remember-panicking.md), [Enums](../proposals/enums.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Linear Matching](../proposals/linear-matching.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [Temporal](../proposals/temporal.md)
 - **Meetings attended**: 37
 
 ## Meetings attended

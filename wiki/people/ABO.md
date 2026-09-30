@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Andreu Botella
 - **Affiliation**: Igalia
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Import Bytes](../proposals/import-bytes.md)
+- **Champion drafts**: [AsyncContext](../proposals/async-context.md)
+- **Mentioned on proposal pages**: [AsyncContext](../proposals/async-context.md), [Compare Strings by Codepoint](../proposals/compare-strings-by-codepoint.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Don't Remember Panicking](../proposals/dont-remember-panicking.md), [Import Bytes](../proposals/import-bytes.md)
 - **Meetings attended**: 13
 
 ## Meetings attended

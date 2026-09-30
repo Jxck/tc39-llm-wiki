@@ -1,51 +1,42 @@
 ---
-abbr: MLS
-name: Michael Saboff
-orgs: [Apple, Apple Inc, Apple Inc., Invited Expert, Observer]
-meetings_attended: 32
+abbr: SRV
+name: Sergey Rubanov
+orgs: [Invited Expert, Invited expert, invited expert]
+meetings_attended: 23
 tags: [person]
 ---
 
-# MLS — Michael Saboff
+# SRV — Sergey Rubanov
 
-- **Full name**: Michael Saboff
-- **Affiliation**: Apple / Apple Inc / Apple Inc. / Invited Expert / Observer
+- **Full name**: Sergey Rubanov
+- **Affiliation**: Invited Expert / Invited expert / invited expert
 - **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Decimal](../proposals/decimal.md), [Decorators](../proposals/decorators.md), [Don't Remember Panicking](../proposals/dont-remember-panicking.md)
-- **Meetings attended**: 32
+- **Mentioned on proposal pages**: [AsyncContext](../proposals/async-context.md)
+- **Meetings attended**: 23
 
 ## Meetings attended
 
-- [2025-09](../meetings/2025-09/README.md)
+- [2026-05](../meetings/2026-05/README.md)
 - [2025-07](../meetings/2025-07/README.md)
-- 2025-04
 - 2025-02
 - 2024-12
 - 2024-10
-- 2024-07
 - 2024-06
-- 2024-02
-- 2023-11
-- 2023-09
+- 2024-04
 - 2023-07
 - 2023-05
 - 2023-03
 - 2023-01
 - 2022-11
-- 2022-09
 - 2022-07
-- 2022-06
 - 2022-03
 - 2021-12
 - 2021-10
 - 2021-08
-- 2021-07
 - 2021-05
 - 2021-04
-- 2021-03
 - 2021-01
 - 2020-11
-- 2020-09
 - 2020-07
 - 2020-06
 

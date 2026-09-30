@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Ruben Bridgewater
 - **Affiliation**: Datadog / Invited Expert
-- **Champion drafts**: [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md), [Object.getOwnPropertySymbols options](../proposals/object-getownpropertysymbols-options.md)
-- **Mentioned on proposal pages**: [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md), [Object.getOwnPropertySymbols options](../proposals/object-getownpropertysymbols-options.md)
+- **Champion drafts**: [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md), [Object.getOwnPropertySymbols options](../proposals/object-getownpropertysymbols-options.md), [Object.propertyCount](../proposals/object-propertycount.md)
+- **Mentioned on proposal pages**: [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md), [Object.getOwnPropertySymbols options](../proposals/object-getownpropertysymbols-options.md), [Object.propertyCount](../proposals/object-propertycount.md)
 - **Meetings attended**: 4
 
 ## Meetings attended

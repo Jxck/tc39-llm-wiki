@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Dmitry Makhnev
 - **Affiliation**: JetBrains
 - **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Linear Matching](../proposals/linear-matching.md)
+- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Linear Matching](../proposals/linear-matching.md), [Object.propertyCount](../proposals/object-propertycount.md)
 - **Meetings attended**: 13
 
 ## Meetings attended

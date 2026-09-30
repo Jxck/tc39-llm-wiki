@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Guy Bedford
 - **Affiliation**: Bloomberg / Cloudflare / OpenJS Foundation / OpenJSF
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Import Bytes](../proposals/import-bytes.md)
+- **Champion drafts**: [import defer](../proposals/import-defer.md)
+- **Mentioned on proposal pages**: [Import Bytes](../proposals/import-bytes.md), [import defer](../proposals/import-defer.md)
 - **Mentioned on family pages**: [Modules (module harmony)](../families/modules.md)
 - **Meetings attended**: 11
 

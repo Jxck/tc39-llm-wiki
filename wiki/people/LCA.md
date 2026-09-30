@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Luca Casonato
 - **Affiliation**: Deno / Deno Land / Deno Land Inc / Invited Expert
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Array.fromAsync](../proposals/array-from-async.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Joint Iteration](../proposals/joint-iteration.md)
+- **Champion drafts**: [Disposable AsyncContext](../proposals/disposable-asynccontext.md)
+- **Mentioned on proposal pages**: [Array.fromAsync](../proposals/array-from-async.md), [Composite Keys](../proposals/composite-keys.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Joint Iteration](../proposals/joint-iteration.md)
 - **Mentioned on family pages**: [Iterator helpers and friends](../families/iterator.md)
 - **Meetings attended**: 16
 

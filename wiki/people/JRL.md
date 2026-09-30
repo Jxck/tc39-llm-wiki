@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Justin Ridgewell
 - **Affiliation**: Google / Vercel
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Bulk-add array elements](../proposals/bulk-add-array-elements.md), [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Import Text](../proposals/import-text.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Native Promise Adoption](../proposals/native-promise-adoption.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
+- **Champion drafts**: [AsyncContext](../proposals/async-context.md)
+- **Mentioned on proposal pages**: [AsyncContext](../proposals/async-context.md), [Bulk-add array elements](../proposals/bulk-add-array-elements.md), [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [import defer](../proposals/import-defer.md), [Import Text](../proposals/import-text.md), [Array.isTemplateObject](../proposals/is-template-object.md), [Native Promise Adoption](../proposals/native-promise-adoption.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md), [RegExp.escape](../proposals/regexp-escaping.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
 - **Meetings attended**: 20
 
 ## Meetings attended
