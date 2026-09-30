@@ -17,17 +17,18 @@ The current design is a plain object/class (`Decimal`) with a constructor and st
 
 ## Stage history
 
-| Meeting                                                     | Event                                                                                                                                              | Stage    |
-| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| [2017-11](../../raw/notes/meetings/2017-11/nov-29.md)       | Presented by API as "Decimal"; reached Stage 0                                                                                                     | → 0      |
-| [2020-02](../../raw/notes/meetings/2020-02/february-4.md)   | Presented by [DE](../people/DE.md) as "BigDecimal"; reached Stage 1                                                                                | 0 → 1    |
-| [2021-12](../../raw/notes/meetings/2021-12/dec-15.md)       | [SHO](../people/SHO.md) takes over presenting alongside [PFC](../people/PFC.md)/API; temperature check favors a new primitive (13 for, 0 blocking) | 1 (kept) |
-| [2023-07](../../raw/notes/meetings/2023-07/july-12.md)      | "Decimal: Open-ended discussion"; [SYG](../people/SYG.md) (V8) leans toward not doing this without operator overloading                            | 1 (kept) |
-| [2023-09](../../raw/notes/meetings/2023-09/september-27.md) | Operator overloading, literal syntax, and primitive-ness dropped, per V8/SpiderMonkey feedback                                                     | 1 (kept) |
-| [2024-04](../../raw/notes/meetings/2024-04/april-11.md)     | Stage 2 requested; blocked by [MM](../people/MM.md) and [JHD](../people/JHD.md)                                                                    | 1 (kept) |
-| [2024-10](../../raw/notes/meetings/2024-10/october-09.md)   | Dropped trailing-zero/precision tracking to simplify; spun off "numeric value with precision"                                                      | 1 (kept) |
-| [2025-02](../../raw/notes/meetings/2025-02/february-19.md)  | "A unified vision for measure and decimal" presented jointly; the spinoff is renamed Amount                                                        | 1 (kept) |
-| [2026-07](../../raw/notes/meetings/2026-07/july-22.md)      | Presented by [CLA](../people/CLA.md); primitive-vs-object deadlock restated, [JHD](../people/JHD.md) treats it as a Stage 2 blocker                | 1 (kept) |
+| Meeting                                                     | Event                                                                                                                                               | Stage    |
+| ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| [2017-11](../../raw/notes/meetings/2017-11/nov-29.md)       | Presented by API as "Decimal"; reached Stage 0                                                                                                      | → 0      |
+| [2020-02](../../raw/notes/meetings/2020-02/february-4.md)   | Presented by [DE](../people/DE.md) as "BigDecimal"; reached Stage 1                                                                                 | 0 → 1    |
+| [2021-12](../../raw/notes/meetings/2021-12/dec-15.md)       | [SHO](../people/SHO.md) takes over presenting alongside [PFC](../people/PFC.md)/API; temperature check favors a new primitive (13 for, 0 blocking)  | 1 (kept) |
+| [2023-07](../../raw/notes/meetings/2023-07/july-12.md)      | "Decimal: Open-ended discussion"; [SYG](../people/SYG.md) (V8) leans toward not doing this without operator overloading                             | 1 (kept) |
+| [2023-09](../../raw/notes/meetings/2023-09/september-27.md) | Operator overloading, literal syntax, and primitive-ness dropped, per V8/SpiderMonkey feedback                                                      | 1 (kept) |
+| [2024-04](../../raw/notes/meetings/2024-04/april-11.md)     | Stage 2 requested; blocked by [MM](../people/MM.md) and [JHD](../people/JHD.md)                                                                     | 1 (kept) |
+| [2024-10](../../raw/notes/meetings/2024-10/october-09.md)   | Dropped trailing-zero/precision tracking to simplify; spun off "numeric value with precision"                                                       | 1 (kept) |
+| [2025-02](../../raw/notes/meetings/2025-02/february-19.md)  | "A unified vision for measure and decimal" presented jointly; the spinoff is renamed Amount                                                         | 1 (kept) |
+| [2025-05](../../raw/notes/meetings/2025-05/may-28.md)       | Stage 1 update: `Decimal.Amount` (a decimal value with separately-tracked precision) presented as part of the Decimal package; no advancement asked | 1 (kept) |
+| [2026-07](../../raw/notes/meetings/2026-07/july-22.md)      | Presented by [CLA](../people/CLA.md); primitive-vs-object deadlock restated, [JHD](../people/JHD.md) treats it as a Stage 2 blocker                 | 1 (kept) |
 
 ```mermaid
 xychart-beta
@@ -63,6 +64,16 @@ IEEE 754 Decimal128 distinguishes `1.2` from `1.20` (the "cohort" concept), and 
 - Discussed in depth at [2024-10](../../raw/notes/meetings/2024-10/october-09.md) and [2025-02](../../raw/notes/meetings/2025-02/february-19.md) ("A unified vision for measure and decimal", presented jointly with [EAO](../people/EAO.md)).
 - Resolved by scope-splitting: Decimal itself always normalizes to a single mathematical value (no observable trailing zeros), and the precision/unit-carrying use cases became a separate proposal — first called "numeric value with precision", then Measure, renamed **Amount** at [EAO](../people/EAO.md)'s suggestion. [Amount](../proposals/amount.md) reached Stage 2 in 2026-07 and is designed to be able to wrap a `Decimal` value if/when Decimal ships.
 
+### Decimal.Amount and the polymorphic-Amount question (2025-05)
+
+The 2025-05 update introduced `Decimal.Amount`: a small class pairing a canonical Decimal128 value with separately-tracked precision (significant digits / fraction digits / trailing zeros), meant to "round out the internationalization and data exchange stories" - round-tripping digits received over the wire, `Intl.NumberFormat` integration, and UI stepping (42.99 → 43.00 keeping its trailing zeros). Precision is metadata, not cohort observability: [MM](../people/MM.md) verified the old agreement still holds ("Any trailing zeros just gets stripped" - [JMN](../people/JMN.md)).
+
+The fight was over whether Amount belongs to Decimal at all. [MM](../people/MM.md): "why is the amount tied to decimal?... why don't we have an amount and have it be able to hold in its value field either a decimal or a number?... This was my major objection the last time you brought this." [EAO](../people/EAO.md) added that `Intl.NumberFormat` supports up to 400 digits, so Decimal's 34-digit limit arbitrarily excludes valid Amount use cases. [SFC](../people/SFC.md) defended the single backing on implementer grounds (a polymorphic amount is "an enumeration of multiple variants, and any operation... has to go through a match statement" plus heap allocation) and on a superset argument via string round-tripping that [MM](../people/MM.md) flatly rejected as unanswered ("I register your answer did not answer my question"). [NRO](../people/NRO.md)'s one genuine asymmetry: parsing a string into value+precision cannot be split across two constructors, so the amount must parse its own numeric type.
+
+[WH](../people/WH.md) then showed the superset claim leaks arithmetic-wise: rounding `0.15` (the float, which sits just below 0.15) to one significant digit gives `0.1`, but converting to Decimal first gives `0.2` - "double rounding will change the result". [DMM](../people/DMM.md) objected that rounding on the shortest-decimal representation is the well-established convention and called the float behavior "generally considered a bug"; the exchange strengthened [MM](../people/MM.md)'s orthogonality call. [WH](../people/WH.md) also probed the Decimal128 ceiling (π to 72 digits silently gains trailing zeros) and a round-ties-to-even gap (0.95 to one significant digit: both neighbors 0.9 and 1 have odd last digits, and Decimal128 has no one-significant-digit operation).
+
+`equals` had been dropped from the draft after [WH](../people/WH.md)'s objection ("equality seems to fall together with addition and other decimal operations"), and [MM](../people/MM.md) pushed the further question of coupling with the composites proposal: if `Decimal.Amount`s were composite keys, an own `equals` would be "just... a trivial wrapper around composite equal" - with a NaN wrinkle (structural equality says two NaNs are equal; IEEE says otherwise). [SHS](../people/SHS.md) heard "Records and Tuples" in the whole discussion. [JMN](../people/JMN.md)'s speaker summary lists the three open uncertainties: rounding edge cases, equality vs composites, and the superset question.
+
 ### Should Decimal exist in the language at all?
 
 Some delegates ([SYG](../people/SYG.md), [MLS](../people/MLS.md), [EAO](../people/EAO.md) early on) questioned whether the use cases justify built-in support at all, versus continuing to rely on userland libraries (`decimal.js`, `big.js`, `bignumber.js`) — echoing the same ROI skepticism raised in the primitive debate. Champions countered with concrete production case studies: Bloomberg ([ACE](../people/ACE.md)) uses decimal pervasively for cross-language financial data interchange (C++/Python/JS via a shared schema), and Alibaba's DingTalk ([LIU](../people/LIU.md)) needs it for spreadsheet-formula calculations at scale.
@@ -86,4 +97,5 @@ Some delegates ([SYG](../people/SYG.md), [MLS](../people/MLS.md), [EAO](../peopl
 - [2024-04](../../raw/notes/meetings/2024-04/april-11.md) — Decimal for stage 2
 - [2024-10](../../raw/notes/meetings/2024-10/october-09.md) — Decimal: Stage 1 Update
 - [2025-02](../../raw/notes/meetings/2025-02/february-19.md) — A unified vision for measure and decimal
+- [2025-05](../../raw/notes/meetings/2025-05/may-28.md) — Decimal stage 1 update (Decimal.Amount); continued [2025-05 may-29](../../raw/notes/meetings/2025-05/may-29.md)
 - [2026-07](../../raw/notes/meetings/2026-07/july-22.md) — Decimal stage 1 update

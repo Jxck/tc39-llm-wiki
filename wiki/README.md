@@ -66,6 +66,11 @@ A wiki for tracing **how each proposal changed stage, and which issues came up a
 | [Immutable ArrayBuffers](proposals/immutable-arraybuffer.md)                              | Stage 3 (2025-07)   | stage3    | `transferToImmutable` and freezable `TypedArray`s on it. Born immutable, never detachable. Stage 3 conditional on test262.                  |
 | [Module Global](proposals/module-global.md)                                               | Stage 1 (2025-07)   | stage1    | New global scope and module map within the same realm. Supply-chain mitigation (LavaMoat); must justify itself against ShadowRealm.         |
 | [Object.getOwnPropertySymbols options](proposals/object-getownpropertysymbols-options.md) | Stage 1 (2025-07)   | stage1    | Enumerability filter for symbol own keys. KG: fill the 2x2 matrix with a new method, not an options bag. Not in the canonical list yet.     |
+| [Array.fromAsync](proposals/array-from-async.md)                                          | Stage 4 (2025-05)   | shipped   | `for await` as `Array.from`. First proposal on the built-in async function infrastructure; Stage 4 conditional on editor sign-off.          |
+| [Error.isError](proposals/error-is-error.md)                                              | Stage 4 (2025-05)   | shipped   | Brand check for error objects. First shown in 2015-11, rejected on principle, brought back in 2024-04 and one stage per meeting.            |
+| [Math.clamp](proposals/math-clamp.md)                                                     | Stage 2 (2025-05)   | stage2    | Clamp into a range. Decided to be `Number.prototype.clamp`; BigInt deferred; no-throw on +0/-0.                                             |
+| [SeededPRNG](proposals/seeded-prng.md)                                                    | Stage 2 (2025-05)   | stage2    | ChaCha12-based reproducible generator, moved to `Random.Seeded`. Stage 1 in 2018-01, then dormant for seven years.                          |
+| [More Random Functions](proposals/more-random-functions.md)                               | Stage 1 (2025-05)   | stage1    | `Random` namespace (random ints, bytes; shuffling and distributions split off). Shares the ChaCha12 backbone with Random.Seeded.            |
 
 ## Families (cross-cutting summaries)
 
@@ -84,7 +89,7 @@ Proposal pages referenced from ingested pages but not created yet:
 
 ## Person pages (people/)
 
-People who appear on proposal or family pages are collected under [people/](people/) (86 at the moment). Each file is named by abbreviation and lists full name, affiliation, champion drafts, proposals and families that mention them, and meetings attended. `tools/extract_people.py` detects abbreviations on proposal and family pages and generates the pages. `tools/link_people.py` turns abbreviations in proposal, family, and meeting-summary prose into `[ABBR](<rel>/people/ABBR.md)` (standard markdown links that work in the VS Code preview). `tools/link_proposals.py` links proposal names in meeting summaries to proposal pages. Only people who actually appear are included, and the set grows as pages are added.
+People who appear on proposal or family pages are collected under [people/](people/) (91 at the moment). Each file is named by abbreviation and lists full name, affiliation, champion drafts, proposals and families that mention them, and meetings attended. `tools/extract_people.py` detects abbreviations on proposal and family pages and generates the pages. `tools/link_people.py` turns abbreviations in proposal, family, and meeting-summary prose into `[ABBR](<rel>/people/ABBR.md)` (standard markdown links that work in the VS Code preview). `tools/link_proposals.py` links proposal names in meeting summaries to proposal pages. Only people who actually appear are included, and the set grows as pages are added.
 
 ## Backbone (machine-extracted)
 

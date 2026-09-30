@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Joshua S. Choi
 - **Affiliation**: IE (Univ. of Utah ) / Indiana University / Invited Expert / Invited expert
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md), [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Iterator Sequencing](../proposals/iterator-sequencing.md)
+- **Champion drafts**: [Array.fromAsync](../proposals/array-from-async.md)
+- **Mentioned on proposal pages**: [Array.fromAsync](../proposals/array-from-async.md), [Decorators](../proposals/decorators.md), [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Iterator Sequencing](../proposals/iterator-sequencing.md)
 - **Meetings attended**: 10
 
 ## Meetings attended

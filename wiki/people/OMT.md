@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Oliver Medhurst
 - **Affiliation**: IE (Porffor) / Invited Expert
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Immutable ArrayBuffers](../proposals/immutable-arraybuffer.md)
+- **Champion drafts**: [Math.clamp](../proposals/math-clamp.md)
+- **Mentioned on proposal pages**: [Immutable ArrayBuffers](../proposals/immutable-arraybuffer.md), [Math.clamp](../proposals/math-clamp.md)
 - **Meetings attended**: 4
 
 ## Meetings attended

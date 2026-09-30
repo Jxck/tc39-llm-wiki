@@ -60,7 +60,7 @@ From the attendees in `raw/notes/meetings/2025-07/july-28.md` (abbreviation — 
 | [RMH](../../people/RMH.md) | Rezvan Mahdavi Hezaveh | Google             |
 | [JSC](../../people/JSC.md) | J. S. Choi             | Invited Expert     |
 | [EAO](../../people/EAO.md) | Eemeli Aro             | Mozilla            |
-| TAB                        | Tab Atkins-Bittner     | Google             |
+| [TAB](../../people/TAB.md) | Tab Atkins-Bittner     | Google             |
 | IS                         | Istvan Sebestyen       | Ecma               |
 | [DRR](../../people/DRR.md) | Daniel Rosenwasser     | Microsoft          |
 | [ABO](../../people/ABO.md) | Andreu Botella         | Igalia             |

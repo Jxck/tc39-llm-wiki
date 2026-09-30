@@ -55,7 +55,7 @@ From the attendees in `raw/notes/meetings/2025-09/september-22.md` (abbreviation
 | [PFC](../../people/PFC.md) | Philip Chimento    | Igalia             |
 | [CM](../../people/CM.md)   | Chip Morningstar   | Consensys          |
 | MBH                        | Mikhail Barash     | Univ. of Bergen    |
-| DMM                        | Duncan MacGregor   | ServiceNow         |
+| [DMM](../../people/DMM.md) | Duncan MacGregor   | ServiceNow         |
 | [MAH](../../people/MAH.md) | Mathieu Hofman     | Agoric             |
 | [JSL](../../people/JSL.md) | James Snell        | Cloudflare         |
 | IS                         | Istvan Sebestyen   | Ecma               |

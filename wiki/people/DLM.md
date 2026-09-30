@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Dan Minor
 - **Affiliation**: Mozilla / Mozilla Foundation
 - **Champion drafts**: [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Upsert](../proposals/upsert.md)
-- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Decimal](../proposals/decimal.md), [Decorators](../proposals/decorators.md), [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Math.sumPrecise](../proposals/math-sum-precise.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [Uint8Array to/from Base64](../proposals/uint8array-base64.md), [Upsert](../proposals/upsert.md)
+- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Decimal](../proposals/decimal.md), [Decorators](../proposals/decorators.md), [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Math.clamp](../proposals/math-clamp.md), [Math.sumPrecise](../proposals/math-sum-precise.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [SeededPRNG](../proposals/seeded-prng.md), [Uint8Array to/from Base64](../proposals/uint8array-base64.md), [Upsert](../proposals/upsert.md)
 - **Meetings attended**: 25
 
 ## Meetings attended
