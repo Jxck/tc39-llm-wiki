@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Dan Minor
 - **Affiliation**: Mozilla / Mozilla Foundation
-- **Champion drafts**: [Upsert](../proposals/upsert.md)
-- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Decimal](../proposals/decimal.md), [Decorators](../proposals/decorators.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Upsert](../proposals/upsert.md)
+- **Champion drafts**: [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Upsert](../proposals/upsert.md)
+- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Decimal](../proposals/decimal.md), [Decorators](../proposals/decorators.md), [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [Upsert](../proposals/upsert.md)
 - **Meetings attended**: 25
 
 ## Meetings attended

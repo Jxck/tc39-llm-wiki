@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Chip Morningstar
 - **Affiliation**: Agoric / Consensys / Consensys (MetaMask) / Invited expert / MetaMask / tbd
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Intl.MessageFormat](../proposals/intl-messageformat.md), [Map get and delete](../proposals/map-get-and-delete.md)
+- **Champion drafts**: [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md)
+- **Mentioned on proposal pages**: [Intl.MessageFormat](../proposals/intl-messageformat.md), [Map get and delete](../proposals/map-get-and-delete.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md)
 - **Meetings attended**: 33
 
 ## Meetings attended

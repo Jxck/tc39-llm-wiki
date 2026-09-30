@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Richard Gibson
 - **Affiliation**: Agoric / Open JS Foundation / OpenJS Foundation
-- **Champion drafts**: [BigInt from exponential](../proposals/bigint-from-exponential.md)
-- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Error code property](../proposals/error-code-property.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Linear Matching](../proposals/linear-matching.md), [Temporal](../proposals/temporal.md)
+- **Champion drafts**: [BigInt from exponential](../proposals/bigint-from-exponential.md), [JSON.parse source text access](../proposals/json-source-text.md)
+- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Error code property](../proposals/error-code-property.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [JSON.parse source text access](../proposals/json-source-text.md), [Linear Matching](../proposals/linear-matching.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [Temporal](../proposals/temporal.md)
 - **Meetings attended**: 30
 
 ## Meetings attended

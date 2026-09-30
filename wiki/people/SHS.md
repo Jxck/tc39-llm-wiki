@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Stephen Hicks
 - **Affiliation**: Google
 - **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Thenable Curtailment](../proposals/thenable-curtailment.md)
+- **Mentioned on proposal pages**: [Native Promise Adoption](../proposals/native-promise-adoption.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
 - **Meetings attended**: 7
 
 ## Meetings attended

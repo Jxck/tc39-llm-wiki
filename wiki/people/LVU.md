@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Lea Verou
 - **Affiliation**: OpenJS / OpenJS Foundation
 - **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Error code property](../proposals/error-code-property.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Linear Matching](../proposals/linear-matching.md)
+- **Mentioned on proposal pages**: [Error code property](../proposals/error-code-property.md), [Import Text](../proposals/import-text.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Intl Unit Protocol](../proposals/intl-unit-protocol.md), [Linear Matching](../proposals/linear-matching.md)
 - **Meetings attended**: 6
 
 ## Meetings attended

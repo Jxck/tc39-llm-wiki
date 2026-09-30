@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Matthew Gaudet
 - **Affiliation**: Mozilla
-- **Champion drafts**: [Thenable Curtailment](../proposals/thenable-curtailment.md)
-- **Mentioned on proposal pages**: [Thenable Curtailment](../proposals/thenable-curtailment.md)
+- **Champion drafts**: [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
+- **Mentioned on proposal pages**: [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Thenable Curtailment](../proposals/thenable-curtailment.md)
 - **Meetings attended**: 7
 
 ## Meetings attended

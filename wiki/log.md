@@ -410,3 +410,11 @@ Checked the entire wiki according to the new precedence (`raw/proposals` is the 
 - Quote spot-check on the newest page (`decimal.md`): the WH 2023-07 "enormous mistake" quote is verbatim in `raw/notes/meetings/2023-07/july-12.md` (leading filler "Yeah," dropped).
 - Flagged notable proposals still without pages (by agenda-index mentions): ShadowRealm (21), Pattern Matching (8), ESM Phase Imports (8), throw expressions (7), Source Phase Imports (7), Observable (6), Decorator Metadata (6), Async Iterator helpers (6), Symbol Predicates (5), Signals (5), Pipeline Operator (5).
 - Fixed AGENTS.md stale counts (86 → 88 meetings, 2737 → 2814 agenda items, 334 → 340 files; README already had the correct numbers).
+
+## [2026-09-30] ingest | 2025-11 meeting
+
+- Deep-read the 2025-11 plenary (november-18/20) and created 10 proposal pages: `json-source-text` (Stage 4), `error-capture-stack-trace` (Stage 2), `intl-locale-info` (Stage 4), `iterator-sequencing` (Stage 4), `intl-unit-protocol` (Stage 2, 2026-03), `import-text` (Stage 3, 2026-03), `typedarray-concat` (Stage 1), `typedarray-find-within` (Stage 1), `intl-energy-units` (Stage 1), `object-get-non-index-string-properties` (Stage 1).
+- Canonical-lag note: `intl-unit-protocol` is stale at Stage 1 in `raw/proposals/ecma402` (notes 2026-03 approve Stage 2); all other stages matched the canonical tables.
+- Added the `iterator-sequencing` member row to `wiki/families/iterator.md`.
+- Added the 10 catalog rows to `wiki/README.md`.
+- Ran `extract_people.py` (78 → 86 people; added among others DRR, STY, MAH, LVU, JAD, PHE) then `link_people.py` / `link_proposals.py`, which also retroactively linked proposal names and person abbreviations in the 2025-07/09/11 and 2026-03/05/07 meeting summaries.

@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Daniel Rosenwasser
 - **Affiliation**: Microsoft
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md)
+- **Champion drafts**: [Bulk-add array elements](../proposals/bulk-add-array-elements.md)
+- **Mentioned on proposal pages**: [Bulk-add array elements](../proposals/bulk-add-array-elements.md), [Decorators](../proposals/decorators.md)
 - **Meetings attended**: 17
 
 ## Meetings attended

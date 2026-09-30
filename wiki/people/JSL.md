@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: James M Snell
 - **Affiliation**: Cloudflare
-- **Champion drafts**: [Error code property](../proposals/error-code-property.md)
-- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Error code property](../proposals/error-code-property.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md)
+- **Champion drafts**: [Error code property](../proposals/error-code-property.md), [TypedArray Concatenation](../proposals/typedarray-concat.md), [TypedArray Find Within](../proposals/typedarray-find-within.md)
+- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [BigInt from exponential](../proposals/bigint-from-exponential.md), [Error code property](../proposals/error-code-property.md), [Import Bytes](../proposals/import-bytes.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [TypedArray Concatenation](../proposals/typedarray-concat.md), [TypedArray Find Within](../proposals/typedarray-find-within.md)
 - **Meetings attended**: 7
 
 ## Meetings attended

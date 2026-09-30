@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Shane Carr
 - **Affiliation**: Google
-- **Champion drafts**: [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Temporal](../proposals/temporal.md)
-- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Comparisons](../proposals/comparisons.md), [Decimal](../proposals/decimal.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Linear Matching](../proposals/linear-matching.md), [Temporal](../proposals/temporal.md)
+- **Champion drafts**: [Intl Energy Units](../proposals/intl-energy-units.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Intl Unit Protocol](../proposals/intl-unit-protocol.md), [Temporal](../proposals/temporal.md)
+- **Mentioned on proposal pages**: [Await Dictionary](../proposals/await-dictionary.md), [Comparisons](../proposals/comparisons.md), [Decimal](../proposals/decimal.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Import Text](../proposals/import-text.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Intl Energy Units](../proposals/intl-energy-units.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Intl Unit Protocol](../proposals/intl-unit-protocol.md), [Linear Matching](../proposals/linear-matching.md), [Temporal](../proposals/temporal.md)
 - **Meetings attended**: 26
 
 ## Meetings attended

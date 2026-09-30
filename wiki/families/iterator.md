@@ -17,7 +17,7 @@ There have been many recent agenda items. In 2026-05 [MF](../people/MF.md) prese
 | Proposal                                                                         | Current stage | In short                                                                                         |
 | -------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------ |
 | `iterator-helpers`                                                               | 4             | The MVP. Lazy `map` / `filter` / `take` / `drop` / `flatMap` / `reduce` / `toArray`, and others  |
-| `iterator-sequencing` (`Iterator.concat`)                                        | 4             | Concatenates zero or more iterators and yields everything they yield                             |
+| [Iterator Sequencing](../proposals/iterator-sequencing.md) (`Iterator.concat`)   | 4             | Concatenates zero or more iterators and yields everything they yield (Stage 4 in 2025-11)        |
 | [Joint Iteration](../proposals/joint-iteration.md) (`Iterator.zip` / `zipKeyed`) | 4             | Zips several iterators by position (reached in 2026-05)                                          |
 | [Iterator Chunking](../proposals/iterator-chunking.md) (`chunks` / `windows`)    | 3             | Consumes several values at once (no overlap = chunks, overlap = windows). Stage 3 in 2026-05     |
 | [Iterator Includes](../proposals/iterator-includes.md)                           | 3             | The equivalent of `Array.prototype.includes`. Stage 3 in 2026-05                                 |
