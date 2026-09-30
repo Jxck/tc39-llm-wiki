@@ -138,7 +138,7 @@ Body sections (headings are fixed, in English):
 Markdown / JSON is formatted with **oxfmt** (config `.oxfmtrc.json`, `proseWrap: preserve` so lines aren't rewrapped, `embeddedLanguageFormatting: off`). Excluded: `raw/**` (submodules, immutable) and `wiki/_generated/**` (generated output, including JSONL).
 
 - Manual: `npm run fmt` (= `oxfmt`), check with `npm run fmt:check`.
-- **Enforced automatically**: Claude Code's PostToolUse hook (`.claude/settings.json`) formats any edited .md/.json file immediately, and git's pre-commit hook (`.githooks/pre-commit`, requires `core.hooksPath`) formats staged files and re-stages them.
+- **Enforced automatically**: git's pre-commit hook (`.githooks/pre-commit`, requires `core.hooksPath`) formats staged files and re-stages them.
 - Right after cloning, run `git config core.hooksPath .githooks` once.
 
 ## Workflow
