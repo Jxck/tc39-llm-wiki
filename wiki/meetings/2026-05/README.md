@@ -65,7 +65,7 @@ From the attendees in `raw/notes/meetings/2026-05/may-19.md` (abbreviation — n
 | [RBN](../../people/RBN.md) | Ron Buckton            | F5                 |
 | [RBR](../../people/RBR.md) | Ruben Bridgewater      | Datadog            |
 | [GCL](../../people/GCL.md) | Gus Caplan             | Deno               |
-| OMT                        | Oliver Medhurst        | IE (Porffor)       |
+| [OMT](../../people/OMT.md) | Oliver Medhurst        | IE (Porffor)       |
 | [ABO](../../people/ABO.md) | Andreu Botella         | Igalia             |
 | CHU                        | Christian Ulbrich      | Zalari             |
 | TKP                        | Tom Kopp               | Zalari             |

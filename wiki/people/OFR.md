@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Olivier Flückiger
 - **Affiliation**: Google
 - **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [BigInt from exponential](../proposals/bigint-from-exponential.md), [Comparisons](../proposals/comparisons.md), [Decorators](../proposals/decorators.md), [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Linear Matching](../proposals/linear-matching.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [TypedArray Concatenation](../proposals/typedarray-concat.md)
+- **Mentioned on proposal pages**: [BigInt from exponential](../proposals/bigint-from-exponential.md), [Comparisons](../proposals/comparisons.md), [Decorators](../proposals/decorators.md), [Error.captureStackTrace](../proposals/error-capture-stack-trace.md), [Linear Matching](../proposals/linear-matching.md), [Module Global](../proposals/module-global.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [TypedArray Concatenation](../proposals/typedarray-concat.md)
 - **Meetings attended**: 7
 
 ## Meetings attended

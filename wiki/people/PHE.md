@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Peter Hoddie
 - **Affiliation**: Moddable / Moddable Inc
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Records & Tuples](../proposals/records-and-tuples.md)
+- **Champion drafts**: [Immutable ArrayBuffers](../proposals/immutable-arraybuffer.md)
+- **Mentioned on proposal pages**: [Immutable ArrayBuffers](../proposals/immutable-arraybuffer.md), [Module Global](../proposals/module-global.md), [Records & Tuples](../proposals/records-and-tuples.md), [Uint8Array to/from Base64](../proposals/uint8array-base64.md)
 - **Meetings attended**: 4
 
 ## Meetings attended

@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Gus Caplan
 - **Affiliation**: Cloudflare / Deno / Deno Land / Deno Land Inc / Invited Expert / OpenJS / OpenJS Foundation
 - **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Import Bytes](../proposals/import-bytes.md)
+- **Mentioned on proposal pages**: [Import Bytes](../proposals/import-bytes.md), [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md)
 - **Mentioned on family pages**: [Iterator helpers and friends](../families/iterator.md)
 - **Meetings attended**: 10
 

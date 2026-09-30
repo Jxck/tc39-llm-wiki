@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Zbigniew Tenerowicz
 - **Affiliation**: Consensys / MetaMask
-- **Champion drafts**: [Array.isTemplateObject](../proposals/is-template-object.md)
-- **Mentioned on proposal pages**: [Array.isTemplateObject](../proposals/is-template-object.md), [Native Promise Predicate](../proposals/native-promise-predicate.md)
+- **Champion drafts**: [Array.isTemplateObject](../proposals/is-template-object.md), [Module Global](../proposals/module-global.md)
+- **Mentioned on proposal pages**: [Array.isTemplateObject](../proposals/is-template-object.md), [Module Global](../proposals/module-global.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [Object.getOwnPropertySymbols options](../proposals/object-getownpropertysymbols-options.md)
 - **Meetings attended**: 4
 
 ## Meetings attended

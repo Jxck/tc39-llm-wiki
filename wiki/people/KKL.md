@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Kris Kowal
 - **Affiliation**: Agoric
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Import Bytes](../proposals/import-bytes.md)
+- **Champion drafts**: [Module Global](../proposals/module-global.md)
+- **Mentioned on proposal pages**: [Import Bytes](../proposals/import-bytes.md), [Module Global](../proposals/module-global.md)
 - **Meetings attended**: 13
 
 ## Meetings attended

@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Mathieu Hofman
 - **Affiliation**: Agoric / Stripe
 - **Champion drafts**: [Native Promise Adoption](../proposals/native-promise-adoption.md), [Native Promise Predicate](../proposals/native-promise-predicate.md)
-- **Mentioned on proposal pages**: [Comparisons](../proposals/comparisons.md), [Native Promise Adoption](../proposals/native-promise-adoption.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md), [Records & Tuples](../proposals/records-and-tuples.md), [Thenable Curtailment](../proposals/thenable-curtailment.md), [TypedArray Concatenation](../proposals/typedarray-concat.md), [TypedArray Find Within](../proposals/typedarray-find-within.md)
+- **Mentioned on proposal pages**: [Comparisons](../proposals/comparisons.md), [Immutable ArrayBuffers](../proposals/immutable-arraybuffer.md), [Module Global](../proposals/module-global.md), [Native Promise Adoption](../proposals/native-promise-adoption.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [Object.getNonIndexStringProperties](../proposals/object-get-non-index-string-properties.md), [Records & Tuples](../proposals/records-and-tuples.md), [Thenable Curtailment](../proposals/thenable-curtailment.md), [TypedArray Concatenation](../proposals/typedarray-concat.md), [TypedArray Find Within](../proposals/typedarray-find-within.md)
 - **Meetings attended**: 11
 
 ## Meetings attended

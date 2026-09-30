@@ -57,7 +57,7 @@ From the attendees in `raw/notes/meetings/2025-07/july-28.md` (abbreviation — 
 | SHN                        | Samina Husain          | Ecma International |
 | [OFR](../../people/OFR.md) | Olivier Flückiger      | Google             |
 | [RGN](../../people/RGN.md) | Richard Gibson         | Agoric             |
-| RMH                        | Rezvan Mahdavi Hezaveh | Google             |
+| [RMH](../../people/RMH.md) | Rezvan Mahdavi Hezaveh | Google             |
 | [JSC](../../people/JSC.md) | J. S. Choi             | Invited Expert     |
 | [EAO](../../people/EAO.md) | Eemeli Aro             | Mozilla            |
 | TAB                        | Tab Atkins-Bittner     | Google             |
