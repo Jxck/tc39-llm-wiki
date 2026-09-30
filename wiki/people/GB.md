@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Guy Bedford
 - **Affiliation**: Bloomberg / Cloudflare / OpenJS Foundation / OpenJSF
-- **Champion drafts**: [import defer](../proposals/import-defer.md)
-- **Mentioned on proposal pages**: [Import Bytes](../proposals/import-bytes.md), [import defer](../proposals/import-defer.md)
+- **Champion drafts**: [ESM Phase Imports](../proposals/esm-phase-imports.md), [import defer](../proposals/import-defer.md), [Import Sync](../proposals/import-sync.md)
+- **Mentioned on proposal pages**: [ESM Phase Imports](../proposals/esm-phase-imports.md), [Import Bytes](../proposals/import-bytes.md), [import defer](../proposals/import-defer.md), [Import Sync](../proposals/import-sync.md)
 - **Mentioned on family pages**: [Modules (module harmony)](../families/modules.md)
 - **Meetings attended**: 11
 
