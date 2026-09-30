@@ -28,12 +28,34 @@ OUT_JSONL = ROOT / "wiki" / "_generated" / "agenda-index.jsonl"
 
 # Headings that are committee boilerplate rather than proposal discussion.
 BOILERPLATE = re.compile(
-    r"^(opening|welcome|secretary'?s report|chair|ecma\s?\d|test262 status|"
-    r"tg\d .*status|.*status update|coc committee|code of conduct|"
+    r"^(opening|welcome|secretary'?s report|chair|coc committee|code of conduct|"
     r"approval of|adoption of|closing|housekeeping|introductions?|"
     r"agenda|next meeting|meeting notes|attendees|administrative)",
     re.IGNORECASE,
 )
+
+# A "status" heading is boilerplate only when its subject is committee
+# infrastructure (spec documents, Test262, task groups, IP policy). A proposal
+# update like "Temporal status update" is exactly what the index must keep.
+STATUS_BOILERPLATE = re.compile(
+    r"ecma[\s-]?\d|40[24] status|es6|spec status|status report 262|"
+    r"test-? ?262|tc39-?tg\d|tg\d\b|status of tcq|ieee software|"
+    r"rf status|royalty free|^status updates?$",
+    re.IGNORECASE,
+)
+
+# Old transcripts number their agenda items ("10.i.k BigInt status update");
+# strip the prefix before matching so "10. Test262 Status Updates" is caught.
+NUM_PREFIX = re.compile(r"^(?:\d+|[ivx]+)(?:\.\w+)*\.?\s+", re.IGNORECASE)
+
+
+def is_boilerplate(head):
+    bare = NUM_PREFIX.sub("", head)
+    if BOILERPLATE.match(bare):
+        return True
+    return bool(
+        re.search(r"status", head, re.IGNORECASE) and STATUS_BOILERPLATE.search(bare)
+    )
 
 STAGE_RE = re.compile(r"stage\s+(\d(?:\.\d)?)", re.IGNORECASE)
 # Stage transition verbs in a conclusion line.
@@ -106,7 +128,7 @@ def main():
         for f in day_files:
             text = f.read_text(encoding="utf-8", errors="replace")
             for head, body in parse_day(text):
-                if BOILERPLATE.match(head):
+                if is_boilerplate(head):
                     continue
                 head_stages = STAGE_RE.findall(head)
                 concl = extract_conclusion(body)
