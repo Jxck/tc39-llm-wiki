@@ -35,7 +35,7 @@ wiki/
   meetings/<YYYY-MM>/        per-meeting daily summaries (output of summarise. One file per day + README.md)
   people/<ABBR>.md          person reference (generated. filename = abbreviation)
   _generated/
-    agenda-index.md         agenda index for all 86 meetings (a grep-able backbone)
+    agenda-index.md         agenda index for all 88 meetings (a grep-able backbone)
     agenda-index.jsonl       the same, machine-readable
 tools/
   extract_agenda.py         generates agenda-index
@@ -257,7 +257,7 @@ Summarize an entire meeting topic-by-topic in English (distinct from proposal-ce
 
 ## Using the backbone (important)
 
-All 86 meetings and 2737 agenda items are machine-extracted into `wiki/_generated/agenda-index.md`. This is not a substitute for deep reading — it's an **index**. When writing/tracing a proposal page, grep this first to grasp which meetings discussed it, then read that meeting's original text to fill in the issues. Proposal names shift by year (renames, aliases), so also try alternate names when grepping.
+All 88 meetings and 2814 agenda items are machine-extracted into `wiki/_generated/agenda-index.md`. This is not a substitute for deep reading — it's an **index**. When writing/tracing a proposal page, grep this first to grasp which meetings discussed it, then read that meeting's original text to fill in the issues. Proposal names shift by year (renames, aliases), so also try alternate names when grepping.
 
 ## TC39 stages (reference)
 
@@ -266,4 +266,4 @@ All 86 meetings and 2737 agenda items are machine-extracted into `wiki/_generate
 
 ## Scope note
 
-The material spans 334 files, 2012-2026. Full deep-reading happens incrementally. Proposals deep-read so far are listed in `wiki/README.md`'s "Ingested proposals" section; those not yet deep-read (backbone only) are referenced via agenda-index.
+The material spans 340 files, 2012-2026. Full deep-reading happens incrementally. Proposals deep-read so far are listed in `wiki/README.md`'s "Ingested proposals" section; those not yet deep-read (backbone only) are referenced via agenda-index.

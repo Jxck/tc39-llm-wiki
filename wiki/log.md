@@ -401,3 +401,12 @@ Checked the entire wiki according to the new precedence (`raw/proposals` is the 
 - Linked `amount.md`'s existing plain-text `decimal` reference to the new page.
 - Ran `extract_people.py` (75 → 78 people; added CLA, LIU, SHO) then `link_people.py` / `link_proposals.py`, which also retroactively linked "Decimal" mentions in 7 meeting-summary files that referenced it before the page existed.
 - Added the catalog row to `wiki/README.md` (Ingested proposals 38 → 39) and updated the people count note.
+
+## [2026-09-30] lint | Full-wiki health check
+
+- Cross-checked all 32 proposal pages' frontmatter against canonical `raw/proposals` (stage/status): 29 match cleanly. The 3 conflicts are all **stale upstream tables, wiki correct per notes**: thenable-curtailment (notes 2026-07-22 "Consensus for Stage 2.7" vs `raw/proposals` README still Stage 2), stable-formatting and intl-sequence-units (notes 2026-05-20 approve Stage 2 / Stage 1+2 vs `raw/proposals/ecma402` README still Stage 1). No wiki changes made; consequence is the generated `wiki/proposals/index.md` inherits the stale stages until upstream updates.
+- Champion coverage: all canonical champions covered. Apparent misses were name-variant false alarms (Nicolò/Nicolo Ribaudo = NRO, James Snell = JSL, Mark S. Miller = MM, Matt/Maggie Johnson-Pint = MPT/MAJ, Daniel Minor = DLM) and a parser mis-match on the isTemplateObject inactive row (actual champions MSU/KOT/JHD/ZTZ are covered).
+- Internal checks all pass: family `members` ↔ frontmatter `families` bidirectional consistency, README catalog rows ↔ pages (32/32), no orphan pages, no broken relative links (2 grep hits are intentional template text in `index.md`/`README.md`).
+- Quote spot-check on the newest page (`decimal.md`): the WH 2023-07 "enormous mistake" quote is verbatim in `raw/notes/meetings/2023-07/july-12.md` (leading filler "Yeah," dropped).
+- Flagged notable proposals still without pages (by agenda-index mentions): ShadowRealm (21), Pattern Matching (8), ESM Phase Imports (8), throw expressions (7), Source Phase Imports (7), Observable (6), Decorator Metadata (6), Async Iterator helpers (6), Symbol Predicates (5), Signals (5), Pipeline Operator (5).
+- Fixed AGENTS.md stale counts (86 → 88 meetings, 2737 → 2814 agenda items, 334 → 340 files; README already had the correct numbers).
