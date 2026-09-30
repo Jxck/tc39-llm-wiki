@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Kris Kowal
 - **Affiliation**: Agoric
 - **Champion drafts**: [Module Global](../proposals/module-global.md)
-- **Mentioned on proposal pages**: [Import Bytes](../proposals/import-bytes.md), [Module Global](../proposals/module-global.md)
+- **Mentioned on proposal pages**: [Avoid capturing lexical context in indirect eval](../proposals/avoid-capturing-lexical-context.md), [Import Bytes](../proposals/import-bytes.md), [Module Global](../proposals/module-global.md)
 - **Meetings attended**: 13
 
 ## Meetings attended

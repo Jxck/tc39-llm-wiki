@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Tab Atkins
 - **Affiliation**: Google
 - **Champion drafts**: [More Random Functions](../proposals/more-random-functions.md), [SeededPRNG](../proposals/seeded-prng.md)
-- **Mentioned on proposal pages**: [Math.clamp](../proposals/math-clamp.md), [More Random Functions](../proposals/more-random-functions.md), [SeededPRNG](../proposals/seeded-prng.md)
+- **Mentioned on proposal pages**: [Math.clamp](../proposals/math-clamp.md), [More Random Functions](../proposals/more-random-functions.md), [SeededPRNG](../proposals/seeded-prng.md), [New Set methods](../proposals/set-methods.md)
 - **Meetings attended**: 4
 
 ## Meetings attended

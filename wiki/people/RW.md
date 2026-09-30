@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Rick Waldron
 - **Affiliation**: Bocoup / Salesforce
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md)
+- **Champion drafts**: [ShadowRealm](../proposals/shadowrealm.md)
+- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md), [New Set methods](../proposals/set-methods.md), [ShadowRealm](../proposals/shadowrealm.md)
 - **Meetings attended**: 4
 
 ## Meetings attended

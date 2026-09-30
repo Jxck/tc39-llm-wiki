@@ -51,7 +51,7 @@ The counterpoint from [ACE](../people/ACE.md) (Bloomberg): "Type-directed emit w
 ## Related proposals
 
 - `pattern-matching` - the fuller pattern syntax this was scoped against; the reason object extractors were dropped (no page yet).
-- `discard-bindings` - the `void` binding, from the same destructuring ergonomics line (no page yet).
+- [Discard bindings](discard-bindings.md) - the `void` binding, from the same destructuring ergonomics line.
 
 ## Sources
 

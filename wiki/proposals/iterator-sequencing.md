@@ -19,15 +19,16 @@ Championed by [MF](../people/MF.md) (Michael Ficarra). A member of the `iterator
 
 ## Stage history
 
-| Meeting                                                                             | What happened                                                                                                                               | Stage      |
-| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| [2023-09](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-27.md) | First presented. Reached Stage 1                                                                                                            | → 1        |
-| [2024-02](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-6.md)        | Reached Stage 2                                                                                                                             | 1 → 2      |
-| [2024-10](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-08.md)   | Reached Stage 2.7                                                                                                                           | 2 → 2.7    |
-| [2024-12](https://github.com/tc39/notes/blob/main/meetings/2024-12/december-02.md)  | Stage 3 requested; not granted - [SYG](../people/SYG.md) wanted the Test262 PR merged first. [MF](../people/MF.md) to ask again once merged | 2.7 (kept) |
-| [2025-05](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-28.md)       | Reached Stage 3                                                                                                                             | 2.7 → 3    |
-| [2025-07](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-28.md)      | Stage 3 update                                                                                                                              | 3          |
-| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md)  | **Reached Stage 4** (two implementations for about a year: JSC, and SpiderMonkey shipping in Firefox 147)                                   | 3 → 4      |
+| Meeting                                                                             | What happened                                                                                                                                                                                                                                                     | Stage      |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| [2023-09](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-27.md) | First presented. Reached Stage 1                                                                                                                                                                                                                                  | → 1        |
+| [2024-02](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-6.md)        | Stage 2 not sought: critical feedback on the naming/design ([JHD](../people/JHD.md): anything named `concat` should use array flattening semantics; [KG](../people/KG.md): variadic `Iterator.from` is inconsistent with every other `from`). Remained at Stage 1 | 1 (kept)   |
+| [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-11.md)      | **Reached Stage 2**. Scope narrowed: the unbounded/infinite case dropped ("no desire at the moment to pursue that in a separate proposal"). Stage 2.7 reviewers: [NRO](../people/NRO.md), [JMN](../people/JMN.md), [RGN](../people/RGN.md)                        | 1 → 2      |
+| [2024-10](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-08.md)   | Reached Stage 2.7                                                                                                                                                                                                                                                 | 2 → 2.7    |
+| [2024-12](https://github.com/tc39/notes/blob/main/meetings/2024-12/december-02.md)  | Stage 3 requested; not granted - [SYG](../people/SYG.md) wanted the Test262 PR merged first. [MF](../people/MF.md) to ask again once merged                                                                                                                       | 2.7 (kept) |
+| [2025-05](https://github.com/tc39/notes/blob/main/meetings/2025-05/may-28.md)       | Reached Stage 3                                                                                                                                                                                                                                                   | 2.7 → 3    |
+| [2025-07](https://github.com/tc39/notes/blob/main/meetings/2025-07/july-28.md)      | Stage 3 update                                                                                                                                                                                                                                                    | 3          |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md)  | **Reached Stage 4** (two implementations for about a year: JSC, and SpiderMonkey shipping in Firefox 147)                                                                                                                                                         | 3 → 4      |
 
 ```mermaid
 xychart-beta
@@ -37,13 +38,13 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2.7, 4, 4]
 ```
 
-> Stage 1 in 2023-09, Stage 2 in 2024-02, Stage 2.7 in 2024-10, Stage 3 in 2025-05, Stage 4 in 2025-11.
+> Stage 1 in 2023-09, Stage 2 in 2024-06 (a 2024-02 request was not brought to consensus), Stage 2.7 in 2024-10, Stage 3 in 2025-05, Stage 4 in 2025-11.
 
 ## Main issues
 
 ### A quiet, fast track (2023-2025)
 
-The proposal advanced one stage per meeting with no recorded controversy, with one hiccup: at the 2024-12 Stage 3 request [SYG](../people/SYG.md) felt strongly that the Test262 tests - sitting in an unmerged PR - had to land first ("I want them to be in the repo to be runnable"), and [MF](../people/MF.md) withdrew rather than put test262 maintainers on the spot. Stage 3 came in 2025-05. JSC implemented it in 2024-10 behind a flag, SpiderMonkey followed in 2024-11; the Stage 4 request in 2025-11 noted two implementations for approximately one year and no signals from V8, which is not required for Stage 4.
+The proposal advanced briskly, with two hiccups. The 2024-02 Stage 2 request was not brought to a vote: [JHD](../people/JHD.md) argued anything named `concat` should use the same flattening semantics as `Array.prototype.concat` (which [MF](../people/MF.md) wasn't interested in adopting, prompting a name search), and [KG](../people/KG.md) objected that a variadic `Iterator.from` would be inconsistent with every other `from` method ("if you pass it two things, it's going to change the behavior and then also stick them together... not really how any of the existing `from` methods work"). [MF](../people/MF.md) came back in 2024-06 with `Iterator.concat`, the infinite case dropped, and Stage 2 followed. At the 2024-12 Stage 3 request [SYG](../people/SYG.md) felt strongly that the Test262 tests - sitting in an unmerged PR - had to land first ("I want them to be in the repo to be runnable"), and [MF](../people/MF.md) withdrew rather than put test262 maintainers on the spot. Stage 3 came in 2025-05. JSC implemented it in 2024-10 behind a flag, SpiderMonkey followed in 2024-11; the Stage 4 request in 2025-11 noted two implementations for approximately one year and no signals from V8, which is not required for Stage 4.
 
 ## Related proposals
 

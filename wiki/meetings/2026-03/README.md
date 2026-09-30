@@ -70,7 +70,7 @@ From the attendees in `raw/notes/meetings/2026-03/march-10.md` (abbreviation —
 | SHN                        | Samina Husain      | Ecma International |
 | [SHS](../../people/SHS.md) | Stephen Hicks      | Google             |
 | [WH](../../people/WH.md)   | Waldemar Horwat    | Invited Expert     |
-| YNP                        | Yagiz Nizipli      | Cloudflare         |
+| [YNP](../../people/YNP.md) | Yagiz Nizipli      | Cloudflare         |
 | [DRR](../../people/DRR.md) | Daniel Rosenwasser | Microsoft          |
 | [JMN](../../people/JMN.md) | Jesse Alama        | Igalia             |
 | [KG](../../people/KG.md)   | Kevin Gibbons      | F5                 |

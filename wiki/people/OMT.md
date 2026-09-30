@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Oliver Medhurst
 - **Affiliation**: IE (Porffor) / Invited Expert
 - **Champion drafts**: [Math.clamp](../proposals/math-clamp.md)
-- **Mentioned on proposal pages**: [Immutable ArrayBuffers](../proposals/immutable-arraybuffer.md), [Math.clamp](../proposals/math-clamp.md)
+- **Mentioned on proposal pages**: ['"Discard" (void) Bindings'](../proposals/discard-bindings.md), [Immutable ArrayBuffers](../proposals/immutable-arraybuffer.md), [Math.clamp](../proposals/math-clamp.md)
 - **Meetings attended**: 4
 
 ## Meetings attended

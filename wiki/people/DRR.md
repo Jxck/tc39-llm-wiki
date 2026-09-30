@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Daniel Rosenwasser
 - **Affiliation**: Microsoft
 - **Champion drafts**: [Bulk-add array elements](../proposals/bulk-add-array-elements.md)
-- **Mentioned on proposal pages**: [Bulk-add array elements](../proposals/bulk-add-array-elements.md), [Decorators](../proposals/decorators.md)
+- **Mentioned on proposal pages**: [Bulk-add array elements](../proposals/bulk-add-array-elements.md), [Decorators](../proposals/decorators.md), [Improved Escapes for Template Literals](../proposals/improve-template-literals.md)
 - **Meetings attended**: 17
 
 ## Meetings attended

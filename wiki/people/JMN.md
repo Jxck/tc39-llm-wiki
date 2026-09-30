@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Jesse Alama
 - **Affiliation**: Igalia / Igalia, S.L
 - **Champion drafts**: [Decimal](../proposals/decimal.md)
-- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [Decimal](../proposals/decimal.md), [SeededPRNG](../proposals/seeded-prng.md), [Upsert](../proposals/upsert.md)
+- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [Decimal](../proposals/decimal.md), [Iterator Sequencing](../proposals/iterator-sequencing.md), [SeededPRNG](../proposals/seeded-prng.md), [Upsert](../proposals/upsert.md)
 - **Meetings attended**: 18
 
 ## Meetings attended

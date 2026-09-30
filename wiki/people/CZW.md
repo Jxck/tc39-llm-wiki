@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Chengzhong Wu
 - **Affiliation**: Alibaba / Bloomberg
-- **Champion drafts**: [AsyncContext](../proposals/async-context.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md)
-- **Mentioned on proposal pages**: [AsyncContext](../proposals/async-context.md), [Composite Keys](../proposals/composite-keys.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Native Promise Predicate](../proposals/native-promise-predicate.md)
+- **Champion drafts**: [AsyncContext](../proposals/async-context.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [ShadowRealm](../proposals/shadowrealm.md)
+- **Mentioned on proposal pages**: [AsyncContext](../proposals/async-context.md), [Composite Keys](../proposals/composite-keys.md), [Disposable AsyncContext](../proposals/disposable-asynccontext.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [ShadowRealm](../proposals/shadowrealm.md)
 - **Meetings attended**: 25
 
 ## Meetings attended

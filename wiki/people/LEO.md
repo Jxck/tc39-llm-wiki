@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Leo Balter
 - **Affiliation**: Salesforce
-- **Champion drafts**: [Float16Array](../proposals/float16array.md)
-- **Mentioned on proposal pages**: [Float16Array](../proposals/float16array.md)
+- **Champion drafts**: [Float16Array](../proposals/float16array.md), [ShadowRealm](../proposals/shadowrealm.md)
+- **Mentioned on proposal pages**: [Float16Array](../proposals/float16array.md), [ShadowRealm](../proposals/shadowrealm.md)
 - **Meetings attended**: 13
 
 ## Meetings attended

@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: John Hax
 - **Affiliation**: (Invited Expert) / 360 / Invited Expert
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Enums](../proposals/enums.md)
+- **Champion drafts**: [Improved Escapes for Template Literals](../proposals/improve-template-literals.md)
+- **Mentioned on proposal pages**: [Enums](../proposals/enums.md), [Improved Escapes for Template Literals](../proposals/improve-template-literals.md), [Iterator unique](../proposals/iterator-unique.md)
 - **Meetings attended**: 8
 
 ## Meetings attended

@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Kristen Hewell Garrett
 - **Affiliation**: Invited Expert / LinkedIn
-- **Champion drafts**: [Decorators](../proposals/decorators.md)
-- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md)
+- **Champion drafts**: [Decorators](../proposals/decorators.md), [Signals](../proposals/signals.md)
+- **Mentioned on proposal pages**: [Decorators](../proposals/decorators.md), [Signals](../proposals/signals.md)
 - **Meetings attended**: 4
 
 ## Meetings attended
