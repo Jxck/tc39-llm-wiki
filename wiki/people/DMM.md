@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Duncan MacGregor
 - **Affiliation**: ServiceNow / ServiceNow Inc
 - **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Decimal](../proposals/decimal.md), ['"Discard" (void) Bindings'](../proposals/discard-bindings.md), [Promise.try](../proposals/promise-try.md)
+- **Mentioned on proposal pages**: [Decimal](../proposals/decimal.md), ['"Discard" (void) Bindings'](../proposals/discard-bindings.md), [Iterator Chunking](../proposals/iterator-chunking.md), [Promise.try](../proposals/promise-try.md)
 - **Meetings attended**: 10
 
 ## Meetings attended
