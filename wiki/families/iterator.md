@@ -14,20 +14,20 @@ There have been many recent agenda items. In 2026-05 [MF](../people/MF.md) prese
 
 ## Members
 
-| Proposal                                                                             | Current stage | In short                                                                                                       |
-| ------------------------------------------------------------------------------------ | ------------- | -------------------------------------------------------------------------------------------------------------- |
-| [Sync Iterator helpers](../proposals/iterator-helpers.md)                            | 4             | The MVP. Lazy `map` / `filter` / `take` / `drop` / `flatMap` / `reduce` / `toArray`, and others                |
-| [Iterator Sequencing](../proposals/iterator-sequencing.md) (`Iterator.concat`)       | 4             | Concatenates zero or more iterators and yields everything they yield (Stage 4 in 2025-11)                      |
-| [Joint Iteration](../proposals/joint-iteration.md) (`Iterator.zip` / `zipKeyed`)     | 4             | Zips several iterators by position (reached in 2026-05)                                                        |
-| [Iterator Chunking](../proposals/iterator-chunking.md) (`chunks` / `windows`)        | 3             | Consumes several values at once (no overlap = chunks, overlap = windows). Stage 3 in 2026-05                   |
-| [Iterator Includes](../proposals/iterator-includes.md)                               | 3             | The equivalent of `Array.prototype.includes`. Stage 3 in 2026-05                                               |
-| [Iterator Join](../proposals/iterator-join.md)                                       | 3             | The equivalent of `Array.prototype.join` ([KG](../people/KG.md) champion). Stage 3 in 2026-05                  |
-| `async-iterator-helpers`                                                             | 2             | The async version of iterator helpers. Spec work in progress for concurrent pull on every method               |
-| `iterator-range` (`Iterator.range`)                                                  | 2             | Numeric range generation. Long stall                                                                           |
-| `concurrency-control`                                                                | 1             | Controls how many async-iterator pulls run at once. Waiting on async helpers                                   |
-| [Unordered Async Iterator Helpers](../proposals/unordered-async-iterator-helpers.md) | 1             | Async helpers that drop the order guarantee in exchange for performance                                        |
-| [Iterator unique](../proposals/iterator-unique.md)                                   | 1             | Dedup with an optional mapper. Hidden unbounded memory is the sticking point (Stage 1 in 2024-02, quiet since) |
-| [Array.zip / Array.unzip](../proposals/array-zip.md)                                 | 1             | The eager Array-flavored `Iterator.zip`. Advancement gated on Joint Iteration usage data                       |
+| Proposal                                                                             | Current stage | In short                                                                                                          |
+| ------------------------------------------------------------------------------------ | ------------- | ----------------------------------------------------------------------------------------------------------------- |
+| [Sync Iterator helpers](../proposals/iterator-helpers.md)                            | 4             | The MVP. Lazy `map` / `filter` / `take` / `drop` / `flatMap` / `reduce` / `toArray`, and others                   |
+| [Iterator Sequencing](../proposals/iterator-sequencing.md) (`Iterator.concat`)       | 4             | Concatenates zero or more iterators and yields everything they yield (Stage 4 in 2025-11)                         |
+| [Joint Iteration](../proposals/joint-iteration.md) (`Iterator.zip` / `zipKeyed`)     | 4             | Zips several iterators by position (reached in 2026-05)                                                           |
+| [Iterator Chunking](../proposals/iterator-chunking.md) (`chunks` / `windows`)        | 3             | Consumes several values at once (no overlap = chunks, overlap = windows). Stage 3 in 2026-05                      |
+| [Iterator Includes](../proposals/iterator-includes.md)                               | 3             | The equivalent of `Array.prototype.includes`. Stage 3 in 2026-05                                                  |
+| [Iterator Join](../proposals/iterator-join.md)                                       | 3             | The equivalent of `Array.prototype.join` ([KG](../people/KG.md) champion). Stage 3 in 2026-05                     |
+| `async-iterator-helpers`                                                             | 2             | The async version of iterator helpers. Spec work in progress for concurrent pull on every method                  |
+| `iterator-range` (`Iterator.range`)                                                  | 2             | Numeric range generation. Long stall                                                                              |
+| [Concurrency Control](../proposals/concurrency-control.md)                           | 1             | Governor protocol + counting governor + concurrency params on `AsyncIterator.prototype`. Waiting on async helpers |
+| [Unordered Async Iterator Helpers](../proposals/unordered-async-iterator-helpers.md) | 1             | Async helpers that drop the order guarantee in exchange for performance                                           |
+| [Iterator unique](../proposals/iterator-unique.md)                                   | 1             | Dedup with an optional mapper. Hidden unbounded memory is the sticking point (Stage 1 in 2024-02, quiet since)    |
+| [Array.zip / Array.unzip](../proposals/array-zip.md)                                 | 1             | The eager Array-flavored `Iterator.zip`. Advancement gated on Joint Iteration usage data                          |
 
 > Stages follow [MF](../people/MF.md)'s roadmap ([2026-05-19](../meetings/2026-05/2026-05-19.md)) and the conclusions of recent meetings. Proposals without a link are not ingested in this wiki yet (no `proposals/` page). A `stage:` value in `agenda-index.md` is the stage asked for or discussed at that meeting, which is not necessarily the current stage.
 
