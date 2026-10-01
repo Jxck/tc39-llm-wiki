@@ -12,7 +12,7 @@ tags: [proposal, iterator, async]
 
 ## Overview
 
-An `AsyncIterator.prototype.unordered()` accessor that returns an iterator inheriting from a separate `UnorderedAsyncIterator.prototype`, whose helper methods may yield results in any order. Dropping the ordering constraint lets concurrent pulls use every concurrency slot as soon as a result is ready, instead of holding slots for earlier inputs that are not done yet. The proposal was **split out of [Async Iterator Helpers](async-iterator-helpers.md)** - keeping it there would have expanded that proposal's scope too much - and depends on `concurrency-control` for the consuming methods, since dropping order buys nothing at concurrency 1.
+An `AsyncIterator.prototype.unordered()` accessor that returns an iterator inheriting from a separate `UnorderedAsyncIterator.prototype`, whose helper methods may yield results in any order. Dropping the ordering constraint lets concurrent pulls use every concurrency slot as soon as a result is ready, instead of holding slots for earlier inputs that are not done yet. The proposal was **split out of `async-iterator-helpers`** - keeping it there would have expanded that proposal's scope too much - and depends on `concurrency-control` for the consuming methods, since dropping order buys nothing at concurrency 1.
 
 The design deliberately makes it hard to mix ordered and unordered helpers accidentally: there are no `map`/`mapUnordered` twin methods, and no inheritance relationship between the two prototypes, so once you re-apply order you have left the unordered world (by `Function.prototype.call` gymnastics, not by accident).
 

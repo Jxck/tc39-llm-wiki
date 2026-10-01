@@ -64,7 +64,7 @@ From the attendees in `raw/notes/meetings/2025-05/may-28.md` (abbreviation — n
 | [RGN](../../people/RGN.md) | Richard Gibson      | Agoric             |
 | [CZW](../../people/CZW.md) | Chengzhong Wu       | Bloomberg          |
 | [SHS](../../people/SHS.md) | Steve Hicks         | Google             |
-| [MBH](../../people/MBH.md) | Mikhail Barash      | Univ. of Bergen    |
+| MBH                        | Mikhail Barash      | Univ. of Bergen    |
 | [YSZ](../../people/YSZ.md) | Yusuke Suzuki       | Apple              |
 | [CM](../../people/CM.md)   | Chip Morningstar    | MetaMask           |
 | [YSV](../../people/YSV.md) | Yulia Startsev      | Mozilla            |

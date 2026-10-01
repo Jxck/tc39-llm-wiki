@@ -10,8 +10,8 @@ tags: [person]
 
 - **Full name**: Jack Works
 - **Affiliation**: Sujitech
-- **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: ['"Discard" (void) Bindings'](../proposals/discard-bindings.md), [Stabilize](../proposals/stabilize.md)
+- **Champion drafts**: [Immutable ArrayBuffers](../proposals/immutable-arraybuffer.md)
+- **Mentioned on proposal pages**: ['"Discard" (void) Bindings'](../proposals/discard-bindings.md), [Immutable ArrayBuffers](../proposals/immutable-arraybuffer.md), [Stabilize](../proposals/stabilize.md)
 - **Meetings attended**: 25
 
 ## Meetings attended

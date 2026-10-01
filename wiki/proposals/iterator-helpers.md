@@ -76,7 +76,7 @@ Three smaller design fights, all settled in 2022-2023: `Iterator.from`'s string 
 - [Joint Iteration](joint-iteration.md) - `Iterator.zip`/`zipKeyed`, built on the helpers' foundation.
 - [iterator-sequencing](iterator-sequencing.md) - `Iterator.concat`.
 - [Iterator chunking](iterator-chunking.md) - `Iterator.chunk`/`window`.
-- [Async Iterator Helpers](async-iterator-helpers.md) - the 2023 split-off (no page yet).
+- `async-iterator-helpers` - the 2023 split-off (no page yet).
 - [Stabilize](stabilize.md) - the integrity-traits proposal that grew out of this saga's override-mistake thread.
 
 ## Sources

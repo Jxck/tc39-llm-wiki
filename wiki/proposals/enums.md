@@ -13,7 +13,7 @@ tags: [proposal, syntax, types]
 
 `enum` as language syntax: a closed, fixed set of named members with restricted value types (String / Number / BigInt / Boolean / Symbol), presented by [RBN](../people/RBN.md) (Ron Buckton, TypeScript team). The immediate trigger is **Node.js type stripping** (`--experimental-strip-types`, `erasableSyntaxOnly`): TypeScript's `enum` is the one major non-erasable feature, so type-stripping users cannot use it, and the Node.js committee reached out to TC39. The ecosystem scale is large - roughly 250,000 `enum` declarations on GitHub.
 
-The proposal is deliberately **not** "TypeScript enums in JS". It keeps what makes an enum an enum (a closed domain, self-reference for bitmask definitions, static-tooling recognition) and drops the parts TC39 would never accept (auto-numbering, declaration merging, reverse mapping, `const enum`). The door is left open to later grow ADT-style enums (`Option` / `Result`) alongside [pattern-matching](pattern-matching.md).
+The proposal is deliberately **not** "TypeScript enums in JS". It keeps what makes an enum an enum (a closed domain, self-reference for bitmask definitions, static-tooling recognition) and drops the parts TC39 would never accept (auto-numbering, declaration merging, reverse mapping, `const enum`). The door is left open to later grow ADT-style enums (`Option` / `Result`) alongside `pattern-matching`.
 
 ## Stage history
 
@@ -54,7 +54,7 @@ Because the runtime is a one-at-a-time desugaring, there is no TDZ protection: s
 
 ### Where it goes next
 
-The design keeps functions out of the value domain specifically to preserve the option of ADT enums (tagged unions like `Option` / `Result`) later, which would interlock with [pattern-matching](pattern-matching.md) and extractors. Interactions with [decorators](decorators.md) and shared structs were named as open areas.
+The design keeps functions out of the value domain specifically to preserve the option of ADT enums (tagged unions like `Option` / `Result`) later, which would interlock with `pattern-matching` and extractors. Interactions with [decorators](decorators.md) and shared structs were named as open areas.
 
 ## Related proposals
 

@@ -6,6 +6,7 @@ current_stage: 3
 ecma: [262]
 champions: [EAO]
 first_seen: "2025-11"
+families: [modules]
 tags: [proposal, modules]
 ---
 
