@@ -22,7 +22,7 @@ tags: [person]
 - [2025-05](../meetings/2025-05/README.md)
 - [2025-04](../meetings/2025-04/README.md)
 - [2025-02](../meetings/2025-02/README.md)
-- 2024-12
+- [2024-12](../meetings/2024-12/README.md)
 - 2024-02
 - 2022-07
 - 2020-06

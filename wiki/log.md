@@ -573,4 +573,20 @@ Checked the entire wiki according to the new precedence (`raw/proposals` is the 
 - Orphan check (README catalog + generated index): none.
 - Dead relative links fixed: meeting summaries linked AKR / SHN / MBH (x2) who appear only in meetings (policy: plain text), 2026-03-11 linked `AWS` - the AWS SDK, not a person; `enums.md` (x2), `iterator-helpers.md`, and `unordered-async-iterator-helpers.md` linked `pattern-matching` / `async-iterator-helpers` which have no pages yet (convention: code-formatted text until a page exists).
 - Remaining broken links are template strings inside inline code (`<rel>/people/ABBR.md`, `<slug>.md`) and pre-existing Japanese-era `en/proposals/...` entries in the append-only log.
+
+## [2026-10-01] summarise | 2024-12 meeting
+
+- Summarized the 105th meeting (2024-12-02 to 2024-12-05, remote; the december-05.md transcript heading says "6th December" but the agenda confirms the meeting ran Dec 2-5, so the file is 2024-12-05.md): day files 2024-12-02..05 + README.
+- Stage transitions: Intl.DurationFormat 3 → 4, Error.isError 2 → 3, More Currency Display Choices straight to Stage 2 (first presented), Stabilize new → 1, Immutable ArrayBuffer 1 → 2, Import Sync new → 1, ESM Phase Imports 2 → 2.7 (conditional on MM's asynchronous approval via TG3).
+- No-advancement notes captured: Error Stacks Structure split (accessor-only proposal spun off, became Error Stack Accessor), ShadowRealm Stage 3 request withdrawn pending DOM-team consensus, iterator sequencing deferred until test262 merges, Upsert settled non-throwing design without advancing.
+- import defer consensus changes (key-list queries trigger evaluation, hidden `then`, `"deferred module"` toStringTag) recorded; Symbol.evaluated left unlanded.
+- Ran extract_people.py (no new pages), link_people.py (linked days 1-2), link_proposals.py.
+
+## [2026-10-01] summarise | 2026-01 meeting
+
+- Summarized the 112th meeting (2026-01-20 to 2026-01-21, remote): day files 2026-01-20/21 + README. Generated via a background agent (stalled after finishing the README; output verified complete).
+- Stage transitions: Upsert 3 → 4, Intl Era/Month Code 2.7 → 3 (with a batch of normative PRs), Import Sync 1 → 2, RBR's error-constructor `limit` and `framesAbove` new → 1, and the Composable value-backed accessors split into composable accessors via built-in decorators (new → 1) and alias accessors (new → 1).
+- Withdrawals/temporaries recorded: Intl.UnitFormat formally withdrawn; function.sent's conditional withdrawal not carried out (champion JHX wants to keep it); Temporal normative consensus on PlainYearMonth arithmetic restriction and time-zone-independent toLocaleString; ECMA-402 numbering-system update adding `tols`.
+- Ran extract_people.py / link_people.py / link_proposals.py over the new files.
+
 - Backlog of proposals appearing in agenda-index without pages (from the restored-items pass): WeakRefs, BigInt, class fields / private methods / static features, Promise.prototype.finally, top-level await, Array.Grouping, String.dedent, Import Reflection, Array Filtering, logical assignment, override mistake, numeric separators, extended numeric literals, double-ended iterator, SIMD.js.
