@@ -19,8 +19,8 @@ tags: [person]
 - [2026-05](../meetings/2026-05/README.md)
 - 2026-01
 - [2025-09](../meetings/2025-09/README.md)
-- 2025-05
-- 2025-04
+- [2025-05](../meetings/2025-05/README.md)
+- [2025-04](../meetings/2025-04/README.md)
 - 2024-06
 - 2024-04
 - 2024-02

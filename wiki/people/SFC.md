@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Shane Carr
 - **Affiliation**: Google
 - **Champion drafts**: [Intl Energy Units](../proposals/intl-energy-units.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Intl Unit Protocol](../proposals/intl-unit-protocol.md), [Temporal](../proposals/temporal.md)
-- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [Await Dictionary](../proposals/await-dictionary.md), [Compare Strings by Codepoint](../proposals/compare-strings-by-codepoint.md), [Comparisons](../proposals/comparisons.md), [Decimal](../proposals/decimal.md), ['"Discard" (void) Bindings'](../proposals/discard-bindings.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Import Text](../proposals/import-text.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Intl Energy Units](../proposals/intl-energy-units.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Intl Unit Protocol](../proposals/intl-unit-protocol.md), [Iterator Chunking](../proposals/iterator-chunking.md), [Iterator unique](../proposals/iterator-unique.md), [Linear Matching](../proposals/linear-matching.md), [More Random Functions](../proposals/more-random-functions.md), [SeededPRNG](../proposals/seeded-prng.md), [Temporal](../proposals/temporal.md)
+- **Mentioned on proposal pages**: [Amount](../proposals/amount.md), [Await Dictionary](../proposals/await-dictionary.md), [Compare Strings by Codepoint](../proposals/compare-strings-by-codepoint.md), [Comparisons](../proposals/comparisons.md), [Decimal](../proposals/decimal.md), [Decorators](../proposals/decorators.md), ['"Discard" (void) Bindings'](../proposals/discard-bindings.md), [Fused Multiply-Add](../proposals/fused-multiply-add.md), [Import Text](../proposals/import-text.md), [Intl.DateTimeFormat Alignment With Other Standards](../proposals/intl-datetimeformat-alignment.md), [Intl Energy Units](../proposals/intl-energy-units.md), [Intl Era/Month Code](../proposals/intl-era-month-code.md), [Intl Keep Trailing Zeros](../proposals/intl-keep-trailing-zeros.md), [Intl.MessageFormat](../proposals/intl-messageformat.md), [Intl Sequence Units](../proposals/intl-sequence-units.md), [Intl Unit Protocol](../proposals/intl-unit-protocol.md), [Iterator Chunking](../proposals/iterator-chunking.md), [Iterator unique](../proposals/iterator-unique.md), [Linear Matching](../proposals/linear-matching.md), [More Random Functions](../proposals/more-random-functions.md), [SeededPRNG](../proposals/seeded-prng.md), [Temporal](../proposals/temporal.md)
 - **Meetings attended**: 26
 
 ## Meetings attended
@@ -23,8 +23,8 @@ tags: [person]
 - [2025-11](../meetings/2025-11/README.md)
 - [2025-09](../meetings/2025-09/README.md)
 - [2025-07](../meetings/2025-07/README.md)
-- 2025-04
-- 2025-02
+- [2025-04](../meetings/2025-04/README.md)
+- [2025-02](../meetings/2025-02/README.md)
 - 2024-10
 - 2024-06
 - 2024-02

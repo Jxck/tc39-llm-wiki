@@ -49,9 +49,10 @@ xychart-beta
 ## Related proposals
 
 - [AsyncContext](async-context.md) - the other library-style proposal about state that flows implicitly through a program (async context vs. reactive dependency graph).
-- `observable` - the push-based counterpart discussed against `Signal.subtle.Watcher` (no page yet).
+- `observable` - the push-based counterpart discussed against `Signal.subtle.Watcher` (no page yet). Now pursued at WHATWG/WICG: presented informally at 2025-04 by [DMF](../people/DMF.md) (Chrome) - "a promise, but for multiple values," integrating with `EventTarget` via `when()` - received neutral-to-positive feedback. [MM](../people/MM.md), its original co-champion (with [JH](../people/JH.md)), lamented the move out of TC39; [DE](../people/DE.md) hoped TC39 and WHATWG would "work together ... rather than kind of in both directions trying to claim territory."
 
 ## Sources
 
 - [2024-04 april-11](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-11.md) - Stage 1
 - [2024-06 june-13](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-13.md) - Algorithms for Signals
+- [2025-04 april-17](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-17.md) - WHATWG Observables informal update ([DMF](../people/DMF.md))

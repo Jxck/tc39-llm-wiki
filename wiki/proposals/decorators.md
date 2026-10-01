@@ -53,6 +53,7 @@ Champions ran from the early Yehuda Katz ([YK](../people/YK.md)) / Brian Terlson
 | [2023-03](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-21.md)                                                                             | Decorators normative update (6 points). Decorator Metadata stayed at Stage 2 and agreed design option 1                                                              | 3                |
 | [2023-05](https://github.com/tc39/notes/blob/main/meetings/2023-05/may-16.md)                                                                             | Fixed field / accessor initializer order to the reverse order. Agreed the Stage 3 design for Metadata                                                                | 3                |
 | [2023-05](https://github.com/tc39/notes/blob/main/meetings/2023-05/may-18.md)                                                                             | **Decorator Metadata reached Stage 3 on its own**                                                                                                                    | (metadata) 2 → 3 |
+| [2025-02](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-18.md)                                                                        | Implementation update: V8 / SpiderMonkey nearing completion, but **no engine willing to ship first**. No browser would explain its deprioritization                  | 3 (kept)         |
 | [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)                                                                             | **Regressed to Stage 2.7**. Zero shipped implementations, unfinished test262, no active champion. Decorator Metadata also went to 2.7 in lockstep                    | 3 → 2.7          |
 
 ```mermaid
@@ -108,6 +109,17 @@ It was stuck enough that [DH](../people/DH.md) said in 2018-09, "I think this is
 
 For the `access` object, which gives imperative get / set / has on a private or public element, it was agreed in 2023-01 to change the target of `access.get` / `set` from going through `this` to **the first argument** (Reflect / WeakMap style), and to **add a `has` method** equivalent to `#x in obj`.
 
+### Implementation deadlock (2025-02): nobody ships first
+
+A year before the regression, the deadlock was already on the table. At an implementation update (2025-02), [DE](../people/DE.md) reported that V8 and SpiderMonkey were "nearing completion," yet none of the three engines planned to ship:
+
+- [MLS](../people/MLS.md) (Apple): "A, we sort of don't want to be the first to ship this, and B, we don't view it as a high priority given other priorities we have ... It's a large feature to implement."
+- [DE](../people/DE.md) pressed all three engines for their reasoning: "It would be really helpful and productive for this committee if we could get more clarity from the three browsers." No answer came ("[a long period of silence]"), and he closed by saying that if implementers had no will to ship, they should have blocked Stage 3 itself: "I was expecting that Stage 3 would be a sufficiently positive signal."
+- [KHG](../people/KHG.md) (champion) described the position as gatekeeping: "it feels kind of arbitrary and also it feels like a really high bar to say that, you know, we have to not be the first one to ship a feature. That can just turn into, like, a never ending stalemate."
+- [SFC](../people/SFC.md) offered the counterpoint of how proposals actually get implemented: the ones that advance are the ones a team champions with its own resources ("my team has been putting a lot of time into Temporal ... that's how that happens").
+
+The session's conclusion recorded the stalemate verbatim: "Status quo remains the same, no one plans to ship currently. No browser was willing to explain the reason for their deprioritization." This is the direct precursor of the Stage 2.7 regression the following year.
+
 ### Regression to Stage 2.7 (2026-05)
 
 Four years after reaching Stage 3 (2022-03), **no engine had shipped it**, and SpiderMonkey, V8, and JSC had all halted implementation. While implementing things such as `Iterator.prototype.includes`, V8 gave concrete feedback on spec issues and complexity, and it became clear that test262 was also unfinished. In 2026-05, [DLM](../people/DLM.md) proposed regressing from Stage 3 to Stage 2.7.
@@ -158,4 +170,5 @@ The result was the paradox that "it is widely used through a transpiler, and yet
 - [2023-03 mar-21](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-21.md) — normative update / Metadata update
 - [2023-05 may-16](https://github.com/tc39/notes/blob/main/meetings/2023-05/may-16.md) — initializer order / Metadata Stage 3 design
 - [2023-05 may-18](https://github.com/tc39/notes/blob/main/meetings/2023-05/may-18.md) — Decorator Metadata reached Stage 3
+- [2025-02 february-18](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-18.md) — implementation update: no engine willing to ship first
 - [2026-05 may-19](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md) — both Decorators itself and Decorator Metadata regressed to Stage 2.7
