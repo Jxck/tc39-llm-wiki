@@ -18,22 +18,23 @@ Championed by [RGN](../people/RGN.md) (Richard Gibson). Presented as early as 20
 
 ## Stage history
 
-| Meeting                                                                            | What happened                                                                                                                                     | Stage |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2018-09](https://github.com/tc39/notes/blob/main/meetings/2018-09/sept-27.md)     | First presented (motivation: lossy `JSON.parse`, reviver gets no source text). Stage 1 accepted                                                   | → 1   |
-| [2020-02](https://github.com/tc39/notes/blob/main/meetings/2020-02/february-5.md)  | Reached Stage 2                                                                                                                                   | 1 → 2 |
-| [2022-06](https://github.com/tc39/notes/blob/main/meetings/2022-06/jun-07.md)      | Reached Stage 3                                                                                                                                   | 2 → 3 |
-| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) | **Reached Stage 4** as the normative PR extending both `JSON.parse` and `JSON.stringify` for interaction with the source text of primitive values | 3 → 4 |
+| Meeting                                                                            | What happened                                                                                                                                       | Stage |
+| ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2018-09](https://github.com/tc39/notes/blob/main/meetings/2018-09/sept-27.md)     | First presented (motivation: lossy `JSON.parse`, reviver gets no source text). Stage 1 accepted                                                     | → 1   |
+| [2020-02](https://github.com/tc39/notes/blob/main/meetings/2020-02/february-5.md)  | Requested Stage 2 but did not advance: spec text was not available in time and there were objections to the mechanism; champion to keep pursuing it | 1     |
+| [2020-07](https://github.com/tc39/notes/blob/main/meetings/2020-07/july-22.md)     | Reached Stage 2. Stage 3 reviewers: [MF](../people/MF.md), [WH](../people/WH.md)                                                                    | 1 → 2 |
+| [2022-06](https://github.com/tc39/notes/blob/main/meetings/2022-06/jun-07.md)      | Reached conditional Stage 3 (spec review by [WH](../people/WH.md) and [MF](../people/MF.md) pending)                                                | 2 → 3 |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) | **Reached Stage 4** as the normative PR extending both `JSON.parse` and `JSON.stringify` for interaction with the source text of primitive values   | 3 → 4 |
 
 ```mermaid
 xychart-beta
     title "JSON.parse source text access stage 2012-2026"
     x-axis [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
     y-axis "Stage" 0 --> 4
-    line [0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3, 4]
+    line [0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 4, 4]
 ```
 
-> Stage 1 in 2018-09, Stage 2 in 2020-02, Stage 3 in 2022-06, Stage 4 in 2025-11.
+> Stage 1 in 2018-09, Stage 2 in 2020-07 (a 2020-02 attempt did not advance), conditional Stage 3 in 2022-06, Stage 4 in 2025-11.
 
 ## Main issues
 
@@ -48,6 +49,7 @@ By the Stage 4 request the proposal had been quiet for years but was essentially
 ## Sources
 
 - [2018-09 sept-27](https://github.com/tc39/notes/blob/main/meetings/2018-09/sept-27.md) - first presented, Stage 1
-- [2020-02 february-5](https://github.com/tc39/notes/blob/main/meetings/2020-02/february-5.md) - Stage 2
-- [2022-06 jun-07](https://github.com/tc39/notes/blob/main/meetings/2022-06/jun-07.md) - Stage 3
+- [2020-02 february-5](https://github.com/tc39/notes/blob/main/meetings/2020-02/february-5.md) - Stage 2 requested, not advanced
+- [2020-07 july-22](https://github.com/tc39/notes/blob/main/meetings/2020-07/july-22.md) - Stage 2
+- [2022-06 jun-07](https://github.com/tc39/notes/blob/main/meetings/2022-06/jun-07.md) - conditional Stage 3
 - [2025-11 november-18](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) - Stage 4

@@ -30,7 +30,7 @@ xychart-beta
     title "Promise.try stage 2012-2026"
     x-axis [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
     y-axis "Stage" 0 --> 4
-    line [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4]
+    line [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4]
 ```
 
 > Stage 1 in 2016-11, then a **seven-year flat line** while the committee waited for motivation evidence. Revived in 2024-02 and fast-tracked: Stage 2, 2.7, 3, and 4 all within the year.
@@ -41,7 +41,7 @@ xychart-beta
 
 The 2016 Stage 1 conclusion explicitly withheld Stage 2 "pending more evidence of motivation" - at the time, `await` syntax was expected to make the helper unnecessary. What changed by 2024 was data: a userland implementation at ~46M npm downloads a week, plus [JRL](../people/JRL.md)'s concrete war story - in [AMP](../people/AMP.md), `Promise.resolve(fn())` swallowed a synchronous throw from `fn` because only async catch existed, a bug class their team only fixed by forcing everyone onto a `promise.try` helper. [SYG](../people/SYG.md) still pressed for a concrete in-language example during the 2024 revival, and only signed off after seeing one in Matrix - the Stage 2 grant came from a same-day "revisit" session with explicit support from three delegates.
 
-> ([SYG](../people/SYG.md), 2024-02) Given that there doesn't seem to be a lot of design room here, I think you could, for folks who have expressed reservation, work with us off-line and go straight to 2.7 or 3.
+> ([SYG](../people/SYG.md), 2024-02) I think you could, given that there doesn't seem to be a lot of design room here, I think you could, for folks who have expressed reservation, work with us off-line and go straight to 2.7 or 3.
 
 That quote is also why the fast track worked: nobody disputed the design (there is essentially none to dispute), only the need.
 

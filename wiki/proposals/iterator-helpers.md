@@ -34,7 +34,7 @@ The helpers are lazy (each method returns a new iterator, nothing runs until con
 | [2023-05](https://github.com/tc39/notes/blob/main/meetings/2023-05/may-16.md)       | Two design questions settled: the `Symbol.iterator` fallback (callable check vs null/undefined check) and whether malformed iterators fail early or when iterated | 3     |
 | [2023-07](https://github.com/tc39/notes/blob/main/meetings/2023-07/july-11.md)      | Small optimization: avoid creating string wrapper objects                                                                                                         | 3     |
 | [2023-09](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-26.md) | **Web incompatibility hit Chrome stable** (regenerator runtime × airgap.js, see below). Chrome unshipped                                                          | 3     |
-| [2023-11](https://github.com/tc39/notes/blob/main/meetings/2023-11/november-28.md)  | Web-compat continuation: settle on the accessor approach for `constructor` ([KG](../people/KG.md): "leaving out 'constructor' is pretty risky")                   | 3     |
+| [2023-11](https://github.com/tc39/notes/blob/main/meetings/2023-11/november-28.md)  | Web-compat continuation: settle on the accessor approach for `constructor` ([KG](../people/KG.md): "leaving out ‘constructor’ is pretty risky")                   | 3     |
 | [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-11.md)      | Status check ("Sync Iterator helpers")                                                                                                                            | 3     |
 | [2024-10](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-08.md)   | **Reached Stage 4**. V8 (unshipped and reshipped), SpiderMonkey, JSC, LibJS; test262 PR merged                                                                    | 3 → 4 |
 | [2024-12](https://github.com/tc39/notes/blob/main/meetings/2024-12/december-02.md)  | Normative fixes: close the receiver when argument validation fails; reusing IteratorResult objects in take/drop/filter/concat                                     | 4     |
@@ -55,9 +55,9 @@ xychart-beta
 
 Chrome shipped the sync helpers to stable in 2023 and immediately found breakage: old copies of the **regenerator runtime** (the Babel-era async/generator polyfill, still embedded in countless sites) assign to their polyfill generator function's `constructor` property, while **airgap.js** (Transcend's closed-source privacy product, which freezes the `Iterator` prototype whenever the global exists) turned that assignment into a silent failure via the override mistake. Sites broke; Chrome unshipped.
 
-> ([SYG](../people/SYG.md), 2023-09) A lot of code on a lot of websites ship an old version of the regenerator runtime ... and it just does dot constructor equals blah ... the override mistake now means that after you freeze the built-in prototype ... this fails and it breaks the existing code.
+> ([SYG](../people/SYG.md), 2023-09) a lot of code on a lot of websites on the web ship an old version of the regenerator run time [...] it tries to assign to the constructor property of its polyfill generator function with dot access and it just does dot constructor equals blah. [...] And the override mistake now means that after you freeze the built-in prototype, the iterator prototype is on the prototype chain of the generator prototype, so when you do a dot constructor, the constructor is read only on the prototype, which means this fails and it breaks the existing code.
 
-The committee first tried a "social fix" (getting Transcend to migrate its customers, capped at about two months - [DE](../people/DE.md): "I want to not delay [iterator helpers] due to an issue we've been stalled on for ten years"). The fallback was making `constructor` and `Symbol.toStringTag` _accessors_ whose setters emulate the pre-freeze behavior (PR #287) - the "funny accessors" [MF](../people/MF.md) apologized for at Stage 4, and the hack [JHD](../people/JHD.md) said he "hates" while still supporting Stage 4. [MM](../people/MM.md) argued the real fix is either language-wide or nothing - and this thread is what later grew into the [Stabilize](stabilize.md) integrity traits (`overridable`).
+The committee first tried a "social fix" (getting Transcend to migrate its customers, capped at about two months - [DE](../people/DE.md): "I want to not delay due to iterator helper due to an issue we’ve been stalled on for ten years."). The fallback was making `constructor` and `Symbol.toStringTag` _accessors_ whose setters emulate the pre-freeze behavior (PR #287) - the "funny accessors" [MF](../people/MF.md) apologized for at Stage 4, and the web-compat hacks [JHD](../people/JHD.md) "hates" (as relayed by [RPR](../people/RPR.md)) while still supporting Stage 4. [MM](../people/MM.md) argued the real fix is either language-wide or nothing - and this thread is what later grew into the [Stabilize](stabilize.md) integrity traits (`overridable`).
 
 ### Should helper results behave like generators? (2020 impasse)
 
@@ -75,7 +75,7 @@ Three smaller design fights, all settled in 2022-2023: `Iterator.from`'s string 
 
 - [Joint Iteration](joint-iteration.md) - `Iterator.zip`/`zipKeyed`, built on the helpers' foundation.
 - [iterator-sequencing](iterator-sequencing.md) - `Iterator.concat`.
-- [Iterator chunking](iterator-chunking.md) - `Iterator.chunk`/`window`.
+- [Iterator chunking](iterator-chunking.md) - `Iterator.prototype.chunks`/`windows`.
 - `async-iterator-helpers` - the 2023 split-off (no page yet).
 - [Stabilize](stabilize.md) - the integrity-traits proposal that grew out of this saga's override-mistake thread.
 

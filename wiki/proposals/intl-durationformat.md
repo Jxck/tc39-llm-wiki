@@ -4,7 +4,7 @@ slug: intl-durationformat
 status: shipped
 current_stage: 4
 ecma: [402]
-champions: [USA, BAN]
+champions: [YMD, USA, BAN]
 first_seen: "2020-02"
 reached_stage4: "2024-12"
 tags: [proposal, intl, date-time]
@@ -50,15 +50,15 @@ xychart-beta
 
 ### Three years at Stage 3
 
-[USA](../people/USA.md)'s own accounting at Stage 4: the long Stage 3 was the result of "a lot of implementer feedback" and of deliberately working in a different order - "developing our API and then going back to making sure that it works in different tools". The tail was a steady drip of consensus PRs (2022-09 through 2024-10) reshaping output details: the `formatToParts` overhaul (PR #126), the negative-sign fix for leading numeric-style zeroes, and dropping grouping separators from the digital style. None contentious enough to stall, all numerous enough to add up.
+[USA](../people/USA.md)'s own accounting at Stage 4: the long Stage 3 was the result of "a lot of implementer feedback" and of deliberately working in a different order - "developing our API and then going back to, you know, making sure that it works in different tools". The tail was a steady drip of consensus PRs (2022-09 through 2024-10) reshaping output details: the `formatToParts` overhaul (PR #126), the negative-sign fix for leading numeric-style zeroes, and dropping grouping separators from the digital style. None contentious enough to stall, all numerous enough to add up.
 
 ### The Temporal coupling
 
-[PFC](../people/PFC.md)'s Stage 4 support came "with my Temporal hat on": DurationFormat is the formatter [Temporal](temporal.md) `Duration` was waiting for, and Temporal will incorporate it after Stage 4. The two proposals matured in parallel on purpose - DurationFormat was one of the original motivations for Temporal's duration type - and their fates were kept deliberately independent so the formatter could advance even while Temporal (at the time still Stage 3) continued.
+[PFC](../people/PFC.md)'s Stage 4 support came "With my Temporal hat on": DurationFormat is the formatter [Temporal](temporal.md) `Duration` was waiting for, and Temporal will incorporate it after Stage 4. The two proposals matured in parallel on purpose - DurationFormat was one of the original motivations for Temporal's duration type - and their fates were kept deliberately independent so the formatter could advance even while Temporal (at the time still Stage 3) continued.
 
-### Not listed in the proposals repo
+### Stage 4 confirmation
 
-Despite reaching Stage 4, the proposal does not appear in tc39/proposals' finished-proposals table in the current snapshot, so the Stage 4 transition rests on the meeting notes (the conclusion is unambiguous: "DurationFormat reached Stage 4 with supporting comments from [DLM](../people/DLM.md) and [PFC](../people/PFC.md)").
+The proposal is listed in tc39/proposals' ECMA-402 finished-proposals table (champions Younies Mahmoud and Ujjwal Sharma, expected publication 2025), consistent with the meeting notes (the conclusion is unambiguous: "DurationFormat reached Stage 4 with supporting comments from [DLM](../people/DLM.md) and [PFC](../people/PFC.md)").
 
 ## Related proposals
 

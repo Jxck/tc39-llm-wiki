@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Rob Palmer
 - **Affiliation**: Bloomberg
 - **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Joint Iteration](../proposals/joint-iteration.md), [Math.clamp](../proposals/math-clamp.md)
+- **Mentioned on proposal pages**: [Sync Iterator helpers](../proposals/iterator-helpers.md), [Joint Iteration](../proposals/joint-iteration.md), [Math.clamp](../proposals/math-clamp.md)
 - **Meetings attended**: 24
 
 ## Meetings attended

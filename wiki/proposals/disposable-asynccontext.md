@@ -41,11 +41,11 @@ The session was mostly a structured comparison of three designs:
 - **B. Make `using` itself AsyncContext-aware** (defer the enter, restore on exit): introduces new global mutable state and makes every `using` perform AsyncContext machinery. [SYG](../people/SYG.md) called B and C "deeply unpalatable because they basically hard couple AsyncContext variables to using syntax".
 - **C. Internal enter/exit slots on a Scopable object**, never user-callable: breaks through `ShadowRealm` boundaries (the realm boundary cannot proxy over it) and does not compose with `DisposableStack`.
 
-[RBN](../people/RBN.md) objected to B and C on composability grounds: they "break intuition with the disposable stack and how composition is intended to work with using declarations" - `using` is sugar over working with a disposable stack, and special-casing one type inside the syntax breaks that model.
+[RBN](../people/RBN.md) objected to B and C on composability grounds: they "break intuition with the disposal stack and how composition is intended to work with using declarations" - `using` is sugar over working with a disposable stack, and special-casing one type inside the syntax breaks that model.
 
 ### Baking time
 
-[SYG](../people/SYG.md)'s overarching concern: "running ahead of the solution space... we are getting zero baking time here... `using` is barely shipped" - the language has one year of experience with the disposal machinery, and "AsyncContext does not rise to the level of needing special casing in syntax that is itself very new". [DLM](../people/DLM.md) seconded that more experience is warranted. [MM](../people/MM.md) summarized the room accurately: "you heard negative comments. You have not heard objections to Stage 1. I will put myself in that category. I am very concerned about this and doubtful there's actually a feasible solution" - and Stage 1 advanced anyway.
+[SYG](../people/SYG.md)'s overarching concern: "it certainly feels like we’re running ahead of the solution space here. … there’s zero baking time. Using is barely shipped" - the language has one year of experience with the disposal machinery, and "AsyncContext does not rise to the level of needing special casing in syntax that is itself very new yet". [DLM](../people/DLM.md) seconded that more experience is warranted. [MM](../people/MM.md) summarized the room accurately: "you heard negative comments. You have not heard objections to Stage 1. I will put myself in that category. I am very concerned about this and doubtful there's actually a feasible solution" - and Stage 1 advanced anyway.
 
 ### Generators and suspend points
 

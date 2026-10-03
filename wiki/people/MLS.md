@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Michael Saboff
 - **Affiliation**: Apple / Apple Inc / Apple Inc. / Invited Expert / Observer
 - **Champion drafts**: (none among curated pages)
-- **Mentioned on proposal pages**: [Decimal](../proposals/decimal.md), [Decorators](../proposals/decorators.md), ['"Discard" (void) Bindings'](../proposals/discard-bindings.md), [Don't Remember Panicking](../proposals/dont-remember-panicking.md), [Iterator unique](../proposals/iterator-unique.md), [ShadowRealm](../proposals/shadowrealm.md)
+- **Mentioned on proposal pages**: [Decimal](../proposals/decimal.md), [Decorators](../proposals/decorators.md), ['"Discard" (void) Bindings'](../proposals/discard-bindings.md), [Don't Remember Panicking](../proposals/dont-remember-panicking.md), [Iterator unique](../proposals/iterator-unique.md), [Redeclarable global eval-introduced vars](../proposals/redeclarable-global-eval-vars.md), [ShadowRealm](../proposals/shadowrealm.md)
 - **Meetings attended**: 32
 
 ## Meetings attended

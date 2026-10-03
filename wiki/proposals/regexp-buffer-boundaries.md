@@ -17,14 +17,14 @@ The champion is [RBN](../people/RBN.md) (Ron Buckton).
 
 ## Stage history
 
-| Meeting                                                                         | What happened                                                                                                | Stage   |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------- |
-| [2021-10](https://github.com/tc39/notes/blob/main/meetings/2021-10/oct-28.md)   | Reached Stage 1 (`\A`, `\z`, `\Z`)                                                                           | → 1     |
-| [2021-12](https://github.com/tc39/notes/blob/main/meetings/2021-12/dec-15.md)   | Reached Stage 2                                                                                              | 1 → 2   |
-| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md) | Asked for Stage 2.7 (continued)                                                                              | 2       |
-| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)   | Proposed `\A`/`\z` for 2.7 and reintroducing `\Z`. **Conditional Stage 2.7** (conditional on including `\Z`) | 2       |
-| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md)   | Settled the meaning of `\Z` as `(?=(?:\r\n\|\n\|\r\|\u2028\|\u2029)?(?-m:$))`                                | 2.7     |
-| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md)   | **Reached Stage 3** (spec and test262 approved, including `\Z`)                                              | 2.7 → 3 |
+| Meeting                                                                         | What happened                                                                                                               | Stage   |
+| ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2021-10](https://github.com/tc39/notes/blob/main/meetings/2021-10/oct-28.md)   | Reached Stage 1 (`\A`, `\z`, `\Z`)                                                                                          | → 1     |
+| [2021-12](https://github.com/tc39/notes/blob/main/meetings/2021-12/dec-15.md)   | Reached Stage 2                                                                                                             | 1 → 2   |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md) | Asked for Stage 2.7 (`\A`/`\z` as sugar over modifiers); "Blocked from advancement due to insufficient time to review"      | 2       |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)   | Proposed `\A`/`\z` for 2.7 and reintroducing `\Z`. **Conditional Stage 2.7** (conditional on including `\Z`)                | 2 → 2.7 |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md)   | Settled the meaning of `\Z` as `(?=(?:\r\n\|\n\|\r\|\u2028\|\u2029)?(?-m:$))` (2.7 still conditional on the `\Z` spec text) | 2.7     |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md)   | Conditional Stage 2.7 conditions met; **reached Stage 3** (spec and test262 approved, including `\Z`)                       | 2.7 → 3 |
 
 ```mermaid
 xychart-beta
@@ -34,7 +34,7 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 3]
 ```
 
-> Horizontal axis = 2012-2026, vertical axis = Stage. Stage 1 in 2021-10, Stage 2 in 2021-12. It then stalled for about four years, and over three days in 2026-05 advanced in one burst: conditional 2.7 → 2.7 → Stage 3.
+> Horizontal axis = 2012-2026, vertical axis = Stage. Stage 1 in 2021-10, Stage 2 in 2021-12. It then stalled for about four years, and over three days in 2026-05 advanced in one burst: conditional Stage 2.7 on day 1 (may-19), then the 2.7 conditions met and Stage 3 on day 3 (may-21).
 
 ## Main issues
 
@@ -48,12 +48,13 @@ It initially aimed for 2.7 with only `\A`/`\z`, but during the meeting there was
 
 ## Related proposals
 
-- `regexp-legacy-features` and other RegExp proposals — in 2026-05 there was also agreement to "evaluate the impact of RegExp proposals on linear implementations" ([2026-05 may-21](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md)).
+- `regexp-legacy-features` and other RegExp proposals — in 2026-05 there was "consensus to require regex proposals to include an impact assessment for regex-matching complexity" ([2026-05 may-21](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md)).
 
 ## Sources
 
 - [2021-10 oct-28](https://github.com/tc39/notes/blob/main/meetings/2021-10/oct-28.md) — Stage 1
 - [2021-12 dec-15](https://github.com/tc39/notes/blob/main/meetings/2021-12/dec-15.md) — Stage 2
+- [2026-03 march-10](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md) — Stage 2.7 blocked (insufficient review time)
 - [2026-05 may-19](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md) — conditional Stage 2.7 / reintroduction of `\Z`
 - [2026-05 may-20](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-20.md) — meaning of `\Z` settled
 - [2026-05 may-21](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md) — Stage 3

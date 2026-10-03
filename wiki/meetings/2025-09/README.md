@@ -19,9 +19,8 @@ Three remote days. **[Iterator Chunking](../../proposals/iterator-chunking.md) r
 | `Array.prototype.pushAll`                                                                | new → 1                                      | Day 1    |
 | [Native Promise Adoption](../../proposals/native-promise-adoption.md)                    | new → 1                                      | Day 1    |
 | [Native Promise Predicate](../../proposals/native-promise-predicate.md)                  | new → 1                                      | Day 1    |
-| [Native Promise Predicate](../../proposals/native-promise-predicate.md)                  | 1 → 2                                        | Day 1    |
-| [Import Bytes](../../proposals/import-bytes.md)                                          | 1 → 2.7                                      | Day 2    |
-| Module Import Hook and new Global                                                        | new → 1                                      | Day 2    |
+| Native Promise Predicate                                                                 | 1 → 2                                        | Day 1    |
+| [Import Bytes](../../proposals/import-bytes.md)                                          | 2 → 2.7                                      | Day 2    |
 | [Amount](../../proposals/amount.md)                                                      | no advancement (carried to the next plenary) | Days 1-3 |
 
 ## Daily summaries

@@ -43,7 +43,7 @@ The most persistent objection of the Stage 1 session. [RBN](../people/RBN.md) wo
 
 ### Is the full governor abstraction justified?
 
-PCO (Igalia) called giving this much control "kind of un-JavaScript like" and asked how much of the demand a plain integer could cover. [DLM](../people/DLM.md) (Mozilla) supported investigating but wanted use cases beyond async iterator helpers flushed out. [MF](../people/MF.md)'s answer, both at Stage 1 and reinforced in 2025-11, is a table of extremely popular npm concurrency libraries each replaced by a one-liner. The 2025-11 update also drew the line: **concurrent task queues are out of scope** - the library landscape there is too varied ("from one-pagers to very complex"), governors would help build them, and the space is left to the community or a possible follow-on proposal.
+PCO (Igalia) called giving this much control "kind of un-JavaScript like" and asked how much of the demand a plain integer could cover. [DLM](../people/DLM.md) (Mozilla) supported investigating but wanted use cases beyond async iterator helpers flushed out. [MF](../people/MF.md)'s answer, both at Stage 1 and reinforced in 2025-11, is a table of extremely popular npm concurrency libraries each replaced by a one-liner. The 2025-11 update also drew the line: **concurrent task queues are out of scope** - the library landscape there is too varied ([MF](../people/MF.md): "They go from very, very simple kind of like one-pager implementations to very complex libraries"), governors would help build them, and the space is left to the community or a possible follow-on proposal.
 
 ### Cross-agent sharing and blocking
 

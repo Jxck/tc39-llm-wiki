@@ -17,14 +17,15 @@ The champion is [SYG](../people/SYG.md), with [RBN](../people/RBN.md) co-present
 
 ## Stage history
 
-| Meeting                                                                           | Event                                                                                                                                                                                            | Stage |
-| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
-| [2021-08](https://github.com/tc39/notes/blob/main/meetings/2021-08/sep-01.md)     | First presented as "Fixed layout objects". Reached Stage 1 ([WH](../people/WH.md) questioned efficiency vs packing object fields)                                                                | → 1   |
-| [2023-03](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-22.md)     | V8 experience report: moved from per-cage shared heaps to a shared cage per process, shared value barrier, publication fence ("allocation is publication")                                       | 1     |
-| [2024-02](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-8.md)      | Update: convergence with WasmGC shared-everything work (shared type hierarchy, one story for JS + Wasm)                                                                                          | 1     |
-| [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-11.md)   | Discussion of the methods design (non-generic methods extending `Set`/`Map` methods); prelude to the Stage 2 request                                                                             | 1     |
-| [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-13.md)    | Methods discussion continued into working sessions (this-TDZ, prototype correlation)                                                                                                             | 1     |
-| [2024-10](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-09.md) | **Reached Stage 2** with explicit open questions (WeakMap keys, unsafe blocks); Stage 3 reviewers [MM](../people/MM.md), [WH](../people/WH.md), [YSV](../people/YSV.md), [NRO](../people/NRO.md) | 1 → 2 |
+| Meeting                                                                             | Event                                                                                                                                                                                            | Stage |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| [2021-08](https://github.com/tc39/notes/blob/main/meetings/2021-08/sept-01.md)      | First presented as "Fixed layout objects". Reached Stage 1 ([WH](../people/WH.md) questioned efficiency vs packing object fields)                                                                | → 1   |
+| [2023-03](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-23.md)       | V8 experience report: moved from per-cage shared heaps to a shared cage per process, shared value barrier, publication fence ("allocation is publication")                                       | 1     |
+| [2023-09](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-27.md) | "Structs and shared structs update": thread-local prototypes plus an auto-correlation registry to attach behavior; conclusion "Shared structs remain at Stage 1"                                 | 1     |
+| [2024-02](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-7.md)        | Update: convergence with WasmGC shared-everything work (shared type hierarchy, one story for JS + Wasm)                                                                                          | 1     |
+| [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-11.md)     | Discussion of the methods design (non-generic methods extending `Set`/`Map` methods); prelude to the Stage 2 request                                                                             | 1     |
+| [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-13.md)      | Methods discussion continued into working sessions (this-TDZ, prototype correlation)                                                                                                             | 1     |
+| [2024-10](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-08.md)   | **Reached Stage 2** with explicit open questions (WeakMap keys, unsafe blocks); Stage 3 reviewers [MM](../people/MM.md), [WH](../people/WH.md), [YSV](../people/YSV.md), [NRO](../people/NRO.md) | 1 → 2 |
 
 ```mermaid
 xychart-beta
@@ -34,7 +35,7 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2]
 ```
 
-> Stage 1 in 2021-08, Stage 2 in 2024-10. The long flat stretch covers the implementation-driven redesign period (V8 experience report 2023-03, WasmGC convergence 2024).
+> Stage 1 in 2021-08, Stage 2 in 2024-10. The long flat stretch covers the implementation-driven redesign period (V8 experience report 2023-03, thread-local prototypes update 2023-09, WasmGC convergence 2024).
 
 ## Main issues
 
@@ -61,9 +62,10 @@ Since 2024-02 the proposal is deliberately sequenced with the Wasm shared-everyt
 
 ## Sources
 
-- [2021-08 sep-01](https://github.com/tc39/notes/blob/main/meetings/2021-08/sep-01.md) - Stage 1 (as Fixed layout objects)
-- [2023-03 mar-22](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-22.md) - V8 experience report
-- [2024-02 feb-8](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-8.md) - WasmGC convergence
+- [2021-08 sept-01](https://github.com/tc39/notes/blob/main/meetings/2021-08/sept-01.md) - Stage 1 (as Fixed layout objects)
+- [2023-03 mar-23](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-23.md) - V8 experience report
+- [2023-09 september-27](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-27.md) - update; remains at Stage 1
+- [2024-02 feb-7](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-7.md) - WasmGC convergence
 - [2024-04 april-11](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-11.md) - methods design discussion
 - [2024-06 june-13](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-13.md) - methods working sessions
-- [2024-10 october-09](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-09.md) - Stage 2 ([SYG](../people/SYG.md), [RBN](../people/RBN.md))
+- [2024-10 october-08](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-08.md) - Stage 2 ([SYG](../people/SYG.md), [RBN](../people/RBN.md))

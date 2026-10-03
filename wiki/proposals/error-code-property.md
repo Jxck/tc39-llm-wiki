@@ -37,13 +37,13 @@ xychart-beta
 
 ### Clash with DOMException's `code`
 
-The only substantive dispute. DOMException historically has a numeric `code` as a **prototype getter**. [AVK](../people/AVK.md) (on the WHATWG side) raised the concern that "`.code` would grow two meanings and cause confusion." [JSL](../people/JSL.md) / [JHD](../people/JHD.md) took the position that there is no real conflict, because both the installation (own property versus prototype getter) and the value space differ. [KG](../people/KG.md) explained that WHATWG treats DOMException's `code` as legacy and recommends `.name`. [JSL](../people/JSL.md) argued the opposite direction would be the breaking one: retargeting the ecosystem's `code` convention onto `.name`.
+The only substantive dispute. DOMException historically has a numeric `code` as a **prototype getter**. [AVK](../people/AVK.md) (on the WHATWG side) raised the concern that `.code` would grow two meanings; as relayed by [KM](../people/KM.md), "his concern is that it will be confusing that there will be two different meanings of ".code"". [JSL](../people/JSL.md) / [JHD](../people/JHD.md) took the position that there is no real conflict, because both the installation (own property versus prototype getter) and the value space differ. [KG](../people/KG.md) explained that WHATWG treats DOMException's `code` as legacy and recommends `.name`. [JSL](../people/JSL.md) argued the opposite direction would be the breaking one: retargeting the ecosystem's `code` convention onto `.name`.
 
-[KM](../people/KM.md) was cautious about advancing while [AVK](../people/AVK.md) was on leave, and [KG](../people/KG.md) held that the proposal should not go past Stage 2 without a coherent story for DOMException. The outcome was **Stage 2 only** (2.7 deferred), with "alignment with DOMException is a condition for further advancement" ([LVU](../people/LVU.md) alone also supported 2.7). The committee asked for that alignment path to be filed as an issue.
+[KM](../people/KM.md) was cautious about advancing while [AVK](../people/AVK.md) was on leave, and [KG](../people/KG.md) held that the proposal should not go past Stage 2 without a coherent story for DOMException. The outcome was **Stage 2 only** (2.7 deferred), with the conclusion "Further advancement blocked on reconciling with DOMException" ([LVU](../people/LVU.md) alone also supported 2.7). The committee asked for that alignment path to be filed as an issue.
 
 ### Adding an options bag to `SuppressedError`
 
-[MM](../people/MM.md) asked "the `SuppressedError` constructor has no options bag, does it?" and supported the proposal after confirming that it adds an options bag so both `cause` and `code` can be passed.
+[MM](../people/MM.md) asked "what about SuppressedError? The current SuppressedError constructor does not have an options bag." and supported the proposal after confirming that it adds an options bag so both `cause` and `code` can be passed.
 
 ## Related proposals
 

@@ -12,9 +12,9 @@ tags: [proposal, concurrency, atomics, shared-memory]
 
 ## Overview
 
-`Atomics.pause` adds a single method, `Atomics.pause`, to the `Atomics` object. It is a spin-loop hint to the CPU: it has no observable behavior and always returns `undefined`. When a spin lock (the fast path of a mutex on a SharedArrayBuffer, and the like) spins briefly before falling into an OS-level sleep (`Atomics.wait`), this tells the CPU "I am in a busy loop right now."
+`Atomics.pause` adds a single method, `Atomics.pause`, to the `Atomics` object. It is a spin-loop hint to the CPU: it has no observable behavior and always returns `undefined`. When a spin lock (the fast path of a mutex on a SharedArrayBuffer, and the like) spins briefly before falling into an OS-level sleep (`Atomics.wait`), this tells the CPU that the code is currently in a busy loop.
 
-Hardware already has instructions for the same purpose, such as x86 `PAUSE` and ARM's ISB (instruction synchronization barrier) / `YIELD`, and C/C++ can use them through intrinsics such as `_mm_pause()`, but JS had no way to express this. This proposal provides it as an engine hook. The original scope was broad and covered both "micro wait (a CPU hint)" and "mini wait (a timeout-clamped `Atomics.wait`, for environments that cannot block)," but the latter was dropped. It was narrowed to the CPU-hint method only, and renamed `Atomics.pause`. The champion is [SYG](../people/SYG.md). At Stage 4, [SYG](../people/SYG.md) had moved on to other work, so [KM](../people/KM.md) presented on his behalf.
+Hardware already has instructions for the same purpose, such as x86 `PAUSE` and ARM's ISB (instruction synchronization barrier) / `YIELD`, and C/C++ can use them through intrinsics such as `_mm_pause()`, but JS had no way to express this. This proposal provides it as an engine hook. The original scope was broad and covered both a micro wait (a CPU hint) and a mini wait (a timeout-clamped `Atomics.wait`, for environments that cannot block), but the latter was dropped. It was narrowed to the CPU-hint method only, and renamed `Atomics.pause`. The champion is [SYG](../people/SYG.md). At Stage 4, [SYG](../people/SYG.md) had moved on to other work, so [KM](../people/KM.md) presented on his behalf.
 
 ## Stage history
 
@@ -24,7 +24,7 @@ Hardware already has instructions for the same purpose, such as x86 `PAUSE` and 
 | [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-08.md)   | Narrowed the scope to the CPU hint only. **Withdrew** the Stage 2 consensus because the spec text was not ready                         | 1       |
 | [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-13.md)    | Renamed to `Atomics.pause`. **Reached Stage 2.7** (1 → 2.7, without a recorded Stage 2)                                                 | 1 → 2.7 |
 | [2024-07](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-29.md)    | Aimed at Stage 3, but a mismatch with [WH](../people/WH.md) over the meaning of the iteration argument came out, and it did not advance | 2.7     |
-| [2024-07](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-31.md)    | Continued discussion. Flipped the argument's meaning to "a larger N means a longer pause." No consensus for Stage 3 or for Stage 2      | 2.7     |
+| [2024-07](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-31.md)    | Continued discussion. Flipped the argument's meaning so that a larger N means a longer pause. No consensus for Stage 3 or for Stage 2   | 2.7     |
 | [2024-10](https://github.com/tc39/notes/blob/main/meetings/2024-10/october-09.md) | **Reached Stage 3**. Optional iteration argument; Test262 landed                                                                        | 2.7 → 3 |
 | [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)     | **Reached Stage 4**. Advanced after approving a normative change that removes the unused optional argument                              | 3 → 4   |
 
@@ -44,7 +44,7 @@ xychart-beta
 
 An integer argument for the spin-loop iteration count (a backoff hint) was the biggest dispute, across three meetings. In 2024-07 [WH](../people/WH.md) pointed out that the spec text on offer was the reverse of the meaning agreed last time.
 
-> ([WH](../people/WH.md), 2024-07) The agreement I thought we had reached last time turned out to be an illusion.
+> ([WH](../people/WH.md), 2024-07) I also wanted it recorded in the notes that consensus we achieved at the last meeting was an illusion.
 
 [SYG](../people/SYG.md) flipped the meaning to match [WH](../people/WH.md)'s reading: a larger number pauses longer (negative values also allowed, as a count-down). At Stage 3 in 2024-10 it was settled as an optional argument (0-based; positive means longer, negative means shorter).
 
@@ -52,9 +52,9 @@ An integer argument for the spin-loop iteration count (a backoff hint) was the b
 
 In 2026-05 [KM](../people/KM.md) proposed deleting the argument entirely, because no engine implements it. [RBN](../people/RBN.md) was concerned that without the argument developers are led into hand-written busy loops, which cannot be undone in the long run, but he did not block.
 
-> ([NRO](../people/NRO.md), 2026-05) If no engine honors this argument, people will keep feeling they have to write bad code even if the argument is there. I do not think putting it in the spec does any good.
+> ([NRO](../people/NRO.md), 2026-05) If no engine actually respects this argument, even if this argument exists, people will still feel the need to write that potentially bad code. So I don't see how having it in the spec has any effect on that.
 
-> ([WH](../people/WH.md), 2026-05) So that we leave room to make this argument meaningful later, we should not include it now.
+> ([WH](../people/WH.md), 2026-05) Since the parameter doesn't do anything now, invariably people will just pass random values to it and then we'll have compatibility issues if we try to make the parameter mean anything. So in order to preserve the ability for us to define such a parameter in the future, we should not include it now.
 
 The outcome was consensus on the normative change that removes the argument, and then Stage 4.
 
@@ -70,7 +70,7 @@ The outcome was consensus on the normative change that removes the argument, and
 
 - `shared-array-buffer` (SharedArrayBuffer) — the foundation of the spin locks that `Atomics.pause` targets.
 - `Atomics.waitAsync` / `Atomics.wait` — `Atomics.pause` is a CPU-level fast-path hint that complements `Atomics.wait`, which blocks at the OS level (the dropped "mini wait" was a clamped `Atomics.wait`).
-- `structs` (shared structs) — [RBN](../people/RBN.md) said "`Atomics.pause` is strongly related to the structs proposal" (useful for implementing lock-free algorithms).
+- `structs` (shared structs) — [RBN](../people/RBN.md) (2024-10) said it is "very useful for implementing spin waiting and lock free algorithms that come in handy with construct shared proposal".
 
 ## Sources
 

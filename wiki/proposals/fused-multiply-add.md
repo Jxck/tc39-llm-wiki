@@ -35,28 +35,30 @@ xychart-beta
 
 ### Confirming the mathematical invariant
 
-[MM](../people/MM.md) checked whether it satisfies the same invariant as +−×÷: "if the exact mathematical result is representable, return that representation; otherwise it lies between the two adjacent values." [WH](../people/WH.md) replied
+[MM](../people/MM.md) checked whether it satisfies the same invariant as +−×÷: "if the exact mathematical result is representable then the result of the operation is the representable number that corresponds to the exact mathematical result, and otherwise it's between those two?" [WH](../people/WH.md) replied
 
-> FMA(a, b, c) computes the exact mathematical value of a × b + c and returns the nearest double (ties round to even). IEEE 754 specifies it completely, bit for bit, and there is no room for approximation
+> _FMA_(_a_, _b_, _c_) computes the exact mathematical value of _a_ × _b_ + _c_ and then gives you the closest double to it, rounding ties to even.
+
+> IEEE 754 defines FMA exactly. There is no latitude for approximate results. [...] So this is bit-by-bit specified by IEEE 754.
 
 and [MM](../people/MM.md) came around to supporting it (the rounding mode is also fixed to round-to-even in ECMAScript).
 
 ### Uneven hardware support (the WASM precedent)
 
-[DLM](../people/DLM.md) recounted that when FMA was discussed for WASM, "hardware support is uneven, and an IEEE-compliant software fallback is slow" became an issue. [PFC](../people/PFC.md), from experience patching JavaScriptCore, confirmed single-instruction lowering on ARMv8 / x86-64 (SSE), and [KM](../people/KM.md) also confirmed on Godbolt that it is a single instruction, including on RISC-V. [WH](../people/WH.md) dismissed the practical harm: "if you are compiling for the x87 coprocessor, your arithmetic is already much more broken than this."
+[DLM](../people/DLM.md) recounted that when FMA was discussed for WASM it was controversial: hardware support is uneven, and software fallbacks are slow if they are fully IEEE-conformant (otherwise rounding can differ by platform). [PFC](../people/PFC.md), from experience patching JavaScriptCore, confirmed single-instruction lowering on ARMv8 / x86-64 (SSE), and [KM](../people/KM.md) also confirmed on Godbolt that it is a single instruction, including on RISC-V. [WH](../people/WH.md) dismissed the practical harm: "If you are compiling for an x86 using the old x87 coprocessor instructions then you have much bigger problems than this—arithmetic will just be broken in subtle ways."
 
 ### Argument coercion
 
-The current draft coerces arguments to Number, like the other `Math` functions, but [JHD](../people/JHD.md) pointed out a clash with a prior committee agreement that "new APIs do not coerce; they throw" (`Math.sumPrecise` also throws). [WH](../people/WH.md) initially opposed this — "I don't want to break consistency with `Math.sin` and the like" — but it was taken up as a topic for discussion during Stage 2. Naming (`fma`, or `multiplyAdd`/`mulAdd`, which [SFC](../people/SFC.md) favors for discoverability) is likewise unsettled.
+The current draft coerces arguments to Number, like the other `Math` functions, but [JHD](../people/JHD.md) pointed out a clash with the committee's prior resolution to stop coercing in new APIs (`Math.sumPrecise` also throws rather than coerces). [WH](../people/WH.md) initially opposed this — "I don't want to break the precedent that `Math.sin`, `Math.cos`, or whatever coerce to Numbers." — but it was taken up as a topic for discussion during Stage 2. Naming (`fma`, or `multiplyAdd`/`mulAdd`, which [SFC](../people/SFC.md) favors for discoverability) is likewise unsettled.
 
 ### Scope
 
-The Stage 1 problem space is limited to "conformance with the required arithmetic operations of IEEE 754-2008", and bit-manipulation operations such as `nextUp` / `nextDown` / `scaleB` are explicitly out of scope. [SFC](../people/SFC.md) reinforced this: "the motivation is not that it is in IEEE, but the capability of multiply-add without double rounding itself."
+The Stage 1 problem space is limited "to conform ECMAScript to include the one new required arithmetic operation in IEEE 754-2008", and bit-manipulation operations such as `nextUp` / `nextDown` / `scaleB` are explicitly out of scope. [SFC](../people/SFC.md) reinforced this from the other side: "having the capability in the language to do the multiply-add operation without the double rounding is motivated on its own", "not just the fact that it's in IEEE."
 
 ## Related proposals
 
 - [Amount](../proposals/amount.md) — the spec text for unit conversion is the direct trigger for this proposal.
-- `decimal` — a different approach to the precision problem (decimal arithmetic). In the 2026-07 update, `Math.fma` / `Math.sumPrecise` were described as having "taken on the use cases for reducing rounding error".
+- `decimal` — a different approach to the precision problem (decimal arithmetic). In the 2026-07 update, `Math.fma` / `Math.sumPrecise` were described as proposals that cover the use case of reducing binary floating-point rounding errors (while not solving decimal's broader problem statement).
 - `Math.sumPrecise` — exact summation. Combined with FMA, an exact dot product is possible.
 
 ## Sources

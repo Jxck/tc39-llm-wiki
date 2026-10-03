@@ -9,30 +9,30 @@
 
 ### Stage 4 — not yet in ECMAScript (publication year 2026 or later) (11 / 77 including already shipped)
 
-- Array.fromAsync — expected publication 2026
+- [Array.fromAsync](array-from-async.md) — expected publication 2026
 - [Atomics.pause](atomics-pause.md) — expected publication 2027
-- Error.isError — expected publication 2026
+- [Error.isError](error-is-error.md) — expected publication 2026
 - [Explicit Resource Management](explicit-resource-management.md) — expected publication 2027
-- Iterator Sequencing — expected publication 2026
+- [Iterator Sequencing](iterator-sequencing.md) — expected publication 2026
 - [Joint Iteration](joint-iteration.md) — expected publication 2027
-- JSON.parse source text access — expected publication 2026
-- Math.sumPrecise — expected publication 2026
+- [JSON.parse source text access](json-source-text.md) — expected publication 2026
+- [Math.sumPrecise](math-sum-precise.md) — expected publication 2026
 - [Temporal](temporal.md) — expected publication 2027
-- Uint8Array to/from Base64 — expected publication 2026
+- [Uint8Array to/from Base64](uint8array-base64.md) — expected publication 2026
 - [Upsert](upsert.md) — expected publication 2026
 
 ### Stage 3 (12)
 
 - [Await Dictionary](await-dictionary.md)
-- Deferring Module Evaluation
+- [Deferring Module Evaluation](import-defer.md)
 - [Dynamic Code Brand Checks](dynamic-code-brand-checks.md)
 - [Error Stack Accessor](error-stack-accessor.md)
-- Import Text
+- [Import Text](import-text.md)
 - [iterator chunking](iterator-chunking.md)
 - [Iterator Includes](iterator-includes.md)
 - [Iterator Join](iterator-join.md)
 - Legacy RegExp features in JavaScript
-- Non-extensible Applies to Private
+- [Non-extensible Applies to Private](nonextensible-applies-to-private.md)
 - [RegExp Buffer Boundaries (\A, \z, \Z)](regexp-buffer-boundaries.md)
 - Source Phase Imports
 
@@ -40,42 +40,42 @@
 
 - Decorator Metadata
 - [Decorators](decorators.md)
-- ESM Phase Imports
-- Immutable ArrayBuffers
-- Import Bytes
-- ShadowRealm
+- [ESM Phase Imports](esm-phase-imports.md)
+- [Immutable ArrayBuffers](immutable-arraybuffer.md)
+- [Import Bytes](import-bytes.md)
+- [ShadowRealm](shadowrealm.md)
 
 ### Stage 2 (29)
 
-- "Discard" (void) Bindings
+- ["Discard" (void) Bindings](discard-bindings.md)
 - [Amount](amount.md)
-- Async Context
+- [Async Context](async-context.md)
 - Async Iterator helpers
 - collection normalization
 - [Curtailing the power of "Thenables"](thenable-curtailment.md)
 - Deferred Re-exports
 - Destructure Private Fields
 - [Error code property](error-code-property.md)
-- Error.captureStackTrace
-- Extractors
+- [Error.captureStackTrace](error-capture-stack-trace.md)
+- [Extractors](extractors.md)
 - Function implementation hiding
 - function.sent metaproperty
 - [Fused Multiply-Add](fused-multiply-add.md)
 - Iterator.range
 - JSON.parseImmutable
-- Math.clamp
+- [Math.clamp](math-clamp.md)
 - Module Declarations
 - Module Expressions
-- Native Promise Predicate
+- [Native Promise Predicate](native-promise-predicate.md)
 - Object.keysLength
 - Pipeline Operator
 - Propagate active ScriptOrModule with JobCallback Record
-- SeededPRNG
+- [SeededPRNG](seeded-prng.md)
 - String.dedent
-- Structs: Fixed Layout Objects and Some Synchronization Primitives
+- [Structs: Fixed Layout Objects and Some Synchronization Primitives](shared-structs.md)
 - Symbol Predicates
-- Sync Imports
-- throw expressions
+- [Sync Imports](import-sync.md)
+- [throw expressions](throw-expressions.md)
 
 ### Stage 1 (108)
 
@@ -83,7 +83,7 @@
 - Array Equality
 - Array filtering
 - Array.prototype.unique()
-- Array.zip and Array.zipKeyed
+- [Array.zip and Array.zipKeyed](array-zip.md)
 - Asset References
 - async do expressions
 - Async initialization
@@ -93,48 +93,48 @@
 - Binary AST
 - Block Params
 - Built In Modules (aka JS Standard Library)
-- Bulk-add array elements
+- [Bulk-add array elements](bulk-add-array-elements.md)
 - Call-this operator
 - Cancellation API
 - class Access Expressions
 - Class Brand Checks
 - Class Method Parameter Decorators
 - Collection methods
-- Compare Strings by Codepoint
+- [Compare Strings by Codepoint](compare-strings-by-codepoint.md)
 - [Comparisons](comparisons.md)
 - Compartments
 - Composable Accessors via built-in decorators
-- Composites
-- Concurrency Control
+- [Composites](composite-keys.md)
+- [Concurrency Control](concurrency-control.md)
 - Cryptographically Secure Random Number Generation
 - DataView get/set Uint8Clamped methods
-- Decimal
+- [Decimal](decimal.md)
 - Declarations in Conditionals
 - Deep Path Properties in Record Literals
-- Disposable AsyncContext.Variable
+- [Disposable AsyncContext.Variable](disposable-asynccontext.md)
 - do expressions
 - Double-Ended Iterator and Destructuring
 - Dynamic Modules
 - Emitter
-- Enums
+- [Enums](enums.md)
 - Error option framesAbove
 - Error option limit
 - Error stacks
 - [export all from](export-all-from.md)
 - export v from "mod"; statements
 - Extensions
-- Faster Promise adoption
+- [Faster Promise adoption](native-promise-adoption.md)
 - First-class protocols
 - Freezing prototypes
-- Function and Object Literal Decorators
+- [Function and Object Literal Decorators](function-and-object-literal-decorators.md)
 - Function Memoization
 - Function once
 - Get Intrinsic
 - Grouped Accessors and Auto-Accessors
 - IDL for ECMAScript
-- Improved Escapes for Template Literals
+- [Improved Escapes for Template Literals](improve-template-literals.md)
 - Inspector
-- Iterator unique
+- [Iterator unique](iterator-unique.md)
 - Legacy reflection features for functions in JavaScript
 - Limited ArrayBuffer
 - [Linear Matching](linear-matching.md)
@@ -142,20 +142,20 @@
 - [Map get and delete](map-get-and-delete.md)
 - Mass Proxy Revocation
 - Maximally minimal mixins
-- Module Global
+- [Module Global](module-global.md)
 - Module Keys
 - Module sync assert
 - Modulus and Additional Integer Math
-- More Random Functions
+- [More Random Functions](more-random-functions.md)
 - Negated in and instanceof operators
 - new.initialize
 - Object pick/omit
 - Object.freeze + Object.seal syntax
-- Object.getNonIndexStringProperties()
-- Object.propertyCount
+- [Object.getNonIndexStringProperties()](object-get-non-index-string-properties.md)
+- [Object.propertyCount](object-propertycount.md)
 - Observable
 - of and from on collection constructors
-- OOM Fails Fast
+- [OOM Fails Fast](dont-remember-panicking.md)
 - Optional chaining in assignment LHS
 - Partial application
 - Pattern Matching
@@ -172,19 +172,19 @@
 - Reversible string split
 - Richer Keys
 - SES (Secure EcmaScript)
-- Signals
+- [Signals](signals.md)
 - Slice notation
-- Stabilize
+- [Stabilize](stabilize.md)
 - Standardized Debug
-- Strict Enforcement of 'using'
+- [Strict Enforcement of 'using'](using-enforcement.md)
 - String.cooked
 - String.prototype.codePoints
 - Support for Distributed Promise Pipelining
 - Type Annotations
-- TypedArray Concat
-- TypedArray Find Within
+- [TypedArray Concat](typedarray-concat.md)
+- [TypedArray Find Within](typedarray-find-within.md)
 - uniform parsing of quasi-standard Date.parse input
-- Unordered Async Iterator Helpers
+- [Unordered Async Iterator Helpers](unordered-async-iterator-helpers.md)
 - Wavy Dot: Syntactic Support for Promise Pipelining
 - {BigInt,Number}.fromString
 
@@ -258,7 +258,7 @@
 ### Stage 4 — not yet in ECMAScript (publication year 2026 or later) (2 / 18 including already shipped)
 
 - [Intl Era and MonthCode Proposal](intl-era-month-code.md) — expected publication 2026
-- Intl Locale Info — expected publication 2026
+- [Intl Locale Info](intl-locale-info.md) — expected publication 2026
 
 ### Stage 3 (1)
 
@@ -267,13 +267,13 @@
 ### Stage 2 (2)
 
 - eraDisplay option for Intl.DateTimeFormat
-- More Currency Display Choices
+- [More Currency Display Choices](more-currency-display-choices.md)
 
 ### Stage 1 (12)
 
 - [Default Behaviours for some Intl APIs](intl-default-behaviours.md)
-- explore associating a unit with a number
-- Intl Energy Units
+- [explore associating a unit with a number](intl-unit-protocol.md)
+- [Intl Energy Units](intl-energy-units.md)
 - Intl LocaleMatcher
 - [Intl Sequence Units](intl-sequence-units.md)
 - [Intl.DateTimeFormat Alignment With Other Standards](intl-datetimeformat-alignment.md)

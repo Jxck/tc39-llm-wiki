@@ -5,7 +5,7 @@ status: shipped
 current_stage: 4
 ecma: [262]
 champions: [SYG]
-first_seen: "2024-04"
+first_seen: "2024-02"
 reached_stage4: "2025-02"
 tags: [proposal, globals, semantics]
 ---
@@ -20,6 +20,7 @@ The concrete observable change: `eval("var x")` at global scope followed by a gl
 
 | Meeting                                                                            | Event                                                                                                                                                                                                                                                                   | Stage   |
 | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [2024-02](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-6.md)       | "Down with `[[VarNames]]`" presented as a needs-consensus PR; [MM](../people/MM.md) and [MLS](../people/MLS.md) to consider the implications before the next plenary                                                                                                    | (PR)    |
 | [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-08.md)    | Originally a needs-consensus PR; [SYG](../people/SYG.md) moved it into a proposal to follow the process, and advanced to Stage 2.7 in the same session ([WH](../people/WH.md) consulted; support [DLM](../people/DLM.md), [KG](../people/KG.md), [MM](../people/MM.md)) | → 2.7   |
 | [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-11.md)    | Continuation session: Stage 3                                                                                                                                                                                                                                           | 2.7 → 3 |
 | [2025-02](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-18.md) | Stage 4: all three engines have shipped the proposed behavior                                                                                                                                                                                                           | 3 → 4   |
@@ -32,7 +33,7 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4]
 ```
 
-> A late-2024 needs-consensus PR turned proposal: Stage 2.7 and Stage 3 within the same 2024-04 meeting (moved as a proposal "instead of as a consensus-needed PR"), Stage 4 in 2025-02. Nothing before 2024 - the topic only ever existed as a spec bug fix.
+> An early-2024 needs-consensus PR ("Down with `[[VarNames]]`", 2024-02) turned proposal: Stage 2.7 and Stage 3 within the same 2024-04 meeting (moved as a proposal "instead of as a consensus needed PR"), Stage 4 in 2025-02. Nothing before 2024 - the topic only ever existed as a spec bug fix.
 
 ## Main issues
 
@@ -53,10 +54,11 @@ let x = 2; // now allowed (shadowing); used to throw
 
 ## Related proposals
 
-- `ShadowRealm` - the other line of work on what the global scope contains and who sees it (no page yet).
+- [ShadowRealm](shadowrealm.md) - the other line of work on what the global scope contains and who sees it.
 
 ## Sources
 
+- [2024-02 feb-6](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-6.md) - needs-consensus PR "Down with `[[VarNames]]`"
 - [2024-04 april-08](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-08.md) - proposal conversion + Stage 2.7
 - [2024-04 april-11](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-11.md) - Stage 3
 - [2025-02 february-18](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-18.md) - Stage 4

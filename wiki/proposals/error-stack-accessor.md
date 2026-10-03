@@ -17,13 +17,14 @@ The champions are [JHD](../people/JHD.md) (Jordan Harband) and [MM](../people/MM
 
 ## Stage history
 
-| Meeting                                                                            | What happened                                                                                                                                                                                                                                        | Stage   |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [2024-12](https://github.com/tc39/notes/blob/main/meetings/2024-12/december-03.md) | Pre-history: the Error Stacks Structure Stage 2 ask did not advance, and the champions announced "a new, smaller proposal with just the existing stack accessor" (this proposal), with the existing proposal to "rebase" on top of it as it advances | –       |
-| [2025-02](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-19.md) | Presented `Error Stack Accessor` (a carve-out from the older Error Stacks line)                                                                                                                                                                      | 2       |
-| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md)    | **Reached Stage 2.7**. HTML integration PR filed                                                                                                                                                                                                     | 2 → 2.7 |
-| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)      | Asked for Stage 3 (tests under review). Continued to day 3 the same week                                                                                                                                                                             | 2.7     |
-| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md)      | **Reached Stage 3**. Conditional: if the tests are not merged by the next meeting, ask to regress to 2.7                                                                                                                                             | 2.7 → 3 |
+| Meeting                                                                            | What happened                                                                                                                                                                                                                                                                                              | Stage     |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| [2024-12](https://github.com/tc39/notes/blob/main/meetings/2024-12/december-03.md) | Pre-history: the Error Stacks Structure Stage 2 ask did not advance, and the champions announced "a new, smaller proposal with just the existing stack accessor" (this proposal), with the existing proposal to "rebase" on top of it as it advances                                                       | –         |
+| [2025-02](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-19.md) | **Reached Stage 2**. First presented `Error Stack Accessor` (a carve-out from the older Error Stacks line); [JHD](../people/JHD.md) asked for Stage 1 and then Stage 2 in the same session. Conclusion "Consensus for Stage 2", with the HTML integration PR to be directionally approved before Stage 2.7 | 0 → 1 → 2 |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) | `Error.prototype.stack accessor for stage 2.7`, but not seeking advancement (waiting on spec reviews and the HTML PR); sought direction on setter behavior. Conclusion "setter throws for non-strings"                                                                                                     | 2         |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md)    | **Reached Stage 2.7**. HTML integration PR filed                                                                                                                                                                                                                                                           | 2 → 2.7   |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md)      | Asked for Stage 3 (tests under review). Continued to day 3 the same week                                                                                                                                                                                                                                   | 2.7       |
+| [2026-05](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md)      | **Reached Stage 3**. Conditional: if the tests are not merged by the next meeting, seek demotion to 2.7                                                                                                                                                                                                    | 2.7 → 3   |
 
 ```mermaid
 xychart-beta
@@ -33,13 +34,13 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3]
 ```
 
-> Horizontal axis = 2012-2026, vertical axis = Stage. This proposal is relatively new: carved out of the Error Stacks line (announced 2024-12, first presented 2025-02 at Stage 2). Stage 2.7 in 2026-03, Stage 3 in 2026-05. The Error stacks discussion itself goes back to 2017, but that is a separate line and is not on this chart.
+> Horizontal axis = 2012-2026, vertical axis = Stage. This proposal is relatively new: carved out of the Error Stacks line (announced 2024-12, first presented 2025-02, where it went to Stage 1 and then Stage 2 in one session). Stage 2.7 in 2026-03, Stage 3 in 2026-05. The Error stacks discussion itself goes back to 2017, but that is a separate line and is not on this chart.
 
 ## Main issues
 
 ### Stage 3 conditional on merging the tests (2026-05)
 
-On day 1, Stage 3 was requested with the tests under review and the HTML PR approved, but the conclusion carried to day 3. On day 3 the test approval was confirmed and it reached Stage 3, with the condition that "if the tests are not merged by the next meeting, ask to regress to Stage 2.7."
+On day 1, Stage 3 was requested with the tests under review and the HTML PR approved, but the conclusion carried to day 3. On day 3 the test approval was confirmed and it reached Stage 3, with the condition "if tests aren’t merged by the next meeting, will seek demotion to stage 2.7".
 
 ### Carve-out from the Error Stacks line
 
@@ -53,7 +54,8 @@ Fully structuring stack traces (Error Stacks Structure) is heavy and hard to agr
 ## Sources
 
 - [2024-12 december-03](https://github.com/tc39/notes/blob/main/meetings/2024-12/december-03.md) — carve-out announced (Error Stacks Structure Stage 2 ask did not advance)
-- [2025-02 february-19](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-19.md) — carve-out presented
+- [2025-02 february-19](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-19.md) — carve-out presented, Stage 1 → 2
+- [2025-11 november-18](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) — setter behavior direction (no advancement)
 - [2026-03 march-10](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md) — Stage 2.7
 - [2026-05 may-19](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-19.md) — Stage 3 request (continued)
 - [2026-05 may-21](https://github.com/tc39/notes/blob/main/meetings/2026-05/may-21.md) — Stage 3 (conditional)

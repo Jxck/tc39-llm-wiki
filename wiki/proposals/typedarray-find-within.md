@@ -15,10 +15,11 @@ Adds a way to search for a subsequence (not just a single element) within a `Typ
 
 ## Stage history
 
-| Meeting                                                                            | What happened                                                                                  | Stage |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ----- |
-| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) | First presented. **Conditional Stage 1** accepted, pending creation of the proposal repository | → 1   |
-| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-11.md)    | Updates (still Stage 1)                                                                        | 1     |
+| Meeting                                                                            | What happened                                                                                                                                                                                                                             | Stage |
+| ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) | First presented. **Conditional Stage 1** accepted, pending creation of the proposal repository                                                                                                                                            | → 1   |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md)    | "TypedArray find within for Stage 2": Stage 2 requested but **not granted** - open questions (needle snapshotting, iterables, mismatched element types) needed changes; conditional Stage 2 declined in favor of a possible overflow slot | 1     |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-12.md)    | Continuation, no stage ask (to return in May). Conclusion: no iterables (like concat); no firm conclusion on overloading `indexOf` vs. a new function, but the committee leaned toward a new function                                     | 1     |
 
 ```mermaid
 xychart-beta
@@ -28,7 +29,7 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
 ```
 
-> Stage 1 (conditional) in 2025-11.
+> Stage 1 (conditional) in 2025-11. Stage 2 was requested in 2026-03 but not granted.
 
 ## Main issues
 
@@ -43,4 +44,5 @@ xychart-beta
 ## Sources
 
 - [2025-11 november-18](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) - conditional Stage 1
-- [2026-03 march-11](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-11.md) - updates
+- [2026-03 march-10](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md) - Stage 2 requested, not granted
+- [2026-03 march-12](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-12.md) - continuation

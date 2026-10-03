@@ -8,21 +8,21 @@
 
 ## Overview
 
-Three days centered on ECMA-262 / ECMA-402 proposals. **[Temporal](../../proposals/temporal.md) reached Stage 4** (shipped after about five years at Stage 3), and **[Intl Era/Month Code](../../proposals/intl-era-month-code.md) also reached Stage 4**. [Error Stack Accessor](../../proposals/error-stack-accessor.md), [RegExp Buffer Boundaries](../../proposals/regexp-buffer-boundaries.md), and [Iterator Includes](../../proposals/iterator-includes.md) advanced to Stage 2.7, and [Import Text](../../proposals/import-text.md) and [Intl Keep Trailing Zeros](../../proposals/intl-keep-trailing-zeros.md) advanced to Stage 3, among many other advancements. The committee also discussed the conditional Stage 4 status of Abort Protocol / Structured Concurrency / [Explicit Resource Management](../../proposals/explicit-resource-management.md), a test262 coverage strategy, and tree-shakeable methods. The annual chair / editor / convener elections were held (a new 262 editor was added at the opening).
+Three days in New York centered on ECMA-262 / ECMA-402 proposals. **[Temporal](../../proposals/temporal.md) reached Stage 4** after about five years at Stage 3, and **[Intl Era/Month Code](../../proposals/intl-era-month-code.md) also reached Stage 4**. [Import Text](../../proposals/import-text.md) advanced through Stage 2.7 to Stage 3, [Error Stack Accessor](../../proposals/error-stack-accessor.md) advanced to Stage 2.7, [Iterator Includes](../../proposals/iterator-includes.md) went from new to Stage 2.7 in one session, [Intl Unit Protocol](../../proposals/intl-unit-protocol.md) and [Thenable Curtailment](../../proposals/thenable-curtailment.md) reached Stage 2, and [Error code property](../../proposals/error-code-property.md) reached Stage 1; Dynamic Import Host Adjustment was withdrawn. [RegExp Buffer Boundaries](../../proposals/regexp-buffer-boundaries.md) was blocked for insufficient review time, and [Intl Keep Trailing Zeros](../../proposals/intl-keep-trailing-zeros.md) resolved two open issues without requesting advancement. The committee also heard a status update on [Explicit Resource Management](../../proposals/explicit-resource-management.md)'s conditional Stage 4, discussion items on an Abort Protocol and on Structured Concurrency (neither is a staged proposal), a test262 coverage strategy, and tree-shakeable methods. The 2026 chair group, convenors, and editors slate was unanimously approved.
 
 ## Stage transitions
 
-| Proposal                                                                | Transition | Day   |
-| ----------------------------------------------------------------------- | ---------- | ----- |
-| [Intl Era/Month Code](../../proposals/intl-era-month-code.md)           | 3 → 4      | Day 1 |
-| [Error.captureStackTrace](../../proposals/error-capture-stack-trace.md) | 1 → 2      | Day 1 |
-| [Error Stack Accessor](../../proposals/error-stack-accessor.md)         | 2 → 2.7    | Day 1 |
-| [RegExp Buffer Boundaries](../../proposals/regexp-buffer-boundaries.md) | 2 → 2.7    | Day 1 |
-| [Temporal](../../proposals/temporal.md)                                 | 3 → 4      | Day 2 |
-| [Import Text](../../proposals/import-text.md)                           | 2.7 → 3    | Day 2 |
-| [Intl Unit Protocol](../../proposals/intl-unit-protocol.md)             | 1 → 2      | Day 2 |
-| [Intl Keep Trailing Zeros](../../proposals/intl-keep-trailing-zeros.md) | 2 → 3      | Day 2 |
-| [Iterator Includes](../../proposals/iterator-includes.md)               | 2.7 → 3    | Day 3 |
+| Proposal                                                        | Transition    | Day   |
+| --------------------------------------------------------------- | ------------- | ----- |
+| Dynamic Import Host Adjustment                                  | 2 → withdrawn | Day 1 |
+| [Intl Era/Month Code](../../proposals/intl-era-month-code.md)   | 3 → 4         | Day 1 |
+| [Error Stack Accessor](../../proposals/error-stack-accessor.md) | 2 → 2.7       | Day 1 |
+| [Iterator Includes](../../proposals/iterator-includes.md)       | new → 2.7     | Day 1 |
+| [Temporal](../../proposals/temporal.md)                         | 3 → 4         | Day 2 |
+| [Import Text](../../proposals/import-text.md)                   | 2 → 2.7 → 3   | Day 2 |
+| [Intl Unit Protocol](../../proposals/intl-unit-protocol.md)     | 1 → 2         | Day 2 |
+| [Error code property](../../proposals/error-code-property.md)   | new → 1       | Day 2 |
+| [Thenable Curtailment](../../proposals/thenable-curtailment.md) | 1 → 2         | Day 3 |
 
 ## Daily summaries
 

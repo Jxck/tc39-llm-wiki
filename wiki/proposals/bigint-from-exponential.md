@@ -37,15 +37,15 @@ xychart-beta
 
 ### Extend the constructor, or a separate method (`BigInt.parse`)?
 
-[MF](../people/MF.md) opposed extending `BigInt(string)`, saying "I don't see why one would want to write a bigint in exponential notation. A form that allows a decimal point is especially hard to accept", and preferred a separate method such as `BigInt.parse` that accepts a more permissive grammar, including separators. [EAO](../people/EAO.md), on the other hand, opposed the separate-method idea:
+[MF](../people/MF.md) opposed extending `BigInt(string)`, saying "I really don't see why people would want to express bigints in exponential notation. I think that that's a really awkward way to do that, especially because exponential notation is a format that allows for expressing many things that are non-integral", and preferred a separate method such as `BigInt.parse` that accepts a more permissive grammar, including separators. [EAO](../people/EAO.md), on the other hand, opposed the separate-method idea:
 
-> It would be very surprising for `BigInt(string)` and `BigInt.parse(string)` to parse the same string differently
+> I would find it very surprising if we introduced a `BigInt.parse` function that also accepted a string as its numerical argument and then would actually perform a different parsing on that string compared to just using `BigInt` as a function.
 
-([WH](../people/WH.md) also +1), and the design remains split. [KM](../people/KM.md) noted that "if the result is always an integer, allowing a decimal point is meaningless and a source of confusion", but [RGN](../people/RGN.md) replied that "unless it can accept the canonical form that indicates significant digits (`1.000e3` ≠ `1e3`), Amount's problem is not solved".
+([WH](../people/WH.md) also +1), and the design remains split. [KM](../people/KM.md) noted that allowing a decimal point "adds to the confusion potential for people without adding any value" when the result is always an integer, but [RGN](../people/RGN.md) replied that the canonical form "indicates exactly which digits are significant. So `1.000e3` is not the same as `1e3`", and "if we didn't allow the decimal point in this notation, then the change would not satisfy the issue that was discovered by Amount".
 
 ### Distinguishing literal use from dynamic parse use
 
-[OFR](../people/OFR.md) argued for separating the use cases: "Having a string parsed in place of a literal is an antipattern, and for literal use the literal syntax (`1e6n`) should be extended. For the Amount use, we should wait until the proposal reaches its final form." [RGN](../people/RGN.md) sorted the space of possibilities: "If we do not satisfy the literal use with a function, the only remaining option is a syntax change." [PFC](../people/PFC.md) supported it, citing a real need in date-time processing (writing out the zeros equivalent to `1e9` is painful).
+[OFR](../people/OFR.md) argued for separating the use cases: for literals, "it would be an antipattern to not write the literal and instead write a string and then have it parse", and for Amount "maybe we should wait for the proposal to reach the final shape before we add things to the language". [RGN](../people/RGN.md) sorted the space of possibilities: "if the literal use case is not achieved by calling a function, then the only other option is a syntax change." [PFC](../people/PFC.md) supported it, citing a real need in date-time processing (writing out the zeros equivalent to `1e9` is painful).
 
 ### Temperature checks (2026-07 day 3)
 

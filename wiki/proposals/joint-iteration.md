@@ -49,7 +49,11 @@ xychart-beta
 
 [MF](../people/MF.md) initially proposed a single method that branched on type, but the committee preferred a split, which became `zipToArrays` / `zipToObjects`. An on-the-spot decision in 2024-06 renamed `zipToArrays`→`zip`, and 2024-07 renamed `zipToObject`→`zipKeyed`. A prepared statement from [SYG](../people/SYG.md) (V8) prompted a revisit of the naming and the mode design.
 
-> ([SYG](../people/SYG.md)'s prepared statement, read by [RPR](../people/RPR.md), 2024-06) V8 has the following concerns about Stage 2.7, but **will not block** if the committee otherwise agrees: we do not like the current method names; we do not like using two Booleans rather than a single string constant for mutually exclusive options.
+> ([SYG](../people/SYG.md)'s prepared statement, read by [RPR](../people/RPR.md), 2024-06) V8 has the following concerns for Stage 2.7, but **not blocking** if they enjoy committee consensus otherwise:
+>
+> - Dislike the current method names
+> - Dislike using two boolean options for mutually exclusive options instead of one option with string constants
+> - Supports omission of Array method because `toArray()` exists
 
 ### Choosing a mode (two Booleans → one mode string)
 
@@ -63,7 +67,7 @@ Strings are iterable, but in 2024-06 the committee chose not to iterate strings 
 
 [JHD](../people/JHD.md) wanted a variant that zips arrays directly, but [MF](../people/MF.md) left it out of the main proposal: the usual joint-iteration use case continues with some operation other than `toArray`, so the motivation is questionable.
 
-> ([MF](../people/MF.md), 2024-10) I did not want that questionable motivation to hurt the joint iteration proposal, so I did not include it in the main proposal.
+> ([MF](../people/MF.md), 2024-10) We didn’t include it in the joint iteration proposal as we didn’t want its questionable motivation to comprise the joint iteration proposal.
 
 The array variant was split out as a separate proposal, `array-zip` (Stage 1 in 2024-10, [JHD](../people/JHD.md)).
 

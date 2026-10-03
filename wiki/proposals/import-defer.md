@@ -22,7 +22,7 @@ The namespace is a special "deferred module namespace" object: reading any expor
 | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | [2021-01](https://github.com/tc39/notes/blob/main/meetings/2021-01/jan-28.md)      | Presented by [YSV](../people/YSV.md) as "Defer module import eval" for Stage 1 (startup performance for large mature codebases). Reached Stage 1                            | → 1      |
 | [2022-11](https://github.com/tc39/notes/blob/main/meetings/2022-11/nov-30.md)      | Update                                                                                                                                                                      | 1 (kept) |
-| [2023-07](https://github.com/tc39/notes/blob/main/meetings/2023-07/july-11.md)     | Stage 2, conditional on working out Wasm interaction and top-level-await stories                                                                                            | 1 → 2    |
+| [2023-07](https://github.com/tc39/notes/blob/main/meetings/2023-07/july-11.md)     | Reached Stage 2. Before Stage 3, champions to investigate the WebAssembly interaction and the top-level-await performance stories                                           | 1 → 2    |
 | [2023-11](https://github.com/tc39/notes/blob/main/meetings/2023-11/november-29.md) | Deferred re-exports discussion (the later `export defer` split)                                                                                                             | 2 (kept) |
 | [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-09.md)    | Stage 2.7 requested (without "tree-shakeable" exports)                                                                                                                      | 2 (kept) |
 | [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-11.md)     | Stage 2.7                                                                                                                                                                   | 2 → 2.7  |
@@ -52,9 +52,9 @@ The 2.7-era crisis. `import.defer("./x.js")` returns a promise of the namespace 
 
 The 2024-12 resolution: a deferred namespace's **export-name reads** trigger evaluation, the namespace object simply has **no `then` property** (killing the accidental-thenable hazard at the root), `toStringTag` is `"deferred module"`, and `Symbol.evaluated` was dropped ([KG](../people/KG.md) had preferred a global function for checking evaluation state, but it did not survive). Each of the three kept changes reached individual consensus.
 
-### Wasm and top-level await (the Stage 2 conditions)
+### Wasm and top-level await (the pre-Stage 3 homework)
 
-Advancement to Stage 2 in 2023-07 was made conditional on two interactions: how deferred evaluation composes with WebAssembly modules (Wasm instantiation is eager by nature), and what `import defer` of a module with top-level await means (evaluation on first access can now suspend). Both were worked through in the 2.7 cycle rather than blocking.
+Stage 2 in 2023-07 was granted outright, but the conclusion set two things to investigate before Stage 3: how deferred evaluation composes with WebAssembly modules (Wasm instantiation is eager by nature), and what `import defer` of a module with top-level await means (evaluation on first access can now suspend). Both were worked through before Stage 3 rather than blocking Stage 2.
 
 ### Scope: import defer vs export defer
 

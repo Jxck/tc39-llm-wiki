@@ -47,15 +47,15 @@ xychart-beta
 
 Whether ECMA-402 invents the era code / monthCode identifiers itself, or defers to an external authority, was the central issue at Stage 1 (2022-11). [MF](../people/MF.md) raised the concern.
 
-> ([MF](../people/MF.md), 2022-11) I am uneasy about us defining this data. I would rather another body, which has many more experts, define it, and we normatively refer to that.
+> ([MF](../people/MF.md), 2022-11) I do feel kind of uneasy about us defining this data. I think there are other bodies who have many more experts that can make more informed decisions. [...] I would really prefer a more dedicated body standardizing it and we could normatively refer to it.
 
-[USA](../people/USA.md) was also concerned that "the original proposal looked as if standardization depended entirely on TC39." [FYT](../people/FYT.md) turned toward making CLDR the authority, formed a working group with the CLDR TC, and upstreamed the era codes, which settled it.
+[USA](../people/USA.md) had raised the same concern directly with the champions: at the time, the proposal seemed to rely completely on TC39 to standardize much of this calendar data, and he welcomed moving it to a more appropriate venue. [FYT](../people/FYT.md) turned toward making CLDR the authority, formed a working group with the CLDR TC, and upstreamed the era codes, which settled it.
 
 ### "Adding a year" on a lunisolar calendar, and leap months
 
 The issue was what to do when a year that has a leap month, such as Adar I of Hebrew 5784, is advanced `+1 year` and that month does not exist in the next year. In 2025-07 the behavior was to move on to the next non-leap month. In 2025-09 that was **reverted** to the earlier behavior of throwing a RangeError when `overflow` is `"reject"` (lining up with how ISO 8601 treats February 29).
 
-> ([BAN](../people/BAN.md), 2025-09) The rule for which month to land on when advancing from a leap month differs by calendar, and in many respects it is outside our jurisdiction. Fall toward strictness. If we lose that, we can always loosen it later.
+> ([BAN](../people/BAN.md), 2025-09) One of the problems that arose is the standards for what month you should go to, when going forward from a leap month, varied calendar by calendar. And it’s stuff that is sort of outside of our purview in a lot of ways. [...] We’re at this point planning on erroring towards strictness, because if we lose that, we can go the other way.
 
 ### A reference year for rare leap months and leap days
 
@@ -65,7 +65,7 @@ PlainMonthDay internally refers to a real ISO 8601 date, but a month-day that ha
 
 Whether to keep calendar identifiers that have no substance, or that invite misuse, was an issue in 2026-01. `islamic-rgsa` (requested by Oracle, unimplemented and unused) is ignored in the format `ca` option, and the simulation-based "islamic" was also made a fallback. Together with that, the available calendars became a **closed list**, avoiding an interoperability problem.
 
-> ([SFC](../people/SFC.md), 2026-01) The specification for this calendar, requested in the early 2010s, was never implemented, and because it was never implemented, shipping it in an engine would only be a footgun.
+> ([SFC](../people/SFC.md), 2026-01) the specification for the calendar that was requested in the early 2010 was never implemented and because it was never implemented, it’s only a footgun for engines to ship it, because no one implements it as it was specified to have been implemented.
 
 ## Related proposals
 

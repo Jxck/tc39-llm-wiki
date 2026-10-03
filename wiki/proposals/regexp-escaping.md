@@ -18,17 +18,18 @@ The design that finally advanced is deliberately maximal and context-insensitive
 
 ## Stage history
 
-| Meeting                                                                             | Event                                                                                                                                                                     | Stage    |
-| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| [2015-07](https://github.com/tc39/notes/blob/main/meetings/2015-07/july-28.md)      | Presented by [DD](../people/DD.md) (original champions [DD](../people/DD.md) and Benjamin Gruenbaum)                                                                      | (none)   |
-| [2021-01](https://github.com/tc39/notes/blob/main/meetings/2021-01/jan-28.md)       | Revisted by [JHD](../people/JHD.md); reached Stage 1                                                                                                                      | → 1      |
-| [2023-03](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-22.md)       | "Next steps for RegExp escaping": [MM](../people/MM.md)'s security concerns addressed via [KG](../people/KG.md)'s context-safety analysis                                 | 1 (kept) |
-| [2023-09](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-26.md) | Stage 2 on the "escape everything" design; Stage 3 reviewers [JRL](../people/JRL.md), [MF](../people/MF.md), [RGN](../people/RGN.md) named the next day                   | 1 → 2    |
-| [2024-02](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-7.md)        | Hex-escape debate (issue #58): the readable version required new RegExp syntax; committee chose hex escapes and no grammar change                                         | 1 (kept) |
-| [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-08.md)     | Stage 2.7 requested; [MM](../people/MM.md)/[RGN](../people/RGN.md) safety follow-ups (leading ASCII letters, missing newlines, unpaired surrogates) to be folded in first | 1 (kept) |
-| [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-11.md)      | Character-vs-hex escapes settled by temperature check (dead heat, nobody blocking): keep character escapes. Stage 2.7                                                     | 1 → 2.7  |
-| [2024-07](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-29.md)      | Stage 3                                                                                                                                                                   | 2.7 → 3  |
-| [2025-02](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-18.md)  | Stage 4: Firefox and Safari shipped (plus two polyfills); Chrome implemented, shipping in 135/136                                                                         | 3 → 4    |
+| Meeting                                                                             | Event                                                                                                                                                                       | Stage    |
+| ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| [2015-07](https://github.com/tc39/notes/blob/main/meetings/2015-07/july-28.md)      | Presented by [DD](../people/DD.md) (original champions [DD](../people/DD.md) and Benjamin Gruenbaum)                                                                        | (none)   |
+| [2021-01](https://github.com/tc39/notes/blob/main/meetings/2021-01/jan-28.md)       | Revisted by [JHD](../people/JHD.md); reached Stage 1                                                                                                                        | → 1      |
+| [2023-03](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-22.md)       | "Next steps for RegExp escaping": free discussion of `RegExp.escape` vs. a template tag; [MM](../people/MM.md) to revisit whether a single escape function can be made safe | 1 (kept) |
+| [2023-03](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-23.md)       | "Quick Regex Escaping update": [MM](../people/MM.md)'s security concerns addressed via [KG](../people/KG.md)'s context-safety analysis                                      | 1 (kept) |
+| [2023-09](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-26.md) | Stage 2 on the "escape everything" design; Stage 3 reviewers [JRL](../people/JRL.md), [MF](../people/MF.md), [RGN](../people/RGN.md) named the next day                     | 1 → 2    |
+| [2024-02](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-7.md)        | Hex-escape debate (issue #58): the readable version required new RegExp syntax; committee chose hex escapes and no grammar change                                           | 2        |
+| [2024-04](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-08.md)     | Stage 2.7 requested; [MM](../people/MM.md)/[RGN](../people/RGN.md) safety follow-ups (leading ASCII letters, missing newlines, unpaired surrogates) to be folded in first   | 2        |
+| [2024-06](https://github.com/tc39/notes/blob/main/meetings/2024-06/june-11.md)      | Character-vs-hex escapes settled by temperature check (dead heat, nobody blocking): keep character escapes. Stage 2.7                                                       | 2 → 2.7  |
+| [2024-07](https://github.com/tc39/notes/blob/main/meetings/2024-07/july-29.md)      | Stage 3                                                                                                                                                                     | 2.7 → 3  |
+| [2025-02](https://github.com/tc39/notes/blob/main/meetings/2025-02/february-18.md)  | Stage 4: Firefox and Safari shipped (plus two polyfills); Chrome implemented, shipping in 135/136                                                                           | 3 → 4    |
 
 ```mermaid
 xychart-beta
@@ -68,7 +69,8 @@ Reviewing for 2.7 surfaced three holes, all fixed: leading ASCII **letters** mus
 
 - [2015-07 july-28](https://github.com/tc39/notes/blob/main/meetings/2015-07/july-28.md) - first presentation ([DD](../people/DD.md))
 - [2021-01 jan-28](https://github.com/tc39/notes/blob/main/meetings/2021-01/jan-28.md) - Stage 1 ([JHD](../people/JHD.md))
-- [2023-03 mar-22](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-22.md) - next steps ([MM](../people/MM.md) concerns addressed)
+- [2023-03 mar-22](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-22.md) - next steps (free discussion)
+- [2023-03 mar-23](https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-23.md) - quick update ([MM](../people/MM.md) concerns addressed)
 - [2023-09 september-26](https://github.com/tc39/notes/blob/main/meetings/2023-09/september-26.md) - Stage 2
 - [2024-02 feb-7](https://github.com/tc39/notes/blob/main/meetings/2024-02/feb-7.md) - hex-escape debate
 - [2024-04 april-08](https://github.com/tc39/notes/blob/main/meetings/2024-04/april-08.md) - safety follow-ups, Stage 2.7 request

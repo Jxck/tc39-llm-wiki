@@ -17,9 +17,10 @@ The proposal is deliberately **not** "TypeScript enums in JS". It keeps what mak
 
 ## Stage history
 
-| Meeting                                                                         | What happened                                                                                                                                                                                                                    | Stage |
-| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| [2025-04](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-15.md) | Presented for Stage 1 by [RBN](../people/RBN.md) (TypeScript team). Stage 1 with explicit support from [MM](../people/MM.md), [PFC](../people/PFC.md), [JHX](../people/JHX.md), [CDA](../people/CDA.md), [NRO](../people/NRO.md) | → 1   |
+| Meeting                                                                         | What happened                                                                                                                                                                                                                                       | Stage |
+| ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2022-01](https://github.com/tc39/notes/blob/main/meetings/2022-01/jan-25.md)   | Prehistory: a separate `Enum for Stage 1` by [JWK](../people/JWK.md). [WH](../people/WH.md): "This is too vague at this point. I don't see the problem space identified." Conclusion "Does not reach stage 1"; form a champion group asynchronously | 0     |
+| [2025-04](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-15.md) | Presented for Stage 1 by [RBN](../people/RBN.md) (TypeScript team). Stage 1 with explicit support from [MM](../people/MM.md), [PFC](../people/PFC.md), [JHX](../people/JHX.md), [CDA](../people/CDA.md), [NRO](../people/NRO.md)                    | → 1   |
 
 ```mermaid
 xychart-beta
@@ -29,13 +30,13 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
 ```
 
-> Stage 1 in 2025-04; no further plenary appearances in the notes as of 2026-05.
+> An earlier, unrelated enum proposal ([JWK](../people/JWK.md), 2022-01) did not reach Stage 1, so the chart starts from this proposal. Stage 1 in 2025-04; no further plenary appearances in the notes as of 2026-05.
 
 ## Main issues
 
 ### Why not an ObjectLiteral?
 
-The obvious counter - "just freeze an object literal" - misses what makes enums closed: members are non-writable and non-configurable on a null-prototype, non-extensible object; the value domain is restricted (functions are forbidden, to keep the ADT door open); members can self-reference during definition (bitmask use); and the syntax is recognizable to static tooling. The runtime is deliberately boring: an ordinary object desugared one member at a time, with `Symbol.iterator` yielding the domain.
+The obvious counter - just freeze an object literal - misses what makes enums closed: members are non-writable and non-configurable on a null-prototype, non-extensible object; the value domain is restricted (functions are forbidden, to keep the ADT door open); members can self-reference during definition (bitmask use); and the syntax is recognizable to static tooling. The runtime is deliberately boring: an ordinary object desugared one member at a time, with `Symbol.iterator` yielding the domain.
 
 ### The TypeScript divergences
 
@@ -46,7 +47,7 @@ Accepted differences from TS enums, each a deliberate cut:
 - **No reverse mapping** (unreliable in TS; `Symbol.iterator` gives the domain instead).
 - **No `const enum`.**
 
-[SYG](../people/SYG.md) pressed the adoption story: if the new syntax has different semantics from TS enums, TS must make the distinction visible in code, and he warned he will assess any new proposal by "how much is a pure DX thing that can be desugared, versus whether there are concrete benefits for the browser during runtime" - type stripping support "is not a runtime benefit" for browsers.
+[SYG](../people/SYG.md) pressed the adoption story: if the new syntax has different semantics from TS enums, TS must make the distinction visible in code, and he warned he will assess any new proposal by "how much is a pure DX thing that can be desugared, versus whether there are concrete benefits for the browser during runtime" - on type stripping support: "That’s not a runtime benefit" for browsers.
 
 ### Desugaring exposes partially-initialized enums ([MM](../people/MM.md))
 
@@ -64,4 +65,5 @@ The design keeps functions out of the value domain specifically to preserve the 
 
 ## Sources
 
+- [2022-01 jan-25](https://github.com/tc39/notes/blob/main/meetings/2022-01/jan-25.md) - prehistory: `Enum for Stage 1` ([JWK](../people/JWK.md)), did not reach Stage 1
 - [2025-04 april-15](https://github.com/tc39/notes/blob/main/meetings/2025-04/april-15.md) - Stage 1

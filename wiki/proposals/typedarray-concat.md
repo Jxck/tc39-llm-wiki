@@ -15,10 +15,11 @@ Provides an optimizable way to concatenate multiple `TypedArray`s in a single op
 
 ## Stage history
 
-| Meeting                                                                            | What happened                                                                                  | Stage |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ----- |
-| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) | First presented. **Conditional Stage 1** accepted, pending creation of the proposal repository | → 1   |
-| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-11.md)    | Updates (still Stage 1)                                                                        | 1     |
+| Meeting                                                                            | What happened                                                                                                                                                           | Stage |
+| ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [2025-11](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) | First presented. **Conditional Stage 1** accepted, pending creation of the proposal repository                                                                          | → 1   |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md)    | "TypedArray concat for Stage 2": Stage 2 requested but **not granted** - "Objections on the current wording of the problem statement"; to refine it and return on day 3 | 1     |
+| [2026-03](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-12.md)    | Continuation: temperature check on iterables; stage ask deferred to May. Conclusion: no iterables, rename the function away from `concat`                               | 1     |
 
 ```mermaid
 xychart-beta
@@ -28,13 +29,13 @@ xychart-beta
     line [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
 ```
 
-> Stage 1 (conditional) in 2025-11.
+> Stage 1 (conditional) in 2025-11. Stage 2 was requested in 2026-03 but not granted.
 
 ## Main issues
 
 ### Ropes and their performance cliffs (2025-11)
 
-[OFR](../people/OFR.md) supported Stage 1 but objected to the "zero-copy" framing in the repository README: "I really don't want to guarantee that. I don't see a zero-copy version of this appearing in engines any time soon" - and noted engines already dislike ropes in strings because of performance cliffs on indexing/finding and imbalance in practice. [YSZ](../people/YSZ.md) raised memory-management concerns (large allocations, lifecycle visibility). The champion agreed the aspirational language would be removed, and [OFR](../people/OFR.md) acknowledged a real optimization opportunity (single allocation with correct size) remains.
+[OFR](../people/OFR.md) supported Stage 1 but objected to the "zero-copy" framing in the repository README: "I really don't want to guarantee that... I don't see a zero-copy version of this appearing in engines any time soon" - and noted engines already dislike ropes in strings because of performance cliffs on indexing/finding and imbalance in practice. [YSZ](../people/YSZ.md) raised memory-management concerns (large allocations, lifecycle visibility). The champion agreed the aspirational language would be removed, and [OFR](../people/OFR.md) acknowledged a real optimization opportunity (single allocation with correct size) remains.
 
 ### Naming and immutability (2025-11)
 
@@ -48,4 +49,5 @@ xychart-beta
 ## Sources
 
 - [2025-11 november-18](https://github.com/tc39/notes/blob/main/meetings/2025-11/november-18.md) - conditional Stage 1
-- [2026-03 march-11](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-11.md) - updates
+- [2026-03 march-10](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-10.md) - Stage 2 requested, not granted
+- [2026-03 march-12](https://github.com/tc39/notes/blob/main/meetings/2026-03/march-12.md) - continuation
