@@ -3,16 +3,19 @@
 > **Generated.** `tools/extract_proposals.py` builds this from `raw/proposals/` (canonical). Do not edit by hand (regenerated whenever Update pulls `raw/proposals`).
 > Current stage comes from raw/proposals. Ingested proposals link as `[Title](<slug>.md)`; unlinked titles are catalog-only in this wiki.
 > **Stage 4 lists only proposals not yet in ECMAScript (publication year 2026 or later)** (shipped finished proposals are omitted). Stage 3 and below are listed in full.
-> Counts: ECMA-262 225 / ECMA-402 20.
+> Counts: ECMA-262 222 / ECMA-402 20.
 
 ## ECMA-262
 
-### Stage 4 — not yet in ECMAScript (publication year 2026 or later) (11 / 77 including already shipped)
+### Stage 4 — not yet in ECMAScript (publication year 2026 or later) (14 / 80 including already shipped)
 
 - [Array.fromAsync](array-from-async.md) — expected publication 2026
 - [Atomics.pause](atomics-pause.md) — expected publication 2027
 - [Error.isError](error-is-error.md) — expected publication 2026
 - [Explicit Resource Management](explicit-resource-management.md) — expected publication 2027
+- [iterator chunking](iterator-chunking.md) — expected publication 2027
+- [Iterator Includes](iterator-includes.md) — expected publication 2027
+- [Iterator Join](iterator-join.md) — expected publication 2027
 - [Iterator Sequencing](iterator-sequencing.md) — expected publication 2026
 - [Joint Iteration](joint-iteration.md) — expected publication 2027
 - [JSON.parse source text access](json-source-text.md) — expected publication 2026
@@ -21,39 +24,40 @@
 - [Uint8Array to/from Base64](uint8array-base64.md) — expected publication 2026
 - [Upsert](upsert.md) — expected publication 2026
 
-### Stage 3 (12)
+### Stage 3 (10)
 
 - [Await Dictionary](await-dictionary.md)
+- [Curtailing the power of "Thenables"](thenable-curtailment.md)
 - [Deferring Module Evaluation](import-defer.md)
 - [Dynamic Code Brand Checks](dynamic-code-brand-checks.md)
 - [Error Stack Accessor](error-stack-accessor.md)
 - [Import Text](import-text.md)
-- [iterator chunking](iterator-chunking.md)
-- [Iterator Includes](iterator-includes.md)
-- [Iterator Join](iterator-join.md)
 - Legacy RegExp features in JavaScript
 - [Non-extensible Applies to Private](nonextensible-applies-to-private.md)
 - [RegExp Buffer Boundaries (\A, \z, \Z)](regexp-buffer-boundaries.md)
 - Source Phase Imports
 
-### Stage 2.7 (6)
+### Stage 2.7 (9)
 
 - Decorator Metadata
 - [Decorators](decorators.md)
+- Deferred Re-exports
 - [ESM Phase Imports](esm-phase-imports.md)
+- [export all from](export-all-from.md)
 - [Immutable ArrayBuffers](immutable-arraybuffer.md)
 - [Import Bytes](import-bytes.md)
+- JSON.parse options
 - [ShadowRealm](shadowrealm.md)
 
-### Stage 2 (29)
+### Stage 2 (28)
 
 - ["Discard" (void) Bindings](discard-bindings.md)
 - [Amount](amount.md)
 - [Async Context](async-context.md)
 - Async Iterator helpers
+- [Bigint from exponential](bigint-from-exponential.md)
 - collection normalization
-- [Curtailing the power of "Thenables"](thenable-curtailment.md)
-- Deferred Re-exports
+- [Composites](composite-keys.md)
 - Destructure Private Fields
 - [Error code property](error-code-property.md)
 - [Error.captureStackTrace](error-capture-stack-trace.md)
@@ -62,7 +66,6 @@
 - function.sent metaproperty
 - [Fused Multiply-Add](fused-multiply-add.md)
 - Iterator.range
-- JSON.parseImmutable
 - [Math.clamp](math-clamp.md)
 - Module Declarations
 - Module Expressions
@@ -77,8 +80,9 @@
 - [Sync Imports](import-sync.md)
 - [throw expressions](throw-expressions.md)
 
-### Stage 1 (108)
+### Stage 1 (106)
 
+- Abort Controller
 - Alias Accessors
 - Array Equality
 - Array filtering
@@ -88,7 +92,6 @@
 - async do expressions
 - Async initialization
 - await operations
-- [Bigint from exponential](bigint-from-exponential.md)
 - BigInt Math
 - Binary AST
 - Block Params
@@ -104,7 +107,6 @@
 - [Comparisons](comparisons.md)
 - Compartments
 - Composable Accessors via built-in decorators
-- [Composites](composite-keys.md)
 - [Concurrency Control](concurrency-control.md)
 - Cryptographically Secure Random Number Generation
 - DataView get/set Uint8Clamped methods
@@ -120,7 +122,6 @@
 - Error option framesAbove
 - Error option limit
 - Error stacks
-- [export all from](export-all-from.md)
 - export v from "mod"; statements
 - Extensions
 - [Faster Promise adoption](native-promise-adoption.md)
@@ -205,22 +206,19 @@
 - String trim characters
 - Structured Clone
 
-### Inactive / Withdrawn (45)
+### Inactive / Withdrawn (41)
 
 - "use module" — Inactive
-- %constructor%.construct — Never
 - ArrayBuffer.prototype.transfer — Withdrawn
 - Blöcks — Withdrawn
 - Builtins.typeOf() and Builtins.is() — Withdrawn
 - Callable class constructors — Withdrawn
 - Cancelable Promises — Withdrawn
 - Date.parse fallback semantics — Inactive
-- deprecated — Never
 - Distinguishing literal strings — Withdrawn
 - Dynamic Import Host Adjustment — Withdrawn
 - Dynamic Module Reform — Withdrawn
 - Extensible numeric literals — Withdrawn
-- from ... import — Never
 - Function helpers — Presented
 - Function.pipe and flow — Withdrawn
 - Generator arrow functions — Withdrawn
@@ -238,10 +236,9 @@
 - Proposed Grammar change to ES Modules — Rejected
 - [Record & Tuple](records-and-tuples.md) — Withdrawn
 - RefCollection — Withdrawn
-- RegExp Atomic Groups & Possessive Quantifiers — Never
+- RegExp Atomic Groups & Possessive Quantifiers — engines
 - Sequence properties in Unicode property escapes — Withdrawn
 - SIMD.JS - SIMD APIs — Stage
-- String.prototype.at — Obsoleted
 - Symbol.thenable — Withdrawn
 - Tagged Collection Literals — Withdrawn
 - Typed Objects — Postponed
