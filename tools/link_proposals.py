@@ -12,7 +12,10 @@ Two idempotent passes over wiki/meetings/<YYYY-MM>/*.md:
    "Await Dictionary") into a markdown link. Only proposals that already have
    a page in wiki/proposals/ are linked, so unread proposals stay plain text
    (no dead links). Matching is case-insensitive and the original casing is
-   kept as the link text.
+   kept as the link text. Within one `## <topic>` section (or the preamble
+   before the first one) only the FIRST mention of each proposal stays a
+   link; later links to the same page are reduced to plain text. The meta
+   bullets at the top of a topic do not count as a mention.
 
 Titles come from each page's frontmatter `title:`; ALIASES adds textual
 variants that appear in summaries (renames, abbreviations, old names).
@@ -45,6 +48,34 @@ ALIASES = {
     "Map take": "map-get-and-delete.md",
     "Intl.DateTimeFormat Alignment": "intl-datetimeformat-alignment.md",
     "Curtailing the power of \"Thenables\"": "thenable-curtailment.md",
+    "How to make thenables safer": "thenable-curtailment.md",
+    "Keep trailing zeros": "intl-keep-trailing-zeros.md",
+    "isTemplateObject": "is-template-object.md",
+    "Import Buffer": "import-bytes.md",
+    "Immutable ArrayBuffer": "immutable-arraybuffer.md",
+    "Module Import Hook and new Global": "module-global.md",
+    "proposal-module-global": "module-global.md",
+    "Uint8Array base64": "uint8array-base64.md",
+    "TypedArray concat": "typedarray-concat.md",
+    "TypedArray find within": "typedarray-find-within.md",
+    "TypedArray findWithin": "typedarray-find-within.md",
+    "Error.prototype.stack accessor": "error-stack-accessor.md",
+    "Sync Imports": "import-sync.md",
+    "Measure": "amount.md",
+}
+
+# Titles that are also ordinary English words ("the amount of work", "clearer
+# signals"). These only match with their exact capitalization, so lowercase
+# prose is never mistaken for the proposal.
+CASE_SENSITIVE = {
+    "Amount",
+    "Comparisons",
+    "Decimal",
+    "Enums",
+    "Extractors",
+    "Measure",
+    "Signals",
+    "Stabilize",
 }
 
 
@@ -97,6 +128,21 @@ def page_title_of(fname):
 
 
 DAILY = re.compile(r"^\d{4}-\d{2}-\d{2}")
+META_BULLET = re.compile(r"^- (?:wiki|proposal|[Ss]lides?):")
+
+
+def dedupe_links(line, rel, seen):
+    """Keep only the first link per proposal page in a section: later links
+    to a page already in `seen` become their plain link text."""
+    pat = re.compile(r"\[([^\]]*)\]\(" + re.escape(rel) + r"/([a-z0-9-]+\.md)\)")
+
+    def repl(m):
+        if m.group(2) in seen:
+            return m.group(1)
+        seen.add(m.group(2))
+        return m.group(0)
+
+    return pat.sub(repl, line)
 # The legacy label is still accepted so older files can be migrated to "wiki".
 WIKI_BULLET = re.compile(r"^- (?:wiki|\u63d0\u6848\u30da\u30fc\u30b8):")
 PROPOSAL_BULLET = re.compile(r"^- proposal:")
@@ -147,9 +193,19 @@ def ensure_topic_bullets(lines, token_re, titles_ci, rel):
             core.pop(0)
         while core and core[-1] == "":
             core.pop()
-        wiki = take_first(core, WIKI_BULLET)
-        if wiki:
-            wiki = WIKI_BULLET.sub("- wiki:", wiki)  # migrate legacy label
+        wikis = []
+        while (w := take_first(core, WIKI_BULLET)) is not None:
+            wikis.append(WIKI_BULLET.sub("", w).strip())  # migrate legacy label
+        wiki = None
+        if wikis:
+            # Several wiki bullets (e.g. one added by hand after Slides) are
+            # merged into a single bullet, keeping each link once.
+            links = []
+            for w in wikis:
+                for part in re.findall(r"\[[^\]]*\]\([^)]*\)", w) or [w]:
+                    if part not in links:
+                        links.append(part)
+            wiki = "- wiki: " + ", ".join(links)
         elif fnames:
             wiki = "- wiki: " + ", ".join(
                 f"[{page_title_of(f)}]({rel}/{f})" for f in fnames
@@ -182,7 +238,12 @@ def main():
     # wins over its shorter alias. Case-insensitive; original text is kept.
     ordered = sorted(titles, key=len, reverse=True)
     titles_ci = {t.lower(): fname for t, fname in titles.items()}
-    alt = "|".join(re.escape(t) for t in ordered)
+    # Case-sensitive titles are matched by a scoped (?-i:...) group so the
+    # longest-first alternation still works as one regex.
+    alt = "|".join(
+        f"(?-i:{re.escape(t)})" if t in CASE_SENSITIVE else re.escape(t)
+        for t in ordered
+    )
     token_re = re.compile(
         r"(?<![A-Za-z0-9])(" + alt + r")(?![A-Za-z0-9])", re.IGNORECASE
     )
@@ -201,6 +262,7 @@ def main():
         out = []
         in_frontmatter = False
         in_fence = False
+        seen = set()  # proposal pages already linked in the current section
         for i, line in enumerate(lines):
             stripped = line.strip()
             if i == 0 and stripped == "---":
@@ -216,10 +278,15 @@ def main():
                 in_fence = not in_fence
                 out.append(line)
                 continue
+            if stripped.startswith("## "):
+                seen = set()
             if in_fence or stripped.startswith("#"):
                 out.append(line)  # headings keep the original topic title
                 continue
-            out.append(link_line(line, token_re, titles_ci, rel))
+            if META_BULLET.match(line):
+                out.append(line)  # topic meta bullets are not body mentions
+                continue
+            out.append(dedupe_links(link_line(line, token_re, titles_ci, rel), rel, seen))
         new = "\n".join(out) + ("\n" if text.endswith("\n") else "")
         if new != orig:
             pf.write_text(new, encoding="utf-8")

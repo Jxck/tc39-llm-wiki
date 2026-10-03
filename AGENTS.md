@@ -81,7 +81,7 @@ Body sections (headings are fixed, in English):
    | ---------------------------------------- | --------------------------------------- | ----- |
    | [2018-09](../_generated/agenda-index.md) | Reached Stage 2. `Temporal for Stage 2` | 1 → 2 |
 
-   The meeting cell is a relative link to the corresponding `raw/notes` file (e.g. `[2018-09](../../raw/notes/meetings/2018-09/sept-27.md)`). The Stage column records a transition as `old → new`, or just the current stage for an update-only row. Place the stage-history chart (below) right after the table.
+   The meeting cell links to the corresponding tc39/notes file on GitHub (e.g. `[2018-09](https://github.com/tc39/notes/blob/main/meetings/2018-09/sept-27.md)`; the same file is `raw/notes/meetings/2018-09/sept-27.md` locally). Link the day file that actually contains the topic. The Stage column records a transition as `old → new`, or just the current stage for an update-only row. Place the stage-history chart (below) right after the table.
 
 3. Stage-history chart — embed a mermaid `xychart-beta` line chart right below the table. **The x-axis is fixed to the full span with any notes (years 2012-2026)**, and the y-axis is Stage (0-4). Plot the stage as of the end of each year, stacked from the bottom. A year in which the proposal didn't exist yet is 0. For a proposal that passed through Stage 2.7, plot `2.7` as a decimal point. **For a withdrawn proposal, stop the line at the withdrawal year** (end the `line` array there; do not plot further points). Long stalls are naturally expressed as a flat run at the same value (no special marker needed). Right after the chart, add a `>` note on how to read it (the year/month of each transition). Example:
 
@@ -101,9 +101,9 @@ Body sections (headings are fixed, in English):
 5. `## Related proposals` — cross-links in the form `[Title](../proposals/other-slug.md)` (a proposal not yet created is written as plain code-formatted text).
 6. `## Sources` — a bulleted list of the meeting files referenced.
 
-Link convention: **always use standard markdown relative links** (do not use Obsidian's `[[wikilink]]` syntax, since it doesn't navigate in VSCode's markdown preview; standard links work in both VSCode and Obsidian).
+Link convention: **use standard markdown links** — relative links within the wiki, GitHub URLs for notes (do not use Obsidian's `[[wikilink]]` syntax, since it doesn't navigate in VSCode's markdown preview; standard links work in both VSCode and Obsidian).
 
-- To source material: `[2018-09](../../raw/notes/meetings/2018-09/sept-27.md)`
+- To source material (notes): `[2018-09](https://github.com/tc39/notes/blob/main/meetings/2018-09/sept-27.md)`. A GitHub URL rather than `../../raw/notes/...`, so links resolve on GitHub and anywhere the submodule isn't checked out.
 - Between proposals: `[Temporal](../proposals/temporal.md)`. To avoid a dead link to a proposal that doesn't have a page yet, write it as plain code-formatted text (e.g. `` `pattern-matching` ``) and turn it into a link once the page is created.
 - Person abbreviations: `[PFC](../people/PFC.md)`. Linking is done by `tools/link_people.py`, not by hand (below; it also migrates any existing `[[ABBR]]` to a markdown link automatically). Frontmatter's `champions` is YAML, so don't linkify it (keep it as abbreviations).
 

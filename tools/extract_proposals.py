@@ -115,6 +115,15 @@ ALIASES = {
     "keeptrailingzerosinintlnumberformatandintlpluralrules": "intl-keep-trailing-zeros.md",
     "istemplateobject": "is-template-object.md",
     "curtailingthepowerofthenables": "thenable-curtailment.md",
+    "deferringmoduleevaluation": "import-defer.md",
+    "arrayzipandarrayzipkeyed": "array-zip.md",
+    "composites": "composite-keys.md",
+    "disposableasynccontextvariable": "disposable-asynccontext.md",
+    "fasterpromiseadoption": "native-promise-adoption.md",
+    "typedarrayconcat": "typedarray-concat.md",
+    "syncimports": "import-sync.md",
+    "oomfailsfast": "dont-remember-panicking.md",
+    "exploreassociatingaunitwithanumber": "intl-unit-protocol.md",
 }
 
 
