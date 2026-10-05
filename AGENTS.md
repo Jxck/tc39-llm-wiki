@@ -208,7 +208,7 @@ The operation of pulling the submodules under `raw/` (`raw/notes` = tc39/notes, 
 
 ### Summarise (daily meeting summaries)
 
-Summarize an entire meeting topic-by-topic in English (distinct from proposal-centric Ingest). Output goes to `wiki/meetings/<YYYY-MM>/`. The target is specified as either **a meeting (YYYY-MM)** or **an unmerged tc39/notes PR (number or URL)**. If a PR is given, check out `pr-<PR>` first following "Summarising a meeting that exists only on an unmerged PR" below, then target the meeting(s) that PR adds. If unspecified, use the **latest meeting** under `raw/notes/meetings/`.
+Summarize an entire meeting topic-by-topic in English (distinct from proposal-centric Ingest). Output goes to `wiki/meetings/<YYYY-MM>/`. The target is specified as either **a meeting (YYYY-MM)** or **an unmerged tc39/notes PR (number or URL)**. If a PR is given, check out `pr-<PR>` first following "Summarising a meeting that exists only on an unmerged PR" below, then target the meeting(s) that PR adds. If unspecified, use the **latest meeting not yet summarized** — the newest `raw/notes/meetings/<YYYY-MM>` that has no `wiki/meetings/<YYYY-MM>/` directory yet (so re-running with no argument never re-summarizes an already-summarized meeting). If every meeting is already summarized, report that and stop.
 
 1. Read each day's file for the target meeting, `raw/notes/meetings/<YYYY-MM>/<month-DD>.md`.
 2. Generate **one file per day**, `wiki/meetings/<YYYY-MM>/<YYYY-MM-DD>.md`. For each day's agenda item (`## <topic>`):
