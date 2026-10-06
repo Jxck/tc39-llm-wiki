@@ -612,3 +612,9 @@ Checked the entire wiki according to the new precedence (`raw/proposals` is the 
 - Summarized all three days of the 104th meeting (hosted by Sony in Tokyo) into `wiki/meetings/2024-10/` (3 daily files + README).
 - Stage transitions: RegExp Modifiers / Import Attributes / JSON Modules / Iterator Helpers / Promise.try → 4; Iterator sequencing / Error.isError → 2.7; Math.sumPrecise / Atomics.pause → 3; Shared structs / Extractors / Iterator chunking → 2; Immutable ArrayBuffer / Amount (Measure, new) / Array.zip → 1. JSSugar/JS0 debated on days 1 and 3 without consensus; import defer's `import.defer` form expected to be dropped; TG4 source map 2024 edition approved for the Ecma GA.
 - Regenerated people pages (Meetings attended for 2024-10) and re-ran linkers.
+
+## [2026-10-06] ingest | JSSugar (JS0)
+
+- Created [wiki/proposals/js-sugar.md](wiki/proposals/js-sugar.md) for SYG's two-layer language initiative (JS0 core + JSSugar in tools), presented at the 104th meeting (2024-10, days 1 and 3) without consensus and never entered into the stage process (no Stage 1 ask; status stage0, flat chart line).
+- Traced the afterlife beyond 2024-10 via corpus grep: SFC's JS0+JSSugar remark in Decimal's "Vision for numeric types" (2024-12), DE's layering design principle (2025-02, explicitly scoped as separate), KM/SHS in the Composable value-backed accessors tooling debate (2026-01), and KM's JSSugar-layer argument in the Decorators 3 → 2.7 demotion (2026-05). No public repo URL exists in the notes (SYG said a then-private repo would be made public), so none is linked.
+- Regenerated people pages (118; new: KM, SHS) and re-ran linkers; added the catalog row to README.md.

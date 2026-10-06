@@ -11,7 +11,7 @@ tags: [person]
 - **Full name**: Chip Morningstar
 - **Affiliation**: Agoric / Consensys / Consensys (MetaMask) / Invited expert / MetaMask / tbd
 - **Champion drafts**: [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [Stabilize](../proposals/stabilize.md)
-- **Mentioned on proposal pages**: [Intl.MessageFormat](../proposals/intl-messageformat.md), [Iterator Chunking](../proposals/iterator-chunking.md), [JSON Modules](../proposals/json-modules.md), [Map get and delete](../proposals/map-get-and-delete.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [Stabilize](../proposals/stabilize.md)
+- **Mentioned on proposal pages**: [Intl.MessageFormat](../proposals/intl-messageformat.md), [Iterator Chunking](../proposals/iterator-chunking.md), [JSSugar (JS0)](../proposals/js-sugar.md), [JSON Modules](../proposals/json-modules.md), [Map get and delete](../proposals/map-get-and-delete.md), [Native Promise Predicate](../proposals/native-promise-predicate.md), [Non-extensible Applies to Private](../proposals/nonextensible-applies-to-private.md), [Stabilize](../proposals/stabilize.md)
 - **Meetings attended**: 33
 
 ## Meetings attended
