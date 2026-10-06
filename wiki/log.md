@@ -606,3 +606,9 @@ Checked the entire wiki according to the new precedence (`raw/proposals` is the 
 - raw/proposals: status changes from the 2026-07 and 2026-09 (29-30 Sep) meetings — Iterator Chunking / Iterator Includes / Iterator Join → 4; Thenable Curtailment → 2.7 → 3; Composites → 2; export-all-from → 2 → 2.7; Deferred re-exports → 2.7; BigInt from exponential → 2; JSON.parseImmutable renamed "JSON.parse options" → 2.7; Abort Controller → 1; never-presented entries removed from inactive.
 - Regenerated agenda-index, proposals/index.md, people, links.
 - Now behind canonical (2026-09 notes not yet published, so history can't be traced yet): bigint-from-exponential, composite-keys, export-all-from, iterator-chunking, iterator-includes, iterator-join, thenable-curtailment. Canonical still lags notes for Stable Formatting, Intl Sequence Units, Intl Unit Protocol.
+
+## [2026-10-06] summarise | 2024-10 meeting (104th, Tokyo)
+
+- Summarized all three days of the 104th meeting (hosted by Sony in Tokyo) into `wiki/meetings/2024-10/` (3 daily files + README).
+- Stage transitions: RegExp Modifiers / Import Attributes / JSON Modules / Iterator Helpers / Promise.try → 4; Iterator sequencing / Error.isError → 2.7; Math.sumPrecise / Atomics.pause → 3; Shared structs / Extractors / Iterator chunking → 2; Immutable ArrayBuffer / Amount (Measure, new) / Array.zip → 1. JSSugar/JS0 debated on days 1 and 3 without consensus; import defer's `import.defer` form expected to be dropped; TG4 source map 2024 edition approved for the Ecma GA.
+- Regenerated people pages (Meetings attended for 2024-10) and re-ran linkers.

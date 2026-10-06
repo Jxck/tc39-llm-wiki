@@ -17,7 +17,7 @@ tags: [person]
 ## Meetings attended
 
 - [2025-05](../meetings/2025-05/README.md)
-- 2024-10
+- [2024-10](../meetings/2024-10/README.md)
 - 2023-03
 - 2023-01
 - 2022-11
